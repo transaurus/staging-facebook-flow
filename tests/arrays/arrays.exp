@@ -1,0 +1,244 @@
+Error ---------------------------------------------------------------------------------------------------- Arrays.js:5:8
+
+Cannot assign `"..."` to `a[1]` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   Arrays.js:5:8
+   5| a[1] = "..."; // no error under old inference, error under LTI
+             ^^^^^ [1]
+
+References:
+   Arrays.js:4:8
+   4| a[0] = 1;
+             ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- includes.js:3:54
+
+Cannot call `[...].includes` with `x` bound to `searchElement` because number [1] is incompatible with union type [2].
+[incompatible-type]
+
+   includes.js:3:54
+   3| if (([1, 2, 3] as ReadonlyArray<1 | 2 | 3>).includes(x)) {
+                                                           ^
+
+References:
+   includes.js:1:16
+   1| declare var x: number;
+                     ^^^^^^ [1]
+   includes.js:3:33
+   3| if (([1, 2, 3] as ReadonlyArray<1 | 2 | 3>).includes(x)) {
+                                      ^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- isarray.js:3:31
+
+Cannot assign `array` to `problem` because read-only array type [1] is incompatible with array type [2].
+[incompatible-type]
+
+   isarray.js:3:31
+   3|     const problem: Array<Z> = array; // error
+                                    ^^^^^
+
+References:
+   isarray.js:1:25
+   1| function hmm1<Z>(array: Z) {
+                              ^ [1]
+   isarray.js:3:20
+   3|     const problem: Array<Z> = array; // error
+                         ^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- isarray.js:10:31
+
+Cannot assign `array` to `problem` because read-only array type [1] is incompatible with array type [2].
+[incompatible-type]
+
+   isarray.js:10:31
+   10|     const problem: Array<Z> = array; // error
+                                     ^^^^^
+
+References:
+   isarray.js:8:26
+    8|   function hmm<Z>(array: Z): Z  {
+                                ^ [1]
+   isarray.js:10:20
+   10|     const problem: Array<Z> = array; // error
+                          ^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- isarray.js:23:35
+
+Cannot assign `array` to `problem` because read-only array type [1] is incompatible with array type [2].
+[incompatible-type]
+
+   isarray.js:23:35
+   23|     const problem: Array<mixed> = array; // error
+                                         ^^^^^
+
+References:
+   isarray.js:21:22
+   21| function hmm2(array: unknown) {
+                            ^^^^^^^ [1]
+   isarray.js:23:20
+   23|     const problem: Array<mixed> = array; // error
+                          ^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------------- map.js:6:7
+
+Cannot compare `n` [1] to empty string [2], because number [3] is not a subtype of empty string [2] and empty string [2]
+is not a subtype of number [3]. In **rare** cases, these types may have overlapping values but lack a subtyping
+relationship. If that happens, you can cast one side to the union of both types to pass the flow check. 
+[invalid-compare]
+
+   map.js:6:7
+   6|   if (n !== '') { // number incompatible with string
+            ^^^^^^^^
+
+References:
+   map.js:5:20
+   5| (x ? x.a : []).map(n => {
+                         ^ [1]
+   map.js:6:13
+   6|   if (n !== '') { // number incompatible with string
+                  ^^ [2]
+   map.js:2:20
+   2|   a: ReadonlyArray<number>,
+                         ^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------- numeric_elem.js:6:1
+
+Cannot assign `0` to `arr[day]` because `Date` [1] is not an array index. [incompatible-use]
+
+   numeric_elem.js:6:1
+   6| arr[day] = 0;
+      ^^^^^^^^
+
+References:
+   numeric_elem.js:2:11
+   2| var day = new Date;
+                ^^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- numeric_elem.js:7:2
+
+Cannot get `arr[day]` because `Date` [1] is not an array index. [incompatible-use]
+
+   numeric_elem.js:7:2
+   7| (arr[day]: string); // error: number ~> string
+       ^^^^^^^^
+
+References:
+   numeric_elem.js:2:11
+   2| var day = new Date;
+                ^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- spread.js:67:2
+
+Cannot cast array literal to array type because in array element: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   spread.js:67:2
+   67| ([...emp]: Array<string>); // error
+        ^^^^^^^^
+
+References:
+   spread.js:66:10
+   66| emp.push(42);
+                ^^ [1]
+   spread.js:67:18
+   67| ([...emp]: Array<string>); // error
+                        ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- subtyping.js:5:4
+
+Cannot cast `arr` to array type because in array element: `Dog` [1] is not exactly the same as `Animal` [2].
+[incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<Dog>` [3] and `Array<Animal>` [4] exactly the same
+- Or make array type [4] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   subtyping.js:5:4
+   5|   (arr: Array<Animal>); // error
+         ^^^
+
+References:
+   subtyping.js:4:28
+   4|   declare const arr: Array<Dog>;
+                                 ^^^ [1]
+   subtyping.js:5:15
+   5|   (arr: Array<Animal>); // error
+                    ^^^^^^ [2]
+   subtyping.js:4:22
+   4|   declare const arr: Array<Dog>;
+                           ^^^^^^^^^^ [3]
+   subtyping.js:5:9
+   5|   (arr: Array<Animal>); // error
+              ^^^^^^^^^^^^^ [4]
+
+
+Error ------------------------------------------------------------------------------------------------ subtyping.js:10:4
+
+Cannot cast `arr` to array type because in array element: `{foo: string, ...}` [1] is not exactly the same as
+`{...}` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<{foo: string, ...}>` [3] and `Array<{...}>` [4] exactly the same
+- Or make array type [4] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   subtyping.js:10:4
+   10|   (arr: Array<{...}>); // error
+          ^^^
+
+References:
+   subtyping.js:9:28
+    9|   declare const arr: Array<{foo: string, ...}>;
+                                  ^^^^^^^^^^^^^^^^^^ [1]
+   subtyping.js:10:15
+   10|   (arr: Array<{...}>); // error
+                     ^^^^^ [2]
+   subtyping.js:9:22
+    9|   declare const arr: Array<{foo: string, ...}>;
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^ [3]
+   subtyping.js:10:9
+   10|   (arr: Array<{...}>); // error
+               ^^^^^^^^^^^^ [4]
+
+
+Error ------------------------------------------------------------------------------------------------ subtyping.js:15:4
+
+Cannot cast `arr` to array type because in array element: `{foo: string}` [1] is not exactly the same as `{}` [2].
+[incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<{foo: string}>` [3] and `Array<{}>` [4] exactly the same
+- Or make array type [4] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   subtyping.js:15:4
+   15|   (arr: Array<{}>); // error
+          ^^^
+
+References:
+   subtyping.js:14:28
+   14|   declare const arr: Array<{foo: string}>;
+                                  ^^^^^^^^^^^^^ [1]
+   subtyping.js:15:15
+   15|   (arr: Array<{}>); // error
+                     ^^ [2]
+   subtyping.js:14:22
+   14|   declare const arr: Array<{foo: string}>;
+                            ^^^^^^^^^^^^^^^^^^^^ [3]
+   subtyping.js:15:9
+   15|   (arr: Array<{}>); // error
+               ^^^^^^^^^ [4]
+
+
+
+Found 12 errors

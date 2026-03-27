@@ -1,0 +1,751 @@
+Error ---------------------------------------------------------------------------------------------------- class.js:4:11
+
+Cannot yield empty string because string [1] is incompatible with number [2]. [incompatible-type]
+
+   class.js:4:11
+   4|     yield ""; // error: string ~> number
+                ^^ [1]
+
+References:
+   class.js:2:28
+   2|   *stmt_yield(): Generator<number, void, void> {
+                                 ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- class.js:15:8
+
+Cannot cast `b` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   class.js:15:8
+   15|       (b : string); // error: number ~> string
+              ^
+
+References:
+   class.js:7:39
+    7|   *stmt_next(): Generator<void, void, number> {
+                                             ^^^^^^ [1]
+   class.js:15:12
+   15|       (b : string); // error: number ~> string
+                  ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- class.js:24:12
+
+Cannot return empty string because in type argument `Return` [1]: string [2] is incompatible with number [3].
+[incompatible-type]
+
+   class.js:24:12
+     24|     return ""; // error: string ~> number
+                    ^^ [2]
+
+References:
+   <BUILTINS>/core.js:2021:24
+   2021| type Generator<+Yield,+Return,-Next> = $Generator<Yield,Return,Next>;
+                                ^^^^^^ [1]
+   class.js:23:39
+     23|   *stmt_return_err(): Generator<void, number, void> {
+                                               ^^^^^^ [3]
+
+
+Error --------------------------------------------------------------------------------------------------- class.js:28:22
+
+Cannot assign `yield 0` to `x` because undefined [1] is incompatible with boolean [2]. [incompatible-type]
+
+   class.js:28:22
+   28|     var x: boolean = yield 0; // error: void ~> boolean
+                            ^^^^^^^
+
+References:
+   class.js:27:44
+   27|   *infer_stmt(): Generator<number, string, void> {
+                                                  ^^^^ [1]
+   class.js:28:12
+   28|     var x: boolean = yield 0; // error: void ~> boolean
+                  ^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- class.js:37:8
+
+Cannot cast `x` to string because undefined [1] is incompatible with string [2]. [incompatible-type]
+
+   class.js:37:8
+   37|       (x : string) // nope
+              ^
+
+References:
+   class.js:32:42
+   32|   *widen_next(): Generator<number, void, void> {
+                                                ^^^^ [1]
+   class.js:37:12
+   37|       (x : string) // nope
+                  ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- class.js:49:23
+
+Cannot assign `yield` to `x` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   class.js:49:23
+   49|       var x: number = yield; // error: string ~> number
+                             ^^^^^
+
+References:
+   class.js:48:48
+   48|     function *inner(): Generator<mixed, mixed, string> {
+                                                      ^^^^^^ [1]
+   class.js:49:14
+   49|       var x: number = yield; // error: string ~> number
+                    ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- class.js:67:21
+
+Cannot assign `yield* inner()` to `x` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   class.js:67:21
+   67|     var x: number = yield *inner(); // error: string ~> number
+                           ^^^^^^^^^^^^^^
+
+References:
+   class.js:64:14
+   64|       return "";
+                    ^^ [1]
+   class.js:67:12
+   67|     var x: number = yield *inner(); // error: string ~> number
+                  ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- class.js:72:12
+
+Cannot yield `xs` because: [incompatible-type]
+ - array type [1] is incompatible with `$Iterable` [2]
+    - in property `@@iterator` > the return value > type argument `Next` [3]: undefined [4] is incompatible with
+      string [5]
+
+   class.js:72:12
+     72|     yield *xs;
+                    ^^
+
+References:
+   class.js:71:31
+     71|   *delegate_next_iterable(xs: Array<number>): Generator<number, void, string> {
+                                       ^^^^^^^^^^^^^ [1]
+   <BUILTINS>/core.js:2007:11
+   2007| interface $Iterable<+Yield,+Return,-Next> {
+                   ^^^^^^^^^ [2]
+   <BUILTINS>/core.js:1880:50
+   1880| interface $IteratorProtocol<+Yield,+Return=void,-Next=void> {
+                                                          ^^^^ [3]
+   <BUILTINS>/core.js:1890:50
+   1890| declare class Iterator<+Yield,+Return=void,-Next=void> implements $IteratorProtocol<Yield,Return,Next>, $Iterable<Yield,Return,Next> {
+                                                          ^^^^ [4]
+   class.js:71:71
+     71|   *delegate_next_iterable(xs: Array<number>): Generator<number, void, string> {
+                                                                               ^^^^^^ [5]
+
+
+Error --------------------------------------------------------------------------------------------------- class.js:98:41
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   class.js:98:41
+   98| for (var x of examples.infer_stmt()) { (x : string) } // error: number ~> string
+                                               ^
+
+References:
+   class.js:27:28
+   27|   *infer_stmt(): Generator<number, string, void> {
+                                  ^^^^^^ [1]
+   class.js:98:45
+   98| for (var x of examples.infer_stmt()) { (x : string) } // error: number ~> string
+                                                   ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- class.js:100:50
+
+Cannot call `examples.infer_stmt().next` with `0` bound to `value` because number [1] is incompatible with
+undefined [2]. [incompatible-type]
+
+   class.js:100:50
+   100| var infer_stmt_next = examples.infer_stmt().next(0).value; // error: number ~> void
+                                                         ^ [1]
+
+References:
+   class.js:27:44
+    27|   *infer_stmt(): Generator<number, string, void> {
+                                                   ^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- class.js:104:4
+
+Cannot cast `infer_stmt_next` to boolean because string [1] is incompatible with boolean [2]. [incompatible-type]
+
+   class.js:104:4
+   104|   (infer_stmt_next : boolean) // error: string ~> boolean
+           ^^^^^^^^^^^^^^^
+
+References:
+   class.js:27:36
+    27|   *infer_stmt(): Generator<number, string, void> {
+                                           ^^^^^^ [1]
+   class.js:104:22
+   104|   (infer_stmt_next : boolean) // error: string ~> boolean
+                             ^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- class.js:107:28
+
+Cannot call `examples.widen_next().next` with `0` bound to `value` because number [1] is incompatible with
+undefined [2]. [incompatible-type]
+
+   class.js:107:28
+   107| examples.widen_next().next(0) // err number -> void
+                                   ^ [1]
+
+References:
+   class.js:32:42
+    32|   *widen_next(): Generator<number, void, void> {
+                                                 ^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- class.js:108:28
+
+Cannot call `examples.widen_next().next` with empty string bound to `value` because string [1] is incompatible with
+undefined [2]. [incompatible-type]
+
+   class.js:108:28
+   108| examples.widen_next().next("") // err number -> void
+                                   ^^ [1]
+
+References:
+   class.js:32:42
+    32|   *widen_next(): Generator<number, void, void> {
+                                                 ^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- class.js:109:28
+
+Cannot call `examples.widen_next().next` with `true` bound to `value` because boolean [1] is incompatible with
+undefined [2]. [incompatible-type]
+
+   class.js:109:28
+   109| examples.widen_next().next(true) // err number -> void
+                                   ^^^^ [1]
+
+References:
+   class.js:32:42
+    32|   *widen_next(): Generator<number, void, void> {
+                                                 ^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- class.js:122:4
+
+Cannot cast `x1` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   class.js:122:4
+   122|   (x1 : number) // error: string ~> number
+           ^^
+
+References:
+   class.js:54:42
+    54|   *delegate_yield_generator(): Generator<string, void, void> {
+                                                 ^^^^^^ [1]
+   class.js:122:9
+   122|   (x1 : number) // error: string ~> number
+                ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- class.js:128:4
+
+Cannot cast `x2` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   class.js:128:4
+   128|   (x2 : string) // error: number ~> string
+           ^^
+
+References:
+   class.js:75:58
+    75|   *delegate_yield_iterable(xs: Array<number>): Generator<number, void, void> {
+                                                                 ^^^^^^ [1]
+   class.js:128:9
+   128|   (x2 : string) // error: number ~> string
+                ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- class_failure.js:5:22
+
+Cannot assign `yield 0` to `x` because undefined [1] is incompatible with boolean [2]. [incompatible-type]
+
+   class_failure.js:5:22
+   5|     var x: boolean = yield 0; // error: void ~> boolean
+                           ^^^^^^^
+
+References:
+   class_failure.js:4:44
+   4|   *infer_stmt(): Generator<number, string, void> {
+                                                 ^^^^ [1]
+   class_failure.js:5:12
+   5|     var x: boolean = yield 0; // error: void ~> boolean
+                 ^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- class_failure.js:12:41
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   class_failure.js:12:41
+   12| for (var x of examples.infer_stmt()) { (x : string) } // error: number ~> string
+                                               ^
+
+References:
+   class_failure.js:4:28
+    4|   *infer_stmt(): Generator<number, string, void> {
+                                  ^^^^^^ [1]
+   class_failure.js:12:45
+   12| for (var x of examples.infer_stmt()) { (x : string) } // error: number ~> string
+                                                   ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- class_failure.js:14:50
+
+Cannot call `examples.infer_stmt().next` with `0` bound to `value` because number [1] is incompatible with
+undefined [2]. [incompatible-type]
+
+   class_failure.js:14:50
+   14| var infer_stmt_next = examples.infer_stmt().next(0).value; // error: number ~> void
+                                                        ^ [1]
+
+References:
+   class_failure.js:4:44
+    4|   *infer_stmt(): Generator<number, string, void> {
+                                                  ^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- class_failure.js:19:4
+
+Cannot cast `infer_stmt_next` to boolean because string [1] is incompatible with boolean [2]. [incompatible-type]
+
+   class_failure.js:19:4
+   19|   (infer_stmt_next : boolean) // error: void ~> boolean
+          ^^^^^^^^^^^^^^^
+
+References:
+   class_failure.js:4:36
+    4|   *infer_stmt(): Generator<number, string, void> {
+                                          ^^^^^^ [1]
+   class_failure.js:19:22
+   19|   (infer_stmt_next : boolean) // error: void ~> boolean
+                            ^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ generators.js:3:9
+
+Cannot yield empty string because string [1] is incompatible with number [2]. [incompatible-type]
+
+   generators.js:3:9
+   3|   yield ""; // error: string ~> number
+              ^^ [1]
+
+References:
+   generators.js:1:35
+   1| function *stmt_yield(): Generator<number, void, void> {
+                                        ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- generators.js:14:6
+
+Cannot cast `b` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   generators.js:14:6
+   14|     (b : string); // error: number ~> string
+            ^
+
+References:
+   generators.js:6:46
+    6| function *stmt_next(): Generator<void, void, number> {
+                                                    ^^^^^^ [1]
+   generators.js:14:10
+   14|     (b : string); // error: number ~> string
+                ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- generators.js:23:10
+
+Cannot return empty string because in type argument `Return` [1]: string [2] is incompatible with number [3].
+[incompatible-type]
+
+   generators.js:23:10
+     23|   return ""; // error: string ~> number
+                  ^^ [2]
+
+References:
+   <BUILTINS>/core.js:2021:24
+   2021| type Generator<+Yield,+Return,-Next> = $Generator<Yield,Return,Next>;
+                                ^^^^^^ [1]
+   generators.js:22:46
+     22| function *stmt_return_err(): Generator<void, number, void> {
+                                                      ^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------- generators.js:27:20
+
+Cannot assign `yield 0` to `x` because undefined (default `next` of unannotated generator function) [1] is incompatible
+with boolean [2]. [incompatible-type]
+
+   generators.js:27:20
+   27|   var x: boolean = yield 0; // nope
+                          ^^^^^^^
+
+References:
+   generators.js:26:24
+                              v
+   26| function *infer_stmt() {
+   27|   var x: boolean = yield 0; // nope
+   28|   return "";
+   29| }
+       ^ [1]
+   generators.js:27:10
+   27|   var x: boolean = yield 0; // nope
+                ^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- generators.js:30:32
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   generators.js:30:32
+   30| for (var x of infer_stmt()) { (x : string) } // error: number ~> string
+                                      ^
+
+References:
+   generators.js:27:26
+   27|   var x: boolean = yield 0; // nope
+                                ^ [1]
+   generators.js:30:36
+   30| for (var x of infer_stmt()) { (x : string) } // error: number ~> string
+                                          ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- generators.js:31:41
+
+Cannot call `infer_stmt().next` with `0` bound to `value` because number [1] is incompatible with undefined (default
+`next` of unannotated generator function) [2]. [incompatible-type]
+
+   generators.js:31:41
+   31| var infer_stmt_next = infer_stmt().next(0).value; // error: number ~> void
+                                               ^ [1]
+
+References:
+   generators.js:26:24
+                              v
+   26| function *infer_stmt() {
+   27|   var x: boolean = yield 0; // nope
+   28|   return "";
+   29| }
+       ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- generators.js:35:4
+
+Cannot cast `infer_stmt_next` to boolean because string [1] is incompatible with boolean [2]. [incompatible-type]
+
+   generators.js:35:4
+   35|   (infer_stmt_next : boolean) // error: string ~> boolean
+          ^^^^^^^^^^^^^^^
+
+References:
+   generators.js:28:10
+   28|   return "";
+                ^^ [1]
+   generators.js:35:22
+   35|   (infer_stmt_next : boolean) // error: string ~> boolean
+                            ^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- generators.js:65:21
+
+Cannot assign `yield` to `x` because undefined (default `next` of unannotated generator function) [1] is incompatible
+with number [2]. [incompatible-type]
+
+   generators.js:65:21
+   65|     var x: number = yield; // error: void ~> number
+                           ^^^^^
+
+References:
+   generators.js:64:21
+                           v
+   64|   function *inner() {
+   65|     var x: number = yield; // error: void ~> number
+   66|   }
+         ^ [1]
+   generators.js:65:12
+   65|     var x: number = yield; // error: void ~> number
+                  ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- generators.js:69:32
+
+Cannot call `delegate_next_generator().next` with empty string bound to `value` because string [1] is incompatible with
+undefined (default `next` of unannotated generator function) [2]. [incompatible-type]
+
+   generators.js:69:32
+   69| delegate_next_generator().next(""); // err string -> void
+                                      ^^ [1]
+
+References:
+   generators.js:63:37
+                                           v
+   63| function *delegate_next_generator() {
+   64|   function *inner() {
+   65|     var x: number = yield; // error: void ~> number
+   66|   }
+   67|   yield *inner();
+   68| }
+       ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- generators.js:79:4
+
+Cannot cast `x2` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   generators.js:79:4
+   79|   (x2 : number) // error: string ~> number
+          ^^
+
+References:
+   generators.js:73:11
+   73|     yield "";
+                 ^^ [1]
+   generators.js:79:9
+   79|   (x2 : number) // error: string ~> number
+               ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- generators.js:87:19
+
+Cannot assign `yield* inner()` to `x` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   generators.js:87:19
+   87|   var x: number = yield *inner(); // error: string ~> number
+                         ^^^^^^^^^^^^^^
+
+References:
+   generators.js:84:12
+   84|     return "";
+                  ^^ [1]
+   generators.js:87:10
+   87|   var x: number = yield *inner(); // error: string ~> number
+                ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- generators.js:94:33
+
+Cannot call `delegate_next_iterable(...).next` with empty string bound to `value` because string [1] is incompatible
+with undefined (default `next` of unannotated generator function) [2]. [incompatible-type]
+
+   generators.js:94:33
+   94| delegate_next_iterable([]).next(""); // error: Iterator has no next value
+                                       ^^ [1]
+
+References:
+   generators.js:91:53
+                                                           v
+   91| function *delegate_next_iterable(xs: Array<number>) {
+   92|   yield *xs;
+   93| }
+       ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- generators.js:100:4
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   generators.js:100:4
+   100|   (x : string) // error: number ~> string
+           ^
+
+References:
+   generators.js:96:45
+    96| function *delegate_yield_iterable(xs: Array<number>) {
+                                                    ^^^^^^ [1]
+   generators.js:100:8
+   100|   (x : string) // error: number ~> string
+               ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- generators.js:128:4
+
+Cannot cast `multiple_return_result.value` to undefined because number [1] is incompatible with undefined [2].
+[incompatible-type]
+
+   generators.js:128:4
+   128|   (multiple_return_result.value: void); // error: number|string ~> void
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   generators.js:121:12
+   121|     return 0;
+                   ^ [1]
+   generators.js:128:34
+   128|   (multiple_return_result.value: void); // error: number|string ~> void
+                                         ^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- generators.js:128:4
+
+Cannot cast `multiple_return_result.value` to undefined because string [1] is incompatible with undefined [2].
+[incompatible-type]
+
+   generators.js:128:4
+   128|   (multiple_return_result.value: void); // error: number|string ~> void
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   generators.js:123:12
+   123|     return "foo";
+                   ^^^^^ [1]
+   generators.js:128:34
+   128|   (multiple_return_result.value: void); // error: number|string ~> void
+                                         ^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------------ refi.js:5:4
+
+Cannot cast `x.a` to string because undefined [1] is incompatible with string [2]. [incompatible-type]
+
+   refi.js:5:4
+   5|   (x.a: string); // error
+         ^^^
+
+References:
+   refi.js:1:20
+   1| function *a(x: {a: void | string}): Generator<void, void, void> {
+                         ^^^^ [1]
+   refi.js:5:9
+   5|   (x.a: string); // error
+              ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- refi.js:22:4
+
+Cannot cast `x.a` to string because undefined [1] is incompatible with string [2]. [incompatible-type]
+
+   refi.js:22:4
+   22|   (x.a: string); // error
+          ^^^
+
+References:
+   refi.js:17:20
+   17| function *c(x: {a: void | string}): Generator<void, void, void> {
+                          ^^^^ [1]
+   refi.js:22:9
+   22|   (x.a: string); // error
+               ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- return.js:5:4
+
+Cannot cast `ret.value` to undefined because string [1] is incompatible with undefined [2]. [incompatible-type]
+
+   return.js:5:4
+   5|   (ret.value: void); // error: string | number ~> void
+         ^^^^^^^^^
+
+References:
+   return.js:1:37
+   1| function test1(gen: Generator<void, string, void>) {
+                                          ^^^^^^ [1]
+   return.js:5:15
+   5|   (ret.value: void); // error: string | number ~> void
+                    ^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- return.js:5:4
+
+Cannot cast `ret.value` to undefined because number [1] is incompatible with undefined [2]. [incompatible-type]
+
+   return.js:5:4
+   5|   (ret.value: void); // error: string | number ~> void
+         ^^^^^^^^^
+
+References:
+   return.js:4:24
+   4|   var ret = gen.return(0);
+                             ^ [1]
+   return.js:5:15
+   5|   (ret.value: void); // error: string | number ~> void
+                    ^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- return.js:20:4
+
+Cannot cast `refuse_return_result.value` to string because undefined [1] is incompatible with string [2].
+[incompatible-type]
+
+   return.js:20:4
+     20|   (refuse_return_result.value: string); // error: number | void ~> string
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:1867:14
+   1867|     +value?: Return,
+                      ^^^^^^ [1]
+   return.js:20:32
+     20|   (refuse_return_result.value: string); // error: number | void ~> string
+                                        ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- return.js:20:4
+
+Cannot cast `refuse_return_result.value` to string because number [1] is incompatible with string [2].
+[incompatible-type]
+
+   return.js:20:4
+   20|   (refuse_return_result.value: string); // error: number | void ~> string
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   return.js:14:12
+   14|     return 0;
+                  ^ [1]
+   return.js:20:32
+   20|   (refuse_return_result.value: string); // error: number | void ~> string
+                                      ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- throw.js:11:4
+
+Cannot cast `catch_return_value` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   throw.js:11:4
+   11|   (catch_return_value : string); // error: number ~> string
+          ^^^^^^^^^^^^^^^^^^
+
+References:
+   throw.js:3:11
+    3|     yield 0;
+                 ^ [1]
+   throw.js:11:25
+   11|   (catch_return_value : string); // error: number ~> string
+                               ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- throw.js:24:4
+
+Cannot cast `yield_return_value` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   throw.js:24:4
+   24|   (yield_return_value: string); // error: number ~> string
+          ^^^^^^^^^^^^^^^^^^
+
+References:
+   throw.js:16:11
+   16|     yield 0;
+                 ^ [1]
+   throw.js:24:24
+   24|   (yield_return_value: string); // error: number ~> string
+                              ^^^^^^ [2]
+
+
+
+Found 43 errors

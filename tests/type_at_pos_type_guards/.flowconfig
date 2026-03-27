@@ -1,0 +1,14 @@
+[ignore]
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+all=true
+enums=true
+no_flowlib=false
+
+[strict]

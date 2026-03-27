@@ -1,0 +1,3 @@
+// @flow
+
+"" as number;

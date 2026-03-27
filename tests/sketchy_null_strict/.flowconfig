@@ -1,0 +1,5 @@
+[options]
+all=true
+
+[strict]
+sketchy-null

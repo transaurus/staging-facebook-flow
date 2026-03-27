@@ -1,0 +1,1097 @@
+Error ---------------------------------------------------------------------------------------------------- array.js:5:16
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   5|     const a = (x) => 3; // Missing annot
+                     ^
+
+
+Error --------------------------------------------------------------------------------------------------- array.js:11:18
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   11|       const b = (x) => 3; // Missing annot
+                        ^
+
+
+Error --------------------------------------------------------------------------------------------------- array.js:18:18
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   18| emptyArray.push((x) => 3); // Missing annot
+                        ^
+
+
+Error ----------------------------------------------------------------------------------------------- assignment.js:13:6
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   13| c = (x) => 3; // Missing annot
+            ^
+
+
+Error ----------------------------------------------------------------------------------------------- assignment.js:19:6
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   19| e = (x) => 3; // Missing annot
+            ^
+
+
+Error --------------------------------------------------------------------------------------------------- block.js:14:16
+
+Missing an annotation on `y`. [missing-local-annot]
+
+   14|     const x = (y) => 3;  // error y missing an annotation
+                      ^
+
+
+Error ----------------------------------------------------------------------------------------------------- call.js:9:14
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   9|   const a = (x) => 3; // Required annot
+                   ^
+
+
+Error ----------------------------------------------------------------------------------------------------- call.js:12:8
+
+Property `@@iterator` is missing in function [1] but exists in `$Iterable` [2]. [incompatible-type]
+
+   call.js:12:8
+     12| }, ...((x) => 3));
+                ^^^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:2007:11
+   2007| interface $Iterable<+Yield,+Return,-Next> {
+                   ^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- call.js:12:9
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   12| }, ...((x) => 3));
+               ^
+
+
+Error ----------------------------------------------------------------------------------------------------- call.js:18:1
+
+This condition is likely falsy.
+[WARNING]: Flow's type inference may be incorrect that it could be null at runtime (due to `any` annotations,
+out-of-bounds array accesses, etc.). If the check is valid, you might want to make [1] nullable (`T` -> `?T`).
+[constant-condition]
+
+   call.js:18:1
+   18| f((x) => 3, (x: number) => 3) || []; // no annot, constant-condition error
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   call.js:4:40
+    4| function f(x: number => number, y: any) {}
+                                              ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- cast.js:6:15
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   6|   const b = ((x) => 3)(3); // This x does not
+                    ^
+
+
+Error ----------------------------------------------------------------------------------------------------- cast.js:7:14
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   7|   const c = (x) => 3; // Neither does this one
+                   ^
+
+
+Error ---------------------------------------------------------------------------------------------------- cast.js:13:15
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   13|   const b = ((x) => 3)(3); // This x does not
+                     ^
+
+
+Error ---------------------------------------------------------------------------------------------------- cast.js:14:14
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   14|   const c = (x) => 3; // Neither does this one
+                    ^
+
+
+Error ---------------------------------------------------------------------------------------------------- class.js:3:10
+
+Missing an annotation on `param`. [missing-local-annot]
+
+   3|   method(param): any { // error on param
+               ^^^^^
+
+
+Error ----------------------------------------------------------------------------------------------------- class.js:4:6
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   4|     (x) => 3; // error
+           ^
+
+
+Error ---------------------------------------------------------------------------------------------------- class.js:8:16
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   8|   property1 = (x) => 3; // error
+                     ^
+
+
+Error ---------------------------------------------------------------------------------------------------- class.js:8:18
+
+Missing an annotation on return. [missing-local-annot]
+
+   8|   property1 = (x) => 3; // error
+                       
+
+
+Error ---------------------------------------------------------------------------------------------------- class.js:19:3
+
+Missing an annotation on property `a`. [missing-local-annot]
+
+   19|   a; // error
+         ^^
+
+
+Error ---------------------------------------------------------------------------------------------------- class.js:20:3
+
+Missing an annotation on property `b`. [missing-local-annot]
+
+   20|   declare b; // error
+         ^^^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- class.js:29:8
+
+Missing an annotation on property `prop2`. [missing-local-annot]
+
+   29|   prop2 = 10 + 30; // err
+              
+
+
+Error ---------------------------------------------------------------------------------------------------- class.js:30:3
+
+Missing an annotation on property `prop3`. [missing-local-annot]
+
+   30|   prop3; // err
+         ^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- class.js:32:22
+
+Missing an annotation on return. [missing-local-annot]
+
+   32|   prop5 = (x: number) => 42; // err return
+                            
+
+
+Error --------------------------------------------------------------------------------------------------- class.js:33:31
+
+Missing an annotation on return. [missing-local-annot]
+
+   33|   prop6 = function (x: number) { return 42 } // err return
+                                     
+
+
+Error --------------------------------------------------------------------------------------------------- class.js:36:12
+
+Missing an annotation on return. [missing-local-annot]
+
+   36|   method2() { return 42; } // err return
+                  
+
+
+Error --------------------------------------------------------------------------------------------------- class.js:37:26
+
+Cannot return `10` because number [1] is incompatible with constructor void return [2]. [incompatible-type]
+
+   class.js:37:26
+   37|   constructor() { return 10; } // no annotation required, but error on non-void return
+                                ^^ [1]
+
+References:
+   class.js:37:16
+   37|   constructor() { return 10; } // no annotation required, but error on non-void return
+                       [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- class.js:39:9
+
+Missing an annotation on property `#priv1`. [missing-local-annot]
+
+   39|   #priv1 = 10 + 20; // err
+               
+
+
+Error ---------------------------------------------------------------------------------------------------- class.js:40:3
+
+Missing an annotation on property `#priv2`. [missing-local-annot]
+
+   40|   #priv2; // err
+         ^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- class.js:43:12
+
+Missing an annotation on return. [missing-local-annot]
+
+   43|   #pmeth2() { return 42 } // err return
+                  
+
+
+Error ---------------------------------------------------------------------------------------------------- class.js:44:3
+
+Computed property keys not supported. [unsupported-syntax]
+
+   44|   ["computed"]() { } // unsupported, but no missing annot
+         ^^^^^^^^^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- class.js:46:23
+
+Missing an annotation on return. [missing-local-annot]
+
+   46|   throwingInvariant1() { invariant() } // error: throws
+                             
+
+
+Error --------------------------------------------------------------------------------------------------- class.js:47:23
+
+Missing an annotation on return. [missing-local-annot]
+
+   47|   throwingInvariant2() { invariant(false) } // error: throws
+                             
+
+
+Error --------------------------------------------------------------------------------------------------- class.js:51:18
+
+Cannot build a typed interface for this module. You should annotate the exports of this module with types. Missing type
+annotation at property `a`: [signature-verification-failure]
+
+   51| export class D { a; } // error
+                        ^^
+
+
+Error --------------------------------------------------------------------------------------------------- class.js:51:18
+
+Missing an annotation on property `a`. [missing-local-annot]
+
+   51| export class D { a; } // error
+                        ^^
+
+
+Error --------------------------------------------------------------------------------------------------- class.js:54:23
+
+Cannot build a typed interface for this module. You should annotate the exports of this module with types. Missing type
+annotation at identifier: [signature-verification-failure]
+
+   54| export class G { a = (p) => 42; } // error
+                             ^
+
+
+Error --------------------------------------------------------------------------------------------------- class.js:54:23
+
+Missing an annotation on `p`. [missing-local-annot]
+
+   54| export class G { a = (p) => 42; } // error
+                             ^
+
+
+Error --------------------------------------------------------------------------------------------------- class.js:54:25
+
+Cannot build a typed interface for this module. You should annotate the exports of this module with types. Missing type
+annotation at function return: [signature-verification-failure]
+
+   54| export class G { a = (p) => 42; } // error
+                               
+
+
+Error --------------------------------------------------------------------------------------------------- class.js:54:25
+
+Missing an annotation on return. [missing-local-annot]
+
+   54| export class G { a = (p) => 42; } // error
+                               
+
+
+Error ----------------------------------------------------------------------------------------- class_expression.js:3:10
+
+Missing an annotation on `param`. [missing-local-annot]
+
+   3|   method(param): any { // error on param, annotation is not pushed down
+               ^^^^^
+
+
+Error ------------------------------------------------------------------------------------------ class_expression.js:4:6
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   4|     (x) => 3; // error
+           ^
+
+
+Error ----------------------------------------------------------------------------------------- class_expression.js:8:16
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   8|   property1 = (x) => 3; // error
+                     ^
+
+
+Error ----------------------------------------------------------------------------------------- class_expression.js:8:18
+
+Missing an annotation on return. [missing-local-annot]
+
+   8|   property1 = (x) => 3; // error
+                       
+
+
+Error ---------------------------------------------------------------------------------------------- conditional.js:22:3
+
+Cannot cast `test3` to read-only array type because in array element > the first parameter: number [1] is incompatible
+with string [2]. [incompatible-type]
+
+   conditional.js:22:3
+   22|   test3 as $ReadOnlyArray<(string) => void>; // error should be number => void
+         ^^^^^
+
+References:
+   conditional.js:20:41
+   20|   const test3 = true ? [x => {}] : [(x: number) => {}];
+                                               ^^^^^^ [1]
+   conditional.js:22:28
+   22|   test3 as $ReadOnlyArray<(string) => void>; // error should be number => void
+                                  ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- conditional.js:30:22
+
+Cannot call `foo` with function bound to `f` because in array element: string [1] is incompatible with string literal
+`x` [1]. [incompatible-type]
+
+Arrays are invariantly typed. See
+https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   conditional.js:30:22
+   30|   foo(() => (false ? [] : ['x'])); // TODO(T225768659) okay, [] is contextually typed
+                            ^^
+
+References:
+   conditional.js:30:28
+   30|   foo(() => (false ? [] : ['x'])); // TODO(T225768659) okay, [] is contextually typed
+                                  ^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------- conditional.js:31:30
+
+Cannot call `foo` with function bound to `f` because in array element: string [1] is incompatible with string literal
+`x` [1]. [incompatible-type]
+
+Arrays are invariantly typed. See
+https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   conditional.js:31:30
+   31|   foo(() => (false ? ['x'] : [])); // TODO(T225768659) okay, [] is contextually typed
+                                    ^^
+
+References:
+   conditional.js:31:23
+   31|   foo(() => (false ? ['x'] : [])); // TODO(T225768659) okay, [] is contextually typed
+                             ^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- conditional.js:39:5
+
+This condition is likely falsy.
+[WARNING]: Flow's type inference may be incorrect that it could be null at runtime (due to `any` annotations,
+out-of-bounds array accesses, etc.). If the check is valid, you might want to make [1] nullable (`T` -> `?T`).
+[constant-condition]
+
+   conditional.js:39:5
+   39|     foo(value) && value.id != null && value.id // okay, no definition-cycle error, but constant-condition error
+           ^^^^^^^^^^
+
+References:
+   conditional.js:35:33
+   35|   declare function foo(x: any): void;
+                                       ^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- destructuring_init.js:3:6
+
+Property `0` is missing in statics of function type [1]. [prop-missing]
+
+   destructuring_init.js:3:6
+   3| let [a]: number => number = (x) => { // ERROR
+           ^
+
+References:
+   destructuring_init.js:3:10
+   3| let [a]: number => number = (x) => { // ERROR
+               ^^^^^^^^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------- destructuring_init.js:4:14
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   4|   const d = (x) => 3;
+                   ^
+
+
+Error ---------------------------------------------------------------------------------------- destructuring_init.js:9:8
+
+Property `x` is missing in statics of function type [1]. [prop-missing]
+
+   destructuring_init.js:9:8
+   9| const {x: b, y: c}: number => void = (x) => { // This x has an annot available
+             ^
+
+References:
+   destructuring_init.js:9:21
+   9| const {x: b, y: c}: number => void = (x) => { // This x has an annot available
+                          ^^^^^^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------- destructuring_init.js:9:14
+
+Property `y` is missing in statics of function type [1]. [prop-missing]
+
+   destructuring_init.js:9:14
+   9| const {x: b, y: c}: number => void = (x) => { // This x has an annot available
+                   ^
+
+References:
+   destructuring_init.js:9:21
+   9| const {x: b, y: c}: number => void = (x) => { // This x has an annot available
+                          ^^^^^^^^^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------- destructuring_init.js:10:15
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   10|   const b = ((x) => 3)(3); // This x does not
+                     ^
+
+
+Error -------------------------------------------------------------------------------------- destructuring_init.js:11:14
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   11|   const c = (x) => 3; // Neither does this one
+                    ^
+
+
+Error --------------------------------------------------------------------------------------- destructuring_init.js:21:6
+
+An annotation on `x` is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   21|     (x) => 1, // Error in LTI: need an annotation
+            ^
+
+
+Error -------------------------------------------------------------------------------------- destructuring_init.js:28:14
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   28| [null_1] = [(x) => 1]; // error needs annotation because `null_1` pattern is a provider
+                    ^
+
+
+Error --------------------------------------------------------------------------------------- destructuring_init.js:39:6
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   39|     (x) => 1, // TODO should not need annotation
+            ^
+
+
+Error -------------------------------------------------------------------------------------- destructuring_init.js:41:10
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   41|         (x) => 1, // TODO should not need annotation
+                ^
+
+
+Error -------------------------------------------------------------------------------------- destructuring_init.js:42:10
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   42|         (x) => 1, // error needs annotation because null_2 pattern is a provider
+                ^
+
+
+Error ------------------------------------------------------------------------------------------------- do_while.js:8:16
+
+Missing an annotation on `y`. [missing-local-annot]
+
+   8|     const x = (y) => 3; // non-return, not covered!
+                     ^
+
+
+Error ------------------------------------------------------------------------------------------------ do_while.js:11:10
+
+This condition is truthy. [constant-condition]
+
+   11|   while ((x) => 3); // guard is not covered!
+                ^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------ do_while.js:11:11
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   11|   while ((x) => 3); // guard is not covered!
+                 ^
+
+
+Error ------------------------------------------------------------------------------------------------- do_while.js:12:3
+
+Unreachable code. [unreachable-code]
+
+   12|   return (y) => 3;
+         ^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------------- for.js:7:9
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   7|   for ((x) => true; (x) => true; 1) { // init, and test are all not covered by the annot
+              ^
+
+
+Error ------------------------------------------------------------------------------------------------------ for.js:7:21
+
+This condition is truthy. [constant-condition]
+
+   7|   for ((x) => true; (x) => true; 1) { // init, and test are all not covered by the annot
+                          ^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------------ for.js:7:22
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   7|   for ((x) => true; (x) => true; 1) { // init, and test are all not covered by the annot
+                           ^
+
+
+Error ------------------------------------------------------------------------------------------------------ for.js:8:16
+
+Missing an annotation on `y`. [missing-local-annot]
+
+   8|     const x = (y) => 3; // non-return, not covered!
+                     ^
+
+
+Error ----------------------------------------------------------------------------------------------------- for.js:14:10
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   14| for (;; (x) => true) {} // update is not covered by the annot
+                ^
+
+
+Error --------------------------------------------------------------------------------------------------- for_in.js:7:19
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   7|   for (let x in ((x) => 3)) { // Only the body is covered, missing annot!
+                        ^
+
+
+Error --------------------------------------------------------------------------------------------------- for_in.js:8:16
+
+Missing an annotation on `y`. [missing-local-annot]
+
+   8|     const x = (y) => 3; // non-return, not covered!
+                     ^
+
+
+Error --------------------------------------------------------------------------------------------------- for_of.js:7:18
+
+Property `@@iterator` is missing in function [1] but exists in `$Iterable` [2]. [incompatible-type]
+
+   for_of.js:7:18
+      7|   for (let x of ((x) => 3)) { // Only the body is covered, missing annot! Also a type error
+                          ^^^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:2007:11
+   2007| interface $Iterable<+Yield,+Return,-Next> {
+                   ^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- for_of.js:7:19
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   7|   for (let x of ((x) => 3)) { // Only the body is covered, missing annot! Also a type error
+                        ^
+
+
+Error --------------------------------------------------------------------------------------------------- for_of.js:8:16
+
+Missing an annotation on `y`. [missing-local-annot]
+
+   8|     const x = (y) => 3; // non-return, not covered!
+                     ^
+
+
+Error --------------------------------------------------------------------------------------------------- freeze.js:3:34
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   3| const noHint = Object.freeze({f: x => {}}); // error
+                                       ^
+
+
+Error ----------------------------------------------------------------------------------------- function_statics.js:4:12
+
+Missing an annotation on `baz`. [missing-local-annot]
+
+   4| foo.bar = (baz) => {}; // Error: function statics assignments do not have hints.
+                 ^^^
+
+
+Error -------------------------------------------------------------------------------------------------- id_init.js:6:15
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   6|   const b = ((x) => 3)(3); // This x does not
+                    ^
+
+
+Error -------------------------------------------------------------------------------------------------- id_init.js:7:14
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   7|   const c = (x) => 3; // Neither does this one
+                   ^
+
+
+Error -------------------------------------------------------------------------------------------------------- if.js:7:9
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   7|   if (((x) => true) ()){ // Guards are not covered by the annot
+              ^
+
+
+Error ------------------------------------------------------------------------------------------------------ if.js:10:16
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   10|     const z = (x) => 3; // Non-return statements are not covered by the annot
+                      ^
+
+
+Error -------------------------------------------------------------------------------- immediate_call_expression.js:8:13
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   8|     return (x) => {}; // error missing annotation
+                  ^
+
+
+Error ------------------------------------------------------------------------------------------------------ jsx.js:9:14
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   9|   const y = (x) => 3; // error, required annot
+                   ^
+
+
+Error --------------------------------------------------------------------------------------------------- logical.js:5:6
+
+This condition is truthy. [constant-condition]
+
+   5| f = (x => {}) || (y => {});
+           ^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- logical.js:6:5
+
+This condition is truthy. [constant-condition]
+
+   6| f = (x => {}) || (y => {}) || (z => {});
+          ^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- logical.js:6:6
+
+This condition is truthy. [constant-condition]
+
+   6| f = (x => {}) || (y => {}) || (z => {});
+           ^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- logical.js:7:6
+
+This condition is truthy. [constant-condition]
+
+   7| f = ((x: string | number) => {}) || (y => {}); // NOTE: `string => void` should be preferred as hint
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- logical.js:9:13
+
+This condition is truthy. [constant-condition]
+
+   9| const or = ((x: number) => {}) || (y => {}); // NOTE: `number => void` should be used as hint
+                  ^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- logical.js:11:6
+
+This condition is truthy. [constant-condition]
+
+   11| f = (x => {}) && (y => {});
+            ^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- logical.js:12:5
+
+This condition is truthy. [constant-condition]
+
+   12| f = (x => {}) && (y => {}) && (z => {});
+           ^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- logical.js:12:6
+
+This condition is truthy. [constant-condition]
+
+   12| f = (x => {}) && (y => {}) && (z => {});
+            ^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- logical.js:13:6
+
+This condition is truthy. [constant-condition]
+
+   13| f = ((x: string | number) => {}) && (y => {}); // NOTE: `string => void` should be preferred as hint
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:15:14
+
+This condition is truthy. [constant-condition]
+
+   15| const and = ((x: number) => {}) && (y => {}); // Error `y` missing annotation
+                    ^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:15:37
+
+Missing an annotation on `y`. [missing-local-annot]
+
+   15| const and = ((x: number) => {}) && (y => {}); // Error `y` missing annotation
+                                           ^
+
+
+Error -------------------------------------------------------------------------------------------------- logical.js:17:6
+
+This condition is truthy. [constant-condition]
+
+   17| f = (x => {}) ?? (y => {});
+            ^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- logical.js:18:6
+
+This condition is truthy. [constant-condition]
+
+   18| f = (x => {}) ?? (y => {}) ?? (z => {});
+            ^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- logical.js:19:6
+
+This condition is truthy. [constant-condition]
+
+   19| f = ((x: string | number) => {}) ?? (y => {}); // NOTE: `string => void` should be preferred as hint
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:21:14
+
+This condition is truthy. [constant-condition]
+
+   21| const nco = ((x: number) => {}) ?? (y => {}); // NOTE: `number => void` should be used as hint
+                    ^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------ no_annots.js:3:12
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   3| function f(x): void {}
+                 ^
+
+
+Error ------------------------------------------------------------------------------------------------ no_annots.js:4:32
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   4| const function_expr = function(x): void {};
+                                     ^
+
+
+Error ------------------------------------------------------------------------------------------------ no_annots.js:5:21
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   5| const arrow_expr = (x) => {};
+                          ^
+
+
+Error ------------------------------------------------------------------------------------------------ no_annots.js:6:49
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   6| const deep_function_expr = {f: {g: {h: function(x): void {}}}};
+                                                      ^
+
+
+Error ------------------------------------------------------------------------------------------------ no_annots.js:7:38
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   7| const deep_arrow_expr = {f: {g: {h: (x) => void {}}}};
+                                           ^
+
+
+Error --------------------------------------------------------------------------------------------------- object.js:5:16
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   5|     const a = (x) => 3; // Missing annot
+                     ^
+
+
+Error --------------------------------------------------------------------------------------------------- object.js:9:16
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   9|     const b = (x) => 3; // Missing annot
+                     ^
+
+
+Error -------------------------------------------------------------------------------------------------- object.js:16:15
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   16|   __proto__: (x) => {
+                     ^
+
+
+Error -------------------------------------------------------------------------------------------------- object.js:17:16
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   17|     const c = (x) => 3; // Missing annot
+                      ^
+
+
+Error -------------------------------------------------------------------------------------------------- object.js:18:13
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   18|     return (x) => 3;
+                   ^
+
+
+Error -------------------------------------------------------------------------------------------------- object.js:21:16
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   21|     const d = (x) => 3; // Missing annot
+                      ^
+
+
+Error -------------------------------------------------------------------------------------------------- object.js:26:16
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   26|     const e = (x) => 3; // Missing annot
+                      ^
+
+
+Error -------------------------------------------------------------------------------------------------- object.js:30:16
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   30|     const f = (x) => 3; // Missing annot
+                      ^
+
+
+Error -------------------------------------------------------------------------------------------------- object.js:34:16
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   34|     const g = (x) => 3; // Missing annot
+                      ^
+
+
+Error -------------------------------------------------------------------------------------------------- object.js:38:16
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   38|     const h = (x) => 3; // Missing annot
+                      ^
+
+
+Error -------------------------------------------------------------------------------------------- object_static.js:3:21
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   3| Object.create({ foo(x) {} });  // error missing annotation
+                          ^
+
+
+Error --------------------------------------------------------------------------------------------------- return.js:7:22
+
+Missing an annotation on `z`. [missing-local-annot]
+
+   7| let b = ((x => y => (z => 3)(3)): number => number => number); // annot missing on z
+                           ^
+
+
+Error -------------------------------------------------------------------------------------------------- return.js:11:40
+
+Missing an annotation on `z`. [missing-local-annot]
+
+   11| let d = ((x => { return y => { return (z => 3)(3) }}): number => number => number); // annot missing on z
+                                              ^
+
+
+Error -------------------------------------------------------------------------------------------------- return.js:15:15
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   15|   const xx = (x) => 3; // Missing annot on x
+                     ^
+
+
+Error -------------------------------------------------------------------------------------------------- return.js:17:16
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   17|     const z = (x) => 3; // Missing annot on x
+                      ^
+
+
+Error --------------------------------------------------------------------------------------------------- switch.js:7:12
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   7|   switch ((x) => true){ // Guards are not covered by the annot
+                 ^
+
+
+Error -------------------------------------------------------------------------------------------------- switch.js:11:18
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   11|       const z = (x) => 3; // Non-return statements are not covered by the annot
+                        ^
+
+
+Error ----------------------------------------------------------------------------------------------------- this.js:2:13
+
+Missing an annotation on implicit `this` parameter of function. [missing-this-annot]
+
+   2| function foo() {return this.x;}
+                  ^^
+
+
+Error ----------------------------------------------------------------------------------------------------- this.js:7:10
+
+Missing an annotation on return. [missing-local-annot]
+
+   7|     foo() {return this.x;} // Error: missing return annot
+               
+
+
+Error ----------------------------------------------------------------------------------------------------- this.js:8:17
+
+Missing an annotation on return. [missing-local-annot]
+
+   8|     static bar() {return this.y;} // Error: missing return annot
+                      
+
+
+Error ---------------------------------------------------------------------------------------------------- this.js:18:18
+
+Missing an annotation on implicit `this` parameter of function. [missing-this-annot]
+
+   18| let f = function () { return this.x }
+                        ^^
+
+
+Error ---------------------------------------------------------------------------------------- try_catch_finally.js:8:16
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   8|     const z = (x) => 3; // Non-return statements are not covered by the annot
+                     ^
+
+
+Error --------------------------------------------------------------------------------------- try_catch_finally.js:11:16
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   11|     const z = (x) => 3; // Non-return statements are not covered by the annot
+                      ^
+
+
+Error --------------------------------------------------------------------------------------- try_catch_finally.js:14:16
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   14|     const z = (x) => 3; // Non-return statements are not covered by the annot
+                      ^
+
+
+Error ---------------------------------------------------------------------------------------------------- while.js:7:10
+
+This condition is truthy. [constant-condition]
+
+   7|   while ((x) => 3) { // Only the body is covered, missing annot!
+               ^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- while.js:7:11
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   7|   while ((x) => 3) { // Only the body is covered, missing annot!
+                ^
+
+
+Error ---------------------------------------------------------------------------------------------------- while.js:8:16
+
+Missing an annotation on `y`. [missing-local-annot]
+
+   8|     const x = (y) => 3; // non-return, not covered!
+                     ^
+
+
+
+Found 126 errors

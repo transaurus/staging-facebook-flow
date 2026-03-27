@@ -1,0 +1,386 @@
+{"path":"library.js","line":5,"endline":5,"start":3,"end":14}
+use of const binding = {"path":"const.js","line":6,"endline":6,"start":9,"end":11}
+use of shadowed const binding = {"path":"const.js","line":3,"endline":3,"start":7,"end":9}
+let binding = {"path":"let.js","line":3,"endline":3,"start":5,"end":7}
+use of let binding = {"path":"let.js","line":6,"endline":6,"start":7,"end":9}
+use of shadowed let binding = {"path":"let.js","line":3,"endline":3,"start":5,"end":7}
+uninitialized let binding = {"path":"let.js","line":12,"endline":12,"start":5,"end":7}
+conditional write of let binding = {"path":"let.js","line":12,"endline":12,"start":5,"end":7}
+use of conditionally initialized let binding = {"path":"let.js","line":12,"endline":12,"start":5,"end":7}
+let binding initialized to member expression = {"path":"let.js","line":28,"endline":28,"start":7,"end":9}
+default import points to default export = {"path":"helpers/exports_default.js","line":3,"endline":3,"start":7,"end":7}
+default import points to source file (from keyword) = []
+import source points to source file = {"path":"helpers/exports_default.js","line":0,"endline":0,"start":1,"end":0}
+local reference points to default import = {"path":"helpers/exports_default.js","line":3,"endline":3,"start":7,"end":7}
+default import points to module.exports = {"path":"helpers/module_exports.js","line":3,"endline":3,"start":25,"end":30}
+named import of const points to named export = {"path":"helpers/exports_named.js","line":3,"endline":3,"start":14,"end":16}
+named import of let points to named export = {"path":"helpers/exports_named.js","line":5,"endline":5,"start":12,"end":21}
+named import of var points to named export = {"path":"helpers/exports_named.js","line":6,"endline":6,"start":12,"end":21}
+named import of function points to named export = {"path":"helpers/exports_named.js","line":7,"endline":7,"start":17,"end":19}
+named import of class points to named export = {"path":"helpers/exports_named.js","line":8,"endline":8,"start":14,"end":16}
+aliased named import points to named export (as) = []
+aliased named import points to named export (remote name) = {"path":"helpers/exports_named.js","line":4,"endline":4,"start":14,"end":16}
+aliased named import points to named export (local name) = {"path":"helpers/exports_named.js","line":4,"endline":4,"start":14,"end":16}
+local reference points to named import = {"path":"helpers/exports_named.js","line":3,"endline":3,"start":14,"end":16}
+local reference points to aliased named import = {"path":"helpers/exports_named.js","line":4,"endline":4,"start":14,"end":16}
+namespaced import points to imported file (as) = []
+namespaced import points to imported file (remote name) = []
+namespaced import points to imported file (local name) = {"path":"helpers/exports_named.js","line":0,"endline":0,"start":1,"end":0}
+local reference points to namespaced import = {"path":"helpers/exports_named.js","line":0,"endline":0,"start":1,"end":0}
+imports of non-existent module leads to itself = {"path":"imports.js","line":14,"endline":14,"start":14,"end":25}
+use of imports of non-existent module points to import loc = {"path":"imports.js","line":14,"endline":14,"start":14,"end":25}
+namespaced import points to declare module (remote name) = []
+namespaced import points to declare module (as) = []
+namespaced import points to declare module (local name) = {"path":"[LIB] libs/lib.js","line":1,"endline":1,"start":16,"end":25}
+import source points to declare module = {"path":"[LIB] libs/lib.js","line":1,"endline":1,"start":16,"end":25}
+local reference points to declare module = {"path":"[LIB] libs/lib.js","line":1,"endline":1,"start":16,"end":25}
+typeof default import (typeof) = []
+typeof default import (local name) = {"path":"helpers/exports_default.js","line":3,"endline":3,"start":7,"end":7}
+local reference of typeof default import = {"path":"helpers/exports_default.js","line":3,"endline":3,"start":7,"end":7}
+typeof namespace import (typeof) = []
+typeof namespace import (local name) = {"path":"helpers/exports_named.js","line":0,"endline":0,"start":1,"end":0}
+local reference of typeof namespace import = {"path":"helpers/exports_named.js","line":0,"endline":0,"start":1,"end":0}
+imports of level-1 barrel-exported names type X = {"path":"helpers/exports_annot.js","line":3,"endline":3,"start":13,"end":13}
+imports of level-1 barrel-exported names x = {"path":"helpers/exports_annot.js","line":7,"endline":7,"start":14,"end":14}
+imports of level-1 barrel-exported names y = {"path":"helpers/exports_annot.js","line":13,"endline":13,"start":20,"end":20}
+imports of level-1 barrel-exported names z = {"path":"helpers/exports_annot.js","line":15,"endline":15,"start":20,"end":20}
+imports of level-1 barrel-exported names foo = {"path":"helpers/exports_named.js","line":3,"endline":3,"start":14,"end":16}
+imports of level-1 barrel-exported names bar = {"path":"helpers/exports_named.js","line":4,"endline":4,"start":14,"end":16}
+imports of level-2 barrel-exported names type X = {"path":"helpers/exports_annot.js","line":3,"endline":3,"start":13,"end":13}
+imports of level-2 barrel-exported names x = {"path":"helpers/exports_annot.js","line":7,"endline":7,"start":14,"end":14}
+imports of level-2 barrel-exported names y = {"path":"helpers/exports_annot.js","line":13,"endline":13,"start":20,"end":20}
+imports of level-2 barrel-exported names z = {"path":"helpers/exports_annot.js","line":15,"endline":15,"start":20,"end":20}
+imports of level-2 barrel-exported names foo = {"path":"helpers/exports_named.js","line":3,"endline":3,"start":14,"end":16}
+imports of level-2 barrel-exported names bar = {"path":"helpers/exports_named.js","line":4,"endline":4,"start":14,"end":16}
+class name (should be itself) = {"path":"class.js","line":3,"endline":3,"start":7,"end":9}
+class property read = {"path":"class.js","line":4,"endline":4,"start":3,"end":6}
+class property write = {"path":"class.js","line":4,"endline":4,"start":3,"end":6}
+class methods = {"path":"class.js","line":6,"endline":6,"start":3,"end":5}
+refined class properties = {"path":"class.js","line":4,"endline":4,"start":3,"end":6}
+private class property access = {"path":"class.js","line":5,"endline":5,"start":3,"end":14}
+private class property assignment = {"path":"class.js","line":5,"endline":5,"start":3,"end":14}
+members of maybe types = {"path":"class.js","line":6,"endline":6,"start":3,"end":5}
+members of unions with null/void = {"path":"class.js","line":6,"endline":6,"start":3,"end":5}
+member of a nonexistent imported type with type parameters = {"error":"not enough type information to extract members"}
+member of a type alias for `any` with type parameters = {"error":"not enough type information to extract members"}
+member of an object type alias = {"path":"objects.js","line":3,"endline":3,"start":13,"end":15}
+member of an unannotated object type = {"path":"objects.js","line":7,"endline":7,"start":12,"end":14}
+optional chain initial property = {"path":"optional_chaining.js","line":4,"endline":4,"start":3,"end":5}
+optional chain subsequent property = {"path":"optional_chaining.js","line":5,"endline":5,"start":5,"end":7}
+optional chain initial property of null = {"path":"optional_chaining.js","line":4,"endline":4,"start":3,"end":5}
+optional chain subsequent property of null = {"path":"optional_chaining.js","line":5,"endline":5,"start":5,"end":7}
+shorthand destructuring = {"path":"objects.js","line":3,"endline":3,"start":13,"end":15}
+non-shorthand destructuring = {"path":"objects.js","line":3,"endline":3,"start":13,"end":15}
+destructuring without type alias = {"path":"objects.js","line":7,"endline":7,"start":12,"end":14}
+bogus array destructuring of an object = {"path":"objects.js","line":15,"endline":15,"start":10,"end":12}
+property access assigned to a variable = {"path":"objects.js","line":16,"endline":16,"start":9,"end":11}
+global (builtin) variable = {"path":"[LIB] prelude.js","line":30,"endline":30,"start":15,"end":19}
+object destructuring key = {"path":"destructuring.js","line":4,"endline":4,"start":15,"end":17}
+object destructuring binding = {"path":"destructuring.js","line":5,"endline":5,"start":13,"end":15}
+annot.js:5:4
+Flags:
+helpers/exports_annot.js:7:14,7:14
+
+annot.js:8:4
+Flags:
+helpers/exports_annot.js:7:14,7:14
+
+annot.js:11:4
+Flags:
+helpers/exports_annot.js:13:20,13:20
+
+annot.js:14:4
+Flags:
+helpers/exports_annot.js:15:20,15:20
+
+annot.js:21:4
+Flags:
+annot.js:19:7,19:7
+
+exports.js:3:9
+Flags: --pretty
+{"path":"helpers/exports_named.js","line":3,"endline":3,"start":14,"end":16}
+
+exports.js:5:4
+Flags: --pretty
+[]
+
+exports.js:7:10
+Flags: --pretty
+{"path":"helpers/exports_named.js","line":3,"endline":3,"start":14,"end":16}
+
+exports.js:9:13
+Flags: --pretty
+[]
+
+exports.js:11:16
+Flags: --pretty
+{"path":"exports.js","line":11,"endline":11,"start":16,"end":19}
+
+exports.js:13:23
+Flags: --pretty
+[]
+
+exports.js:15:31
+Flags: --pretty
+{"path":"helpers/exports_named.js","line":0,"endline":0,"start":1,"end":0}
+
+exports.js:17:14
+Flags: --pretty
+{"path":"helpers/exports_named.js","line":0,"endline":0,"start":1,"end":0}
+
+exports.js:19:9
+Flags: --pretty
+{"path":"[LIB] libs/lib.js","line":2,"endline":2,"start":22,"end":24}
+
+exports.js:21:16
+Flags: --pretty
+{"path":"exports.js","line":21,"endline":21,"start":16,"end":23}
+
+exports.js:23:33
+Flags: --pretty
+{"path":"[LIB] libs/lib.js","line":1,"endline":1,"start":16,"end":25}
+
+exports.js:25:18
+Flags: --pretty
+{"path":"[LIB] libs/lib.js","line":1,"endline":1,"start":16,"end":25}
+
+exports.js:29:9
+Flags: --pretty
+{"path":"exports.js","line":28,"endline":28,"start":7,"end":9}
+
+exports.js:31:9
+Flags: --pretty
+{"path":"exports.js","line":28,"endline":28,"start":7,"end":9}
+
+exports.js:33:13
+Flags: --pretty
+[]
+
+exports.js:35:16
+Flags: --pretty
+{"path":"exports.js","line":35,"endline":35,"start":16,"end":19}
+
+identifier.js:5:4
+Flags:
+identifier.js:3:10,3:16
+
+identifier.js:8:10
+Flags:
+identifier.js:3:10,3:16
+
+identifier.js:11:11
+Flags:
+identifier.js:3:10,3:16
+
+indexed_access.js:5:13
+Flags:
+indexed_access.js:2:3,2:5
+
+indexed_access.js:8:10
+Flags:
+indexed_access.js:1:6,1:6
+
+literals.js:3:4
+Flags:
+helpers/Foo.js:5:18,5:18
+
+literals.js:6:4
+Flags:
+
+literals.js:9:4
+Flags:
+
+literals.js:13:9
+Flags:
+literals.js:12:13,12:15
+
+literals.js:17:9
+Flags:
+
+literals.js:20:4
+Flags:
+literals.js:16:18,16:23
+
+literals.js:23:4
+Flags:
+
+literals.js:26:4
+Flags:
+
+literals.js:29:4
+Flags:
+
+literals.js:32:4
+Flags:
+
+literals.js:35:4
+Flags:
+
+require.js:3:10
+Flags:
+require.js:3:9,3:17
+
+require.js:6:10
+Flags:
+[LIB] libs/lib.js:17:27,17:32
+
+require.js:9:10
+Flags:
+Untyped.js:0:1,0:0
+
+require.js:12:10
+Flags:
+[LIB] libs/lib.js:21:27,21:32
+
+require.js:15:11
+Flags:
+[LIB] libs/lib.js:2:22,2:24
+
+require.js:19:8
+Flags:
+require.js:19:13,19:31
+
+require.js:21:9
+Flags:
+[LIB] libs/lib.js:2:22,2:24
+
+require.js:23:9
+Flags:
+[LIB] libs/lib.js:2:22,2:24
+
+require.js:25:14
+Flags:
+[LIB] libs/lib.js:2:22,2:24
+
+require.js:27:9
+Flags:
+[LIB] libs/lib.js:3:22,3:24
+
+require.js:29:9
+Flags:
+[LIB] libs/lib.js:3:22,3:24
+
+require.js:31:14
+Flags:
+[LIB] libs/lib.js:3:22,3:24
+
+require.js:33:15
+Flags:
+[LIB] libs/lib.js:3:28,3:30
+
+require.js:35:20
+Flags:
+[LIB] libs/lib.js:3:28,3:30
+
+require.js:37:17
+Flags:
+require.js:37:16,37:20
+
+require.js:39:17
+Flags:
+require.js:39:16,39:22
+
+require.js:41:16
+Flags:
+
+require.js:46:9
+Flags:
+[LIB] libs/lib.js:11:5,11:7
+
+require.js:48:9
+Flags:
+[LIB] libs/lib.js:11:5,11:7
+
+require.js:50:14
+Flags:
+[LIB] libs/lib.js:11:5,11:7
+
+require.js:52:9
+Flags:
+[LIB] libs/lib.js:12:5,12:7
+
+require.js:54:9
+Flags:
+[LIB] libs/lib.js:12:5,12:7
+
+require.js:56:14
+Flags:
+[LIB] libs/lib.js:12:5,12:7
+
+require.js:58:15
+Flags:
+[LIB] libs/lib.js:12:11,12:13
+
+require.js:60:20
+Flags:
+[LIB] libs/lib.js:12:11,12:13
+
+imports_from_cjs.js:1:10
+Flags:
+[LIB] libs/lib.js:11:5,11:7
+
+imports_from_cjs.js:3:10
+Flags:
+[LIB] libs/lib.js:11:5,11:7
+
+imports_from_cjs.js:5:17
+Flags:
+[LIB] libs/lib.js:11:5,11:7
+
+imports_from_cjs.js:7:10
+Flags:
+[LIB] libs/lib.js:12:5,12:7
+
+imports_from_cjs.js:9:10
+Flags:
+[LIB] libs/lib.js:12:5,12:7
+
+imports_from_cjs.js:11:17
+Flags:
+[LIB] libs/lib.js:12:5,12:7
+
+imports_from_cjs.js:13:17
+Flags:
+helpers/module_exports_ref.js:3:15,3:17
+
+type_literals.js:1:12
+Flags:
+
+type_literals.js:3:11
+Flags:
+
+type_literals.js:5:11
+Flags:
+
+type_literals.js:7:11
+Flags:
+
+unbound.js:3:4
+Flags:
+unbound.js:3:2,3:4
+
+utilities.js:5:8
+Flags:
+utilities.js:1:20,1:22
+
+utilities.js:11:8
+Flags:
+utilities.js:1:20,1:22
+
+utilities.js:17:8
+Flags:
+utilities.js:1:20,1:22
+
+utilities.js:23:8
+Flags:
+utilities.js:1:20,1:22
+
+parse_error_component.js:3:29
+Flags:
+parse_error_component.js:3:26,3:28
+
+parse_error_component.js:10:30
+Flags:
+parse_error_component.js:10:30,10:30
+

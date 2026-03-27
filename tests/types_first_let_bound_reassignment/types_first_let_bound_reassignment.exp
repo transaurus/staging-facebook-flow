@@ -1,0 +1,122 @@
+Error ------------------------------------------------------------------------------------------------------ file.js:4:1
+
+Cannot reassign class binding `C` [1]. [cannot-reassign]
+
+   file.js:4:1
+   4| C = 1; // error in types-first, cannot reassign exported class
+      ^
+
+References:
+   file.js:3:7
+   3| class C {}
+            ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------------ file.js:7:1
+
+Cannot reassign function binding `foo` [1]. [cannot-reassign]
+
+   file.js:7:1
+   7| foo = 1; // error in types-first, cannot reassign exported function
+      ^^^
+
+References:
+   file.js:6:10
+   6| function foo() {}
+               ^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- file.js:13:1
+
+Cannot reassign function binding `bar` [1]. [cannot-reassign]
+
+   file.js:13:1
+   13| bar = 1; //  not exported, but still not allowed
+       ^^^
+
+References:
+   file.js:12:10
+   12| function bar() {}
+                ^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- file.js:15:5
+
+Cannot assign `1` to `Lib.baz` because property `baz` is not writable. [cannot-write]
+
+   15| Lib.baz = 1; // error in both modes, baz is not writable
+           ^^^
+
+
+Error ----------------------------------------------------------------------------------------------------- file.js:18:1
+
+Cannot reassign declared function binding `bak` [1]. [cannot-reassign]
+
+   file.js:18:1
+   18| bak = 1; // error in both modes
+       ^^^
+
+References:
+   file.js:17:18
+   17| declare function bak(): void;
+                        ^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- file.js:24:1
+
+Cannot reassign function binding `d` [1]. [cannot-reassign]
+
+   file.js:24:1
+   24| d = 1; // error in types-first
+       ^
+
+References:
+   file.js:20:10
+   20| function d() {}
+                ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- file.js:28:1
+
+Cannot reassign function binding `e` [1]. [cannot-reassign]
+
+   file.js:28:1
+   28| e = 1; // error in types-first, exported via eObj
+       ^
+
+References:
+   file.js:26:10
+   26| function e() {}
+                ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- file.js:32:1
+
+Cannot reassign function binding `f` [1]. [cannot-reassign]
+
+   file.js:32:1
+   32| f = 1; // error in types-first, exported via type F
+       ^
+
+References:
+   file.js:30:10
+   30| function f() {}
+                ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- file.js:36:1
+
+Cannot reassign function binding `g` [1]. [cannot-reassign]
+
+   file.js:36:1
+   36| g = 1; // not exported, but still not allowed
+       ^
+
+References:
+   file.js:34:10
+   34| function g() {}
+                ^ [1]
+
+
+
+Found 9 errors

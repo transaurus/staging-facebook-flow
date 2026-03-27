@@ -1,0 +1,73 @@
+Error ------------------------------------------------------------------------------------------------------- b.js:13:17
+
+Cannot assign object literal to `data` because property `z` is extra in object literal [1] but missing in object
+literal [2]. Exact objects do not accept extra props. [incompatible-type]
+
+All writes to `data` must be compatible with the type of its initializer [3]. Add an annotation to `data` [3] if a
+different type is desired.
+
+   b.js:13:17
+   13|   if (b) data = { x: 0, z: 0 }; // constrained write error
+                       ^^^^^^^^^^^^^^ [1]
+
+References:
+   b.js:12:14
+   12|   var data = { x: 0 };
+                    ^^^^^^^^ [2]
+   b.js:12:7
+   12|   var data = { x: 0 };
+             ^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------------- b.js:19:12
+
+Cannot call `o['fun']` with `data` bound to `data` because property `x` is missing in object literal [1] but exists in
+`Data` [2]. [incompatible-type]
+
+   b.js:19:12
+   19|   o['fun'](data); // Error: { z: 0 } ~> Data
+                  ^^^^
+
+References:
+   b.js:18:14
+   18|   var data = { z: 0 };
+                    ^^^^^^^^ [1]
+   b.js:5:28
+    5| declare function foo(data: Data): void;
+                                  ^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------------- b.js:19:12
+
+Cannot call `o['fun']` with `data` bound to `data` because property `z` is extra in object literal [1] but missing in
+`Data` [2]. Exact objects do not accept extra props. [incompatible-type]
+
+   b.js:19:12
+   19|   o['fun'](data); // Error: { z: 0 } ~> Data
+                  ^^^^
+
+References:
+   b.js:18:14
+   18|   var data = { z: 0 };
+                    ^^^^^^^^ [1]
+   b.js:5:28
+    5| declare function foo(data: Data): void;
+                                  ^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- test2.js:4:16
+
+Cannot assign `5` to `t` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   test2.js:4:16
+   4| const t: arg = 5;
+                     ^ [1]
+
+References:
+   test2.js:2:17
+   2| type fn = (arg: string) => number;
+                      ^^^^^^ [2]
+
+
+
+Found 4 errors

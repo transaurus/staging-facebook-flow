@@ -1,0 +1,1060 @@
+Error ------------------------------------------------------------------------------------------------------ test.js:6:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   6|   p: number; // PropertyNotDefinitelyInitialized
+        ^
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:10:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   10|   p1: number; // PropertyNotDefinitelyInitialized
+         ^^
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:11:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   11|   p2: number; // PropertyNotDefinitelyInitialized
+         ^^
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:15:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   15|   #priv: boolean; // PropertyNotDefinitelyInitialized
+         ^^^^^
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:19:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   19|   p: number; // PropertyNotDefinitelyInitialized
+         ^
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:27:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   27|   p: number; // PropertyNotDefinitelyInitialized
+         ^
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:35:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   35|   p: number; // PropertyNotDefinitelyInitialized
+         ^
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:45:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   45|   p: number; // PropertyNotDefinitelyInitialized
+         ^
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:55:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   55|   p: number; // PropertyNotDefinitelyInitialized
+         ^
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:65:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   65|   p: number; // PropertyNotDefinitelyInitialized
+         ^
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:75:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   75|   p: number; // PropertyNotDefinitelyInitialized
+         ^
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:85:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   85|   p: number; // PropertyNotDefinitelyInitialized
+         ^
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:95:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   95|   p: number; // PropertyNotDefinitelyInitialized
+         ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:109:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   109|   p: number; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:119:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   119|   p: number; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:129:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   129|   p: number; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:139:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   139|   p: number; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:149:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   149|   p: number; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:151:5
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   151|     this.p += 3; // ReadFromUninitializedProperty
+            ^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:156:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   156|   p: string; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:158:5
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   158|     this.p; // ReadFromUninitializedProperty
+            ^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:163:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   163|   p: null; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:165:15
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   165|     const x = this.p; // ReadFromUninitializedProperty
+                      ^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:170:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   170|   p: number; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:172:9
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   172|     if (this.p === 0) false; // ReadFromUninitializedProperty
+                ^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:179:5
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   179|     this.p; // ReadFromUninitializedProperty
+            ^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:185:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   185|   p: number; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:187:5
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   187|     this.p++; // ReadFromUninitializedProperty
+            ^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:194:5
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   194|     this.p++; // ReadFromUninitializedProperty
+            ^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:202:21
+
+Cannot assign `x` to `y` because uninitialized variable [1] is incompatible with number [2]. [incompatible-type]
+
+   test.js:202:21
+   202|     let y: number = x; // ExpectError uninitialized variable is incompatible with number
+                            ^
+
+References:
+   test.js:201:9
+   201|     let x: number;
+                ^ [1]
+   test.js:202:12
+   202|     let y: number = x; // ExpectError uninitialized variable is incompatible with number
+                   ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:210:14
+
+Cannot assign `x` to `this.p` because uninitialized variable [1] is incompatible with number [2]. [incompatible-type]
+
+   test.js:210:14
+   210|     this.p = x; // ExpectError uninitialized variable is incompatible with number
+                     ^
+
+References:
+   test.js:209:9
+   209|     let x: number;
+                ^ [1]
+   test.js:207:6
+   207|   p: number;
+             ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:217:14
+
+It is unsafe to use `this` in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   217|     this.p = this; // ThisBeforeEverythingInitialized
+                     ^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:224:9
+
+It is unsafe to use `this` in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   224|     if (this) {
+                ^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:234:7
+
+It is unsafe to use `this` in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   234|     f(this); // ThisBeforeEverythingInitialized
+              ^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:242:15
+
+It is unsafe to use `this` in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   242|     const x = this; // ThisBeforeEverythingInitialized
+                      ^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:250:5
+
+It is unsafe to call a method in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   250|     this.m(); // MethodCallBeforeEverythingInitialized
+            ^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:261:5
+
+It is unsafe to call a method in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   261|     this.m(); // MethodCallBeforeEverythingInitialized
+            ^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:268:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   268|   p1: number; // PropertyNotDefinitelyInitialized
+          ^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:277:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   277|   #p: 'a'; // PropertyNotDefinitelyInitialized
+          ^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:284:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   284|   p: number; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:297:14
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   297|     this.p = this.p; // ReadFromUninitializedProperty
+                     ^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:302:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   302|   p: {x: number}; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:304:5
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   304|     this.p.x = 0; // ReadFromUninitializedProperty
+            ^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:309:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   309|   p1: number; // PropertyNotDefinitelyInitialized
+          ^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:312:23
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   312|     while ((this.p2 = this.p1)) {
+                              ^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:320:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   320|   p: number; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:328:15
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   328|     this.p1 = this.p2; // ReadFromUninitializedProperty
+                      ^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:334:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   334|   p: number; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:350:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   350|   p: number; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:364:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   364|   p: number; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:377:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   377|   p: number; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:386:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   386|   p: number; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:396:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   396|   p: number; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:404:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   404|   p: 0; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:416:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   416|   p: number; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:428:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   428|   p: 0; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:443:7
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   443|       this.p; // ReadFromUninitializedProperty
+              ^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:454:7
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   454|       this.p; // ReadFromUninitializedProperty
+              ^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:464:26
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   464|     const a = (this.p2 = this.p1), // ReadFromUninitializedProperty
+                                 ^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:470:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   470|   p: number; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:479:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   479|   p: number; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:490:5
+
+It is unsafe to call a method in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   490|     this.m(this); // MethodCallBeforeEverythingInitialized, ThisBeforeEverythingInitialized
+            ^^^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:490:12
+
+It is unsafe to use `this` in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   490|     this.m(this); // MethodCallBeforeEverythingInitialized, ThisBeforeEverythingInitialized
+                   ^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:499:5
+
+It is unsafe to call a method in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   499|     this.m(this.p); // MethodCallBeforeEverythingInitialized, ReadFromUninitializedProperty
+            ^^^^^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:499:12
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   499|     this.m(this.p); // MethodCallBeforeEverythingInitialized, ReadFromUninitializedProperty
+                   ^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:508:5
+
+It is unsafe to call a method in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   508|     this.m(this.m(0)); // MethodCallBeforeEverythingInitialized, MethodCallBeforeEverythingInitialized
+            ^^^^^^^^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:508:12
+
+It is unsafe to call a method in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   508|     this.m(this.m(0)); // MethodCallBeforeEverythingInitialized, MethodCallBeforeEverythingInitialized
+                   ^^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:519:5
+
+It is unsafe to call a method in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   519|     this.m((this.p = 0)); // MethodCallBeforeEverythingInitialized
+            ^^^^^^^^^^^^^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:527:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   527|   p: number | string; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:531:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   531|   p: void & number; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:535:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   535|   p: T; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:539:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   539|   p: {x: number}; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:541:5
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   541|     this.p.x; // ReadFromUninitializedProperty
+            ^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:546:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   546|   p: string; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:548:5
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   548|     this.p as string; // ReadFromUninitializedProperty
+            ^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:553:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   553|   #p: string; // PropertyNotDefinitelyInitialized
+          ^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:555:5
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   555|     this.#p as string; // ReadFromUninitializedProperty
+            ^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:565:10
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   565|     incr(this.p); // ReadFromUninitializedProperty
+                 ^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:573:10
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   573|     incr(this.#p); // ReadFromUninitializedProperty
+                 ^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:581:23
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   581|     const x: number = this.p; // ReadFromUninitializedProperty
+                              ^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:589:23
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   589|     const x: number = this.#p; // ReadFromUninitializedProperty
+                              ^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:595:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   595|   #p1: number; // PropertyNotDefinitelyInitialized
+          ^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:599:5
+
+It is unsafe to call a method in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   599|     this.m(); // MethodCallBeforeEverythingInitialized
+            ^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:608:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   608|   p: boolean; // PropertyNotDefinitelyInitialized
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:610:5
+
+It is unsafe to call a method in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   610|     this.m(this.p); // MethodCallBeforeEverythingInitialized, ReadFromUninitializedProperty
+            ^^^^^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:610:12
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   610|     this.m(this.p); // MethodCallBeforeEverythingInitialized, ReadFromUninitializedProperty
+                   ^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:620:5
+
+It is unsafe to use `this` in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   620|     this; // ThisBeforeEverythingInitialized
+            ^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:621:5
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   621|     this.p as number; // ReadFromUninitializedProperty
+            ^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:631:5
+
+It is unsafe to call a property function in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   631|     this.f(); // PropertyFunctionCallBeforeEverythingInitialized
+            ^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:639:19
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   639|     let f = () => this.p++; // ReadFromUninitializedProperty
+                          ^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:647:12
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   647|     (() => this.p++)(); // ReadFromUninitializedProperty
+                   ^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:658:5
+
+It is unsafe to call a property function in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   658|     this.f(); // PropertyFunctionCallBeforeEverythingInitialized
+            ^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:667:20
+
+Cannot use operator `+=` with operands number [1] and undefined [2] [unsafe-addition]
+
+   test.js:667:20
+   667|     this.f = x => (this.p += x);
+                           ^^^^^^^^^^^
+
+References:
+   test.js:664:6
+   664|   p: number;
+             ^^^^^^ [1]
+   test.js:665:19
+   665|   f: (x: number | void) => number;
+                          ^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:668:5
+
+It is unsafe to call a property function in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   668|     this.f(this.f()); // PropertyFunctionCallBeforeEverythingInitialized, PropertyFunctionCallBeforeEverythingInitialized
+            ^^^^^^^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:668:12
+
+It is unsafe to call a property function in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   668|     this.f(this.f()); // PropertyFunctionCallBeforeEverythingInitialized, PropertyFunctionCallBeforeEverythingInitialized
+                   ^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:678:5
+
+It is unsafe to call a property function in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   678|     this.f(); // PropertyFunctionCallBeforeEverythingInitialized
+            ^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:691:16
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   691|   p2: number = this.p1; // ReadFromUninitializedProperty
+                       ^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:699:17
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   699|   #p2: number = this.p1; // ReadFromUninitializedProperty
+                        ^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:706:15
+
+It is unsafe to call a method in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   706|   p: number = this.m(); // MethodCallBeforeEverythingInitialized
+                      ^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:714:15
+
+It is unsafe to call a method in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   714|   p: number = this.m(); // MethodCallBeforeEverythingInitialized
+                      ^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:721:12
+
+It is unsafe to use `this` in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   721|   p: E81 = this; // ThisBeforeEverythingInitialized
+                   ^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:728:5
+
+It is unsafe to call a property function in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   728|     this.f(); // PropertyFunctionCallBeforeEverythingInitialized
+            ^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:736:19
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   736|     let f = () => this.p++; // ReadFromUninitializedProperty
+                          ^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:744:12
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   744|     (() => this.p++)(); // ReadFromUninitializedProperty
+                   ^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:753:5
+
+It is unsafe to call a property function in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   753|     this.f(); // PropertyFunctionCallBeforeEverythingInitialized
+            ^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:763:5
+
+It is unsafe to call a property function in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   763|     this.f(); // PropertyFunctionCallBeforeEverythingInitialized
+            ^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:770:38
+
+Cannot use operator `+=` with operands number [1] and undefined [2] [unsafe-addition]
+
+   test.js:770:38
+   770|   f = (x: number | void): number => (this.p += x);
+                                             ^^^^^^^^^^^
+
+References:
+   test.js:769:6
+   769|   p: number;
+             ^^^^^^ [1]
+   test.js:770:20
+   770|   f = (x: number | void): number => (this.p += x);
+                           ^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:772:5
+
+It is unsafe to call a property function in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   772|     this.f(this.f()); // PropertyFunctionCallBeforeEverythingInitialized, PropertyFunctionCallBeforeEverythingInitialized
+            ^^^^^^^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:772:12
+
+It is unsafe to call a property function in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   772|     this.f(this.f()); // PropertyFunctionCallBeforeEverythingInitialized, PropertyFunctionCallBeforeEverythingInitialized
+                   ^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:780:10
+
+Cannot call `this.p` because number [1] is not a function. [not-a-function]
+
+   test.js:780:10
+   780|     this.p(); // ExpectError Cannot call `this.p` because number is not a function.
+                 ^
+
+References:
+   test.js:778:7
+   778|   p = 0;
+              ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:792:5
+
+It is unsafe to call a property function in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   792|     this.p(); // PropertyFunctionCallBeforeEverythingInitialized
+            ^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:805:5
+
+It is unsafe to call a property function in the constructor before all class properties are definitely initialized.
+[uninitialized-instance-property]
+
+   805|     this.p(); // PropertyFunctionCallBeforeEverythingInitialized
+            ^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:1116:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   1116|   p: T; // TODO spurious error
+           ^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:1175:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   1175|   p: number; // TODO spurious error
+           ^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:1177:5
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   1177|     this.p; // TODO spurious error
+             ^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:1182:3
+
+Class property not definitely initialized in the constructor. Can you add an assignment to the property declaration?
+[uninitialized-instance-property]
+
+   1182|   #p: number; // TODO spurious error
+           ^^
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:1184:5
+
+It is unsafe to read from a class property before it is definitely initialized. [uninitialized-instance-property]
+
+   1184|     this.#p; // TODO spurious error
+             ^^^^^^^
+
+
+
+Found 117 errors

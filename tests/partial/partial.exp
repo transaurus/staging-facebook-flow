@@ -1,0 +1,265 @@
+Error ------------------------------------------------------------------------------------------ deprecated-alias.js:1:6
+
+The utility type `$Partial` is deprecated, use `Partial` instead. [deprecated-utility]
+
+   1| ({}: $Partial<{x: string, y: string}>); // ERROR: deprecated utility - use `Partial` instead
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ----------------------------------------------------------------------------------------- deprecated-alias.js:8:17
+
+The utility type `$Partial` is deprecated, use `Partial` instead. [deprecated-utility]
+
+   8| export type T = $Partial<{x: string}>; // ERROR
+                      ^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------- partial-positioning.js:18:26
+
+Cannot call `register` because in type argument `T` > property `foo`: `number` [1] is not exactly the same as
+`RecursiveProp` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because property `foo` is invariantly typed. To fix the error,
+- Either make `{foo: number}` [3] and `{[string]: RecursiveProp}` [4] exactly the same
+- Or make property `foo` in object type [5] readonly. See
+https://flow.org/en/docs/faq/#why-cant-i-pass-a-string-to-a-function-that-takes-a-string-number.
+
+   partial-positioning.js:18:26
+   18| register(() => (x: {foo: number}) => null); // ERROR!
+                                ^^^^^^ [1]
+
+References:
+   partial-positioning.js:8:33
+    8| type Props = Partial<{[string]: RecursiveProp}>;
+                                       ^^^^^^^^^^^^^ [2]
+   partial-positioning.js:18:20
+   18| register(() => (x: {foo: number}) => null); // ERROR!
+                          ^^^^^^^^^^^^^ [3]
+   partial-positioning.js:8:22
+    8| type Props = Partial<{[string]: RecursiveProp}>;
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^ [4]
+   partial-positioning.js:12:37
+   12| declare export function register<T: Props>(
+                                           ^^^^^ [5]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:9:30
+
+Cannot assign object literal to `b7` because in property `x`: null [1] is incompatible with string [2].
+[incompatible-type]
+
+   test.js:9:30
+   9| let b7 : Partial<Foo> = {x : null}; // error
+                                   ^^^^ [1]
+
+References:
+   test.js:1:19
+   1| type Foo = {| x : string, y : string |};
+                        ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:10:30
+
+Cannot assign object literal to `b8` because in property `x`: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   test.js:10:30
+   10| let b8 : Partial<Foo> = {x : 3}; // error
+                                    ^ [1]
+
+References:
+   test.js:1:19
+    1| type Foo = {| x : string, y : string |};
+                         ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:11:25
+
+Cannot assign object literal to `b9` because property `z` is extra in object literal [1] but missing in `Foo` [2]. Exact
+objects do not accept extra props. [incompatible-type]
+
+   test.js:11:25
+   11| let b9 : Partial<Foo> = {z : ""}; // error
+                               ^^^^^^^^ [1]
+
+References:
+   test.js:11:18
+   11| let b9 : Partial<Foo> = {z : ""}; // error
+                        ^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:16:17
+
+Cannot assign `null` to `v2` because null [1] is incompatible with undefined [2]. [incompatible-type]
+
+   test.js:16:17
+   16| let v2 : Void = null; // error
+                       ^^^^ [1]
+
+References:
+   test.js:16:10
+   16| let v2 : Void = null; // error
+                ^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:19:16
+
+Cannot assign `undefined` to `n` because undefined [1] is incompatible with null [2]. [incompatible-type]
+
+   test.js:19:16
+   19| let n : Null = undefined; // error
+                      ^^^^^^^^^ [1]
+
+References:
+   test.js:19:9
+   19| let n : Null = undefined; // error
+               ^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:25:17
+
+Cannot assign `a` to `p3` because: [incompatible-type]
+ - Either in property `x`: undefined [1] is incompatible with string [1].
+    - This property is invariantly typed. See
+      https://flow.org/en/docs/faq/#why-cant-i-pass-a-string-to-a-function-that-takes-a-string-number.
+ - Or `Foo` [2] is incompatible with null or undefined [3].
+
+   test.js:25:17
+   25| let p3 : PFoo = a; // error
+                       ^
+
+References:
+   test.js:1:19
+    1| type Foo = {| x : string, y : string |};
+                         ^^^^^^ [1]
+   test.js:2:9
+    2| let a : Foo = {x : "", y : ""};
+               ^^^ [2]
+   test.js:22:21
+   22| type PFoo = Partial<?Foo>;
+                           ^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:28:17
+
+Cannot assign `3` to `p6` because: [incompatible-type]
+ - Either number [1] is incompatible with `Foo` [2].
+ - Or number [1] is incompatible with null or undefined [3].
+
+   test.js:28:17
+   28| let p6 : PFoo = 3; // error
+                       ^ [1]
+
+References:
+   test.js:22:22
+   22| type PFoo = Partial<?Foo>;
+                            ^^^ [2]
+   test.js:22:21
+   22| type PFoo = Partial<?Foo>;
+                           ^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:30:20
+
+Cannot instantiate partial number because number [1] is not an object. [not-an-object]
+
+   30| type Err = Partial<number> // error
+                          ^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:45:32
+
+Cannot assign object literal to `d7` because in property `x`: null [1] is incompatible with string [2].
+[incompatible-type]
+
+   test.js:45:32
+   45| let d7 : Partial<IFace> = {x : null}; // error
+                                      ^^^^ [1]
+
+References:
+   test.js:34:9
+   34|     x : string,
+               ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:46:32
+
+Cannot assign object literal to `d8` because in property `x`: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   test.js:46:32
+   46| let d8 : Partial<IFace> = {x : 3}; // error
+                                      ^ [1]
+
+References:
+   test.js:34:9
+   34|     x : string,
+               ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:62:32
+
+Cannot assign object literal to `f9` because in property `x`: null [1] is incompatible with string [2].
+[incompatible-type]
+
+   test.js:62:32
+   62| let f9 : Partial<JFace> = {x : null}; // error
+                                      ^^^^ [1]
+
+References:
+   test.js:34:9
+   34|     x : string,
+               ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:63:33
+
+Cannot assign object literal to `f10` because in property `z`: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   test.js:63:33
+   63| let f10 : Partial<JFace> = {z : 3}; // error
+                                       ^ [1]
+
+References:
+   test.js:50:9
+   50|     z : string
+               ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:64:33
+
+Cannot assign object literal to `f11` because in property `x`: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   test.js:64:33
+   64| let f11 : Partial<JFace> = {x : 3}; // error
+                                       ^ [1]
+
+References:
+   test.js:34:9
+   34|     x : string,
+               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- variance.js:11:5
+
+Cannot assign `1` to `x.r` because property `r` is not writable. [cannot-write]
+
+   11|   x.r = 1; // ERROR
+           ^
+
+
+Error ------------------------------------------------------------------------------------------------- variance.js:13:6
+
+Cannot get `x.w` because property `w` is not readable. [cannot-read]
+
+   13|   (x.w: number | void); // ERROR
+            ^
+
+
+
+Found 18 errors
+
+Only showing the most relevant union/intersection branches.
+To see all branches, re-run Flow with --show-all-branches

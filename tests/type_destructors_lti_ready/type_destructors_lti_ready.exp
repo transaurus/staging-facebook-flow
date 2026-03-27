@@ -1,0 +1,240 @@
+Error -------------------------------------------------------------------------------------------------- errors.js:12:13
+
+Cannot access string literal `p` on object type because property `p` is missing in object type [1]. [prop-missing]
+
+   errors.js:12:13
+   12| type A = {}['p']; // We should get an error on this line.
+                   ^^^
+
+References:
+   errors.js:12:10
+   12| type A = {}['p']; // We should get an error on this line.
+                ^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- errors.js:15:10
+
+Cannot instantiate `P` because property `p` is missing in object type [1]. [prop-missing]
+
+   errors.js:15:10
+   15| type B = P<{}>; // We should get an error on this line.
+                ^^^^^
+
+References:
+   errors.js:15:12
+   15| type B = P<{}>; // We should get an error on this line.
+                  ^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- errors.js:18:1
+
+Cannot call `fn1` because property `p` is missing in object literal [1]. [prop-missing]
+
+   errors.js:18:1
+   18| fn1({x: 42}); // We should get an error on this line.
+       ^^^
+
+References:
+   errors.js:18:5
+   18| fn1({x: 42}); // We should get an error on this line.
+           ^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- errors.js:19:1
+
+Cannot call `fn1` because property `p` is missing in null [1]. [incompatible-use]
+
+   errors.js:19:1
+   19| fn1(null); // We should get an error on this line.
+       ^^^
+
+References:
+   errors.js:19:5
+   19| fn1(null); // We should get an error on this line.
+           ^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- errors.js:21:1
+
+Cannot call `fn2` because property `p` is missing in object literal [1]. [prop-missing]
+
+   errors.js:21:1
+   21| fn2({x: 42})(); // We should get an error on this line.
+       ^^^
+
+References:
+   errors.js:21:5
+   21| fn2({x: 42})(); // We should get an error on this line.
+           ^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- errors.js:22:1
+
+Cannot call `fn2` because property `p` is missing in null [1]. [incompatible-use]
+
+   errors.js:22:1
+   22| fn2(null)(); // We should get an error on this line.
+       ^^^
+
+References:
+   errors.js:22:5
+   22| fn2(null)(); // We should get an error on this line.
+           ^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- errors.js:24:1
+
+Cannot call `fn3` because property `p` is missing in object literal [1]. [prop-missing]
+
+   errors.js:24:1
+   24| fn3({x: 42}); // We should get an error on this line.
+       ^^^
+
+References:
+   errors.js:24:5
+   24| fn3({x: 42}); // We should get an error on this line.
+           ^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- errors.js:25:1
+
+Cannot call `fn3` because property `p` is missing in null [1]. [incompatible-use]
+
+   errors.js:25:1
+   25| fn3(null); // We should get an error on this line.
+       ^^^
+
+References:
+   errors.js:25:5
+   25| fn3(null); // We should get an error on this line.
+           ^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- errors.js:27:1
+
+Cannot call `fn4` because property `p` is missing in object literal [1]. [prop-missing]
+
+   errors.js:27:1
+   27| fn4({x: 42})(); // We should get an error on this line.
+       ^^^
+
+References:
+   errors.js:27:5
+   27| fn4({x: 42})(); // We should get an error on this line.
+           ^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- errors.js:28:1
+
+Cannot call `fn4` because property `p` is missing in null [1]. [incompatible-use]
+
+   errors.js:28:1
+   28| fn4(null)(); // We should get an error on this line.
+       ^^^
+
+References:
+   errors.js:28:5
+   28| fn4(null)(); // We should get an error on this line.
+           ^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- errors2.js:6:12
+
+Cannot access string literal `p` on object type because property `p` is missing in object type [1]. [prop-missing]
+
+   errors2.js:6:12
+   6| null as {}['p']; // Error should point here.
+                 ^^^
+
+References:
+   errors2.js:6:9
+   6| null as {}['p']; // Error should point here.
+              ^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- errors2.js:8:13
+
+Cannot access string literal `p` on object type because property `p` is missing in object type [1]. [prop-missing]
+
+   errors2.js:8:13
+   8| type A = {}['p']; // Error should point here.
+                  ^^^
+
+References:
+   errors2.js:8:10
+   8| type A = {}['p']; // Error should point here.
+               ^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- errors2.js:12:10
+
+Cannot instantiate `B` because property `p` is missing in object type [1]. [prop-missing]
+
+   errors2.js:12:10
+   12| type C = B<{}>; // Error should point here.
+                ^^^^^
+
+References:
+   errors2.js:12:12
+   12| type C = B<{}>; // Error should point here.
+                  ^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- errors2.js:15:34
+
+Cannot access string literal `p` on object type because property `p` is missing in object type [1]. [prop-missing]
+
+   errors2.js:15:34
+   15| declare function f1<O>(o: O): {}['p']; // Error should point here.
+                                        ^^^
+
+References:
+   errors2.js:15:31
+   15| declare function f1<O>(o: O): {}['p']; // Error should point here.
+                                     ^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- errors2.js:17:31
+
+Cannot instantiate `B` because property `p` is missing in object type [1]. [prop-missing]
+
+   errors2.js:17:31
+   17| declare function f3<O>(o: O): B<{}>; // Error should point here.
+                                     ^^^^^
+
+References:
+   errors2.js:17:33
+   17| declare function f3<O>(o: O): B<{}>; // Error should point here.
+                                       ^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- errors2.js:25:1
+
+Cannot call `f4` because property `p` is missing in object type [1]. [prop-missing]
+
+   errors2.js:25:1
+   25| f4(o) as empty; // Error should point here.
+       ^^
+
+References:
+   errors2.js:21:16
+   21| declare var o: {};
+                      ^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- errors2.js:26:1
+
+Cannot call `f5` because property `p` is missing in object type [1]. [prop-missing]
+
+   errors2.js:26:1
+   26| f5(o) as empty; // Error should point here.
+       ^^
+
+References:
+   errors2.js:21:16
+   21| declare var o: {};
+                      ^^ [1]
+
+
+
+Found 17 errors

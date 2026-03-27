@@ -1,0 +1,62 @@
+Error ------------------------------------------------------------------------------------------------------ test.js:1:1
+
+Component syntax is not enabled. You may opt-in to using component syntax by putting `component_syntax=true` into the
+`[options]` section of your `.flowconfig`. [unsupported-syntax]
+
+   1| component Comp() {} // error: unsupported
+      ^^^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------------ test.js:4:2
+
+Cannot cast `3` to indexed access because number [1] is incompatible with component Fragment [2]. [incompatible-type]
+
+   test.js:4:2
+     4| (3: $Exports<'react'>['Fragment']); // ERROR
+         ^ [1]
+
+References:
+   <BUILTINS>/react.js:749:5
+            v------------------------------------------------------
+   749|     declare component Fragment<Renders: React$Node = void>(
+   750|       children?: Renders,
+   751|     ) renders Renders;
+            -----------------^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------------ test.js:8:1
+
+Cannot cast `Foo` to empty because component Foo [1] is incompatible with empty [2]. [incompatible-type]
+
+   test.js:8:1
+   8| Foo as empty; // ERROR
+      ^^^
+
+References:
+   test.js:7:1
+   7| declare component Foo() renders Foo; // ok
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   test.js:8:8
+   8| Foo as empty; // ERROR
+             ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:11:1
+
+Cannot cast `c` to empty because component [1] is incompatible with empty [2]. [incompatible-type]
+
+   test.js:11:1
+   11| c as empty; // ERROR
+       ^
+
+References:
+   test.js:10:18
+   10| declare const c: component(); // ok
+                        ^^^^^^^^^^^ [1]
+   test.js:11:6
+   11| c as empty; // ERROR
+            ^^^^^ [2]
+
+
+
+Found 4 errors

@@ -1,0 +1,1267 @@
+Error ------------------------------------------------------------------------------------------------- arr_rest.js:9:11
+
+`Set` [1] is not an array. [not-an-array]
+
+   arr_rest.js:9:11
+   9| const [...y] = new Set() // still error
+                ^
+
+References:
+   arr_rest.js:9:16
+   9| const [...y] = new Set() // still error
+                     ^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- arr_rest.js:9:20
+
+Cannot call `Set` because `T` [1] is underconstrained by new `Set` [2]. Either add explicit type arguments or cast the
+expression to your expected type. [underconstrained-implicit-instantiation]
+
+   arr_rest.js:9:20
+      9| const [...y] = new Set() // still error
+                            ^^^
+
+References:
+   <BUILTINS>/core.js:2240:19
+   2240| declare class Set<T> extends $ReadOnlySet<T> {
+                           ^ [1]
+   arr_rest.js:9:16
+      9| const [...y] = new Set() // still error
+                        ^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ arr_rest.js:15:52
+
+Cannot call `arb` because `T` [1] is underconstrained by call of `arb` [2]. Either add explicit type arguments or cast
+the expression to your expected type. [underconstrained-implicit-instantiation]
+
+   arr_rest.js:15:52
+   15| const w: [number, number, string, number] = [...z, arb(), ...arb()]; // incompat and instantiation errors
+                                                          ^^^
+
+References:
+   arr_rest.js:11:22
+   11| declare function arb<T>(): T;
+                            ^ [1]
+   arr_rest.js:15:52
+   15| const w: [number, number, string, number] = [...z, arb(), ...arb()]; // incompat and instantiation errors
+                                                          ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ arr_rest.js:15:62
+
+Cannot call `arb` because `T` [1] is underconstrained by call of `arb` [2]. Either add explicit type arguments or cast
+the expression to your expected type. [underconstrained-implicit-instantiation]
+
+   arr_rest.js:15:62
+   15| const w: [number, number, string, number] = [...z, arb(), ...arb()]; // incompat and instantiation errors
+                                                                    ^^^
+
+References:
+   arr_rest.js:11:22
+   11| declare function arb<T>(): T;
+                            ^ [1]
+   arr_rest.js:15:62
+   15| const w: [number, number, string, number] = [...z, arb(), ...arb()]; // incompat and instantiation errors
+                                                                    ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- async.js:15:16
+
+Cannot call `commit` because property `variables` is missing in `Promise` [1]. [prop-missing]
+
+   async.js:15:16
+   15|   return await commit({});  // error: property 'variables' is missing (reference
+                      ^^^^^^
+
+References:
+   async.js:14:21
+   14| async function g(): Promise<{ variables: any }> {
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ call_rest.js:5:16
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   5|     outer(...[(x) => { // TODO okay no annotation required
+                     ^
+
+
+Error ------------------------------------------------------------------------------------------------ call_rest.js:9:22
+
+An annotation on `x` is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   9|     outer(...inner([(x) => { // TODO okay no annotation required
+                           ^
+
+
+Error ------------------------------------------------------------------------------------------------ call_rest.js:29:9
+
+Cannot cast `x` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   call_rest.js:29:9
+   29|         x as number; // error string ~> number
+               ^
+
+References:
+   call_rest.js:24:37
+   24|       ) => ReturnType<() => Set<(x: string) => void>>,
+                                           ^^^^^^ [1]
+   call_rest.js:29:14
+   29|         x as number; // error string ~> number
+                    ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------- destructuring_assignment.js:7:12
+
+Cannot cast `n` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   destructuring_assignment.js:7:12
+   7|    (n) => (n: empty), // error: num ~> empty
+                 ^
+
+References:
+   destructuring_assignment.js:1:17
+   1| declare var a: (number) => mixed;
+                      ^^^^^^ [1]
+   destructuring_assignment.js:7:15
+   7|    (n) => (n: empty), // error: num ~> empty
+                    ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------- destructuring_assignment.js:9:15
+
+Cannot cast `n` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   destructuring_assignment.js:9:15
+   9|       (n) => (n: empty), // error: num ~> empty
+                    ^
+
+References:
+   destructuring_assignment.js:2:17
+   2| declare var b: (number) => mixed;
+                      ^^^^^^ [1]
+   destructuring_assignment.js:9:18
+   9|       (n) => (n: empty), // error: num ~> empty
+                       ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------- destructuring_assignment.js:11:17
+
+Cannot cast `n` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   destructuring_assignment.js:11:17
+   11|         (n) => (n: empty), // error: num ~> empty
+                       ^
+
+References:
+   destructuring_assignment.js:3:17
+    3| declare var c: (number) => mixed;
+                       ^^^^^^ [1]
+   destructuring_assignment.js:11:20
+   11|         (n) => (n: empty), // error: num ~> empty
+                          ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------- destructuring_assignment.js:12:21
+
+Cannot cast `n` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   destructuring_assignment.js:12:21
+   12|         {d: (n) => (n: empty)} // error: num ~> empty
+                           ^
+
+References:
+   destructuring_assignment.js:4:17
+    4| declare var d: (number) => mixed;
+                       ^^^^^^ [1]
+   destructuring_assignment.js:12:24
+   12|         {d: (n) => (n: empty)} // error: num ~> empty
+                              ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------- destructuring_assignment.js:17:14
+
+Cannot cast `n` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   destructuring_assignment.js:17:14
+   17|   a: (n) => (n: empty), // error: num ~> empty
+                    ^
+
+References:
+   destructuring_assignment.js:1:17
+    1| declare var a: (number) => mixed;
+                       ^^^^^^ [1]
+   destructuring_assignment.js:17:17
+   17|   a: (n) => (n: empty), // error: num ~> empty
+                       ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------- destructuring_assignment.js:18:14
+
+Cannot cast `n` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   destructuring_assignment.js:18:14
+   18|   b: (n) => (n: empty), // error: num ~> empty
+                    ^
+
+References:
+   destructuring_assignment.js:2:17
+    2| declare var b: (number) => mixed;
+                       ^^^^^^ [1]
+   destructuring_assignment.js:18:17
+   18|   b: (n) => (n: empty), // error: num ~> empty
+                       ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------- destructuring_assignment.js:23:19
+
+Cannot cast `n` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   destructuring_assignment.js:23:19
+   23| [...e] = [(n) => (n: empty)]; // error: num ~> empty
+                         ^
+
+References:
+   destructuring_assignment.js:21:32
+   21| declare var e: $ReadOnlyArray<(number) => mixed>;
+                                      ^^^^^^ [1]
+   destructuring_assignment.js:23:22
+   23| [...e] = [(n) => (n: empty)]; // error: num ~> empty
+                            ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------- destructuring_assignment.js:24:27
+
+Cannot cast `n` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   destructuring_assignment.js:24:27
+   24| ({...f} = {hello: (n) => (n: empty)}); // error: num ~> empty
+                                 ^
+
+References:
+   destructuring_assignment.js:22:28
+   22| declare var f: {[string]: (number) => mixed};
+                                  ^^^^^^ [1]
+   destructuring_assignment.js:24:30
+   24| ({...f} = {hello: (n) => (n: empty)}); // error: num ~> empty
+                                    ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------- destructuring_assignment.js:26:14
+
+Missing an annotation on `n`. [missing-local-annot]
+
+   26| [, b] = [1, (n) => {}]; // error: missing-local-annot (array hole pattern is unsupported)
+                    ^
+
+
+Error --------------------------------------------------------------------------- encountered_placeholder_failure.js:8:5
+
+An annotation on `item` is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   8| id((item) => 1); // error
+          ^^^^
+
+
+Error -------------------------------------------------------------------------- encountered_placeholder_failure.js:10:8
+
+An annotation on rest parameter `item` is required because Flow cannot infer its type from local context.
+[missing-local-annot]
+
+   10| id((...item) => 1); // error
+              ^^^^
+
+
+Error ------------------------------------------------------------------------- encountered_placeholder_failure.js:12:11
+
+An annotation on `item` is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   12| id(() => (item) => 1); // error
+                 ^^^^
+
+
+Error ------------------------------------------------------------------------- encountered_placeholder_failure.js:14:24
+
+An annotation on `item` is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   14| async () => id(await ((item) => 1)) // error
+                              ^^^^
+
+
+Error ------------------------------------------------------------------------- encountered_placeholder_failure.js:16:17
+
+An annotation on `item` is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   16| id(async () => (item) => 1); // error
+                       ^^^^
+
+
+Error ------------------------------------------------------------------------- encountered_placeholder_failure.js:19:11
+
+An annotation on `item` is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   19| id({foo: (item) => 1}); // error
+                 ^^^^
+
+
+Error ------------------------------------------------------------------------- encountered_placeholder_failure.js:21:13
+
+An annotation on `item` is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   21| id({[str]: (item) => 1}); // error
+                   ^^^^
+
+
+Error ------------------------------------------------------------------------- encountered_placeholder_failure.js:23:15
+
+An annotation on `item` is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   23| id({...{foo: (item) => 1}}); // error
+                     ^^^^
+
+
+Error -------------------------------------------------------------------------- encountered_placeholder_failure.js:25:6
+
+An annotation on `item` is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   25| id([(item) => 1]); // error
+            ^^^^
+
+
+Error -------------------------------------------------------------------------- encountered_placeholder_failure.js:27:8
+
+Property `@@iterator` is missing in function [1] but exists in `$Iterable` [2]. [incompatible-type]
+
+   encountered_placeholder_failure.js:27:8
+     27| id([...(item) => 1]); // error
+                ^^^^^^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:2007:11
+   2007| interface $Iterable<+Yield,+Return,-Next> {
+                   ^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------- encountered_placeholder_failure.js:27:9
+
+An annotation on `item` is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   27| id([...(item) => 1]); // error
+               ^^^^
+
+
+Error ------------------------------------------------------------------------- encountered_placeholder_failure.js:29:28
+
+An annotation on `item` is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   29| id({type: 'literal', foo: (item) => 1}) // error
+                                  ^^^^
+
+
+Error -------------------------------------------------------------------------- encountered_placeholder_failure.js:32:8
+
+An annotation on `item` is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   32| id(id((item) => 1)); // error
+              ^^^^
+
+
+Error ------------------------------------------------------------------------- encountered_placeholder_failure.js:38:13
+
+An annotation on `foo` is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   38|   debounce((foo) => {}); // error
+                   ^^^
+
+
+Error ----------------------------------------------------------------------------------- error_during_synthesis.js:4:32
+
+Cannot call `expectString` with `3` bound to `x` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   error_during_synthesis.js:4:32
+   4|   poly((v) => {}, expectString(3)); // Error: incompatible-type, but v can still be contextually typed
+                                     ^ [1]
+
+References:
+   error_during_synthesis.js:3:36
+   3|   declare function expectString(x: string): string;
+                                         ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------ error_during_synthesis.js:8:8
+
+Cannot resolve name `THIS_SHOULD_ERROR`. [cannot-resolve-name]
+
+   8|   ((): THIS_SHOULD_ERROR => new Set([]))
+             ^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------- immediate_call_expression.js:4:10
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   immediate_call_expression.js:4:10
+   4|         (x: string); // error number ~> string
+               ^
+
+References:
+   immediate_call_expression.js:1:10
+   1| const x: number => void = (function () {
+               ^^^^^^ [1]
+   immediate_call_expression.js:4:13
+   4|         (x: string); // error number ~> string
+                  ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------- implicit_instantiation.js:15:49
+
+Cannot cast `a` to empty because string [1] is incompatible with empty [2]. [incompatible-type]
+
+   implicit_instantiation.js:15:49
+   15|   const reasonTest: (string) => mixed = (a) => (a: empty); // ok
+                                                       ^
+
+References:
+   implicit_instantiation.js:15:22
+   15|   const reasonTest: (string) => mixed = (a) => (a: empty); // ok
+                            ^^^^^^ [1]
+   implicit_instantiation.js:15:52
+   15|   const reasonTest: (string) => mixed = (a) => (a: empty); // ok
+                                                          ^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------- implicit_instantiation.js:61:29
+
+Cannot assign `z3.concat(...)` to `z5` because in array element: `string | 1` [1] is not exactly the same as
+`string` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<string | 1>` [3] and `Array<string>` [4] exactly the same
+- Or make array type [4] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   implicit_instantiation.js:61:29
+    61|   const z5: Array<string> = z3.concat(1); // Only one error on 1 ~> string
+                                    ^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:746:54
+   746|     >(...items: Array<$ReadOnlyArray<S> | S>): Array<T | S>;
+                                                             ^^^^^ [1]
+   implicit_instantiation.js:61:19
+    61|   const z5: Array<string> = z3.concat(1); // Only one error on 1 ~> string
+                          ^^^^^^ [2]
+   <BUILTINS>/core.js:746:48
+   746|     >(...items: Array<$ReadOnlyArray<S> | S>): Array<T | S>;
+                                                       ^^^^^^^^^^^^ [3]
+   implicit_instantiation.js:61:13
+    61|   const z5: Array<string> = z3.concat(1); // Only one error on 1 ~> string
+                    ^^^^^^^^^^^^^ [4]
+
+
+Error --------------------------------------------------------------------------------- implicit_instantiation.js:105:19
+
+Cannot call `f` with empty string bound to `c` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   implicit_instantiation.js:105:19
+   105|   f(3, (n) => {}, ""); // Error on third argument, but n can still be contextually typed.
+                          ^^ [1]
+
+References:
+   implicit_instantiation.js:104:46
+   104|   declare function f<A>(a: A, b: A=>void, c: number): void;
+                                                     ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------- implicit_instantiation.js:147:4
+
+Cannot cast `a` to `Set` because in type argument `T` [1]: string [2] is incompatible with empty [3].
+[incompatible-type]
+
+   implicit_instantiation.js:147:4
+    147|   (a: Set<empty>); // error Set<string> ~> Set<empty>
+            ^
+
+References:
+   <BUILTINS>/core.js:2240:19
+   2240| declare class Set<T> extends $ReadOnlySet<T> {
+                           ^ [1]
+   implicit_instantiation.js:144:29
+    144| function test12(foo: ?Array<string>) {
+                                     ^^^^^^ [2]
+   implicit_instantiation.js:147:11
+    147|   (a: Set<empty>); // error Set<string> ~> Set<empty>
+                   ^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------- implicit_instantiation.js:148:4
+
+Cannot cast `b` to `Set` because in type argument `T` [1]: string [2] is incompatible with empty [3].
+[incompatible-type]
+
+   implicit_instantiation.js:148:4
+    148|   (b: Set<empty>); // error Set<string> ~> Set<empty>
+            ^
+
+References:
+   <BUILTINS>/core.js:2240:19
+   2240| declare class Set<T> extends $ReadOnlySet<T> {
+                           ^ [1]
+   implicit_instantiation.js:144:29
+    144| function test12(foo: ?Array<string>) {
+                                     ^^^^^^ [2]
+   implicit_instantiation.js:148:11
+    148|   (b: Set<empty>); // error Set<string> ~> Set<empty>
+                   ^^^^^ [3]
+
+
+Error --------------------------------------------------------------------------------- implicit_instantiation.js:156:48
+
+Cannot cast `value` to empty because object type [1] is incompatible with empty [2]. [incompatible-type]
+
+   implicit_instantiation.js:156:48
+   156|     (value: { elements: Array<string> }) => { (value: empty); }, // error
+                                                       ^^^^^
+
+References:
+   implicit_instantiation.js:156:13
+   156|     (value: { elements: Array<string> }) => { (value: empty); }, // error
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   implicit_instantiation.js:156:55
+   156|     (value: { elements: Array<string> }) => { (value: empty); }, // error
+                                                              ^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------- implicit_instantiation.js:170:9
+
+Cannot call `acc.set` because property `set` is missing in null or undefined [1]. [incompatible-use]
+
+   implicit_instantiation.js:170:9
+   170|     acc.set("", ""); // error
+                ^^^
+
+References:
+   implicit_instantiation.js:167:36
+                                           v------------------------
+   167|   const map: Map<string, string> = [""].reduce((acc, v) => {
+   168|     // TODO: This is an unfortunate error when we wrap the hint on logical expression with MaybeT
+   169|     //       for LHS. It makes acc to have type `?Map<string, string>`
+   170|     acc.set("", ""); // error
+   171|     return acc;
+   172|   }, new Map()) ?? new Map();
+          ------------^ [1]
+
+
+Error ---------------------------------------------------------------------------------- implicit_instantiation.js:188:7
+
+Cannot call `foo` with object literal bound to `x` because property `bar` is extra in object literal [1] but missing in
+object type [2]. Exact objects do not accept extra props. [incompatible-type]
+
+   implicit_instantiation.js:188:7
+   188|   foo({bar: new Set([''])}); // error: there should be only one prop-missing error
+              ^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   implicit_instantiation.js:187:27
+   187|   declare function foo(x: {||}): void;
+                                  ^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- intersections.js:7:24
+
+Cannot cast `x` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   intersections.js:7:24
+   7|   foo('str', (x) => { (x: number); }); // error
+                             ^
+
+References:
+   intersections.js:3:44
+   3|   declare function foo(tag: 'str', cb: (x: string) => void): void;
+                                                 ^^^^^^ [1]
+   intersections.js:7:27
+   7|   foo('str', (x) => { (x: number); }); // error
+                                ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- intersections.js:8:3
+
+Cannot call `foo` because: [incompatible-type]
+ - Either string literal `a` [1] is incompatible with string literal `boolean` [2].
+ - Or string literal `a` [1] is incompatible with string literal `str` [3].
+ - Or string literal `a` [1] is incompatible with string literal `num` [4].
+
+   intersections.js:8:3
+   8|   foo('a', (x) => { (x: number); }); // error
+        ^^^
+
+References:
+   intersections.js:8:7
+   8|   foo('a', (x) => { (x: number); }); // error
+            ^^^ [1]
+   intersections.js:2:29
+   2|   declare function foo(tag: 'boolean', cb: (x: boolean) => void): void;
+                                  ^^^^^^^^^ [2]
+   intersections.js:3:29
+   3|   declare function foo(tag: 'str', cb: (x: string) => void): void;
+                                  ^^^^^ [3]
+   intersections.js:4:29
+   4|   declare function foo(tag: 'num', cb: (x: number) => void): void;
+                                  ^^^^^ [4]
+
+
+Error -------------------------------------------------------------------------------------------- intersections.js:8:13
+
+An annotation on `x` is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   8|   foo('a', (x) => { (x: number); }); // error
+                  ^
+
+
+Error ------------------------------------------------------------------------------------------- intersections.js:20:24
+
+Cannot cast `x` to string because object type [1] is incompatible with string [2]. [incompatible-type]
+
+   intersections.js:20:24
+   20|   foo('obj', (x) => { (x: string); }); // error
+                              ^
+
+References:
+   intersections.js:15:33
+   15|   type O = (tag: 'obj', cb: (x: {}) => void) => void;
+                                       ^^ [1]
+   intersections.js:20:27
+   20|   foo('obj', (x) => { (x: string); }); // error
+                                 ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- intersections.js:25:24
+
+Cannot cast `x` to string because object type [1] is incompatible with string [2]. [incompatible-type]
+
+   intersections.js:25:24
+   25|   bar('obj', (x) => { (x: string); }); // error
+                              ^
+
+References:
+   intersections.js:15:33
+   15|   type O = (tag: 'obj', cb: (x: {}) => void) => void;
+                                       ^^ [1]
+   intersections.js:25:27
+   25|   bar('obj', (x) => { (x: string); }); // error
+                                 ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- intersections.js:29:28
+
+Cannot cast `x` to string because boolean [1] is incompatible with string [2]. [incompatible-type]
+
+   intersections.js:29:28
+   29|   bak('boolean', (x) => { (x: string); }); // error in cast (ideally would pick the right overload)
+                                  ^
+
+References:
+   intersections.js:12:37
+   12|   type B = (tag: 'boolean', cb: (x: boolean) => void) => void;
+                                           ^^^^^^^ [1]
+   intersections.js:29:31
+   29|   bak('boolean', (x) => { (x: string); }); // error in cast (ideally would pick the right overload)
+                                     ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- intersections.js:53:28
+
+Cannot cast `tag` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   intersections.js:53:28
+   53|   tagsList.forEach(tag => (tag: number)); // error: string ~> number
+                                  ^^^
+
+References:
+   intersections.js:51:37
+   51|   declare var tags: ?$ReadOnlyArray<string>;
+                                           ^^^^^^ [1]
+   intersections.js:53:33
+   53|   tagsList.forEach(tag => (tag: number)); // error: string ~> number
+                                       ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- intersections.js:62:3
+
+Cannot call `overload` because: [incompatible-type]
+ - Either number [1] is incompatible with string [2].
+ - Or string [3] is incompatible with number [4].
+
+   intersections.js:62:3
+   62|   overload(foo || 42, (s) => {}); // error because we can't resolve overload, and on 1st arg
+         ^^^^^^^^
+
+References:
+   intersections.js:62:19
+   62|   overload(foo || 42, (s) => {}); // error because we can't resolve overload, and on 1st arg
+                         ^^ [1]
+   intersections.js:57:32
+   57|   declare function overload(a: string, b: (string) => void): void;
+                                      ^^^^^^ [2]
+   intersections.js:60:21
+   60|   declare var foo: ?string;
+                           ^^^^^^ [3]
+   intersections.js:58:32
+   58|   declare function overload(a: number, b: (number) => void): void;
+                                      ^^^^^^ [4]
+
+
+Error ------------------------------------------------------------------------------------------- intersections.js:62:24
+
+An annotation on `s` is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   62|   overload(foo || 42, (s) => {}); // error because we can't resolve overload, and on 1st arg
+                              ^
+
+
+Error ------------------------------------------------------------------------------------------------------ lits.js:3:5
+
+Cannot determine type of empty array literal. Please provide an annotation. [missing-empty-array-annot]
+
+   3| let h = []; // err
+          ^
+
+
+Error ----------------------------------------------------------------------------------------------------- lits.js:8:19
+
+Cannot assign array literal to `u` because empty array literal [1] has 0 elements but tuple type [2] has 1 element.
+[invalid-tuple-arity]
+
+   lits.js:8:19
+   8| let u: [number] = []; // err
+                        ^^ [1]
+
+References:
+   lits.js:8:8
+   8| let u: [number] = []; // err
+             ^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- lits.js:46:22
+
+Cannot determine type of empty array literal. Please provide an annotation. [missing-empty-array-annot]
+
+   46|   const s1 = new Set([]); // error missing annotation on `[]` -- corresponds to EncounteredPlaceholder
+                            ^^
+
+
+Error ----------------------------------------------------------------------------------------------------- lits.js:52:3
+
+Cannot cast `s2.values()` to `Iterator` because in type argument `Yield` [1]: number [2] is incompatible with
+string [3]. [incompatible-type]
+
+   lits.js:52:3
+     52|   s2.values() as Iterator<string>; // error number ~> string
+           ^^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:1890:25
+   1890| declare class Iterator<+Yield,+Return=void,-Next=void> implements $IteratorProtocol<Yield,Return,Next>, $Iterable<Yield,Return,Next> {
+                                 ^^^^^ [1]
+   lits.js:50:17
+     50|   const s2: Set<number> = new Set([]);
+                         ^^^^^^ [2]
+   lits.js:52:27
+     52|   s2.values() as Iterator<string>; // error number ~> string
+                                   ^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------ misplaced_error.js:9:31
+
+An annotation on destructuring is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   9|   {...EMPTY_TEMPLATE, title: ({a}) => `${a}`}, // missing-local-annot due to inexact ~> exact
+                                    ^^^
+
+
+Error -------------------------------------------------------------------------------------------- param_default.js:2:20
+
+Cannot cast `a` to number because undefined [1] is incompatible with number [2]. [incompatible-type]
+
+   param_default.js:2:20
+   2| context = (a) => {(a: number)}; // error: number | void ~> number
+                         ^
+
+References:
+   param_default.js:1:27
+   1| declare var context: (a?: number) => void;
+                                ^^^^^^ [1]
+   param_default.js:2:23
+   2| context = (a) => {(a: number)}; // error: number | void ~> number
+                            ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- param_default.js:3:21
+
+Cannot cast `a` to number because undefined [1] is incompatible with number [2]. [incompatible-type]
+
+   param_default.js:3:21
+   3| context = (a?) => {(a: number)}; // error: number | void ~> number
+                          ^
+
+References:
+   param_default.js:1:27
+   1| declare var context: (a?: number) => void;
+                                ^^^^^^ [1]
+   param_default.js:3:24
+   3| context = (a?) => {(a: number)}; // error: number | void ~> number
+                             ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- param_default.js:3:21
+
+Cannot cast `a` to number because undefined [1] is incompatible with number [2]. [incompatible-type]
+
+   param_default.js:3:21
+   3| context = (a?) => {(a: number)}; // error: number | void ~> number
+                          ^
+
+References:
+   param_default.js:3:12
+   3| context = (a?) => {(a: number)}; // error: number | void ~> number
+                 ^^ [1]
+   param_default.js:3:24
+   3| context = (a?) => {(a: number)}; // error: number | void ~> number
+                             ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- param_default.js:8:16
+
+Cannot assign undefined to `a` because undefined [1] is incompatible with number [2]. [incompatible-type]
+
+   param_default.js:8:16
+   8| context = (a = undefined) => {(a: number)}; // error: void ~> number
+                     ^^^^^^^^^ [1]
+
+References:
+   param_default.js:1:27
+   1| declare var context: (a?: number) => void;
+                                ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------- poly_class_static_sanity_test.js:13:25
+
+Cannot resolve name `unbound_type`. [cannot-resolve-name]
+
+   13| declare var unused_var: unbound_type; // sanity check: should surface this error
+                               ^^^^^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------- react_tests.js:19:6
+
+Cannot cast `props` to empty because props [1] is incompatible with empty [2]. [incompatible-type]
+
+   react_tests.js:19:6
+    19|     (props: empty); // error
+             ^^^^^
+
+References:
+   <BUILTINS>/react.js:258:59
+   258|   declare export type ComponentType<-P: {...}> = component(...P);
+                                                                  ^^^^^^ [1]
+   react_tests.js:19:13
+    19|     (props: empty); // error
+                    ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- react_tests.js:37:24
+
+Cannot cast `n` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   react_tests.js:37:24
+   37|     {n => <Child foo={(n: empty)} /> /* ERROR */}
+                              ^
+
+References:
+   react_tests.js:34:42
+   34|   declare function Parent(x: {children: (number) => React.Node}): React.Node;
+                                                ^^^^^^ [1]
+   react_tests.js:37:27
+   37|     {n => <Child foo={(n: empty)} /> /* ERROR */}
+                                 ^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinements.js:6:22
+
+Cannot cast `u` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   refinements.js:6:22
+   6|   x.m && x.m(u => { (u: string); }); // error number ~> string
+                           ^
+
+References:
+   refinements.js:4:33
+   4|   declare var x: { m?: (cb: (n: number) => void) => void };
+                                      ^^^^^^ [1]
+   refinements.js:6:25
+   6|   x.m && x.m(u => { (u: string); }); // error number ~> string
+                              ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinements.js:10:7
+
+Cannot call `x.m` because undefined [1] is not a function. [not-a-function]
+
+   refinements.js:10:7
+   10|     x.m(u => { (u: string); });  // error: undefined not a function & mising local annotation
+             ^
+
+References:
+   refinements.js:4:24
+    4|   declare var x: { m?: (cb: (n: number) => void) => void };
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- refinements.js:10:9
+
+An annotation on `u` is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   10|     x.m(u => { (u: string); });  // error: undefined not a function & mising local annotation
+               ^
+
+
+Error --------------------------------------------------------------------------------------------- refinements.js:18:17
+
+Cannot cast `u` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   refinements.js:18:17
+   18|     x.m(u => { (u: string); }); // error number ~> string
+                       ^
+
+References:
+   refinements.js:4:33
+    4|   declare var x: { m?: (cb: (n: number) => void) => void };
+                                       ^^^^^^ [1]
+   refinements.js:18:20
+   18|     x.m(u => { (u: string); }); // error number ~> string
+                          ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- refinements.js:25:24
+
+Cannot cast `u` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   refinements.js:25:24
+   25|   x?.m && x?.m(u => { (u: string); }); // error number ~> string
+                              ^
+
+References:
+   refinements.js:23:34
+   23|   declare var x: ?{ m?: (cb: (n: number) => void) => void };
+                                        ^^^^^^ [1]
+   refinements.js:25:27
+   25|   x?.m && x?.m(u => { (u: string); }); // error number ~> string
+                                 ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinements.js:29:8
+
+Cannot call `x?.m` because undefined [1] is not a function. [not-a-function]
+
+   refinements.js:29:8
+   29|     x?.m(u => { (u: string); });  // error: undefined not a function & mising local annotation
+              ^
+
+References:
+   refinements.js:23:25
+   23|   declare var x: ?{ m?: (cb: (n: number) => void) => void };
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------- refinements.js:29:10
+
+An annotation on `u` is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   29|     x?.m(u => { (u: string); });  // error: undefined not a function & mising local annotation
+                ^
+
+
+Error --------------------------------------------------------------------------------------------- refinements.js:37:18
+
+Cannot cast `u` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   refinements.js:37:18
+   37|     x?.m(u => { (u: string); }); // error number ~> string
+                        ^
+
+References:
+   refinements.js:23:34
+   23|   declare var x: ?{ m?: (cb: (n: number) => void) => void };
+                                        ^^^^^^ [1]
+   refinements.js:37:21
+   37|     x?.m(u => { (u: string); }); // error number ~> string
+                           ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------ sentinel_refinements.js:52:43
+
+Cannot cast `v` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   sentinel_refinements.js:52:43
+   52| const e1: F = { __type__: a(), f: (v) => (v: string) }; // error
+                                                 ^
+
+References:
+   sentinel_refinements.js:6:80
+    6| type F = { __type__: 'a', f: (v: string) => string } | { __type__: 'b', f: (v: number) => number };
+                                                                                      ^^^^^^ [1]
+   sentinel_refinements.js:52:46
+   52| const e1: F = { __type__: a(), f: (v) => (v: string) }; // error
+                                                    ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------ sentinel_refinements.js:53:38
+
+Cannot cast `v` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   sentinel_refinements.js:53:38
+   53| <CompFProp __type__={a()} f={(v) => (v: string)} />; // error
+                                            ^
+
+References:
+   sentinel_refinements.js:6:80
+    6| type F = { __type__: 'a', f: (v: string) => string } | { __type__: 'b', f: (v: number) => number };
+                                                                                      ^^^^^^ [1]
+   sentinel_refinements.js:53:41
+   53| <CompFProp __type__={a()} f={(v) => (v: string)} />; // error
+                                               ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- type_filter_union.js:9:50
+
+Cannot get `(thumbnails ?? []).filter` because property `filter` [1] cannot be unbound from the context [2] where it was
+defined. [method-unbinding]
+
+   type_filter_union.js:9:50
+      9| const loadedThumbnailsCount = (thumbnails ?? []).filter;
+                                                          ^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:1064:5
+   1064|     filter(callbackfn: typeof Boolean): Array<$NonMaybeType<T>>;
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ type_guard.js:3:4
+
+Cannot cast `y` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   type_guard.js:3:4
+   3|   (y: empty); // error number | string ~> empty
+         ^
+
+References:
+   type_guard.js:1:15
+   1| const fn: (x: number | string) => x is string = (y): y is string => {
+                    ^^^^^^ [1]
+   type_guard.js:3:7
+   3|   (y: empty); // error number | string ~> empty
+            ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ type_guard.js:3:4
+
+Cannot cast `y` to empty because string [1] is incompatible with empty [2]. [incompatible-type]
+
+   type_guard.js:3:4
+   3|   (y: empty); // error number | string ~> empty
+         ^
+
+References:
+   type_guard.js:1:24
+   1| const fn: (x: number | string) => x is string = (y): y is string => {
+                             ^^^^^^ [1]
+   type_guard.js:3:7
+   3|   (y: empty); // error number | string ~> empty
+            ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- under_constrained.js:3:5
+
+An annotation on `y` is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   3|   x(y => {}); // error missing annot
+          ^
+
+
+Error ----------------------------------------------------------------------------------------- under_constrained.js:8:5
+
+An annotation on `y` is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   8|   x(y => {}); // error missing annot
+          ^
+
+
+Error --------------------------------------------------------------------------------------------------- unions.js:4:48
+
+Cannot assign object literal to `x` because property `42` is missing in object type [1] but exists in object
+literal [2]. Any property that does not exist in object type [1] must be compatible with its indexer union type [3].
+[incompatible-type]
+
+   unions.js:4:48
+   4|   const x: {['A' | 'B']: (number) => number} = {[42]: v => v}; // ERROR
+                                                     ^^^^^^^^^^^^^^ [2]
+
+References:
+   unions.js:4:12
+   4|   const x: {['A' | 'B']: (number) => number} = {[42]: v => v}; // ERROR
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   unions.js:4:14
+   4|   const x: {['A' | 'B']: (number) => number} = {[42]: v => v}; // ERROR
+                   ^^^^^^^^^ [3]
+
+
+Error --------------------------------------------------------------------------------------------------- unions.js:4:55
+
+An annotation on `v` is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   4|   const x: {['A' | 'B']: (number) => number} = {[42]: v => v}; // ERROR
+                                                            ^
+
+
+Error --------------------------------------------------------------------------------------------------- unions.js:7:42
+
+Cannot assign object literal to `x` because property `42` is missing in object type [1] but exists in object
+literal [2]. Any property that does not exist in object type [1] must be compatible with its indexer string literal
+`A` [3]. [incompatible-type]
+
+   unions.js:7:42
+   7|   const x: {['A']: (number) => number} = {[42]: v => v}; // ERROR
+                                               ^^^^^^^^^^^^^^ [2]
+
+References:
+   unions.js:7:12
+   7|   const x: {['A']: (number) => number} = {[42]: v => v}; // ERROR
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   unions.js:7:14
+   7|   const x: {['A']: (number) => number} = {[42]: v => v}; // ERROR
+                   ^^^ [3]
+
+
+Error --------------------------------------------------------------------------------------------------- unions.js:7:49
+
+An annotation on `v` is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   7|   const x: {['A']: (number) => number} = {[42]: v => v}; // ERROR
+                                                      ^
+
+
+Error -------------------------------------------------------------------------------------------------- unions.js:10:32
+
+An annotation on `v` is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   10|   const x: {...} | {...} = {a: v => v};
+                                      ^
+
+
+Error --------------------------------------------------------------------------------------------------- unions.js:27:7
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   unions.js:27:7
+   27|       x as string;
+             ^
+
+References:
+   unions.js:17:16
+   17|   type NumCb = number => void;
+                      ^^^^^^ [1]
+   unions.js:27:12
+   27|       x as string;
+                  ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- unions.js:41:5
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   unions.js:41:5
+   41|     x as string;
+           ^
+
+References:
+   unions.js:39:24
+   39|   type B<T> = A<T> | A<number>;
+                              ^^^^^^ [1]
+   unions.js:41:10
+   41|     x as string;
+                ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- unions.js:49:5
+
+Cannot cast `elem` to empty because string [1] is incompatible with empty [2]. [incompatible-type]
+
+   unions.js:49:5
+   49|     elem as empty; // error number ~> empty
+           ^^^^
+
+References:
+   unions.js:46:34
+   46|   declare var mixedArray1: Array<string> | Array<number>;
+                                        ^^^^^^ [1]
+   unions.js:49:13
+   49|     elem as empty; // error number ~> empty
+                   ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- unions.js:49:5
+
+Cannot cast `elem` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   unions.js:49:5
+   49|     elem as empty; // error number ~> empty
+           ^^^^
+
+References:
+   unions.js:46:50
+   46|   declare var mixedArray1: Array<string> | Array<number>;
+                                                        ^^^^^^ [1]
+   unions.js:49:13
+   49|     elem as empty; // error number ~> empty
+                   ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- unions.js:56:5
+
+Cannot cast `elem` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   unions.js:56:5
+   56|     elem as empty; // error number ~> empty
+           ^^^^
+
+References:
+   unions.js:53:49
+   53|   declare var mixedArray2: Array<empty> | Array<number>;
+                                                       ^^^^^^ [1]
+   unions.js:56:13
+   56|     elem as empty; // error number ~> empty
+                   ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- unions.js:62:5
+
+Cannot cast `x` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   unions.js:62:5
+   62|     x as empty; // error number ~> empty
+           ^
+
+References:
+   unions.js:60:34
+   60|   declare var mixedArray3: Array<number> | Array<empty>;
+                                        ^^^^^^ [1]
+   unions.js:62:10
+   62|     x as empty; // error number ~> empty
+                ^^^^^ [2]
+
+
+
+Found 89 errors

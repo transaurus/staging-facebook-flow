@@ -1,0 +1,158 @@
+Error ----------------------------------------------------------------------------------- __tests__/excluded-test.js:5:5
+
+Cannot call hook [1] because React hooks can only be called within components or hooks. Under the current configuration,
+we only infer component-syntax components to be components and hook-syntax hooks to be hooks.
+(https://react.dev/reference/rules/rules-of-hooks) [react-rule-hook]
+
+   __tests__/excluded-test.js:5:5
+   5|     IP.useFoo(); // error
+          ^^^^^^^^^^^
+
+References:
+   __tests__/excluded-test.js:5:5
+   5|     IP.useFoo(); // error
+          ^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------- __tests__/excluded-test.js:6:5
+
+Cannot call hook [1] because React hooks can only be called within components or hooks. Under the current configuration,
+we only infer component-syntax components to be components and hook-syntax hooks to be hooks.
+(https://react.dev/reference/rules/rules-of-hooks) [react-rule-hook]
+
+   __tests__/excluded-test.js:6:5
+   6|     IP.useBar(); // error: it's assumed to be hook
+          ^^^^^^^^^^^
+
+References:
+   __tests__/excluded-test.js:6:5
+   6|     IP.useBar(); // error: it's assumed to be hook
+          ^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------- __tests__/excluded-test.js:7:5
+
+Cannot call hook [1] because React hooks can only be called within components or hooks. Under the current configuration,
+we only infer component-syntax components to be components and hook-syntax hooks to be hooks.
+(https://react.dev/reference/rules/rules-of-hooks) [react-rule-hook]
+
+   __tests__/excluded-test.js:7:5
+   7|     XP.useFoo(); // error
+          ^^^^^^^^^^^
+
+References:
+   __tests__/excluded-test.js:7:5
+   7|     XP.useFoo(); // error
+          ^^^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------- __tests__/excluded-test.js:15:5
+
+Cannot call function because callee [1] has a name that indicates it is a React hook (starting with `use`) but it is not
+defined with hook syntax. (https://react.dev/reference/rules/rules-of-hooks) [react-rule-hook-non-hook-syntax]
+
+   __tests__/excluded-test.js:15:5
+   15|     XP.useBar(); // error
+           ^^^^^^^^^^^
+
+References:
+   __tests__/excluded-test.js:15:5
+   15|     XP.useBar(); // error
+           ^^^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------- __tests__/included-test.js:15:5
+
+Cannot call function because callee [1] has a name that indicates it is a React hook (starting with `use`) but it is not
+defined with hook syntax. (https://react.dev/reference/rules/rules-of-hooks) [react-rule-hook-non-hook-syntax]
+
+   __tests__/included-test.js:15:5
+   15|     XP.useBar(); // error: unsupported hook compatibility
+           ^^^^^^^^^^^
+
+References:
+   __tests__/included-test.js:15:5
+   15|     XP.useBar(); // error: unsupported hook compatibility
+           ^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- exclude.js:6:5
+
+Cannot call hook [1] because React hooks can only be called within components or hooks. Under the current configuration,
+we only infer component-syntax components to be components and hook-syntax hooks to be hooks.
+(https://react.dev/reference/rules/rules-of-hooks) [react-rule-hook]
+
+   exclude.js:6:5
+   6|     IP.useFoo(); // error
+          ^^^^^^^^^^^
+
+References:
+   exclude.js:6:5
+   6|     IP.useFoo(); // error
+          ^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- exclude.js:7:5
+
+Cannot call hook [1] because React hooks can only be called within components or hooks. Under the current configuration,
+we only infer component-syntax components to be components and hook-syntax hooks to be hooks.
+(https://react.dev/reference/rules/rules-of-hooks) [react-rule-hook]
+
+   exclude.js:7:5
+   7|     IP.useBar(); // error: it's assumed to be hook
+          ^^^^^^^^^^^
+
+References:
+   exclude.js:7:5
+   7|     IP.useBar(); // error: it's assumed to be hook
+          ^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- exclude.js:8:5
+
+Cannot call hook [1] because React hooks can only be called within components or hooks. Under the current configuration,
+we only infer component-syntax components to be components and hook-syntax hooks to be hooks.
+(https://react.dev/reference/rules/rules-of-hooks) [react-rule-hook]
+
+   exclude.js:8:5
+   8|     XP.useFoo(); // error
+          ^^^^^^^^^^^
+
+References:
+   exclude.js:8:5
+   8|     XP.useFoo(); // error
+          ^^^^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- exclude.js:16:5
+
+Cannot call function because callee [1] has a name that indicates it is a React hook (starting with `use`) but it is not
+defined with hook syntax. (https://react.dev/reference/rules/rules-of-hooks) [react-rule-hook-non-hook-syntax]
+
+   exclude.js:16:5
+   16|     XP.useBar(); // error
+           ^^^^^^^^^^^
+
+References:
+   exclude.js:16:5
+   16|     XP.useBar(); // error
+           ^^^^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- include.js:15:5
+
+Cannot call function because callee [1] has a name that indicates it is a React hook (starting with `use`) but it is not
+defined with hook syntax. (https://react.dev/reference/rules/rules-of-hooks) [react-rule-hook-non-hook-syntax]
+
+   include.js:15:5
+   15|     XP.useBar(); // error: unsupported hook compatibility
+           ^^^^^^^^^^^
+
+References:
+   include.js:15:5
+   15|     XP.useBar(); // error: unsupported hook compatibility
+           ^^^^^^^^^ [1]
+
+
+
+Found 10 errors

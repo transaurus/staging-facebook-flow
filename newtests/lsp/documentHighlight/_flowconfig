@@ -1,0 +1,5 @@
+[libs]
+lib.js
+
+[options]
+exact_by_default=false

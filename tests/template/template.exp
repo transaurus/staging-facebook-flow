@@ -1,0 +1,217 @@
+Error ------------------------------------------------------------------------------------------ tagged_template.js:5:12
+
+Cannot call `tag` with string bound to `x` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   tagged_template.js:5:12
+   5|   tag`foo${'bad'}bar${2}`; // ERROR: string !~> number
+                 ^^^^^ [1]
+
+References:
+   tagged_template.js:3:62
+   3|   declare const tag: (quasis: TaggedTemplateLiteralArray, x: number, y: number) => string;
+                                                                   ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- tagged_template.js:11:19
+
+Cannot call `tag` because no more than 2 arguments are expected by function type [1]. [extra-arg]
+
+   tagged_template.js:11:19
+   11|   tag`foo${1}bar${2}`; // ERROR: expected 2 args, got 3
+                         ^
+
+References:
+   tagged_template.js:10:22
+   10|   declare const tag: (quasis: TaggedTemplateLiteralArray, number: number) => string;
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------- tagged_template.js:18:12
+
+Cannot call `tag` because in array element: string [1] is incompatible with number [2]. [incompatible-type]
+
+   tagged_template.js:18:12
+   18|   tag`foo${'bad'}`; // ERROR: string !~> number
+                  ^^^^^ [1]
+
+References:
+   tagged_template.js:16:75
+   16|   declare const tag: (quasis: TaggedTemplateLiteralArray, ...exprs: Array<number>) => string;
+                                                                                 ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ tagged_template.js:25:6
+
+Cannot cast `quasis.raw` to empty because read-only array type [1] is incompatible with empty [2]. [incompatible-type]
+
+   tagged_template.js:25:6
+     25|     (quasis.raw: empty); // ERROR
+              ^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:1250:9
+   1250|   +raw: $ReadOnlyArray<string>;
+                 ^^^^^^^^^^^^^^^^^^^^^^ [1]
+   tagged_template.js:25:18
+     25|     (quasis.raw: empty); // ERROR
+                          ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ tagged_template.js:34:4
+
+Cannot cast `x` to empty because string [1] is incompatible with empty [2]. [incompatible-type]
+
+   tagged_template.js:34:4
+     34|   (x: empty); // ERROR
+            ^
+
+References:
+   <BUILTINS>/core.js:1512:114
+   1512|     static raw: (callSite: interface {+raw: $ReadOnlyArray<string>}, ...substitutions: $ReadOnlyArray<mixed>) => string;
+                                                                                                                          ^^^^^^ [1]
+   tagged_template.js:34:7
+     34|   (x: empty); // ERROR
+               ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- tagged_template.js:36:14
+
+Cannot call `String.raw` with `'foo'` bound to `callSite` because string literal `foo` [1], a primitive, cannot be used
+as a subtype of interface type [2]. You can wrap it in `new String(...))` to turn it into an object and attempt to use
+it as a subtype of an interface. [incompatible-type]
+
+   tagged_template.js:36:14
+     36|   String.raw('foo'); // ERROR
+                      ^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:1512:28
+   1512|     static raw: (callSite: interface {+raw: $ReadOnlyArray<string>}, ...substitutions: $ReadOnlyArray<mixed>) => string;
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ tagged_template.js:45:4
+
+Cannot cast `x` to empty because string [1] is incompatible with empty [2]. [incompatible-type]
+
+   tagged_template.js:45:4
+     45|   (x: empty); // ERROR
+            ^
+
+References:
+   <BUILTINS>/core.js:1512:114
+   1512|     static raw: (callSite: interface {+raw: $ReadOnlyArray<string>}, ...substitutions: $ReadOnlyArray<mixed>) => string;
+                                                                                                                          ^^^^^^ [1]
+   tagged_template.js:45:7
+     45|   (x: empty); // ERROR
+               ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- template.js:3:2
+
+Cannot cast template string to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   template.js:3:2
+   3| (`baz`: number); // ERROR
+       ^^^^^ [1]
+
+References:
+   template.js:3:9
+   3| (`baz`: number); // ERROR
+              ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- template.js:6:8
+
+Cannot coerce object literal to string because object literal [1] should not be coerced. [incompatible-type]
+
+   6| `foo ${{bar: 123}} baz`; // ERROR: object can't be appended
+             ^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ template.js:22:10
+
+Cannot coerce `x` to string because boolean [1] should not be coerced. [incompatible-type]
+
+   template.js:22:10
+   22|   `foo ${x}`; // ERROR
+                ^
+
+References:
+   template.js:21:20
+   21|   declare const x: boolean;
+                          ^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- template.js:23:6
+
+Cannot coerce `x` to string because boolean [1] should not be coerced. [incompatible-type]
+
+   template.js:23:6
+   23|   `${x} bar`; // ERROR
+            ^
+
+References:
+   template.js:21:20
+   21|   declare const x: boolean;
+                          ^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ template.js:24:19
+
+Cannot coerce `x` to string because boolean [1] should not be coerced. [incompatible-type]
+
+   template.js:24:19
+   24|   `foo ${'bar'} ${x}`; // ERROR
+                         ^
+
+References:
+   template.js:21:20
+   21|   declare const x: boolean;
+                          ^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ template.js:28:10
+
+Cannot coerce `x` to string because `unknown` [1] should not be coerced. [incompatible-type]
+
+   template.js:28:10
+   28|   `foo ${x}`; // ERROR
+                ^
+
+References:
+   template.js:27:20
+   27|   declare const x: mixed;
+                          ^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- template.js:29:6
+
+Cannot coerce `x` to string because `unknown` [1] should not be coerced. [incompatible-type]
+
+   template.js:29:6
+   29|   `${x} bar`; // ERROR
+            ^
+
+References:
+   template.js:27:20
+   27|   declare const x: mixed;
+                          ^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ template.js:30:19
+
+Cannot coerce `x` to string because `unknown` [1] should not be coerced. [incompatible-type]
+
+   template.js:30:19
+   30|   `foo ${'bar'} ${x}`; // ERROR
+                         ^
+
+References:
+   template.js:27:20
+   27|   declare const x: mixed;
+                          ^^^^^ [1]
+
+
+
+Found 15 errors

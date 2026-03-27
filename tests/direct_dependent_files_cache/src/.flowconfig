@@ -1,0 +1,6 @@
+[include]
+../node_modules
+
+[options]
+all=true
+exact_by_default=false

@@ -1,0 +1,66 @@
+Error --------------------------------------------------------------------- error_positioning/error_positioning.js:30:36
+
+`MockFn` [1] is not a React component. [not-a-component]
+
+   error_positioning/error_positioning.js:30:36
+   30| let RefetchContainer = HOC<any, _>(Component); // Error, mock is not a Component
+                                          ^^^^^^^^^
+
+References:
+   error_positioning/error_positioning.js:23:4
+   23| ): MockFn<TArguments, TReturn>
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- strict.js:4:12
+
+Cannot create `Component` element because props [1] is incompatible with empty [2]. [incompatible-type]
+
+   strict.js:4:12
+    4| const c = <Component f = {3}/>;
+                  ^^^^^^^^^
+
+References:
+   strict.js:4:11
+    4| const c = <Component f = {3}/>;
+                 ^^^^^^^^^^^^^^^^^^^^ [1]
+   <BUILTINS>/react.js:44:14
+   44|   | component(...empty);
+                    ^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- strict.js:9:5
+
+Cannot call `foo` with `ref` bound to `a` because `CommonInstance` [1] is incompatible with `Component` [2].
+[incompatible-type]
+
+   strict.js:9:5
+   9| foo(ref);
+          ^^^
+
+References:
+   strict.js:8:19
+   8| declare var ref: ?React.ElementRef<React$ElementType>;
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   strict.js:7:26
+   7| declare function foo(a: ?React.Component<any, any>): void;
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- test_prop.js:5:9
+
+Cannot get `x.notOnEitherSFCOrClass` because property `notOnEitherSFCOrClass` is missing in
+`React.AbstractComponentStatics` [1]. [prop-missing]
+
+   test_prop.js:5:9
+   5|   if (x.notOnEitherSFCOrClass) {} // Error Not on any component
+              ^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   test_prop.js:3:18
+   3| function test(x: React.ComponentType<any>) {
+                       ^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+
+Found 4 errors

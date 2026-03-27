@@ -1,0 +1,131 @@
+Error ------------------------------------------------------------------------------------------------------ test.js:1:1
+
+Suppression is missing a code. Please update this suppression to use an error code: `$FlowFixMe[<CODE>]` [InferError]
+
+   1| // $FlowFixMe
+      ^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------------ test.js:2:2
+
+Cannot cast `3` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   test.js:2:2
+   2| (3: string); // not suppressed due to missing code
+       ^ [1]
+
+References:
+   test.js:2:5
+   2| (3: string); // not suppressed due to missing code
+          ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------------ test.js:4:1
+
+Suppression is missing a code. Please update this suppression to use an error code: `$FlowFixMe[<CODE>]` [InferError]
+
+   4| // $FlowExpectedError
+      ^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------------ test.js:5:2
+
+Cannot cast `3` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   test.js:5:2
+   5| (3: string); // not suppressed due to missing code
+       ^ [1]
+
+References:
+   test.js:5:5
+   5| (3: string); // not suppressed due to missing code
+          ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:10:1
+
+Suppression contains a malformed error code. Suppressions with error codes should be formatted as `$FlowFixMe[<CODE>]`.
+[InferError]
+
+   10| // $FlowFixMe[]
+       ^^^^^^^^^^^^^^^
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:11:2
+
+Cannot cast `3` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   test.js:11:2
+   11| (3: string);
+        ^ [1]
+
+References:
+   test.js:11:5
+   11| (3: string);
+           ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:13:1
+
+Suppression contains a malformed error code. Suppressions with error codes should be formatted as `$FlowFixMe[<CODE>]`.
+[InferError]
+
+   13| // $FlowFixMe [asdfa
+       ^^^^^^^^^^^^^^^^^^^^
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:14:2
+
+Cannot cast `3` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   test.js:14:2
+   14| (3: string); // not suppressed due to missing code
+        ^ [1]
+
+References:
+   test.js:14:5
+   14| (3: string); // not suppressed due to missing code
+           ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:18:1
+
+Suppression is missing a code. Please update this suppression to use an error code: `$FlowFixMe[<CODE>]` [InferError]
+
+   18| // $FlowFixMe
+       ^^^^^^^^^^^^^
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:19:2
+
+Cannot cast `y.x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   test.js:19:2
+   19| (y.x : string); // not suppressed due to missing code
+        ^^^
+
+References:
+   test.js:16:24
+   16| let y : number | { x : number }  = 1;
+                              ^^^^^^ [1]
+   test.js:19:8
+   19| (y.x : string); // not suppressed due to missing code
+              ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:19:4
+
+Cannot get `y.x` because property `x` is missing in `Number` [1]. [prop-missing]
+
+   test.js:19:4
+   19| (y.x : string); // not suppressed due to missing code
+          ^
+
+References:
+   test.js:16:9
+   16| let y : number | { x : number }  = 1;
+               ^^^^^^ [1]
+
+
+
+Found 11 errors

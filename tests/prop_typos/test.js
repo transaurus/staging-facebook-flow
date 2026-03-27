@@ -1,0 +1,63 @@
+let x = {asdf : 3};
+x.asd;
+x.asdfo;
+x.bsdf;
+x.asd = 3;
+
+let y = {aaaa : 3, bbaa : 3};
+y.aaab;
+y.bbba;
+y.baaa;
+
+class A {
+    foo : 3;
+    func() {}
+    static s1111: void;
+}
+
+class B extends A {
+    bar : 3;
+    static s2222: void;
+}
+
+class C extends B {
+    baz : 3;
+    static s3333: void;
+}
+
+let a = new A;
+let b = new B;
+let c = new C;
+
+a.fooo;
+a.barr; // should have no suggestion
+a.funk();
+A.s11111;
+A.s22222; // should have no suggestion
+
+b.fooo;
+b.barr;
+b.funk();
+B.s11111;
+B.s22222;
+
+c.fooo;
+c.barr;
+c.bazz;
+c.funk();
+C.s11111;
+C.s22222;
+C.s33333;
+
+// Test prop suggestions:
+if (x.asd) {} // Error with suggestion
+if (b.fooo) {} // Error with suggestion
+if (C.s333) {} // Error with suggestion
+
+// Test that typo_suggestions picks the closest match, not just any match
+// within the edit distance limit.
+let obj = {
+  abcdef: 1, // distance 2 from xbcdeg (x->a, g->f)
+  xbcdef: 2, // distance 1 from xbcdeg (g->f)
+};
+obj.xbcdeg; // Error: should suggest `xbcdef`

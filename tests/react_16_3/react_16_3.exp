@@ -1,0 +1,107 @@
+Error ---------------------------------------------------------------------------------------------- forwardRef.js:11:13
+
+Cannot create `FancyButton` element because property `foo` is missing in props [1] but exists in `Props` [2].
+[incompatible-type]
+
+   forwardRef.js:11:13
+   11| const _a = <FancyButton />; // Error, missing foo
+                   ^^^^^^^^^^^
+
+References:
+   forwardRef.js:11:12
+   11| const _a = <FancyButton />; // Error, missing foo
+                  ^^^^^^^^^^^^^^^ [1]
+   forwardRef.js:5:38
+    5| const FancyButton = React.forwardRef<Props, ButtonInstance>((props, ref) => (
+                                            ^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- forwardRef.js:13:13
+
+Cannot create `FancyButton` element because property `bar` is extra in props [1] but missing in `Props` [2]. Exact
+objects do not accept extra props. [incompatible-type]
+
+   forwardRef.js:13:13
+   13| const _c = <FancyButton foo={3} bar={3} />; // Error bar, not allowed in exact props
+                   ^^^^^^^^^^^
+
+References:
+   forwardRef.js:13:12
+   13| const _c = <FancyButton foo={3} bar={3} />; // Error bar, not allowed in exact props
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   forwardRef.js:5:38
+    5| const FancyButton = React.forwardRef<Props, ButtonInstance>((props, ref) => (
+                                            ^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- forwardRef.js:19:38
+
+Cannot create `FancyButton` element because in property `ref`: [incompatible-type]
+ - Either in property `current`: `ButtonInstance` [1] is incompatible with `DivInstance` [2].
+ - Or in property `current`: `ButtonInstance` [1] is incompatible with null [3].
+
+   forwardRef.js:19:38
+    19| const _e = <FancyButton foo={3} ref={badRef} />; // Incorrect ref type
+                                             ^^^^^^
+
+References:
+   forwardRef.js:5:45
+     5| const FancyButton = React.forwardRef<Props, ButtonInstance>((props, ref) => (
+                                                    ^^^^^^^^^^^^^^ [1]
+   forwardRef.js:18:32
+    18| const badRef = React.createRef<DivInstance>();
+                                       ^^^^^^^^^^^ [2]
+   <BUILTINS>/react.js:620:28
+   620|     ): React$RefObject<T | null>;
+                                   ^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------- forwardRef.js:22:38
+
+Cannot create `FancyButton` element because in property `ref`: [incompatible-type]
+ - Either in the first parameter: `ButtonInstance` [1] is incompatible with `DivInstance` [2].
+ - Or in the first parameter: `ButtonInstance` [1] is incompatible with null [3].
+
+   forwardRef.js:22:38
+   22| const _g = <FancyButton foo={3} ref={(x: null | DivInstance) => x} />; // Incorrect ref type
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   forwardRef.js:5:45
+    5| const FancyButton = React.forwardRef<Props, ButtonInstance>((props, ref) => (
+                                                   ^^^^^^^^^^^^^^ [1]
+   forwardRef.js:22:49
+   22| const _g = <FancyButton foo={3} ref={(x: null | DivInstance) => x} />; // Incorrect ref type
+                                                       ^^^^^^^^^^^ [2]
+   forwardRef.js:22:42
+   22| const _g = <FancyButton foo={3} ref={(x: null | DivInstance) => x} />; // Incorrect ref type
+                                                ^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------- forwardRef.js:42:35
+
+Cannot create `UnionRef` element because in property `ref`: [incompatible-type]
+ - Either in property `current`: `AInstance` [1] is incompatible with `ButtonInstance` [2].
+ - Or in property `current`: `AInstance` [1] is incompatible with `DivInstance` [3].
+
+   forwardRef.js:42:35
+   42| const _j = <UnionRef foo={3} ref={badUnionRef} />; // Error bad ref
+                                         ^^^^^^^^^^^
+
+References:
+   forwardRef.js:28:20
+   28|   ButtonInstance | AInstance,
+                          ^^^^^^^^^ [1]
+   forwardRef.js:41:37
+   41| const badUnionRef = React.createRef<ButtonInstance | DivInstance>();
+                                           ^^^^^^^^^^^^^^ [2]
+   forwardRef.js:41:54
+   41| const badUnionRef = React.createRef<ButtonInstance | DivInstance>();
+                                                            ^^^^^^^^^^^ [3]
+
+
+
+Found 5 errors
+
+Only showing the most relevant union/intersection branches.
+To see all branches, re-run Flow with --show-all-branches

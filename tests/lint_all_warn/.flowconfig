@@ -1,0 +1,13 @@
+[ignore]
+
+[include]
+
+[libs]
+
+[lints]
+all=warn
+
+[options]
+all=true
+
+[strict]

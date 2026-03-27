@@ -1,0 +1,13 @@
+[ignore]
+
+[include]
+
+[libs]
+
+[options]
+all=true
+
+[lints]
+all=off
+sketchy-null-bool=error
+sketchy-null=off

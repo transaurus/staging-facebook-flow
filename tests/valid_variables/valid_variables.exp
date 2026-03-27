@@ -1,0 +1,142 @@
+Error ----------------------------------------------------------------------------------------------------- test.js:10:5
+
+Variable `z` [1] is never initialized, annotated, or assigned to. [invalid-declaration]
+
+   10| var z;
+           ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:14:5
+
+Cannot declare `w` [1] because var redeclaration is not supported. [name-already-bound]
+
+   test.js:14:5
+   14| var w;
+           ^
+
+References:
+   test.js:13:5
+   13| var w;
+           ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:17:5
+
+Cannot declare `u` [1] because var redeclaration is not supported. [name-already-bound]
+
+   test.js:17:5
+   17| var u = 10;
+           ^
+
+References:
+   test.js:16:5
+   16| var u;
+           ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:21:5
+
+Cannot declare `v` [1] because var redeclaration is not supported. [name-already-bound]
+
+   test.js:21:5
+   21| var v;
+           ^
+
+References:
+   test.js:20:5
+   20| var v = 10;
+           ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:23:5
+
+Variable `w2` [1] is never initialized, annotated, or assigned to. [invalid-declaration]
+
+   23| var w2;
+           ^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:24:5
+
+Cannot declare `w2` [1] because var redeclaration is not supported. [name-already-bound]
+
+   test.js:24:5
+   24| var w2;
+           ^^
+
+References:
+   test.js:23:5
+   23| var w2;
+           ^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:24:5
+
+Variable `w2` [1] is never initialized, annotated, or assigned to. [invalid-declaration]
+
+   24| var w2;
+           ^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:28:5
+
+Cannot declare `u2` [1] because var redeclaration is not supported. [name-already-bound]
+
+   test.js:28:5
+   28| var u2 = 10;
+           ^^
+
+References:
+   test.js:27:5
+   27| var u2;
+           ^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:32:5
+
+Cannot declare `v2` [1] because var redeclaration is not supported. [name-already-bound]
+
+   test.js:32:5
+   32| var v2;
+           ^^
+
+References:
+   test.js:31:5
+   31| var v2 = 10;
+           ^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:43:5
+
+Variable `j` [1] is never initialized, annotated, or assigned to. [invalid-declaration]
+
+   43| let j;
+           ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- test_null.js:3:5
+
+Variable `x` [1] is only ever assigned to by `null` [2]. This is likely unintended; if it is intended, annotate `x` with
+`: null` to disambiguate. [invalid-declaration]
+
+   test_null.js:3:5
+   3| var x;
+          ^ [1]
+
+References:
+   test_null.js:4:1
+   4| x = null;
+      ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- test_null.js:7:5
+
+Variable `y` [1] is only ever assigned to by `null`. This is likely unintended; if it is intended, annotate `y` with
+`: null` to disambiguate. [invalid-declaration]
+
+   7| var y = null;
+          ^ [1]
+
+
+
+Found 12 errors

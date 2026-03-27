@@ -1,0 +1,77 @@
+Error ----------------------------------------------------------------------------------------------- concretize.js:8:16
+
+Cannot create `C1` element because in property `onKeyDown` > the first parameter > type argument `T` [1]: `C1` [2] is
+incompatible with `B` [3]. [incompatible-type]
+
+   concretize.js:8:16
+   8| <C1 onKeyDown={_onKeyDown} />;
+                     ^^^^^^^^^^
+
+References:
+   flow-typed/libdefs.js:2:39
+   2| declare class SyntheticKeyboardEvent<+T: B = B> {}
+                                            ^ [1]
+   concretize.js:7:47
+   7| function _onKeyDown(e: SyntheticKeyboardEvent<C1>): void {};
+                                                    ^^ [2]
+   flow-typed/libdefs.js:2:46
+   2| declare class SyntheticKeyboardEvent<+T: B = B> {}
+                                                   ^ [3]
+
+
+Error ----------------------------------------------------------------------------------------------- concretize.js:8:16
+
+Cannot create `C1` element because in property `onKeyDown` > the first parameter > type argument `T`: `B` [1] is
+incompatible with `C1` [2]. [incompatible-type]
+
+   concretize.js:8:16
+   8| <C1 onKeyDown={_onKeyDown} />;
+                     ^^^^^^^^^^
+
+References:
+   flow-typed/libdefs.js:2:42
+   2| declare class SyntheticKeyboardEvent<+T: B = B> {}
+                                               ^ [1]
+   concretize.js:7:47
+   7| function _onKeyDown(e: SyntheticKeyboardEvent<C1>): void {};
+                                                    ^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:21:2
+
+Cannot create `Foo` element because `Context` [1] is underconstrained by `Foo` element [2]. Either add explicit type
+arguments or cast the expression to your expected type. [underconstrained-implicit-instantiation]
+
+   test.js:21:2
+   21| <Foo x={props.t} />;
+        ^^^
+
+References:
+   test.js:16:3
+   16|   Context: {+context: mixed, ...},
+         ^^^^^^^ [1]
+   test.js:21:1
+   21| <Foo x={props.t} />;
+       ^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:33:2
+
+Cannot create `Bar` element because `Context` [1] is underconstrained by `Bar` element [2]. Either add explicit type
+arguments or cast the expression to your expected type. [underconstrained-implicit-instantiation]
+
+   test.js:33:2
+   33| <Bar y={props.t} />;
+        ^^^
+
+References:
+   test.js:28:3
+   28|   Context: {},
+         ^^^^^^^ [1]
+   test.js:33:1
+   33| <Bar y={props.t} />;
+       ^^^^^^^^^^^^^^^^^^^ [2]
+
+
+
+Found 4 errors

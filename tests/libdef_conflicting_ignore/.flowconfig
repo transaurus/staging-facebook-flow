@@ -1,0 +1,8 @@
+[ignore]
+<PROJECT_ROOT>/lib.js
+
+[libs]
+lib.js
+
+[options]
+all=true

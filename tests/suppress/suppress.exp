@@ -1,0 +1,67 @@
+Error ------------------------------------------------------------------------------------------------------- A.js:13:21
+
+Cannot assign `123` to `test3` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   A.js:13:21
+   13| var test3: string = 123; // This error is NOT suppressed
+                           ^^^ [1]
+
+References:
+   A.js:13:12
+   13| var test3: string = 123; // This error is NOT suppressed
+                  ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------------- D.js:7:5
+
+Cannot assign `y` to `x` because in property `x`: `{bar: number}` [1] is not exactly the same as `{foo: string}` [2].
+[incompatible-type]
+
+The above-mentioned two types must be the same because property `x` is invariantly typed. To fix the error,
+- Either make `{x: {bar: number}}` [3] and `{x: {foo: string}}` [4] exactly the same
+- Or make property `x` in object type [4] readonly. See
+https://flow.org/en/docs/faq/#why-cant-i-pass-a-string-to-a-function-that-takes-a-string-number.
+
+   D.js:7:5
+   7| x = y;
+          ^
+
+References:
+   D.js:5:6
+   5|   x: { bar: number }
+           ^^^^^^^^^^^^^^^ [1]
+   D.js:2:6
+   2|   x: { foo: string }
+           ^^^^^^^^^^^^^^^ [2]
+   D.js:4:16
+                     v
+   4| declare var y: {
+   5|   x: { bar: number }
+   6| };
+      ^ [3]
+   D.js:1:16
+                     v
+   1| declare var x: {
+   2|   x: { foo: string }
+   3| };
+      ^ [4]
+
+
+Warning ------------------------------------------------------------------------------------------------------ A.js:11:1
+
+Unused suppression comment. [InferError]
+
+   11| // $FlowFixMe[incompatible-type] Error unused suppression
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Warning ------------------------------------------------------------------------------------------------------- E.js:8:1
+
+Unused suppression comment. [InferError]
+
+   8| // $FlowFixMe[sketchy-null-string] - this is unused because sketchy-null-string is off
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+Found 2 errors and 2 warnings

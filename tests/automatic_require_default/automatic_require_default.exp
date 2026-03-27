@@ -1,0 +1,30 @@
+Error -------------------------------------------------------------------------------------------------- imports.js:9:14
+
+Cannot get `Default.T` because property `T` is missing in `Number` [1]. [prop-missing]
+
+   imports.js:9:14
+     9| (1 : Default.T); // error T missing in number
+                     ^
+
+References:
+   <BUILTINS>/core.js:403:15
+   403| declare class Number {
+                      ^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- react.js:6:13
+
+Cannot get `react.NotAType` because property `NotAType` is missing in module `react` [1]. [prop-missing]
+
+   react.js:6:13
+   6| ("" : react.NotAType); // error NotAType missing in react
+                  ^^^^^^^^
+
+References:
+   react.js:1:15
+   1| const react = require('react');
+                    ^^^^^^^^^^^^^^^^ [1]
+
+
+
+Found 2 errors

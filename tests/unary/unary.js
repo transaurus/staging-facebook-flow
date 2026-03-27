@@ -1,0 +1,89 @@
+/* @flow */
+
+function x0(y: string): number {
+  return +y; // ok, + exists solely for coercion
+}
+
+function x1(y: string): number {
+  return -y; // error, we don't allow coercion here
+}
+
+function x3(y: string) {
+  return ~y; // error, we don't allow coercion here
+}
+
+function x4(y: string): boolean {
+  return !y; // ok, coercion is allowed
+}
+
+-1 as void; // error, number ~> void
+
+type A<X> = X;
+
+function x5(a: A<false>): true {
+  return !a; // ok
+}
+
+function x6(a: A<false>): false {
+  return !a; // error, true ~> false
+}
+
+function x7(a: false & false): true {
+  return !a; // ok
+}
+
+function x8(a: false & false): false {
+  return !a; // error, true ~> false
+}
+
+function x9(): number {
+  return -10; // ok
+}
+
+function x10(y: number): number {
+  return -y; // ok
+}
+
+function x11(y: number): number {
+  return +y; // ok
+}
+
+function x12(y: number): number {
+  return ~y; // ok
+}
+
+function x13(): bigint {
+  return -10n; // ok
+}
+
+function x14(y: bigint): bigint {
+  return -y; // ok
+}
+
+function x15(y: bigint) {
+  return +y; // error, bigint cannot be coerced to number
+}
+
+function x16(y: bigint): bigint {
+  return ~y; // ok
+}
+
+function x17(y: (?boolean) & (number | string)) {
+  +y as number; // ok, + coerces to number
+  +y as bigint; // error, bigint ~> number
+}
+
+function x18(y: any) {
+  +y as number; // ok, + coerces to number
+  +y as bigint; // error, bigint ~> number
+  -y as number; // ok, any
+  -y as bigint; // ok, any
+  ~y as number; // ok, any
+  ~y as bigint; // ok, any
+}
+
+function x19(y: empty) {
+  +y as empty;
+  -y as empty;
+  ~y as empty;
+}

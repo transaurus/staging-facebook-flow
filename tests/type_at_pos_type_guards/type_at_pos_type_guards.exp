@@ -1,0 +1,309 @@
+decls.js:1:6
+Flags:
+type G = (x: mixed) => x is number
+
+'G' defined at decls.js:1:5
+
+decls.js:1:6,1:6
+
+decls.js:3:10
+Flags:
+(x: mixed) => x is number
+decls.js:3:10,3:12
+
+decls.js:9:15
+Flags:
+
+ Returns the elements of an array that meet the condition specified in a callback function.
+(
+  callbackfn: (value: 0 | 1, index: number, array: ReadonlyArray<0 | 1>) => implies value is 0,
+  thisArg: void
+) => Array<0>
+decls.js:9:15,9:20
+
+decls.js:13:18
+Flags:
+(x: mixed) => implies x is number
+decls.js:13:18,13:24
+
+test.js:27:11
+Flags:
+{
+  in_01: T01,
+  in_02: empty,
+  in_03: empty,
+  in_04: empty,
+  in_05: empty,
+  in_06: T06,
+  in_07: T01,
+  in_08: T01,
+  in_09: empty
+}
+
+'T01' defined at test.js:4:5
+'T06' defined at test.js:9:5
+
+test.js:27:11,27:13
+
+test.js:35:11
+Flags:
+{
+  in_01: empty,
+  in_02: T02,
+  in_03: empty,
+  in_04: empty,
+  in_05: empty,
+  in_06: T06,
+  in_07: empty,
+  in_08: empty,
+  in_09: empty
+}
+
+'T02' defined at test.js:5:5
+'T06' defined at test.js:9:5
+
+test.js:35:11,35:13
+
+test.js:43:11
+Flags:
+{
+  in_01: empty,
+  in_02: empty,
+  in_03: T03,
+  in_04: empty,
+  in_05: empty,
+  in_06: T06,
+  in_07: empty,
+  in_08: T03,
+  in_09: empty
+}
+
+'T03' defined at test.js:6:5
+'T06' defined at test.js:9:5
+
+test.js:43:11,43:13
+
+test.js:51:11
+Flags:
+{
+  in_01: empty,
+  in_02: empty,
+  in_03: empty,
+  in_04: T04,
+  in_05: empty,
+  in_06: T06,
+  in_07: empty,
+  in_08: T04,
+  in_09: empty
+}
+
+'T04' defined at test.js:7:5
+'T06' defined at test.js:9:5
+
+test.js:51:11,51:13
+
+test.js:59:11
+Flags:
+{
+  in_01: empty,
+  in_02: empty,
+  in_03: empty,
+  in_04: empty,
+  in_05: T05,
+  in_06: T06,
+  in_07: empty,
+  in_08: T05,
+  in_09: empty
+}
+
+'T05' defined at test.js:8:5
+'T06' defined at test.js:9:5
+
+test.js:59:11,59:13
+
+test.js:67:11
+Flags:
+{
+  in_01: empty,
+  in_02: empty,
+  in_03: empty,
+  in_04: empty,
+  in_05: empty,
+  in_06: T06,
+  in_07: empty,
+  in_08: empty,
+  in_09: empty
+}
+
+'T06' defined at test.js:9:5
+
+test.js:67:11,67:13
+
+test.js:75:11
+Flags:
+{
+  in_01: T01,
+  in_02: empty,
+  in_03: empty,
+  in_04: empty,
+  in_05: empty,
+  in_06: T06,
+  in_07: T07,
+  in_08: T07,
+  in_09: empty
+}
+
+'T01' defined at test.js:4:5
+'T06' defined at test.js:9:5
+'T07' defined at test.js:10:5
+
+test.js:75:11,75:13
+
+test.js:83:11
+Flags:
+{
+  in_01: T01,
+  in_02: empty,
+  in_03: T03,
+  in_04: T04,
+  in_05: T05,
+  in_06: T06,
+  in_07: T07,
+  in_08: T08,
+  in_09: empty
+}
+
+'T01' defined at test.js:4:5
+'T03' defined at test.js:6:5
+'T04' defined at test.js:7:5
+'T05' defined at test.js:8:5
+'T06' defined at test.js:9:5
+'T07' defined at test.js:10:5
+'T08' defined at test.js:11:5
+
+test.js:83:11,83:13
+
+test.js:91:11
+Flags:
+{
+  in_01: empty,
+  in_02: empty,
+  in_03: empty,
+  in_04: empty,
+  in_05: empty,
+  in_06: T06,
+  in_07: empty,
+  in_08: empty,
+  in_09: T09
+}
+
+'T06' defined at test.js:9:5
+'T09' defined at test.js:12:5
+
+test.js:91:11,91:13
+
+inferred.js:3:7
+Flags:
+(x: mixed) => implies x is number
+inferred.js:3:7,3:9
+
+inferred.js:5:7
+Flags:
+(x: mixed) => implies x is string
+inferred.js:5:7,5:9
+
+inferred.js:7:7
+Flags:
+(x: mixed) => implies x is number
+inferred.js:7:7,7:9
+
+inferred.js:9:7
+Flags:
+(x: mixed) => implies x is number | string
+inferred.js:9:7,9:9
+
+inferred.js:11:7
+Flags:
+(x: number | "") => implies x is number
+inferred.js:11:7,11:9
+
+inferred.js:13:7
+Flags:
+(x: number) => implies x is 42
+inferred.js:13:7,13:9
+
+inferred.js:15:7
+Flags:
+(x: 1 | 2) => implies x is 1
+inferred.js:15:7,15:9
+
+inferred.js:17:7
+Flags:
+(x: 1 | 2) => implies x is 2
+inferred.js:17:7,17:9
+
+inferred.js:19:7
+Flags:
+(x: "a" | "b") => implies x is "a"
+inferred.js:19:7,19:9
+
+inferred.js:21:7
+Flags:
+(x: "a" | "b") => implies x is "b"
+inferred.js:21:7,21:10
+
+inferred.js:23:7
+Flags:
+(x: boolean) => implies x is true
+inferred.js:23:7,23:10
+
+inferred.js:25:7
+Flags:
+(x: boolean) => implies x is true
+inferred.js:25:7,25:10
+
+inferred.js:28:7
+Flags:
+(x: number) => boolean
+inferred.js:28:7,28:9
+
+inferred.js:30:7
+Flags:
+(x: mixed) => mixed
+inferred.js:30:7,30:9
+
+inferred.js:32:7
+Flags:
+(x: boolean) => boolean
+inferred.js:32:7,32:9
+
+inferred.js:34:7
+Flags:
+(x: mixed) => boolean
+inferred.js:34:7,34:9
+
+inferred.js:36:7
+Flags:
+(x: mixed) => mixed
+inferred.js:36:7,36:9
+
+inferred.js:38:7
+Flags:
+(x: null | 1 | 2) => boolean | null
+inferred.js:38:7,38:9
+
+inferred.js:40:7
+Flags:
+(x: mixed) => mixed
+inferred.js:40:7,40:9
+
+inferred.js:42:7
+Flags:
+(x: mixed) => boolean
+inferred.js:42:7,42:9
+
+inferred.js:44:7
+Flags:
+(x: mixed) => boolean
+inferred.js:44:7,44:9
+

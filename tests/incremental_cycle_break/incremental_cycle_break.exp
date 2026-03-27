@@ -1,0 +1,20 @@
+
+Initial status:
+No errors!
+
+Delete A.js:
+Error --------------------------------------------------------------------------------------------------------- B.js:4:9
+
+Cannot resolve module `A`. [cannot-resolve-module]
+
+   4| require('A');
+              ^^^
+
+
+
+Found 1 error
+
+Restore A.js:
+No errors!
+
+Done!

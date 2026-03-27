@@ -1,0 +1,35 @@
+a.js:3:16
+Flags:
+module "a"
+a.js:3:16,3:16
+
+b.js:3:16
+Flags:
+module "b"
+b.js:3:16,3:16
+
+c.js:3:16
+Flags:
+module "c"
+c.js:3:16,3:16
+
+cjs.js:7:4
+Flags:
+{-[key: string]: mixed}
+cjs.js:7:1,7:7
+
+es_exports2.js:1:9
+Flags:
+"foo"
+es_exports2.js:1:9,1:11
+
+es_exports2.js:4:16
+Flags:
+"foo"
+es_exports2.js:4:16,4:19
+
+es_exports2.js:7:13
+Flags:
+{+bar: "bar", +foo: "foo"}
+es_exports2.js:7:13,7:14
+

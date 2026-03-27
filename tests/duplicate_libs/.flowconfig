@@ -1,0 +1,7 @@
+; The lib file lib.js is included twice: by lib and lib/shared
+[libs]
+lib
+lib/shared
+
+[options]
+all=true

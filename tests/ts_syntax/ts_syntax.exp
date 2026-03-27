@@ -1,0 +1,1310 @@
+Error --------------------------------------------------------------------------------------------- accessibility.js:2:3
+
+Flow does not support using `private` in classes. Use JavaScript private elements instead. To fix, change `private foo`
+to `#foo`. [ts-syntax]
+
+   2|   private x: string; // ERROR
+        ^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------- accessibility.js:3:3
+
+Flow does not support using `protected` in classes. To fix, remove the `protected` modifier. [ts-syntax]
+
+   3|   protected y: number; // ERROR
+        ^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------- accessibility.js:4:3
+
+Flow does not support using `public` in classes. Fields and methods are public by default. To fix, remove the `public`
+modifier. [ts-syntax]
+
+   4|   public z: boolean; // ERROR
+        ^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------- accessibility.js:6:3
+
+Flow does not support using `private` in classes. Use JavaScript private elements instead. To fix, change `private foo`
+to `#foo`. [ts-syntax]
+
+   6|   private m1(): void {} // ERROR
+        ^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------- accessibility.js:7:3
+
+Flow does not support using `protected` in classes. To fix, remove the `protected` modifier. [ts-syntax]
+
+   7|   protected m2(): void {} // ERROR
+        ^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------- accessibility.js:8:3
+
+Flow does not support using `public` in classes. Fields and methods are public by default. To fix, remove the `public`
+modifier. [ts-syntax]
+
+   8|   public m3(): void {} // ERROR
+        ^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:10:3
+
+Flow does not support using `private` in classes. Use JavaScript private elements instead. To fix, change `private foo`
+to `#foo`. [ts-syntax]
+
+   10|   private static a: string; // ERROR
+         ^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:11:3
+
+Flow does not support using `protected` in classes. To fix, remove the `protected` modifier. [ts-syntax]
+
+   11|   protected static b: number; // ERROR
+         ^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:12:3
+
+Flow does not support using `public` in classes. Fields and methods are public by default. To fix, remove the `public`
+modifier. [ts-syntax]
+
+   12|   public static c: boolean; // ERROR
+         ^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:15:3
+
+Flow does not support using `private` in classes. Use JavaScript private elements instead. To fix, change `private foo`
+to `#foo`. [ts-syntax]
+
+   15|   private readonly d: string; // ERROR
+         ^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------- accessibility.js:15:11
+
+While TypeScript uses `readonly` to specify read only properties, Flow uses `+` in the form `+foo: T` for class and
+object type properties, and `+[string]: T` for dictionaries. [ts-syntax]
+
+   15|   private readonly d: string; // ERROR
+                 ^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:16:3
+
+Flow does not support using `protected` in classes. To fix, remove the `protected` modifier. [ts-syntax]
+
+   16|   protected readonly e: number; // ERROR
+         ^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------- accessibility.js:16:13
+
+While TypeScript uses `readonly` to specify read only properties, Flow uses `+` in the form `+foo: T` for class and
+object type properties, and `+[string]: T` for dictionaries. [ts-syntax]
+
+   16|   protected readonly e: number; // ERROR
+                   ^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:17:3
+
+Flow does not support using `public` in classes. Fields and methods are public by default. To fix, remove the `public`
+modifier. [ts-syntax]
+
+   17|   public readonly f: boolean; // ERROR
+         ^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------- accessibility.js:17:10
+
+While TypeScript uses `readonly` to specify read only properties, Flow uses `+` in the form `+foo: T` for class and
+object type properties, and `+[string]: T` for dictionaries. [ts-syntax]
+
+   17|   public readonly f: boolean; // ERROR
+                ^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:19:3
+
+Flow does not support using `private` in classes. Use JavaScript private elements instead. To fix, change `private foo`
+to `#foo`. [ts-syntax]
+
+   19|   private static readonly g: string; // ERROR
+         ^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------- accessibility.js:19:18
+
+While TypeScript uses `readonly` to specify read only properties, Flow uses `+` in the form `+foo: T` for class and
+object type properties, and `+[string]: T` for dictionaries. [ts-syntax]
+
+   19|   private static readonly g: string; // ERROR
+                        ^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:20:3
+
+Flow does not support using `protected` in classes. To fix, remove the `protected` modifier. [ts-syntax]
+
+   20|   protected static readonly h: number; // ERROR
+         ^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------- accessibility.js:20:20
+
+While TypeScript uses `readonly` to specify read only properties, Flow uses `+` in the form `+foo: T` for class and
+object type properties, and `+[string]: T` for dictionaries. [ts-syntax]
+
+   20|   protected static readonly h: number; // ERROR
+                          ^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:21:3
+
+Flow does not support using `public` in classes. Fields and methods are public by default. To fix, remove the `public`
+modifier. [ts-syntax]
+
+   21|   public static readonly i: boolean; // ERROR
+         ^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------- accessibility.js:21:17
+
+While TypeScript uses `readonly` to specify read only properties, Flow uses `+` in the form `+foo: T` for class and
+object type properties, and `+[string]: T` for dictionaries. [ts-syntax]
+
+   21|   public static readonly i: boolean; // ERROR
+                       ^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:34:3
+
+Flow does not support using `private` in classes. Use JavaScript private elements instead. To fix, change `private foo`
+to `#foo`. [ts-syntax]
+
+   34|   private a; // ERROR
+         ^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:35:3
+
+Flow does not support using `private` in classes. Use JavaScript private elements instead. To fix, change `private foo`
+to `#foo`. [ts-syntax]
+
+   35|   private b: number; // ERROR
+         ^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:36:3
+
+Flow does not support using `private` in classes. Use JavaScript private elements instead. To fix, change `private foo`
+to `#foo`. [ts-syntax]
+
+   36|   private readonly c; // ERROR
+         ^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:37:3
+
+Flow does not support using `private` in classes. Use JavaScript private elements instead. To fix, change `private foo`
+to `#foo`. [ts-syntax]
+
+   37|   private static d: string; // ERROR
+         ^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:38:3
+
+Flow does not support using `protected` in classes. To fix, remove the `protected` modifier. [ts-syntax]
+
+   38|   protected e: number; // ERROR
+         ^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:39:3
+
+Flow does not support using `public` in classes. Fields and methods are public by default. To fix, remove the `public`
+modifier. [ts-syntax]
+
+   39|   public f: string; // ERROR
+         ^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:40:3
+
+Flow does not support using `public` in classes. Fields and methods are public by default. To fix, remove the `public`
+modifier. [ts-syntax]
+
+   40|   public readonly g: boolean; // ERROR
+         ^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------- accessibility.js:40:10
+
+While TypeScript uses `readonly` to specify read only properties, Flow uses `+` in the form `+foo: T` for class and
+object type properties, and `+[string]: T` for dictionaries. [ts-syntax]
+
+   40|   public readonly g: boolean; // ERROR
+                ^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:41:3
+
+Flow does not support using `private` in classes. Use JavaScript private elements instead. To fix, change `private foo`
+to `#foo`. [ts-syntax]
+
+   41|   private h(): void; // ERROR
+         ^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:42:3
+
+Flow does not support using `protected` in classes. To fix, remove the `protected` modifier. [ts-syntax]
+
+   42|   protected i(): number; // ERROR
+         ^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:43:3
+
+Flow does not support using `public` in classes. Fields and methods are public by default. To fix, remove the `public`
+modifier. [ts-syntax]
+
+   43|   public j(): string; // ERROR
+         ^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:44:3
+
+Flow does not support using `protected` in classes. To fix, remove the `protected` modifier. [ts-syntax]
+
+   44|   protected static k: number; // ERROR
+         ^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:45:3
+
+Flow does not support using `public` in classes. Fields and methods are public by default. To fix, remove the `public`
+modifier. [ts-syntax]
+
+   45|   public static l: boolean; // ERROR
+         ^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:46:3
+
+Flow does not support using `private` in classes. Use JavaScript private elements instead. To fix, change `private foo`
+to `#foo`. [ts-syntax]
+
+   46|   private static readonly m: string; // ERROR
+         ^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:51:3
+
+Flow does not support using `protected` in classes. To fix, remove the `protected` modifier. [ts-syntax]
+
+   51|   protected abstract n: number; // ERROR
+         ^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:51:3
+
+Flow does not support `abstract` methods. [ts-syntax]
+
+   51|   protected abstract n: number; // ERROR
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:52:3
+
+Flow does not support using `public` in classes. Fields and methods are public by default. To fix, remove the `public`
+modifier. [ts-syntax]
+
+   52|   public abstract o: string; // ERROR
+         ^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:52:3
+
+Flow does not support `abstract` methods. [ts-syntax]
+
+   52|   public abstract o: string; // ERROR
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:53:3
+
+Flow does not support using `protected` in classes. To fix, remove the `protected` modifier. [ts-syntax]
+
+   53|   protected abstract p(): void; // ERROR
+         ^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:53:3
+
+Flow does not support `abstract` methods. [ts-syntax]
+
+   53|   protected abstract p(): void; // ERROR
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:54:3
+
+Flow does not support using `public` in classes. Fields and methods are public by default. To fix, remove the `public`
+modifier. [ts-syntax]
+
+   54|   public abstract q(): number; // ERROR
+         ^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- accessibility.js:54:3
+
+Flow does not support `abstract` methods. [ts-syntax]
+
+   54|   public abstract q(): number; // ERROR
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------- deprecated/excluded_dir/readonly.js:7:23
+
+Cannot assign object literal to `a` because property `b` is extra in object literal [1] but missing in object type [2].
+Exact objects do not accept extra props. [incompatible-type]
+
+   deprecated/excluded_dir/readonly.js:7:23
+   7| let a: exportedType = {b: 1}; // ERROR
+                            ^^^^^^ [1]
+
+References:
+   deprecated/excluded_dir/readonly.js:7:8
+   7| let a: exportedType = {b: 1}; // ERROR
+             ^^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------- deprecated/excluded_dir/readonly_type.js:6:23
+
+Cannot assign object literal to `a` because property `b` is extra in object literal [1] but missing in
+`exportedType` [2]. Exact objects do not accept extra props. [incompatible-type]
+
+   deprecated/excluded_dir/readonly_type.js:6:23
+   6| let a: exportedType = {b: 1}; // ERROR
+                            ^^^^^^ [1]
+
+References:
+   deprecated/excluded_dir/readonly_type.js:6:8
+   6| let a: exportedType = {b: 1}; // ERROR
+             ^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------- deprecated/excluded_dir/readonly_type.js:10:29
+
+Cannot assign `3` to `b` because number [1] is incompatible with `exportedValuesType` [2]. [incompatible-type]
+
+   deprecated/excluded_dir/readonly_type.js:10:29
+   10| let b: exportedValuesType = 3; // ERROR
+                                   ^ [1]
+
+References:
+   deprecated/excluded_dir/readonly_type.js:10:8
+   10| let b: exportedValuesType = 3; // ERROR
+              ^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------- deprecated/excluded_dir/readonlymap.js:2:14
+
+Cannot assign `3` to `x` because number [1] is incompatible with `$ReadOnlyMap` [2]. [incompatible-type]
+
+   deprecated/excluded_dir/readonlymap.js:2:14
+   2| const x: T = 3; // ERROR
+                   ^ [1]
+
+References:
+   deprecated/excluded_dir/readonlymap.js:2:10
+   2| const x: T = 3; // ERROR
+               ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- deprecated/keyof.js:3:10
+
+The utility type `$Keys` is deprecated, use `keyof` instead. For example, `type KeyType = keyof MyObjectType;` 
+[deprecated-utility]
+
+   3| type T = $Keys<O>; // ERROR
+               ^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------- deprecated/nonMaybeType.js:1:10
+
+The utility type `$NonMaybeType` is deprecated, use `NonNullable` instead. [deprecated-utility]
+
+   1| type T = $NonMaybeType<?number>; // ERROR
+               ^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------- deprecated/readonly.js:1:10
+
+The utility type `$ReadOnly` is deprecated, use `Readonly` instead. [deprecated-utility]
+
+   1| type T = $ReadOnly<{a: string}>; // ERROR
+               ^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------- deprecated/readonly.js:7:23
+
+Cannot assign object literal to `a` because property `b` is extra in object literal [1] but missing in object type [2].
+Exact objects do not accept extra props. [incompatible-type]
+
+   deprecated/readonly.js:7:23
+   7| let a: exportedType = {b: 1}; // ERROR
+                            ^^^^^^ [1]
+
+References:
+   deprecated/readonly.js:7:8
+   7| let a: exportedType = {b: 1}; // ERROR
+             ^^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------- deprecated/readonly_type.js:3:10
+
+The utility type `$ReadOnly` is deprecated, use `Readonly` instead. [deprecated-utility]
+
+   3| type A = $ReadOnly<[string, number]>; // ERROR
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------- deprecated/readonly_type.js:4:10
+
+The utility type `$ReadOnly` is deprecated, use `Readonly` instead. [deprecated-utility]
+
+   4| type B = $ReadOnly<[number]>; // ERROR
+               ^^^^^^^^^^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------- deprecated/readonly_type.js:6:23
+
+Cannot assign object literal to `a` because property `b` is extra in object literal [1] but missing in
+`exportedType` [2]. Exact objects do not accept extra props. [incompatible-type]
+
+   deprecated/readonly_type.js:6:23
+   6| let a: exportedType = {b: 1}; // ERROR
+                            ^^^^^^ [1]
+
+References:
+   deprecated/readonly_type.js:6:8
+   6| let a: exportedType = {b: 1}; // ERROR
+             ^^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------- deprecated/readonly_type.js:10:29
+
+Cannot assign `3` to `b` because number [1] is incompatible with `exportedValuesType` [2]. [incompatible-type]
+
+   deprecated/readonly_type.js:10:29
+   10| let b: exportedValuesType = 3; // ERROR
+                                   ^ [1]
+
+References:
+   deprecated/readonly_type.js:10:8
+   10| let b: exportedValuesType = 3; // ERROR
+              ^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------- deprecated/readonlyarray.js:1:10
+
+The utility type `$ReadOnlyArray` is deprecated, use `ReadonlyArray` instead. [deprecated-utility]
+
+   1| type T = $ReadOnlyArray<number>; // error
+               ^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ----------------------------------------------------------------------------------- deprecated/readonlymap.js:1:10
+
+The utility type `$ReadOnlyMap` is deprecated, use `ReadonlyMap` instead. [deprecated-utility]
+
+   1| type T = $ReadOnlyMap<string, number>; // ERROR
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ----------------------------------------------------------------------------------- deprecated/readonlymap.js:2:14
+
+Cannot assign `3` to `x` because number [1] is incompatible with `$ReadOnlyMap` [2]. [incompatible-type]
+
+   deprecated/readonlymap.js:2:14
+   2| const x: T = 3; // ERROR
+                   ^ [1]
+
+References:
+   deprecated/readonlymap.js:2:10
+   2| const x: T = 3; // ERROR
+               ^ [2]
+
+
+Error ----------------------------------------------------------------------------------- deprecated/readonlyset.js:1:10
+
+The utility type `$ReadOnlySet` is deprecated, use `ReadonlySet` instead. [deprecated-utility]
+
+   1| type T = $ReadOnlySet<number>; // ERROR
+               ^^^^^^^^^^^^^^^^^^^^
+
+
+Error ----------------------------------------------------------------------- deprecated/type_param_colon_extends.js:1:8
+
+Using `:` for type parameter bounds is deprecated. Use `extends` instead (e.g., `<T extends Bound>`). [ts-syntax]
+
+   1| type A<T: string> = [T]; // ERROR
+             ^^^^^^^^^
+
+
+Error ----------------------------------------------------------------------- deprecated/type_param_colon_extends.js:2:8
+
+Using `:` for type parameter bounds is deprecated. Use `extends` instead (e.g., `<T extends Bound>`). [ts-syntax]
+
+   2| type B<+T: string> = [T]; // ERROR
+             ^^^^^^^^^^
+
+
+Error ---------------------------------------------------------------------- deprecated/type_param_colon_extends.js:2:23
+
+Cannot use `T` [1] in an input/output position because `T` [1] is expected to occur only in output positions.
+[incompatible-variance]
+
+   deprecated/type_param_colon_extends.js:2:23
+   2| type B<+T: string> = [T]; // ERROR
+                            ^
+
+References:
+   deprecated/type_param_colon_extends.js:2:9
+   2| type B<+T: string> = [T]; // ERROR
+              ^ [1]
+
+
+Error ----------------------------------------------------------------------- deprecated/type_param_colon_extends.js:3:8
+
+Using `:` for type parameter bounds is deprecated. Use `extends` instead (e.g., `<T extends Bound>`). [ts-syntax]
+
+   3| type C<T: string = "hi"> = [T]; // ERROR
+             ^^^^^^^^^^^^^^^^
+
+
+Error ----------------------------------------------------------------------- deprecated/type_param_colon_extends.js:4:8
+
+Using `:` for type parameter bounds is deprecated. Use `extends` instead (e.g., `<T extends Bound>`). [ts-syntax]
+
+   4| type D<+T: string = "hi"> = [T]; // ERROR
+             ^^^^^^^^^^^^^^^^^
+
+
+Error ---------------------------------------------------------------------- deprecated/type_param_colon_extends.js:4:30
+
+Cannot use `T` [1] in an input/output position because `T` [1] is expected to occur only in output positions.
+[incompatible-variance]
+
+   deprecated/type_param_colon_extends.js:4:30
+   4| type D<+T: string = "hi"> = [T]; // ERROR
+                                   ^
+
+References:
+   deprecated/type_param_colon_extends.js:4:9
+   4| type D<+T: string = "hi"> = [T]; // ERROR
+              ^ [1]
+
+
+Error ---------------------------------------------------------------------------- deprecated/type_param_extends.js:2:30
+
+Cannot use `T` [1] in an input/output position because `T` [1] is expected to occur only in output positions.
+[incompatible-variance]
+
+   deprecated/type_param_extends.js:2:30
+   2| type B<+T extends string> = [T];
+                                   ^
+
+References:
+   deprecated/type_param_extends.js:2:9
+   2| type B<+T extends string> = [T];
+              ^ [1]
+
+
+Error ---------------------------------------------------------------------------- deprecated/type_param_extends.js:4:37
+
+Cannot use `T` [1] in an input/output position because `T` [1] is expected to occur only in output positions.
+[incompatible-variance]
+
+   deprecated/type_param_extends.js:4:37
+   4| type D<+T extends string = "hi"> = [T];
+                                          ^
+
+References:
+   deprecated/type_param_extends.js:4:9
+   4| type D<+T extends string = "hi"> = [T];
+              ^ [1]
+
+
+Error --------------------------------------------------------------------------------------- deprecated/unknown.js:1:10
+
+The utility type `mixed` is deprecated, use `unknown` instead. [deprecated-utility]
+
+   1| type T = mixed; // ERROR
+               ^^^^^
+
+
+Error --------------------------------------------------------------------------------------- deprecated/unknown.js:3:10
+
+The utility type `mixed` is deprecated, use `unknown` instead. [deprecated-utility]
+
+   3| const x: mixed = 1; // ERROR
+               ^^^^^
+
+
+Error --------------------------------------------------------------------------------------- deprecated/unknown.js:9:15
+
+The utility type `mixed` is deprecated, use `unknown` instead. [deprecated-utility]
+
+   9|     catch (e: mixed) {} // ERROR
+                    ^^^^^
+
+
+Error ---------------------------------------------------------------------------------------- deprecated/values.js:3:11
+
+The utility type `$Values` is deprecated, use `Values` instead. [deprecated-utility]
+
+   3| type T1 = $Values<O>; // ERROR
+                ^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------ in_out_variance.js:1:20
+
+The equivalent of TypeScript's `in` variance annotation is `-` in Flow. [ts-syntax]
+
+   1| declare function f<in A>(x: A): void; // ERROR
+                         ^^
+
+
+Error ------------------------------------------------------------------------------------------ in_out_variance.js:1:20
+
+Variance modifiers cannot appear on a type parameter of a function type. [unsupported-variance-annotation]
+
+   1| declare function f<in A>(x: A): void; // ERROR
+                         ^^
+
+
+Error ------------------------------------------------------------------------------------------ in_out_variance.js:2:20
+
+The equivalent of TypeScript's `out` variance annotation is `+` in Flow. [ts-syntax]
+
+   2| declare function f<out A>(): A; // ERROR
+                         ^^^
+
+
+Error ------------------------------------------------------------------------------------------ in_out_variance.js:2:20
+
+Variance modifiers cannot appear on a type parameter of a function type. [unsupported-variance-annotation]
+
+   2| declare function f<out A>(): A; // ERROR
+                         ^^^
+
+
+Error ------------------------------------------------------------------------------------------ in_out_variance.js:3:20
+
+The equivalent of TypeScript's `in out` variance annotation in Flow is to simply leave it out - it's the default if you
+don't have a variance annotation. [ts-syntax]
+
+   3| declare function f<in out A>(x: A): A; // ERROR
+                         ^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------ in_out_variance.js:3:20
+
+Variance modifiers cannot appear on a type parameter of a function type. [unsupported-variance-annotation]
+
+   3| declare function f<in out A>(x: A): A; // ERROR
+                         ^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------------- never.js:1:10
+
+The closest equivalent of TypeScript's `never` type in Flow is `empty`. [ts-syntax]
+
+   1| type T = never; // ERROR
+               ^^^^^
+
+
+Error -------------------------------------------------------------------------------------- parameter_properties.js:3:5
+
+Flow does not support TypeScript parameter properties. To fix, declare the property in the class body and assign it in
+the constructor. [ts-syntax]
+
+   3|     private name: string, // ERROR
+          ^^^^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------- parameter_properties.js:9:5
+
+Flow does not support TypeScript parameter properties. To fix, declare the property in the class body and assign it in
+the constructor. [ts-syntax]
+
+   9|     private readonly x: number, // ERROR
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------- parameter_properties.js:15:5
+
+Flow does not support TypeScript parameter properties. To fix, declare the property in the class body and assign it in
+the constructor. [ts-syntax]
+
+   15|     private a: string, // ERROR
+           ^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------- parameter_properties.js:16:5
+
+Flow does not support TypeScript parameter properties. To fix, declare the property in the class body and assign it in
+the constructor. [ts-syntax]
+
+   16|     protected b: number, // ERROR
+           ^^^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------- parameter_properties.js:17:5
+
+Flow does not support TypeScript parameter properties. To fix, declare the property in the class body and assign it in
+the constructor. [ts-syntax]
+
+   17|     public c: boolean, // ERROR
+           ^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------- parameter_properties.js:18:5
+
+Flow does not support TypeScript parameter properties. To fix, declare the property in the class body and assign it in
+the constructor. [ts-syntax]
+
+   18|     protected readonly d: string, // ERROR
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------- parameter_properties.js:24:5
+
+Flow does not support TypeScript parameter properties. To fix, declare the property in the class body and assign it in
+the constructor. [ts-syntax]
+
+   24|     private name: string = "default", // ERROR
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- readonly_type.js:1:10
+
+The equivalent of TypeScript's `readonly` type operator applied to a tuple type is `Readonly<[T, S]>`. [ts-syntax]
+
+   1| type A = readonly [string, number]; // ERROR
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- readonly_type.js:2:10
+
+The equivalent of TypeScript's `readonly` type operator applied to an array type is `ReadonlyArray<T>`. [ts-syntax]
+
+   2| type B = readonly string[]; // ERROR
+               ^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- readonly_type.js:3:10
+
+TypeScript's `readonly` type operator is not valid in Flow. For array types, you can use `ReadonlyArray<T>`. For object
+and tuple types you can use `Readonly<T>`. [ts-syntax]
+
+   3| type C = readonly number; // ERROR
+               ^^^^^^^^^^^^^^^
+
+
+Error ----------------------------------------------------------------------------------------- readonly_variance.js:2:3
+
+While TypeScript uses `readonly` to specify read only properties, Flow uses `+` in the form `+foo: T` for class and
+object type properties, and `+[string]: T` for dictionaries. [ts-syntax]
+
+   2|   readonly foo: string, // ERROR
+        ^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------- readonly_variance.js:11:3
+
+While TypeScript uses `readonly` to specify read only properties, Flow uses `+` in the form `+foo: T` for class and
+object type properties, and `+[string]: T` for dictionaries. [ts-syntax]
+
+   11|   readonly [string]: mixed; // ERROR
+         ^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------- readonly_variance.js:15:3
+
+While TypeScript uses `readonly` to specify read only properties, Flow uses `+` in the form `+foo: T` for class and
+object type properties, and `+[string]: T` for dictionaries. [ts-syntax]
+
+   15|   readonly prop: string; // ERROR
+         ^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------- readonly_variance.js:19:3
+
+While TypeScript uses `readonly` to specify read only properties, Flow uses `+` in the form `+foo: T` for class and
+object type properties, and `+[string]: T` for dictionaries. [ts-syntax]
+
+   19|   readonly prop: string; // ERROR
+         ^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------- readonly_variance.js:24:11
+
+While TypeScript uses `readonly` to specify read only properties, Flow uses `+` in the form `+foo: T` for class and
+object type properties, and `+[string]: T` for dictionaries. [ts-syntax]
+
+   24| type T = [readonly foo: number]; // ERROR
+                 ^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------- readonly_variance.js:27:3
+
+While TypeScript uses `readonly` to specify read only properties, Flow uses `+` in the form `+foo: T` for class and
+object type properties, and `+[string]: T` for dictionaries. [ts-syntax]
+
+   27|   readonly "foo": string, // ERROR
+         ^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------- readonly_variance.js:30:3
+
+While TypeScript uses `readonly` to specify read only properties, Flow uses `+` in the form `+foo: T` for class and
+object type properties, and `+[string]: T` for dictionaries. [ts-syntax]
+
+   30|   readonly 0: string, // ERROR
+         ^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------- readonlymap.js:2:14
+
+Cannot assign `3` to `x` because number [1] is incompatible with `$ReadOnlyMap` [2]. [incompatible-type]
+
+   readonlymap.js:2:14
+   2| const x: T = 3; // ERROR
+                   ^ [1]
+
+References:
+   readonlymap.js:2:10
+   2| const x: T = 3; // ERROR
+               ^ [2]
+
+
+Error ------------------------------------------------------------------------------------ reserved_core_js_type.js:2:19
+
+Cannot declare `$ReadOnlyArray` [1] because the name is a core builtin type. [name-already-bound]
+
+   2|     declare class $ReadOnlyArray {}
+                        ^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------ reserved_core_js_type.js:3:19
+
+Cannot declare `$ReadOnlyMap` [1] because the name is a core builtin type. [name-already-bound]
+
+   3|     declare class $ReadOnlyMap {}
+                        ^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------ reserved_core_js_type.js:4:19
+
+Cannot declare `$ReadOnlySet` [1] because the name is a core builtin type. [name-already-bound]
+
+   4|     declare class $ReadOnlySet {}
+                        ^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------ reserved_core_js_type.js:5:19
+
+Cannot declare `ReadonlyArray` [1] because the name is a core builtin type. [name-already-bound]
+
+   5|     declare class ReadonlyArray {}
+                        ^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------ reserved_core_js_type.js:6:19
+
+Cannot declare `ReadonlyMap` [1] because the name is a core builtin type. [name-already-bound]
+
+   6|     declare class ReadonlyMap {}
+                        ^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------ reserved_core_js_type.js:7:19
+
+Cannot declare `ReadonlySet` [1] because the name is a core builtin type. [name-already-bound]
+
+   7|     declare class ReadonlySet {}
+                        ^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------- reserved_core_js_type.js:11:11
+
+Cannot declare `$ReadOnlyArray` [1] because the name is a core builtin type. [name-already-bound]
+
+   11|     class $ReadOnlyArray {}
+                 ^^^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------- reserved_core_js_type.js:12:11
+
+Cannot declare `$ReadOnlyMap` [1] because the name is a core builtin type. [name-already-bound]
+
+   12|     class $ReadOnlyMap {}
+                 ^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------- reserved_core_js_type.js:13:11
+
+Cannot declare `$ReadOnlySet` [1] because the name is a core builtin type. [name-already-bound]
+
+   13|     class $ReadOnlySet {}
+                 ^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------- reserved_core_js_type.js:14:11
+
+Cannot declare `ReadonlyArray` [1] because the name is a core builtin type. [name-already-bound]
+
+   14|     class ReadonlyArray {}
+                 ^^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------- reserved_core_js_type.js:15:11
+
+Cannot declare `ReadonlyMap` [1] because the name is a core builtin type. [name-already-bound]
+
+   15|     class ReadonlyMap {}
+                 ^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------- reserved_core_js_type.js:16:11
+
+Cannot declare `ReadonlySet` [1] because the name is a core builtin type. [name-already-bound]
+
+   16|     class ReadonlySet {}
+                 ^^^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------- reserved_type.js:2:9
+
+Cannot declare `$NonMaybeType` [1], because `$NonMaybeType` is a reserved type name. [reserved-keyword]
+
+   2|    type $NonMaybeType = string | number;
+              ^^^^^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------- reserved_type.js:3:9
+
+Cannot declare `NonNullable` [1], because `NonNullable` is a reserved type name. [reserved-keyword]
+
+   3|    type NonNullable = number;
+              ^^^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------- reserved_type.js:4:9
+
+Cannot declare `$ReadOnly` [1], because `$ReadOnly` is a reserved type name. [reserved-keyword]
+
+   4|    type $ReadOnly = string;
+              ^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------- reserved_type.js:5:9
+
+Cannot declare `Readonly` [1], because `Readonly` is a reserved type name. [reserved-keyword]
+
+   5|    type Readonly = string;
+              ^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------- reserved_type.js:6:9
+
+Cannot declare `$Keys` [1], because `$Keys` is a reserved type name. [reserved-keyword]
+
+   6|    type $Keys = string;
+              ^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------- reserved_type.js:7:9
+
+Cannot declare `$Values` [1], because `$Values` is a reserved type name. [reserved-keyword]
+
+   7|    type $Values<T> = Array<T>;
+              ^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------- reserved_type.js:8:9
+
+Cannot declare `Values` [1], because `Values` is a reserved type name. [reserved-keyword]
+
+   8|    type Values = Array<string>;
+              ^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- reserved_type.js:11:17
+
+Cannot declare `$NonMaybeType` [1], because `$NonMaybeType` is a reserved type name. [reserved-keyword]
+
+   11|    declare type $NonMaybeType = string | number;
+                       ^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- reserved_type.js:12:17
+
+Cannot declare `NonNullable` [1], because `NonNullable` is a reserved type name. [reserved-keyword]
+
+   12|    declare type NonNullable = number;
+                       ^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- reserved_type.js:13:17
+
+Cannot declare `$ReadOnly` [1], because `$ReadOnly` is a reserved type name. [reserved-keyword]
+
+   13|    declare type $ReadOnly = string;
+                       ^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- reserved_type.js:14:17
+
+Cannot declare `Readonly` [1], because `Readonly` is a reserved type name. [reserved-keyword]
+
+   14|    declare type Readonly = string;
+                       ^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- reserved_type.js:15:17
+
+Cannot declare `$Keys` [1], because `$Keys` is a reserved type name. [reserved-keyword]
+
+   15|    declare type $Keys = string;
+                       ^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- reserved_type.js:16:17
+
+Cannot declare `$Values` [1], because `$Values` is a reserved type name. [reserved-keyword]
+
+   16|    declare type $Values<T> = Array<T>;
+                       ^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- reserved_type.js:17:17
+
+Cannot declare `Values` [1], because `Values` is a reserved type name. [reserved-keyword]
+
+   17|    declare type Values = Array<string>;
+                       ^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- reserved_type.js:21:18
+
+Cannot declare `$NonMaybeType` [1], because `$NonMaybeType` is a reserved type name. [reserved-keyword]
+
+   21|    declare class $NonMaybeType {}
+                        ^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- reserved_type.js:22:18
+
+Cannot declare `NonNullable` [1], because `NonNullable` is a reserved type name. [reserved-keyword]
+
+   22|    declare class NonNullable {}
+                        ^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- reserved_type.js:23:18
+
+Cannot declare `$ReadOnly` [1], because `$ReadOnly` is a reserved type name. [reserved-keyword]
+
+   23|    declare class $ReadOnly {}
+                        ^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- reserved_type.js:24:18
+
+Cannot declare `Readonly` [1], because `Readonly` is a reserved type name. [reserved-keyword]
+
+   24|    declare class Readonly {}
+                        ^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- reserved_type.js:25:18
+
+Cannot declare `$Keys` [1], because `$Keys` is a reserved type name. [reserved-keyword]
+
+   25|    declare class $Keys<TT> {}
+                        ^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- reserved_type.js:26:18
+
+Cannot declare `$Values` [1], because `$Values` is a reserved type name. [reserved-keyword]
+
+   26|    declare class $Values<T> {}
+                        ^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- reserved_type.js:27:18
+
+Cannot declare `Values` [1], because `Values` is a reserved type name. [reserved-keyword]
+
+   27|    declare class Values {}
+                        ^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- reserved_type.js:31:10
+
+Cannot declare `$NonMaybeType` [1], because `$NonMaybeType` is a reserved type name. [reserved-keyword]
+
+   31|    class $NonMaybeType {}
+                ^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- reserved_type.js:32:10
+
+Cannot declare `NonNullable` [1], because `NonNullable` is a reserved type name. [reserved-keyword]
+
+   32|    class NonNullable {}
+                ^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- reserved_type.js:33:10
+
+Cannot declare `$ReadOnly` [1], because `$ReadOnly` is a reserved type name. [reserved-keyword]
+
+   33|    class $ReadOnly {}
+                ^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- reserved_type.js:34:10
+
+Cannot declare `Readonly` [1], because `Readonly` is a reserved type name. [reserved-keyword]
+
+   34|    class Readonly {}
+                ^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- reserved_type.js:35:10
+
+Cannot declare `$Keys` [1], because `$Keys` is a reserved type name. [reserved-keyword]
+
+   35|    class $Keys<TT> {}
+                ^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- reserved_type.js:36:10
+
+Cannot declare `$Values` [1], because `$Values` is a reserved type name. [reserved-keyword]
+
+   36|    class $Values<T> {}
+                ^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- reserved_type.js:37:10
+
+Cannot declare `Values` [1], because `Values` is a reserved type name. [reserved-keyword]
+
+   37|    class Values {}
+                ^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ satisfies.js:4:18
+
+Cannot build a typed interface for this module. You should annotate the exports of this module with types. Cannot
+determine the type of this satisfies expression. Please provide an annotation, e.g., by adding a type cast around this
+expression. [signature-verification-failure]
+
+   4| export const a = m satisfies T; // ERROR
+                       ^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------ satisfies.js:4:18
+
+The closest equivalent of TypeScript's `satisfies` expression in Flow is to do a cast in the form `<expr> as <type>`.
+[ts-syntax]
+
+   4| export const a = m satisfies T; // ERROR
+                       ^^^^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------- type_param_colon_extends.js:2:23
+
+Cannot use `T` [1] in an input/output position because `T` [1] is expected to occur only in output positions.
+[incompatible-variance]
+
+   type_param_colon_extends.js:2:23
+   2| type B<+T: string> = [T];
+                            ^
+
+References:
+   type_param_colon_extends.js:2:9
+   2| type B<+T: string> = [T];
+              ^ [1]
+
+
+Error --------------------------------------------------------------------------------- type_param_colon_extends.js:4:30
+
+Cannot use `T` [1] in an input/output position because `T` [1] is expected to occur only in output positions.
+[incompatible-variance]
+
+   type_param_colon_extends.js:4:30
+   4| type D<+T: string = "hi"> = [T];
+                                   ^
+
+References:
+   type_param_colon_extends.js:4:9
+   4| type D<+T: string = "hi"> = [T];
+              ^ [1]
+
+
+Error --------------------------------------------------------------------------------------- type_param_extends.js:2:30
+
+Cannot use `T` [1] in an input/output position because `T` [1] is expected to occur only in output positions.
+[incompatible-variance]
+
+   type_param_extends.js:2:30
+   2| type B<+T extends string> = [T];
+                                   ^
+
+References:
+   type_param_extends.js:2:9
+   2| type B<+T extends string> = [T];
+              ^ [1]
+
+
+Error --------------------------------------------------------------------------------------- type_param_extends.js:4:37
+
+Cannot use `T` [1] in an input/output position because `T` [1] is expected to occur only in output positions.
+[incompatible-variance]
+
+   type_param_extends.js:4:37
+   4| type D<+T extends string = "hi"> = [T];
+                                          ^
+
+References:
+   type_param_extends.js:4:9
+   4| type D<+T extends string = "hi"> = [T];
+              ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ undefined.js:1:10
+
+The equivalent of TypeScript's `undefined` type in Flow is `void`. Flow does not have separate `void` and `undefined`
+types. [ts-syntax]
+
+   1| type T = undefined; // ERROR
+               ^^^^^^^^^
+
+
+
+Found 143 errors

@@ -1,0 +1,42 @@
+Error ------------------------------------------------------------------------------------------------------ test.js:3:3
+
+`m` has already been declared in this class. Class member names must be unique. [duplicate-class-member]
+
+   3|   m() { }
+        ^
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:10:3
+
+`m` has already been declared in this class. Class member names must be unique. [duplicate-class-member]
+
+   10|   m() { }
+         ^
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:17:3
+
+`m` has already been declared in this class. Class member names must be unique. [duplicate-class-member]
+
+   17|   m() { }
+         ^
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:31:7
+
+`m` has already been declared in this class. Class member names must be unique. [duplicate-class-member]
+
+   31|   get m(): number { return 42; }
+             ^
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:32:7
+
+`m` has already been declared in this class. Class member names must be unique. [duplicate-class-member]
+
+   32|   set m(x: number): void { }
+             ^
+
+
+
+Found 5 errors

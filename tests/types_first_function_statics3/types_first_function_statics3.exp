@@ -1,0 +1,19 @@
+Error --------------------------------------------------------------------------------------------------------- b.js:2:1
+
+Cannot call `foo.call` because in the first argument: string [1] is incompatible with number [2]. [incompatible-type]
+
+   b.js:2:1
+   2| foo.call(undefined, "");
+      ^^^
+
+References:
+   b.js:2:21
+   2| foo.call(undefined, "");
+                          ^^ [1]
+   a.js:1:17
+   1| function foo(x: number) {}
+                      ^^^^^^ [2]
+
+
+
+Found 1 error

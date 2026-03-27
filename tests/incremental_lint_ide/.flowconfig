@@ -1,0 +1,8 @@
+[ignore]
+<PROJECT_ROOT>/tmp*
+
+[lints]
+sketchy-null=error
+
+[options]
+all=true

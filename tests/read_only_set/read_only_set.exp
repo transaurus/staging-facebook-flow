@@ -1,0 +1,17 @@
+Error ---------------------------------------------------------------------------------------------------- test.js:16:35
+
+Cannot use `T` [1] in an output position because `T` [1] is expected to occur only in input positions.
+[incompatible-variance]
+
+   test.js:16:35
+   16|     bad (x: number) : ReadonlySet<T> {// Error: T in invariant position
+                                         ^
+
+References:
+   test.js:15:12
+   15| class Baz<-T> {
+                  ^ [1]
+
+
+
+Found 1 error

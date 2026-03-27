@@ -1,0 +1,123 @@
+// Const without initializer
+const foo: string; // ERROR
+
+// Function without body
+function named(a: string): string; // ERROR
+
+// Component without body
+component Button(props: { label: string }); // ERROR
+
+// Import type annotation
+type T = import("react").Component; // ERROR
+
+// Declare class constructor without return type
+declare class Foo {
+  constructor(x: number); // ERROR
+}
+
+// Regular class constructor without return type (bodyless in ambient context)
+class Bar {
+  constructor(x: number); // ERROR
+}
+
+// Namespace without declare keyword
+namespace ImplicitNS { // ERROR
+  const x: number;
+}
+
+// Declare export namespace
+declare export namespace ExportedNS { // ERROR
+  declare const y: string;
+}
+
+// Export assignment
+export = foo; // ERROR
+
+// Import equals declaration
+import A = require("./exports"); // ERROR
+import type B = require("./exports"); // ERROR
+import C = Foo.Bar; // ERROR
+
+// DeclareVariable multiple declarations
+declare const x: string, y: number; // ERROR
+
+// DeclareVariable literal init
+declare const s = 'foo'; // ERROR
+
+// Export type specifier
+type SomeType = string;
+export {type SomeType}; // ERROR
+
+// Template literal type
+type TLT = `foo ${string}`; // ERROR
+
+// Unique symbol
+declare const us: unique symbol; // ERROR
+
+// Typeof import
+type TI = typeof import("foo"); // ERROR
+
+// Implements dotted path
+declare namespace ns {
+  declare interface IFace {}
+}
+declare class IDP implements ns.IFace {} // ERROR
+
+// Optional class property
+class OCP {
+  x?: number; // ERROR
+}
+
+// Optional shorthand method
+type OSM = { f?(): void }; // ERROR
+
+// Anonymous default export function
+export default function (): void; // ERROR
+
+// Mapped type key remapping
+type MKR<T> = {[K in keyof T as string]: T[K]}; // ERROR
+
+// Constructor type
+type CT = new () => string; // ERROR
+type ACT = abstract new () => string; // ERROR
+
+// Optional unlabeled tuple element
+type OTup = [string, string?]; // ERROR
+
+// Optional indexer
+type OptIdx = {[string]?: number}; // ERROR
+
+// Export as namespace
+export as namespace Foo; // ERROR
+
+// Readonly mapped type variance op
+type MR<T> = { -readonly [P in keyof T]: T[P] }; // ERROR
+type PR<T> = { +readonly [P in keyof T]: T[P] }; // ERROR
+
+// Private class field
+declare class PCF {
+  #private; // ERROR
+}
+
+// Generic tagged template
+declare const tag: any;
+tag<string>`hello`; // ERROR
+
+// Typeof this
+type TT = typeof this; // ERROR
+type TTP = typeof this.property; // ERROR
+
+// Property value initializer
+declare class PVI {
+  readonly x = 42; // ERROR
+}
+
+// Property value initializer on private field
+declare class PrivatePVI {
+  private readonly x = 42; // ERROR
+}
+
+// Index signature in class
+class ClassIdx {
+  [key: string]: any; // ERROR
+}

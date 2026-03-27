@@ -1,0 +1,36 @@
+Error --------------------------------------------------------------------------------------------------------- b.js:3:2
+
+Cannot cast `A.default` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   b.js:3:2
+   3| (A.default: string); // Error: cannot cast number to string
+       ^^^^^^^^^
+
+References:
+   a.js:2:12
+   2|   default: 1,
+                 ^ [1]
+   b.js:3:13
+   3| (A.default: string); // Error: cannot cast number to string
+                  ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------------- b.js:4:2
+
+Cannot cast `A.foo` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   b.js:4:2
+   4| (A.foo: string); // Error: cannot cast number to string
+       ^^^^^
+
+References:
+   a.js:3:8
+   3|   foo: 2,
+             ^ [1]
+   b.js:4:9
+   4| (A.foo: string); // Error: cannot cast number to string
+              ^^^^^^ [2]
+
+
+
+Found 2 errors

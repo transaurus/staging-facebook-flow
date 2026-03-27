@@ -1,0 +1,70 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docsSidebar.category.Introduction": {
+    "message": "Introduction",
+    "description": "The label for category Introduction in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Type Annotations": {
+    "message": "Type Annotations",
+    "description": "The label for category Type Annotations in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Type System": {
+    "message": "Type System",
+    "description": "The label for category Type System in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.React": {
+    "message": "React",
+    "description": "The label for category React in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Flow Enums": {
+    "message": "Flow Enums",
+    "description": "The label for category Flow Enums in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Match": {
+    "message": "Match",
+    "description": "The label for category Match in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Library Definitions": {
+    "message": "Library Definitions",
+    "description": "The label for category Library Definitions in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Linting": {
+    "message": "Linting",
+    "description": "The label for category Linting in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Flow CLI": {
+    "message": "Flow CLI",
+    "description": "The label for category Flow CLI in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Configuration": {
+    "message": "Configuration",
+    "description": "The label for category Configuration in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Tools": {
+    "message": "Tools",
+    "description": "The label for category Tools in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Editors": {
+    "message": "Editors",
+    "description": "The label for category Editors in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.doc.FAQ": {
+    "message": "FAQ",
+    "description": "The label for the doc item FAQ in sidebar docsSidebar, linking to the doc faq"
+  },
+  "sidebar.docsSidebar.doc.Declarations": {
+    "message": "Declarations",
+    "description": "The label for the doc item Declarations in sidebar docsSidebar, linking to the doc declarations/index"
+  },
+  "sidebar.docsSidebar.doc.Error Suppressions": {
+    "message": "Error Suppressions",
+    "description": "The label for the doc item Error Suppressions in sidebar docsSidebar, linking to the doc errors/index"
+  },
+  "sidebar.docsSidebar.doc.Flow Strict": {
+    "message": "Flow Strict",
+    "description": "The label for the doc item Flow Strict in sidebar docsSidebar, linking to the doc strict/index"
+  }
+}

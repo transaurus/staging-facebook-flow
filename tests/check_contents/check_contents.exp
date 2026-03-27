@@ -1,0 +1,137 @@
+syntax_error.js
+Error ---------------------------------------------------------------------------------------------- syntax_error.js:4:1
+
+Unexpected end of input [ParseError]
+
+   4|
+      
+
+
+
+Found 1 error
+docblock_error.js
+Error ------------------------------------------------------------------------------------------- docblock_error.js:1:10
+
+Unexpected `@flow` declaration. Only one per file is allowed. [duplicate-flow-decl]
+
+   1| // @flow @flow
+               ^^^^^
+
+
+
+Found 1 error
+docblock_error_with_syntax_error.js
+Error ------------------------------------------------------------------------- docblock_error_with_syntax_error.js:1:10
+
+Unexpected `@flow` declaration. Only one per file is allowed. [duplicate-flow-decl]
+
+   1| // @flow @flow
+               ^^^^^
+
+
+Error -------------------------------------------------------------------------- docblock_error_with_syntax_error.js:4:1
+
+Unexpected end of input [ParseError]
+
+   4|
+      
+
+
+
+Found 2 errors
+docblock_error_with_module_type_conflict.js
+Error ----------------------------------------------------------------- docblock_error_with_module_type_conflict.js:1:10
+
+Unexpected `@flow` declaration. Only one per file is allowed. [duplicate-flow-decl]
+
+   1| // @flow @flow
+               ^^^^^
+
+
+Error ------------------------------------------------------------------ docblock_error_with_module_type_conflict.js:5:1
+
+Unable to determine module type (CommonJS vs ES) if both an export statement and `module.exports` are used in the same
+module! [module-type-conflict]
+
+   5| module.exports.bar = function (): void {}
+      ^^^^^^^^^^^^^^
+
+
+
+Found 2 errors
+module_type_conflict.js
+Error -------------------------------------------------------------------------------------- module_type_conflict.js:5:1
+
+Unable to determine module type (CommonJS vs ES) if both an export statement and `module.exports` are used in the same
+module! [module-type-conflict]
+
+   5| module.exports.bar = function (): void {}
+      ^^^^^^^^^^^^^^
+
+
+
+Found 1 error
+syntax_error.js (no filename)
+Error ------------------------------------------------------------------------------------------------------------ -:4:1
+
+Unexpected end of input [ParseError]
+
+   4|
+      
+
+
+
+Found 1 error
+
+
+not_flow.js
+
+File is not @flow!
+
+
+not_flow.js with --all
+
+Error -------------------------------------------------------------------------------------------------- not_flow.js:1:1
+
+Cannot use operator `*` with operands number [1] and string [2] [unsafe-arithmetic]
+
+   not_flow.js:1:1
+   1| 1 * 'foo';
+      ^^^^^^^^^
+
+References:
+   not_flow.js:1:1
+   1| 1 * 'foo';
+      ^ [1]
+   not_flow.js:1:5
+   1| 1 * 'foo';
+          ^^^^^ [2]
+
+
+
+Found 1 error
+
+
+unsaved_foo.js depends on bar.js which is still checked against foo.js
+
+No errors!
+
+
+bad_exports.js
+
+Error ---------------------------------------------------------------------------------------------- bad_exports.js:2:31
+
+Cannot build a typed interface for this module. You should annotate the exports of this module with types. Missing type
+annotation at function return: [signature-verification-failure]
+
+   2| export function foo(x: number) { return x; } // Error, missing return type
+                                    
+
+
+
+Found 1 error
+
+
+json.json
+
+File is not @flow!

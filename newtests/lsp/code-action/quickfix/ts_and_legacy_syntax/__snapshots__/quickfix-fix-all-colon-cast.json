@@ -1,0 +1,97 @@
+{
+  "method": "textDocument/codeAction",
+  "result": [
+    {
+      "title": "Convert all colon casts to `as` expressions",
+      "kind": "quickfix",
+      "diagnostics": [],
+      "edit": {
+        "changes": {
+          "<PLACEHOLDER_PROJECT_URL>/fix-all-colon-cast.js": [
+            {
+              "range": {
+                "start": {
+                  "line": 2,
+                  "character": 18
+                },
+                "end": {
+                  "line": 2,
+                  "character": 29
+                }
+              },
+              "newText": "1 as number"
+            },
+            {
+              "range": {
+                "start": {
+                  "line": 4,
+                  "character": 18
+                },
+                "end": {
+                  "line": 4,
+                  "character": 35
+                }
+              },
+              "newText": "\"hello\" as string"
+            },
+            {
+              "range": {
+                "start": {
+                  "line": 5,
+                  "character": 19
+                },
+                "end": {
+                  "line": 5,
+                  "character": 34
+                }
+              },
+              "newText": "true as boolean"
+            }
+          ]
+        }
+      },
+      "command": {
+        "title": "",
+        "command": "log:org.flow:<PLACEHOLDER_PROJECT_URL>",
+        "arguments": [
+          "textDocument/codeAction",
+          "convert_all_colon_cast",
+          "Convert all colon casts to `as` expressions"
+        ]
+      }
+    },
+    {
+      "title": "Convert to `as` expression `<expr> as <type>`",
+      "kind": "quickfix",
+      "diagnostics": [],
+      "edit": {
+        "changes": {
+          "<PLACEHOLDER_PROJECT_URL>/fix-all-colon-cast.js": [
+            {
+              "range": {
+                "start": {
+                  "line": 2,
+                  "character": 18
+                },
+                "end": {
+                  "line": 2,
+                  "character": 29
+                }
+              },
+              "newText": "1 as number"
+            }
+          ]
+        }
+      },
+      "command": {
+        "title": "",
+        "command": "log:org.flow:<PLACEHOLDER_PROJECT_URL>",
+        "arguments": [
+          "textDocument/codeAction",
+          "convert_colon_cast",
+          "Convert to `as` expression `<expr> as <type>`"
+        ]
+      }
+    }
+  ]
+}

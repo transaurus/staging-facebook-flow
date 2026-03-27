@@ -1,0 +1,6 @@
+[lints]
+unused-promise=error
+
+[options]
+all=true
+no_flowlib=false

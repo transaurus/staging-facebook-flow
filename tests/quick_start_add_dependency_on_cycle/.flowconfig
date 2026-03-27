@@ -1,0 +1,6 @@
+[ignore]
+<PROJECT_ROOT>/tmp*
+
+[options]
+all=true
+no_flowlib=false

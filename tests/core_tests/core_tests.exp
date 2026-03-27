@@ -1,0 +1,364 @@
+Error ------------------------------------------------------------------------------------------------------ json.js:2:5
+
+Cannot use `new` on object type [1]. Only classes can be constructed. [invalid-constructor]
+
+   json.js:2:5
+      2| new JSON(); // ERROR
+             ^^^^
+
+References:
+   <BUILTINS>/core.js:1836:19
+                           v-
+   1836| declare var JSON: {|
+   1837|     /**
+   1838|      * Converts a JavaScript Object Notation (JSON) string into an object.
+   1839|      * @param text A valid JSON string.
+   1840|      * @param reviver A function that transforms the results. This function is called for each member of the object.
+   1841|      * If a member contains nested objects, the nested objects are transformed before the parent object is.
+   1842|      */
+   1843|     +parse: (text: string, reviver?: (key: any, value: any) => any) => any,
+   1844|     /**
+   1845|      * Converts a JavaScript value to a JavaScript Object Notation (JSON) string.
+   1846|      * @param value A JavaScript value, usually an object or array, to be converted.
+   1847|      * @param replacer A function that transforms the results or an array of strings and numbers that acts as a approved list for selecting the object properties that will be stringified.
+   1848|      * @param space Adds indentation, white space, and line break characters to the return-value JSON text to make it easier to read.
+   1849|      */
+   1850|     +stringify: ((
+   1851|         value: null | string | number | boolean | interface {} | $ReadOnlyArray<mixed>,
+   1852|         replacer?: ?((key: string, value: any) => any) | Array<any>,
+   1853|         space?: string | number
+   1854|       ) => string) &
+   1855|       (
+   1856|         value: mixed,
+   1857|         replacer?: ?((key: string, value: any) => any) | Array<any>,
+   1858|         space?: string | number
+   1859|       ) => string | void,
+   1860| |};
+         -^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------------ json.js:9:6
+
+Cannot assign `1` to `JSON.parse` because property `parse` is not writable. [cannot-write]
+
+   9| JSON.parse = 1; // ERROR
+           ^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- json_stringify.js:7:2
+
+Cannot cast `JSON.stringify(...)` to string because undefined [1] is incompatible with string [2]. [incompatible-type]
+
+   json_stringify.js:7:2
+      7| (JSON.stringify(bad1): string);
+          ^^^^^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:1859:21
+   1859|       ) => string | void,
+                             ^^^^ [1]
+   json_stringify.js:7:24
+      7| (JSON.stringify(bad1): string);
+                                ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- map.js:28:21
+
+Cannot call `Map` with array literal bound to `iterable` because: [incompatible-type]
+ - array literal [1] is incompatible with `$Iterable` [2]
+    - in property `@@iterator` > the return value > type argument `Yield` [3]: string [4] is incompatible with tuple
+      type [5]
+
+   map.js:28:21
+     28|     let x = new Map(['foo', 123]); // error
+                             ^^^^^^^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:2079:29
+   2079|     constructor(iterable?: ?Iterable<[+key: K, +value: V]>): void;
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+   <BUILTINS>/core.js:1880:30
+   1880| interface $IteratorProtocol<+Yield,+Return=void,-Next=void> {
+                                      ^^^^^ [3]
+   map.js:28:22
+     28|     let x = new Map(['foo', 123]); // error
+                              ^^^^^ [4]
+   <BUILTINS>/core.js:2079:38
+   2079|     constructor(iterable?: ?Iterable<[+key: K, +value: V]>): void;
+                                              ^^^^^^^^^^^^^^^^^^^^ [5]
+
+
+Error ----------------------------------------------------------------------------------------------------- map.js:28:21
+
+Cannot call `Map` with array literal bound to `iterable` because: [incompatible-type]
+ - array literal [1] is incompatible with `$Iterable` [2]
+    - in property `@@iterator` > the return value > type argument `Yield` [3]: number [4] is incompatible with tuple
+      type [5]
+
+   map.js:28:21
+     28|     let x = new Map(['foo', 123]); // error
+                             ^^^^^^^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:2079:29
+   2079|     constructor(iterable?: ?Iterable<[+key: K, +value: V]>): void;
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+   <BUILTINS>/core.js:1880:30
+   1880| interface $IteratorProtocol<+Yield,+Return=void,-Next=void> {
+                                      ^^^^^ [3]
+   map.js:28:29
+     28|     let x = new Map(['foo', 123]); // error
+                                     ^^^ [4]
+   <BUILTINS>/core.js:2079:38
+   2079|     constructor(iterable?: ?Iterable<[+key: K, +value: V]>): void;
+                                              ^^^^^^^^^^^^^^^^^^^^ [5]
+
+
+Error ----------------------------------------------------------------------------------------------------- map.js:29:42
+
+Cannot call `Map` with array literal bound to `iterable` because: [incompatible-type]
+ - array literal [1] is incompatible with `$Iterable` [2]
+    - in property `@@iterator` > the return value > type argument `Yield` [3] > index `0`: string [4] is incompatible
+      with number [5]
+
+   map.js:29:42
+     29|     let y: Map<number, string> = new Map([['foo', 123]]); // error
+                                                  ^^^^^^^^^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:2079:29
+   2079|     constructor(iterable?: ?Iterable<[+key: K, +value: V]>): void;
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+   <BUILTINS>/core.js:1880:30
+   1880| interface $IteratorProtocol<+Yield,+Return=void,-Next=void> {
+                                      ^^^^^ [3]
+   map.js:29:44
+     29|     let y: Map<number, string> = new Map([['foo', 123]]); // error
+                                                    ^^^^^ [4]
+   map.js:29:16
+     29|     let y: Map<number, string> = new Map([['foo', 123]]); // error
+                        ^^^^^^ [5]
+
+
+Error ----------------------------------------------------------------------------------------------------- map.js:29:42
+
+Cannot call `Map` with array literal bound to `iterable` because: [incompatible-type]
+ - array literal [1] is incompatible with `$Iterable` [2]
+    - in property `@@iterator` > the return value > type argument `Yield` [3] > index `1`: number [4] is incompatible
+      with string [5]
+
+   map.js:29:42
+     29|     let y: Map<number, string> = new Map([['foo', 123]]); // error
+                                                  ^^^^^^^^^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:2079:29
+   2079|     constructor(iterable?: ?Iterable<[+key: K, +value: V]>): void;
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+   <BUILTINS>/core.js:1880:30
+   1880| interface $IteratorProtocol<+Yield,+Return=void,-Next=void> {
+                                      ^^^^^ [3]
+   map.js:29:51
+     29|     let y: Map<number, string> = new Map([['foo', 123]]); // error
+                                                           ^^^ [4]
+   map.js:29:24
+     29|     let y: Map<number, string> = new Map([['foo', 123]]); // error
+                                ^^^^^^ [5]
+
+
+Error ------------------------------------------------------------------------------------------------------ map.js:34:6
+
+Cannot cast `x.get(...)` to boolean because undefined [1] is incompatible with boolean [2]. [incompatible-type]
+
+   map.js:34:6
+     34|     (x.get('foo'): boolean); // error, string | void
+              ^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:2087:22
+   2087|     get(key: K): V | void;
+                              ^^^^ [1]
+   map.js:34:20
+     34|     (x.get('foo'): boolean); // error, string | void
+                            ^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------------ map.js:34:6
+
+Cannot cast `x.get(...)` to boolean because number [1] is incompatible with boolean [2]. [incompatible-type]
+
+   map.js:34:6
+   34|     (x.get('foo'): boolean); // error, string | void
+            ^^^^^^^^^^^^
+
+References:
+   map.js:33:27
+   33|   function(x: Map<string, number>) {
+                                 ^^^^^^ [1]
+   map.js:34:20
+   34|     (x.get('foo'): boolean); // error, string | void
+                          ^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- map.js:35:11
+
+Cannot call `x.get` with `123` bound to `key` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   map.js:35:11
+   35|     x.get(123); // error, wrong key type
+                 ^^^ [1]
+
+References:
+   map.js:33:19
+   33|   function(x: Map<string, number>) {
+                         ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- weakref.js:17:23
+
+Cannot call `WeakRef` because in type argument `T`: [incompatible-type]
+ - Either boolean [1], a primitive, cannot be used as a subtype of interface type [2]. You can wrap it in
+   `new Boolean(...))` to turn it into an object and attempt to use it as a subtype of an interface.
+ - Or boolean [1] is incompatible with read-only array type [3].
+
+   weakref.js:17:23
+     17| let wr5 = new WeakRef(true); // error, must be objects
+                               ^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:2110:28
+   2110| type WeaklyReferenceable = interface {} | $ReadOnlyArray<mixed>;
+                                    ^^^^^^^^^^^^ [2]
+   <BUILTINS>/core.js:2110:43
+   2110| type WeaklyReferenceable = interface {} | $ReadOnlyArray<mixed>;
+                                                   ^^^^^^^^^^^^^^^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------- weakref.js:18:23
+
+Cannot call `WeakRef` because in type argument `T`: [incompatible-type]
+ - Either number [1], a primitive, cannot be used as a subtype of interface type [2]. You can wrap it in
+   `new Number(...))` to turn it into an object and attempt to use it as a subtype of an interface.
+ - Or number [1] is incompatible with read-only array type [3].
+
+   weakref.js:18:23
+     18| let wr6 = new WeakRef(123); // error, must be objects
+                               ^^^ [1]
+
+References:
+   <BUILTINS>/core.js:2110:28
+   2110| type WeaklyReferenceable = interface {} | $ReadOnlyArray<mixed>;
+                                    ^^^^^^^^^^^^ [2]
+   <BUILTINS>/core.js:2110:43
+   2110| type WeaklyReferenceable = interface {} | $ReadOnlyArray<mixed>;
+                                                   ^^^^^^^^^^^^^^^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------- weakref.js:19:23
+
+Cannot call `WeakRef` because in type argument `T`: [incompatible-type]
+ - Either string [1], a primitive, cannot be used as a subtype of interface type [2]. You can wrap it in
+   `new String(...))` to turn it into an object and attempt to use it as a subtype of an interface.
+ - Or string [1] is incompatible with read-only array type [3].
+
+   weakref.js:19:23
+     19| let wr7 = new WeakRef('not an object'); // error, must be objects
+                               ^^^^^^^^^^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:2110:28
+   2110| type WeaklyReferenceable = interface {} | $ReadOnlyArray<mixed>;
+                                    ^^^^^^^^^^^^ [2]
+   <BUILTINS>/core.js:2110:43
+   2110| type WeaklyReferenceable = interface {} | $ReadOnlyArray<mixed>;
+                                                   ^^^^^^^^^^^^^^^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------- weakset.js:14:24
+
+Cannot call `WeakSet` because in type argument `T`: [incompatible-type]
+ - Either number [1], a primitive, cannot be used as a subtype of interface type [2]. You can wrap it in
+   `new Number(...))` to turn it into an object and attempt to use it as a subtype of an interface.
+ - Or number [1] is incompatible with read-only array type [3].
+
+   weakset.js:14:24
+     14| let ws3 = new WeakSet([1, 2, 3]); // error, must be objects
+                                ^ [1]
+
+References:
+   <BUILTINS>/core.js:2110:28
+   2110| type WeaklyReferenceable = interface {} | $ReadOnlyArray<mixed>;
+                                    ^^^^^^^^^^^^ [2]
+   <BUILTINS>/core.js:2110:43
+   2110| type WeaklyReferenceable = interface {} | $ReadOnlyArray<mixed>;
+                                                   ^^^^^^^^^^^^^^^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------- weakset.js:14:27
+
+Cannot call `WeakSet` because in type argument `T`: [incompatible-type]
+ - Either number [1], a primitive, cannot be used as a subtype of interface type [2]. You can wrap it in
+   `new Number(...))` to turn it into an object and attempt to use it as a subtype of an interface.
+ - Or number [1] is incompatible with read-only array type [3].
+
+   weakset.js:14:27
+     14| let ws3 = new WeakSet([1, 2, 3]); // error, must be objects
+                                   ^ [1]
+
+References:
+   <BUILTINS>/core.js:2110:28
+   2110| type WeaklyReferenceable = interface {} | $ReadOnlyArray<mixed>;
+                                    ^^^^^^^^^^^^ [2]
+   <BUILTINS>/core.js:2110:43
+   2110| type WeaklyReferenceable = interface {} | $ReadOnlyArray<mixed>;
+                                                   ^^^^^^^^^^^^^^^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------- weakset.js:14:30
+
+Cannot call `WeakSet` because in type argument `T`: [incompatible-type]
+ - Either number [1], a primitive, cannot be used as a subtype of interface type [2]. You can wrap it in
+   `new Number(...))` to turn it into an object and attempt to use it as a subtype of an interface.
+ - Or number [1] is incompatible with read-only array type [3].
+
+   weakset.js:14:30
+     14| let ws3 = new WeakSet([1, 2, 3]); // error, must be objects
+                                      ^ [1]
+
+References:
+   <BUILTINS>/core.js:2110:28
+   2110| type WeaklyReferenceable = interface {} | $ReadOnlyArray<mixed>;
+                                    ^^^^^^^^^^^^ [2]
+   <BUILTINS>/core.js:2110:43
+   2110| type WeaklyReferenceable = interface {} | $ReadOnlyArray<mixed>;
+                                                   ^^^^^^^^^^^^^^^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------- weakset.js:31:15
+
+Cannot call `WeakSet` because in type argument `T`: [incompatible-type]
+ - Either number [1], a primitive, cannot be used as a subtype of interface type [2]. You can wrap it in
+   `new Number(...))` to turn it into an object and attempt to use it as a subtype of an interface.
+ - Or number [1] is incompatible with read-only array type [3].
+
+   weakset.js:31:15
+     31| let ws5 = new WeakSet(numbers()); // error, must be objects
+                       ^^^^^^^
+
+References:
+   weakset.js:24:31
+     24| function* numbers(): Iterable<number> {
+                                       ^^^^^^ [1]
+   <BUILTINS>/core.js:2110:28
+   2110| type WeaklyReferenceable = interface {} | $ReadOnlyArray<mixed>;
+                                    ^^^^^^^^^^^^ [2]
+   <BUILTINS>/core.js:2110:43
+   2110| type WeaklyReferenceable = interface {} | $ReadOnlyArray<mixed>;
+                                                   ^^^^^^^^^^^^^^^^^^^^^ [3]
+
+
+
+Found 17 errors
+
+Only showing the most relevant union/intersection branches.
+To see all branches, re-run Flow with --show-all-branches

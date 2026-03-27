@@ -1,0 +1,135 @@
+Error ------------------------------------------------------------------------------------------------------- B.js:10:12
+
+Cannot call `ifRequired` with `'A'` bound to `id` because string [1] is incompatible with `$Flow$ModuleRef` [2].
+[incompatible-type]
+
+   B.js:10:12
+   10| ifRequired('A', (A: any) => A.FOO); // Error - A is a plain string, not a module ref
+                  ^^^ [1]
+
+References:
+   B.js:6:7
+    6|   id: $Flow$ModuleRef<TModule>,
+             ^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------------- B.js:11:26
+
+Cannot get `A.BAR` because property `BAR` is missing in object literal [1]. [prop-missing]
+
+   B.js:11:26
+   11| ifRequired('m#A', A => A.BAR); // Error - BAR is not present in A's exports
+                                ^^^
+
+References:
+   A.js:5:18
+                        v
+    5| module.exports = {
+    6|   FOO: 'bar',
+    7| };
+       ^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------------- D.js:10:3
+
+Importing from an untyped module makes it `any` and is not safe! Did you mean to add `// @flow` to the top of `C`?
+[untyped-import]
+
+   10|   'm#C', // Error - untyped import
+         ^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------------- G.js:34:5
+
+Cannot cast `E` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   G.js:34:5
+   34|     E as number; // Error - E exports string
+           ^
+
+References:
+   G.js:23:45
+   23|     callback: (...modules: {[K in keyof I]: I[K] extends JSResourceReference<infer T> ? T : empty}) => void,
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   G.js:34:10
+   34|     E as number; // Error - E exports string
+                ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------------- G.js:35:5
+
+Cannot cast `F` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   G.js:35:5
+   35|     F as string; // Error - F exports number
+           ^
+
+References:
+   G.js:23:45
+   23|     callback: (...modules: {[K in keyof I]: I[K] extends JSResourceReference<infer T> ? T : empty}) => void,
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   G.js:35:10
+   35|     F as string; // Error - F exports number
+                ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------------- G.js:39:1
+
+Cannot cast `'m#E'` to string because `$Flow$ModuleRef` [1] is incompatible with string [2]. [incompatible-type]
+
+   G.js:39:1
+   39| 'm#E' as string; // Error
+       ^^^^^
+
+References:
+   <BUILTINS>/prelude.js:86:21
+   86| declare opaque type $Flow$ModuleRef<+T>;
+                           ^^^^^^^^^^^^^^^ [1]
+   G.js:39:10
+   39| 'm#E' as string; // Error
+                ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------------- G.js:40:1
+
+Cannot cast `'m#E'` to empty because `$Flow$ModuleRef` [1] is incompatible with empty [2]. [incompatible-type]
+
+   G.js:40:1
+   40| 'm#E' as empty; // Error
+       ^^^^^
+
+References:
+   <BUILTINS>/prelude.js:86:21
+   86| declare opaque type $Flow$ModuleRef<+T>;
+                           ^^^^^^^^^^^^^^^ [1]
+   G.js:40:10
+   40| 'm#E' as empty; // Error
+                ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- object_prop.js:5:4
+
+Cannot resolve module `NotAModule`. [cannot-resolve-module]
+
+   5|   ['m#NotAModule']: null
+         ^^^^^^^^^^^^^^
+
+
+Error ----------------------------------------------------------------------------------------------- object_prop.js:5:4
+
+Cannot use `'m#NotAModule'` [1] to assign a computed property. Computed properties may only be numeric or string literal
+values, but this one is a `$Flow$ModuleRef` [2]. Can you add an appropriate type annotation to `'m#NotAModule'` [1]? See
+https://flow.org/en/docs/types/literals/ for more information on literal types. [invalid-computed-prop]
+
+   object_prop.js:5:4
+    5|   ['m#NotAModule']: null
+          ^^^^^^^^^^^^^^ [1]
+
+References:
+   <BUILTINS>/prelude.js:86:21
+   86| declare opaque type $Flow$ModuleRef<+T>;
+                           ^^^^^^^^^^^^^^^ [2]
+
+
+
+Found 9 errors

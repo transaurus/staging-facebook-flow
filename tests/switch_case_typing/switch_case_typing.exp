@@ -1,0 +1,615 @@
+Error ------------------------------------------------------------------------------------------------------ test.js:8:5
+
+Cannot compare `x` [1] to string literal `qux` [2], because `x` [1] is not a subtype of string literal `qux` [2] and
+string literal `qux` [2] is not a subtype of `x` [1]. In **rare** cases, these types may have overlapping values but
+lack a subtyping relationship. If that happens, you can cast one side to the union of both types to pass the flow check.
+ [invalid-compare]
+
+   test.js:8:5
+   8|     case 'qux': // error
+          ^^^^^^^^^^
+
+References:
+   test.js:3:17
+   3|   declare const x: Enum;
+                      ^ [1]
+   test.js:8:10
+   8|     case 'qux': // error
+               ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:19:5
+
+Cannot compare `x` [1] to number literal `3` [2], because `x` [1] is not a subtype of number literal `3` [2] and number
+literal `3` [2] is not a subtype of `x` [1]. In **rare** cases, these types may have overlapping values but lack a
+subtyping relationship. If that happens, you can cast one side to the union of both types to pass the flow check. 
+[invalid-compare]
+
+   test.js:19:5
+   19|     case 3: // error
+           ^^^^^^
+
+References:
+   test.js:13:17
+   13|   declare const x: Enum;
+                       ^ [1]
+   test.js:19:10
+   19|     case 3: // error
+                ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:30:5
+
+Cannot compare `x` [1] to string literal `qux` [2], because `x` [1] is not a subtype of string literal `qux` [2] and
+string literal `qux` [2] is not a subtype of `x` [1]. In **rare** cases, these types may have overlapping values but
+lack a subtyping relationship. If that happens, you can cast one side to the union of both types to pass the flow check.
+ [invalid-compare]
+
+   test.js:30:5
+   30|     case 'qux': // error
+           ^^^^^^^^^^
+
+References:
+   test.js:24:17
+   24|   declare const x: Enum;
+                       ^ [1]
+   test.js:30:10
+   30|     case 'qux': // error
+                ^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:39:12
+
+Cannot compare `x` [1] to string literal `qux` [2], because `x` [1] is empty.  [invalid-compare]
+
+   test.js:39:12
+   39|   else if (x === 'qux') {} // error
+                  ^^^^^^^^^^^
+
+References:
+   test.js:39:12
+   39|   else if (x === 'qux') {} // error
+                  ^ [1]
+   test.js:39:18
+   39|   else if (x === 'qux') {} // error
+                        ^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:45:12
+
+Cannot compare `x` [1] to string literal `qux` [2], because string literal `baz` [3] is not a subtype of string literal
+`qux` [2] and string literal `qux` [2] is not a subtype of string literal `baz` [3]. In **rare** cases, these types may
+have overlapping values but lack a subtyping relationship. If that happens, you can cast one side to the union of both
+types to pass the flow check.  [invalid-compare]
+
+   test.js:45:12
+   45|   else if (x === 'qux') {} // error
+                  ^^^^^^^^^^^
+
+References:
+   test.js:45:12
+   45|   else if (x === 'qux') {} // error
+                  ^ [1]
+   test.js:45:18
+   45|   else if (x === 'qux') {} // error
+                        ^^^^^ [2]
+   test.js:42:20
+   42|   declare const x: Enum;
+                          ^^^^ [3]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:54:5
+
+Cannot compare `y` [1] to number literal `4` [2], because `y` [1] is not a subtype of number literal `4` [2] and number
+literal `4` [2] is not a subtype of `y` [1]. In **rare** cases, these types may have overlapping values but lack a
+subtyping relationship. If that happens, you can cast one side to the union of both types to pass the flow check. 
+[invalid-compare]
+
+   test.js:54:5
+   54|     case 4: // error
+           ^^^^^^
+
+References:
+   test.js:50:17
+   50|   declare const y: eNum;
+                       ^ [1]
+   test.js:54:10
+   54|     case 4: // error
+                ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:65:5
+
+Cannot compare `y` [1] to number literal `4` [2], because `y` [1] is not a subtype of number literal `4` [2] and number
+literal `4` [2] is not a subtype of `y` [1]. In **rare** cases, these types may have overlapping values but lack a
+subtyping relationship. If that happens, you can cast one side to the union of both types to pass the flow check. 
+[invalid-compare]
+
+   test.js:65:5
+   65|     case 4: // error
+           ^^^^^^
+
+References:
+   test.js:59:17
+   59|   declare const y: eNum;
+                       ^ [1]
+   test.js:65:10
+   65|     case 4: // error
+                ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:77:5
+
+Cannot compare `o.type` [1] to string literal `qux` [2], because `o.type` [1] is not a subtype of string literal
+`qux` [2] and string literal `qux` [2] is not a subtype of `o.type` [1]. In **rare** cases, these types may have
+overlapping values but lack a subtyping relationship. If that happens, you can cast one side to the union of both types
+to pass the flow check.  [invalid-compare]
+
+   test.js:77:5
+   77|     case 'qux': // error
+           ^^^^^^^^^^
+
+References:
+   test.js:73:11
+   73|   switch (o.type) {
+                 ^^^^^^ [1]
+   test.js:77:10
+   77|     case 'qux': // error
+                ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:87:7
+
+Cannot cast `o.type` to empty because string literal `foo` [1] is incompatible with empty [2]. [incompatible-type]
+
+   test.js:87:7
+   87|       o.type as empty; // error
+             ^^^^^^
+
+References:
+   test.js:70:30
+   70| type DisjointUnion = { type: 'foo' } | { type: 'bar' } | { type: 'baz' }
+                                    ^^^^^ [1]
+   test.js:87:17
+   87|       o.type as empty; // error
+                       ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:87:7
+
+Cannot cast `o.type` to empty because string literal `bar` [1] is incompatible with empty [2]. [incompatible-type]
+
+   test.js:87:7
+   87|       o.type as empty; // error
+             ^^^^^^
+
+References:
+   test.js:70:48
+   70| type DisjointUnion = { type: 'foo' } | { type: 'bar' } | { type: 'baz' }
+                                                      ^^^^^ [1]
+   test.js:87:17
+   87|       o.type as empty; // error
+                       ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:87:7
+
+Cannot cast `o.type` to empty because string literal `baz` [1] is incompatible with empty [2]. [incompatible-type]
+
+   test.js:87:7
+   87|       o.type as empty; // error
+             ^^^^^^
+
+References:
+   test.js:70:66
+   70| type DisjointUnion = { type: 'foo' } | { type: 'bar' } | { type: 'baz' }
+                                                                        ^^^^^ [1]
+   test.js:87:17
+   87|       o.type as empty; // error
+                       ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:87:7
+
+Cannot cast `o.type` to empty because string literal `foo` [1] is incompatible with empty [2]. [incompatible-type]
+
+   test.js:87:7
+   87|       o.type as empty; // error
+             ^^^^^^
+
+References:
+   test.js:84:10
+   84|     case 'foo':
+                ^^^^^ [1]
+   test.js:87:17
+   87|       o.type as empty; // error
+                       ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:87:7
+
+Cannot cast `o.type` to empty because string literal `bar` [1] is incompatible with empty [2]. [incompatible-type]
+
+   test.js:87:7
+   87|       o.type as empty; // error
+             ^^^^^^
+
+References:
+   test.js:85:10
+   85|     case 'bar':
+                ^^^^^ [1]
+   test.js:87:17
+   87|       o.type as empty; // error
+                       ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:89:5
+
+Cannot compare `o.type` [1] to string literal `qux` [2], because `o.type` [1] is not a subtype of string literal
+`qux` [2] and string literal `qux` [2] is not a subtype of `o.type` [1]. In **rare** cases, these types may have
+overlapping values but lack a subtyping relationship. If that happens, you can cast one side to the union of both types
+to pass the flow check.  [invalid-compare]
+
+   test.js:89:5
+   89|     case 'qux': // error
+           ^^^^^^^^^^
+
+References:
+   test.js:83:11
+   83|   switch (o.type) {
+                 ^^^^^^ [1]
+   test.js:89:10
+   89|     case 'qux': // error
+                ^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:101:5
+
+Cannot compare `o.type` [1] to number literal `3` [2], because `o.type` [1] is not a subtype of number literal `3` [2]
+and number literal `3` [2] is not a subtype of `o.type` [1]. In **rare** cases, these types may have overlapping values
+but lack a subtyping relationship. If that happens, you can cast one side to the union of both types to pass the flow
+check.  [invalid-compare]
+
+   test.js:101:5
+   101|     case 3: // error
+            ^^^^^^
+
+References:
+   test.js:96:11
+    96|   switch (o.type) {
+                  ^^^^^^ [1]
+   test.js:101:10
+   101|     case 3: // error
+                 ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:108:7
+
+Cannot compare `s` [1] to string literal `a` [2], because `String` [3] is not a subtype of string literal `a` [2] and
+string literal `a` [2] is not a subtype of `String` [3]. In **rare** cases, these types may have overlapping values but
+lack a subtyping relationship. If that happens, you can cast one side to the union of both types to pass the flow check.
+ [invalid-compare]
+
+   test.js:108:7
+   108|   if (s === "a" || s === "b") {} // error
+              ^^^^^^^^^
+
+References:
+   test.js:107:17
+   107|   declare const s: String;
+                        ^ [1]
+   test.js:108:13
+   108|   if (s === "a" || s === "b") {} // error
+                    ^^^ [2]
+   test.js:107:20
+   107|   declare const s: String;
+                           ^^^^^^ [3]
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:108:20
+
+Cannot compare `s` [1] to string literal `b` [2], because `String` [3] is not a subtype of string literal `b` [2] and
+string literal `b` [2] is not a subtype of `String` [3]. In **rare** cases, these types may have overlapping values but
+lack a subtyping relationship. If that happens, you can cast one side to the union of both types to pass the flow check.
+ [invalid-compare]
+
+   test.js:108:20
+   108|   if (s === "a" || s === "b") {} // error
+                           ^^^^^^^^^
+
+References:
+   test.js:107:17
+   107|   declare const s: String;
+                        ^ [1]
+   test.js:108:26
+   108|   if (s === "a" || s === "b") {} // error
+                                 ^^^ [2]
+   test.js:107:20
+   107|   declare const s: String;
+                           ^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:109:7
+
+Cannot compare `s` [1] to string literal `a` [2], because `String` [3] is not a subtype of string literal `a` [2] and
+string literal `a` [2] is not a subtype of `String` [3]. In **rare** cases, these types may have overlapping values but
+lack a subtyping relationship. If that happens, you can cast one side to the union of both types to pass the flow check.
+ [invalid-compare]
+
+   test.js:109:7
+   109|   if (s === "a" && s === "b") {} // error
+              ^^^^^^^^^
+
+References:
+   test.js:107:17
+   107|   declare const s: String;
+                        ^ [1]
+   test.js:109:13
+   109|   if (s === "a" && s === "b") {} // error
+                    ^^^ [2]
+   test.js:107:20
+   107|   declare const s: String;
+                           ^^^^^^ [3]
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:109:20
+
+Cannot compare `s` [1] to string literal `b` [2], because `s` [1] is empty.  [invalid-compare]
+
+   test.js:109:20
+   109|   if (s === "a" && s === "b") {} // error
+                           ^^^^^^^^^
+
+References:
+   test.js:109:20
+   109|   if (s === "a" && s === "b") {} // error
+                           ^ [1]
+   test.js:109:26
+   109|   if (s === "a" && s === "b") {} // error
+                                 ^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:114:7
+
+Cannot compare `st` [1] to number literal `1` [2], because string [3] is not a subtype of number literal `1` [2] and
+number literal `1` [2] is not a subtype of string [3]. In **rare** cases, these types may have overlapping values but
+lack a subtyping relationship. If that happens, you can cast one side to the union of both types to pass the flow check.
+ [invalid-compare]
+
+   test.js:114:7
+   114|   if (st === 1 || st === 2) {} // error
+              ^^^^^^^^
+
+References:
+   test.js:113:15
+   113|   declare var st: string;
+                      ^^ [1]
+   test.js:114:14
+   114|   if (st === 1 || st === 2) {} // error
+                     ^ [2]
+   test.js:113:19
+   113|   declare var st: string;
+                          ^^^^^^ [3]
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:114:19
+
+Cannot compare `st` [1] to number literal `2` [2], because string [3] is not a subtype of number literal `2` [2] and
+number literal `2` [2] is not a subtype of string [3]. In **rare** cases, these types may have overlapping values but
+lack a subtyping relationship. If that happens, you can cast one side to the union of both types to pass the flow check.
+ [invalid-compare]
+
+   test.js:114:19
+   114|   if (st === 1 || st === 2) {} // error
+                          ^^^^^^^^
+
+References:
+   test.js:113:15
+   113|   declare var st: string;
+                      ^^ [1]
+   test.js:114:26
+   114|   if (st === 1 || st === 2) {} // error
+                                 ^ [2]
+   test.js:113:19
+   113|   declare var st: string;
+                          ^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:115:7
+
+Cannot compare `st` [1] to number literal `1` [2], because string [3] is not a subtype of number literal `1` [2] and
+number literal `1` [2] is not a subtype of string [3]. In **rare** cases, these types may have overlapping values but
+lack a subtyping relationship. If that happens, you can cast one side to the union of both types to pass the flow check.
+ [invalid-compare]
+
+   test.js:115:7
+   115|   if (st === 1 && st === 2) {} // error
+              ^^^^^^^^
+
+References:
+   test.js:113:15
+   113|   declare var st: string;
+                      ^^ [1]
+   test.js:115:14
+   115|   if (st === 1 && st === 2) {} // error
+                     ^ [2]
+   test.js:113:19
+   113|   declare var st: string;
+                          ^^^^^^ [3]
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:115:19
+
+Cannot compare `st` [1] to number literal `2` [2], because `st` [1] is empty.  [invalid-compare]
+
+   test.js:115:19
+   115|   if (st === 1 && st === 2) {} // error
+                          ^^^^^^^^
+
+References:
+   test.js:115:19
+   115|   if (st === 1 && st === 2) {} // error
+                          ^^ [1]
+   test.js:115:26
+   115|   if (st === 1 && st === 2) {} // error
+                                 ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:121:7
+
+Cannot compare `obj.field` [1] to number literal `1` [2], because string [3] is not a subtype of number literal `1` [2]
+and number literal `1` [2] is not a subtype of string [3]. In **rare** cases, these types may have overlapping values
+but lack a subtyping relationship. If that happens, you can cast one side to the union of both types to pass the flow
+check.  [invalid-compare]
+
+   test.js:121:7
+   121|   if (obj.field === 1 || obj.field === 2) {} // error
+              ^^^^^^^^^^^^^^^
+
+References:
+   test.js:121:7
+   121|   if (obj.field === 1 || obj.field === 2) {} // error
+              ^^^^^^^^^ [1]
+   test.js:121:21
+   121|   if (obj.field === 1 || obj.field === 2) {} // error
+                            ^ [2]
+   test.js:119:24
+   119|   type Obj = { field : string };
+                               ^^^^^^ [3]
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:121:26
+
+Cannot compare property `field` [1] to number literal `2` [2], because string [3] is not a subtype of number literal
+`2` [2] and number literal `2` [2] is not a subtype of string [3]. In **rare** cases, these types may have overlapping
+values but lack a subtyping relationship. If that happens, you can cast one side to the union of both types to pass the
+flow check.  [invalid-compare]
+
+   test.js:121:26
+   121|   if (obj.field === 1 || obj.field === 2) {} // error
+                                 ^^^^^^^^^^^^^^^
+
+References:
+   test.js:121:7
+   121|   if (obj.field === 1 || obj.field === 2) {} // error
+              ^^^^^^^^^ [1]
+   test.js:121:40
+   121|   if (obj.field === 1 || obj.field === 2) {} // error
+                                               ^ [2]
+   test.js:119:24
+   119|   type Obj = { field : string };
+                               ^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:122:7
+
+Cannot compare `obj.field` [1] to number literal `1` [2], because string [3] is not a subtype of number literal `1` [2]
+and number literal `1` [2] is not a subtype of string [3]. In **rare** cases, these types may have overlapping values
+but lack a subtyping relationship. If that happens, you can cast one side to the union of both types to pass the flow
+check.  [invalid-compare]
+
+   test.js:122:7
+   122|   if (obj.field === 1 && obj.field === 2) {} // error
+              ^^^^^^^^^^^^^^^
+
+References:
+   test.js:122:7
+   122|   if (obj.field === 1 && obj.field === 2) {} // error
+              ^^^^^^^^^ [1]
+   test.js:122:21
+   122|   if (obj.field === 1 && obj.field === 2) {} // error
+                            ^ [2]
+   test.js:119:24
+   119|   type Obj = { field : string };
+                               ^^^^^^ [3]
+
+
+Error --------------------------------------------------------------------------------------------------- test.js:122:26
+
+Cannot compare refined property `field` [1] to number literal `2` [2], because refined property `field` [1] is empty. 
+[invalid-compare]
+
+   test.js:122:26
+   122|   if (obj.field === 1 && obj.field === 2) {} // error
+                                 ^^^^^^^^^^^^^^^
+
+References:
+   test.js:122:26
+   122|   if (obj.field === 1 && obj.field === 2) {} // error
+                                 ^^^^^^^^^ [1]
+   test.js:122:40
+   122|   if (obj.field === 1 && obj.field === 2) {} // error
+                                               ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:132:7
+
+Cannot compare `o.type` [1] to `KeyObj.ERR` [2], because `o.type` [1] is not a subtype of string literal `err` [3] and
+string literal `err` [3] is not a subtype of `o.type` [1]. In **rare** cases, these types may have overlapping values
+but lack a subtyping relationship. If that happens, you can cast one side to the union of both types to pass the flow
+check.  [invalid-compare]
+
+   test.js:132:7
+   132|   if (o.type === KeyObj.ERR) {} // error
+              ^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   test.js:132:7
+   132|   if (o.type === KeyObj.ERR) {} // error
+              ^^^^^^ [1]
+   test.js:132:18
+   132|   if (o.type === KeyObj.ERR) {} // error
+                         ^^^^^^^^^^ [2]
+   test.js:128:10
+   128|   "ERR": 'err',
+                 ^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:133:7
+
+Cannot compare `KeyObj.ERR` [1] to `o.type` [2], because string literal `err` [3] is not a subtype of `o.type` [2] and
+`o.type` [2] is not a subtype of string literal `err` [3]. In **rare** cases, these types may have overlapping values
+but lack a subtyping relationship. If that happens, you can cast one side to the union of both types to pass the flow
+check.  [invalid-compare]
+
+   test.js:133:7
+   133|   if (KeyObj.ERR === o.type) {} // error
+              ^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   test.js:133:7
+   133|   if (KeyObj.ERR === o.type) {} // error
+              ^^^^^^^^^^ [1]
+   test.js:133:22
+   133|   if (KeyObj.ERR === o.type) {} // error
+                             ^^^^^^ [2]
+   test.js:128:10
+   128|   "ERR": 'err',
+                 ^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:140:5
+
+Cannot compare `o.type` [1] to `KeyObj.ERR` [2], because `o.type` [1] is not a subtype of string literal `err` [3] and
+string literal `err` [3] is not a subtype of `o.type` [1]. In **rare** cases, these types may have overlapping values
+but lack a subtyping relationship. If that happens, you can cast one side to the union of both types to pass the flow
+check.  [invalid-compare]
+
+   test.js:140:5
+   140|     case KeyObj.ERR: // error
+            ^^^^^^^^^^^^^^^
+
+References:
+   test.js:137:11
+   137|   switch (o.type) {
+                  ^^^^^^ [1]
+   test.js:140:10
+   140|     case KeyObj.ERR: // error
+                 ^^^^^^^^^^ [2]
+   test.js:128:10
+   128|   "ERR": 'err',
+                 ^^^^^ [3]
+
+
+
+Found 30 errors

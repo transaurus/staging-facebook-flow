@@ -1,0 +1,118 @@
+
+=== Codemod annotate-exports ===
+
+>>> ./cycle1.js
+// @flow
+
+import {f} from './cycle2';
+
+declare export function g(): any;
+
+export default f() as $FlowFixMe; // annotated with $FlowFixMe because f has an annotated $FlowFixMe return
+
+>>> ./cycle2.js
+// @flow strict-local
+
+import {g} from './cycle1';
+
+declare export function f(): $FlowFixMe;
+
+export default g() as $FlowFixMe; // should be annotated with $FlowFixMe
+
+>>> ./other_cycle1.js
+// @flow strict-local
+
+import {f} from './other_cycle2';
+
+declare export function g(): $FlowFixMe;
+
+export default f() as $FlowFixMe; // should be annotated with $FlowFixMe
+
+>>> ./other_cycle2.js
+// @flow
+
+import {g} from './other_cycle1';
+
+declare export function f(): any;
+
+export default g() as $FlowFixMe; // annotated with $FlowFixMe because g has an annotated $FlowFixMe return
+
+>>> Launching report...
+
+Stats:
+  Files changed:                            4
+  Number of annotations added:              4
+  Total size of annotations:                4
+  Number of sig. ver. errors:               4
+  Number of annotations required:           4
+  Number of annotations skipped:            0
+
+Errors:
+  Missing annot./normalizer error:          0
+  Validation Error:                         0
+  Import Error:
+    Loc source none:                        0
+    Indeterminate module type:              0
+    No matching export:                     0
+  Unsupported error kind:                   0
+
+Warnings:
+  Skipping arrow function:                  0
+  Large type added:                         0
+  Location unhandled:                       0
+  Empty NoUpper:                            0
+  Empty SomeKnownUpper:                     0
+
+
+=== Autofix exports ===
+
+>>> ./cycle1.js
+// @flow
+
+import {f} from './cycle2';
+
+declare export function g(): any;
+
+export default f() as $FlowFixMe; // annotated with $FlowFixMe because f has an annotated $FlowFixMe return
+
+>>> ./cycle2.js
+// @flow strict-local
+
+import {g} from './cycle1';
+
+declare export function f(): $FlowFixMe;
+
+export default g() as any; // should be annotated with $FlowFixMe
+
+>>> ./other_cycle1.js
+// @flow strict-local
+
+import {f} from './other_cycle2';
+
+declare export function g(): $FlowFixMe;
+
+export default f() as any; // should be annotated with $FlowFixMe
+
+>>> ./other_cycle2.js
+// @flow
+
+import {g} from './other_cycle1';
+
+declare export function f(): any;
+
+export default g() as $FlowFixMe; // annotated with $FlowFixMe because g has an annotated $FlowFixMe return
+
+
+=== Diff between codemod-ed & autofix-ed ===
+>>> ./cycle2.js
+7c7
+< export default g() as $FlowFixMe; // should be annotated with $FlowFixMe
+---
+> export default g() as any; // should be annotated with $FlowFixMe
+
+>>> ./other_cycle1.js
+7c7
+< export default f() as $FlowFixMe; // should be annotated with $FlowFixMe
+---
+> export default f() as any; // should be annotated with $FlowFixMe
+

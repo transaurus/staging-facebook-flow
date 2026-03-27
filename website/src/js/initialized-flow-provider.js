@@ -1,0 +1,60 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @format
+ */
+
+import {spawn} from 'child_process';
+
+async function checkContents(input /*: string */) {
+  const flowProcess = spawn(process.env.FLOW_BIN_PATH || 'flow', [
+    'check-contents',
+    '--json',
+    '--flowconfig-name',
+    '.flowconfig.snippets',
+  ]);
+  flowProcess.stdin.end(input, 'utf8');
+  let json = '';
+  for await (const data of flowProcess.stdout) {
+    json += data.toString();
+  }
+  return JSON.parse(json);
+}
+
+export default async function getFlowErrors(
+  code /*: string */,
+) /*: Promise<string> */ {
+  if (process.env.NO_INLINE_FLOW_ERRORS) {
+    return '[]';
+  }
+  return JSON.stringify(
+    (await checkContents(code)).errors.map(({message, error_codes}) => {
+      const errorCode = (error_codes && error_codes[0]) || null;
+      let fullDescription = message.map(({descr}) => descr).join(' ');
+
+      // Strip error code tag from description text — Flow includes it inline
+      // but we display it separately as a badge
+      if (errorCode) {
+        fullDescription = fullDescription
+          .replace(`. [${errorCode}]`, '.')
+          .replace(`[${errorCode}] `, '')
+          .replace(`[${errorCode}]`, '');
+      }
+
+      return {
+        messages: message.map(({loc, descr}) => ({
+          startLine: loc.start.line,
+          startColumn: loc.start.column,
+          endLine: loc.end.line,
+          endColumn: loc.end.column,
+          description: descr,
+        })),
+        fullDescription,
+        errorCode,
+      };
+    }),
+  );
+}

@@ -1,0 +1,17 @@
+Error ----------------------------------------------------------------------------------------------------- main.js:2:16
+
+Cannot assign object literal to `o1` because property `f` is missing in object literal [1] but exists in object
+literal [2]. [incompatible-type]
+
+   main.js:2:16
+   2| const o1: T1 = {}; // error
+                     ^^ [1]
+
+References:
+   main.js:2:11
+   2| const o1: T1 = {}; // error
+                ^^ [2]
+
+
+
+Found 1 error

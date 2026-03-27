@@ -1,0 +1,86 @@
+Error ------------------------------------------------------------------------------------------------------ test.js:4:5
+
+Cannot call `foo` because no arguments are expected by function [1]. [extra-arg]
+
+   test.js:4:5
+   4| foo(1, 2); // error
+          ^
+
+References:
+   test.js:1:1
+   1| function foo() {}
+      ^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------------ test.js:6:3
+
+Cannot call `foo` because no arguments are expected by function [1]. [extra-arg]
+
+   test.js:6:3
+   6|   1, // error
+        ^
+
+References:
+   test.js:1:1
+   1| function foo() {}
+      ^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------------ test.js:9:1
+
+Cannot call `foo` because no arguments are expected by function [1]. [extra-arg]
+
+   test.js:9:1
+   9| foo(...args); // error
+      ^^^
+
+References:
+   test.js:1:1
+   1| function foo() {}
+      ^^^^^^^^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:18:16
+
+Cannot call `foo.bind` because no arguments are expected by function [1]. [extra-arg]
+
+   test.js:18:16
+   18| foo.bind(null, 1, 2); // error
+                      ^
+
+References:
+   test.js:1:1
+    1| function foo() {}
+       ^^^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:19:5
+
+Cannot call `foo.bind` because no arguments are expected by function [1]. [extra-arg]
+
+   test.js:19:5
+   19| foo.bind(null, ...args); // error
+           ^^^^
+
+References:
+   test.js:1:1
+    1| function foo() {}
+       ^^^^^^^^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:20:16
+
+Cannot call `foo.bind` because no arguments are expected by function [1]. [extra-arg]
+
+   test.js:20:16
+   20| foo.bind(null, 1, 2, ...args); // error
+                      ^
+
+References:
+   test.js:1:1
+    1| function foo() {}
+       ^^^^^^^^^^^^^^ [1]
+
+
+
+Found 6 errors

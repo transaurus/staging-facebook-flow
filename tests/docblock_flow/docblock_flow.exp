@@ -1,0 +1,69 @@
+Error ---------------------------------------------------------------------------------------- invalid_flow_mode.js:2:10
+
+`@flow local` is not a valid `@flow` mode. Valid ones are: `@flow`, `@flow strict`, and `@flow strict-local`.
+[invalid-flow-mode]
+
+   2|  * @flow local
+               ^^^^^
+
+
+Error ----------------------------------------------------------------------------------------- license_with_flow.js:4:1
+
+Cannot cast empty string to undefined because string [1] is incompatible with undefined [2]. [incompatible-type]
+
+   license_with_flow.js:4:1
+   4| '' as void; // error
+      ^^ [1]
+
+References:
+   license_with_flow.js:4:7
+   4| '' as void; // error
+            ^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ multiple_flows_1.js:2:4
+
+Unexpected `@flow` declaration. Only one per file is allowed. [duplicate-flow-decl]
+
+   2| /* @flow */
+         ^^^^^
+
+
+Error ------------------------------------------------------------------------------------------ multiple_flows_2.js:3:4
+
+Unexpected `@flow` declaration. Only one per file is allowed. [duplicate-flow-decl]
+
+   3|  * @noflow
+         ^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------- use_strict_with_flow.js:4:1
+
+Cannot cast empty string to undefined because string [1] is incompatible with undefined [2]. [incompatible-type]
+
+   use_strict_with_flow.js:4:1
+   4| '' as void; // error
+      ^^ [1]
+
+References:
+   use_strict_with_flow.js:4:7
+   4| '' as void; // error
+            ^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- with_flow.js:3:1
+
+Cannot cast empty string to undefined because string [1] is incompatible with undefined [2]. [incompatible-type]
+
+   with_flow.js:3:1
+   3| '' as void; // error
+      ^^ [1]
+
+References:
+   with_flow.js:3:7
+   3| '' as void; // error
+            ^^^^ [2]
+
+
+
+Found 6 errors

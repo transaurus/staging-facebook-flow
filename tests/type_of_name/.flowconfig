@@ -1,0 +1,14 @@
+[ignore]
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+all=true
+component_syntax=true
+enums=true
+
+[strict]

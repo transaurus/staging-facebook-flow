@@ -1,0 +1,1070 @@
+Error ---------------------------------------------------------------------------------- declaration-invalid-name.js:1:8
+
+Invalid record name `clas`. Record names cannot start with lowercase 'a' through 'z'. [record-invalid-name]
+
+   1| record clas {} // ERROR
+             ^^^^
+
+
+Error ---------------------------------------------------------------------------------- declaration-invalid-name.js:3:8
+
+Invalid record name `struct`. Record names cannot start with lowercase 'a' through 'z'. [record-invalid-name]
+
+   3| record struct {} // ERROR
+             ^^^^^^
+
+
+Error ----------------------------------------------------------------------------------------------- declaration.js:8:5
+
+Cannot get `x.xxx` because property `xxx` is missing in `R` [1]. [prop-missing]
+
+   declaration.js:8:5
+   8|   x.xxx; // ERROR: property not found
+          ^^^
+
+References:
+   declaration.js:5:20
+   5|   declare const x: R;
+                         ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- declaration.js:20:3
+
+Cannot cast `x.a` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   declaration.js:20:3
+   20|   x.a as empty; // ERROR: `number`
+         ^^^
+
+References:
+   declaration.js:14:8
+   14|     a: number,
+              ^^^^^^ [1]
+   declaration.js:20:10
+   20|   x.a as empty; // ERROR: `number`
+                ^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- declaration.js:36:5
+
+Cannot get `x.xxx` because property `xxx` is missing in `R` [1]. [prop-missing]
+
+   declaration.js:36:5
+   36|   x.xxx; // ERROR: property not found
+           ^^^
+
+References:
+   declaration.js:31:20
+   31|   declare const x: R;
+                          ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- declaration.js:47:5
+
+Cannot assign `1` to `x.a` because property `a` is not writable. [cannot-write]
+
+   47|   x.a = 1; // ERROR: not writable
+           ^
+
+
+Error --------------------------------------------------------------------------------------------- declaration.js:133:5
+
+Cannot assign function to `R.random` because property `random` is not writable. [cannot-write]
+
+   133|   R.random = () => x; // ERROR: method not writable
+            ^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------- declaration.js:143:3
+
+Cannot cast `R.zero` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   declaration.js:143:3
+   143|   R.zero as empty; // ERROR: `number`
+          ^^^^^^
+
+References:
+   declaration.js:139:18
+   139|     static zero: number = 0,
+                         ^^^^^^ [1]
+   declaration.js:143:13
+   143|   R.zero as empty; // ERROR: `number`
+                    ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- declaration.js:144:5
+
+Cannot assign `1` to `R.zero` because property `zero` is not writable. [cannot-write]
+
+   144|   R.zero = 1; // ERROR: static not writable
+            ^^^^
+
+
+Error --------------------------------------------------------------------------------------------- declaration.js:171:7
+
+Cannot compare `x` [1] to number literal `1` [2], because `R` [3] is not a subtype of number literal `1` [2] and number
+literal `1` [2] is not a subtype of `R` [3]. In **rare** cases, these types may have overlapping values but lack a
+subtyping relationship. If that happens, you can cast one side to the union of both types to pass the flow check. 
+[invalid-compare]
+
+   declaration.js:171:7
+   171|   if (x === 1) {} // ERROR
+              ^^^^^^^
+
+References:
+   declaration.js:168:17
+   168|   declare const x: R;
+                        ^ [1]
+   declaration.js:171:13
+   171|   if (x === 1) {} // ERROR
+                    ^ [2]
+   declaration.js:168:20
+   168|   declare const x: R;
+                           ^ [3]
+
+
+Error --------------------------------------------------------------------------------------------- declaration.js:201:3
+
+Cannot cast `x` to `E` because property `xxx` is missing in `R` [1] but exists in `E` [2]. [incompatible-type]
+
+   declaration.js:201:3
+   201|   x as E; // ERROR
+          ^
+
+References:
+   declaration.js:189:20
+   189|   declare const x: R;
+                           ^ [1]
+   declaration.js:201:8
+   201|   x as E; // ERROR
+               ^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- declaration.js:212:3
+
+Cannot cast `x` to object type because `R` [1] is not a subtype of object type [2]. Records are not subtypes of object
+types; consider rewriting object type [2] as an interface. [class-object-subtyping]
+
+   declaration.js:212:3
+   212|   x as {+a: number}; // ERROR
+          ^
+
+References:
+   declaration.js:210:20
+   210|   declare const x: R;
+                           ^ [1]
+   declaration.js:212:8
+   212|   x as {+a: number}; // ERROR
+               ^^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- declaration.js:213:3
+
+Cannot cast `x` to object type because `R` [1] is not a subtype of object type [2]. Records are not subtypes of object
+types; consider rewriting object type [2] as an interface. [class-object-subtyping]
+
+   declaration.js:213:3
+   213|   x as {+a: number, ...}; // ERROR
+          ^
+
+References:
+   declaration.js:210:20
+   210|   declare const x: R;
+                           ^ [1]
+   declaration.js:213:8
+   213|   x as {+a: number, ...}; // ERROR
+               ^^^^^^^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- declaration.js:309:3
+
+Cannot reassign record binding `R` [1]. [cannot-reassign]
+
+   declaration.js:309:3
+   309|   R = null; // ERROR: cannot reassign
+          ^
+
+References:
+   declaration.js:297:10
+   297|   record R {
+                 ^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- declaration.js:366:22
+
+Cannot instantiate `R` because in type argument `T`: [incompatible-type]
+ - Either boolean [1] is incompatible with number [2].
+ - Or boolean [1] is incompatible with string [3].
+
+   declaration.js:366:22
+   366|   declare const z: R<boolean>; // ERROR
+                             ^^^^^^^ [1]
+
+References:
+   declaration.js:360:15
+   360|   record R<T: number | string> {
+                      ^^^^^^ [2]
+   declaration.js:360:24
+   360|   record R<T: number | string> {
+                               ^^^^^^ [3]
+
+
+Error --------------------------------------------------------------------------------------------- declaration.js:396:9
+
+Cannot extend `R` [1] with `C` because `R` [1] is not inheritable. [incompatible-use]
+
+   declaration.js:396:9
+   396|   class C extends R { // ERROR
+                ^
+
+References:
+   declaration.js:396:19
+   396|   class C extends R { // ERROR
+                          ^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- declaration.js:399:22
+
+Cannot implement `R` because it is not an interface. [cannot-implement]
+
+   399|   class D implements R { // ERROR
+                             ^
+
+
+Error -------------------------------------------------------------------------------------------- declaration.js:411:29
+
+Operation `Readonly` [1] is not allowed on record `R` [2]. To fix, turn the record type into an object type first using
+`{...MyRecord}`, for example: `TypeUtil<{...MyRecord}>`. [record-banned-type-util]
+
+   declaration.js:411:29
+   411|   type ReadonlyR = Readonly<R>; // ERROR
+                                    ^ [2]
+
+References:
+   declaration.js:411:20
+   411|   type ReadonlyR = Readonly<R>; // ERROR
+                           ^^^^^^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- declaration.js:412:27
+
+Operation partial `R` [1] is not allowed on record `R` [1]. To fix, turn the record type into an object type first using
+`{...MyRecord}`, for example: `TypeUtil<{...MyRecord}>`. [record-banned-type-util]
+
+   412|   type PartialR = Partial<R>; // ERROR
+                                  ^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- declaration.js:413:29
+
+Operation required of `R` [1] is not allowed on record `R` [1]. To fix, turn the record type into an object type first
+using `{...MyRecord}`, for example: `TypeUtil<{...MyRecord}>`. [record-banned-type-util]
+
+   413|   type RequiredR = Required<R>; // ERROR
+                                    ^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- declaration.js:414:21
+
+Operation `Pick` [1] is not allowed on record `R` [2]. To fix, turn the record type into an object type first using
+`{...MyRecord}`, for example: `TypeUtil<{...MyRecord}>`. [record-banned-type-util]
+
+   declaration.js:414:21
+    414|   type PickR = Pick<R, 'a'>; // ERROR
+                             ^ [2]
+
+References:
+   <BUILTINS>/core.js:3183:47
+   3183| type Pick<O: interface {}, Keys: $Keys<O>> = {[key in Keys]: O[key]};
+                                                       ^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- declaration.js:416:21
+
+Operation `Omit` [1] is not allowed on record `R` [2]. To fix, turn the record type into an object type first using
+`{...MyRecord}`, for example: `TypeUtil<{...MyRecord}>`. [record-banned-type-util]
+
+   declaration.js:416:21
+    416|   type OmitR = Omit<R, 'a'>; // ERROR
+                             ^ [2]
+
+References:
+   <BUILTINS>/core.js:3188:36
+   3188| type Omit<O: interface {}, Keys> = $Omit<O, Keys>;
+                                            ^^^^^^^^^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- declaration.js:418:24
+
+Operation `$Exact` [1] is not allowed on record `R` [2]. To fix, turn the record type into an object type first using
+`{...MyRecord}`, for example: `TypeUtil<{...MyRecord}>`. [record-banned-type-util]
+
+   declaration.js:418:24
+   418|   type ExactR = $Exact<R>; // ERROR
+                               ^ [2]
+
+References:
+   declaration.js:418:17
+   418|   type ExactR = $Exact<R>; // ERROR
+                        ^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------- declaration.js:421:7
+
+Cannot call `fun` with `x` bound to `x` because `R` [1] is not a subtype of `Omit` [2]. Records are not subtypes of
+object types; consider rewriting `Omit` [2] as an interface. [class-object-subtyping]
+
+   declaration.js:421:7
+   421|   fun(x); // ERROR
+              ^
+
+References:
+   declaration.js:409:20
+   409|   declare const x: R;
+                           ^ [1]
+   declaration.js:420:30
+   420|   declare function fun<T>(x: Omit<T, 'a'>): T;
+                                     ^^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- declaration.js:435:4
+
+Cannot cast object literal to `OmitObjR` because property `a` is extra in object literal [1] but missing in `Omit` [2].
+Exact objects do not accept extra props. [incompatible-type]
+
+   declaration.js:435:4
+   435|   ({a: 1, b: 's'}) as OmitObjR; // ERROR: property `a` is extra
+           ^^^^^^^^^^^^^^ [1]
+
+References:
+   declaration.js:435:23
+   435|   ({a: 1, b: 's'}) as OmitObjR; // ERROR: property `a` is extra
+                              ^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- declaration.js:467:9
+
+Cannot call `R` with `oB` bound to the first parameter because property `a` is missing in object literal [1] but exists
+in record `R` [2]. [incompatible-type]
+
+   declaration.js:467:9
+   467|   new R(oB); // ERROR: missing `a`
+                ^^
+
+References:
+   declaration.js:463:14
+   463|   const oB = {b: 's'};
+                     ^^^^^^^^ [1]
+   declaration.js:457:10
+   457|   record R {
+                 ^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- declaration.js:468:9
+
+Cannot call `R` with `oEmpty` bound to the first parameter because properties `a` and `b` are missing in object
+literal [1] but exist in record `R` [2]. [incompatible-type]
+
+   declaration.js:468:9
+   468|   new R(oEmpty); // ERROR: missing `a` and `b`
+                ^^^^^^
+
+References:
+   declaration.js:462:18
+   462|   const oEmpty = {};
+                         ^^ [1]
+   declaration.js:457:10
+   457|   record R {
+                 ^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- declaration.js:480:9
+
+Cannot call `R` with `oExtra` bound to the first parameter because property `xxx` is extra in object literal [1] but
+missing in record `R` [2]. Records do not accept extra props. [incompatible-type]
+
+   declaration.js:480:9
+   480|   new R(oExtra); // ERROR
+                ^^^^^^
+
+References:
+   declaration.js:479:18
+   479|   const oExtra = {a: 1, b: 's', xxx: false};
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   declaration.js:457:10
+   457|   record R {
+                 ^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- declaration.js:481:12
+
+Cannot call `ROpt` with `oExtra` bound to the first parameter because property `xxx` is extra in object literal [1] but
+missing in record `ROpt` [2]. Records do not accept extra props. [incompatible-type]
+
+   declaration.js:481:12
+   481|   new ROpt(oExtra); // ERROR
+                   ^^^^^^
+
+References:
+   declaration.js:479:18
+   479|   const oExtra = {a: 1, b: 's', xxx: false};
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   declaration.js:470:10
+   470|   record ROpt {
+                 ^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- declaration.js:488:5
+
+`a` has already been declared in this record. Record property names must be unique. [duplicate-class-member]
+
+   488|     a: number, // ERROR
+            ^
+
+
+Error --------------------------------------------------------------------------------------------- declaration.js:494:5
+
+`10` has already been declared in this record. Record property names must be unique. [duplicate-class-member]
+
+   494|     10: number, // ERROR
+            ^^
+
+
+Error --------------------------------------------------------------------------------------------- declaration.js:495:5
+
+`10` has already been declared in this record. Record property names must be unique. [duplicate-class-member]
+
+   495|     10n: number, // ERROR
+            ^^^
+
+
+Error -------------------------------------------------------------------------------------------- declaration.js:502:17
+
+Cannot initialize property `a` with `true` because boolean [1] is incompatible with number [2]. [incompatible-type]
+
+   declaration.js:502:17
+   502|     a: number = true, // ERROR
+                        ^^^^ [1]
+
+References:
+   declaration.js:502:8
+   502|     a: number = true, // ERROR
+               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- exported.js:5:34
+
+Operation `Readonly` [1] is not allowed on record `R` [2]. To fix, turn the record type into an object type first using
+`{...MyRecord}`, for example: `TypeUtil<{...MyRecord}>`. [record-banned-type-util]
+
+   exported.js:5:34
+   5| export type ReadonlyR = Readonly<R>; // ERROR
+                                       ^ [2]
+
+References:
+   exported.js:5:25
+   5| export type ReadonlyR = Readonly<R>; // ERROR
+                              ^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ expression.js:7:5
+
+Cannot create record `R` because property `xxx` is extra in record properties [1] but missing in record `R` [2]. Records
+do not accept extra props. [incompatible-type]
+
+   expression.js:7:5
+   7|   R {xxx: 0}; // ERROR: extra field `xxx`
+          ^^^^^^^^ [1]
+
+References:
+   expression.js:3:10
+   3|   record R {}
+               ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- expression.js:33:15
+
+Cannot create record `R` because in property `b`: null [1] is incompatible with boolean [2]. [incompatible-type]
+
+   expression.js:33:15
+   33|   R {a: 1, b: null}; // ERROR
+                     ^^^^ [1]
+
+References:
+   expression.js:26:8
+   26|     b: boolean = false,
+              ^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- expression.js:43:5
+
+Cannot create record `R` because property `b` is missing in record properties [1] but exists in record `R` [2].
+[incompatible-type]
+
+   expression.js:43:5
+   43|   R {a: 1}; // ERROR: missing `b`
+           ^^^^^^ [1]
+
+References:
+   expression.js:38:10
+   38|   record R {
+                ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- expression.js:44:5
+
+Cannot create record `R` because property `a` is missing in record properties [1] but exists in record `R` [2].
+[incompatible-type]
+
+   expression.js:44:5
+   44|   R {b: 's'}; // ERROR: missing `a`
+           ^^^^^^^^ [1]
+
+References:
+   expression.js:38:10
+   38|   record R {
+                ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- expression.js:45:5
+
+Cannot create record `R` because properties `a` and `b` are missing in record properties [1] but exist in record
+`R` [2]. [incompatible-type]
+
+   expression.js:45:5
+   45|   R {}; // ERROR: missing `a` and `b`
+           ^^ [1]
+
+References:
+   expression.js:38:10
+   38|   record R {
+                ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- expression.js:54:5
+
+Cannot create record `R` because property `b` is extra in record properties [1] but missing in record `R` [2]. Records
+do not accept extra props. [incompatible-type]
+
+   expression.js:54:5
+   54|   R {a: 1, b: 's'}; // ERROR: extra field `b`
+           ^^^^^^^^^^^^^^ [1]
+
+References:
+   expression.js:50:10
+   50|   record R {
+                ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- expression.js:64:9
+
+Cannot create record `R` because in property `a`: string [1] is incompatible with number [2]. [incompatible-type]
+
+   expression.js:64:9
+   64|   R {a: 's', b: 1}; // ERROR: wrong type for `a` and `b`
+               ^^^ [1]
+
+References:
+   expression.js:60:8
+   60|     a: number,
+              ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- expression.js:64:17
+
+Cannot create record `R` because in property `b`: number [1] is incompatible with string [2]. [incompatible-type]
+
+   expression.js:64:17
+   64|   R {a: 's', b: 1}; // ERROR: wrong type for `a` and `b`
+                       ^ [1]
+
+References:
+   expression.js:61:8
+   61|     b: string,
+              ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- expression.js:65:9
+
+Cannot create record `R` because in property `a`: null [1] is incompatible with number [2]. [incompatible-type]
+
+   expression.js:65:9
+   65|   R {a: null, b: 's'}; // ERROR: wrong type for `a`
+               ^^^^ [1]
+
+References:
+   expression.js:60:8
+   60|     a: number,
+              ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- imported.js:13:3
+
+Cannot cast `x` to empty because `RNamed` [1] is incompatible with empty [2]. [incompatible-type]
+
+   imported.js:13:3
+   13|   x as empty; // ERROR
+         ^
+
+References:
+   imported.js:11:13
+   11|   const x = RNamed {a: 1}; // OK
+                   ^^^^^^ [1]
+   imported.js:13:8
+   13|   x as empty; // ERROR
+              ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ imported.js:16:10
+
+Cannot create record `RNamed` because property `a` is missing in record properties [1] but exists in record
+`RNamed` [2]. [incompatible-type]
+
+   imported.js:16:10
+   16|   RNamed {}; // ERROR
+                ^^ [1]
+
+References:
+   exported.js:7:15
+    7| export record RNamed {
+                     ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ imported.js:17:10
+
+Cannot create record `RNamed` because property `xxx` is extra in record properties [1] but missing in record
+`RNamed` [2]. Records do not accept extra props. [incompatible-type]
+
+   imported.js:17:10
+   17|   RNamed {a: 1, b: 's', xxx: true}; // ERROR
+                ^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   exported.js:7:15
+    7| export record RNamed {
+                     ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ imported.js:18:14
+
+Cannot create record `RNamed` because in property `a`: boolean [1] is incompatible with number [2]. [incompatible-type]
+
+   imported.js:18:14
+   18|   RNamed {a: false}; // ERROR
+                    ^^^^^ [1]
+
+References:
+   exported.js:8:6
+    8|   a: number,
+            ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- imported.js:25:3
+
+Cannot cast `x` to empty because `RDefault` [1] is incompatible with empty [2]. [incompatible-type]
+
+   imported.js:25:3
+   25|   x as empty; // ERROR
+         ^
+
+References:
+   imported.js:23:13
+   23|   const x = RDefault {a: 1}; // OK
+                   ^^^^^^^^ [1]
+   imported.js:25:8
+   25|   x as empty; // ERROR
+              ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ imported.js:28:12
+
+Cannot create record `RDefault` because property `a` is missing in record properties [1] but exists in record
+`RDefault` [2]. [incompatible-type]
+
+   imported.js:28:12
+   28|   RDefault {}; // ERROR
+                  ^^ [1]
+
+References:
+   exported-default.js:1:23
+    1| export default record RDefault {
+                             ^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ imported.js:29:12
+
+Cannot create record `RDefault` because property `xxx` is extra in record properties [1] but missing in record
+`RDefault` [2]. Records do not accept extra props. [incompatible-type]
+
+   imported.js:29:12
+   29|   RDefault {a: 1, b: 's', xxx: true}; // ERROR
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   exported-default.js:1:23
+    1| export default record RDefault {
+                             ^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ imported.js:30:16
+
+Cannot create record `RDefault` because in property `a`: boolean [1] is incompatible with number [2].
+[incompatible-type]
+
+   imported.js:30:16
+   30|   RDefault {a: false}; // ERROR
+                      ^^^^^ [1]
+
+References:
+   exported-default.js:2:6
+    2|   a: number,
+            ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ imported.js:36:21
+
+Cannot create record `RKeyNames` because in property `foo`: boolean [1] is incompatible with string [2].
+[incompatible-type]
+
+   imported.js:36:21
+   36|   RKeyNames {'foo': false, 42: false}; // ERROR
+                           ^^^^^ [1]
+
+References:
+   exported.js:13:10
+   13|   'foo': string,
+                ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ imported.js:36:32
+
+Cannot create record `RKeyNames` because in property `42`: boolean [1] is incompatible with number [2].
+[incompatible-type]
+
+   imported.js:36:32
+   36|   RKeyNames {'foo': false, 42: false}; // ERROR
+                                      ^^^^^ [1]
+
+References:
+   exported.js:14:7
+   14|   42: number,
+             ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- imported.js:42:3
+
+Cannot cast `o` to `RNamed` because object literal [1] is incompatible with `RNamed` [2]. [incompatible-type]
+
+Fix by adding the record name `RNamed` before the object literal [1], e.g. `RNamed {...}`.
+
+   imported.js:42:3
+   42|   o as RNamed; // ERROR
+         ^
+
+References:
+   imported.js:41:13
+   41|   const o = {a: 1};
+                   ^^^^^^ [1]
+   imported.js:42:8
+   42|   o as RNamed; // ERROR
+              ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------- invalid-declaration-syntax.js:4:14
+
+Record declarations use commas `,` to separate properties. To fix, replace the `;` with `,`. [record-invalid-syntax]
+
+   4|     a: number;
+                   ^
+
+
+Error ------------------------------------------------------------------------------- invalid-declaration-syntax.js:9:25
+
+Record declarations use commas `,` to separate properties. To fix, replace the `;` with `,`. [record-invalid-syntax]
+
+   9|     static a: number = 1;
+                              ^
+
+
+Error ------------------------------------------------------------------------------ invalid-declaration-syntax.js:15:10
+
+Record declarations use commas `,` to separate properties. To fix, replace the `;` with `,`. At [1] [2].
+[record-invalid-syntax]
+
+   invalid-declaration-syntax.js:15:10
+   15|   record R {
+                ^
+
+References:
+   invalid-declaration-syntax.js:16:14
+   16|     a: number;
+                    ^ [1]
+   invalid-declaration-syntax.js:17:27
+   17|     static b: string = 's';
+                                 ^ [2]
+
+
+Error ------------------------------------------------------------------------------- invalid-declaration-syntax.js:24:5
+
+Record declaration properties are read-only by default, so don't allow variance annotations. Remove to fix.
+[record-invalid-syntax]
+
+   24|     +a: number, // ERROR
+           ^
+
+
+Error ------------------------------------------------------------------------------ invalid-declaration-syntax.js:30:10
+
+Record declaration properties are read-only by default, so don't allow variance annotations. Remove to fix. At [1] [2].
+[record-invalid-syntax]
+
+   invalid-declaration-syntax.js:30:10
+   30|   record R {
+                ^
+
+References:
+   invalid-declaration-syntax.js:31:5
+   31|     +a: number, // ERROR
+           ^ [1]
+   invalid-declaration-syntax.js:32:12
+   32|     static +b: string = 's', // ERROR
+                  ^ [2]
+
+
+Error ------------------------------------------------------------------------------- invalid-declaration-syntax.js:39:6
+
+Record declaration properties can't be optional. Instead, you can specify a default value for the property using
+`= <expression>,` after the type annotation. This default value will be used if the property is omitted when creating
+the record. To closely mimic the existing behavior of an optional property, you can change `foo?: T,` to
+`foo: T | void = undefined,`, though there is likely a better default value you could use instead.
+[record-invalid-syntax]
+
+   39|     a?: number, // ERROR
+            ^
+
+
+Error ------------------------------------------------------------------------------ invalid-declaration-syntax.js:45:10
+
+Record declaration properties can't be optional. Instead, you can specify a default value for the property using
+`= <expression>,` after the type annotation. This default value will be used if the property is omitted when creating
+the record. To closely mimic the existing behavior of an optional property, you can change `foo?: T,` to
+`foo: T | void = undefined,`, though there is likely a better default value you could use instead. At [1] [2].
+[record-invalid-syntax]
+
+   invalid-declaration-syntax.js:45:10
+   45|   record R {
+                ^
+
+References:
+   invalid-declaration-syntax.js:46:6
+   46|     a?: number, // ERROR
+            ^ [1]
+   invalid-declaration-syntax.js:47:6
+   47|     b?: string, // ERROR
+            ^ [2]
+
+
+Error ------------------------------------------------------------------------------ invalid-declaration-syntax.js:53:12
+
+Record declarations don't need the `=`, remove it. [record-invalid-syntax]
+
+   53|   record R = {
+                  ^
+
+
+Error ------------------------------------------------------------------------------ invalid-declaration-syntax.js:60:10
+
+Invalid record declaration syntax:
+- Record declarations don't need the `=`, remove it. At  [1].
+- Record declaration properties are read-only by default, so don't allow variance annotations. Remove to fix.
+At [2] [3].
+- Record declaration properties can't be optional. Instead, you can specify a default value for the property using
+`= <expression>,` after the type annotation. This default value will be used if the property is omitted when creating
+the record. To closely mimic the existing behavior of an optional property, you can change `foo?: T,` to
+`foo: T | void = undefined,`, though there is likely a better default value you could use instead. At [4] [5].
+- Record declarations use commas `,` to separate properties. To fix, replace the `;` with `,`. At [6] [7].
+[record-invalid-syntax]
+
+   invalid-declaration-syntax.js:60:10
+   60|   record R = { // ERROR
+                ^
+
+References:
+   invalid-declaration-syntax.js:60:12
+   60|   record R = { // ERROR
+                  ^ [1]
+   invalid-declaration-syntax.js:61:5
+   61|     +a?: number;
+           ^ [2]
+   invalid-declaration-syntax.js:62:5
+   62|     +b?: string;
+           ^ [3]
+   invalid-declaration-syntax.js:61:7
+   61|     +a?: number;
+             ^ [4]
+   invalid-declaration-syntax.js:62:7
+   62|     +b?: string;
+             ^ [5]
+   invalid-declaration-syntax.js:61:16
+   61|     +a?: number;
+                      ^ [6]
+   invalid-declaration-syntax.js:62:16
+   62|     +b?: string;
+                      ^ [7]
+
+
+Error -------------------------------------------------------------------------------------------- invalid-usage.js:7:16
+
+Cannot assign object literal to `x` because object literal [1] is incompatible with `R` [2]. [incompatible-type]
+
+Fix by adding the record name `R` before the object literal [1], e.g. `R {...}`.
+
+   invalid-usage.js:7:16
+   7|   const x: R = {a: 1}; // ERROR: should suggest `R {...}`
+                     ^^^^^^ [1]
+
+References:
+   invalid-usage.js:7:12
+   7|   const x: R = {a: 1}; // ERROR: should suggest `R {...}`
+                 ^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- invalid-usage.js:9:3
+
+Cannot cast `o` to `R` because object literal [1] is incompatible with `R` [2]. [incompatible-type]
+
+Fix by adding the record name `R` before the object literal [1], e.g. `R {...}`.
+
+   invalid-usage.js:9:3
+   9|   o as R; // ERROR: should suggest `R {...}`
+        ^
+
+References:
+   invalid-usage.js:8:13
+   8|   const o = {a: 1};
+                  ^^^^^^ [1]
+   invalid-usage.js:9:8
+   9|   o as R; // ERROR: should suggest `R {...}`
+             ^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- invalid-usage.js:18:3
+
+Use a record expression directly instead of `new` with an object literal. For example: `R {...}`. [record-invalid-new]
+
+   18|   new R({a: 1}); // ERROR: should suggest record expression
+         ^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- invalid-usage.js:25:3
+
+Use a record expression directly instead of `new` with an object literal. For example: `R {...}`. [record-invalid-new]
+
+   25|   new R<number>({a: 1}); // ERROR: should suggest record expression
+         ^^^^^^^^^^^^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------- static-async-names.js:10:3
+
+Cannot cast `x.static` to empty because string [1] is incompatible with empty [2]. [incompatible-type]
+
+   static-async-names.js:10:3
+   10|   x.static as empty; // ERROR: `string`
+         ^^^^^^^^
+
+References:
+   static-async-names.js:4:13
+    4|     static: string,
+                   ^^^^^^ [1]
+   static-async-names.js:10:15
+   10|   x.static as empty; // ERROR: `string`
+                     ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------- static-async-names.js:13:3
+
+Cannot cast `x.async` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   static-async-names.js:13:3
+   13|   x.async as empty; // ERROR: `number`
+         ^^^^^^^
+
+References:
+   static-async-names.js:5:12
+    5|     async: number,
+                  ^^^^^^ [1]
+   static-async-names.js:13:14
+   13|   x.async as empty; // ERROR: `number`
+                    ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------- static-async-names.js:29:3
+
+Cannot cast `x.static()` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   static-async-names.js:29:3
+   29|   x.static() as empty; // ERROR: `number`
+         ^^^^^^^^^^
+
+References:
+   static-async-names.js:19:15
+   19|     static(): number {
+                     ^^^^^^ [1]
+   static-async-names.js:29:17
+   29|   x.static() as empty; // ERROR: `number`
+                       ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------- static-async-names.js:32:3
+
+Cannot cast `x.async()` to empty because string [1] is incompatible with empty [2]. [incompatible-type]
+
+   static-async-names.js:32:3
+   32|   x.async() as empty; // ERROR: `string`
+         ^^^^^^^^^
+
+References:
+   static-async-names.js:22:14
+   22|     async(): string {
+                    ^^^^^^ [1]
+   static-async-names.js:32:16
+   32|   x.async() as empty; // ERROR: `string`
+                      ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------- static-async-names.js:42:3
+
+Cannot cast `R.async` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   static-async-names.js:42:3
+   42|   R.async as empty; // ERROR: `number`
+         ^^^^^^^
+
+References:
+   static-async-names.js:38:19
+   38|     static async: number = 1,
+                         ^^^^^^ [1]
+   static-async-names.js:42:14
+   42|   R.async as empty; // ERROR: `number`
+                    ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------- static-async-names.js:54:3
+
+Cannot cast `R.async()` to empty because boolean [1] is incompatible with empty [2]. [incompatible-type]
+
+   static-async-names.js:54:3
+   54|   R.async() as empty; // ERROR: `boolean`
+         ^^^^^^^^^
+
+References:
+   static-async-names.js:48:21
+   48|     static async(): boolean {
+                           ^^^^^^^ [1]
+   static-async-names.js:54:16
+   54|   R.async() as empty; // ERROR: `boolean`
+                      ^^^^^ [2]
+
+
+
+Found 73 errors

@@ -1,0 +1,330 @@
+Error ----------------------------------------------------------------------------------------------------- class.js:5:2
+
+Cannot cast `C.m` to empty because function [1] is incompatible with empty [2]. [incompatible-type]
+
+   class.js:5:2
+   5| (C.m: empty); //err
+       ^^^
+
+References:
+   class.js:2:3
+   2|   static m() {};
+        ^^^^^^^^^^^^^ [1]
+   class.js:5:7
+   5| (C.m: empty); //err
+            ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- class.js:6:2
+
+Cannot cast `(new C()).m` to empty because function [1] is incompatible with empty [2]. [incompatible-type]
+
+   class.js:6:2
+   6| (new C().m: empty); // err
+       ^^^^^^^^^
+
+References:
+   class.js:3:3
+   3|   m() {};
+        ^^^^^^ [1]
+   class.js:6:13
+   6| (new C().m: empty); // err
+                  ^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- class.js:6:10
+
+Cannot get `(new C()).m` because property `m` [1] cannot be unbound from the context [2] where it was defined.
+[method-unbinding]
+
+   class.js:6:10
+   6| (new C().m: empty); // err
+               ^ [1]
+
+References:
+   class.js:3:3
+   3|   m() {};
+        ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- class_dep.js:2:2
+
+Cannot cast `C.m` to empty because function [1] is incompatible with empty [2]. [incompatible-type]
+
+   class_dep.js:2:2
+   2| (C.m: empty); //err
+       ^^^
+
+References:
+   class.js:2:3
+   2|   static m() {};
+        ^^^^^^^^^^^^^ [1]
+   class_dep.js:2:7
+   2| (C.m: empty); //err
+            ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- class_dep.js:3:2
+
+Cannot cast `(new C()).m` to empty because function [1] is incompatible with empty [2]. [incompatible-type]
+
+   class_dep.js:3:2
+   3| (new C().m: empty); // err
+       ^^^^^^^^^
+
+References:
+   class.js:3:3
+   3|   m() {};
+        ^^^^^^ [1]
+   class_dep.js:3:13
+   3| (new C().m: empty); // err
+                  ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ class_dep.js:3:10
+
+Cannot get `(new C()).m` because property `m` [1] cannot be unbound from the context [2] where it was defined.
+[method-unbinding]
+
+   class_dep.js:3:10
+   3| (new C().m: empty); // err
+               ^ [1]
+
+References:
+   class.js:3:3
+   3|   m() {};
+        ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- declare_class.js:5:2
+
+Cannot cast `C.m` to empty because function type [1] is incompatible with empty [2]. [incompatible-type]
+
+   declare_class.js:5:2
+   5| (C.m: empty); //err
+       ^^^
+
+References:
+   declare_class.js:2:3
+   2|   static m(): void;
+        ^^^^^^^^^^^^^^^^ [1]
+   declare_class.js:5:7
+   5| (C.m: empty); //err
+            ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- declare_class.js:6:2
+
+Cannot cast `(new C()).m` to empty because function type [1] is incompatible with empty [2]. [incompatible-type]
+
+   declare_class.js:6:2
+   6| (new C().m: empty); // err
+       ^^^^^^^^^
+
+References:
+   declare_class.js:3:3
+   3|   m(): void;
+        ^^^^^^^^^ [1]
+   declare_class.js:6:13
+   6| (new C().m: empty); // err
+                  ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- declare_class.js:6:10
+
+Cannot get `(new C()).m` because property `m` [1] cannot be unbound from the context [2] where it was defined.
+[method-unbinding]
+
+   declare_class.js:6:10
+   6| (new C().m: empty); // err
+               ^ [1]
+
+References:
+   declare_class.js:3:3
+   3|   m(): void;
+        ^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- declare_class_dep.js:2:2
+
+Cannot cast `C.m` to empty because function type [1] is incompatible with empty [2]. [incompatible-type]
+
+   declare_class_dep.js:2:2
+   2| (C.m: empty); //err
+       ^^^
+
+References:
+   declare_class.js:2:3
+   2|   static m(): void;
+        ^^^^^^^^^^^^^^^^ [1]
+   declare_class_dep.js:2:7
+   2| (C.m: empty); //err
+            ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- declare_class_dep.js:3:2
+
+Cannot cast `(new C()).m` to empty because function type [1] is incompatible with empty [2]. [incompatible-type]
+
+   declare_class_dep.js:3:2
+   3| (new C().m: empty); // err
+       ^^^^^^^^^
+
+References:
+   declare_class.js:3:3
+   3|   m(): void;
+        ^^^^^^^^^ [1]
+   declare_class_dep.js:3:13
+   3| (new C().m: empty); // err
+                  ^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- declare_class_dep.js:3:10
+
+Cannot get `(new C()).m` because property `m` [1] cannot be unbound from the context [2] where it was defined.
+[method-unbinding]
+
+   declare_class_dep.js:3:10
+   3| (new C().m: empty); // err
+               ^ [1]
+
+References:
+   declare_class.js:3:3
+   3|   m(): void;
+        ^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- interface.js:5:2
+
+Cannot cast `o.m` to empty because function type [1] is incompatible with empty [2]. [incompatible-type]
+
+   interface.js:5:2
+   5| (o.m: empty); // err
+       ^^^
+
+References:
+   interface.js:2:3
+   2|   m(): void,
+        ^^^^^^^^^ [1]
+   interface.js:5:7
+   5| (o.m: empty); // err
+            ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- interface.js:5:4
+
+Cannot get `o.m` because property `m` [1] cannot be unbound from the context [2] where it was defined.
+[method-unbinding]
+
+   interface.js:5:4
+   5| (o.m: empty); // err
+         ^ [1]
+
+References:
+   interface.js:2:3
+   2|   m(): void,
+        ^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- interface_dep.js:2:2
+
+Cannot cast `o.m` to empty because function type [1] is incompatible with empty [2]. [incompatible-type]
+
+   interface_dep.js:2:2
+   2| (o.m: empty); // err
+       ^^^
+
+References:
+   interface.js:2:3
+   2|   m(): void,
+        ^^^^^^^^^ [1]
+   interface_dep.js:2:7
+   2| (o.m: empty); // err
+            ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- interface_dep.js:2:4
+
+Cannot get `o.m` because property `m` [1] cannot be unbound from the context [2] where it was defined.
+[method-unbinding]
+
+   interface_dep.js:2:4
+   2| (o.m: empty); // err
+         ^ [1]
+
+References:
+   interface.js:2:3
+   2|   m(): void,
+        ^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- obj_lit.js:2:2
+
+Cannot cast `o.m` to empty because function [1] is incompatible with empty [2]. [incompatible-type]
+
+   obj_lit.js:2:2
+   2| (o.m: empty); // err
+       ^^^
+
+References:
+   obj_lit.js:1:13
+   1| const o = { m() {} };
+                  ^^^^^^ [1]
+   obj_lit.js:2:7
+   2| (o.m: empty); // err
+            ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- obj_lit_dep.js:2:2
+
+Cannot cast `o.m` to empty because function [1] is incompatible with empty [2]. [incompatible-type]
+
+   obj_lit_dep.js:2:2
+   2| (o.m: empty); // err
+       ^^^
+
+References:
+   obj_lit.js:1:13
+   1| const o = { m() {} };
+                  ^^^^^^ [1]
+   obj_lit_dep.js:2:7
+   2| (o.m: empty); // err
+            ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- obj_type.js:2:2
+
+Cannot cast `o.m` to empty because function type [1] is incompatible with empty [2]. [incompatible-type]
+
+   obj_type.js:2:2
+   2| (o.m: empty); // err
+       ^^^
+
+References:
+   obj_type.js:1:18
+   1| declare var o: { m(): void };
+                       ^^^^^^^^^ [1]
+   obj_type.js:2:7
+   2| (o.m: empty); // err
+            ^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- obj_type_dep.js:2:2
+
+Cannot cast `o.m` to empty because function type [1] is incompatible with empty [2]. [incompatible-type]
+
+   obj_type_dep.js:2:2
+   2| (o.m: empty); // err
+       ^^^
+
+References:
+   obj_type.js:1:18
+   1| declare var o: { m(): void };
+                       ^^^^^^^^^ [1]
+   obj_type_dep.js:2:7
+   2| (o.m: empty); // err
+            ^^^^^ [2]
+
+
+
+Found 20 errors

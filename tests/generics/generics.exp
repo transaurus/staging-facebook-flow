@@ -1,0 +1,156 @@
+Error ---------------------------------------------------------------------------------- detect_literal_subtypes.js:15:9
+
+Cannot compare `a` [1] to string literal `b` [2], because `A` [3] is not a subtype of string literal `b` [2] and string
+literal `b` [2] is not a subtype of `A` [3]. In **rare** cases, these types may have overlapping values but lack a
+subtyping relationship. If that happens, you can cast one side to the union of both types to pass the flow check. 
+[invalid-compare]
+
+   detect_literal_subtypes.js:15:9
+   15|     if (a === 'b'){ } // error 'b' not compatible with 'a'
+               ^^^^^^^^^
+
+References:
+   detect_literal_subtypes.js:14:23
+   14|   function a1<A: 'a'>(a: A): void {
+                             ^ [1]
+   detect_literal_subtypes.js:15:15
+   15|     if (a === 'b'){ } // error 'b' not compatible with 'a'
+                     ^^^ [2]
+   detect_literal_subtypes.js:14:26
+   14|   function a1<A: 'a'>(a: A): void {
+                                ^ [3]
+
+
+Error ---------------------------------------------------------------------------------- detect_literal_subtypes.js:19:9
+
+Cannot compare `b` [1] to string literal `b` [2], because `B` [3] is not a subtype of string literal `b` [2] and string
+literal `b` [2] is not a subtype of `B` [3]. In **rare** cases, these types may have overlapping values but lack a
+subtyping relationship. If that happens, you can cast one side to the union of both types to pass the flow check. 
+[invalid-compare]
+
+   detect_literal_subtypes.js:19:9
+   19|     if (b === 'b'){ } // error 'b' not compatible with 'a'
+               ^^^^^^^^^
+
+References:
+   detect_literal_subtypes.js:18:29
+   18|   function b1<A: 'a', B: A>(b: B): void {
+                                   ^ [1]
+   detect_literal_subtypes.js:19:15
+   19|     if (b === 'b'){ } // error 'b' not compatible with 'a'
+                     ^^^ [2]
+   detect_literal_subtypes.js:18:32
+   18|   function b1<A: 'a', B: A>(b: B): void {
+                                      ^ [3]
+
+
+Error ---------------------------------------------------------------------------------- detect_literal_subtypes.js:37:7
+
+Cannot compare `x` [1] to string literal `r` [2], because `x` [1] is not a subtype of string literal `r` [2] and string
+literal `r` [2] is not a subtype of `x` [1]. In **rare** cases, these types may have overlapping values but lack a
+subtyping relationship. If that happens, you can cast one side to the union of both types to pass the flow check. 
+[invalid-compare]
+
+   detect_literal_subtypes.js:37:7
+   37|       case 'r': // error
+             ^^^^^^^^
+
+References:
+   detect_literal_subtypes.js:31:20
+   31|   function c<X: T>(x: $Keys<X>) {
+                          ^ [1]
+   detect_literal_subtypes.js:37:12
+   37|       case 'r': // error
+                  ^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ generics.js:17:16
+
+Cannot assign `d.x` to `s` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   generics.js:17:16
+   17| var s:string = d.x;
+                      ^^^
+
+References:
+   generics.js:15:15
+   15| var d = new D<number>();
+                     ^^^^^^ [1]
+   generics.js:17:7
+   17| var s:string = d.x;
+             ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ generics.js:25:16
+
+Cannot assign `e.set(...)` to `x` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   generics.js:25:16
+   25| var x:string = e.set(0);
+                      ^^^^^^^^
+
+References:
+   generics.js:24:15
+   24| var e = new E<number | void>(); // error: too few arguments to inherited constructor
+                     ^^^^^^ [1]
+   generics.js:25:7
+   25| var x:string = e.set(0);
+             ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ generics.js:25:16
+
+Cannot assign `e.set(...)` to `x` because undefined [1] is incompatible with string [2]. [incompatible-type]
+
+   generics.js:25:16
+   25| var x:string = e.set(0);
+                      ^^^^^^^^
+
+References:
+   generics.js:24:24
+   24| var e = new E<number | void>(); // error: too few arguments to inherited constructor
+                              ^^^^ [1]
+   generics.js:25:7
+   25| var x:string = e.set(0);
+             ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ generics.js:36:41
+
+Cannot assign `h1` to `h2` because in type argument `X` [1]: string [2] is incompatible with number [3].
+[incompatible-type]
+
+   generics.js:36:41
+   36| var h2:F<Array<Array<Array<number>>>> = h1;
+                                               ^^
+
+References:
+   generics.js:27:9
+   27| class F<X> { }
+               ^ [1]
+   generics.js:34:22
+   34| var h1 = new H<Array<string>>();
+                            ^^^^^^ [2]
+   generics.js:36:28
+   36| var h2:F<Array<Array<Array<number>>>> = h1;
+                                  ^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------ generics.js:38:11
+
+Cannot apply type because it is not a polymorphic type. [nonpolymorphic-type-app]
+
+   38| var obj : Object<string, string> = {} // error, arity 0
+                 ^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------ generics.js:39:11
+
+Cannot apply type because it is not a polymorphic type. [nonpolymorphic-type-app]
+
+   39| var fn1 : Function<string> = function() { return 'foo'; } // error, arity 0
+                 ^^^^^^^^^^^^^^^^
+
+
+
+Found 9 errors

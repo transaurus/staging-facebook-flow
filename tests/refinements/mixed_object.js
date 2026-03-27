@@ -1,0 +1,8 @@
+function bad (x : unknown) {
+  if (typeof x === "object" && x !== null) {
+    x.a = 3;
+  }
+}
+
+let obj : {a : string} = {a : "oops"};
+bad(obj); // yikes

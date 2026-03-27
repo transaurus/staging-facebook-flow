@@ -1,0 +1,18 @@
+// @flow
+
+class C {
+  field: string;
+
+  method() {}
+
+  test() {
+    field;
+//   ^
+
+    method();
+//   ^
+
+    notAMember;
+//   ^
+  }
+}

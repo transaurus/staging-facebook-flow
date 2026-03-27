@@ -1,0 +1,17 @@
+[options]
+all=true
+
+experimental.projects=web
+experimental.projects=native
+experimental.projects_path_mapping='<PROJECT_ROOT>/web' -> 'web'
+experimental.projects_path_mapping='<PROJECT_ROOT>/native' -> 'native'
+experimental.projects_path_mapping='<PROJECT_ROOT>/' -> 'web,native'
+experimental.projects.strict_boundary=true
+
+experimental.multi_platform=true
+experimental.multi_platform.extensions=.ios
+experimental.multi_platform.extensions=.android
+experimental.multi_platform.extensions=.web
+experimental.multi_platform.extension_group_mapping='.native' -> 'ios, android'
+experimental.multi_platform.ambient_supports_platform.project_overrides='web' -> 'web'
+experimental.multi_platform.ambient_supports_platform.project_overrides='native' -> 'ios, android'

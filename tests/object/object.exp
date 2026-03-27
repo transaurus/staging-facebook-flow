@@ -1,0 +1,162 @@
+Error ------------------------------------------------------------------------------------------------------ obj.js:8:39
+
+Cannot call method `defineProperty` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   obj.js:8:39
+   8| Object.defineProperty(y, 'a', {value: "a"});
+                                            ^^^ [1]
+
+References:
+   obj.js:5:21
+   5| declare var y: {|a: number, b: number|};
+                          ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- obj.js:11:47
+
+Cannot call method `defineProperty` because in property `value`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   obj.js:11:47
+   11| Object.defineProperty<number>(y, 'b', {value: "a"})
+                                                     ^^^ [1]
+
+References:
+   obj.js:11:23
+   11| Object.defineProperty<number>(y, 'b', {value: "a"})
+                             ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- obj.js:12:23
+
+Cannot call method `defineProperty` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   obj.js:12:23
+   12| Object.defineProperty<string>(y, 'b', {value: "a"})
+                             ^^^^^^ [1]
+
+References:
+   obj.js:5:32
+    5| declare var y: {|a: number, b: number|};
+                                      ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------------ obj.js:13:1
+
+Cannot call function without exactly 1 type argument. [nonpolymorphic-type-arg]
+
+   13| Object.defineProperty<string, string>(y, 'b', {value: "a"}) //targ arity mismatch
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ----------------------------------------------------------------------------------------------------- obj.js:14:26
+
+Cannot call method `defineProperty` because property `c` is missing in object type [1]. [prop-missing]
+
+   obj.js:14:26
+   14| Object.defineProperty(y, 'c', {value: 42});
+                                ^^^
+
+References:
+   obj.js:5:16
+    5| declare var y: {|a: number, b: number|};
+                      ^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- obj.js:15:26
+
+Cannot call method `defineProperty` because property `c` is missing in object type [1]. [prop-missing]
+
+   obj.js:15:26
+   15| Object.defineProperty(y, 'c', {writable:false});
+                                ^^^
+
+References:
+   obj.js:5:16
+    5| declare var y: {|a: number, b: number|};
+                      ^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- obj.js:17:25
+
+Cannot resolve name `x`. [cannot-resolve-name]
+
+   17| Object.defineProperties(x, {d: {value: 42}, e: {writable:false}, f:{get: () => 42}});
+                               ^
+
+
+Error ------------------------------------------------------------------------------------------------------ obj.js:18:8
+
+Cannot call method `defineProperties` because property `d` is missing in object type [1]. [prop-missing]
+
+   obj.js:18:8
+   18| Object.defineProperties(y, {d: {value: 42}, a: {writable:false}, b:{get: () => "a"}});
+              ^^^^^^^^^^^^^^^^
+
+References:
+   obj.js:5:16
+    5| declare var y: {|a: number, b: number|};
+                      ^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- obj.js:18:80
+
+Cannot call method `defineProperties` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   obj.js:18:80
+   18| Object.defineProperties(y, {d: {value: 42}, a: {writable:false}, b:{get: () => "a"}});
+                                                                                      ^^^ [1]
+
+References:
+   obj.js:5:32
+    5| declare var y: {|a: number, b: number|};
+                                      ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------------ obj.js:19:1
+
+Cannot call non-polymorphic function with type arguments. [nonpolymorphic-type-arg]
+
+   19| Object.defineProperties<number>({}, {}); // targ arity mismatch
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ----------------------------------------------------------------------------------------------------- obj.js:26:45
+
+Cannot get `Object.freeze<...>(...).b` because property `b` is missing in object type [1]. [prop-missing]
+
+   obj.js:26:45
+   26| Object.freeze<{+a: number}>({a: 42, b: 42}).b; // b is hidden
+                                                   ^
+
+References:
+   obj.js:26:15
+   26| Object.freeze<{+a: number}>({a: 42, b: 42}).b; // b is hidden
+                     ^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- obj.js:27:29
+
+Cannot call method `freeze` with object literal bound to `o` because property `c` is missing in frozen object
+literal [1] but exists in object type [2]. [incompatible-type]
+
+   obj.js:27:29
+   27| Object.freeze<{+c: number}>({a: 42, b: 42}); // c does not exist
+                                   ^^^^^^^^^^^^^^ [1]
+
+References:
+   obj.js:27:15
+   27| Object.freeze<{+c: number}>({a: 42, b: 42}); // c does not exist
+                     ^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------------ obj.js:28:1
+
+Cannot call function without exactly 1 type argument. [nonpolymorphic-type-arg]
+
+   28| Object.freeze<number, number>({}); // targ arity misnatch
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+Found 13 errors

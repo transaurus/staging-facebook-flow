@@ -1,0 +1,14 @@
+{
+  "errors": {
+    "0": {
+      "message": "Use of reserved word in strict mode",
+      "lineNumber": undefined,
+      "index": undefined,
+      "column": undefined,
+      "loc": {
+        "start": { "line": 1, "column": 24 },
+        "end": { "line": 1, "column": 33 }
+      }
+    }
+  }
+}

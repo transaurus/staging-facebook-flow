@@ -1,0 +1,291 @@
+Error ------------------------------------------------------------------------------- android_and_common.android.js:1:27
+
+Cannot conform to common interface module because in property `foo`: number [1] is incompatible with string [2].
+[incompatible-type]
+
+Read the docs on Flow's multi-platform support for more information: https://flow.org/en/docs/react/multiplatform.
+
+   android_and_common.android.js:1:27
+   1| declare export const foo: number; // expected conformance error so we can test which one gets imported
+                                ^^^^^^ [1]
+
+References:
+   android_and_common.js:1:27
+   1| declare export const foo: string;
+                                ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------- android_only_use.android.js:2:1
+
+Cannot cast `require(...).foo` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   android_only_use.android.js:2:1
+   2| require('./android_and_common').foo as string; // error: android_and_common.android is actually imported
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   android_and_common.android.js:1:27
+   1| declare export const foo: number; // expected conformance error so we can test which one gets imported
+                                ^^^^^^ [1]
+   android_only_use.android.js:2:40
+   2| require('./android_and_common').foo as string; // error: android_and_common.android is actually imported
+                                             ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------- bad_supports_platform.js:3:4
+
+Invalid `@supportsPlatform` declaration. `random` is not configured in `experimental.multi_platform.extensions` in your
+flow config. [invalid-supports-platform]
+
+   3|  * @supportsPlatform random
+         ^^^^^^^^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------- cjs_conformance_errors.android.js:1:16
+
+Cannot conform to common interface module because in property `default`: exports [1] is incompatible with string [2].
+[incompatible-type]
+
+Read the docs on Flow's multi-platform support for more information: https://flow.org/en/docs/react/multiplatform.
+
+   cjs_conformance_errors.android.js:1:16
+   1| module.exports.foo = 1;
+                     ^^^
+
+References:
+   cjs_conformance_errors.android.js
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   cjs_conformance_errors.js.flow:1:25
+   1| declare module.exports: string;
+                              ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------- cjs_conformance_errors.ios.js:1:18
+
+Cannot conform to common interface module because in property `default`: number [1] is incompatible with string [2].
+[incompatible-type]
+
+Read the docs on Flow's multi-platform support for more information: https://flow.org/en/docs/react/multiplatform.
+
+   cjs_conformance_errors.ios.js:1:18
+   1| module.exports = 1;
+                       ^ [1]
+
+References:
+   cjs_conformance_errors.js.flow:1:25
+   1| declare module.exports: string;
+                              ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------- disallowed_supports_platform.ios.js:2:4
+
+`@supportsPlatform` declaration is disallowed in platform specific files. [invalid-supports-platform]
+
+   2|  * @supportsPlatform ios
+         ^^^^^^^^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------- esm_conformance_errors.android.js:1:16
+
+Cannot conform to common interface module because property `a` is missing in self [1] but exists in common
+interface [2]. [incompatible-type]
+
+Read the docs on Flow's multi-platform support for more information: https://flow.org/en/docs/react/multiplatform.
+
+   esm_conformance_errors.android.js:1:16
+   1| export default 3;
+                     ^
+
+References:
+   esm_conformance_errors.android.js:1:1
+      v----------------
+   1| export default 3;
+   2|
+   3| declare export function foo(): boolean;
+   4| declare export function foo(): number;
+      -------------------------------------^ [1]
+   esm_conformance_errors.js.flow
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------- esm_conformance_errors.android.js:1:16
+
+Cannot conform to common interface module because in property `foo`: [incompatible-type]
+ - Either in the return value: boolean [1] is incompatible with string [2].
+ - Or in the return value: number [3] is incompatible with string [2].
+
+Read the docs on Flow's multi-platform support for more information: https://flow.org/en/docs/react/multiplatform.
+
+   esm_conformance_errors.android.js:1:16
+   1| export default 3;
+                     ^
+
+References:
+   esm_conformance_errors.android.js:3:32
+   3| declare export function foo(): boolean;
+                                     ^^^^^^^ [1]
+   esm_conformance_errors.js.flow:3:32
+   3| declare export function foo(): string;
+                                     ^^^^^^ [2]
+   esm_conformance_errors.android.js:4:32
+   4| declare export function foo(): number;
+                                     ^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------- esm_conformance_errors.ios.js:1:14
+
+Cannot conform to common interface module because in property `foo`: [incompatible-type]
+ - Either in the return value: string [1] is incompatible with number [2].
+ - Or in the return value: boolean [3] is incompatible with number [2].
+
+Read the docs on Flow's multi-platform support for more information: https://flow.org/en/docs/react/multiplatform.
+
+   esm_conformance_errors.ios.js:1:14
+   1| export const a = 3;
+                   ^
+
+References:
+   esm_conformance_errors.ios.js:4:32
+   4| declare export function foo(): string;
+                                     ^^^^^^ [1]
+   esm_conformance_errors.js.flow:4:32
+   4| declare export function foo(): number;
+                                     ^^^^^^ [2]
+   esm_conformance_errors.ios.js:5:32
+   5| declare export function foo(): boolean;
+                                     ^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------- esm_conformance_errors.ios.js:1:18
+
+Cannot conform to common interface module because in property `a`: number [1] is incompatible with string [2].
+[incompatible-type]
+
+Read the docs on Flow's multi-platform support for more information: https://flow.org/en/docs/react/multiplatform.
+
+   esm_conformance_errors.ios.js:1:18
+   1| export const a = 3;
+                       ^ [1]
+
+References:
+   esm_conformance_errors.js.flow:1:25
+   1| declare export const a: string;
+                              ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------- missing_one_impl.js.flow:0:1
+
+Cannot resolve platform-specific implementation module `./missing_one_impl.android`. All platform-specific
+implementations must exist for this interface. Read the docs on Flow's multi-platform support for more information:
+https://flow.org/en/docs/react/multiplatform [cannot-resolve-module]
+
+
+Error ----------------------------------------------------------------------------------------- shadowing.android.js:1:1
+
+Cannot conform to common interface module because property `myValue` is missing in self [1] but exists in common
+interface [2]. [incompatible-type]
+
+Read the docs on Flow's multi-platform support for more information: https://flow.org/en/docs/react/multiplatform.
+
+   shadowing.android.js:1:1
+   1|
+       [1]
+
+References:
+   shadowing.js.flow
+   ^^^^^^^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- shadowing.ios.js:1:1
+
+Cannot conform to common interface module because property `myValue` is missing in self [1] but exists in common
+interface [2]. [incompatible-type]
+
+Read the docs on Flow's multi-platform support for more information: https://flow.org/en/docs/react/multiplatform.
+
+   shadowing.ios.js:1:1
+   1|
+       [1]
+
+References:
+   shadowing.js.flow
+   ^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------ shadowing_cjs.android.cjs:1:1
+
+Cannot conform to common interface module because property `myValue` is missing in self [1] but exists in common
+interface [2]. [incompatible-type]
+
+Read the docs on Flow's multi-platform support for more information: https://flow.org/en/docs/react/multiplatform.
+
+   shadowing_cjs.android.cjs:1:1
+   1|
+       [1]
+
+References:
+   shadowing_cjs.js.flow
+   ^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- shadowing_cjs.ios.cjs:1:1
+
+Cannot conform to common interface module because property `myValue` is missing in self [1] but exists in common
+interface [2]. [incompatible-type]
+
+Read the docs on Flow's multi-platform support for more information: https://flow.org/en/docs/react/multiplatform.
+
+   shadowing_cjs.ios.cjs:1:1
+   1|
+       [1]
+
+References:
+   shadowing_cjs.js.flow
+   ^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------- test_interface_import.js:3:8
+
+The imported module supports the `ios` platform, but the current module requires the support of the following platforms:
+`android`, `ios`. Support for the `android` platform is missing. [missing-platform-support]
+
+   3| import './shadowing.ios'; // ok, platform specific files can still be **explictly** imported
+             ^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------- test_interface_import.js:4:8
+
+The imported module supports the `android` platform, but the current module requires the support of the following
+platforms: `android`, `ios`. Support for the `ios` platform is missing. [missing-platform-support]
+
+   4| import './shadowing.android'; // ok, platform specific files can still be **explictly** imported
+             ^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------- test_interface_import.js:8:2
+
+Cannot cast `o1` to empty because string [1] is incompatible with empty [2]. [incompatible-type]
+
+   test_interface_import.js:8:2
+   8| (o1: empty); // error
+       ^^
+
+References:
+   test_interface_import.js:6:17
+   6| declare var o1: MyType;
+                      ^^^^^^ [1]
+   test_interface_import.js:8:6
+   8| (o1: empty); // error
+           ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------ test_interface_import.js:10:8
+
+Cannot resolve module `./allow_no_interface`. [cannot-resolve-module]
+
+   10| import './allow_no_interface'; // error
+              ^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+Found 19 errors

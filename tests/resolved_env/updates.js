@@ -1,0 +1,48 @@
+// @flow
+
+var x = 42;
+x++;
+++x as empty; // err
+x as empty; // err
+x += 42;
+x as empty; // err
+x -= 42;
+x as empty; // err
+
+{
+  // Changing type
+  let x: boolean = false;
+  let y: boolean = false;
+  let z: ?boolean = false;
+  x &&= 3; // Error: number not assignable to boolean
+  y ||= 3; // Error: number not assignable to boolean
+  z ??= 3; // Error: number not assignable to boolean
+}
+
+{
+  // Nullable refinements
+  class A {}
+
+  declare function expectNullable(x: null): A;
+
+  let x: A | null = null;
+  x ??= x as null;
+}
+
+{
+  declare var invariant: any;
+  // Flow does not understand LHS's nullability/truthiness/falseyness and the statement always throws.
+  class A {}
+  let x: null = null;
+  let y: A = new A();
+
+  function alwaysThrows1(): number {
+    x ??= invariant(false);
+  } // Error
+  function alwaysThrows2(): number {
+    y &&= invariant(false);
+  } // Error
+  function alwaysThrows3(): number {
+    x ||= invariant(false); // constant-condition error
+  } // Error
+}

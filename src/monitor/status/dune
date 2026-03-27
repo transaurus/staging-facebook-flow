@@ -1,0 +1,4 @@
+(library
+ (name flow_server_status)
+ (wrapped false)
+ (libraries flow_parser flow_common build_mode))

@@ -1,0 +1,3647 @@
+Error ------------------------------------------------------------------------------------------------ annotation.js:5:2
+
+Cannot create `Basic` element because property `foo` is extra in props [1] but missing in props of component [2]. Exact
+objects do not accept extra props. [incompatible-type]
+
+   annotation.js:5:2
+   5| <Basic foo={42} /> // error
+       ^^^^^
+
+References:
+   annotation.js:5:1
+   5| <Basic foo={42} /> // error
+      ^^^^^^^^^^^^^^^^^^ [1]
+   annotation.js:3:20
+   3| declare var Basic: component();
+                         ^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- annotation.js:13:39
+
+Cannot create `InlineOnly` element because in property `foo`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   annotation.js:13:39
+   13| const inlineOnlyBad = <InlineOnly foo="" bar={3} />; // Error 2x
+                                             ^^ [1]
+
+References:
+   annotation.js:8:8
+    8|   foo: number,
+              ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- annotation.js:13:47
+
+Cannot create `InlineOnly` element because in property `bar`: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   annotation.js:13:47
+   13| const inlineOnlyBad = <InlineOnly foo="" bar={3} />; // Error 2x
+                                                     ^ [1]
+
+References:
+   annotation.js:9:8
+    9|   bar: string,
+              ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- annotation.js:21:37
+
+Cannot create `InexactRest` element because in property `foo`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   annotation.js:21:37
+   21| const inexactBad = <InexactRest foo="" bar={3} baz={3} />; // ERROR 2x for foo and bar
+                                           ^^ [1]
+
+References:
+   annotation.js:16:8
+   16|   foo: number,
+              ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- annotation.js:21:45
+
+Cannot create `InexactRest` element because in property `bar`: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   annotation.js:21:45
+   21| const inexactBad = <InexactRest foo="" bar={3} baz={3} />; // ERROR 2x for foo and bar
+                                                   ^ [1]
+
+References:
+   annotation.js:17:18
+   17|   ...rest: {bar: string, ...}
+                        ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- annotation.js:29:37
+
+Cannot create `IndexedRest` element because in property `foo`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   annotation.js:29:37
+   29| const indexedBad = <IndexedRest foo="" bar="str" />; // ERROR 2x for foo and bar
+                                           ^^ [1]
+
+References:
+   annotation.js:24:8
+   24|   foo: number,
+              ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- annotation.js:29:44
+
+Cannot create `IndexedRest` element because in property `bar`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   annotation.js:29:44
+   29| const indexedBad = <IndexedRest foo="" bar="str" />; // ERROR 2x for foo and bar
+                                                  ^^^^^ [1]
+
+References:
+   annotation.js:25:23
+   25|   ...rest: {[string]: number, ...}
+                             ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- annotation.js:36:39
+
+Cannot create `DefaultProps` element because in property `foo`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   annotation.js:36:39
+   36| const defaultsBad = <DefaultProps foo="bad" />; // ERROR
+                                             ^^^^^ [1]
+
+References:
+   annotation.js:32:9
+   32|   foo?: number,
+               ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- annotation.js:43:34
+
+Cannot create `OptionalRest` element because in property `foo`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   annotation.js:43:34
+   43| const optBad = <OptionalRest foo="bad" />; // ERROR
+                                        ^^^^^ [1]
+
+References:
+   annotation.js:39:15
+   39|     ...{foo?: number}
+                     ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- annotation.js:45:48
+
+Component property `x` [1] is re-declared [2] within a spread [3]. Property names may only be have one definition within
+a component. [invalid-component-prop]
+
+   annotation.js:45:48
+   45| declare var Duplicate: component(x: number, ...{x: number}); // error
+                                                      ^^^^^^^^^^^ [3]
+
+References:
+   annotation.js:45:34
+   45| declare var Duplicate: component(x: number, ...{x: number}); // error
+                                        ^ [1]
+   annotation.js:45:49
+   45| declare var Duplicate: component(x: number, ...{x: number}); // error
+                                                       ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- annotation.js:54:57
+
+Cannot use number [1] as the type argument of renders type. [invalid-render]
+
+   54| declare export var Export: component(x: number) renders number; // invalid-render
+                                                               ^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- annotation.js:59:2
+
+Cannot create `Export` element because property `x` is missing in props [1] but exists in props of component [2].
+[incompatible-type]
+
+   annotation.js:59:2
+   59| <Export />; // error
+        ^^^^^^
+
+References:
+   annotation.js:59:1
+   59| <Export />; // error
+       ^^^^^^^^^^ [1]
+   annotation.js:54:28
+   54| declare export var Export: component(x: number) renders number; // invalid-render
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- annotation.js:60:19
+
+Cannot create `DefaultExport` element because in property `x`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   annotation.js:60:19
+   60| <DefaultExport x={"a"} />; // error
+                         ^^^ [1]
+
+References:
+   annotation.js:56:41
+   56| declare var DefaultExport: component(x: number);
+                                               ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- binding_rules.js:6:1
+
+Cannot reassign component binding `Foo` [1]. [cannot-reassign]
+
+   binding_rules.js:6:1
+   6| Foo = 3; // ERROR, cannot reassign components
+      ^^^
+
+References:
+   binding_rules.js:5:11
+   5| component Foo() { return <div /> }
+                ^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------- binding_rules.js:7:5
+
+Cannot declare `Foo` [1] because the name is already bound. [name-already-bound]
+
+   binding_rules.js:7:5
+   7| var Foo = 3; // ERROR, cannot re-bind components
+          ^^^
+
+References:
+   binding_rules.js:5:11
+   5| component Foo() { return <div /> }
+                ^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------- binding_rules.js:8:5
+
+Cannot declare `Foo` [1] because the name is already bound. [name-already-bound]
+
+   binding_rules.js:8:5
+   8| let Foo = 3; // ERROR, still can't re-bind
+          ^^^
+
+References:
+   binding_rules.js:5:11
+   5| component Foo() { return <div /> }
+                ^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------- binding_rules.js:9:7
+
+Cannot declare `Foo` [1] because the name is already bound. [name-already-bound]
+
+   binding_rules.js:9:7
+   9| const Foo = 3; // ERROR
+            ^^^
+
+References:
+   binding_rules.js:5:11
+   5| component Foo() { return <div /> }
+                ^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- binding_rules.js:10:11
+
+Cannot declare `Foo` [1] because the name is already bound. [name-already-bound]
+
+   binding_rules.js:10:11
+   10| component Foo() { return <div /> } // ERROR, can't re-bind a component with a component either
+                 ^^^
+
+References:
+   binding_rules.js:5:11
+    5| component Foo() { return <div /> }
+                 ^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- binding_rules.js:11:6
+
+Cannot declare `Foo` [1] because the name is already bound. [name-already-bound]
+
+   binding_rules.js:11:6
+   11| type Foo = number; // ERROR
+            ^^^
+
+References:
+   binding_rules.js:5:11
+    5| component Foo() { return <div /> }
+                 ^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- binding_rules.js:12:10
+
+Cannot declare `Foo` [1] because the name is already bound. [name-already-bound]
+
+   binding_rules.js:12:10
+   12| function Foo() {} // ERROR
+                ^^^
+
+References:
+   binding_rules.js:5:11
+    5| component Foo() { return <div /> }
+                 ^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- binding_rules.js:13:7
+
+Cannot declare `Foo` [1] because the name is already bound. [name-already-bound]
+
+   binding_rules.js:13:7
+   13| class Foo {} // ERROR
+             ^^^
+
+References:
+   binding_rules.js:5:11
+    5| component Foo() { return <div /> }
+                 ^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- binding_rules.js:14:13
+
+Cannot declare `Foo` [1] because the name is already bound. [name-already-bound]
+
+   binding_rules.js:14:13
+   14| declare var Foo: number; // ERROR
+                   ^^^
+
+References:
+   binding_rules.js:5:11
+    5| component Foo() { return <div /> }
+                 ^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- binding_rules.js:15:13
+
+Cannot declare `Foo` [1] because the name is already bound. [name-already-bound]
+
+   binding_rules.js:15:13
+   15| declare let Foo: number; // ERROR
+                   ^^^
+
+References:
+   binding_rules.js:5:11
+    5| component Foo() { return <div /> }
+                 ^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- binding_rules.js:16:15
+
+Cannot declare `Foo` [1] because the name is already bound. [name-already-bound]
+
+   binding_rules.js:16:15
+   16| declare const Foo: number; // ERROR
+                     ^^^
+
+References:
+   binding_rules.js:5:11
+    5| component Foo() { return <div /> }
+                 ^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- binding_rules.js:17:14
+
+Cannot declare `Foo` [1] because the name is already bound. [name-already-bound]
+
+   binding_rules.js:17:14
+   17| declare type Foo = number; // ERROR
+                    ^^^
+
+References:
+   binding_rules.js:5:11
+    5| component Foo() { return <div /> }
+                 ^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- binding_rules.js:18:18
+
+Cannot declare `Foo` [1] because the name is already bound. [name-already-bound]
+
+   binding_rules.js:18:18
+   18| declare function Foo(): number; // ERROR
+                        ^^^
+
+References:
+   binding_rules.js:5:11
+    5| component Foo() { return <div /> }
+                 ^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- binding_rules.js:19:15
+
+Cannot declare `Foo` [1] because the name is already bound. [name-already-bound]
+
+   binding_rules.js:19:15
+   19| declare class Foo {} // ERROR
+                     ^^^
+
+References:
+   binding_rules.js:5:11
+    5| component Foo() { return <div /> }
+                 ^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- binding_rules.js:23:11
+
+Cannot declare `A` [1] because the name is already bound. [name-already-bound]
+
+   binding_rules.js:23:11
+   23| component A() { return <div /> } // ERROR, can't re-bind other bindings with a component either!
+                 ^
+
+References:
+   binding_rules.js:22:10
+   22| function A() {}
+                ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- binding_rules.js:26:11
+
+Cannot declare `B` [1] because the name is already bound. [name-already-bound]
+
+   binding_rules.js:26:11
+   26| component B() { return <div /> } // ERROR
+                 ^
+
+References:
+   binding_rules.js:25:5
+   25| var B = 3;
+           ^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- binding_rules.js:28:5
+
+Cannot declare `C` [1] because the name is already bound. [name-already-bound]
+
+   28| let C = 3; // ERROR. Components are hoisted so the error is on the let
+           ^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- binding_rules.js:31:7
+
+Cannot declare `D` [1] because the name is already bound. [name-already-bound]
+
+   31| const D = 3;
+             ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- binding_rules.js:35:11
+
+Cannot declare `E` [1] because the name is already bound. [name-already-bound]
+
+   binding_rules.js:35:11
+   35| component E() { return <div /> } // ERROR
+                 ^
+
+References:
+   binding_rules.js:34:6
+   34| type E = number;
+            ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- binding_rules.js:39:13
+
+Cannot declare `F` [1] because the name is already bound. [name-already-bound]
+
+   binding_rules.js:39:13
+   39|   component F() { return <div /> } // ERROR
+                   ^
+
+References:
+   binding_rules.js:37:23
+   37| function paramsStrict(F: number) {
+                             ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- binding_rules.js:43:13
+
+Cannot declare `G` [1] because the name is already bound. [name-already-bound]
+
+   binding_rules.js:43:13
+   43|   component G() { return <div /> } // ERROR
+                   ^
+
+References:
+   binding_rules.js:42:17
+   42| function params(G: number) {
+                       ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- binding_rules.js:47:11
+
+Cannot declare `H` [1] because the name is already bound. [name-already-bound]
+
+   binding_rules.js:47:11
+   47| component H() { return <div /> } // ERROR
+                 ^
+
+References:
+   binding_rules.js:46:15
+   46| declare const H: number;
+                     ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- binding_rules.js:50:11
+
+Cannot declare `I` [1] because the name is already bound. [name-already-bound]
+
+   binding_rules.js:50:11
+   50| component I() { return <div /> } // ERROR
+                 ^
+
+References:
+   binding_rules.js:49:18
+   49| declare function I(): void;
+                        ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- binding_rules.js:53:11
+
+Cannot declare `J` [1] because the name is already bound. [name-already-bound]
+
+   binding_rules.js:53:11
+   53| component J() { return <div /> } // ERROR
+                 ^
+
+References:
+   binding_rules.js:52:14
+   52| declare type J = number;
+                    ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- binding_rules.js:56:11
+
+Cannot declare `K` [1] because the name is already bound. [name-already-bound]
+
+   binding_rules.js:56:11
+   56| component K() { return <div /> } // ERROR
+                 ^
+
+References:
+   binding_rules.js:55:13
+   55| declare let K: number;
+                   ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- binding_rules.js:59:11
+
+Cannot declare `L` [1] because the name is already bound. [name-already-bound]
+
+   binding_rules.js:59:11
+   59| component L() { return <div /> } // ERROR
+                 ^
+
+References:
+   binding_rules.js:58:15
+   58| declare class L {}
+                     ^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- binding_rules.js:61:7
+
+Cannot declare `M` [1] because the name is already bound. [name-already-bound]
+
+   61| class M {} // ERROR
+             ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- binding_rules.js:64:32
+
+Cannot declare `p` [1] because the name is already bound. [name-already-bound]
+
+   binding_rules.js:64:32
+   64| component N(p: string) { const p: string = ''; return } // ERROR
+                                      ^
+
+References:
+   binding_rules.js:64:13
+   64| component N(p: string) { const p: string = ''; return } // ERROR
+                   ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------------ call.js:4:1
+
+Suppression is missing a code. Please update this suppression to use an error code: `$FlowFixMe[<CODE>]` [InferError]
+
+   4| // $FlowFixMe
+      ^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------------ call.js:5:1
+
+Cannot call component Foo [1] because React components cannot be called. Use JSX instead.
+(https://react.dev/reference/rules/react-calls-components-and-hooks) [react-rule-call-component]
+
+   call.js:5:1
+   5| Foo(); // ERROR, even with fixme
+      ^^^
+
+References:
+   call.js:1:1
+   1| component Foo() {
+      ^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------- component_in_type_position.js:5:16
+
+Cannot assign `Foo` to `x` because component Foo [1] is incompatible with `Foo` element [2]. [incompatible-type]
+
+   component_in_type_position.js:5:16
+   5| const x: Foo = Foo; // ERROR
+                     ^^^
+
+References:
+   component_in_type_position.js:3:8
+   3| export component Foo() { return null }
+             ^^^^^^^^^^^^^^^ [1]
+   component_in_type_position.js:5:10
+   5| const x: Foo = Foo; // ERROR
+               ^^^ [2]
+
+
+Error ------------------------------------------------------------------------------- component_in_type_position.js:6:22
+
+Cannot assign `<Foo />` to `fooElem` because `ExactReactElement_DEPRECATED` [1] is incompatible with
+`React.RendersExactly` [2]. [incompatible-type]
+
+   component_in_type_position.js:6:22
+   6| const fooElem: Foo = <Foo />; // ERROR
+                           ^^^^^^^ [1]
+
+References:
+   component_in_type_position.js:6:16
+   6| const fooElem: Foo = <Foo />; // ERROR
+                     ^^^ [2]
+
+
+Error ----------------------------------------------------------------------------- component_in_type_position.js:12:115
+
+Cannot assign `<Poly />` to `polyElemBad` because in type argument `P` [1] > property `prop`: string [2] is incompatible
+with number [3]. [incompatible-type]
+
+   component_in_type_position.js:12:115
+   12| const polyElemBad: Poly<number> extends React$RendersExactly<infer C> ? ExactReactElement_DEPRECATED<C> : empty = <Poly prop="STRING" />; // ERROR
+                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:58:84
+   58| declare opaque type ExactReactElement_DEPRECATED<+ElementType: React$ElementType, +P = React$ElementConfig<ElementType>>: {...};
+                                                                                          ^ [1]
+   component_in_type_position.js:12:126
+   12| const polyElemBad: Poly<number> extends React$RendersExactly<infer C> ? ExactReactElement_DEPRECATED<C> : empty = <Poly prop="STRING" />; // ERROR
+                                                                                                                                    ^^^^^^^^ [2]
+   component_in_type_position.js:12:25
+   12| const polyElemBad: Poly<number> extends React$RendersExactly<infer C> ? ExactReactElement_DEPRECATED<C> : empty = <Poly prop="STRING" />; // ERROR
+                               ^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------ component_in_type_position.js:13:20
+
+Cannot use component Poly [1] without 1 type argument. [missing-type-arg]
+
+   component_in_type_position.js:13:20
+   13| type PolyNoTargs = Poly; // ERROR
+                          ^^^^
+
+References:
+   component_in_type_position.js:10:22
+   10| export component Poly<T>(prop: T) { return null }
+                            ^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------- component_type_checking.js:10:4
+
+Cannot cast `foo` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   component_type_checking.js:10:4
+   10|   (foo: string); // ERROR
+          ^^^
+
+References:
+   component_type_checking.js:4:8
+    4|   foo: number,
+              ^^^^^^ [1]
+   component_type_checking.js:10:9
+   10|   (foo: string); // ERROR
+               ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------- component_type_checking.js:12:4
+
+Cannot cast `bar` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   component_type_checking.js:12:4
+   12|   (bar: string); // ERROR
+          ^^^
+
+References:
+   component_type_checking.js:5:25
+    5|   'special-key' as bar: number,
+                               ^^^^^^ [1]
+   component_type_checking.js:12:9
+   12|   (bar: string); // ERROR
+               ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------- component_type_checking.js:13:4
+
+Cannot resolve name `baz`. [cannot-resolve-name]
+
+   13|   (baz: number); // ERROR, baz unbound
+          ^^^
+
+
+Error ---------------------------------------------------------------------------------- component_type_checking.js:16:4
+
+Cannot cast `a` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   component_type_checking.js:16:4
+   16|   (a: string); // ERROR
+          ^
+
+References:
+   component_type_checking.js:7:28
+    7|   destructured as {a}: {a: number},
+                                  ^^^^^^ [1]
+   component_type_checking.js:16:7
+   16|   (a: string); // ERROR
+             ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------- component_type_checking.js:17:10
+
+Cannot return `null` because null [1] does not render `InlineParams` [2]. [incompatible-type]
+
+   component_type_checking.js:17:10
+   17|   return null; // ERROR
+                ^^^^ [1]
+
+References:
+   component_type_checking.js:8:3
+    8| ) renders InlineParams {
+         ^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------- component_type_checking.js:22:12
+
+Component property `foo` [1] is re-declared [2] within a spread [3]. Property names may only be have one definition
+within a component. [invalid-component-prop]
+
+   component_type_checking.js:22:12
+   22|   ...rest: {foo: number}
+                  ^^^^^^^^^^^^^ [3]
+
+References:
+   component_type_checking.js:21:3
+   21|   foo: number,
+         ^^^ [1]
+   component_type_checking.js:22:13
+   22|   ...rest: {foo: number}
+                   ^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------- component_type_checking.js:26:4
+
+Cannot cast `rest` to empty because object type [1] is incompatible with empty [2]. [incompatible-type]
+
+   component_type_checking.js:26:4
+   26|   (rest: empty); // ERROR
+          ^^^^
+
+References:
+   component_type_checking.js:22:12
+   22|   ...rest: {foo: number}
+                  ^^^^^^^^^^^^^ [1]
+   component_type_checking.js:26:10
+   26|   (rest: empty); // ERROR
+                ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------- component_type_checking.js:32:17
+
+Cannot assign number literal `3` to `bar` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   component_type_checking.js:32:17
+   32|   bar: string = 3, // ERROR
+                       ^ [1]
+
+References:
+   component_type_checking.js:32:8
+   32|   bar: string = 3, // ERROR
+              ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------- component_type_checking.js:33:24
+
+Cannot resolve name `foo`. [cannot-resolve-name]
+
+   33|   backwardsRef: typeof foo = foo, // ERROR 2x
+                              ^^^
+
+
+Error --------------------------------------------------------------------------------- component_type_checking.js:33:30
+
+Cannot resolve name `foo`. [cannot-resolve-name]
+
+   33|   backwardsRef: typeof foo = foo, // ERROR 2x
+                                    ^^^
+
+
+Error --------------------------------------------------------------------------------- component_type_checking.js:34:24
+
+Cannot assign string literal `str` to `a` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   component_type_checking.js:34:24
+   34|   destructured as {a = 'str'}: {a?: number}, // ERROR
+                              ^^^^^ [1]
+
+References:
+   component_type_checking.js:34:37
+   34|   destructured as {a = 'str'}: {a?: number}, // ERROR
+                                           ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------- component_type_checking.js:49:18
+
+Cannot assign `3` to `c` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   component_type_checking.js:49:18
+   49|   const c: Bar = 3; // error
+                        ^ [1]
+
+References:
+   component_type_checking.js:49:12
+   49|   const c: Bar = 3; // error
+                  ^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- config.js:4:1
+
+Cannot cast `config` to object type because property `n` is read-only in props of component Foo [1] but writable in
+object type [2]. [incompatible-variance]
+
+   config.js:4:1
+   4| config as {n: number | string}; // error: n is not read-only in {n: number | string}
+      ^^^^^^
+
+References:
+   config.js:3:28
+   3| declare export var config: React.ElementConfig<typeof Foo>;
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   config.js:4:11
+   4| config as {n: number | string}; // error: n is not read-only in {n: number | string}
+                ^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- config_imported.js:3:1
+
+Cannot cast `config` to object type because property `n` is read-only in props of component Foo [1] but writable in
+object type [2]. [incompatible-variance]
+
+   config_imported.js:3:1
+   3| config as {n: number | string}; // error: n is not read-only in {n: number | string}
+      ^^^^^^
+
+References:
+   config.js:3:28
+   3| declare export var config: React.ElementConfig<typeof Foo>;
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   config_imported.js:3:11
+   3| config as {n: number | string}; // error: n is not read-only in {n: number | string}
+                ^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- cycle1.js:15:1
+
+Cannot cast `Bar` to `typeof Baz` because component Foo [1] is incompatible with component Baz [2]. [incompatible-type]
+
+   cycle1.js:15:1
+   15| Bar as typeof Baz; // ERROR
+       ^^^
+
+References:
+   cycle2.js:4:19
+    4| export const Bar: typeof Foo = Foo;
+                         ^^^^^^^^^^ [1]
+   cycle1.js:15:8
+   15| Bar as typeof Baz; // ERROR
+              ^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- cycle1.js:16:1
+
+Cannot cast `Foo` to `typeof Baz` because component Foo [1] is incompatible with component Baz [2]. [incompatible-type]
+
+   cycle1.js:16:1
+   16| Foo as typeof Baz; // ERROR
+       ^^^
+
+References:
+   cycle1.js:5:8
+    5| export component Foo() {
+              ^^^^^^^^^^^^^^^ [1]
+   cycle1.js:16:8
+   16| Foo as typeof Baz; // ERROR
+              ^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- cycle1.js:17:1
+
+Cannot cast `Baz` to `typeof Bar` because component Baz [1] is incompatible with component Foo [2]. [incompatible-type]
+
+   cycle1.js:17:1
+   17| Baz as typeof Bar; // ERROR
+       ^^^
+
+References:
+   cycle1.js:12:1
+   12| component Baz() {
+       ^^^^^^^^^^^^^^^ [1]
+   cycle1.js:17:8
+   17| Baz as typeof Bar; // ERROR
+              ^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- declared.js:5:2
+
+Cannot create `Basic` element because property `foo` is extra in props [1] but missing in props of component Basic [2].
+Exact objects do not accept extra props. [incompatible-type]
+
+   declared.js:5:2
+   5| <Basic foo={42} /> // error
+       ^^^^^
+
+References:
+   declared.js:5:1
+   5| <Basic foo={42} /> // error
+      ^^^^^^^^^^^^^^^^^^ [1]
+   declared.js:3:1
+   3| declare component Basic();
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ declared.js:13:39
+
+Cannot create `InlineOnly` element because in property `foo`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   declared.js:13:39
+   13| const inlineOnlyBad = <InlineOnly foo="" bar={3} />; // Error 2x
+                                             ^^ [1]
+
+References:
+   declared.js:8:8
+    8|   foo: number,
+              ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ declared.js:13:47
+
+Cannot create `InlineOnly` element because in property `bar`: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   declared.js:13:47
+   13| const inlineOnlyBad = <InlineOnly foo="" bar={3} />; // Error 2x
+                                                     ^ [1]
+
+References:
+   declared.js:9:8
+    9|   bar: string,
+              ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ declared.js:21:37
+
+Cannot create `InexactRest` element because in property `foo`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   declared.js:21:37
+   21| const inexactBad = <InexactRest foo="" bar={3} baz={3} />; // ERROR 2x for foo and bar
+                                           ^^ [1]
+
+References:
+   declared.js:16:8
+   16|   foo: number,
+              ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ declared.js:21:45
+
+Cannot create `InexactRest` element because in property `bar`: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   declared.js:21:45
+   21| const inexactBad = <InexactRest foo="" bar={3} baz={3} />; // ERROR 2x for foo and bar
+                                                   ^ [1]
+
+References:
+   declared.js:17:18
+   17|   ...rest: {bar: string, ...}
+                        ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ declared.js:29:37
+
+Cannot create `IndexedRest` element because in property `foo`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   declared.js:29:37
+   29| const indexedBad = <IndexedRest foo="" bar="str" />; // ERROR 2x for foo and bar
+                                           ^^ [1]
+
+References:
+   declared.js:24:8
+   24|   foo: number,
+              ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ declared.js:29:44
+
+Cannot create `IndexedRest` element because in property `bar`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   declared.js:29:44
+   29| const indexedBad = <IndexedRest foo="" bar="str" />; // ERROR 2x for foo and bar
+                                                  ^^^^^ [1]
+
+References:
+   declared.js:25:23
+   25|   ...rest: {[string]: number, ...}
+                             ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ declared.js:36:39
+
+Cannot create `DefaultProps` element because in property `foo`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   declared.js:36:39
+   36| const defaultsBad = <DefaultProps foo="bad" />; // ERROR
+                                             ^^^^^ [1]
+
+References:
+   declared.js:32:9
+   32|   foo?: number,
+               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ declared.js:43:34
+
+Cannot create `OptionalRest` element because in property `foo`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   declared.js:43:34
+   43| const optBad = <OptionalRest foo="bad" />; // ERROR
+                                        ^^^^^ [1]
+
+References:
+   declared.js:39:21
+   39|     ...rest: {foo?: number}
+                           ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ declared.js:45:19
+
+Component identifiers must begin with an upper-case character [component-case]
+
+   45| declare component lowercase(); // error
+                         ^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------ declared.js:47:49
+
+Component property `x` [1] is re-declared [2] within a spread [3]. Property names may only be have one definition within
+a component. [invalid-component-prop]
+
+   declared.js:47:49
+   47| declare component Duplicate(x: number, ...rest: {x: number}); // error
+                                                       ^^^^^^^^^^^ [3]
+
+References:
+   declared.js:47:29
+   47| declare component Duplicate(x: number, ...rest: {x: number}); // error
+                                   ^ [1]
+   declared.js:47:50
+   47| declare component Duplicate(x: number, ...rest: {x: number}); // error
+                                                        ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ declared.js:50:29
+
+The `ref` parameter must be a subtype of `React.RefSetter`: [incompatible-type]
+ - Either number [1] is incompatible with object type [2].
+ - Or number [1] is incompatible with function type [3].
+
+   declared.js:50:29
+    50| declare component InlineRef(ref: number); // error
+                                    ^^^
+
+References:
+   declared.js:50:34
+    50| declare component InlineRef(ref: number); // error
+                                         ^^^^^^ [1]
+   <BUILTINS>/react.js:107:7
+   107|     | { -current: T | null, ... }
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+   <BUILTINS>/react.js:108:8
+   108|     | ((T | null) => mixed)
+               ^^^^^^^^^^^^^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------ declared.js:56:52
+
+Cannot use number [1] as the type argument of renders type. [invalid-render]
+
+   56| declare export component Export(x: number) renders number;
+                                                          ^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- declared.js:60:2
+
+Cannot create `Export` element because property `x` is missing in props [1] but exists in props of component Export [2].
+[incompatible-type]
+
+   declared.js:60:2
+   60| <Export />; // error
+        ^^^^^^
+
+References:
+   declared.js:60:1
+   60| <Export />; // error
+       ^^^^^^^^^^ [1]
+   declared.js:56:16
+   56| declare export component Export(x: number) renders number;
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ declared.js:61:19
+
+Cannot create `DefaultExport` element because in property `x`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   declared.js:61:19
+   61| <DefaultExport x={"a"} />; // error
+                         ^^^ [1]
+
+References:
+   declared.js:58:51
+   58| declare export default component DefaultExport(x: number);
+                                                         ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ declared.js:69:41
+
+Cannot create `OptionalStringKeyAsBinding` element because in property `aria-label`: number [1] is incompatible with
+string [2]. [incompatible-type]
+
+   declared.js:69:41
+   69| <OptionalStringKeyAsBinding aria-label={3} />; // ERROR
+                                               ^ [1]
+
+References:
+   declared.js:64:31
+   64|   'aria-label' as ariaLabel?: string,
+                                     ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------ eager_config_checking.js:1:38
+
+Component property `foo` [1] is re-declared [2] within a spread [3]. Property names may only be have one definition
+within a component. [invalid-component-prop]
+
+   eager_config_checking.js:1:38
+   1| component Foo(foo: number, ...props: {foo: number}) {
+                                           ^^^^^^^^^^^^^ [3]
+
+References:
+   eager_config_checking.js:1:15
+   1| component Foo(foo: number, ...props: {foo: number}) {
+                    ^^^ [1]
+   eager_config_checking.js:1:39
+   1| component Foo(foo: number, ...props: {foo: number}) {
+                                            ^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- errors.js:2:5
+
+Cannot reference `this` from within component declaration [1] [component-this-reference]
+
+   errors.js:2:5
+   2|     this; // error
+          ^^^^
+
+References:
+   errors.js:1:1
+   1| component Bar() {
+      ^^^^^^^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- errors.js:20:9
+
+Cannot declare component because component Foo [1] is not guaranteed to reach a return statement. An explicit return
+statement must be included for all possible branches. [component-missing-return]
+
+   20|         component Foo(x: string = this.x) { } // error from num ~> string, no error from this
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- errors.js:20:35
+
+Cannot assign `this.x` to `x` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   errors.js:20:35
+   20|         component Foo(x: string = this.x) { } // error from num ~> string, no error from this
+                                         ^^^^^^
+
+References:
+   errors.js:18:9
+   18|     x = 42;
+               ^^ [1]
+   errors.js:20:26
+   20|         component Foo(x: string = this.x) { } // error from num ~> string, no error from this
+                                ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- errors.js:25:11
+
+Component identifiers must begin with an upper-case character [component-case]
+
+   25| component lowercase() { return (42: any) } // error
+                 ^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- errors.js:27:22
+
+Missing an annotation on `unannotated`. [missing-local-annot]
+
+   27| component HelloWorld(unannotated) { return } // error
+                            ^^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- errors.js:30:5
+
+Components may not be nested directly within other components or hooks. [nested-component]
+
+   30|     component Inner () { return null; } // lint error
+           ^^^^^^^^^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- errors.js:40:9
+
+Components may not be nested directly within other components or hooks. [nested-component]
+
+   40|         component IfNested() { return null; } // lint error
+               ^^^^^^^^^^^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- errors.js:45:1
+
+Cannot call component Baz [1] because React components cannot be called. Use JSX instead.
+(https://react.dev/reference/rules/react-calls-components-and-hooks) [react-rule-call-component]
+
+   errors.js:45:1
+   45| Baz(); // error
+       ^^^
+
+References:
+   errors.js:6:1
+    6| component Baz() {
+       ^^^^^^^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- errors.js:48:1
+
+Cannot call component Poly [1] because React components cannot be called. Use JSX instead.
+(https://react.dev/reference/rules/react-calls-components-and-hooks) [react-rule-call-component]
+
+   errors.js:48:1
+   48| Poly(); // error
+       ^^^^
+
+References:
+   errors.js:47:1
+   47| component Poly<T>() { return null; }
+       ^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- errors.js:49:1
+
+Cannot call component Poly [1] because React components cannot be called. Use JSX instead.
+(https://react.dev/reference/rules/react-calls-components-and-hooks) [react-rule-call-component]
+
+   errors.js:49:1
+   49| Poly<number>(); // error
+       ^^^^
+
+References:
+   errors.js:47:1
+   47| component Poly<T>() { return null; }
+       ^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- errors.js:51:2
+
+Cannot cast `Baz` to component because indexed props of component [1] is incompatible with exact props of component
+Baz [2]. [incompatible-indexer]
+
+   errors.js:51:2
+   51| (Baz: component(...mixed));
+        ^^^
+
+References:
+   errors.js:51:7
+   51| (Baz: component(...mixed));
+             ^^^^^^^^^^^^^^^^^^^ [1]
+   errors.js:6:1
+    6| component Baz() {
+       ^^^^^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- errors.js:51:20
+
+Cannot use `unknown` [1] as a component rest param. Component rest params must use an object type and cannot be
+optional. [incompatible-type]
+
+   51| (Baz: component(...mixed));
+                          ^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- exhaust.js:4:5
+
+Cannot declare component because component NoReturn [1] is not guaranteed to reach a return statement. An explicit
+return statement must be included for all possible branches. [component-missing-return]
+
+   4|     component NoReturn() { } // error
+          ^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- exhaust.js:16:5
+
+Cannot declare component because component Throws2 [1] is not guaranteed to reach a return statement. An explicit return
+statement must be included for all possible branches. [component-missing-return]
+
+   16|     component Throws2(f: boolean) { // error
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- exhaust.js:30:5
+
+Cannot declare component because component NotExhaustive [1] is not guaranteed to reach a return statement. An explicit
+return statement must be included for all possible branches. [component-missing-return]
+
+   30|     component NotExhaustive(t: A) { // error
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- exhaust.js:57:3
+
+Cannot declare component because component C [1] is not guaranteed to reach a return statement. An explicit return
+statement must be included for all possible branches. [component-missing-return]
+
+   57|   component C(x: number, b: boolean) { // ERROR
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------- export_syntax.js:3:8
+
+Cannot declare component because component C [1] is not guaranteed to reach a return statement. An explicit return
+statement must be included for all possible branches. [component-missing-return]
+
+   3| export component C (x: number) { }
+             ^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- export_syntax.js:5:16
+
+Cannot declare component because component D [1] is not guaranteed to reach a return statement. An explicit return
+statement must be included for all possible branches. [component-missing-return]
+
+   5| export default component D (y: number, ...props: {z: string}) { }
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------- export_syntax.js:7:7
+
+Cannot create `C` element because in property `x`: string [1] is incompatible with number [2]. [incompatible-type]
+
+   export_syntax.js:7:7
+   7| <C x={"a"} />; // error
+            ^^^ [1]
+
+References:
+   export_syntax.js:3:24
+   3| export component C (x: number) { }
+                             ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- export_syntax.js:8:2
+
+Cannot create `D` element because property `z` is missing in props [1] but exists in object type [2].
+[incompatible-type]
+
+   export_syntax.js:8:2
+   8| <D y={"a"} /> // 2 errors
+       ^
+
+References:
+   export_syntax.js:8:1
+   8| <D y={"a"} /> // 2 errors
+      ^^^^^^^^^^^^^ [1]
+   export_syntax.js:5:50
+   5| export default component D (y: number, ...props: {z: string}) { }
+                                                       ^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- export_syntax.js:8:7
+
+Cannot create `D` element because in property `y`: string [1] is incompatible with number [2]. [incompatible-type]
+
+   export_syntax.js:8:7
+   8| <D y={"a"} /> // 2 errors
+            ^^^ [1]
+
+References:
+   export_syntax.js:5:32
+   5| export default component D (y: number, ...props: {z: string}) { }
+                                     ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- import.js:5:39
+
+Cannot create `InlineOnly` element because in property `foo`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   import.js:5:39
+   5| const inlineOnlyBad = <InlineOnly foo="" bar={3} />; // Error 2x
+                                            ^^ [1]
+
+References:
+   signature.js:4:27
+   4| component InlineOnly(foo: number, bar: string) {
+                                ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- import.js:5:47
+
+Cannot create `InlineOnly` element because in property `bar`: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   import.js:5:47
+   5| const inlineOnlyBad = <InlineOnly foo="" bar={3} />; // Error 2x
+                                                    ^ [1]
+
+References:
+   signature.js:4:40
+   4| component InlineOnly(foo: number, bar: string) {
+                                             ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- import.js:8:37
+
+Cannot create `InexactRest` element because in property `foo`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   import.js:8:37
+    8| const inexactBad = <InexactRest foo="" bar={3} baz={3} />; // ERROR 2x for foo and bar
+                                           ^^ [1]
+
+References:
+   signature.js:11:28
+   11| component InexactRest(foo: number, ...rest: {bar: string, ...}) {
+                                  ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- import.js:8:45
+
+Cannot create `InexactRest` element because in property `bar`: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   import.js:8:45
+    8| const inexactBad = <InexactRest foo="" bar={3} baz={3} />; // ERROR 2x for foo and bar
+                                                   ^ [1]
+
+References:
+   signature.js:11:51
+   11| component InexactRest(foo: number, ...rest: {bar: string, ...}) {
+                                                         ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- import.js:11:37
+
+Cannot create `IndexedRest` element because in property `foo`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   import.js:11:37
+   11| const indexedBad = <IndexedRest foo="" bar="str" />; // ERROR 2x for foo and bar
+                                           ^^ [1]
+
+References:
+   signature.js:18:28
+   18| component IndexedRest(foo: number, ...rest: {[string]: number, ...}) {
+                                  ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- import.js:11:44
+
+Cannot create `IndexedRest` element because in property `bar`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   import.js:11:44
+   11| const indexedBad = <IndexedRest foo="" bar="str" />; // ERROR 2x for foo and bar
+                                                  ^^^^^ [1]
+
+References:
+   signature.js:18:56
+   18| component IndexedRest(foo: number, ...rest: {[string]: number, ...}) {
+                                                              ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- import.js:14:39
+
+Cannot create `DefaultProps` element because in property `foo`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   import.js:14:39
+   14| const defaultsBad = <DefaultProps foo="bad" />; // ERROR
+                                             ^^^^^ [1]
+
+References:
+   signature.js:25:29
+   25| component DefaultProps(foo: number = 3) {
+                                   ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- import.js:17:28
+
+Cannot create `RenamedParams` element because property `baz` is extra in props [1] but missing in props of component
+RenamedParams [2]. Exact objects do not accept extra props. [incompatible-type]
+
+   import.js:17:28
+   17| const renamedWrongProps = <RenamedParams bar={3} foo="str" baz="str" />; // ERROR 4x, bad foo type, bad bar type, no non-ident, extra baz
+                                  ^^^^^^^^^^^^^
+
+References:
+   import.js:17:27
+   17| const renamedWrongProps = <RenamedParams bar={3} foo="str" baz="str" />; // ERROR 4x, bad foo type, bad bar type, no non-ident, extra baz
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   signature.js:32:24
+                              v
+   32| component RenamedParams(
+   33|   foo as bar: number,
+   34|   bar as foo: string,
+   35|   'non-ident' as baz: string,
+   36| ) {
+       ^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- import.js:17:28
+
+Cannot create `RenamedParams` element because property `non-ident` is missing in props [1] but exists in props of
+component RenamedParams [2]. [incompatible-type]
+
+   import.js:17:28
+   17| const renamedWrongProps = <RenamedParams bar={3} foo="str" baz="str" />; // ERROR 4x, bad foo type, bad bar type, no non-ident, extra baz
+                                  ^^^^^^^^^^^^^
+
+References:
+   import.js:17:27
+   17| const renamedWrongProps = <RenamedParams bar={3} foo="str" baz="str" />; // ERROR 4x, bad foo type, bad bar type, no non-ident, extra baz
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   signature.js:32:24
+                              v
+   32| component RenamedParams(
+   33|   foo as bar: number,
+   34|   bar as foo: string,
+   35|   'non-ident' as baz: string,
+   36| ) {
+       ^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- import.js:17:47
+
+Cannot create `RenamedParams` element because in property `bar`: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   import.js:17:47
+   17| const renamedWrongProps = <RenamedParams bar={3} foo="str" baz="str" />; // ERROR 4x, bad foo type, bad bar type, no non-ident, extra baz
+                                                     ^ [1]
+
+References:
+   signature.js:34:15
+   34|   bar as foo: string,
+                     ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- import.js:17:54
+
+Cannot create `RenamedParams` element because in property `foo`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   import.js:17:54
+   17| const renamedWrongProps = <RenamedParams bar={3} foo="str" baz="str" />; // ERROR 4x, bad foo type, bad bar type, no non-ident, extra baz
+                                                            ^^^^^ [1]
+
+References:
+   signature.js:33:15
+   33|   foo as bar: number,
+                     ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- import.js:21:2
+
+Cannot cast `Foo.displayName` to empty because null or undefined [1] is incompatible with empty [2]. [incompatible-type]
+
+   import.js:21:2
+   21| (Foo.displayName: empty); // error, displayName is a string
+        ^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:26:17
+   26|   displayName?: ?string,
+                       ^^^^^^^ [1]
+   import.js:21:19
+   21| (Foo.displayName: empty); // error, displayName is a string
+                         ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- import.js:21:2
+
+Cannot cast `Foo.displayName` to empty because undefined [1] is incompatible with empty [2]. [incompatible-type]
+
+   import.js:21:2
+   21| (Foo.displayName: empty); // error, displayName is a string
+        ^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:26:17
+   26|   displayName?: ?string,
+                       ^^^^^^^ [1]
+   import.js:21:19
+   21| (Foo.displayName: empty); // error, displayName is a string
+                         ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- import.js:21:2
+
+Cannot cast `Foo.displayName` to empty because string [1] is incompatible with empty [2]. [incompatible-type]
+
+   import.js:21:2
+   21| (Foo.displayName: empty); // error, displayName is a string
+        ^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:26:18
+   26|   displayName?: ?string,
+                        ^^^^^^ [1]
+   import.js:21:19
+   21| (Foo.displayName: empty); // error, displayName is a string
+                         ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- import.js:22:5
+
+Cannot get `Foo.randomProperty` because property `randomProperty` is missing in `React.AbstractComponentStatics` [1].
+[prop-missing]
+
+   import.js:22:5
+   22| Foo.randomProperty; // ERROR!
+           ^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:25:47
+                                                     v
+   25| declare type React$AbstractComponentStatics = {
+   26|   displayName?: ?string,
+   27|   // This is only on function components, but trying to access name when
+   28|   // displayName is undefined is a common pattern.
+   29|   name?: ?string,
+   30|   propTypes?: {[string] : any, ...},
+   31|   ...
+   32| };
+       ^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- import.js:27:7
+
+Cannot create `C` element because in property `x`: string [1] is incompatible with number [2]. [incompatible-type]
+
+   import.js:27:7
+   27| <C x={"a"} />; // error
+             ^^^ [1]
+
+References:
+   export_syntax.js:3:24
+    3| export component C (x: number) { }
+                              ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- import.js:28:2
+
+Cannot create `D` element because property `z` is missing in props [1] but exists in object type [2].
+[incompatible-type]
+
+   import.js:28:2
+   28| <D y={"a"} /> // 2 errors
+        ^
+
+References:
+   import.js:28:1
+   28| <D y={"a"} /> // 2 errors
+       ^^^^^^^^^^^^^ [1]
+   export_syntax.js:5:50
+    5| export default component D (y: number, ...props: {z: string}) { }
+                                                        ^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- import.js:28:7
+
+Cannot create `D` element because in property `y`: string [1] is incompatible with number [2]. [incompatible-type]
+
+   import.js:28:7
+   28| <D y={"a"} /> // 2 errors
+             ^^^ [1]
+
+References:
+   export_syntax.js:5:32
+    5| export default component D (y: number, ...props: {z: string}) { }
+                                      ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- import.js:33:2
+
+Cannot create `Export` element because property `x` is missing in props [1] but exists in props of component Export [2].
+[incompatible-type]
+
+   import.js:33:2
+   33| <Export />; // error
+        ^^^^^^
+
+References:
+   import.js:33:1
+   33| <Export />; // error
+       ^^^^^^^^^^ [1]
+   declared.js:56:32
+   56| declare export component Export(x: number) renders number;
+                                      ^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- import.js:34:19
+
+Cannot create `DefaultExport` element because in property `x`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   import.js:34:19
+   34| <DefaultExport x={"a"} />; // error
+                         ^^^ [1]
+
+References:
+   declared.js:58:51
+   58| declare export default component DefaultExport(x: number);
+                                                         ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- import.js:37:2
+
+Cannot create `NoRef` element because property `ref` is missing in props [1] but exists in props of component NoRef [2].
+[incompatible-type]
+
+   import.js:37:2
+   37| <NoRef /> // error again because ref in NoRef is bad
+        ^^^^^
+
+References:
+   import.js:37:1
+   37| <NoRef /> // error again because ref in NoRef is bad
+       ^^^^^^^^^ [1]
+   names.js:22:23
+   22| export component NoRef(ref: string) { return <div /> }; // Error
+                             ^^^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- import.js:42:2
+
+Cannot create `ExportType` element because property `x` is missing in props [1] but exists in props of component [2].
+[incompatible-type]
+
+   import.js:42:2
+   42| <ExportType />; // error
+        ^^^^^^^^^^
+
+References:
+   import.js:42:1
+   42| <ExportType />; // error
+       ^^^^^^^^^^^^^^ [1]
+   annotation.js:54:37
+   54| declare export var Export: component(x: number) renders number; // invalid-render
+                                           ^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- import.js:43:23
+
+Cannot create `DefaultExportType` element because in property `x`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   import.js:43:23
+   43| <DefaultExportType x={"a"} />; // error
+                             ^^^ [1]
+
+References:
+   annotation.js:56:41
+   56| declare var DefaultExport: component(x: number);
+                                               ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- import.js:49:34
+
+Cannot create `Poly` element because in property `baz` > the first parameter: string [1] is incompatible with
+number [2]. [incompatible-type]
+
+   import.js:49:34
+   49| <Poly foo={1} bar={[1]} baz={(x: string) => {}} />;
+                                        ^^^^^^ [1]
+
+References:
+   import.js:49:12
+   49| <Poly foo={1} bar={[1]} baz={(x: string) => {}} />;
+                  ^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- import.js:49:34
+
+Cannot create `Poly` element because in property `baz` > the first parameter: string [1] is incompatible with
+number [2]. [incompatible-type]
+
+   import.js:49:34
+   49| <Poly foo={1} bar={[1]} baz={(x: string) => {}} />;
+                                        ^^^^^^ [1]
+
+References:
+   import.js:49:21
+   49| <Poly foo={1} bar={[1]} baz={(x: string) => {}} />;
+                           ^ [2]
+
+
+Error ---------------------------------------------------------------------- import_component_in_type_position.js:13:121
+
+Cannot assign `<Poly />` to `polyElemError` because in type argument `P` [1] > property `prop`: string [2] is
+incompatible with number [3]. [incompatible-type]
+
+   import_component_in_type_position.js:13:121
+   13| const polyElemError: PolyType<number> extends React$RendersExactly<infer C> ? ExactReactElement_DEPRECATED<C> : empty = <Poly prop="STRING" />; // ERROR
+                                                                                                                               ^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:58:84
+   58| declare opaque type ExactReactElement_DEPRECATED<+ElementType: React$ElementType, +P = React$ElementConfig<ElementType>>: {...};
+                                                                                          ^ [1]
+   import_component_in_type_position.js:13:132
+   13| const polyElemError: PolyType<number> extends React$RendersExactly<infer C> ? ExactReactElement_DEPRECATED<C> : empty = <Poly prop="STRING" />; // ERROR
+                                                                                                                                          ^^^^^^^^ [2]
+   import_component_in_type_position.js:13:31
+   13| const polyElemError: PolyType<number> extends React$RendersExactly<infer C> ? ExactReactElement_DEPRECATED<C> : empty = <Poly prop="STRING" />; // ERROR
+                                     ^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------ import_component_in_type_position.js:18:2
+
+Cannot cast `<Bar />` to `Foo` because `ExactReactElement_DEPRECATED` [1] is incompatible with
+`React.RendersExactly` [2]. [incompatible-type]
+
+   import_component_in_type_position.js:18:2
+   18| (<Bar />) as Foo; // ERROR
+        ^^^^^^^ [1]
+
+References:
+   import_component_in_type_position.js:18:14
+   18| (<Bar />) as Foo; // ERROR
+                    ^^^ [2]
+
+
+Error ------------------------------------------------------------------------ import_component_in_type_position.js:21:1
+
+Cannot cast `aliasedFoo` to number because `ExactReactElement_DEPRECATED` [1] is incompatible with number [2].
+[incompatible-type]
+
+   import_component_in_type_position.js:21:1
+   21| aliasedFoo as number; // ERROR
+       ^^^^^^^^^^
+
+References:
+   import_component_in_type_position.js:20:70
+   20| const aliasedFoo: AliasedFoo extends React$RendersExactly<infer C> ? ExactReactElement_DEPRECATED<C> : empty = <Foo />;
+                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   import_component_in_type_position.js:21:15
+   21| aliasedFoo as number; // ERROR
+                     ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------- import_component_in_type_position.js:25:45
+
+Cannot assign `3` to `errRendersMFoo` because number literal `3` [1] does not render `Foo` [2]. [incompatible-type]
+
+   import_component_in_type_position.js:25:45
+   25| const errRendersMFoo: renders MemoFooType = 3; // ERROR
+                                                   ^ [1]
+
+References:
+   component_in_type_position.js:17:56
+   17| export const MemoFoo: component(...React.PropsOf<Foo>) renders Foo = React.memo(Foo);
+                                                              ^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------- import_component_in_type_position.js:26:49
+
+Cannot assign `3` to `errRendersMFooType` because number literal `3` [1] does not render `Foo` [2]. [incompatible-type]
+
+   import_component_in_type_position.js:26:49
+   26| const errRendersMFooType: renders MemoFooType = 3; // ERROR
+                                                       ^ [1]
+
+References:
+   component_in_type_position.js:17:56
+   17| export const MemoFoo: component(...React.PropsOf<Foo>) renders Foo = React.memo(Foo);
+                                                              ^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- names.js:4:36
+
+Component property `a` [1] is re-declared [2] within a spread [3]. Property names may only be have one definition within
+a component. [invalid-component-prop]
+
+   names.js:4:36
+   4| component Foo(a: number, ...props: {a: boolean}) { return <div /> } // Error
+                                         ^^^^^^^^^^^^ [3]
+
+References:
+   names.js:4:15
+   4| component Foo(a: number, ...props: {a: boolean}) { return <div /> } // Error
+                    ^ [1]
+   names.js:4:37
+   4| component Foo(a: number, ...props: {a: boolean}) { return <div /> } // Error
+                                          ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- names.js:5:9
+
+Cannot create `Foo` element because in property `a`: boolean [1] is incompatible with number [2]. [incompatible-type]
+
+   names.js:5:9
+   5| <Foo a={false} /> // Error: first param wins, so a must be number
+              ^^^^^ [1]
+
+References:
+   names.js:4:18
+   4| component Foo(a: number, ...props: {a: boolean}) { return <div /> } // Error
+                       ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- names.js:8:36
+
+Component property `a` [1] is re-declared [2] within a spread [3]. Property names may only be have one definition within
+a component. [invalid-component-prop]
+
+   names.js:8:36
+   8| component Bar(a: number, ...props: BarT) { return <div /> }; // Error
+                                         ^^^^ [3]
+
+References:
+   names.js:8:15
+   8| component Bar(a: number, ...props: BarT) { return <div /> }; // Error
+                    ^ [1]
+   names.js:7:14
+   7| type BarT = {a: string} | {b: string}
+                   ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- names.js:9:2
+
+Cannot create `Bar` element because in property `a`: boolean [1] is incompatible with number [2]. [incompatible-type]
+
+   names.js:9:2
+   9| <Bar a={false} /> // Error: first param wins, so a must be number
+       ^^^
+
+References:
+   names.js:9:9
+   9| <Bar a={false} /> // Error: first param wins, so a must be number
+              ^^^^^ [1]
+   names.js:8:18
+   8| component Bar(a: number, ...props: BarT) { return <div /> }; // Error
+                       ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- names.js:12:9
+
+Cannot create `Baz` element because in property `a`: boolean [1] is incompatible with number [2]. [incompatible-type]
+
+   names.js:12:9
+   12| <Baz a={false} />; // Error
+               ^^^^^ [1]
+
+References:
+   names.js:11:18
+   11| component Baz(a: number, ...props: {[string]: boolean}) { return <div /> }; // Ok
+                        ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- names.js:15:36
+
+Component property `a` [1] is re-declared [2] within a spread [3]. Property names may only be have one definition within
+a component. [invalid-component-prop]
+
+   names.js:15:36
+   15| component Qux(a: number, ...props: {[string]: boolean, a: number}) { return <div /> }; // Error
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [3]
+
+References:
+   names.js:15:15
+   15| component Qux(a: number, ...props: {[string]: boolean, a: number}) { return <div /> }; // Error
+                     ^ [1]
+   names.js:15:56
+   15| component Qux(a: number, ...props: {[string]: boolean, a: number}) { return <div /> }; // Error
+                                                              ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- names.js:16:9
+
+Cannot create `Qux` element because in property `a`: boolean [1] is incompatible with number [2]. [incompatible-type]
+
+   names.js:16:9
+   16| <Qux a={false} /> // Error: first param wins, so a must be number
+               ^^^^^ [1]
+
+References:
+   names.js:15:18
+   15| component Qux(a: number, ...props: {[string]: boolean, a: number}) { return <div /> }; // Error
+                        ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- names.js:19:67
+
+Component property `a` [1] is re-declared [2] within a spread [3]. Property names may only be have one definition within
+a component. [invalid-component-prop]
+
+   names.js:19:67
+   19| component RunningOutOfMetasyntaxticVariables(a: number, ...props: {...ROMSVType}) { return <div /> }; // Error
+                                                                         ^^^^^^^^^^^^^^ [3]
+
+References:
+   names.js:19:46
+   19| component RunningOutOfMetasyntaxticVariables(a: number, ...props: {...ROMSVType}) { return <div /> }; // Error
+                                                    ^ [1]
+   names.js:18:19
+   18| type ROMSVType = {a: boolean}
+                         ^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- names.js:20:40
+
+Cannot create `RunningOutOfMetasyntaxticVariables` element because in property `a`: boolean [1] is incompatible with
+number [2]. [incompatible-type]
+
+   names.js:20:40
+   20| <RunningOutOfMetasyntaxticVariables a={false} /> // Error: first param wins, so a must be number
+                                              ^^^^^ [1]
+
+References:
+   names.js:19:49
+   19| component RunningOutOfMetasyntaxticVariables(a: number, ...props: {...ROMSVType}) { return <div /> }; // Error
+                                                       ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- names.js:22:24
+
+The `ref` parameter must be a subtype of `React.RefSetter`: [incompatible-type]
+ - Either string [1] is incompatible with object type [2].
+ - Or string [1] is incompatible with function type [3].
+
+   names.js:22:24
+    22| export component NoRef(ref: string) { return <div /> }; // Error
+                               ^^^
+
+References:
+   names.js:22:29
+    22| export component NoRef(ref: string) { return <div /> }; // Error
+                                    ^^^^^^ [1]
+   <BUILTINS>/react.js:107:7
+   107|     | { -current: T | null, ... }
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+   <BUILTINS>/react.js:108:8
+   108|     | ((T | null) => mixed)
+               ^^^^^^^^^^^^^^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------------- names.js:23:2
+
+Cannot create `NoRef` element because property `ref` is missing in props [1] but exists in props of component NoRef [2].
+[incompatible-type]
+
+   names.js:23:2
+   23| <NoRef /> // error again due to bad ref
+        ^^^^^
+
+References:
+   names.js:23:1
+   23| <NoRef /> // error again due to bad ref
+       ^^^^^^^^^ [1]
+   names.js:22:8
+   22| export component NoRef(ref: string) { return <div /> }; // Error
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- names.js:26:2
+
+Cannot create `NoRefInSpread` element because property `ref` is missing in props [1] but exists in object type [2].
+[incompatible-type]
+
+   names.js:26:2
+   26| <NoRefInSpread />
+        ^^^^^^^^^^^^^
+
+References:
+   names.js:26:1
+   26| <NoRefInSpread />
+       ^^^^^^^^^^^^^^^^^ [1]
+   names.js:25:35
+   25| component NoRefInSpread(...props: {ref: string}) { return <div /> }; // Error
+                                         ^^^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- names.js:28:82
+
+Multiple component properties are re-declared within a spread [1].
+ - `bar` [2] is re-declared here [3]
+ - `foo` [4] is re-declared here [5]
+Property names may only be have one definition within a component. [invalid-component-prop]
+
+   names.js:28:82
+   28| component MyPropsAreBadInSoManyDifferentWays(foo: string, bar: string, ...props: {foo: number, bar: number, ref: any}) { return <div /> }; // Error
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   names.js:28:59
+   28| component MyPropsAreBadInSoManyDifferentWays(foo: string, bar: string, ...props: {foo: number, bar: number, ref: any}) { return <div /> }; // Error
+                                                                 ^^^ [2]
+   names.js:28:96
+   28| component MyPropsAreBadInSoManyDifferentWays(foo: string, bar: string, ...props: {foo: number, bar: number, ref: any}) { return <div /> }; // Error
+                                                                                                      ^^^ [3]
+   names.js:28:46
+   28| component MyPropsAreBadInSoManyDifferentWays(foo: string, bar: string, ...props: {foo: number, bar: number, ref: any}) { return <div /> }; // Error
+                                                    ^^^ [4]
+   names.js:28:83
+   28| component MyPropsAreBadInSoManyDifferentWays(foo: string, bar: string, ...props: {foo: number, bar: number, ref: any}) { return <div /> }; // Error
+                                                                                         ^^^ [5]
+
+
+Error ------------------------------------------------------------------------------------- nested_with_function.js:5:27
+
+Cannot use string [1] as the type argument of renders type. [invalid-render]
+
+   5|   component Foo() renders string { // invalid-render
+                                ^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------ nested_with_function.js:11:25
+
+Cannot use number [1] as the type argument of renders type. [invalid-render]
+
+   11| component Foo() renders number { // invalid-render
+                               ^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- nominal.js:13:1
+
+Cannot cast `Bar` to `typeof Foo` because component Bar [1] is incompatible with component Foo [2]. [incompatible-type]
+
+   nominal.js:13:1
+   13| Bar as typeof Foo; // ERROR
+       ^^^
+
+References:
+   nominal.js:9:1
+    9| component Bar() {
+       ^^^^^^^^^^^^^^^ [1]
+   nominal.js:13:8
+   13| Bar as typeof Foo; // ERROR
+              ^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- nominal.js:14:1
+
+Cannot cast `Foo` to `typeof Bar` because component Foo [1] is incompatible with component Bar [2]. [incompatible-type]
+
+   nominal.js:14:1
+   14| Foo as typeof Bar; // ERROR
+       ^^^
+
+References:
+   nominal.js:5:1
+    5| component Foo() {
+       ^^^^^^^^^^^^^^^ [1]
+   nominal.js:14:8
+   14| Foo as typeof Bar; // ERROR
+              ^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- nominal.js:17:1
+
+Cannot cast `Foo` to `React.ComponentType` because property `foo` is extra in object type [1] but missing in props of
+component Foo [2]. Exact objects do not accept extra props. [incompatible-type]
+
+   nominal.js:17:1
+   17| Foo as React.ComponentType<{foo: number}>; // ERROR
+       ^^^
+
+References:
+   nominal.js:17:28
+   17| Foo as React.ComponentType<{foo: number}>; // ERROR
+                                  ^^^^^^^^^^^^^ [1]
+   nominal.js:5:1
+    5| component Foo() {
+       ^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- nominal.js:19:36
+
+Cannot use null [1] as the type argument of renders type. Only elements of a component-syntax components can appear in
+renders. If you want to express the idea of rendering zero or one item, please use `renders?` instead. [invalid-render]
+
+   19| component Baz(foo: number) renders null { // invalid-render
+                                          ^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- param_reassignment.js:2:5
+
+Cannot reassign constant `p` [1]. [reassign-const]
+
+   param_reassignment.js:2:5
+   2|     p = 42; // error
+          ^
+
+References:
+   param_reassignment.js:1:15
+   1| component Foo(p: number, 'a' as b: string, ...rest: {...}) {
+                    ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- param_reassignment.js:3:5
+
+Cannot reassign constant `b` [1]. [reassign-const]
+
+   param_reassignment.js:3:5
+   3|     b = 'b'; // error
+          ^
+
+References:
+   param_reassignment.js:1:33
+   1| component Foo(p: number, 'a' as b: string, ...rest: {...}) {
+                                      ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- param_reassignment.js:4:5
+
+Cannot reassign constant `rest` [1]. [reassign-const]
+
+   param_reassignment.js:4:5
+   4|     rest = {}; // error
+          ^^^^
+
+References:
+   param_reassignment.js:1:47
+   1| component Foo(p: number, 'a' as b: string, ...rest: {...}) {
+                                                    ^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- param_reassignment.js:6:9
+
+Cannot declare `p` [1] because the name is already bound. [name-already-bound]
+
+   param_reassignment.js:6:9
+   6|     let p; // error
+              ^
+
+References:
+   param_reassignment.js:1:15
+   1| component Foo(p: number, 'a' as b: string, ...rest: {...}) {
+                    ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- poly.js:10:34
+
+Cannot create `Poly` element because in property `baz` > the first parameter: string [1] is incompatible with
+number [2]. [incompatible-type]
+
+   poly.js:10:34
+   10| <Poly foo={1} bar={[1]} baz={(x: string) => {}} />; //error
+                                        ^^^^^^ [1]
+
+References:
+   poly.js:10:12
+   10| <Poly foo={1} bar={[1]} baz={(x: string) => {}} />; //error
+                  ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- poly.js:10:34
+
+Cannot create `Poly` element because in property `baz` > the first parameter: string [1] is incompatible with
+number [2]. [incompatible-type]
+
+   poly.js:10:34
+   10| <Poly foo={1} bar={[1]} baz={(x: string) => {}} />; //error
+                                        ^^^^^^ [1]
+
+References:
+   poly.js:10:21
+   10| <Poly foo={1} bar={[1]} baz={(x: string) => {}} />; //error
+                           ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- poly.js:13:2
+
+Cannot cast `x` to `Poly` because in type argument `T` [1]: number [2] is incompatible with string [3].
+[incompatible-type]
+
+   poly.js:13:2
+   13| (x: Poly<string>);
+        ^
+
+References:
+   poly.js:3:23
+    3| export component Poly<T>(foo: T, bar: [T], ...props: { baz?: (T) => void}) {
+                             ^ [1]
+   poly.js:12:23
+   12| declare const x: Poly<number>;
+                             ^^^^^^ [2]
+   poly.js:13:10
+   13| (x: Poly<string>);
+                ^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------------- poly.js:25:25
+
+Cannot create `Foo` element because in property `setTV` > the first parameter: string literal `number` [1] is
+incompatible with string literal `out` [2]. [incompatible-type]
+
+   poly.js:25:25
+   25|     return (<Foo setTV={set /* error */}>
+                               ^^^
+
+References:
+   poly.js:24:24
+   24|     declare const set: 'number' => void;
+                              ^^^^^^^^ [1]
+   poly.js:26:19
+   26|         <BRB foo={'out'} />
+                         ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- props_reason.js:6:39
+
+Cannot assign `Foo` to `a` because inexact object type [1] is incompatible with exact props of component Foo [2].
+[incompatible-exact]
+
+   props_reason.js:6:39
+   6| const a: React.ComponentType<{...}> = Foo; // ERROR
+                                            ^^^
+
+References:
+   props_reason.js:6:30
+   6| const a: React.ComponentType<{...}> = Foo; // ERROR
+                                   ^^^^^ [1]
+   props_reason.js:3:1
+   3| component Foo(x: number) { return null; }
+      ^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- props_reason.js:6:39
+
+Cannot assign `Foo` to `a` because property `x` is missing in object type [1] but exists in props of component Foo [2].
+[incompatible-type]
+
+   props_reason.js:6:39
+   6| const a: React.ComponentType<{...}> = Foo; // ERROR
+                                            ^^^
+
+References:
+   props_reason.js:6:30
+   6| const a: React.ComponentType<{...}> = Foo; // ERROR
+                                   ^^^^^ [1]
+   props_reason.js:3:1
+   3| component Foo(x: number) { return null; }
+      ^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- propsof.js:8:4
+
+Cannot cast `foo` to empty because string [1] is incompatible with empty [2]. [incompatible-type]
+
+   propsof.js:8:4
+   8|   (foo: empty); // foo is string
+         ^^^
+
+References:
+   propsof.js:3:18
+   3| component A(foo: string, bar: number, ref: React.RefSetter<AInstance>) {
+                       ^^^^^^ [1]
+   propsof.js:8:9
+   8|   (foo: empty); // foo is string
+              ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- propsof.js:9:4
+
+Cannot cast `bar` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   propsof.js:9:4
+   9|   (bar: empty); // bar is number
+         ^^^
+
+References:
+   propsof.js:3:31
+   3| component A(foo: string, bar: number, ref: React.RefSetter<AInstance>) {
+                                    ^^^^^^ [1]
+   propsof.js:9:9
+   9|   (bar: empty); // bar is number
+              ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- propsof.js:14:2
+
+Cannot cast `intrinsicProp.children` to empty because `$Iterable` [1] is incompatible with empty [2].
+[incompatible-type]
+
+   propsof.js:14:2
+   14| (intrinsicProp.children: empty); // children is ?React.Node
+        ^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   flow-typed/jsx.js:16:24
+   16|     props: {children?: React$Node, ...},
+                              ^^^^^^^^^^ [1]
+   propsof.js:14:26
+   14| (intrinsicProp.children: empty); // children is ?React.Node
+                                ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- propsof.js:14:2
+
+Cannot cast `intrinsicProp.children` to empty because `ExactReactElement_DEPRECATED` [1] is incompatible with empty [2].
+[incompatible-type]
+
+   propsof.js:14:2
+   14| (intrinsicProp.children: empty); // children is ?React.Node
+        ^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   flow-typed/jsx.js:16:24
+   16|     props: {children?: React$Node, ...},
+                              ^^^^^^^^^^ [1]
+   propsof.js:14:26
+   14| (intrinsicProp.children: empty); // children is ?React.Node
+                                ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- propsof.js:14:2
+
+Cannot cast `intrinsicProp.children` to empty because `React.Portal` [1] is incompatible with empty [2].
+[incompatible-type]
+
+   propsof.js:14:2
+   14| (intrinsicProp.children: empty); // children is ?React.Node
+        ^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   flow-typed/jsx.js:16:24
+   16|     props: {children?: React$Node, ...},
+                              ^^^^^^^^^^ [1]
+   propsof.js:14:26
+   14| (intrinsicProp.children: empty); // children is ?React.Node
+                                ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- propsof.js:14:2
+
+Cannot cast `intrinsicProp.children` to empty because boolean [1] is incompatible with empty [2]. [incompatible-type]
+
+   propsof.js:14:2
+   14| (intrinsicProp.children: empty); // children is ?React.Node
+        ^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   flow-typed/jsx.js:16:24
+   16|     props: {children?: React$Node, ...},
+                              ^^^^^^^^^^ [1]
+   propsof.js:14:26
+   14| (intrinsicProp.children: empty); // children is ?React.Node
+                                ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- propsof.js:14:2
+
+Cannot cast `intrinsicProp.children` to empty because null [1] is incompatible with empty [2]. [incompatible-type]
+
+   propsof.js:14:2
+   14| (intrinsicProp.children: empty); // children is ?React.Node
+        ^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   flow-typed/jsx.js:16:24
+   16|     props: {children?: React$Node, ...},
+                              ^^^^^^^^^^ [1]
+   propsof.js:14:26
+   14| (intrinsicProp.children: empty); // children is ?React.Node
+                                ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- propsof.js:14:2
+
+Cannot cast `intrinsicProp.children` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   propsof.js:14:2
+   14| (intrinsicProp.children: empty); // children is ?React.Node
+        ^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   flow-typed/jsx.js:16:24
+   16|     props: {children?: React$Node, ...},
+                              ^^^^^^^^^^ [1]
+   propsof.js:14:26
+   14| (intrinsicProp.children: empty); // children is ?React.Node
+                                ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- propsof.js:14:2
+
+Cannot cast `intrinsicProp.children` to empty because string [1] is incompatible with empty [2]. [incompatible-type]
+
+   propsof.js:14:2
+   14| (intrinsicProp.children: empty); // children is ?React.Node
+        ^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   flow-typed/jsx.js:16:24
+   16|     props: {children?: React$Node, ...},
+                              ^^^^^^^^^^ [1]
+   propsof.js:14:26
+   14| (intrinsicProp.children: empty); // children is ?React.Node
+                                ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- propsof.js:14:2
+
+Cannot cast `intrinsicProp.children` to empty because undefined [1] is incompatible with empty [2]. [incompatible-type]
+
+   propsof.js:14:2
+   14| (intrinsicProp.children: empty); // children is ?React.Node
+        ^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   flow-typed/jsx.js:16:24
+   16|     props: {children?: React$Node, ...},
+                              ^^^^^^^^^^ [1]
+   propsof.js:14:26
+   14| (intrinsicProp.children: empty); // children is ?React.Node
+                                ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- propsof.js:17:16
+
+Cannot assign `42` to `s` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   propsof.js:17:16
+   17| const s: Str = 42; // Str is string
+                      ^^ [1]
+
+References:
+   propsof.js:17:10
+   17| const s: Str = 42; // Str is string
+                ^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- propsof.js:28:22
+
+Cannot create `meta` element because in property `ref`: [incompatible-type]
+ - Either in the first parameter: `MetaInstance` [1] is incompatible with `AInstance` [2].
+ - Or in the first parameter: `MetaInstance` [1] is incompatible with null [3].
+
+   propsof.js:28:22
+    28|   let b = <meta ref={ref} />; // error
+                             ^^^
+
+References:
+   flow-typed/jsx.js:29:15
+    29|     instance: MetaInstance,
+                      ^^^^^^^^^^^^ [1]
+   propsof.js:3:60
+     3| component A(foo: string, bar: number, ref: React.RefSetter<AInstance>) {
+                                                                   ^^^^^^^^^ [2]
+   <BUILTINS>/react.js:108:13
+   108|     | ((T | null) => mixed)
+                    ^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------- propsof.js:28:22
+
+Cannot create `meta` element because in property `ref`: [incompatible-type]
+ - Either in property `current`: `MetaInstance` [1] is incompatible with `AInstance` [2].
+ - Or in property `current`: `MetaInstance` [1] is incompatible with null [3].
+
+   propsof.js:28:22
+    28|   let b = <meta ref={ref} />; // error
+                             ^^^
+
+References:
+   flow-typed/jsx.js:29:15
+    29|     instance: MetaInstance,
+                      ^^^^^^^^^^^^ [1]
+   propsof.js:3:60
+     3| component A(foo: string, bar: number, ref: React.RefSetter<AInstance>) {
+                                                                   ^^^^^^^^^ [2]
+   <BUILTINS>/react.js:108:13
+   108|     | ((T | null) => mixed)
+                    ^^^^ [3]
+
+
+Error -------------------------------------------------------------------------------------------------- provider.js:4:9
+
+Cannot assign `42` to `x` because number [1] is incompatible with string [2]. [incompatible-type]
+
+All writes to `x` must be compatible with the type of its initial assignment [3]. Add an annotation to `x` [4] if a
+different type is desired.
+
+   provider.js:4:9
+   4|     x = 42;
+              ^^ [1]
+
+References:
+   provider.js:8:5
+   8| x = 'a';
+          ^^^ [2]
+   provider.js:8:1
+   8| x = 'a';
+      ^ [3]
+   provider.js:1:5
+   1| var x;
+          ^ [4]
+
+
+Error ------------------------------------------------------------------------------------------------- provider.js:11:6
+
+Cannot cast `x` to empty because string [1] is incompatible with empty [2]. [incompatible-type]
+
+   provider.js:11:6
+   11|     (x: empty);
+            ^
+
+References:
+   provider.js:8:5
+    8| x = 'a';
+           ^^^ [1]
+   provider.js:11:9
+   11|     (x: empty);
+               ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- refs.js:3:15
+
+The `ref` parameter must be a subtype of `React.RefSetter`: [incompatible-type]
+ - Either in property `current`: null [1] is incompatible with component Reffed [2].
+ - Or object type [3] is incompatible with function type [4].
+
+   refs.js:3:15
+     3| component Foo(ref: {current: typeof Reffed}) { return null };
+                      ^^^
+
+References:
+   <BUILTINS>/react.js:107:23
+   107|     | { -current: T | null, ... }
+                              ^^^^ [1]
+   refs.js:3:30
+     3| component Foo(ref: {current: typeof Reffed}) { return null };
+                                     ^^^^^^^^^^^^^ [2]
+   refs.js:3:20
+     3| component Foo(ref: {current: typeof Reffed}) { return null };
+                           ^^^^^^^^^^^^^^^^^^^^^^^^ [3]
+   <BUILTINS>/react.js:108:8
+   108|     | ((T | null) => mixed)
+               ^^^^^^^^^^^^^^^^^^^ [4]
+
+
+Error ----------------------------------------------------------------------------------------------------- refs.js:5:15
+
+The `ref` parameter must be a subtype of `React.RefSetter`: [incompatible-type]
+ - Either in the first parameter: component Reffed [1] is incompatible with null [2].
+ - Or function type [3] is incompatible with object type [4].
+    - Functions without statics are not compatible with objects.
+
+   refs.js:5:15
+     5| component Bar(ref: ((typeof Reffed) => mixed)) { return null };
+                      ^^^
+
+References:
+   refs.js:5:22
+     5| component Bar(ref: ((typeof Reffed) => mixed)) { return null };
+                             ^^^^^^^^^^^^^ [1]
+   <BUILTINS>/react.js:108:13
+   108|     | ((T | null) => mixed)
+                    ^^^^ [2]
+   refs.js:5:21
+     5| component Bar(ref: ((typeof Reffed) => mixed)) { return null };
+                            ^^^^^^^^^^^^^^^^^^^^^^^^ [3]
+   <BUILTINS>/react.js:107:7
+   107|     | { -current: T | null, ... }
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^ [4]
+
+
+Error ----------------------------------------------------------------------------------------------------- refs.js:12:2
+
+Cannot cast `Foo` to component because in property `ref`: null [1] is incompatible with object type [2].
+[incompatible-type]
+
+   refs.js:12:2
+   12| (Foo: component(ref: React.RefSetter<string>)); // err: React.RefSetter<string> ~> {current: typeof Reffed}
+        ^^^
+
+References:
+   refs.js:12:22
+   12| (Foo: component(ref: React.RefSetter<string>)); // err: React.RefSetter<string> ~> {current: typeof Reffed}
+                            ^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   refs.js:3:20
+    3| component Foo(ref: {current: typeof Reffed}) { return null };
+                          ^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- refs.js:12:2
+
+Cannot cast `Foo` to component because in property `ref`: undefined [1] is incompatible with object type [2].
+[incompatible-type]
+
+   refs.js:12:2
+   12| (Foo: component(ref: React.RefSetter<string>)); // err: React.RefSetter<string> ~> {current: typeof Reffed}
+        ^^^
+
+References:
+   refs.js:12:22
+   12| (Foo: component(ref: React.RefSetter<string>)); // err: React.RefSetter<string> ~> {current: typeof Reffed}
+                            ^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   refs.js:3:20
+    3| component Foo(ref: {current: typeof Reffed}) { return null };
+                          ^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- refs.js:12:2
+
+Cannot cast `Foo` to component because in property `ref`: inexact function type [1] is incompatible with exact object
+type [2]. [incompatible-exact]
+
+   refs.js:12:2
+   12| (Foo: component(ref: React.RefSetter<string>)); // err: React.RefSetter<string> ~> {current: typeof Reffed}
+        ^^^
+
+References:
+   refs.js:12:22
+   12| (Foo: component(ref: React.RefSetter<string>)); // err: React.RefSetter<string> ~> {current: typeof Reffed}
+                            ^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   refs.js:3:20
+    3| component Foo(ref: {current: typeof Reffed}) { return null };
+                          ^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- refs.js:12:2
+
+Cannot cast `Foo` to component because in property `ref`: inexact object type [1] is incompatible with exact object
+type [2]. [incompatible-exact]
+
+   refs.js:12:2
+   12| (Foo: component(ref: React.RefSetter<string>)); // err: React.RefSetter<string> ~> {current: typeof Reffed}
+        ^^^
+
+References:
+   refs.js:12:22
+   12| (Foo: component(ref: React.RefSetter<string>)); // err: React.RefSetter<string> ~> {current: typeof Reffed}
+                            ^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   refs.js:3:20
+    3| component Foo(ref: {current: typeof Reffed}) { return null };
+                          ^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- refs.js:12:2
+
+Cannot cast `Foo` to component because in property `ref`: property `current` is write-only in object type [1] but
+readable in object type [2]. [incompatible-variance]
+
+   refs.js:12:2
+   12| (Foo: component(ref: React.RefSetter<string>)); // err: React.RefSetter<string> ~> {current: typeof Reffed}
+        ^^^
+
+References:
+   refs.js:12:22
+   12| (Foo: component(ref: React.RefSetter<string>)); // err: React.RefSetter<string> ~> {current: typeof Reffed}
+                            ^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   refs.js:3:20
+    3| component Foo(ref: {current: typeof Reffed}) { return null };
+                          ^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- refs.js:12:2
+
+Cannot cast `Foo` to component because in property `ref.current`: [incompatible-type]
+ - Either component Reffed [1] is incompatible with string [2].
+ - Or component Reffed [1] is incompatible with null [3].
+
+   refs.js:12:2
+    12| (Foo: component(ref: React.RefSetter<string>)); // err: React.RefSetter<string> ~> {current: typeof Reffed}
+         ^^^
+
+References:
+   refs.js:3:30
+     3| component Foo(ref: {current: typeof Reffed}) { return null };
+                                     ^^^^^^^^^^^^^ [1]
+   refs.js:12:38
+    12| (Foo: component(ref: React.RefSetter<string>)); // err: React.RefSetter<string> ~> {current: typeof Reffed}
+                                             ^^^^^^ [2]
+   <BUILTINS>/react.js:107:23
+   107|     | { -current: T | null, ... }
+                              ^^^^ [3]
+
+
+Error ----------------------------------------------------------------------------------------------------- refs.js:13:2
+
+Cannot cast `Foo` to component because in property `ref`: null [1] is incompatible with object type [2].
+[incompatible-type]
+
+   refs.js:13:2
+   13| (Foo: component(ref: React.RefSetter<typeof Reffed>)); //err
+        ^^^
+
+References:
+   refs.js:13:22
+   13| (Foo: component(ref: React.RefSetter<typeof Reffed>)); //err
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   refs.js:3:20
+    3| component Foo(ref: {current: typeof Reffed}) { return null };
+                          ^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- refs.js:13:2
+
+Cannot cast `Foo` to component because in property `ref`: undefined [1] is incompatible with object type [2].
+[incompatible-type]
+
+   refs.js:13:2
+   13| (Foo: component(ref: React.RefSetter<typeof Reffed>)); //err
+        ^^^
+
+References:
+   refs.js:13:22
+   13| (Foo: component(ref: React.RefSetter<typeof Reffed>)); //err
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   refs.js:3:20
+    3| component Foo(ref: {current: typeof Reffed}) { return null };
+                          ^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- refs.js:13:2
+
+Cannot cast `Foo` to component because in property `ref`: inexact function type [1] is incompatible with exact object
+type [2]. [incompatible-exact]
+
+   refs.js:13:2
+   13| (Foo: component(ref: React.RefSetter<typeof Reffed>)); //err
+        ^^^
+
+References:
+   refs.js:13:22
+   13| (Foo: component(ref: React.RefSetter<typeof Reffed>)); //err
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   refs.js:3:20
+    3| component Foo(ref: {current: typeof Reffed}) { return null };
+                          ^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- refs.js:13:2
+
+Cannot cast `Foo` to component because in property `ref`: inexact object type [1] is incompatible with exact object
+type [2]. [incompatible-exact]
+
+   refs.js:13:2
+   13| (Foo: component(ref: React.RefSetter<typeof Reffed>)); //err
+        ^^^
+
+References:
+   refs.js:13:22
+   13| (Foo: component(ref: React.RefSetter<typeof Reffed>)); //err
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   refs.js:3:20
+    3| component Foo(ref: {current: typeof Reffed}) { return null };
+                          ^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- refs.js:13:2
+
+Cannot cast `Foo` to component because in property `ref`: property `current` is write-only in object type [1] but
+readable in object type [2]. [incompatible-variance]
+
+   refs.js:13:2
+   13| (Foo: component(ref: React.RefSetter<typeof Reffed>)); //err
+        ^^^
+
+References:
+   refs.js:13:22
+   13| (Foo: component(ref: React.RefSetter<typeof Reffed>)); //err
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   refs.js:3:20
+    3| component Foo(ref: {current: typeof Reffed}) { return null };
+                          ^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- refs.js:15:2
+
+Cannot cast `Bar` to component because in property `ref`: null [1] is incompatible with function type [2].
+[incompatible-type]
+
+   refs.js:15:2
+   15| (Bar: component(ref: React.RefSetter<string>)); // err
+        ^^^
+
+References:
+   refs.js:15:22
+   15| (Bar: component(ref: React.RefSetter<string>)); // err
+                            ^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   refs.js:5:21
+    5| component Bar(ref: ((typeof Reffed) => mixed)) { return null };
+                           ^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- refs.js:15:2
+
+Cannot cast `Bar` to component because in property `ref`: object type [1] is incompatible with function type [2].
+[incompatible-type]
+
+   refs.js:15:2
+   15| (Bar: component(ref: React.RefSetter<string>)); // err
+        ^^^
+
+References:
+   refs.js:15:22
+   15| (Bar: component(ref: React.RefSetter<string>)); // err
+                            ^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   refs.js:5:21
+    5| component Bar(ref: ((typeof Reffed) => mixed)) { return null };
+                           ^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- refs.js:15:2
+
+Cannot cast `Bar` to component because in property `ref`: undefined [1] is incompatible with function type [2].
+[incompatible-type]
+
+   refs.js:15:2
+   15| (Bar: component(ref: React.RefSetter<string>)); // err
+        ^^^
+
+References:
+   refs.js:15:22
+   15| (Bar: component(ref: React.RefSetter<string>)); // err
+                            ^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   refs.js:5:21
+    5| component Bar(ref: ((typeof Reffed) => mixed)) { return null };
+                           ^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- refs.js:15:2
+
+Cannot cast `Bar` to component because in the first parameter of property `ref`: [incompatible-type]
+ - Either component Reffed [1] is incompatible with string [2].
+ - Or component Reffed [1] is incompatible with null [3].
+
+   refs.js:15:2
+    15| (Bar: component(ref: React.RefSetter<string>)); // err
+         ^^^
+
+References:
+   refs.js:5:22
+     5| component Bar(ref: ((typeof Reffed) => mixed)) { return null };
+                             ^^^^^^^^^^^^^ [1]
+   refs.js:15:38
+    15| (Bar: component(ref: React.RefSetter<string>)); // err
+                                             ^^^^^^ [2]
+   <BUILTINS>/react.js:108:13
+   108|     | ((T | null) => mixed)
+                    ^^^^ [3]
+
+
+Error ----------------------------------------------------------------------------------------------------- refs.js:17:2
+
+Cannot cast `Baz` to component because in property `ref` > type argument `T` [1]: string [2] is incompatible with
+component Reffed [3]. [incompatible-type]
+
+   refs.js:17:2
+    17| (Baz: component(ref: React.RefSetter<string>)); // err
+         ^^^
+
+References:
+   <BUILTINS>/react.js:274:34
+   274|   declare export type RefSetter<-T> = React.RefSetter<T>;
+                                         ^ [1]
+   refs.js:17:38
+    17| (Baz: component(ref: React.RefSetter<string>)); // err
+                                             ^^^^^^ [2]
+   refs.js:8:36
+     8| component Baz(ref: React.RefSetter<typeof Reffed>) { return null };
+                                           ^^^^^^^^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------------- refs.js:64:53
+
+Cannot create `MyNestedInput` element because in property `ref`: [incompatible-type]
+ - Either in the first parameter: `CommonInstance` [1] is incompatible with nullable `InputInstance` [2].
+ - Or in the first parameter: `CommonInstance` [1] is incompatible with `InputInstance` [3].
+
+   refs.js:64:53
+   64|                 <MyNestedInput {...otherProps} ref={ref} />
+                                                           ^^^
+
+References:
+   refs.js:56:66
+   56|     component MyNestedInput(other: string, ref: React.RefSetter<?CommonInstance>) {
+                                                                        ^^^^^^^^^^^^^^ [1]
+   refs.js:60:59
+   60|     component MyInput(label: string, ref: React.RefSetter<?InputInstance>, ...otherProps: { other: string}) {
+                                                                 ^^^^^^^^^^^^^^ [2]
+   refs.js:60:60
+   60|     component MyInput(label: string, ref: React.RefSetter<?InputInstance>, ...otherProps: { other: string}) {
+                                                                  ^^^^^^^^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------------- refs.js:64:53
+
+Cannot create `MyNestedInput` element because in property `ref`: [incompatible-type]
+ - Either in property `current`: `CommonInstance` [1] is incompatible with nullable `InputInstance` [2].
+ - Or in property `current`: `CommonInstance` [1] is incompatible with `InputInstance` [3].
+
+   refs.js:64:53
+   64|                 <MyNestedInput {...otherProps} ref={ref} />
+                                                           ^^^
+
+References:
+   refs.js:56:66
+   56|     component MyNestedInput(other: string, ref: React.RefSetter<?CommonInstance>) {
+                                                                        ^^^^^^^^^^^^^^ [1]
+   refs.js:60:59
+   60|     component MyInput(label: string, ref: React.RefSetter<?InputInstance>, ...otherProps: { other: string}) {
+                                                                 ^^^^^^^^^^^^^^ [2]
+   refs.js:60:60
+   60|     component MyInput(label: string, ref: React.RefSetter<?InputInstance>, ...otherProps: { other: string}) {
+                                                                  ^^^^^^^^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------------- refs.js:92:13
+
+Cannot create `Foo` element because in property `ref`: [incompatible-type]
+ - Either in the first parameter > property `bar`: number [1] is incompatible with boolean [2].
+ - Or in the first parameter: object type [3] is incompatible with null [4].
+
+   refs.js:92:13
+    92|   <Foo ref={badRef} />; // error
+                    ^^^^^^
+
+References:
+   refs.js:88:66
+    88|   declare component Foo(ref?: React.RefSetter<{foo: string, bar: number}>)
+                                                                         ^^^^^^ [1]
+   refs.js:90:60
+    90|   declare const badRef: React.RefSetter<{foo: string, bar: boolean}>;
+                                                                   ^^^^^^^ [2]
+   refs.js:88:47
+    88|   declare component Foo(ref?: React.RefSetter<{foo: string, bar: number}>)
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^ [3]
+   <BUILTINS>/react.js:108:13
+   108|     | ((T | null) => mixed)
+                    ^^^^ [4]
+
+
+Error ---------------------------------------------------------------------------------------------------- refs.js:92:13
+
+Cannot create `Foo` element because in property `ref`: [incompatible-type]
+ - Either in property `current` > property `bar`: number [1] is incompatible with boolean [2].
+ - Or in property `current`: object type [3] is incompatible with null [4].
+
+   refs.js:92:13
+    92|   <Foo ref={badRef} />; // error
+                    ^^^^^^
+
+References:
+   refs.js:88:66
+    88|   declare component Foo(ref?: React.RefSetter<{foo: string, bar: number}>)
+                                                                         ^^^^^^ [1]
+   refs.js:90:60
+    90|   declare const badRef: React.RefSetter<{foo: string, bar: boolean}>;
+                                                                   ^^^^^^^ [2]
+   refs.js:88:47
+    88|   declare component Foo(ref?: React.RefSetter<{foo: string, bar: number}>)
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^ [3]
+   <BUILTINS>/react.js:107:23
+   107|     | { -current: T | null, ... }
+                              ^^^^ [4]
+
+
+Error --------------------------------------------------------------------------------------------------- refs.js:105:23
+
+Cannot create `GenericRef1` element because in property `ref`: [incompatible-type]
+ - Either number [1] is incompatible with object type [2].
+ - Or number [1] is incompatible with function type [3].
+
+   refs.js:105:23
+   105|     <GenericRef1 ref={1} />; // error
+                              ^ [1]
+
+References:
+   <BUILTINS>/react.js:107:7
+   107|     | { -current: T | null, ... }
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+   <BUILTINS>/react.js:108:8
+   108|     | ((T | null) => mixed)
+               ^^^^^^^^^^^^^^^^^^^ [3]
+
+
+Error --------------------------------------------------------------------------------------------------- refs.js:108:23
+
+Cannot create `GenericRef2` element because in property `ref`: [incompatible-type]
+ - Either in the first parameter: array type [1] is incompatible with string [2].
+ - Or in the first parameter: array type [1] is incompatible with null [3].
+
+   refs.js:108:23
+   108|     <GenericRef2 ref={(r: string | null) => {}} />; // error
+                              ^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   refs.js:101:51
+   101|     component GenericRef2<T>(ref: React.RefSetter<Array<Array<Array<T>>>>) { return null };
+                                                          ^^^^^^^^^^^^^^^^^^^^^^ [1]
+   refs.js:108:27
+   108|     <GenericRef2 ref={(r: string | null) => {}} />; // error
+                                  ^^^^^^ [2]
+   refs.js:108:36
+   108|     <GenericRef2 ref={(r: string | null) => {}} />; // error
+                                           ^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------- refs_without_react.js:1:1
+
+Cannot declare component because component Foo [1] is not guaranteed to reach a return statement. An explicit return
+statement must be included for all possible branches. [component-missing-return]
+
+   1| component Foo(ref: any) { }
+      ^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------- render_constraints.js:1:34
+
+Cannot use object type [1] as the type argument of renders type. [invalid-render]
+
+   1| component Foo(x: number) renders {...} { // ERROR, {...} not a subtype of React.Node
+                                       ^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------- rest_constraints.js:1:21
+
+number [1] is not an object. [not-an-object]
+
+   1| component Foo(...x: number) { return null; } // ERROR, not an object
+                          ^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------- rest_constraints.js:1:21
+
+Cannot use number [1] as a component rest param. Component rest params must use an object type and cannot be optional.
+[incompatible-type]
+
+   1| component Foo(...x: number) { return null; } // ERROR, not an object
+                          ^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------- rest_constraints.js:2:22
+
+number [1] is not an object. [not-an-object]
+
+   2| component Bar(...x?: number) {return null; } // ERROR optional
+                           ^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------- rest_constraints.js:2:22
+
+Cannot use optional number [1] as a component rest param. Component rest params must use an object type and cannot be
+optional. [incompatible-type]
+
+   2| component Bar(...x?: number) {return null; } // ERROR optional
+                           ^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------- rest_constraints.js:3:22
+
+Cannot use optional object type [1] as a component rest param. Component rest params must use an object type and cannot
+be optional. [incompatible-type]
+
+   3| component Baz(...x?: {foo: number}) {return null; } // ERROR optional
+                           ^^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------- rest_constraints.js:6:23
+
+Cannot assign boolean literal `false` to `baz` because boolean [1] is incompatible with number [2]. [incompatible-type]
+
+   rest_constraints.js:6:23
+   6|   ...{foo, bar, baz = false}: {foo: number, bar: number, baz?: number} // ERROR bad default for baz
+                            ^^^^^ [1]
+
+References:
+   rest_constraints.js:6:64
+   6|   ...{foo, bar, baz = false}: {foo: number, bar: number, baz?: number} // ERROR bad default for baz
+                                                                     ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ rest_constraints.js:9:4
+
+Cannot cast `bar` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   rest_constraints.js:9:4
+   9|   (bar: string); // ERROR
+         ^^^
+
+References:
+   rest_constraints.js:6:50
+   6|   ...{foo, bar, baz = false}: {foo: number, bar: number, baz?: number} // ERROR bad default for baz
+                                                       ^^^^^^ [1]
+   rest_constraints.js:9:9
+   9|   (bar: string); // ERROR
+              ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- rest_constraints.js:13:30
+
+You may only use an identifier or a destructured object as a component rest param. [invalid-component-prop]
+
+   13| component DestructuredArr(...[foo, bar]: {foo: number, bar: number}) { // ERROR destructure array
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------- rest_constraints.js:13:31
+
+Property `0` is missing in object type [1]. [prop-missing]
+
+   rest_constraints.js:13:31
+   13| component DestructuredArr(...[foo, bar]: {foo: number, bar: number}) { // ERROR destructure array
+                                     ^^^
+
+References:
+   rest_constraints.js:13:42
+   13| component DestructuredArr(...[foo, bar]: {foo: number, bar: number}) { // ERROR destructure array
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- rest_constraints.js:13:36
+
+Property `1` is missing in object type [1]. [prop-missing]
+
+   rest_constraints.js:13:36
+   13| component DestructuredArr(...[foo, bar]: {foo: number, bar: number}) { // ERROR destructure array
+                                          ^^^
+
+References:
+   rest_constraints.js:13:42
+   13| component DestructuredArr(...[foo, bar]: {foo: number, bar: number}) { // ERROR destructure array
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- rest_constraints.js:17:42
+
+You may only use an identifier or a destructured object as a component rest param. [invalid-component-prop]
+
+   17| component DestructuredArrWithArrAnnot(...[foo, bar]: [number, number]) { // ERROR destructure array, array not an object
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------- rest_constraints.js:17:54
+
+tuple type [1] is not an object. [not-an-object]
+
+   17| component DestructuredArrWithArrAnnot(...[foo, bar]: [number, number]) { // ERROR destructure array, array not an object
+                                                            ^^^^^^^^^^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- rest_constraints.js:17:54
+
+Cannot use tuple type [1] as a component rest param. Component rest params must use an object type and cannot be
+optional. [incompatible-type]
+
+   17| component DestructuredArrWithArrAnnot(...[foo, bar]: [number, number]) { // ERROR destructure array, array not an object
+                                                            ^^^^^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------- rest_constraints.js:22:2
+
+Cannot create `DestructuredArr` element because properties `bar` and `foo` are missing in props [1] but exist in object
+type [2]. [incompatible-type]
+
+   rest_constraints.js:22:2
+   22| <DestructuredArr />; // ERROR because annot still provides a valid config type
+        ^^^^^^^^^^^^^^^
+
+References:
+   rest_constraints.js:22:1
+   22| <DestructuredArr />; // ERROR because annot still provides a valid config type
+       ^^^^^^^^^^^^^^^^^^^ [1]
+   rest_constraints.js:13:42
+   13| component DestructuredArr(...[foo, bar]: {foo: number, bar: number}) { // ERROR destructure array
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ signature.js:9:39
+
+Cannot create `InlineOnly` element because in property `foo`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   signature.js:9:39
+   9| const inlineOnlyBad = <InlineOnly foo="" bar={3} />; // Error 2x
+                                            ^^ [1]
+
+References:
+   signature.js:4:27
+   4| component InlineOnly(foo: number, bar: string) {
+                                ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ signature.js:9:47
+
+Cannot create `InlineOnly` element because in property `bar`: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   signature.js:9:47
+   9| const inlineOnlyBad = <InlineOnly foo="" bar={3} />; // Error 2x
+                                                    ^ [1]
+
+References:
+   signature.js:4:40
+   4| component InlineOnly(foo: number, bar: string) {
+                                             ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- signature.js:16:37
+
+Cannot create `InexactRest` element because in property `foo`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   signature.js:16:37
+   16| const inexactBad = <InexactRest foo="" bar={3} baz={3} />; // ERROR 2x for foo and bar
+                                           ^^ [1]
+
+References:
+   signature.js:11:28
+   11| component InexactRest(foo: number, ...rest: {bar: string, ...}) {
+                                  ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- signature.js:16:45
+
+Cannot create `InexactRest` element because in property `bar`: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   signature.js:16:45
+   16| const inexactBad = <InexactRest foo="" bar={3} baz={3} />; // ERROR 2x for foo and bar
+                                                   ^ [1]
+
+References:
+   signature.js:11:51
+   11| component InexactRest(foo: number, ...rest: {bar: string, ...}) {
+                                                         ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- signature.js:23:37
+
+Cannot create `IndexedRest` element because in property `foo`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   signature.js:23:37
+   23| const indexedBad = <IndexedRest foo="" bar="str" />; // ERROR 2x for foo and bar
+                                           ^^ [1]
+
+References:
+   signature.js:18:28
+   18| component IndexedRest(foo: number, ...rest: {[string]: number, ...}) {
+                                  ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- signature.js:23:44
+
+Cannot create `IndexedRest` element because in property `bar`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   signature.js:23:44
+   23| const indexedBad = <IndexedRest foo="" bar="str" />; // ERROR 2x for foo and bar
+                                                  ^^^^^ [1]
+
+References:
+   signature.js:18:56
+   18| component IndexedRest(foo: number, ...rest: {[string]: number, ...}) {
+                                                              ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- signature.js:30:39
+
+Cannot create `DefaultProps` element because in property `foo`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   signature.js:30:39
+   30| const defaultsBad = <DefaultProps foo="bad" />; // ERROR
+                                             ^^^^^ [1]
+
+References:
+   signature.js:25:29
+   25| component DefaultProps(foo: number = 3) {
+                                   ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- signature.js:41:28
+
+Cannot create `RenamedParams` element because property `baz` is extra in props [1] but missing in props of component
+RenamedParams [2]. Exact objects do not accept extra props. [incompatible-type]
+
+   signature.js:41:28
+   41| const renamedWrongProps = <RenamedParams bar={3} foo="str" baz="str" />; // ERROR 4x, bad foo type, bad bar type, no non-ident, extra baz
+                                  ^^^^^^^^^^^^^
+
+References:
+   signature.js:41:27
+   41| const renamedWrongProps = <RenamedParams bar={3} foo="str" baz="str" />; // ERROR 4x, bad foo type, bad bar type, no non-ident, extra baz
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   signature.js:32:1
+       v-----------------------
+   32| component RenamedParams(
+   33|   foo as bar: number,
+   34|   bar as foo: string,
+   35|   'non-ident' as baz: string,
+   36| ) {
+       ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- signature.js:41:28
+
+Cannot create `RenamedParams` element because property `non-ident` is missing in props [1] but exists in props of
+component RenamedParams [2]. [incompatible-type]
+
+   signature.js:41:28
+   41| const renamedWrongProps = <RenamedParams bar={3} foo="str" baz="str" />; // ERROR 4x, bad foo type, bad bar type, no non-ident, extra baz
+                                  ^^^^^^^^^^^^^
+
+References:
+   signature.js:41:27
+   41| const renamedWrongProps = <RenamedParams bar={3} foo="str" baz="str" />; // ERROR 4x, bad foo type, bad bar type, no non-ident, extra baz
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   signature.js:32:1
+       v-----------------------
+   32| component RenamedParams(
+   33|   foo as bar: number,
+   34|   bar as foo: string,
+   35|   'non-ident' as baz: string,
+   36| ) {
+       ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- signature.js:41:47
+
+Cannot create `RenamedParams` element because in property `bar`: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   signature.js:41:47
+   41| const renamedWrongProps = <RenamedParams bar={3} foo="str" baz="str" />; // ERROR 4x, bad foo type, bad bar type, no non-ident, extra baz
+                                                     ^ [1]
+
+References:
+   signature.js:34:15
+   34|   bar as foo: string,
+                     ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- signature.js:41:54
+
+Cannot create `RenamedParams` element because in property `foo`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   signature.js:41:54
+   41| const renamedWrongProps = <RenamedParams bar={3} foo="str" baz="str" />; // ERROR 4x, bad foo type, bad bar type, no non-ident, extra baz
+                                                            ^^^^^ [1]
+
+References:
+   signature.js:33:15
+   33|   foo as bar: number,
+                     ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- signature.js:46:13
+
+Cannot use optional object type [1] as a component rest param. Component rest params must use an object type and cannot
+be optional. [incompatible-type]
+
+   46|   ...rest?: {foo: number} // ERROR, rest params can't be optional
+                   ^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ signature.js:48:3
+
+Cannot cast `x` to number because undefined [1] is incompatible with number [2]. [incompatible-type]
+
+   signature.js:48:3
+   48|   x as number; // ERROR
+         ^
+
+References:
+   signature.js:44:7
+   44|   x?: number,
+             ^^^^^^ [1]
+   signature.js:48:8
+   48|   x as number; // ERROR
+              ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ signature.js:50:3
+
+Cannot cast `rest` to object type because undefined [1] is incompatible with object type [2]. [incompatible-type]
+
+   signature.js:50:3
+   50|   rest as {foo: number}; // ERROR, rest is optional in the body, as typed
+         ^^^^
+
+References:
+   signature.js:46:13
+   46|   ...rest?: {foo: number} // ERROR, rest params can't be optional
+                   ^^^^^^^^^^^^^ [1]
+   signature.js:50:11
+   50|   rest as {foo: number}; // ERROR, rest is optional in the body, as typed
+                 ^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ signature.js:67:3
+
+Cannot cast `bar` to number because undefined [1] is incompatible with number [2]. [incompatible-type]
+
+   signature.js:67:3
+   67|   bar as number; // ERROR, bar is optional
+         ^^^
+
+References:
+   signature.js:65:16
+   65|   foo as bar?: number,
+                      ^^^^^^ [1]
+   signature.js:67:10
+   67|   bar as number; // ERROR, bar is optional
+                ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- signature.js:73:24
+
+Cannot create `OptionalAsBinding` element because in property `foo`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   signature.js:73:24
+   73| <OptionalAsBinding foo="str" />; // ERROR
+                              ^^^^^ [1]
+
+References:
+   signature.js:65:16
+   65|   foo as bar?: number,
+                      ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ signature.js:78:3
+
+Cannot cast `ariaLabel` to string because undefined [1] is incompatible with string [2]. [incompatible-type]
+
+   signature.js:78:3
+   78|   ariaLabel as string; // ERROR, ariaLabel is optional
+         ^^^^^^^^^
+
+References:
+   signature.js:76:31
+   76|   'aria-label' as ariaLabel?: string,
+                                     ^^^^^^ [1]
+   signature.js:78:16
+   78|   ariaLabel as string; // ERROR, ariaLabel is optional
+                      ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- signature.js:84:41
+
+Cannot create `OptionalStringKeyAsBinding` element because in property `aria-label`: number [1] is incompatible with
+string [2]. [incompatible-type]
+
+   signature.js:84:41
+   84| <OptionalStringKeyAsBinding aria-label={3} />; // ERROR
+                                               ^ [1]
+
+References:
+   signature.js:76:31
+   76|   'aria-label' as ariaLabel?: string,
+                                     ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- statics.js:4:19
+
+Cannot assign `3` to `Foo.displayName` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   statics.js:4:19
+    4| Foo.displayName = 3; // ERROR
+                         ^ [1]
+
+References:
+   <BUILTINS>/react.js:26:18
+   26|   displayName?: ?string,
+                        ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- statics.js:6:5
+
+Cannot get `Foo.randomProperty` because property `randomProperty` is missing in `React.AbstractComponentStatics` [1].
+[prop-missing]
+
+   statics.js:6:5
+    6| Foo.randomProperty; // ERROR!
+           ^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:25:47
+                                                     v
+   25| declare type React$AbstractComponentStatics = {
+   26|   displayName?: ?string,
+   27|   // This is only on function components, but trying to access name when
+   28|   // displayName is undefined is a common pattern.
+   29|   name?: ?string,
+   30|   propTypes?: {[string] : any, ...},
+   31|   ...
+   32| };
+       ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- strict_by_default.js:5:20
+
+Strict mode function may not have duplicate parameter names [ParseError]
+
+   5|   destructured as {a}: {a: number}, // ERROR
+                         ^
+
+
+
+Found 237 errors
+
+Only showing the most relevant union/intersection branches.
+To see all branches, re-run Flow with --show-all-branches

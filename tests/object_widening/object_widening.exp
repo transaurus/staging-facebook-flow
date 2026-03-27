@@ -1,0 +1,727 @@
+Error ------------------------------------------------------------------------------------------ annot_in_union.js:16:31
+
+Cannot assign object literal to `x` because property `thisFieldIsMissing` is missing in object literal [1] but exists in
+`LiterallyAnyObject` [2]. [incompatible-type]
+
+   annot_in_union.js:16:31
+                                     v
+   16| const x: LiterallyAnyObject = {
+   17|   ...prevPagers.object, // Error
+   18| };
+       ^ [1]
+
+References:
+   annot_in_union.js:16:10
+   16| const x: LiterallyAnyObject = {
+                ^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- exact_indexer.js:4:11
+
+Cannot spread object literal because Flow cannot determine a type for object literal [1]. object type [2] cannot be
+spread because the indexer string [3] may overwrite properties with explicit keys in a way that Flow cannot track. Try
+spreading object type [2] first or remove the indexer. [cannot-spread-indexer]
+
+   exact_indexer.js:4:11
+   4| const z = {...{foo: 3}, ...x.x};
+                ^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   exact_indexer.js:2:21
+   2| declare var x: {x?: {| [string]: number |}};
+                          ^^^^^^^^^^^^^^^^^^^^^^ [2]
+   exact_indexer.js:2:25
+   2| declare var x: {x?: {| [string]: number |}};
+                              ^^^^^^ [3]
+
+
+Error --------------------------------------------------------------------------------------------- intersection.js:5:24
+
+Cannot assign object literal to `i` because property `bar` is missing in object literal [1] but exists in
+`OtherProps` [2]. [incompatible-type]
+
+   intersection.js:5:24
+   5| const i: Intersected = {...null}; // error, missing foo and bar
+                             ^^^^^^^^^ [1]
+
+References:
+   intersection.js:4:28
+   4| type Intersected = Props & OtherProps;
+                                 ^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- intersection.js:5:24
+
+Cannot assign object literal to `i` because property `foo` is missing in object literal [1] but exists in `Props` [2].
+[incompatible-type]
+
+   intersection.js:5:24
+   5| const i: Intersected = {...null}; // error, missing foo and bar
+                             ^^^^^^^^^ [1]
+
+References:
+   intersection.js:4:20
+   4| type Intersected = Props & OtherProps;
+                         ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- type_widening.js:32:1
+
+Cannot cast `a.foo` to number because `void` (due to access of non-existent property `foo`) [1] is incompatible with
+number [2]. [incompatible-type]
+
+   type_widening.js:32:1
+   32| a.foo as number; // Error, foo does not appear in all branches
+       ^^^^^ [1]
+
+References:
+   type_widening.js:32:10
+   32| a.foo as number; // Error, foo does not appear in all branches
+                ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- type_widening.js:33:1
+
+Cannot cast `a.bar` to number because `void` (due to access of non-existent property `bar`) [1] is incompatible with
+number [2]. [incompatible-type]
+
+   type_widening.js:33:1
+   33| a.bar as number; // Error, bar does not appear in all branches
+       ^^^^^ [1]
+
+References:
+   type_widening.js:33:10
+   33| a.bar as number; // Error, bar does not appear in all branches
+                ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- type_widening.js:34:1
+
+Cannot cast `a.baz` to number because `void` (due to access of non-existent property `baz`) [1] is incompatible with
+number [2]. [incompatible-type]
+
+   type_widening.js:34:1
+   34| a.baz as number; // Error, baz does not appear in all branches
+       ^^^^^ [1]
+
+References:
+   type_widening.js:34:10
+   34| a.baz as number; // Error, baz does not appear in all branches
+                ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- type_widening.js:35:1
+
+Cannot cast `a.qux` to number because `void` (due to access of non-existent property `qux`) [1] is incompatible with
+number [2]. [incompatible-type]
+
+   type_widening.js:35:1
+   35| a.qux as number; // Error, qux does not appear in all branches
+       ^^^^^ [1]
+
+References:
+   type_widening.js:35:10
+   35| a.qux as number; // Error, qux does not appear in all branches
+                ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- type_widening.js:62:1
+
+Cannot cast `b.foo` to number because `void` (due to access of non-existent property `foo`) [1] is incompatible with
+number [2]. [incompatible-type]
+
+   type_widening.js:62:1
+   62| b.foo as number; // Error, foo does not appear in all branches
+       ^^^^^ [1]
+
+References:
+   type_widening.js:62:10
+   62| b.foo as number; // Error, foo does not appear in all branches
+                ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- type_widening.js:63:1
+
+Cannot cast `b.bar` to number because `void` (due to access of non-existent property `bar`) [1] is incompatible with
+number [2]. [incompatible-type]
+
+   type_widening.js:63:1
+   63| b.bar as number; // Error, bar does not appear in all branches
+       ^^^^^ [1]
+
+References:
+   type_widening.js:63:10
+   63| b.bar as number; // Error, bar does not appear in all branches
+                ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- type_widening.js:64:1
+
+Cannot cast `b.baz` to number because `void` (due to access of non-existent property `baz`) [1] is incompatible with
+number [2]. [incompatible-type]
+
+   type_widening.js:64:1
+   64| b.baz as number; // Error, baz does not appear in all branches
+       ^^^^^ [1]
+
+References:
+   type_widening.js:64:10
+   64| b.baz as number; // Error, baz does not appear in all branches
+                ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- type_widening.js:65:1
+
+Cannot cast `b.qux` to number because `void` (due to access of non-existent property `qux`) [1] is incompatible with
+number [2]. [incompatible-type]
+
+   type_widening.js:65:1
+   65| b.qux as number; // Error, qux does not appear in all branches
+       ^^^^^ [1]
+
+References:
+   type_widening.js:65:10
+   65| b.qux as number; // Error, qux does not appear in all branches
+                ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- type_widening.js:93:3
+
+Cannot get `c.foo` because property `foo` is missing in object type [1]. [prop-missing]
+
+   type_widening.js:93:3
+   93| c.foo as number; // Error, foo does not appear in all branches
+         ^^^
+
+References:
+   type_widening.js:3:27
+    3| function spread<T>(x: T): {...T, ...{||}} {
+                                 ^^^^^^^^^^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- type_widening.js:94:3
+
+Cannot get `c.bar` because property `bar` (did you mean `baz`?) is missing in object type [1]. [prop-missing]
+
+   type_widening.js:94:3
+   94| c.bar as number; // Error, bar does not appear in all branches
+         ^^^
+
+References:
+   type_widening.js:3:27
+    3| function spread<T>(x: T): {...T, ...{||}} {
+                                 ^^^^^^^^^^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- type_widening.js:94:3
+
+Cannot get `c.bar` because property `bar` is missing in object type [1]. [prop-missing]
+
+   type_widening.js:94:3
+   94| c.bar as number; // Error, bar does not appear in all branches
+         ^^^
+
+References:
+   type_widening.js:3:27
+    3| function spread<T>(x: T): {...T, ...{||}} {
+                                 ^^^^^^^^^^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- type_widening.js:95:3
+
+Cannot get `c.baz` because property `baz` (did you mean `bar`?) is missing in object type [1]. [prop-missing]
+
+   type_widening.js:95:3
+   95| c.baz as number; // Error, baz does not appear in all branches
+         ^^^
+
+References:
+   type_widening.js:3:27
+    3| function spread<T>(x: T): {...T, ...{||}} {
+                                 ^^^^^^^^^^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- type_widening.js:95:3
+
+Cannot get `c.baz` because property `baz` is missing in object type [1]. [prop-missing]
+
+   type_widening.js:95:3
+   95| c.baz as number; // Error, baz does not appear in all branches
+         ^^^
+
+References:
+   type_widening.js:3:27
+    3| function spread<T>(x: T): {...T, ...{||}} {
+                                 ^^^^^^^^^^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- type_widening.js:96:3
+
+Cannot get `c.qux` because property `qux` is missing in object type [1]. [prop-missing]
+
+   type_widening.js:96:3
+   96| c.qux as number; // Error, qux does not appear in all branches
+         ^^^
+
+References:
+   type_widening.js:3:27
+    3| function spread<T>(x: T): {...T, ...{||}} {
+                                 ^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- type_widening.js:131:1
+
+Cannot cast `optional_spread.foo` to number because undefined [1] is incompatible with number [2]. [incompatible-type]
+
+   type_widening.js:131:1
+   131| optional_spread.foo as number; // Error, foo does not appear in all branches, might be undefined
+        ^^^^^^^^^^^^^^^^^^^
+
+References:
+   type_widening.js:113:33
+   113|   optional = {foo: 3} as {foo?: number};
+                                        ^^^^^^ [1]
+   type_widening.js:131:24
+   131| optional_spread.foo as number; // Error, foo does not appear in all branches, might be undefined
+                               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ type_widening.js:131:17
+
+Cannot get `optional_spread.foo` because property `foo` is missing in object type [1]. [prop-missing]
+
+   type_widening.js:131:17
+   131| optional_spread.foo as number; // Error, foo does not appear in all branches, might be undefined
+                        ^^^
+
+References:
+   type_widening.js:3:27
+     3| function spread<T>(x: T): {...T, ...{||}} {
+                                  ^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- type_widening.js:132:1
+
+Cannot cast `optional_spread.bar` to number because undefined [1] is incompatible with number [2]. [incompatible-type]
+
+   type_widening.js:132:1
+   132| optional_spread.bar as number; // Error, bar does not appear in all branches, might be undefined
+        ^^^^^^^^^^^^^^^^^^^
+
+References:
+   type_widening.js:115:33
+   115|   optional = {bar: 3} as {bar?: number};
+                                        ^^^^^^ [1]
+   type_widening.js:132:24
+   132| optional_spread.bar as number; // Error, bar does not appear in all branches, might be undefined
+                               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ type_widening.js:132:17
+
+Cannot get `optional_spread.bar` because property `bar` (did you mean `baz`?) is missing in object type [1].
+[prop-missing]
+
+   type_widening.js:132:17
+   132| optional_spread.bar as number; // Error, bar does not appear in all branches, might be undefined
+                        ^^^
+
+References:
+   type_widening.js:3:27
+     3| function spread<T>(x: T): {...T, ...{||}} {
+                                  ^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------ type_widening.js:132:17
+
+Cannot get `optional_spread.bar` because property `bar` is missing in object type [1]. [prop-missing]
+
+   type_widening.js:132:17
+   132| optional_spread.bar as number; // Error, bar does not appear in all branches, might be undefined
+                        ^^^
+
+References:
+   type_widening.js:3:27
+     3| function spread<T>(x: T): {...T, ...{||}} {
+                                  ^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- type_widening.js:133:1
+
+Cannot cast `optional_spread.baz` to number because undefined [1] is incompatible with number [2]. [incompatible-type]
+
+   type_widening.js:133:1
+   133| optional_spread.baz as number; // Error, baz does not appear in all branches, might be undefined
+        ^^^^^^^^^^^^^^^^^^^
+
+References:
+   type_widening.js:117:33
+   117|   optional = {baz: 3} as {baz?: number};
+                                        ^^^^^^ [1]
+   type_widening.js:133:24
+   133| optional_spread.baz as number; // Error, baz does not appear in all branches, might be undefined
+                               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ type_widening.js:133:17
+
+Cannot get `optional_spread.baz` because property `baz` (did you mean `bar`?) is missing in object type [1].
+[prop-missing]
+
+   type_widening.js:133:17
+   133| optional_spread.baz as number; // Error, baz does not appear in all branches, might be undefined
+                        ^^^
+
+References:
+   type_widening.js:3:27
+     3| function spread<T>(x: T): {...T, ...{||}} {
+                                  ^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------ type_widening.js:133:17
+
+Cannot get `optional_spread.baz` because property `baz` is missing in object type [1]. [prop-missing]
+
+   type_widening.js:133:17
+   133| optional_spread.baz as number; // Error, baz does not appear in all branches, might be undefined
+                        ^^^
+
+References:
+   type_widening.js:3:27
+     3| function spread<T>(x: T): {...T, ...{||}} {
+                                  ^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- type_widening.js:134:1
+
+Cannot cast `optional_spread.qux` to number because undefined [1] is incompatible with number [2]. [incompatible-type]
+
+   type_widening.js:134:1
+   134| optional_spread.qux as number; // Error, qux does not appear in all branches, might be undefined
+        ^^^^^^^^^^^^^^^^^^^
+
+References:
+   type_widening.js:119:33
+   119|   optional = {qux: 3} as {qux?: number};
+                                        ^^^^^^ [1]
+   type_widening.js:134:24
+   134| optional_spread.qux as number; // Error, qux does not appear in all branches, might be undefined
+                               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ type_widening.js:134:17
+
+Cannot get `optional_spread.qux` because property `qux` is missing in object type [1]. [prop-missing]
+
+   type_widening.js:134:17
+   134| optional_spread.qux as number; // Error, qux does not appear in all branches, might be undefined
+                        ^^^
+
+References:
+   type_widening.js:3:27
+     3| function spread<T>(x: T): {...T, ...{||}} {
+                                  ^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- type_widening.js:193:1
+
+Cannot cast `indexer_spread2.foo` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   type_widening.js:193:1
+   193| indexer_spread2.foo as string; // Error, number ~> string
+        ^^^^^^^^^^^^^^^^^^^
+
+References:
+   type_widening.js:175:37
+   175|   indexer2 = {foo: 3} as {[string]: number};
+                                            ^^^^^^ [1]
+   type_widening.js:193:24
+   193| indexer_spread2.foo as string; // Error, number ~> string
+                               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- type_widening.js:193:1
+
+Cannot cast `indexer_spread2.foo` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   type_widening.js:193:1
+   193| indexer_spread2.foo as string; // Error, number ~> string
+        ^^^^^^^^^^^^^^^^^^^
+
+References:
+   type_widening.js:177:38
+   177|   indexer2 = {bar: ''} as {[string]: number, bar: string};
+                                             ^^^^^^ [1]
+   type_widening.js:193:24
+   193| indexer_spread2.foo as string; // Error, number ~> string
+                               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- type_widening.js:193:1
+
+Cannot cast `indexer_spread2.foo` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   type_widening.js:193:1
+   193| indexer_spread2.foo as string; // Error, number ~> string
+        ^^^^^^^^^^^^^^^^^^^
+
+References:
+   type_widening.js:179:38
+   179|   indexer2 = {baz: ''} as {[string]: number, baz: string};
+                                             ^^^^^^ [1]
+   type_widening.js:193:24
+   193| indexer_spread2.foo as string; // Error, number ~> string
+                               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- type_widening.js:193:1
+
+Cannot cast `indexer_spread2.foo` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   type_widening.js:193:1
+   193| indexer_spread2.foo as string; // Error, number ~> string
+        ^^^^^^^^^^^^^^^^^^^
+
+References:
+   type_widening.js:181:38
+   181|   indexer2 = {qux: ''} as {[string]: number, qux: string};
+                                             ^^^^^^ [1]
+   type_widening.js:193:24
+   193| indexer_spread2.foo as string; // Error, number ~> string
+                               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- type_widening.js:194:1
+
+Cannot cast `indexer_spread2.bar` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   type_widening.js:194:1
+   194| indexer_spread2.bar as string; // Error, possibly number or undefined
+        ^^^^^^^^^^^^^^^^^^^
+
+References:
+   type_widening.js:175:37
+   175|   indexer2 = {foo: 3} as {[string]: number};
+                                            ^^^^^^ [1]
+   type_widening.js:194:24
+   194| indexer_spread2.bar as string; // Error, possibly number or undefined
+                               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- type_widening.js:194:1
+
+Cannot cast `indexer_spread2.bar` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   type_widening.js:194:1
+   194| indexer_spread2.bar as string; // Error, possibly number or undefined
+        ^^^^^^^^^^^^^^^^^^^
+
+References:
+   type_widening.js:179:38
+   179|   indexer2 = {baz: ''} as {[string]: number, baz: string};
+                                             ^^^^^^ [1]
+   type_widening.js:194:24
+   194| indexer_spread2.bar as string; // Error, possibly number or undefined
+                               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- type_widening.js:194:1
+
+Cannot cast `indexer_spread2.bar` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   type_widening.js:194:1
+   194| indexer_spread2.bar as string; // Error, possibly number or undefined
+        ^^^^^^^^^^^^^^^^^^^
+
+References:
+   type_widening.js:181:38
+   181|   indexer2 = {qux: ''} as {[string]: number, qux: string};
+                                             ^^^^^^ [1]
+   type_widening.js:194:24
+   194| indexer_spread2.bar as string; // Error, possibly number or undefined
+                               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- type_widening.js:195:1
+
+Cannot cast `indexer_spread2.baz` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   type_widening.js:195:1
+   195| indexer_spread2.baz as string; // Error, possibly number or undefined
+        ^^^^^^^^^^^^^^^^^^^
+
+References:
+   type_widening.js:175:37
+   175|   indexer2 = {foo: 3} as {[string]: number};
+                                            ^^^^^^ [1]
+   type_widening.js:195:24
+   195| indexer_spread2.baz as string; // Error, possibly number or undefined
+                               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- type_widening.js:195:1
+
+Cannot cast `indexer_spread2.baz` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   type_widening.js:195:1
+   195| indexer_spread2.baz as string; // Error, possibly number or undefined
+        ^^^^^^^^^^^^^^^^^^^
+
+References:
+   type_widening.js:177:38
+   177|   indexer2 = {bar: ''} as {[string]: number, bar: string};
+                                             ^^^^^^ [1]
+   type_widening.js:195:24
+   195| indexer_spread2.baz as string; // Error, possibly number or undefined
+                               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- type_widening.js:195:1
+
+Cannot cast `indexer_spread2.baz` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   type_widening.js:195:1
+   195| indexer_spread2.baz as string; // Error, possibly number or undefined
+        ^^^^^^^^^^^^^^^^^^^
+
+References:
+   type_widening.js:181:38
+   181|   indexer2 = {qux: ''} as {[string]: number, qux: string};
+                                             ^^^^^^ [1]
+   type_widening.js:195:24
+   195| indexer_spread2.baz as string; // Error, possibly number or undefined
+                               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- type_widening.js:196:1
+
+Cannot cast `indexer_spread2.qux` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   type_widening.js:196:1
+   196| indexer_spread2.qux as string; // Error, Possibly number or undefined
+        ^^^^^^^^^^^^^^^^^^^
+
+References:
+   type_widening.js:175:37
+   175|   indexer2 = {foo: 3} as {[string]: number};
+                                            ^^^^^^ [1]
+   type_widening.js:196:24
+   196| indexer_spread2.qux as string; // Error, Possibly number or undefined
+                               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- type_widening.js:196:1
+
+Cannot cast `indexer_spread2.qux` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   type_widening.js:196:1
+   196| indexer_spread2.qux as string; // Error, Possibly number or undefined
+        ^^^^^^^^^^^^^^^^^^^
+
+References:
+   type_widening.js:177:38
+   177|   indexer2 = {bar: ''} as {[string]: number, bar: string};
+                                             ^^^^^^ [1]
+   type_widening.js:196:24
+   196| indexer_spread2.qux as string; // Error, Possibly number or undefined
+                               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- type_widening.js:196:1
+
+Cannot cast `indexer_spread2.qux` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   type_widening.js:196:1
+   196| indexer_spread2.qux as string; // Error, Possibly number or undefined
+        ^^^^^^^^^^^^^^^^^^^
+
+References:
+   type_widening.js:179:38
+   179|   indexer2 = {baz: ''} as {[string]: number, baz: string};
+                                             ^^^^^^ [1]
+   type_widening.js:196:24
+   196| indexer_spread2.qux as string; // Error, Possibly number or undefined
+                               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- type_widening.js:216:1
+
+Cannot cast `indexer_on_second_spread.foo` to number because string [1] is incompatible with number [2].
+[incompatible-type]
+
+   type_widening.js:216:1
+   216| indexer_on_second_spread.foo as number; // Error, may be void or string
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   type_widening.js:210:29
+   210|   indexer_on_second = {foo: 'string'};
+                                    ^^^^^^^^ [1]
+   type_widening.js:216:33
+   216| indexer_on_second_spread.foo as number; // Error, may be void or string
+                                        ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ type_widening.js:217:26
+
+Cannot get `indexer_on_second_spread.bar` because property `bar` is missing in object type [1]. [prop-missing]
+
+   type_widening.js:217:26
+   217| indexer_on_second_spread.bar as number; // Error, no indexer if it's only in one branch
+                                 ^^^
+
+References:
+   type_widening.js:3:27
+     3| function spread<T>(x: T): {...T, ...{||}} {
+                                  ^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------ type_widening.js:218:26
+
+Cannot get `indexer_on_second_spread.baz` because property `baz` is missing in object type [1]. [prop-missing]
+
+   type_widening.js:218:26
+   218| indexer_on_second_spread.baz as number; // Error, no indexer if it's only in one branch
+                                 ^^^
+
+References:
+   type_widening.js:3:27
+     3| function spread<T>(x: T): {...T, ...{||}} {
+                                  ^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------ type_widening.js:219:26
+
+Cannot get `indexer_on_second_spread.qux` because property `qux` is missing in object type [1]. [prop-missing]
+
+   type_widening.js:219:26
+   219| indexer_on_second_spread.qux as number; // Error, no indexer if it's only in one branch
+                                 ^^^
+
+References:
+   type_widening.js:3:27
+     3| function spread<T>(x: T): {...T, ...{||}} {
+                                  ^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------ type_widening.js:229:28
+
+Cannot call `inexactSpread` because Flow cannot determine a type for object type [1]. object type [2] is inexact, so it
+may contain `bar` with a type that conflicts with `bar`'s definition in object type [1]. Try making object type [2]
+exact. [cannot-spread-inexact]
+
+   type_widening.js:229:28
+   229| const inexact_spread_err = inexactSpread(inexact);
+                                   ^^^^^^^^^^^^^
+
+References:
+   type_widening.js:228:42
+   228| declare function inexactSpread<T>(x: T): {bar: 3, ...T, ...{||}};
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   type_widening.js:225:25
+   225|   inexact = {foo: 3} as {foo: number};
+                                ^^^^^^^^^^^^^ [2]
+
+
+
+Found 46 errors

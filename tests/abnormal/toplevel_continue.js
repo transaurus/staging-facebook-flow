@@ -1,0 +1,1 @@
+continue; // error, illegal

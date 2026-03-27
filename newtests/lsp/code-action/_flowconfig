@@ -1,0 +1,7 @@
+[options]
+exact_by_default=false
+enums=true
+component_syntax=true
+
+[lints]
+unused-promise=error

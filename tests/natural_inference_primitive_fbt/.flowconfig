@@ -1,0 +1,16 @@
+[ignore]
+
+[include]
+
+[libs]
+fbt.js.flow
+
+[lints]
+
+[options]
+all=true
+facebook.fbt=FbtElement
+component_syntax=true
+no_flowlib=false
+
+[strict]

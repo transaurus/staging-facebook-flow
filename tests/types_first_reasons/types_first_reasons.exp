@@ -1,0 +1,102 @@
+Error ---------------------------------------------------------------------------- destructured_param_default_dep.js:2:3
+
+Cannot call `f` with `0` bound to the first parameter because number [1] is incompatible with object type [2].
+[incompatible-type]
+
+   destructured_param_default_dep.js:2:3
+   2| f(0); // error
+        ^ [1]
+
+References:
+   destructured_param_default.js:1:31
+   1| module.exports = function({}: {} = {}) {}
+                                    ^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- instantiation_err.js:2:17
+
+Cannot instantiate `T` because `T` [1] is not a polymorphic type. [incompatible-use]
+
+   instantiation_err.js:2:17
+   2| export type U = T<string>; // Err: cannot instantiate
+                      ^^^^^^^^^
+
+References:
+   type_exports.js:1:13
+   1| export type T = string;
+                  ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- instantiation_err.js:2:17
+
+Cannot instantiate `T` because `T` [1] is not a polymorphic type. (FLOW BUG: This is a misplaced error. The original
+error was raised in file `instantiation_err_dep.js`). [incompatible-use]
+
+   instantiation_err.js:2:17
+   2| export type U = T<string>; // Err: cannot instantiate
+                      ^^^^^^^^^
+
+References:
+   type_exports.js:1:13
+   1| export type T = string;
+                  ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- mixin_dep.js:4:7
+
+Cannot call `s.has` with `"foo"` bound to `key` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   mixin_dep.js:4:7
+   4| s.has("foo"); // Err: string ~> number (on Seq, _not_ IndexedIterable's inherited method)
+            ^^^^^ [1]
+
+References:
+   mixin.js:9:48
+   9| declare export class IndexedSeq<T> extends Seq<number,T> mixins IndexedIterable<T> {}
+                                                     ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- qualified_dep.js:2:3
+
+Cannot get `b.bzzt` because property `bzzt` is missing in `B` [1]. [prop-missing]
+
+   qualified_dep.js:2:3
+   2| b.bzzt; // Error: prop-missing
+        ^^^^
+
+References:
+   qualified.js:3:26
+   3| module.exports = (new B: A.B);
+                               ^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- qualified_typeapp.js:3:25
+
+Cannot use `A.B` [1] with fewer than 1 type argument. [missing-type-arg]
+
+   qualified_typeapp.js:3:25
+   3| declare module.exports: A.B<>; // Error: missing-type-arg
+                              ^^^^^
+
+References:
+   qualified_typeapp.js:1:8
+   1| class B<T> { x: T }
+             ^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------- qualified_typeapp_dep.js:2:1
+
+Cannot use `A.B` [1] with fewer than 1 type argument. [missing-type-arg]
+
+   qualified_typeapp_dep.js:2:1
+   2| b.x; // Error: missing-type-arg
+      ^
+
+References:
+   qualified_typeapp.js:1:8
+   1| class B<T> { x: T }
+             ^^^ [1]
+
+
+
+Found 7 errors

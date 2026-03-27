@@ -1,0 +1,83 @@
+Error -------------------------------------------------------------------------------------------------- callable.js:8:1
+
+Cannot use function type [1] with fewer than 2 type arguments. [missing-type-arg]
+
+   callable.js:8:1
+   8| o<number>(); // Error should be here
+      ^
+
+References:
+   callable.js:3:5
+   3|     <T, U>(): T,
+          ^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- callable.js:16:1
+
+Cannot use function type [1] with fewer than 2 type arguments. [missing-type-arg]
+
+   callable.js:16:1
+   16| i<number>(); // Error should be here
+       ^
+
+References:
+   callable.js:11:5
+   11|     <T, U>(): T
+           ^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- spread.js:2:3
+
+Cannot assign function to `x.m` because property `m` is not writable. [cannot-write]
+
+   2| x.m = () => {}; // error: m is read-only
+        ^
+
+
+Error ---------------------------------------------------------------------------------------------------- spread.js:5:4
+
+Cannot assign function to `x2.m` because property `m` is not writable. [cannot-write]
+
+   5| x2.m = () => {}; // error: m is read-only
+         ^
+
+
+Error ---------------------------------------------------------------------------------------------------- spread.js:8:3
+
+Cannot assign function to `y.m` because property `m` is not writable. [cannot-write]
+
+   8| y.m = () => {}; // error: m is read-only
+        ^
+
+
+Error --------------------------------------------------------------------------------------------------- spread.js:11:3
+
+Cannot assign function to `z.m` because property `m` is not writable. [cannot-write]
+
+   11| z.m = () => {}; // error: m is read-only
+         ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test2.js:17:1
+
+Cannot call `b.f` because property `p` is missing in object literal [1] but exists in object type [2].
+[incompatible-type]
+
+   test2.js:17:1
+   17| b.f(); // error, property `p` not found
+       ^
+
+References:
+   test2.js:12:9
+               v
+   12| var b = {
+   13|   f
+   14| }
+       ^ [1]
+   test2.js:3:18
+    3| function f(this: {+p: mixed}) {
+                        ^^^^^^^^^^^ [2]
+
+
+
+Found 7 errors

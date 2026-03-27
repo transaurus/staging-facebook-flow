@@ -1,0 +1,28 @@
+Error ------------------------------------------------------------------------------------------------------ foo.js:1:21
+
+Cannot build a typed interface for this module. You should annotate the exports of this module with types. Missing type
+annotation at identifier: [signature-verification-failure]
+
+   1| export function foo(x) { return x; }
+                          ^
+
+
+Error ------------------------------------------------------------------------------------------------------ foo.js:1:21
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   1| export function foo(x) { return x; }
+                          ^
+
+
+Error ------------------------------------------------------------------------------------------------------ foo.js:1:23
+
+Cannot build a typed interface for this module. You should annotate the exports of this module with types. Missing type
+annotation at function return: [signature-verification-failure]
+
+   1| export function foo(x) { return x; }
+                            
+
+
+
+Found 3 errors

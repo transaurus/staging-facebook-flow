@@ -1,0 +1,116 @@
+Error ------------------------------------------------------------------------------------------- jsx_unreachable.js:7:3
+
+Unreachable code. [unreachable-code]
+
+   7|   <Component />;
+        ^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------ typecheck.js:4:10
+
+Cannot return `bar()` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   typecheck.js:4:10
+   4|   return bar();
+               ^^^^^
+
+References:
+   typecheck.js:7:12
+   7|     return 0;
+                 ^ [1]
+   typecheck.js:3:19
+   3| function test1(): string {
+                        ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- typecheck.js:21:21
+
+Cannot assign `n` to `y` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   typecheck.js:21:21
+   21|     var y: string = n;    // error, n is number (EmptyT would work)
+                           ^
+
+References:
+   typecheck.js:15:13
+   15|   const n = 0;
+                   ^ [1]
+   typecheck.js:21:12
+   21|     var y: string = n;    // error, n is number (EmptyT would work)
+                  ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- typecheck.js:32:15
+
+Cannot call `expectNum` with empty string bound to `a` because string [1] is incompatible with number [2].
+[incompatible-type]
+
+   typecheck.js:32:15
+   32|     expectNum(""); // error
+                     ^^ [1]
+
+References:
+   typecheck.js:35:25
+   35|   function expectNum(a: number) { }
+                               ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- unreachable.js:5:19
+
+Cannot call `baz` because uninitialized variable [1] is not a function. [not-a-function]
+
+   unreachable.js:5:19
+    5|   return bar(x) + baz(y);
+                         ^^^
+
+References:
+   unreachable.js:13:7
+   13|   var baz = function (why: number) {
+             ^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------- unreachable.js:13:13
+
+Unreachable code. [unreachable-code]
+
+                   v-----------------------
+   13|   var baz = function (why: number) {
+   14|     return y + why;
+   15|   };
+         ^
+
+
+Error --------------------------------------------------------------------------------------------- unreachable.js:22:11
+
+Unreachable code. [unreachable-code]
+
+   22|       u = 5,
+                 ^
+
+
+Error --------------------------------------------------------------------------------------------- unreachable.js:24:11
+
+Unreachable code. [unreachable-code]
+
+   24|       w = 7;
+                 ^
+
+
+Error ---------------------------------------------------------------------------------------------- unreachable.js:33:5
+
+Unreachable code. [unreachable-code]
+
+   33|     { let i = 0; i = 1; } // error: unreachable
+           ^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------- unreachable.js:37:5
+
+Unreachable code. [unreachable-code]
+
+   37|     { let i = 0; i++; } // error: unreachable
+           ^^^^^^^^^^^^^^^^^^^
+
+
+
+Found 10 errors

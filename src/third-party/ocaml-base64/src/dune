@@ -1,0 +1,4 @@
+(library
+ (name flow_third_party_base64)
+ (wrapped false)
+ (modules unsafe base64))

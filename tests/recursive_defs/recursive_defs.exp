@@ -1,0 +1,87 @@
+Error --------------------------------------------------------------------------------------------------- fileA1.js:16:2
+
+Cannot cast `data.propA` to empty because `Readonly` [1] is incompatible with empty [2]. [incompatible-type]
+
+   fileA1.js:16:2
+   16| (data.propA: empty); // error obj ~> empty
+        ^^^^^^^^^^
+
+References:
+   fileA1.js:6:10
+    6|   propA: Data,
+                ^^^^ [1]
+   fileA1.js:16:14
+   16| (data.propA: empty); // error obj ~> empty
+                    ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- fileA1.js:16:2
+
+Cannot cast `data.propA` to empty because object type [1] is incompatible with empty [2]. [incompatible-type]
+
+   fileA1.js:16:2
+   16| (data.propA: empty); // error obj ~> empty
+        ^^^^^^^^^^
+
+References:
+   fileA1.js:6:10
+    6|   propA: Data,
+                ^^^^ [1]
+   fileA1.js:16:14
+   16| (data.propA: empty); // error obj ~> empty
+                    ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- fileB1.js:16:2
+
+Cannot cast `data.propA` to empty because `Readonly` [1] is incompatible with empty [2]. [incompatible-type]
+
+   fileB1.js:16:2
+   16| (data.propA: empty); // error obj ~> empty
+        ^^^^^^^^^^
+
+References:
+   fileB1.js:6:10
+    6|   propA: Data,
+                ^^^^ [1]
+   fileB1.js:16:14
+   16| (data.propA: empty); // error obj ~> empty
+                    ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- fileB1.js:16:2
+
+Cannot cast `data.propA` to empty because object type [1] is incompatible with empty [2]. [incompatible-type]
+
+   fileB1.js:16:2
+   16| (data.propA: empty); // error obj ~> empty
+        ^^^^^^^^^^
+
+References:
+   fileB1.js:6:10
+    6|   propA: Data,
+                ^^^^ [1]
+   fileB1.js:16:14
+   16| (data.propA: empty); // error obj ~> empty
+                    ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------- overflow_regression.js:3:19
+
+Invalid trivially recursive definition of `Rec`.  [recursive-definition]
+
+   3| type Rec = null | Rec;
+                        ^^^
+
+
+Error -------------------------------------------------------------------------------------- overflow_regression.js:9:37
+
+`$ReactDeepReadOnly` is a secret internal Flow type exposed for testing purposes. There will be no stability guarantees.
+[internal-type]
+
+   9| declare function useState<S>(x: S): $ReactDeepReadOnly<S>;
+                                          ^^^^^^^^^^^^^^^^^^^^^
+
+
+
+Found 6 errors

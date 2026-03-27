@@ -1,0 +1,9 @@
+[ignore]
+<PROJECT_ROOT>/tmp*
+
+[libs]
+lib
+
+[options]
+all=true
+file_watcher=none

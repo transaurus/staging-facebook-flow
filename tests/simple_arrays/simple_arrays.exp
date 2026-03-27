@@ -1,0 +1,36 @@
+Error --------------------------------------------------------------------------------------------------- array.js:11:41
+
+Cannot return `a[i]` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   array.js:11:41
+   11| function baz(i:number): string { return a[i]; }
+                                               ^^^^
+
+References:
+   array.js:4:30
+    4|     if (i % 2 == 0) { a[i] = 0; }
+                                    ^ [1]
+   array.js:11:25
+   11| function baz(i:number): string { return a[i]; }
+                               ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- array2.js:8:42
+
+Cannot return `a[i]` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   array2.js:8:42
+   8| function foo(i: number): string { return a[i]; }
+                                               ^^^^
+
+References:
+   array2.js:4:30
+   4|     if (i % 2 == 0) { a[i] = 0; }
+                                   ^ [1]
+   array2.js:8:26
+   8| function foo(i: number): string { return a[i]; }
+                               ^^^^^^ [2]
+
+
+
+Found 2 errors

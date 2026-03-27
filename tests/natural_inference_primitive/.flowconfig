@@ -1,0 +1,15 @@
+[ignore]
+
+[include]
+
+[libs]
+jsx-intrinsics-mini.js
+
+[lints]
+
+[options]
+all=true
+experimental.pattern_matching=true
+no_flowlib=false
+
+[strict]

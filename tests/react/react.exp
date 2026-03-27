@@ -1,0 +1,2441 @@
+Error ----------------------------------------------------------------------------------- contravariant_refsetter.js:9:2
+
+Cannot cast `x` to `React.RefSetter` because in type argument `T` [1]: [incompatible-type]
+ - Either boolean [2] is incompatible with number [3].
+ - Or boolean [2] is incompatible with string [4].
+
+   contravariant_refsetter.js:9:2
+     9| (x: React.RefSetter<number | string | boolean>); // ERROR
+         ^
+
+References:
+   <BUILTINS>/react.js:274:34
+   274|   declare export type RefSetter<-T> = React.RefSetter<T>;
+                                         ^ [1]
+   contravariant_refsetter.js:9:39
+     9| (x: React.RefSetter<number | string | boolean>); // ERROR
+                                              ^^^^^^^ [2]
+   contravariant_refsetter.js:3:34
+     3| declare const x: React.RefSetter<number | string>;
+                                         ^^^^^^ [3]
+   contravariant_refsetter.js:3:43
+     3| declare const x: React.RefSetter<number | string>;
+                                                  ^^^^^^ [4]
+
+
+Error ---------------------------------------------------------------------------------- contravariant_refsetter.js:10:2
+
+Cannot cast `y` to `React.RefSetter` because in type argument `T` [1]: [incompatible-type]
+ - Either boolean [2] is incompatible with number [3].
+ - Or boolean [2] is incompatible with string [4].
+
+   contravariant_refsetter.js:10:2
+    10| (y: React.RefSetter<number | string | boolean>); // ERROR
+         ^
+
+References:
+   <BUILTINS>/react.js:274:34
+   274|   declare export type RefSetter<-T> = React.RefSetter<T>;
+                                         ^ [1]
+   contravariant_refsetter.js:10:39
+    10| (y: React.RefSetter<number | string | boolean>); // ERROR
+                                              ^^^^^^^ [2]
+   contravariant_refsetter.js:6:34
+     6| declare const y: React.RefSetter<number | string>;
+                                         ^^^^^^ [3]
+   contravariant_refsetter.js:6:43
+     6| declare const y: React.RefSetter<number | string>;
+                                                  ^^^^^^ [4]
+
+
+Error ------------------------------------------------------------------------------------------- createContext.js:16:24
+
+Cannot create `Consumer` element because in property `children` > the first parameter: union type [1] is incompatible
+with string [2]. [incompatible-type]
+
+   createContext.js:16:24
+   16|                 {(Tag: 'div' | 'span' | 'img') => <Tag />}
+                              ^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   createContext.js:4:39
+    4|   const Context = React.createContext<string>('div');
+                                             ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- createContext.js:22:22
+
+Cannot create `Consumer` element because in property `children` > the first parameter: union type [1] is incompatible
+with string [2]. [incompatible-type]
+
+   createContext.js:22:22
+   22|               {(Tag: 'div' | 'span' | 'img') => <Tag />}
+                            ^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   createContext.js:4:39
+    4|   const Context = React.createContext<string>('div');
+                                             ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- createContext.js:31:39
+
+Cannot assign `this.divRef.current` to `image` because: [incompatible-type]
+ - Either `DivInstance` [1] is incompatible with `ImgInstance` [2].
+ - Or `DivInstance` [1] is incompatible with null [3].
+
+   createContext.js:31:39
+   31|       var image: null | ImgInstance = this.divRef.current; // Error: DivInstance is incompatible with ImgInstance
+                                             ^^^^^^^^^^^^^^^^^^^
+
+References:
+   createContext.js:8:30
+    8|     divRef: {current: null | DivInstance} = React.createRef();
+                                    ^^^^^^^^^^^ [1]
+   createContext.js:31:25
+   31|       var image: null | ImgInstance = this.divRef.current; // Error: DivInstance is incompatible with ImgInstance
+                               ^^^^^^^^^^^ [2]
+   createContext.js:31:18
+   31|       var image: null | ImgInstance = this.divRef.current; // Error: DivInstance is incompatible with ImgInstance
+                        ^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------- createContext.js:53:24
+
+Cannot resolve name `createContext`. [cannot-resolve-name]
+
+   53|   const ThemeContext = createContext("light");
+                              ^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------ createElementRequiredProp_string.js:16:14
+
+Cannot create `Cmp` element because property `test` is missing in props [1] but exists in props of class `Bar` [2].
+[incompatible-type]
+
+   createElementRequiredProp_string.js:16:14
+   16|     return (<Cmp/>);
+                    ^^^
+
+References:
+   createElementRequiredProp_string.js:16:13
+   16|     return (<Cmp/>);
+                   ^^^^^^ [1]
+   createElementRequiredProp_string.js:3:7
+    3| class Bar extends React.Component<{test: number}> {
+             ^^^ [2]
+
+
+Error ---------------------------------------------------------------------------- createElement_invalid_implicit.js:2:4
+
+Cannot cast `<div />` to `ExactReactElement_DEPRECATED` because in type argument `ElementType` [1]: `div` [2] is
+incompatible with string literal `span` [3]. [incompatible-type]
+
+   createElement_invalid_implicit.js:2:4
+    2|   <div /> as ExactReactElement_DEPRECATED<'span'>; // missing React, jsx still checked
+          ^^^ [2]
+
+References:
+   <BUILTINS>/react.js:58:51
+   58| declare opaque type ExactReactElement_DEPRECATED<+ElementType: React$ElementType, +P = React$ElementConfig<ElementType>>: {...};
+                                                         ^^^^^^^^^^^ [1]
+   createElement_invalid_implicit.js:2:43
+    2|   <div /> as ExactReactElement_DEPRECATED<'span'>; // missing React, jsx still checked
+                                                 ^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------- createElement_invalid_implicit.js:2:4
+
+Cannot cast `<div />` to `ExactReactElement_DEPRECATED` because in type argument `P` [1] > property `ref`:
+`void | RefSetter<DivInstance>` [2] is not exactly the same as `void | RefSetter<SpanInstance>` [3]. [incompatible-type]
+
+The above-mentioned two types must be the same because property `ref` is invariantly typed. To fix the error,
+- Either make `{ref?: RefSetter<DivInstance>, ...}` [2] and `{ref?: RefSetter<SpanInstance>, ...}` [3] exactly the same
+- Or make property `ref` in props of string literal `span` [3] readonly. See
+https://flow.org/en/docs/faq/#why-cant-i-pass-a-string-to-a-function-that-takes-a-string-number.
+
+   createElement_invalid_implicit.js:2:4
+    2|   <div /> as ExactReactElement_DEPRECATED<'span'>; // missing React, jsx still checked
+          ^^^ [2]
+
+References:
+   <BUILTINS>/react.js:58:84
+   58| declare opaque type ExactReactElement_DEPRECATED<+ElementType: React$ElementType, +P = React$ElementConfig<ElementType>>: {...};
+                                                                                          ^ [1]
+   createElement_invalid_implicit.js:2:43
+    2|   <div /> as ExactReactElement_DEPRECATED<'span'>; // missing React, jsx still checked
+                                                 ^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------- createElement_invalid_implicit.js:2:3
+
+Cannot resolve name `React`. [cannot-resolve-name]
+
+   2|   <div /> as ExactReactElement_DEPRECATED<'span'>; // missing React, jsx still checked
+        ^^^^^^^
+
+
+Error ---------------------------------------------------------------------------- createElement_invalid_implicit.js:7:4
+
+Cannot cast `<div />` to `ExactReactElement_DEPRECATED` because in type argument `ElementType` [1]: `div` [2] is
+incompatible with string literal `span` [3]. [incompatible-type]
+
+   createElement_invalid_implicit.js:7:4
+    7|   <div /> as ExactReactElement_DEPRECATED<'span'>; // missing createElement, jsx still checked
+          ^^^ [2]
+
+References:
+   <BUILTINS>/react.js:58:51
+   58| declare opaque type ExactReactElement_DEPRECATED<+ElementType: React$ElementType, +P = React$ElementConfig<ElementType>>: {...};
+                                                         ^^^^^^^^^^^ [1]
+   createElement_invalid_implicit.js:7:43
+    7|   <div /> as ExactReactElement_DEPRECATED<'span'>; // missing createElement, jsx still checked
+                                                 ^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------- createElement_invalid_implicit.js:7:4
+
+Cannot cast `<div />` to `ExactReactElement_DEPRECATED` because in type argument `P` [1] > property `ref`:
+`void | RefSetter<DivInstance>` [2] is not exactly the same as `void | RefSetter<SpanInstance>` [3]. [incompatible-type]
+
+The above-mentioned two types must be the same because property `ref` is invariantly typed. To fix the error,
+- Either make `{ref?: RefSetter<DivInstance>, ...}` [2] and `{ref?: RefSetter<SpanInstance>, ...}` [3] exactly the same
+- Or make property `ref` in props of string literal `span` [3] readonly. See
+https://flow.org/en/docs/faq/#why-cant-i-pass-a-string-to-a-function-that-takes-a-string-number.
+
+   createElement_invalid_implicit.js:7:4
+    7|   <div /> as ExactReactElement_DEPRECATED<'span'>; // missing createElement, jsx still checked
+          ^^^ [2]
+
+References:
+   <BUILTINS>/react.js:58:84
+   58| declare opaque type ExactReactElement_DEPRECATED<+ElementType: React$ElementType, +P = React$ElementConfig<ElementType>>: {...};
+                                                                                          ^ [1]
+   createElement_invalid_implicit.js:7:43
+    7|   <div /> as ExactReactElement_DEPRECATED<'span'>; // missing createElement, jsx still checked
+                                                 ^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------- createElement_invalid_implicit.js:7:4
+
+Cannot create `div` element because property `createElement` is missing in object literal [1]. [prop-missing]
+
+   createElement_invalid_implicit.js:7:4
+   7|   <div /> as ExactReactElement_DEPRECATED<'span'>; // missing createElement, jsx still checked
+         ^^^
+
+References:
+   createElement_invalid_implicit.js:6:17
+   6|   const React = {};
+                      ^^ [1]
+
+
+Error ---------------------------------------------------------------------------- createElement_invalid_implicit.js:7:3
+
+Cannot create react element because the `createElement` property of `React` [1] is incompatible with builtin
+`React.createElement` type. Please check the `React` [1] identifier in scope to ensure it is the right one.
+[invalid-react-create-element]
+
+   createElement_invalid_implicit.js:7:3
+   7|   <div /> as ExactReactElement_DEPRECATED<'span'>; // missing createElement, jsx still checked
+        ^^^^^^^
+
+References:
+   createElement_invalid_implicit.js:6:9
+   6|   const React = {};
+              ^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------- createElement_invalid_implicit.js:12:4
+
+Cannot cast `<div />` to `ExactReactElement_DEPRECATED` because in type argument `ElementType` [1]: `div` [2] is
+incompatible with string literal `span` [3]. [incompatible-type]
+
+   createElement_invalid_implicit.js:12:4
+   12|   <div /> as ExactReactElement_DEPRECATED<'span'>; // bad createElement, jsx still checked
+          ^^^ [2]
+
+References:
+   <BUILTINS>/react.js:58:51
+   58| declare opaque type ExactReactElement_DEPRECATED<+ElementType: React$ElementType, +P = React$ElementConfig<ElementType>>: {...};
+                                                         ^^^^^^^^^^^ [1]
+   createElement_invalid_implicit.js:12:43
+   12|   <div /> as ExactReactElement_DEPRECATED<'span'>; // bad createElement, jsx still checked
+                                                 ^^^^^^ [3]
+
+
+Error --------------------------------------------------------------------------- createElement_invalid_implicit.js:12:4
+
+Cannot cast `<div />` to `ExactReactElement_DEPRECATED` because in type argument `P` [1] > property `ref`:
+`void | RefSetter<DivInstance>` [2] is not exactly the same as `void | RefSetter<SpanInstance>` [3]. [incompatible-type]
+
+The above-mentioned two types must be the same because property `ref` is invariantly typed. To fix the error,
+- Either make `{ref?: RefSetter<DivInstance>, ...}` [2] and `{ref?: RefSetter<SpanInstance>, ...}` [3] exactly the same
+- Or make property `ref` in props of string literal `span` [3] readonly. See
+https://flow.org/en/docs/faq/#why-cant-i-pass-a-string-to-a-function-that-takes-a-string-number.
+
+   createElement_invalid_implicit.js:12:4
+   12|   <div /> as ExactReactElement_DEPRECATED<'span'>; // bad createElement, jsx still checked
+          ^^^ [2]
+
+References:
+   <BUILTINS>/react.js:58:84
+   58| declare opaque type ExactReactElement_DEPRECATED<+ElementType: React$ElementType, +P = React$ElementConfig<ElementType>>: {...};
+                                                                                          ^ [1]
+   createElement_invalid_implicit.js:12:43
+   12|   <div /> as ExactReactElement_DEPRECATED<'span'>; // bad createElement, jsx still checked
+                                                 ^^^^^^ [3]
+
+
+Error --------------------------------------------------------------------------- createElement_invalid_implicit.js:12:3
+
+Cannot create react element because the `createElement` property of `React` [1] is incompatible with builtin
+`React.createElement` type. Please check the `React` [1] identifier in scope to ensure it is the right one.
+[invalid-react-create-element]
+
+   createElement_invalid_implicit.js:12:3
+   12|   <div /> as ExactReactElement_DEPRECATED<'span'>; // bad createElement, jsx still checked
+         ^^^^^^^
+
+References:
+   createElement_invalid_implicit.js:11:9
+   11|   const React = { createElement: 'hi' };
+               ^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------- default_props_undefined.js:8:10
+
+Cannot create `Foo` element because in property `bar`: string [1] is incompatible with number [2]. [incompatible-type]
+
+   default_props_undefined.js:8:10
+   8| <Foo bar="42"/>; // Error
+               ^^^^ [1]
+
+References:
+   default_props_undefined.js:3:41
+   3| class Foo extends React.Component<{bar: number}, void> {
+                                              ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ element_config.js:15:43
+
+Cannot initialize property `defaultProps` with object literal because in property `p`: string [1] is incompatible with
+number [2]. [incompatible-type]
+
+   element_config.js:15:43
+   15|   static defaultProps: {p: ?number} = {p: 'foo'}; // Error: string ~> number
+                                                 ^^^^^ [1]
+
+References:
+   element_config.js:15:29
+   15|   static defaultProps: {p: ?number} = {p: 'foo'}; // Error: string ~> number
+                                   ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ element_config.js:31:31
+
+Cannot initialize property `defaultProps` with object literal because property `p` is extra in object literal [1] but
+missing in object type [2]. Exact objects do not accept extra props. [incompatible-type]
+
+   element_config.js:31:31
+   31|   static defaultProps: {||} = {p: 42}; // Error: extra property `p`
+                                     ^^^^^^^ [1]
+
+References:
+   element_config.js:31:24
+   31|   static defaultProps: {||} = {p: 42}; // Error: extra property `p`
+                              ^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ element_config.js:39:28
+
+string [1] is incompatible with number [2]. [incompatible-type]
+
+   element_config.js:39:28
+   39|   static defaultProps: {p: string} = {p: 'foo'}; // Error: string ~> number
+                                  ^^^^^^ [1]
+
+References:
+   element_config.js:38:39
+   38| class H extends React.Component<{p?: ?number}> {
+                                             ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ element_config.js:47:29
+
+string [1] is incompatible with number [2]. [incompatible-type]
+
+   element_config.js:47:29
+   47|   static defaultProps: {p?: string} = {} as {p?: string}; // Error: string ~> number
+                                   ^^^^^^ [1]
+
+References:
+   element_config.js:46:39
+   46| class J extends React.Component<{p?: ?number}> {
+                                             ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- element_config.js:52:6
+
+Cannot cast object literal to `React.ElementConfig` because in property `p`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   element_config.js:52:6
+   52| ({p: 'foo'}) as React.ElementConfig<typeof A>; // Error: string ~> number
+            ^^^^^ [1]
+
+References:
+   element_config.js:10:38
+   10| class A extends React.Component<{p: ?number}> {
+                                            ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- element_config.js:56:6
+
+Cannot cast object literal to `React.ElementConfig` because in property `p`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   element_config.js:56:6
+   56| ({p: 'foo'}) as React.ElementConfig<typeof B>; // Error: string ~> number
+            ^^^^^ [1]
+
+References:
+   element_config.js:14:38
+   14| class B extends React.Component<{p: ?number}> {
+                                            ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- element_config.js:58:9
+
+Cannot cast `{...}` to `React.ElementConfig` because properties `p` and `ref` are missing in object type [1] but exist
+in props of class `C` [2]. [incompatible-type]
+
+   element_config.js:58:9
+   58| ({}) as {} as React.ElementConfig<typeof C>; // Error: missing property `p`
+               ^^ [1]
+
+References:
+   element_config.js:58:15
+   58| ({}) as {} as React.ElementConfig<typeof C>; // Error: missing property `p`
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- element_config.js:60:6
+
+Cannot cast object literal to `React.ElementConfig` because in property `p`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   element_config.js:60:6
+   60| ({p: 'foo'}) as React.ElementConfig<typeof C>; // Error: string ~> number
+            ^^^^^ [1]
+
+References:
+   element_config.js:18:38
+   18| class C extends React.Component<{p: ?number}> {
+                                            ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- element_config.js:62:9
+
+Cannot cast `{...}` to `React.ElementConfig` because properties `p` and `ref` are missing in object type [1] but exist
+in props of class `D` [2]. [incompatible-type]
+
+   element_config.js:62:9
+   62| ({}) as {} as React.ElementConfig<typeof D>; // Error: missing property `p`
+               ^^ [1]
+
+References:
+   element_config.js:62:15
+   62| ({}) as {} as React.ElementConfig<typeof D>; // Error: missing property `p`
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- element_config.js:64:6
+
+Cannot cast object literal to `React.ElementConfig` because in property `p`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   element_config.js:64:6
+   64| ({p: 'foo'}) as React.ElementConfig<typeof D>; // Error: string ~> number
+            ^^^^^ [1]
+
+References:
+   element_config.js:22:38
+   22| class D extends React.Component<{p: ?number}> {
+                                            ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- element_config.js:71:2
+
+Cannot cast object literal to `React.ElementConfig` because property `p` is extra in object literal [1] but missing in
+props of class `F` [2]. Exact objects do not accept extra props. [incompatible-type]
+
+   element_config.js:71:2
+   71| ({p: 42}) as React.ElementConfig<typeof F>; // Error: extra property `p`
+        ^^^^^^^ [1]
+
+References:
+   element_config.js:71:14
+   71| ({p: 42}) as React.ElementConfig<typeof F>; // Error: extra property `p`
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- element_config.js:72:2
+
+Cannot cast object literal to `React.ElementConfig` because property `p` is extra in object literal [1] but missing in
+props of class `F` [2]. Exact objects do not accept extra props. [incompatible-type]
+
+   element_config.js:72:2
+   72| ({p: 'foo'}) as React.ElementConfig<typeof F>; // Error: extra property `p`
+        ^^^^^^^^^^ [1]
+
+References:
+   element_config.js:72:17
+   72| ({p: 'foo'}) as React.ElementConfig<typeof F>; // Error: extra property `p`
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- element_config.js:76:6
+
+Cannot cast object literal to `React.ElementConfig` because in property `p`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   element_config.js:76:6
+   76| ({p: 'foo'}) as React.ElementConfig<typeof G>; // Error: string ~> number
+            ^^^^^ [1]
+
+References:
+   element_config.js:34:38
+   34| class G extends React.Component<{p: ?number}> {
+                                            ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- element_config.js:80:6
+
+Cannot cast object literal to `React.ElementConfig` because in property `p`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   element_config.js:80:6
+   80| ({p: 'foo'}) as React.ElementConfig<typeof H>; // Error: string ~> number
+            ^^^^^ [1]
+
+References:
+   element_config.js:38:39
+   38| class H extends React.Component<{p?: ?number}> {
+                                             ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- element_config.js:84:6
+
+Cannot cast object literal to `React.ElementConfig` because in property `p`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   element_config.js:84:6
+   84| ({p: 'foo'}) as React.ElementConfig<typeof I>; // Error: string ~> number
+            ^^^^^ [1]
+
+References:
+   element_config.js:42:39
+   42| class I extends React.Component<{p?: ?number}> {
+                                             ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- element_config.js:88:6
+
+Cannot cast object literal to `React.ElementConfig` because in property `p`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   element_config.js:88:6
+   88| ({p: 'foo'}) as React.ElementConfig<typeof J>; // Error: string ~> number
+            ^^^^^ [1]
+
+References:
+   element_config.js:46:39
+   46| class J extends React.Component<{p?: ?number}> {
+                                             ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------- element_with_component_type.js:6:2
+
+Cannot cast `<Foo />` to `ExactReactElement_DEPRECATED` because in type argument `P` [1]: property `b` is missing in
+object type [2] but exists in object type [3]. [incompatible-type]
+
+   element_with_component_type.js:6:2
+    6| (<Foo a={42}/>: ExactReactElement_DEPRECATED<React.ComponentType<{b: number}>>); // Error
+        ^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:58:84
+   58| declare opaque type ExactReactElement_DEPRECATED<+ElementType: React$ElementType, +P = React$ElementConfig<ElementType>>: {...};
+                                                                                          ^ [1]
+   element_with_component_type.js:3:40
+    3| declare const Foo: React.ComponentType<{a: number}>
+                                              ^^^^^^^^^^^ [2]
+   element_with_component_type.js:6:66
+    6| (<Foo a={42}/>: ExactReactElement_DEPRECATED<React.ComponentType<{b: number}>>); // Error
+                                                                        ^^^^^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------- element_with_component_type.js:6:3
+
+Cannot cast `<Foo />` to `ExactReactElement_DEPRECATED` because in type argument `ElementType` [1] > type argument
+`P` [2]: property `a` is missing in object type [3] but exists in object type [4]. [incompatible-type]
+
+   element_with_component_type.js:6:3
+     6| (<Foo a={42}/>: ExactReactElement_DEPRECATED<React.ComponentType<{b: number}>>); // Error
+          ^^^
+
+References:
+   <BUILTINS>/react.js:58:51
+    58| declare opaque type ExactReactElement_DEPRECATED<+ElementType: React$ElementType, +P = React$ElementConfig<ElementType>>: {...};
+                                                          ^^^^^^^^^^^ [1]
+   <BUILTINS>/react.js:258:38
+   258|   declare export type ComponentType<-P: {...}> = component(...P);
+                                             ^ [2]
+   element_with_component_type.js:6:66
+     6| (<Foo a={42}/>: ExactReactElement_DEPRECATED<React.ComponentType<{b: number}>>); // Error
+                                                                         ^^^^^^^^^^^ [3]
+   element_with_component_type.js:3:40
+     3| declare const Foo: React.ComponentType<{a: number}>
+                                               ^^^^^^^^^^^ [4]
+
+
+Error ------------------------------------------------------------------------------------------------------- hoc.js:9:8
+
+Cannot create `Component` element because properties `bar` and `foo` are missing in props [1] but exist in props of
+component [2]. [incompatible-type]
+
+   hoc.js:9:8
+   9|       <Component />; // Error: `foo` is required.
+             ^^^^^^^^^
+
+References:
+   hoc.js:9:7
+   9|       <Component />; // Error: `foo` is required.
+            ^^^^^^^^^^^^^ [1]
+   hoc.js:4:14
+   4|   Component: component(ref?: React.RefSetter<mixed>, foo: number, bar: number),
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------------ hoc.js:10:8
+
+Cannot create `Component` element because property `bar` is missing in props [1] but exists in props of component [2].
+[incompatible-type]
+
+   hoc.js:10:8
+   10|       <Component foo={42} />; // Error: `bar` is required.
+              ^^^^^^^^^
+
+References:
+   hoc.js:10:7
+   10|       <Component foo={42} />; // Error: `bar` is required.
+             ^^^^^^^^^^^^^^^^^^^^^^ [1]
+   hoc.js:4:14
+    4|   Component: component(ref?: React.RefSetter<mixed>, foo: number, bar: number),
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- hoc.js:33:13
+
+Cannot call `myHOC` with `class { ... }` bound to `Component` because in property `foo`: string [1] is incompatible with
+number [2]. [incompatible-type]
+
+   hoc.js:33:13
+   33| myHOC(class Empty extends React.Component<{foo: string}, void> {}); // Error
+                   ^^^^^
+
+References:
+   hoc.js:33:49
+   33| myHOC(class Empty extends React.Component<{foo: string}, void> {}); // Error
+                                                       ^^^^^^ [1]
+   hoc.js:4:59
+    4|   Component: component(ref?: React.RefSetter<mixed>, foo: number, bar: number),
+                                                                 ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------------ hoc.js:34:7
+
+Cannot call `myHOC` with function bound to `Component` because in property `foo`: number [1] is incompatible with
+string [2]. [incompatible-type]
+
+   hoc.js:34:7
+   34| myHOC(function Empty(props: {foo: string}) {}); // Error
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   hoc.js:4:59
+    4|   Component: component(ref?: React.RefSetter<mixed>, foo: number, bar: number),
+                                                                 ^^^^^^ [1]
+   hoc.js:34:35
+   34| myHOC(function Empty(props: {foo: string}) {}); // Error
+                                         ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------------ hoc.js:39:2
+
+Cannot create `Wrapped` element because property `foo` is missing in props [1] but exists in props of component [2].
+[incompatible-type]
+
+   hoc.js:39:2
+   39| <Wrapped nonsense="what" />; // Error: `foo` is required.
+        ^^^^^^^
+
+References:
+   hoc.js:39:1
+   39| <Wrapped nonsense="what" />; // Error: `foo` is required.
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   hoc.js:36:16
+   36| const Wrapped: component(ref?: React.RefSetter<mixed>, foo: number) = myHOC(Unwrapped);
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------------ hoc.js:39:2
+
+Cannot create `Wrapped` element because property `nonsense` is extra in props [1] but missing in props of component [2].
+Exact objects do not accept extra props. [incompatible-type]
+
+   hoc.js:39:2
+   39| <Wrapped nonsense="what" />; // Error: `foo` is required.
+        ^^^^^^^
+
+References:
+   hoc.js:39:1
+   39| <Wrapped nonsense="what" />; // Error: `foo` is required.
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   hoc.js:36:16
+   36| const Wrapped: component(ref?: React.RefSetter<mixed>, foo: number) = myHOC(Unwrapped);
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------------ hoc.js:41:2
+
+Cannot create `WrappedFun` element because property `foo` is missing in props [1] but exists in props of component [2].
+[incompatible-type]
+
+   hoc.js:41:2
+   41| <WrappedFun />; // Error: `foo` is required.
+        ^^^^^^^^^^
+
+References:
+   hoc.js:41:1
+   41| <WrappedFun />; // Error: `foo` is required.
+       ^^^^^^^^^^^^^^ [1]
+   hoc.js:5:4
+    5| ): component(ref?: React.RefSetter<mixed>, foo: number) {
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- hoc2.js:24:2
+
+Cannot create `MyEnhancedComponent` element because properties `a` and `b` are missing in props [1] but exist in props
+of class `MyComponent` [2]. [incompatible-type]
+
+   hoc2.js:24:2
+   24| <MyEnhancedComponent />; // Error: Needs `a` and `b`.
+        ^^^^^^^^^^^^^^^^^^^
+
+References:
+   hoc2.js:24:1
+   24| <MyEnhancedComponent />; // Error: Needs `a` and `b`.
+       ^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   hoc2.js:9:7
+    9| class MyComponent extends React.Component<{|
+             ^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- hoc2.js:26:24
+
+Cannot create `MyEnhancedComponent` element because in property `a`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   hoc2.js:26:24
+   26| <MyEnhancedComponent a="foo" b={2} />; // Error: string ~> number
+                              ^^^^^ [1]
+
+References:
+   hoc2.js:10:6
+   10|   a: number,
+            ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- hoc2.js:28:2
+
+Cannot create `MyEnhancedFunctionComponent` element because properties `a` and `b` are missing in props [1] but exist in
+object type [2]. [incompatible-type]
+
+   hoc2.js:28:2
+   28| <MyEnhancedFunctionComponent/>; // Error: Needs `a` and `b`.
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   hoc2.js:28:1
+   28| <MyEnhancedFunctionComponent/>; // Error: Needs `a` and `b`.
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   hoc2.js:15:37
+                                           v-
+   15| function MyFunctionComponent(props: {|
+   16|   a: number,
+   17|   b: number,
+   18|   prop: number,
+   19| |}) { return null }
+       -^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- hoc2.js:30:32
+
+Cannot create `MyEnhancedFunctionComponent` element because in property `a`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   hoc2.js:30:32
+   30| <MyEnhancedFunctionComponent a="foo" b={2} />; // Error: string ~> number
+                                      ^^^^^ [1]
+
+References:
+   hoc2.js:16:6
+   16|   a: number,
+            ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- hoc3.js:24:2
+
+Cannot create `MyEnhancedComponent` element because properties `a` and `b` are missing in props [1] but exist in props
+of class `MyComponent` [2]. [incompatible-type]
+
+   hoc3.js:24:2
+   24| <MyEnhancedComponent />; // Error: Needs `a` and `b`.
+        ^^^^^^^^^^^^^^^^^^^
+
+References:
+   hoc3.js:24:1
+   24| <MyEnhancedComponent />; // Error: Needs `a` and `b`.
+       ^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   hoc3.js:9:7
+    9| class MyComponent extends React.Component<{
+             ^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- hoc3.js:26:24
+
+Cannot create `MyEnhancedComponent` element because in property `a`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   hoc3.js:26:24
+   26| <MyEnhancedComponent a="foo" b={2} />; // Error: string ~> number
+                              ^^^^^ [1]
+
+References:
+   hoc3.js:10:6
+   10|   a: number,
+            ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- hoc3.js:28:2
+
+Cannot create `MyEnhancedFunctionComponent` element because properties `a` and `b` are missing in props [1] but exist in
+object type [2]. [incompatible-type]
+
+   hoc3.js:28:2
+   28| <MyEnhancedFunctionComponent/>; // Error: Needs `a` and `b`.
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   hoc3.js:28:1
+   28| <MyEnhancedFunctionComponent/>; // Error: Needs `a` and `b`.
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   hoc3.js:22:45
+   22| const MyEnhancedFunctionComponent = connect<{a: number, b: number}>(MyFunctionComponent);
+                                                   ^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- hoc3.js:30:32
+
+Cannot create `MyEnhancedFunctionComponent` element because in property `a`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   hoc3.js:30:32
+   30| <MyEnhancedFunctionComponent a="foo" b={2} />; // Error: string ~> number
+                                      ^^^^^ [1]
+
+References:
+   hoc3.js:22:49
+   22| const MyEnhancedFunctionComponent = connect<{a: number, b: number}>(MyFunctionComponent);
+                                                       ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- hoc4.js:24:2
+
+Cannot create `MyEnhancedComponent` element because properties `a` and `b` are missing in props [1] but exist in
+`Omit` [2]. [incompatible-type]
+
+   hoc4.js:24:2
+   24| <MyEnhancedComponent />; // Error: Needs `a` and `b`.
+        ^^^^^^^^^^^^^^^^^^^
+
+References:
+   hoc4.js:24:1
+   24| <MyEnhancedComponent />; // Error: Needs `a` and `b`.
+       ^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   hoc4.js:5:24
+    5| ): React.ComponentType<Omit<TProps, 'prop'>> {
+                              ^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- hoc4.js:26:24
+
+Cannot create `MyEnhancedComponent` element because in property `a`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   hoc4.js:26:24
+   26| <MyEnhancedComponent a="foo" b={2} />; // Error: string ~> number
+                              ^^^^^ [1]
+
+References:
+   hoc4.js:10:6
+   10|   a: number,
+            ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- hoc4.js:28:2
+
+Cannot create `MyEnhancedFunctionComponent` element because properties `a` and `b` are missing in props [1] but exist in
+`Omit` [2]. [incompatible-type]
+
+   hoc4.js:28:2
+   28| <MyEnhancedFunctionComponent/>; // Error: Needs `a` and `b`.
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   hoc4.js:28:1
+   28| <MyEnhancedFunctionComponent/>; // Error: Needs `a` and `b`.
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   hoc4.js:5:24
+    5| ): React.ComponentType<Omit<TProps, 'prop'>> {
+                              ^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- hoc4.js:30:32
+
+Cannot create `MyEnhancedFunctionComponent` element because in property `a`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   hoc4.js:30:32
+   30| <MyEnhancedFunctionComponent a="foo" b={2} />; // Error: string ~> number
+                                      ^^^^^ [1]
+
+References:
+   hoc4.js:22:49
+   22| const MyEnhancedFunctionComponent = connect<{a: number, b: number, prop: number}>(MyFunctionComponent);
+                                                       ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- hoc5.js:21:2
+
+Cannot create `MyComponent1` element because property `bar` is missing in props [1] but exists in props of class
+`MyComponent1` [2]. [incompatible-type]
+
+   hoc5.js:21:2
+   21| <MyComponent1 />; // Error
+        ^^^^^^^^^^^^
+
+References:
+   hoc5.js:21:1
+   21| <MyComponent1 />; // Error
+       ^^^^^^^^^^^^^^^^ [1]
+   hoc5.js:14:7
+   14| class MyComponent1 extends React.Component<{foo: string, bar: number}> {
+             ^^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- hoc5.js:23:19
+
+Cannot create `MyComponent1` element because in property `bar`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   hoc5.js:23:19
+   23| <MyComponent1 bar="nope" />; // Error
+                         ^^^^^^ [1]
+
+References:
+   hoc5.js:14:63
+   14| class MyComponent1 extends React.Component<{foo: string, bar: number}> {
+                                                                     ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- hoc5.js:25:29
+
+Cannot create `MyComponent1` element because in property `foo`: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   hoc5.js:25:29
+   25| <MyComponent1 bar={42} foo={100} />; // Error
+                                   ^^^ [1]
+
+References:
+   hoc5.js:14:50
+   14| class MyComponent1 extends React.Component<{foo: string, bar: number}> {
+                                                        ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- hoc5.js:30:2
+
+Cannot create `MyEnhancedComponent1` element because property `bar` is missing in props [1] but exists in props of class
+`MyComponent1` [2]. [incompatible-type]
+
+   hoc5.js:30:2
+   30| <MyEnhancedComponent1 />; // Error
+        ^^^^^^^^^^^^^^^^^^^^
+
+References:
+   hoc5.js:30:1
+   30| <MyEnhancedComponent1 />; // Error
+       ^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   hoc5.js:10:24
+   10| ): React.ComponentType<React.ElementConfig<Component>> {
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- hoc5.js:32:27
+
+Cannot create `MyEnhancedComponent1` element because in property `bar`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   hoc5.js:32:27
+   32| <MyEnhancedComponent1 bar="nope" />; // Error
+                                 ^^^^^^ [1]
+
+References:
+   hoc5.js:14:63
+   14| class MyComponent1 extends React.Component<{foo: string, bar: number}> {
+                                                                     ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- hoc5.js:34:37
+
+Cannot create `MyEnhancedComponent1` element because in property `foo`: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   hoc5.js:34:37
+   34| <MyEnhancedComponent1 bar={42} foo={100} />; // Error
+                                           ^^^ [1]
+
+References:
+   hoc5.js:14:50
+   14| class MyComponent1 extends React.Component<{foo: string, bar: number}> {
+                                                        ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- import_react.js:7:17
+
+Cannot assign `new react.Component()` to `b` because `Component` [1] is incompatible with number [2].
+[incompatible-type]
+
+   import_react.js:7:17
+   7| var b: number = new react.Component(); // Error: ReactComponent ~> number
+                      ^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   import_react.js:7:8
+   7| var b: number = new react.Component(); // Error: ReactComponent ~> number
+             ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------- intersection_component_error.js:12:2
+
+Cannot create `MyComponent` element because: [incompatible-use]
+ - Either property `foo` is missing in props [1] but exists in object type [2].
+ - Or object type [3] is not a React component.
+
+   intersection_component_error.js:12:2
+   12| <MyComponent />;
+        ^^^^^^^^^^^
+
+References:
+   intersection_component_error.js:12:1
+   12| <MyComponent />;
+       ^^^^^^^^^^^^^^^ [1]
+   intersection_component_error.js:8:46
+    8| declare var MyComponent: React.ComponentType<{foo: number}> & {
+                                                    ^^^^^^^^^^^^^ [2]
+   intersection_component_error.js:8:63
+                                                                     v
+    8| declare var MyComponent: React.ComponentType<{foo: number}> & {
+    9|   someStatic: boolean,
+   10| };
+       ^ [3]
+
+
+Error ----------------------------------------------------------------------------------------------- jsx_spread.js:9:15
+
+Cannot create `Foo` element because in property `bar`: number [1] is incompatible with string [2]. [incompatible-type]
+
+   jsx_spread.js:9:15
+   9| const blah = <Foo {...props} />; // error bar, number given string expected
+                    ^^^
+
+References:
+   jsx_spread.js:8:21
+   8| const props = {bar: 42};
+                          ^^ [1]
+   jsx_spread.js:5:8
+   5|   bar: string,
+             ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- key.js:10:11
+
+Cannot create `Foo` element because in property `key`: [incompatible-type]
+ - Either boolean [1] is incompatible with string [2].
+ - Or boolean [1] is incompatible with number [3].
+
+   key.js:10:11
+   10| <Foo key={true} />; // Error
+                 ^^^^ [1]
+
+References:
+   <BUILTINS>/react.js:79:26
+   79| declare type React$Key = string | number;
+                                ^^^^^^ [2]
+   <BUILTINS>/react.js:79:35
+   79| declare type React$Key = string | number;
+                                         ^^^^^^ [3]
+
+
+Error ----------------------------------------------------------------------------------------------------- key.js:19:16
+
+Cannot create `FooExact` element because in property `key`: [incompatible-type]
+ - Either boolean [1] is incompatible with string [2].
+ - Or boolean [1] is incompatible with number [3].
+
+   key.js:19:16
+   19| <FooExact key={true} />; // Error
+                      ^^^^ [1]
+
+References:
+   <BUILTINS>/react.js:79:26
+   79| declare type React$Key = string | number;
+                                ^^^^^^ [2]
+   <BUILTINS>/react.js:79:35
+   79| declare type React$Key = string | number;
+                                         ^^^^^^ [3]
+
+
+Error ----------------------------------------------------------------------------------------------------- key.js:21:10
+
+Cannot spread [1] an object that contains a `key` property [2] [invalid-spread-prop]
+
+   key.js:21:10
+   21| <Foo {...{key: 42}} />; // error
+                ^^^^^^^^^ [1]
+
+References:
+   key.js:21:11
+   21| <Foo {...{key: 42}} />; // error
+                 ^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- key.js:24:14
+
+Cannot spread [1] an object that contains a `key` property [2] [invalid-spread-prop]
+
+   key.js:24:14
+   24|     <Foo {...keyProps} />; // error
+                    ^^^^^^^^ [1]
+
+References:
+   key.js:23:46
+   23|     declare const keyProps: {foo: number} | {key: string};
+                                                    ^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- key.js:28:14
+
+Cannot spread [1] an object that contains a `key` property [2] [invalid-spread-prop]
+
+   key.js:28:14
+   28|     <Foo {...keyProps} />; // error
+                    ^^^^^^^^ [1]
+
+References:
+   key.js:27:56
+   27|     declare const keyProps: $ReadOnly<{foo: number} | {key: string}>;
+                                                              ^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- key.js:32:14
+
+Cannot spread [1] an object that contains a `key` property [2] [invalid-spread-prop]
+
+   key.js:32:14
+   32|     <Foo {...keyProps.foo} />; // error
+                    ^^^^^^^^^^^^ [1]
+
+References:
+   key.js:31:63
+   31|     declare const keyProps: { foo: $ReadOnly<{foo: number} | {key: string}>};
+                                                                     ^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- key.js:37:14
+
+Cannot spread [1] an object that contains a `key` property [2] [invalid-spread-prop]
+
+   key.js:37:14
+   37|     <Foo {...keyProps} />; // error
+                    ^^^^^^^^ [1]
+
+References:
+   key.js:35:28
+   35|     type PropsWithKey = {| key: string |};
+                                  ^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- profiler.js:19:3
+
+Unexpected token <. Remember, adjacent JSX elements must be wrapped in an enclosing parent tag [ParseError]
+
+   19|   <Profiler id="fake" onRender={onRender}>
+         ^
+
+
+Error ------------------------------------------------------------------------- react_util_types_monomorphization.js:7:4
+
+Cannot cast `config.foo` to string because `unknown` (inferred from type parameter's bound) [1] is incompatible with
+string [2]. [incompatible-type]
+
+   react_util_types_monomorphization.js:7:4
+   7|   (config.foo: string); // error: mixed ~> string
+         ^^^^^^^^^^
+
+References:
+   react_util_types_monomorphization.js:3:29
+   3| declare class PolyComponent<T> extends React.Component<{foo: T}> {}
+                                  ^ [1]
+   react_util_types_monomorphization.js:7:16
+   7|   (config.foo: string); // error: mixed ~> string
+                     ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------ react_util_types_monomorphization.js:12:8
+
+Cannot get `ref.props` because property `props` is missing in null [1]. [incompatible-use]
+
+   react_util_types_monomorphization.js:12:8
+   12|   (ref.props.foo: string); // error: mixed ~> string
+              ^^^^^
+
+References:
+   react_util_types_monomorphization.js:11:20
+   11|   declare var ref: React.ElementRef<typeof PolyComponent>; // T instantiated to mixed
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------ react_util_types_monomorphization.js:12:4
+
+Cannot cast `ref.props.foo` to string because `unknown` (inferred from type parameter's bound) [1] is incompatible with
+string [2]. [incompatible-type]
+
+   react_util_types_monomorphization.js:12:4
+   12|   (ref.props.foo: string); // error: mixed ~> string
+          ^^^^^^^^^^^^^
+
+References:
+   react_util_types_monomorphization.js:3:29
+    3| declare class PolyComponent<T> extends React.Component<{foo: T}> {}
+                                   ^ [1]
+   react_util_types_monomorphization.js:12:19
+   12|   (ref.props.foo: string); // error: mixed ~> string
+                         ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------------ ref.js:7:10
+
+Cannot create `Foo` element because in property `ref`: [incompatible-type]
+ - Either string [1] is incompatible with object type [2].
+ - Or string [1] is incompatible with function type [3].
+
+   ref.js:7:10
+     7| <Foo ref="foo" />; // Error: string ref is banned
+                 ^^^^^ [1]
+
+References:
+   <BUILTINS>/react.js:107:7
+   107|     | { -current: T | null, ... }
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+   <BUILTINS>/react.js:108:8
+   108|     | ((T | null) => mixed)
+               ^^^^^^^^^^^^^^^^^^^ [3]
+
+
+Error ----------------------------------------------------------------------------------------------------- ref.js:10:11
+
+Cannot create `Foo` element because in property `ref`: [incompatible-type]
+ - Either in the first parameter: number [1] is incompatible with `Foo` [2].
+ - Or function [3] is incompatible with object type [4].
+    - Functions without statics are not compatible with objects.
+
+   ref.js:10:11
+    10| <Foo ref={(foo: number) => {}} />; // Error: `Foo` is not a `number`.
+                  ^^^^^^^^^^^^^^^^^^^ [3]
+
+References:
+   ref.js:10:17
+    10| <Foo ref={(foo: number) => {}} />; // Error: `Foo` is not a `number`.
+                        ^^^^^^ [1]
+   ref.js:3:7
+     3| class Foo extends React.Component<{}, void> {}
+              ^^^ [2]
+   <BUILTINS>/react.js:107:7
+   107|     | { -current: T | null, ... }
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^ [4]
+
+
+Error ----------------------------------------------------------------------------------------------------- ref.js:11:19
+
+Cannot cast `foo` to `Foo` because null [1] is incompatible with `Foo` [2]. [incompatible-type]
+
+   ref.js:11:19
+    11| <Foo ref={foo => (foo: Foo)} />; // Error: `Foo` may be null.
+                          ^^^
+
+References:
+   <BUILTINS>/react.js:108:13
+   108|     | ((T | null) => mixed)
+                    ^^^^ [1]
+   ref.js:11:24
+    11| <Foo ref={foo => (foo: Foo)} />; // Error: `Foo` may be null.
+                               ^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- ref.js:13:19
+
+Cannot cast `foo` to union type because: [incompatible-type]
+ - Either `Foo` [1] is incompatible with `Bar` [2].
+ - Or `Foo` [1] is incompatible with null [3].
+
+   ref.js:13:19
+   13| <Foo ref={foo => (foo: Bar | null)} />; // Error: `Foo` is not `Bar`.
+                         ^^^
+
+References:
+   ref.js:3:7
+    3| class Foo extends React.Component<{}, void> {}
+             ^^^ [1]
+   ref.js:13:24
+   13| <Foo ref={foo => (foo: Bar | null)} />; // Error: `Foo` is not `Bar`.
+                              ^^^ [2]
+   ref.js:13:30
+   13| <Foo ref={foo => (foo: Bar | null)} />; // Error: `Foo` is not `Bar`.
+                                    ^^^^ [3]
+
+
+Error ----------------------------------------------------------------------------------------------------- ref.js:18:15
+
+Cannot create `FooExact` element because in property `ref`: [incompatible-type]
+ - Either string [1] is incompatible with object type [2].
+ - Or string [1] is incompatible with function type [3].
+
+   ref.js:18:15
+    18| <FooExact ref="foo" />; // Error: string ref is banned
+                      ^^^^^ [1]
+
+References:
+   <BUILTINS>/react.js:107:7
+   107|     | { -current: T | null, ... }
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+   <BUILTINS>/react.js:108:8
+   108|     | ((T | null) => mixed)
+               ^^^^^^^^^^^^^^^^^^^ [3]
+
+
+Error ----------------------------------------------------------------------------------------------------- ref.js:21:16
+
+Cannot create `FooExact` element because in property `ref`: [incompatible-type]
+ - Either in the first parameter: number [1] is incompatible with `FooExact` [2].
+ - Or function [3] is incompatible with object type [4].
+    - Functions without statics are not compatible with objects.
+
+   ref.js:21:16
+    21| <FooExact ref={(foo: number) => {}} />; // Error: `FooExact` is not a `number`.
+                       ^^^^^^^^^^^^^^^^^^^ [3]
+
+References:
+   ref.js:21:22
+    21| <FooExact ref={(foo: number) => {}} />; // Error: `FooExact` is not a `number`.
+                             ^^^^^^ [1]
+   ref.js:15:7
+    15| class FooExact extends React.Component<{||}, void> {}
+              ^^^^^^^^ [2]
+   <BUILTINS>/react.js:107:7
+   107|     | { -current: T | null, ... }
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^ [4]
+
+
+Error ----------------------------------------------------------------------------------------------------- ref.js:22:16
+
+Cannot create `FooExact` element because in property `ref`: [incompatible-type]
+ - Either in the first parameter: `FooExact` [1] is incompatible with null [2].
+ - Or function [3] is incompatible with object type [4].
+    - Functions without statics are not compatible with objects.
+
+   ref.js:22:16
+    22| <FooExact ref={(foo: FooExact) => {}} />; // Error: `FooExact` may be null.
+                       ^^^^^^^^^^^^^^^^^^^^^ [3]
+
+References:
+   ref.js:22:22
+    22| <FooExact ref={(foo: FooExact) => {}} />; // Error: `FooExact` may be null.
+                             ^^^^^^^^ [1]
+   <BUILTINS>/react.js:108:13
+   108|     | ((T | null) => mixed)
+                    ^^^^ [2]
+   <BUILTINS>/react.js:107:7
+   107|     | { -current: T | null, ... }
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^ [4]
+
+
+Error ----------------------------------------------------------------------------------------------------- ref.js:24:16
+
+Cannot create `FooExact` element because in property `ref`: [incompatible-type]
+ - Either in the first parameter: `FooExact` [1] is incompatible with `Bar` [2].
+ - Or in the first parameter: `FooExact` [1] is incompatible with null [3].
+
+   ref.js:24:16
+   24| <FooExact ref={(foo: Bar | null) => {}} />; // Error: `FooExact` is not `Bar`.
+                      ^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   ref.js:15:7
+   15| class FooExact extends React.Component<{||}, void> {}
+             ^^^^^^^^ [1]
+   ref.js:24:22
+   24| <FooExact ref={(foo: Bar | null) => {}} />; // Error: `FooExact` is not `Bar`.
+                            ^^^ [2]
+   ref.js:24:28
+   24| <FooExact ref={(foo: Bar | null) => {}} />; // Error: `FooExact` is not `Bar`.
+                                  ^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------- undefined_prop.js:5:21
+
+Cannot create `MyComponent` element because in property `title`: undefined [1] is incompatible with string [2].
+[incompatible-type]
+
+   undefined_prop.js:5:21
+   5| <MyComponent title={undefined} />;
+                          ^^^^^^^^^ [1]
+
+References:
+   undefined_prop.js:3:51
+   3| class MyComponent extends React.Component<{title: string}> {}
+                                                        ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ useCallback_hook.js:4:9
+
+Cannot call `React.useCallback` because in type argument `T`: undefined [1] is incompatible with function type [2].
+[incompatible-type]
+
+   useCallback_hook.js:4:9
+     4|   React.useCallback(); // Error: function requires another argument.
+                ^^^^^^^^^^^
+
+References:
+   useCallback_hook.js:4:3
+     4|   React.useCallback(); // Error: function requires another argument.
+          ^^^^^^^^^^^^^^^^^^^ [1]
+   <BUILTINS>/react.js:908:33
+   908|     declare hook useCallback<T: (...args: $ReadOnlyArray<empty>) => mixed>(
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- useCallback_hook.js:10:23
+
+Cannot assign `callback()` to `str` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   useCallback_hook.js:10:23
+   10|   const str: string = callback();// Error: number is incompatible with string.
+                             ^^^^^^^^^^
+
+References:
+   useCallback_hook.js:8:44
+    8|   const callback = React.useCallback(() => 123);
+                                                  ^^^ [1]
+   useCallback_hook.js:10:14
+   10|   const str: string = callback();// Error: number is incompatible with string.
+                    ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- useCallback_hook.js:19:3
+
+Cannot call `callback` because function [1] requires another argument. [incompatible-type]
+
+   useCallback_hook.js:19:3
+   19|   callback(true); // Error: function requires another argument.
+         ^^^^^^^^
+
+References:
+   useCallback_hook.js:14:38
+                                            v------------------------------
+   14|   const callback = React.useCallback((num: number, str: string) => {
+   15|     (num: number);
+   16|     (str: string);
+   17|   });
+         ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- useCallback_hook.js:19:12
+
+Cannot call `callback` with `true` bound to `num` because boolean [1] is incompatible with number [2].
+[incompatible-type]
+
+   useCallback_hook.js:19:12
+   19|   callback(true); // Error: function requires another argument.
+                  ^^^^ [1]
+
+References:
+   useCallback_hook.js:14:44
+   14|   const callback = React.useCallback((num: number, str: string) => {
+                                                  ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- useCallback_hook.js:20:12
+
+Cannot call `callback` with `'123'` bound to `num` because string [1] is incompatible with number [2].
+[incompatible-type]
+
+   useCallback_hook.js:20:12
+   20|   callback('123', 'abc'); // Error: string is incompatible with number.
+                  ^^^^^ [1]
+
+References:
+   useCallback_hook.js:14:44
+   14|   const callback = React.useCallback((num: number, str: string) => {
+                                                  ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- useContext_hook.js:4:9
+
+Cannot call `React.useMutationEffect` because property `useMutationEffect` is missing in namespace React [1].
+[prop-missing]
+
+   useContext_hook.js:4:9
+      4|   React.useMutationEffect(); // Error: function requires another argument.
+                 ^^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:1054:26
+   1054|   declare export default typeof React;
+                                  ^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------- useContext_hook.js:19:18
+
+Cannot assign `React.useContext(...)` to `numericValue` because string [1] is incompatible with number [2].
+[incompatible-type]
+
+   useContext_hook.js:19:18
+   19|   numericValue = React.useContext(StringContext); // Error: string is incompatible with number
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   useContext_hook.js:17:45
+   17|   const StringContext = React.createContext('hello');
+                                                   ^^^^^^^ [1]
+   useContext_hook.js:14:21
+   14|   let numericValue: number;
+                           ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- useContext_hook.js:21:73
+
+Cannot call `React.createContext` with `'hello'` bound to `defaultValue` because string [1] is incompatible with
+`CustomType` [2]. [incompatible-type]
+
+   useContext_hook.js:21:73
+   21|   const InvalidContext: React.Context<CustomType> = React.createContext('hello'); // Error: inexact string is incompatible with exact CustomType
+                                                                               ^^^^^^^ [1]
+
+References:
+   useContext_hook.js:21:39
+   21|   const InvalidContext: React.Context<CustomType> = React.createContext('hello'); // Error: inexact string is incompatible with exact CustomType
+                                             ^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- useContext_hook.js:27:17
+
+Cannot assign `React.useContext(...)` to `stringValue` because `CustomType` [1] is incompatible with string [2].
+[incompatible-type]
+
+   useContext_hook.js:27:17
+   27|   stringValue = React.useContext(CustomContext); // Error: CustomType is incompatible with string
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   useContext_hook.js:23:38
+   23|   const CustomContext: React.Context<CustomType> = React.createContext({
+                                            ^^^^^^^^^^ [1]
+   useContext_hook.js:13:20
+   13|   let stringValue: string;
+                          ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- useContext_hook.js:48:43
+
+Cannot call `React.useContext` because no more than 1 argument is expected by function type [1]. [extra-arg]
+
+   useContext_hook.js:48:43
+    48|   const {foo} = React.useContext(Context, 0b001);
+                                                  ^^^^^
+
+References:
+   <BUILTINS>/react.js:825:28
+   825|     declare hook useContext<T>(context: React.Context<T>): T;
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------- useContext_hook.js:50:43
+
+Cannot call `React.useContext` because no more than 1 argument is expected by function type [1]. [extra-arg]
+
+   useContext_hook.js:50:43
+    50|   const {bar} = React.useContext(Context, 0b010);
+                                                  ^^^^^
+
+References:
+   <BUILTINS>/react.js:825:28
+   825|     declare hook useContext<T>(context: React.Context<T>): T;
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------ useContext_hook.js:52:4
+
+Cannot cast `bar` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   useContext_hook.js:52:4
+   52|   (bar: string); // Error: number is incompatible with string
+          ^^^
+
+References:
+   useContext_hook.js:33:19
+   33|     {foo: 0, bar: 0, baz: 0},
+                         ^ [1]
+   useContext_hook.js:52:9
+   52|   (bar: string); // Error: number is incompatible with string
+               ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------- useDebugValue_hook.js:3:30
+
+Cannot call `React.useDebugValue` because property `useDebugValue` is missing in namespace React [1]. [prop-missing]
+
+   useDebugValue_hook.js:3:30
+      3| const undefinedValue = React.useDebugValue(123);
+                                      ^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:1054:26
+   1054|   declare export default typeof React;
+                                  ^^^^^^^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- useEffect_hook.js:4:9
+
+Cannot call `React.useEffect` because function [1] requires another argument. [incompatible-type]
+
+   useEffect_hook.js:4:9
+     4|   React.useEffect(); // Error: function requires another argument.
+                ^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:876:27
+                                  v
+   876|     declare hook useEffect(
+   877|       create: () => MaybeCleanUpFn,
+   878|       inputs?: ?$ReadOnlyArray<mixed>,
+   879|     ): void;
+            ------^ [1]
+
+
+Error ------------------------------------------------------------------------------------------ useEffect_hook.js:20:19
+
+Cannot call `React.useEffect` with `1` bound to `create` because number [1] is incompatible with function type [2].
+[incompatible-type]
+
+   useEffect_hook.js:20:19
+    20|   React.useEffect(1); // Error: number is incompatible with function type
+                          ^ [1]
+
+References:
+   <BUILTINS>/react.js:877:15
+   877|       create: () => MaybeCleanUpFn,
+                      ^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ useEffect_hook.js:21:29
+
+Cannot call `React.useEffect` with `1` bound to `inputs` because number [1] is incompatible with read-only array
+type [2]. [incompatible-type]
+
+   useEffect_hook.js:21:29
+    21|   React.useEffect(() => {}, 1); // Error: number is incompatible with function react-only array
+                                    ^ [1]
+
+References:
+   <BUILTINS>/react.js:878:17
+   878|       inputs?: ?$ReadOnlyArray<mixed>,
+                        ^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ useEffect_hook.js:22:30
+
+Cannot call `React.useEffect` with async function bound to `create` because in the return value: [incompatible-type]
+ - Either `Promise` [1] is incompatible with function type [2].
+ - Or `Promise` [1] is incompatible with undefined [3].
+
+   useEffect_hook.js:22:30
+    22|   React.useEffect(async () => {}) // Error: promise is incompatible with function return type
+                                     ^ [1]
+
+References:
+   <BUILTINS>/react.js:347:41
+   347|   declare type MaybeCleanUpFn = void | (() => void);
+                                                ^^^^^^^^^^ [2]
+   <BUILTINS>/react.js:347:33
+   347|   declare type MaybeCleanUpFn = void | (() => void);
+                                        ^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------ useEffect_hook.js:23:25
+
+Cannot call `React.useEffect` with function bound to `create` because in the return value: [incompatible-type]
+ - Either in the return value: number [1] is incompatible with undefined [2].
+ - Or function [3] is incompatible with undefined [4].
+
+   useEffect_hook.js:23:25
+    23|   React.useEffect(() => () => 123) // Error: cleanup function should not return a value
+                                ^^^^^^^^^ [3]
+
+References:
+   useEffect_hook.js:23:31
+    23|   React.useEffect(() => () => 123) // Error: cleanup function should not return a value
+                                      ^^^ [1]
+   <BUILTINS>/react.js:347:47
+   347|   declare type MaybeCleanUpFn = void | (() => void);
+                                                      ^^^^ [2]
+   <BUILTINS>/react.js:347:33
+   347|   declare type MaybeCleanUpFn = void | (() => void);
+                                        ^^^^ [4]
+
+
+Error ---------------------------------------------------------------------------------- useImperativeHandle_hook.js:4:9
+
+Cannot call `React.useImperativeHandle` because function [1] requires another argument. [incompatible-type]
+
+   useImperativeHandle_hook.js:4:9
+     4|   React.useImperativeHandle(); // Error: function requires another argument.
+                ^^^^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:930:37
+                                            v---
+   930|     declare hook useImperativeHandle<T>(
+   931|       ref: React.RefSetter<T> | null | void,
+   932|       create: () => T,
+   933|       inputs: ?$ReadOnlyArray<mixed>,
+   934|     ): void;
+            ------^ [1]
+
+
+Error -------------------------------------------------------------------------------- useImperativeHandle_hook.js:29:29
+
+Cannot call `React.useImperativeHandle` with `ref` bound to `ref` because: [incompatible-type]
+ - Either in property `current`: property `focus` is missing in object literal [1] but exists in `Interface` [2].
+ - Or in property `current`: object literal [1] is incompatible with null [3].
+
+   useImperativeHandle_hook.js:29:29
+   29|   React.useImperativeHandle(ref, () => ({})); // Error: inexact object literal is incompatible with exact Interface
+                                   ^^^
+
+References:
+   useImperativeHandle_hook.js:29:41
+   29|   React.useImperativeHandle(ref, () => ({})); // Error: inexact object literal is incompatible with exact Interface
+                                               ^^ [1]
+   useImperativeHandle_hook.js:28:31
+   28|   const ref: {current: null | Interface } = React.createRef();
+                                     ^^^^^^^^^ [2]
+   useImperativeHandle_hook.js:28:24
+   28|   const ref: {current: null | Interface } = React.createRef();
+                              ^^^^ [3]
+
+
+Error -------------------------------------------------------------------------------- useImperativeHandle_hook.js:32:29
+
+Cannot call `React.useImperativeHandle` with `refSetter` bound to `ref` because: [incompatible-type]
+ - Either in the first parameter: property `focus` is missing in object literal [1] but exists in `Interface` [2].
+ - Or in the first parameter: object literal [1] is incompatible with null [3].
+
+   useImperativeHandle_hook.js:32:29
+   32|   React.useImperativeHandle(refSetter, () => ({})); // Error: inexact object literal is incompatible with exact Interface
+                                   ^^^^^^^^^
+
+References:
+   useImperativeHandle_hook.js:32:47
+   32|   React.useImperativeHandle(refSetter, () => ({})); // Error: inexact object literal is incompatible with exact Interface
+                                                     ^^ [1]
+   useImperativeHandle_hook.js:31:39
+   31|   const refSetter = (instance: null | Interface) => {};
+                                             ^^^^^^^^^ [2]
+   useImperativeHandle_hook.js:31:32
+   31|   const refSetter = (instance: null | Interface) => {};
+                                      ^^^^ [3]
+
+
+Error -------------------------------------------------------------------------------------- useLayoutEffect_hook.js:4:9
+
+Cannot call `React.useLayoutEffect` because function [1] requires another argument. [incompatible-type]
+
+   useLayoutEffect_hook.js:4:9
+     4|   React.useLayoutEffect(); // Error: function requires another argument.
+                ^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:897:33
+                                        v
+   897|     declare hook useLayoutEffect(
+   898|       create: () => MaybeCleanUpFn,
+   899|       inputs?: ?$ReadOnlyArray<mixed>,
+   900|     ): void;
+            ------^ [1]
+
+
+Error ------------------------------------------------------------------------------------ useLayoutEffect_hook.js:20:25
+
+Cannot call `React.useLayoutEffect` with `1` bound to `create` because number [1] is incompatible with function
+type [2]. [incompatible-type]
+
+   useLayoutEffect_hook.js:20:25
+    20|   React.useLayoutEffect(1); // Error: number is incompatible with function type
+                                ^ [1]
+
+References:
+   <BUILTINS>/react.js:898:15
+   898|       create: () => MaybeCleanUpFn,
+                      ^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------ useLayoutEffect_hook.js:21:35
+
+Cannot call `React.useLayoutEffect` with `1` bound to `inputs` because number [1] is incompatible with read-only array
+type [2]. [incompatible-type]
+
+   useLayoutEffect_hook.js:21:35
+    21|   React.useLayoutEffect(() => {}, 1); // Error: number is incompatible with function react-only array
+                                          ^ [1]
+
+References:
+   <BUILTINS>/react.js:899:17
+   899|       inputs?: ?$ReadOnlyArray<mixed>,
+                        ^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------ useLayoutEffect_hook.js:22:36
+
+Cannot call `React.useLayoutEffect` with async function bound to `create` because in the return value:
+[incompatible-type]
+ - Either `Promise` [1] is incompatible with function type [2].
+ - Or `Promise` [1] is incompatible with undefined [3].
+
+   useLayoutEffect_hook.js:22:36
+    22|   React.useLayoutEffect(async () => {}) // Error: promise is incompatible with function return type
+                                           ^ [1]
+
+References:
+   <BUILTINS>/react.js:347:41
+   347|   declare type MaybeCleanUpFn = void | (() => void);
+                                                ^^^^^^^^^^ [2]
+   <BUILTINS>/react.js:347:33
+   347|   declare type MaybeCleanUpFn = void | (() => void);
+                                        ^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------ useLayoutEffect_hook.js:23:31
+
+Cannot call `React.useLayoutEffect` with function bound to `create` because in the return value: [incompatible-type]
+ - Either in the return value: number [1] is incompatible with undefined [2].
+ - Or function [3] is incompatible with undefined [4].
+
+   useLayoutEffect_hook.js:23:31
+    23|   React.useLayoutEffect(() => () => 123) // Error: cleanup function should not return a value
+                                      ^^^^^^^^^ [3]
+
+References:
+   useLayoutEffect_hook.js:23:37
+    23|   React.useLayoutEffect(() => () => 123) // Error: cleanup function should not return a value
+                                            ^^^ [1]
+   <BUILTINS>/react.js:347:47
+   347|   declare type MaybeCleanUpFn = void | (() => void);
+                                                      ^^^^ [2]
+   <BUILTINS>/react.js:347:33
+   347|   declare type MaybeCleanUpFn = void | (() => void);
+                                        ^^^^ [4]
+
+
+Error ---------------------------------------------------------------------------------------------- useMemo_hook.js:4:9
+
+Cannot call `React.useMemo` because function [1] requires another argument. [incompatible-type]
+
+   useMemo_hook.js:4:9
+     4|   React.useMemo(); // Error: function requires another argument.
+                ^^^^^^^
+
+References:
+   <BUILTINS>/react.js:919:25
+                                v---
+   919|     declare hook useMemo<T>(
+   920|       create: () => T,
+   921|       inputs: ?$ReadOnlyArray<mixed>,
+   922|     ): T;
+            ---^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- useMemo_hook.js:15:27
+
+Cannot assign `React.useMemo(...)` to `invalid` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   useMemo_hook.js:15:27
+   15|   const invalid: number = React.useMemo(() => "abc"); // Error: string is incompatible with number
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   useMemo_hook.js:15:47
+   15|   const invalid: number = React.useMemo(() => "abc"); // Error: string is incompatible with number
+                                                     ^^^^^ [1]
+   useMemo_hook.js:15:18
+   15|   const invalid: number = React.useMemo(() => "abc"); // Error: string is incompatible with number
+                        ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------ useMutationEffect_hook.js:4:9
+
+Cannot call `React.useMutationEffect` because property `useMutationEffect` is missing in namespace React [1].
+[prop-missing]
+
+   useMutationEffect_hook.js:4:9
+      4|   React.useMutationEffect(); // Error: function requires another argument.
+                 ^^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:1054:26
+   1054|   declare export default typeof React;
+                                  ^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------ useMutationEffect_hook.js:9:9
+
+Cannot call `React.useMutationEffect` because property `useMutationEffect` is missing in namespace React [1].
+[prop-missing]
+
+   useMutationEffect_hook.js:9:9
+      9|   React.useMutationEffect(() => {});
+                 ^^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:1054:26
+   1054|   declare export default typeof React;
+                                  ^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------- useMutationEffect_hook.js:10:9
+
+Cannot call `React.useMutationEffect` because property `useMutationEffect` is missing in namespace React [1].
+[prop-missing]
+
+   useMutationEffect_hook.js:10:9
+     10|   React.useMutationEffect(() => {}, []);
+                 ^^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:1054:26
+   1054|   declare export default typeof React;
+                                  ^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------- useMutationEffect_hook.js:11:9
+
+Cannot call `React.useMutationEffect` because property `useMutationEffect` is missing in namespace React [1].
+[prop-missing]
+
+   useMutationEffect_hook.js:11:9
+     11|   React.useMutationEffect(() => {}, [1, 2, 3]);
+                 ^^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:1054:26
+   1054|   declare export default typeof React;
+                                  ^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------- useMutationEffect_hook.js:14:9
+
+Cannot call `React.useMutationEffect` because property `useMutationEffect` is missing in namespace React [1].
+[prop-missing]
+
+   useMutationEffect_hook.js:14:9
+     14|   React.useMutationEffect(() => () => {});
+                 ^^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:1054:26
+   1054|   declare export default typeof React;
+                                  ^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------- useMutationEffect_hook.js:15:9
+
+Cannot call `React.useMutationEffect` because property `useMutationEffect` is missing in namespace React [1].
+[prop-missing]
+
+   useMutationEffect_hook.js:15:9
+     15|   React.useMutationEffect(() => () => {}, []);
+                 ^^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:1054:26
+   1054|   declare export default typeof React;
+                                  ^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------- useMutationEffect_hook.js:16:9
+
+Cannot call `React.useMutationEffect` because property `useMutationEffect` is missing in namespace React [1].
+[prop-missing]
+
+   useMutationEffect_hook.js:16:9
+     16|   React.useMutationEffect(() => () => {}, [1, 2, 3]);
+                 ^^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:1054:26
+   1054|   declare export default typeof React;
+                                  ^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------- useMutationEffect_hook.js:20:9
+
+Cannot call `React.useMutationEffect` because property `useMutationEffect` is missing in namespace React [1].
+[prop-missing]
+
+   useMutationEffect_hook.js:20:9
+     20|   React.useMutationEffect(1); // Error: number is incompatible with function type
+                 ^^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:1054:26
+   1054|   declare export default typeof React;
+                                  ^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------- useMutationEffect_hook.js:21:9
+
+Cannot call `React.useMutationEffect` because property `useMutationEffect` is missing in namespace React [1].
+[prop-missing]
+
+   useMutationEffect_hook.js:21:9
+     21|   React.useMutationEffect(() => {}, 1); // Error: number is incompatible with function react-only array
+                 ^^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:1054:26
+   1054|   declare export default typeof React;
+                                  ^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- useReducer_hook.js:4:9
+
+Cannot call `React.useReducer` because: [incompatible-type]
+ - Either function type [1] requires another argument from call of method `useReducer` [2].
+ - Or function type [3] requires another argument from call of method `useReducer` [2].
+ - Or function type [4] requires another argument from call of method `useReducer` [2].
+
+   useReducer_hook.js:4:9
+     4|   React.useReducer(); // Error: function requires another argument.
+                ^^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:845:28
+                                   v------
+   845|     declare hook useReducer<S, A>(
+   846|       reducer: (S, A) => S,
+   847|       initialState: S,
+   848|     ): [S, Dispatch<A>];
+            ------------------^ [1]
+   useReducer_hook.js:4:3
+     4|   React.useReducer(); // Error: function requires another argument.
+          ^^^^^^^^^^^^^^^^^^ [2]
+   <BUILTINS>/react.js:850:28
+                                   v------
+   850|     declare hook useReducer<S, A>(
+   851|       reducer: (S, A) => S,
+   852|       initialState: S,
+   853|       init: void,
+   854|     ): [S, Dispatch<A>];
+            ------------------^ [3]
+   <BUILTINS>/react.js:856:28
+                                   v---------
+   856|     declare hook useReducer<S, A, I>(
+   857|       reducer: (S, A) => S,
+   858|       initialArg: I,
+   859|       init: (I) => S,
+   860|     ): [S, Dispatch<A>];
+            ------------------^ [4]
+
+
+Error ------------------------------------------------------------------------------------------ useReducer_hook.js:27:4
+
+Cannot cast `state.count` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   useReducer_hook.js:27:4
+   27|   (state.count: string); // Error: number is incompatible with string
+          ^^^^^^^^^^^
+
+References:
+   useReducer_hook.js:7:76
+    7| type Action = {type: 'increment' | 'decrement'} | {type: 'reset', payload: number}
+                                                                                  ^^^^^^ [1]
+   useReducer_hook.js:27:17
+   27|   (state.count: string); // Error: number is incompatible with string
+                       ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ useReducer_hook.js:27:4
+
+Cannot cast `state.count` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   useReducer_hook.js:27:4
+   27|   (state.count: string); // Error: number is incompatible with string
+          ^^^^^^^^^^^
+
+References:
+   useReducer_hook.js:9:33
+    9| function reducer(state: {count: number}, action: Action) {
+                                       ^^^^^^ [1]
+   useReducer_hook.js:27:17
+   27|   (state.count: string); // Error: number is incompatible with string
+                       ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ useReducer_hook.js:27:4
+
+Cannot cast `state.count` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   useReducer_hook.js:27:4
+   27|   (state.count: string); // Error: number is incompatible with string
+          ^^^^^^^^^^^
+
+References:
+   useReducer_hook.js:14:23
+   14|       return { count: state.count + 1 };
+                             ^^^^^^^^^^^^^^^ [1]
+   useReducer_hook.js:27:17
+   27|   (state.count: string); // Error: number is incompatible with string
+                       ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ useReducer_hook.js:27:4
+
+Cannot cast `state.count` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   useReducer_hook.js:27:4
+   27|   (state.count: string); // Error: number is incompatible with string
+          ^^^^^^^^^^^
+
+References:
+   useReducer_hook.js:16:23
+   16|       return { count: state.count - 1 };
+                             ^^^^^^^^^^^^^^^ [1]
+   useReducer_hook.js:27:17
+   27|   (state.count: string); // Error: number is incompatible with string
+                       ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ useReducer_hook.js:27:4
+
+Cannot cast `state.count` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   useReducer_hook.js:27:4
+   27|   (state.count: string); // Error: number is incompatible with string
+          ^^^^^^^^^^^
+
+References:
+   useReducer_hook.js:22:31
+   22| const initialState = { count: 0 };
+                                     ^ [1]
+   useReducer_hook.js:27:17
+   27|   (state.count: string); // Error: number is incompatible with string
+                       ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- useRef_hook.js:14:62
+
+Cannot call `React.useRef` with `123` bound to `initialValue` because: [incompatible-type]
+ - Either number [1] is incompatible with string [2].
+ - Or number [1] is incompatible with null [3].
+
+   useRef_hook.js:14:62
+   14|   const stringValue: {current: string | null} = React.useRef(123); // Error: number is incompatible with string in property current
+                                                                    ^^^ [1]
+
+References:
+   useRef_hook.js:14:32
+   14|   const stringValue: {current: string | null} = React.useRef(123); // Error: number is incompatible with string in property current
+                                      ^^^^^^ [2]
+   useRef_hook.js:14:41
+   14|   const stringValue: {current: string | null} = React.useRef(123); // Error: number is incompatible with string in property current
+                                               ^^^^ [3]
+
+
+Error --------------------------------------------------------------------------------------------- useRef_hook.js:15:62
+
+Cannot call `React.useRef` with `"abc"` bound to `initialValue` because: [incompatible-type]
+ - Either string [1] is incompatible with number [2].
+ - Or string [1] is incompatible with null [3].
+
+   useRef_hook.js:15:62
+   15|   const numberValue: {current: number | null} = React.useRef("abc"); // Error: string is incompatible with number in property current
+                                                                    ^^^^^ [1]
+
+References:
+   useRef_hook.js:15:32
+   15|   const numberValue: {current: number | null} = React.useRef("abc"); // Error: string is incompatible with number in property current
+                                      ^^^^^^ [2]
+   useRef_hook.js:15:41
+   15|   const numberValue: {current: number | null} = React.useRef("abc"); // Error: string is incompatible with number in property current
+                                               ^^^^ [3]
+
+
+Error --------------------------------------------------------------------------------------------- useRef_hook.js:16:51
+
+Cannot call `React.useRef` with `true` bound to `initialValue` because boolean [1] is incompatible with null [2].
+[incompatible-type]
+
+   useRef_hook.js:16:51
+   16|   const nullValue: {current: null} = React.useRef(true); // Error: boolean is incompatible with null in property current
+                                                         ^^^^ [1]
+
+References:
+   useRef_hook.js:16:30
+   16|   const nullValue: {current: null} = React.useRef(true); // Error: boolean is incompatible with null in property current
+                                    ^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- useRef_hook.js:22:25
+
+Cannot assign `123` to `stringValue.current` because: [incompatible-type]
+ - Either number [1] is incompatible with string [2].
+ - Or number [1] is incompatible with null [3].
+
+   useRef_hook.js:22:25
+   22|   stringValue.current = 123; // Error: number is incompatible with string in property current
+                               ^^^ [1]
+
+References:
+   useRef_hook.js:20:32
+   20|   const stringValue: {current: string | null} = React.useRef(null);
+                                      ^^^^^^ [2]
+   useRef_hook.js:20:41
+   20|   const stringValue: {current: string | null} = React.useRef(null);
+                                               ^^^^ [3]
+
+
+Error --------------------------------------------------------------------------------------------- useRef_hook.js:30:51
+
+Cannot call `React.useRef` with `new Bar(...)` bound to `initialValue` because: [incompatible-type]
+ - Either `Bar` [1] is incompatible with `Foo` [2].
+ - Or `Bar` [1] is incompatible with null [3].
+
+   useRef_hook.js:30:51
+   30|   const foo: {current: Foo | null} = React.useRef(new Bar({})); // Error: Bar is incompatible with Foo in property current
+                                                         ^^^^^^^^^^^ [1]
+
+References:
+   useRef_hook.js:30:24
+   30|   const foo: {current: Foo | null} = React.useRef(new Bar({})); // Error: Bar is incompatible with Foo in property current
+                              ^^^ [2]
+   useRef_hook.js:30:30
+   30|   const foo: {current: Foo | null} = React.useRef(new Bar({})); // Error: Bar is incompatible with Foo in property current
+                                    ^^^^ [3]
+
+
+Error --------------------------------------------------------------------------------------------- useState_hook.js:8:2
+
+Cannot cast `count` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   useState_hook.js:8:2
+   8| (count: string); // Error: number is incompatible with string
+       ^^^^^
+
+References:
+   useState_hook.js:5:42
+   5| const [count, setCount] = React.useState<number>(1);
+                                               ^^^^^^ [1]
+   useState_hook.js:8:9
+   8| (count: string); // Error: number is incompatible with string
+              ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- useState_hook.js:11:10
+
+Cannot call `setCount` with `true` bound to the first parameter because: [incompatible-type]
+ - Either boolean [1] is incompatible with number [2].
+ - Or boolean [1] is incompatible with function type [3].
+
+   useState_hook.js:11:10
+     11| setCount(true); // Error: boolean is incompatible with number
+                  ^^^^ [1]
+
+References:
+   useState_hook.js:5:42
+      5| const [count, setCount] = React.useState<number>(1);
+                                                  ^^^^^^ [2]
+   <BUILTINS>/react.js:1046:39
+   1046|     type ReactSetStateFunction<S> = ((S => S) | S) => void;
+                                               ^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------ use_hook.js:19:21
+
+Cannot assign `use(...)` to `notAny` because `Theme` [1] is incompatible with number literal `0` [2].
+[incompatible-type]
+
+   use_hook.js:19:21
+   19|   const notAny: 0 = use(ThemeContext);
+                           ^^^^^^^^^^^^^^^^^
+
+References:
+   use_hook.js:4:43
+    4| declare const ThemeContext: React.Context<Theme>;
+                                                 ^^^^^ [1]
+   use_hook.js:19:17
+   19|   const notAny: 0 = use(ThemeContext);
+                       ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ use_hook.js:20:22
+
+Cannot assign `use(...)` to `notAny2` because number literal `42` [1] is incompatible with number literal `0` [2].
+[incompatible-type]
+
+   use_hook.js:20:22
+   20|   const notAny2: 0 = use(AnswerPromise);
+                            ^^^^^^^^^^^^^^^^^^
+
+References:
+   use_hook.js:6:38
+    6| declare const AnswerPromise: Promise<42>;
+                                            ^^ [1]
+   use_hook.js:20:18
+   20|   const notAny2: 0 = use(AnswerPromise);
+                        ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ use_hook.js:21:22
+
+Cannot assign `use(...)` to `notAny3` because string [1] is incompatible with number literal `0` [2].
+[incompatible-type]
+
+   use_hook.js:21:22
+   21|   const notAny3: 0 = use(CustomThennable);
+                            ^^^^^^^^^^^^^^^^^^^^
+
+References:
+   use_hook.js:9:19
+    9|   then(onFulfil: (string) => void): void;
+                         ^^^^^^ [1]
+   use_hook.js:21:18
+   21|   const notAny3: 0 = use(CustomThennable);
+                        ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- use_hook.js:24:7
+
+Cannot call `use` with `null` bound to `usable` because: [incompatible-type]
+ - Either null [1] is incompatible with `Thenable` [2].
+ - Or null [1] is incompatible with `Context` [3].
+
+   use_hook.js:24:7
+    24|   use(null);
+              ^^^^ [1]
+
+References:
+   <BUILTINS>/react.js:309:28
+   309|   declare type Usable<T> = Thenable<T> | React.Context<T>;
+                                   ^^^^^^^^^^^ [2]
+   <BUILTINS>/react.js:309:42
+   309|   declare type Usable<T> = Thenable<T> | React.Context<T>;
+                                                 ^^^^^^^^^^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------- use_hook.js:25:7
+
+Cannot call `use` with `undefined` bound to `usable` because: [incompatible-type]
+ - Either undefined [1] is incompatible with `Thenable` [2].
+ - Or undefined [1] is incompatible with `Context` [3].
+
+   use_hook.js:25:7
+    25|   use(undefined);
+              ^^^^^^^^^ [1]
+
+References:
+   <BUILTINS>/react.js:309:28
+   309|   declare type Usable<T> = Thenable<T> | React.Context<T>;
+                                   ^^^^^^^^^^^ [2]
+   <BUILTINS>/react.js:309:42
+   309|   declare type Usable<T> = Thenable<T> | React.Context<T>;
+                                                 ^^^^^^^^^^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------- use_hook.js:26:7
+
+Cannot call `use` with `0` bound to `usable` because: [incompatible-type]
+ - Either number literal `0` [1], a primitive, cannot be used as a subtype of `Thenable` [2]. You can wrap it in
+   `new Number(...))` to turn it into an object and attempt to use it as a subtype of an interface.
+ - Or number [1] is incompatible with `Context` [3].
+
+   use_hook.js:26:7
+    26|   use(0);
+              ^ [1]
+
+References:
+   <BUILTINS>/react.js:309:28
+   309|   declare type Usable<T> = Thenable<T> | React.Context<T>;
+                                   ^^^^^^^^^^^ [2]
+   <BUILTINS>/react.js:309:42
+   309|   declare type Usable<T> = Thenable<T> | React.Context<T>;
+                                                 ^^^^^^^^^^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------- use_hook.js:27:7
+
+Cannot call `use` with object literal bound to `usable` because: [incompatible-type]
+ - Either property `then` is missing in object literal [1] but exists in `Thenable` [2].
+ - Or object literal [1] is incompatible with `Context` [3].
+
+   use_hook.js:27:7
+    27|   use({});
+              ^^ [1]
+
+References:
+   <BUILTINS>/react.js:309:28
+   309|   declare type Usable<T> = Thenable<T> | React.Context<T>;
+                                   ^^^^^^^^^^^ [2]
+   <BUILTINS>/react.js:309:42
+   309|   declare type Usable<T> = Thenable<T> | React.Context<T>;
+                                                 ^^^^^^^^^^^^^^^^ [3]
+
+
+
+Found 141 errors
+
+Only showing the most relevant union/intersection branches.
+To see all branches, re-run Flow with --show-all-branches

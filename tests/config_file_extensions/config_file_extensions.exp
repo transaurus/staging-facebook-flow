@@ -1,0 +1,19 @@
+Error ------------------------------------------------------------------------------------------------- test.js.es6:6:10
+
+Cannot use operator `*` with operands string [1] and number [2] [unsafe-arithmetic]
+
+   test.js.es6:6:10
+   6|   return x * 10;
+               ^^^^^^
+
+References:
+   test.js.es6:5:17
+   5| function foo(x: string) {
+                      ^^^^^^ [1]
+   test.js.es6:6:14
+   6|   return x * 10;
+                   ^^ [2]
+
+
+
+Found 1 error

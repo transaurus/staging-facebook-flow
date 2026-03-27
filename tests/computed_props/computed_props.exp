@@ -1,0 +1,575 @@
+Error ---------------------------------------------------------------------------------------------- boolean_key.js:9:23
+
+Cannot use `true` [1] to assign a computed property. Computed properties may only be numeric or string literal values,
+but this one is a boolean literal `true` [1]. Can you add an appropriate type annotation to `true` [1]? See
+https://flow.org/en/docs/types/literals/ for more information on literal types. [invalid-computed-prop]
+
+   9|   return {...params, [true]: true}; // error true is invalid-computed-prop
+                            ^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------- boolean_key.js:15:23
+
+Cannot use `key` [1] to assign a computed property. Computed properties may only be numeric or string literal values,
+but this one is a boolean [2]. Can you add an appropriate type annotation to `key` [1]? See
+https://flow.org/en/docs/types/literals/ for more information on literal types. [invalid-computed-prop]
+
+   boolean_key.js:15:23
+   15|   return {...params, [key]: true}; // error boolean is invalid-computed-prop
+                             ^^^ [1]
+
+References:
+   boolean_key.js:13:8
+   13|   key: T,
+              ^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- boolean_key.js:21:23
+
+Cannot use `key` [1] to assign a computed property. Computed properties may only be numeric or string literal values,
+but this one is a boolean literal `true` [2]. Can you add an appropriate type annotation to `key` [1]? See
+https://flow.org/en/docs/types/literals/ for more information on literal types. [invalid-computed-prop]
+
+   boolean_key.js:21:23
+   21|   return {...params, [key]: true}; // error true is invalid-computed-prop
+                             ^^^ [1]
+
+References:
+   boolean_key.js:19:8
+   19|   key: T,
+              ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- hints.js:12:4
+
+Cannot add computed property because number literal `3` [1] is incompatible with union type [2]. [incompatible-type]
+
+   hints.js:12:4
+   12|   [z]: v3, // error 3 ~> 1|2
+          ^
+
+References:
+   hints.js:7:19
+    7| declare const v3: 3;
+                         ^ [1]
+   hints.js:9:24
+    9| const obj1: {[string]: 1|2} = {
+                              ^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- hints.js:16:8
+
+Cannot assign object literal to `obj2` because in the indexer property: number literal `1` [1] is incompatible with
+empty [2]. [incompatible-type]
+
+   hints.js:16:8
+   16|   [x]: v1, // error 1 ~> empty
+              ^^
+
+References:
+   hints.js:5:19
+    5| declare const v1: 1;
+                         ^ [1]
+   hints.js:15:24
+   15| const obj2: {[string]: empty} = {
+                              ^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- hints.js:17:4
+
+Cannot add computed property because number literal `2` [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   hints.js:17:4
+   17|   [y]: v2, // error 2 ~> 1
+          ^
+
+References:
+   hints.js:6:19
+    6| declare const v2: 2;
+                         ^ [1]
+   hints.js:5:19
+    5| declare const v1: 1;
+                         ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- hints.js:18:4
+
+Cannot add computed property because number literal `3` [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   hints.js:18:4
+   18|   [z]: v3, // error 3 ~> 1
+          ^
+
+References:
+   hints.js:7:19
+    7| declare const v3: 3;
+                         ^ [1]
+   hints.js:5:19
+    5| declare const v1: 1;
+                         ^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- hints.js:21:21
+
+Cannot assign object literal to `obj3` because object literal [1] is incompatible with empty [2]. [incompatible-type]
+
+   hints.js:21:21
+                           v----------------------
+   21| const obj3: empty = { // error obj ~> empty
+   22|   [x]: v1,
+   23|   [y]: v2,
+   24|   [z]: v3,
+   25| }
+       ^ [1]
+
+References:
+   hints.js:21:13
+   21| const obj3: empty = { // error obj ~> empty
+                   ^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- hints.js:23:4
+
+Cannot add computed property because number literal `2` [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   hints.js:23:4
+   23|   [y]: v2,
+          ^
+
+References:
+   hints.js:6:19
+    6| declare const v2: 2;
+                         ^ [1]
+   hints.js:5:19
+    5| declare const v1: 1;
+                         ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- hints.js:24:4
+
+Cannot add computed property because number literal `3` [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   hints.js:24:4
+   24|   [z]: v3,
+          ^
+
+References:
+   hints.js:7:19
+    7| declare const v3: 3;
+                         ^ [1]
+   hints.js:5:19
+    5| declare const v1: 1;
+                         ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- hints.js:29:4
+
+Cannot add computed property because number literal `2` [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   hints.js:29:4
+   29|   [y]: v2, // error 2 ~> 1
+          ^
+
+References:
+   hints.js:6:19
+    6| declare const v2: 2;
+                         ^ [1]
+   hints.js:5:19
+    5| declare const v1: 1;
+                         ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- hints.js:39:4
+
+Cannot add computed property because number literal `2` [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   hints.js:39:4
+   39|   [y]: v2, // error 2 ~> 1
+          ^
+
+References:
+   hints.js:6:19
+    6| declare const v2: 2;
+                         ^ [1]
+   hints.js:5:19
+    5| declare const v1: 1;
+                         ^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- hints.js:42:24
+
+Cannot assign object literal to `obj7` because object literal [1] is incompatible with function type [2].
+[incompatible-type]
+
+   hints.js:42:24
+                              v---------------------
+   42| const obj7: () => {} = { // error obj ~> funt
+   43|   [x]: v1, // values okay
+   44|   [y]: v2, // values okay
+   45| }
+       ^ [1]
+
+References:
+   hints.js:42:13
+   42| const obj7: () => {} = { // error obj ~> funt
+                   ^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- hints.js:44:4
+
+Cannot add computed property because number literal `2` [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   hints.js:44:4
+   44|   [y]: v2, // values okay
+          ^
+
+References:
+   hints.js:6:19
+    6| declare const v2: 2;
+                         ^ [1]
+   hints.js:5:19
+    5| declare const v1: 1;
+                         ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- hints.js:70:7
+
+Cannot call `foo` with object literal bound to `o` because: [incompatible-type]
+ - Either in the indexer property: number [1] is incompatible with boolean [2].
+ - Or in the indexer property: boolean [2] is incompatible with number [1].
+
+   hints.js:70:7
+             v-------------------------------------------------------------------------
+   70|   foo({ // errors due to hint being boolean|number which won't match any indexer
+   71|     [x]: b,
+   72|     [y]: b,
+   73|   });
+         ^
+
+References:
+   hints.js:62:18
+   62|     | {[string]: number, ...}
+                        ^^^^^^ [1]
+   hints.js:61:18
+   61|     | {[string]: boolean, ...}
+                        ^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ overwrite.js:2:29
+
+Cannot add computed property because the indexer [1] may overwrite properties with explicit keys [2] in a way that Flow
+cannot track. [invalid-computed-prop]
+
+   overwrite.js:2:29
+   2| const f1 = {foo: 'string', [s1]: 3}; // error: might overwrite
+                                  ^^ [1]
+
+References:
+   overwrite.js:2:13
+   2| const f1 = {foo: 'string', [s1]: 3}; // error: might overwrite
+                  ^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ overwrite.js:3:38
+
+Cannot add computed property because the indexer [1] may overwrite properties with explicit keys [2] [3] in a way that
+Flow cannot track. [invalid-computed-prop]
+
+   overwrite.js:3:38
+   3| const f2 = {foo: 'string', bar: '', [s1]: 3}; // error: might overwrite
+                                           ^^ [1]
+
+References:
+   overwrite.js:3:28
+   3| const f2 = {foo: 'string', bar: '', [s1]: 3}; // error: might overwrite
+                                 ^^^ [2]
+   overwrite.js:3:13
+   3| const f2 = {foo: 'string', bar: '', [s1]: 3}; // error: might overwrite
+                  ^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------ overwrite.js:7:29
+
+Cannot add computed property because the indexer [1] may overwrite properties with explicit keys [2] in a way that Flow
+cannot track. [invalid-computed-prop]
+
+   overwrite.js:7:29
+   7| const f4 = {baz: 'string', [s2]: 3}; // ok
+                                  ^^ [1]
+
+References:
+   overwrite.js:7:13
+   7| const f4 = {baz: 'string', [s2]: 3}; // ok
+                  ^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- poly.js:3:29
+
+Missing an annotation on return because generic functions must be fully annotated. [missing-local-annot]
+
+   3| function f1<T: string>(x: T) { return {[x]: x} } // ok
+                                  
+
+
+Error ----------------------------------------------------------------------------------------------------- poly.js:4:21
+
+Missing an annotation on return because generic functions must be fully annotated. [missing-local-annot]
+
+   4| function f2<T>(x: T) { return {[x]: x} } // error. mixed can't be used as a computed prop
+                          
+
+
+Error ----------------------------------------------------------------------------------------------------- poly.js:4:33
+
+Cannot use `x` [1] to assign a computed property. Computed properties may only be numeric or string literal values, but
+this one is a `unknown` [2]. Can you add an appropriate type annotation to `x` [1]? See
+https://flow.org/en/docs/types/literals/ for more information on literal types. [invalid-computed-prop]
+
+   poly.js:4:33
+   4| function f2<T>(x: T) { return {[x]: x} } // error. mixed can't be used as a computed prop
+                                      ^ [1]
+
+References:
+   poly.js:4:19
+   4| function f2<T>(x: T) { return {[x]: x} } // error. mixed can't be used as a computed prop
+                        ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:19:2
+
+Cannot cast `ColorIdToNumber[ColorId.RED]` to string literal `ffffff` because string literal `ff0000` [1] is
+incompatible with string literal `ffffff` [2]. [incompatible-type]
+
+   test.js:19:2
+   19| (ColorIdToNumber[ColorId.RED]: 'ffffff'); // oops
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   test.js:8:8
+    8|   RED: 'ff0000',
+              ^^^^^^^^ [1]
+   test.js:19:32
+   19| (ColorIdToNumber[ColorId.RED]: 'ffffff'); // oops
+                                      ^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:21:17
+
+Cannot get `ColorIdToNumber.XXX` because property `XXX` is missing in object literal [1]. [prop-missing]
+
+   test.js:21:17
+   21| ColorIdToNumber.XXX; // oops
+                       ^^^
+
+References:
+   test.js:13:25
+                               v
+   13| const ColorIdToNumber = {
+   14|   [ColorId.RED]: ColorNumber.RED,
+   15|   [ColorId.GREEN]: ColorNumber.GREEN,
+   16|   [ColorId.BLUE]: ColorNumber.BLUE,
+   17| };
+       ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- test2.js:3:25
+
+Cannot build a typed interface for this module. You should annotate the exports of this module with types. Expected
+simple key in object: [signature-verification-failure]
+
+                              v
+   3| const ColorIdToNumber = {
+   4|   [ColorId.RED]: ColorNumber.RED,
+   5|   [ColorId.GREEN]: ColorNumber.GREEN,
+   6|   [ColorId.BLUE]: ColorNumber.BLUE,
+   7| };
+      ^
+
+
+Error ----------------------------------------------------------------------------------------------------- test2.js:9:2
+
+Cannot cast `ColorIdToNumber[ColorId.GREEN]` to string literal `ffffff` because string literal `00ff00` [1] is
+incompatible with string literal `ffffff` [2]. [incompatible-type]
+
+   test2.js:9:2
+   9| (ColorIdToNumber[ColorId.GREEN]: 'ffffff'); // oops
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   test.js:9:10
+   9|   GREEN: '00ff00',
+               ^^^^^^^^ [1]
+   test2.js:9:34
+   9| (ColorIdToNumber[ColorId.GREEN]: 'ffffff'); // oops
+                                       ^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- test5.js:3:18
+
+Cannot build a typed interface for this module. You should annotate the exports of this module with types. Expected
+simple key in object: [signature-verification-failure]
+
+                       v
+   3| module.exports = {
+   4|   ...dummy,
+   5|   // TODO allow computed prop (T64194787)
+   6|   [hello]: 'world',
+   7|   ...dummy,
+   8| };
+      ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test7.js:2:19
+
+Cannot assign `obj['m']()` to `x` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   test7.js:2:19
+   2| const x: string = obj['m'](); // error, number ~> string
+                        ^^^^^^^^^^
+
+References:
+   test7.js:1:19
+   1| const obj: {|m(): number, x: number|} = {x: 0, m() { return obj.x }}
+                        ^^^^^^ [1]
+   test7.js:2:10
+   2| const x: string = obj['m'](); // error, number ~> string
+               ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- test7.js:5:19
+
+Cannot assign `arr[0]()` to `y` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   test7.js:5:19
+      5| const y: string = arr[0](); // error: number ~> string
+                           ^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:1190:13
+   1190|     length: number;
+                     ^^^^^^ [1]
+   test7.js:5:10
+      5| const y: string = arr[0](); // error: number ~> string
+                  ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- union.js:6:1
+
+Cannot cast `a` to object type because indexed object literal [1] is incompatible with exact object type [2].
+[incompatible-indexer]
+
+   union.js:6:1
+   6| a as {}; // error
+      ^
+
+References:
+   union.js:5:11
+   5| const a = {[k]: 3}; // multiple lower bounds okay
+                ^^^^^^^^ [1]
+   union.js:6:6
+   6| a as {}; // error
+           ^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- union.js:20:13
+
+Cannot use `maybe` [1] to assign a computed property. Computed properties may only be numeric or string literal values,
+but this one is a null or undefined [2]. Can you add an appropriate type annotation to `maybe` [1]? See
+https://flow.org/en/docs/types/literals/ for more information on literal types. [invalid-computed-prop]
+
+   union.js:20:13
+   20| const c = {[maybe]: 3}; // ERROR
+                   ^^^^^ [1]
+
+References:
+   union.js:19:20
+   19| declare var maybe: ?string;
+                          ^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- union.js:23:13
+
+Cannot use `several` [1] to assign a computed property. Computed properties may only be numeric or string literal
+values, but this one is a null or undefined [2]. Can you add an appropriate type annotation to `several` [1]? See
+https://flow.org/en/docs/types/literals/ for more information on literal types. [invalid-computed-prop]
+
+   union.js:23:13
+   23| const d = {[several]: 3}; // ERROR
+                   ^^^^^^^ [1]
+
+References:
+   union.js:22:22
+   22| declare var several: ?string | key;
+                            ^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- union.js:28:6
+
+Cannot use `several` [1] to assign a computed property. Computed properties may only be numeric or string literal
+values, but this one is a null or undefined [2]. Can you add an appropriate type annotation to `several` [1]? See
+https://flow.org/en/docs/types/literals/ for more information on literal types. [invalid-computed-prop]
+
+   union.js:28:6
+   28|     [several]: 3, // ERROR
+            ^^^^^^^ [1]
+
+References:
+   union.js:22:22
+   22| declare var several: ?string | key;
+                            ^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- union_key.js:11:10
+
+Cannot return object literal because indexed object literal [1] is incompatible with exact object type [2].
+[incompatible-indexer]
+
+   union_key.js:11:10
+   11|   return {...params, [key]: true}; // ok: key set is normalized to StrT. error: indexed incompatible with Params
+                ^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   union_key.js:10:4
+   10| ): Params => {
+          ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- union_key.js:17:10
+
+Cannot return object literal because indexed object literal [1] is incompatible with exact object type [2].
+[incompatible-indexer]
+
+   union_key.js:17:10
+   17|   return {...params, [key]: true}; // ok: key set is normalized to StrT. error: indexed incompatible with Params
+                ^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   union_key.js:16:4
+   16| ): Params => {
+          ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- union_key.js:23:10
+
+Cannot return object literal because indexed object literal [1] is incompatible with exact object type [2].
+[incompatible-indexer]
+
+   union_key.js:23:10
+   23|   return {...params, [key]: true}; // ok: key set is normalized to StrT. error: indexed incompatible with Params
+                ^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   union_key.js:22:4
+   22| ): Params => {
+          ^^^^^^ [2]
+
+
+
+Found 35 errors

@@ -1,0 +1,4 @@
+declare export component Foo(bar: string, baz: boolean) renders Base;
+declare component Base();
+
+declare export component DifferentRenders() renders Base;

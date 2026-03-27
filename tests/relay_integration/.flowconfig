@@ -1,0 +1,7 @@
+[options]
+all=true
+
+module.system=haste
+
+relay_integration=true
+relay_integration.excludes=.*/__tests__/.*

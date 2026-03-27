@@ -1,0 +1,1803 @@
+Error ----------------------------------------------------------------------------------------------- expression.js:18:3
+
+Cannot cast `out` to empty because boolean [1] is incompatible with empty [2]. [incompatible-type]
+
+   expression.js:18:3
+   18|   out as empty; // ERROR
+         ^^^
+
+References:
+   expression.js:13:10
+   13|     1 => true,
+                ^^^^ [1]
+   expression.js:18:10
+   18|   out as empty; // ERROR
+                ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- expression.js:18:3
+
+Cannot cast `out` to empty because boolean [1] is incompatible with empty [2]. [incompatible-type]
+
+   expression.js:18:3
+   18|   out as empty; // ERROR
+         ^^^
+
+References:
+   expression.js:14:10
+   14|     2 => false,
+                ^^^^^ [1]
+   expression.js:18:10
+   18|   out as empty; // ERROR
+                ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- expression.js:27:3
+
+Cannot cast `out` to empty because boolean [1] is incompatible with empty [2]. [incompatible-type]
+
+   expression.js:27:3
+   27|   out as empty; // ERROR
+         ^^^
+
+References:
+   expression.js:23:10
+   23|     1 => true,
+                ^^^^ [1]
+   expression.js:27:10
+   27|   out as empty; // ERROR
+                ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- expression.js:27:3
+
+Cannot cast `out` to empty because string [1] is incompatible with empty [2]. [incompatible-type]
+
+   expression.js:27:3
+   27|   out as empty; // ERROR
+         ^^^
+
+References:
+   expression.js:24:10
+   24|     2 => 's',
+                ^^^ [1]
+   expression.js:27:10
+   27|   out as empty; // ERROR
+                ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- expression.js:38:3
+
+Cannot cast `out` to empty because boolean [1] is incompatible with empty [2]. [incompatible-type]
+
+   expression.js:38:3
+   38|   out as empty; // ERROR
+         ^^^
+
+References:
+   expression.js:34:10
+   34|     1 => true,
+                ^^^^ [1]
+   expression.js:38:10
+   38|   out as empty; // ERROR
+                ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- expression.js:46:3
+
+Unreachable code. [unreachable-code]
+
+   46|   out; // ERROR: unreachable
+         ^^^^
+
+
+Error ----------------------------------------------------------------------------------------------- expression.js:56:3
+
+Cannot cast `out` to empty because string [1] is incompatible with empty [2]. [incompatible-type]
+
+   expression.js:56:3
+   56|   out as empty; // ERROR
+         ^^^
+
+References:
+   expression.js:53:10
+   53|     _ => 's',
+                ^^^ [1]
+   expression.js:56:10
+   56|   out as empty; // ERROR
+                ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- expression.js:97:3
+
+Cannot resolve name `a`. [cannot-resolve-name]
+
+   97|   a; // ERROR
+         ^
+
+
+Error ---------------------------------------------------------------------------------------------- expression.js:108:3
+
+Cannot resolve name `a`. [cannot-resolve-name]
+
+   108|   a; // ERROR
+          ^
+
+
+Error --------------------------------------------------------------------------------------------- expression.js:144:10
+
+Cannot assign `match` to `out` because string literal `xxx` [1] is incompatible with union type [2]. [incompatible-type]
+
+   expression.js:144:10
+   144|     2 => 'xxx', // ERROR: 'xxx' is not a subtype of 'a' | 'b'
+                 ^^^^^ [1]
+
+References:
+   expression.js:142:14
+   142|   const out: 'a' | 'b' = match (x) {
+                     ^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- expression.js:151:10
+
+Cannot get `dict[match]` because property `xxx` is missing in object type [1]. [prop-missing]
+
+   expression.js:151:10
+   151|     2 => 'xxx', // ERROR: 'xxx' is not a subtype of 'a' | 'b'
+                 ^^^^^
+
+References:
+   expression.js:148:23
+   148|   declare const dict: {['a' | 'b']: number};
+                              ^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------- instance-pattern.js:26:5
+
+This instance pattern hasn't considered all possible properties of the input. There could be additional properties due
+to `Point` [1]. To fix, add `...` to the end of the pattern to match all other properties. [match-not-exhaustive]
+
+   instance-pattern.js:26:5
+   26|     Point {const x, const y} => { // ERROR: instances are inexact
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   instance-pattern.js:16:20
+   16|   declare const x: Point;
+                          ^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------- instance-pattern.js:92:3
+
+`match` hasn't checked all possible cases of the input type. To fix, add the missing pattern: `Point {...}` to match
+`Point` [1]. [match-not-exhaustive]
+
+   instance-pattern.js:92:3
+   92|   match (x) { // ERROR
+         ^^^^^
+
+References:
+   instance-pattern.js:90:20
+   90|   declare const x: Point;
+                          ^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------- instance-pattern.js:93:5
+
+This match pattern [1] is unused. The values it matches are either already covered by previous patterns, or are not part
+of the input type. To fix, either remove this pattern or restructure previous patterns. [match-unused-pattern]
+
+   93|     ThreeD {...} => {} // ERROR
+           ^^^^^^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- instance-pattern.js:102:3
+
+`match` hasn't checked all possible cases of the input type. To fix, add the missing pattern: `Point {...}` to match
+`Point` [1]. [match-not-exhaustive]
+
+   instance-pattern.js:102:3
+   102|   match (x) { // ERROR: non-exhaustive
+          ^^^^^
+
+References:
+   instance-pattern.js:99:20
+    99|   declare const x: Point;
+                           ^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- instance-pattern.js:103:5
+
+Invalid match instance pattern constructor. It must reference a single class. [match-invalid-pattern]
+
+   103|     S {...} => {} // ERROR
+            ^
+
+
+Error ---------------------------------------------------------------------------------------- instance-pattern.js:113:3
+
+`match` hasn't checked all possible cases of the input type. To fix, add the missing pattern: `Point {...}` to match
+`Point` [1]. [match-not-exhaustive]
+
+   instance-pattern.js:113:3
+   113|   match (x) { // ERROR: non-exhaustive
+          ^^^^^
+
+References:
+   instance-pattern.js:107:20
+   107|   declare const x: Point;
+                           ^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- instance-pattern.js:114:5
+
+Cannot use type `I` [1] as a value. Types are erased and don't exist at runtime. [type-as-value]
+
+   instance-pattern.js:114:5
+   114|     I {...} => {} // ERROR
+            ^
+
+References:
+   instance-pattern.js:108:13
+   108|   interface I {
+                    ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- instance-pattern.js:114:5
+
+Invalid match instance pattern constructor. It must reference a single class. [match-invalid-pattern]
+
+   114|     I {...} => {} // ERROR
+            ^
+
+
+Error ---------------------------------------------------------------------------------------- instance-pattern.js:133:3
+
+`match` hasn't checked all possible cases of the input type. To fix, add the missing pattern: `{...}` to match
+`<<anonymous class>>` [1]. [match-not-exhaustive]
+
+   instance-pattern.js:133:3
+   133|   match (x) {} // ERROR
+          ^^^^^
+
+References:
+   instance-pattern.js:124:20
+   124|   declare const x: C;
+                           ^ [1]
+
+
+Error --------------------------------------------------------------------------------------- instance-pattern.js:161:18
+
+Duplicate property `x` in instance pattern. [match-invalid-pattern]
+
+   161|     Point {x: _, x: _, ...} => {} // ERROR
+                         ^
+
+
+Error ---------------------------------------------------------------------------------------- instance-pattern.js:170:5
+
+This match pattern [1] is unused. The values it matches are either already covered by previous patterns, or are not part
+of the input type. To fix, either remove this pattern or restructure previous patterns. [match-unused-pattern]
+
+   170|     Point {1.3: _, ...} => {} // ERROR
+            ^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------- instance-pattern.js:170:12
+
+Unsupported instance pattern property literal in match pattern. String literals and int-like number literals are
+supported. [match-invalid-pattern]
+
+   170|     Point {1.3: _, ...} => {} // ERROR
+                   ^^^
+
+
+Error --------------------------------------------------------------------------------------- instance-pattern.js:180:12
+
+`match` instance patterns don't allow this property shorthand syntax. To fix, be explicit and either use `{const x}` if
+you want to create a new variable with the value of property `x`, or use `{x: x}` if you want to match property `x`
+against the value of the variable named `x`. [match-invalid-pattern]
+
+   180|     Point {x, ...} => {} // ERROR
+                   ^
+
+
+Error ---------------------------------------------------------------------------------- invalid-break-statement.js:17:5
+
+Illegal break statement. `break` statements are not required in `match` statements, as unlike `switch` statements,
+`match` statement cases do not fall-through by default. [ParseError]
+
+   17|     break; // ERROR: parse error
+           ^^^^^^
+
+
+Error --------------------------------------------------------------------------------------- invalid-case-syntax.js:6:5
+
+Drop the `case`. Just <pattern>. It's cleaner. [unsupported-syntax]
+
+   6|     case 0 => {} // ERROR
+          ^^^^
+
+
+Error -------------------------------------------------------------------------------------- invalid-case-syntax.js:10:6
+
+`match` cases use `=>` to separate the pattern and the case body. To fix, replace the `;` with `=>`.
+[unsupported-syntax]
+
+   10|     0: {} // ERROR
+            ^
+
+
+Error -------------------------------------------------------------------------------------- invalid-case-syntax.js:17:5
+
+Drop the `case`. Just <pattern>. It's cleaner. [unsupported-syntax]
+
+   17|     case 0 => 1, // ERROR
+           ^^^^
+
+
+Error -------------------------------------------------------------------------------------- invalid-case-syntax.js:22:6
+
+`match` cases use `=>` to separate the pattern and the case body. To fix, replace the `;` with `=>`.
+[unsupported-syntax]
+
+   22|     0: 1, // ERROR
+            ^
+
+
+Error ------------------------------------------------------------------------------------- invalid-case-syntax.js:27:11
+
+`match` uses commas `,` to separate cases. To fix, replace the `;` with `,`. [unsupported-syntax]
+
+   27|     0 => 1; // ERROR
+                 ^
+
+
+Error -------------------------------------------------------------------------------------- invalid-case-syntax.js:35:3
+
+Drop the `case`. Just <pattern>. It's cleaner. At [1] [2] [3]. [unsupported-syntax]
+
+   invalid-case-syntax.js:35:3
+   35|   match (x) { // ERROR
+         ^^^^^
+
+References:
+   invalid-case-syntax.js:36:5
+   36|     case 1 => {}
+           ^^^^ [1]
+   invalid-case-syntax.js:37:5
+   37|     case 2 => {}
+           ^^^^ [2]
+   invalid-case-syntax.js:38:5
+   38|     case 3 => {}
+           ^^^^ [3]
+
+
+Error -------------------------------------------------------------------------------------- invalid-case-syntax.js:52:3
+
+Invalid match case syntax:
+- Drop the `case`. Just <pattern>. It's cleaner. At [1] [2] [3].
+- `match` cases use `=>` to separate the pattern and the case body. To fix, replace the `;` with `=>`. At [4] [5] [6].
+[unsupported-syntax]
+
+   invalid-case-syntax.js:52:3
+   52|   match (x) { // ERROR
+         ^^^^^
+
+References:
+   invalid-case-syntax.js:53:5
+   53|     case 1: {}
+           ^^^^ [1]
+   invalid-case-syntax.js:54:5
+   54|     case 2: {}
+           ^^^^ [2]
+   invalid-case-syntax.js:55:5
+   55|     case 3: {}
+           ^^^^ [3]
+   invalid-case-syntax.js:53:11
+   53|     case 1: {}
+                 ^ [4]
+   invalid-case-syntax.js:54:11
+   54|     case 2: {}
+                 ^ [5]
+   invalid-case-syntax.js:55:11
+   55|     case 3: {}
+                 ^ [6]
+
+
+Error ------------------------------------------------------------------------------------- invalid-case-syntax.js:58:13
+
+Invalid match case syntax:
+- Drop the `case`. Just <pattern>. It's cleaner. At [1] [2] [3].
+- `match` cases use `=>` to separate the pattern and the case body. To fix, replace the `;` with `=>`. At [4] [5] [6].
+- `match` uses commas `,` to separate cases. To fix, replace the `;` with `,`. At [7] [8] [9]. [unsupported-syntax]
+
+   invalid-case-syntax.js:58:13
+   58|   const e = match (x) { // ERROR
+                   ^^^^^
+
+References:
+   invalid-case-syntax.js:59:5
+   59|     case 1: null;
+           ^^^^ [1]
+   invalid-case-syntax.js:60:5
+   60|     case 2: null;
+           ^^^^ [2]
+   invalid-case-syntax.js:61:5
+   61|     case 3: null;
+           ^^^^ [3]
+   invalid-case-syntax.js:59:11
+   59|     case 1: null;
+                 ^ [4]
+   invalid-case-syntax.js:60:11
+   60|     case 2: null;
+                 ^ [5]
+   invalid-case-syntax.js:61:11
+   61|     case 3: null;
+                 ^ [6]
+   invalid-case-syntax.js:59:17
+   59|     case 1: null;
+                       ^ [7]
+   invalid-case-syntax.js:60:17
+   60|     case 2: null;
+                       ^ [8]
+   invalid-case-syntax.js:61:17
+   61|     case 3: null;
+                       ^ [9]
+
+
+Error ------------------------------------------------------------------------------------------------ matching.js:14:14
+
+`match` hasn't checked all possible cases of the input type. To fix, add the missing patterns:
+- `'s'` to match string literal `s` [1]
+- `-2` to match number literal `-2` [2] [match-not-exhaustive]
+
+   matching.js:14:14
+   14|   const e2 = match (x) { // ERROR: not all members checked
+                    ^^^^^
+
+References:
+   matching.js:3:34
+    3|   declare const x: 1 | -2 | 3n | 's' | false | null;
+                                        ^^^ [1]
+   matching.js:3:24
+    3|   declare const x: 1 | -2 | 3n | 's' | false | null;
+                              ^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ matching.js:34:14
+
+`match` hasn't checked all possible cases of the input type. To fix, add the missing pattern: `2` to match number
+literal `2` [1]. [match-not-exhaustive]
+
+   matching.js:34:14
+   34|   const e2 = match (x) { // ERROR: `2` not checked
+                    ^^^^^
+
+References:
+   matching.js:24:24
+   24|   declare const x: 1 | 2;
+                              ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ matching.js:48:14
+
+`match` hasn't checked all possible cases of the input type. To fix, add the missing pattern: `undefined` to match
+undefined [1]. [match-not-exhaustive]
+
+   matching.js:48:14
+   48|   const e2 = match (x) { // ERROR: `undefined` not checked
+                    ^^^^^
+
+References:
+   matching.js:41:24
+   41|   declare const x: 1 | void;
+                              ^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ matching.js:63:14
+
+`match` hasn't checked all possible cases of the input type. To fix, add the missing patterns:
+- `null` to match null or undefined [1]
+- `undefined` to match null or undefined [1] [match-not-exhaustive]
+
+   matching.js:63:14
+   63|   const e2 = match (x) { // ERROR: `null` and `undefined` not checked
+                    ^^^^^
+
+References:
+   matching.js:55:20
+   55|   declare const x: ?1;
+                          ^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ matching.js:82:14
+
+`match` hasn't checked all possible cases of the input type. To fix, add the missing pattern: `2` to match number
+literal `2` [1]. [match-not-exhaustive]
+
+   matching.js:82:14
+   82|   const e2 = match (x) { // ERROR: `2` not checked
+                    ^^^^^
+
+References:
+   matching.js:70:24
+   70|   declare const x: 1 | 2;
+                              ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- matching.js:131:14
+
+`match` hasn't checked all possible cases of the input type. To fix, add the missing pattern: `2` to match number
+literal `2` [1]. [match-not-exhaustive]
+
+   matching.js:131:14
+   131|   const e2 = match (f(0)) { // ERROR: `2` not checked
+                     ^^^^^
+
+References:
+   matching.js:124:36
+   124|   declare const f: (number) => 1 | 2;
+                                           ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- matching.js:144:14
+
+`match` hasn't checked all possible cases of the input type. To fix, add the missing pattern: `3` to match number
+literal `3` [1]. [match-not-exhaustive]
+
+   matching.js:144:14
+   144|   const e2 = match (x) { // ERROR: `3` not checked
+                     ^^^^^
+
+References:
+   matching.js:138:28
+   138|   declare const x: 1 | 2 | 3;
+                                   ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- matching.js:155:14
+
+`match` hasn't checked all possible cases of the input type. To fix, add the missing pattern: `2` to match number
+literal `2` [1]. [match-not-exhaustive]
+
+   matching.js:155:14
+   155|   const e1 = match (x) { // ERROR: `2` not checked
+                     ^^^^^
+
+References:
+   matching.js:151:24
+   151|   declare const x: 1 | 2;
+                               ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- matching.js:218:14
+
+`match` hasn't checked all possible cases of the input type. To fix, add the missing pattern: `{type: 'baz', val: _}` to
+match object type [1]. [match-not-exhaustive]
+
+   matching.js:218:14
+   218|   const e2 = match (x) { // ERROR: `type: 'baz'` not checked
+                     ^^^^^
+
+References:
+   matching.js:210:20
+   210|                  | {type: 'baz', val: boolean};
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- matching.js:263:14
+
+`match` hasn't checked all possible cases of the input type. To fix, add the missing pattern:
+`{type: 'bar', n: 2, val: _}` to match object type [1]. [match-not-exhaustive]
+
+   matching.js:263:14
+   263|   const e3 = match (x) { // ERROR: `type: 'bar', n: 2` not checked
+                     ^^^^^
+
+References:
+   matching.js:250:20
+   250|                  | {type: 'bar', n: 2, val: boolean};
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- matching.js:289:14
+
+`match` hasn't checked all possible cases of the input type. To fix, add the missing pattern: `{type: 'bar', val: _}` to
+match object type [1]. [match-not-exhaustive]
+
+   matching.js:289:14
+   289|   const e2 = match (x) { // ERROR: `type: 'bar'` not checked
+                     ^^^^^
+
+References:
+   matching.js:282:20
+   282|                  | {type: 'bar', val: string}
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- matching.js:306:14
+
+`match` hasn't checked all possible cases of the input type. To fix, add the missing pattern: `['baz', _]` to match
+tuple type [1]. [match-not-exhaustive]
+
+   matching.js:306:14
+   306|   const e2 = match (x) { // ERROR: `'baz'` element not checked
+                     ^^^^^
+
+References:
+   matching.js:298:20
+   298|                  | ['baz', boolean];
+                           ^^^^^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- matching.js:342:24
+
+Cannot cast `a` to empty because boolean [1] is incompatible with empty [2]. [incompatible-type]
+
+   matching.js:342:24
+   342|     [const a, _, _] => a as empty, // ERROR: `boolean` is not `empty`
+                               ^
+
+References:
+   matching.js:337:21
+   337|                  | [boolean, boolean, boolean];
+                            ^^^^^^^ [1]
+   matching.js:342:29
+   342|     [const a, _, _] => a as empty, // ERROR: `boolean` is not `empty`
+                                    ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- matching.js:359:18
+
+Cannot cast `a` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   matching.js:359:18
+   359|     [const a] => a as string, // ERROR: `number` is not `string`
+                         ^
+
+References:
+   matching.js:355:21
+   355|   declare const x: [number] | Array<string>;
+                            ^^^^^^ [1]
+   matching.js:359:23
+   359|     [const a] => a as string, // ERROR: `number` is not `string`
+                              ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- matching.js:377:14
+
+`match` hasn't checked all possible cases of the input type. To fix, add the missing pattern: `[_]` to match tuple
+type [1]. [match-not-exhaustive]
+
+   matching.js:377:14
+   377|   const e2 = match (x) { // ERROR: does not match all possibilities
+                     ^^^^^
+
+References:
+   matching.js:371:20
+   371|   declare const x: [a: 0, b?: 1, c?: 2];
+                           ^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- matching.js:381:14
+
+`match` hasn't checked all possible cases of the input type. To fix, add the missing patterns:
+- `[_, _, _]` to match tuple type [1]
+- `[_, _]` to match tuple type [1] [match-not-exhaustive]
+
+   matching.js:381:14
+   381|   const e3 = match (x) { // ERROR: does not match all possibilities
+                     ^^^^^
+
+References:
+   matching.js:371:20
+   371|   declare const x: [a: 0, b?: 1, c?: 2];
+                           ^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- matching.js:385:14
+
+`match` hasn't checked all possible cases of the input type. To fix, add the missing patterns:
+- `[_, _]` to match tuple type [1]
+- `[_]` to match tuple type [1] [match-not-exhaustive]
+
+   matching.js:385:14
+   385|   const e4 = match (x) { // ERROR: does not match all possibilities
+                     ^^^^^
+
+References:
+   matching.js:371:20
+   371|   declare const x: [a: 0, b?: 1, c?: 2];
+                           ^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- matching.js:398:14
+
+`match` hasn't checked all possible cases of the input type. To fix, add the missing pattern: `[_, ...]` to match tuple
+type [1]. [match-not-exhaustive]
+
+   matching.js:398:14
+   398|   const e2 = match (x) { // ERROR: does not match all elements
+                     ^^^^^
+
+References:
+   matching.js:392:20
+   392|   declare const x: [a: 0, ...];
+                           ^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- matching.js:408:14
+
+`match` hasn't checked all possible cases of the input type. To fix, add the missing pattern: `{foo: 2}` to match object
+type [1]. [match-not-exhaustive]
+
+   matching.js:408:14
+   408|   const e1 = match (x) {
+                     ^^^^^
+
+References:
+   matching.js:406:20
+   406|   declare const x: T;
+                           ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- pattern-errors.js:6:10
+
+Cannot use `let` for match pattern binding. Only `const` is allowed. [match-invalid-pattern]
+
+   6|      [...let a] => 0, // ERROR
+               ^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- pattern-errors.js:7:7
+
+Cannot use `let` for match pattern binding. Only `const` is allowed. [match-invalid-pattern]
+
+   7|      {let a, ...let b} => 0, // ERROR
+            ^^^^^
+
+
+Error ------------------------------------------------------------------------------------------- pattern-errors.js:7:17
+
+Cannot use `let` for match pattern binding. Only `const` is allowed. [match-invalid-pattern]
+
+   7|      {let a, ...let b} => 0, // ERROR
+                      ^^^^^
+
+
+Error ------------------------------------------------------------------------------------------- pattern-errors.js:8:11
+
+Cannot use `let` for match pattern binding. Only `const` is allowed. [match-invalid-pattern]
+
+   8|      0 as let a => 0, // ERROR
+                ^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- pattern-errors.js:9:6
+
+Cannot use `let` for match pattern binding. Only `const` is allowed. [match-invalid-pattern]
+
+   9|      let a => 0, // ERROR
+           ^^^^^
+
+
+Error ------------------------------------------------------------------------------------------ pattern-errors.js:13:10
+
+Cannot use `var` for match pattern binding. Only `const` is allowed. [match-invalid-pattern]
+
+   13|      [...var a] => 0, // ERROR
+                ^^^^^
+
+
+Error ------------------------------------------------------------------------------------------- pattern-errors.js:14:7
+
+Cannot use `var` for match pattern binding. Only `const` is allowed. [match-invalid-pattern]
+
+   14|      {var a, ...var b} => a, // ERROR
+             ^^^^^
+
+
+Error ------------------------------------------------------------------------------------------ pattern-errors.js:14:17
+
+Cannot use `var` for match pattern binding. Only `const` is allowed. [match-invalid-pattern]
+
+   14|      {var a, ...var b} => a, // ERROR
+                       ^^^^^
+
+
+Error ------------------------------------------------------------------------------------------ pattern-errors.js:14:27
+
+Cannot resolve name `a`. [cannot-resolve-name]
+
+   14|      {var a, ...var b} => a, // ERROR
+                                 ^
+
+
+Error ------------------------------------------------------------------------------------------ pattern-errors.js:15:11
+
+Cannot use `var` for match pattern binding. Only `const` is allowed. [match-invalid-pattern]
+
+   15|      0 as var a => 0, // ERROR
+                 ^^^^^
+
+
+Error ------------------------------------------------------------------------------------------- pattern-errors.js:16:6
+
+Cannot use `var` for match pattern binding. Only `const` is allowed. [match-invalid-pattern]
+
+   16|      var a => 0, // ERROR
+            ^^^^^
+
+
+Error ------------------------------------------------------------------------------------------- pattern-errors.js:25:5
+
+This match pattern [1] is unused. The values it matches are either already covered by previous patterns, or are not part
+of the input type. To fix, either remove this pattern or restructure previous patterns. [match-unused-pattern]
+
+   25|     {1.1: _} => 0, // ERROR
+           ^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- pattern-errors.js:25:6
+
+Unsupported object pattern property literal in match pattern. String literals and int-like number literals are
+supported. [match-invalid-pattern]
+
+   25|     {1.1: _} => 0, // ERROR
+            ^^^
+
+
+Error ------------------------------------------------------------------------------------------- pattern-errors.js:35:5
+
+Unary pattern on `0` is not supported. [match-invalid-pattern]
+
+   35|     -0 => true, // ERROR
+           ^^
+
+
+Error ------------------------------------------------------------------------------------------- pattern-errors.js:36:5
+
+Unary pattern on `0` is not supported. [match-invalid-pattern]
+
+   36|     +0 => true, // ERROR
+           ^^
+
+
+Error ------------------------------------------------------------------------------------------- pattern-errors.js:46:5
+
+Unary pattern `+` on bigint literal is not supported. [match-invalid-pattern]
+
+   46|     +1n => true, // ERROR
+           ^^^
+
+
+Error ------------------------------------------------------------------------------------------ pattern-errors.js:56:17
+
+Duplicate property `foo` in object pattern. [match-invalid-pattern]
+
+   56|     {foo: true, foo: false} => 0, // ERROR
+                       ^^^
+
+
+Error ------------------------------------------------------------------------------------------ pattern-errors.js:61:23
+
+Duplicate property `foo` in object pattern. [match-invalid-pattern]
+
+   61|     {foo: true, const foo} => 0, // ERROR
+                             ^^^
+
+
+Error ------------------------------------------------------------------------------------------ pattern-errors.js:65:17
+
+Duplicate property `foo` in object pattern. [match-invalid-pattern]
+
+   65|     {foo: true, 'foo': false} => 0, // ERROR
+                       ^^^^^
+
+
+Error ------------------------------------------------------------------------------------------ pattern-errors.js:75:23
+
+Cannot declare `a` [1] because the name is already bound. [name-already-bound]
+
+   pattern-errors.js:75:23
+   75|     [const a, true as a] => 0, // ERROR
+                             ^
+
+References:
+   pattern-errors.js:75:12
+   75|     [const a, true as a] => 0, // ERROR
+                  ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------ pattern-errors.js:76:21
+
+Cannot declare `a` [1] because the name is already bound. [name-already-bound]
+
+   pattern-errors.js:76:21
+   76|     [const a, const a] => 0, // ERROR
+                           ^
+
+References:
+   pattern-errors.js:76:12
+   76|     [const a, const a] => 0, // ERROR
+                  ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------ pattern-errors.js:80:29
+
+Cannot declare `a` [1] because the name is already bound. [name-already-bound]
+
+   pattern-errors.js:80:29
+   80|     [const a, true as const a] => 0, // ERROR
+                                   ^
+
+References:
+   pattern-errors.js:80:12
+   80|     [const a, true as const a] => 0, // ERROR
+                  ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------ pattern-errors.js:81:24
+
+Cannot declare `a` [1] because the name is already bound. [name-already-bound]
+
+   pattern-errors.js:81:24
+   81|     [const a, ...const a] => 0, // ERROR
+                              ^
+
+References:
+   pattern-errors.js:81:12
+   81|     [const a, ...const a] => 0, // ERROR
+                  ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------ pattern-errors.js:87:26
+
+Cannot declare `a` [1] because the name is already bound. [name-already-bound]
+
+   pattern-errors.js:87:26
+   87|     {const a, b: true as a} => 0, // ERROR
+                                ^
+
+References:
+   pattern-errors.js:87:12
+   87|     {const a, b: true as a} => 0, // ERROR
+                  ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------ pattern-errors.js:88:24
+
+Cannot declare `a` [1] because the name is already bound. [name-already-bound]
+
+   pattern-errors.js:88:24
+   88|     {const a, ...const a} => 0, // ERROR
+                              ^
+
+References:
+   pattern-errors.js:88:12
+   88|     {const a, ...const a} => 0, // ERROR
+                  ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------ pattern-errors.js:97:14
+
+New bindings in 'or' patterns are not yet supported. [match-invalid-pattern]
+
+   97|     [true as a] | ['s'] => 0, // ERROR
+                    ^
+
+
+Error ------------------------------------------------------------------------------------------ pattern-errors.js:98:21
+
+New bindings in 'or' patterns are not yet supported. [match-invalid-pattern]
+
+   98|     [false as const a] | ['s'] => 0, // ERROR
+                           ^
+
+
+Error ----------------------------------------------------------------------------------------- pattern-errors.js:103:20
+
+New bindings in 'or' patterns are not yet supported. [match-invalid-pattern]
+
+   103|     [true as const a] | ['s'] => 0, // ERROR
+                           ^
+
+
+Error ----------------------------------------------------------------------------------------- pattern-errors.js:104:23
+
+New bindings in 'or' patterns are not yet supported. [match-invalid-pattern]
+
+   104|     ['t'] | [...const a] => 0, // ERROR
+                              ^
+
+
+Error ----------------------------------------------------------------------------------------- pattern-errors.js:111:17
+
+New bindings in 'or' patterns are not yet supported. [match-invalid-pattern]
+
+   111|     {a: true as a} | {a: 's'} => 0, // ERROR
+                        ^
+
+
+Error ----------------------------------------------------------------------------------------- pattern-errors.js:112:24
+
+New bindings in 'or' patterns are not yet supported. [match-invalid-pattern]
+
+   112|     {a: false as const a} | {a: 's'} => 0, // ERROR
+                               ^
+
+
+Error ------------------------------------------------------------------------------------------ pattern-errors.js:122:6
+
+Invalid `as` pattern. Direct use on a binding pattern is not allowed. [match-invalid-pattern]
+
+   122|     [const a as b] => 0, // ERROR
+             ^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------ pattern-errors.js:126:5
+
+Invalid `as` pattern. Direct use on a binding pattern is not allowed. [match-invalid-pattern]
+
+   126|     const a as const b => 0, // ERROR
+            ^^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------ pattern-errors.js:135:6
+
+Cannot use variable `a` [1] because the declaration either comes later or was skipped. [reference-before-declaration]
+
+   pattern-errors.js:135:6
+   135|     [a, const a] => a, // ERROR: reference before declaration
+             ^
+
+References:
+   pattern-errors.js:135:15
+   135|     [a, const a] => a, // ERROR: reference before declaration
+                      ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------ pattern-errors.js:143:6
+
+Cannot use variable `a` [1] because the declaration either comes later or was skipped. [reference-before-declaration]
+
+   pattern-errors.js:143:6
+   143|     [a.foo, const a] => a, // ERROR: reference before declaration
+             ^
+
+References:
+   pattern-errors.js:143:19
+   143|     [a.foo, const a] => a, // ERROR: reference before declaration
+                          ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------- pattern-errors.js:153:15
+
+Can't use variable `a` [1] within the same match pattern it is defined. [match-invalid-pattern]
+
+   pattern-errors.js:153:15
+   153|     [const a, a] => a, // ERROR
+                      ^
+
+References:
+   pattern-errors.js:153:12
+   153|     [const a, a] => a, // ERROR
+                   ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------- pattern-errors.js:153:15
+
+Cannot use variable `a` [1] because the declaration either comes later or was skipped. [reference-before-declaration]
+
+   pattern-errors.js:153:15
+   153|     [const a, a] => a, // ERROR
+                      ^
+
+References:
+   pattern-errors.js:153:12
+   153|     [const a, a] => a, // ERROR
+                   ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------- pattern-errors.js:161:15
+
+Can't use variable `a` [1] within the same match pattern it is defined. [match-invalid-pattern]
+
+   pattern-errors.js:161:15
+   161|     [const a, a.foo] => a, // ERROR
+                      ^
+
+References:
+   pattern-errors.js:161:12
+   161|     [const a, a.foo] => a, // ERROR
+                   ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------- pattern-errors.js:161:15
+
+Cannot use variable `a` [1] because the declaration either comes later or was skipped. [reference-before-declaration]
+
+   pattern-errors.js:161:15
+   161|     [const a, a.foo] => a, // ERROR
+                      ^
+
+References:
+   pattern-errors.js:161:12
+   161|     [const a, a.foo] => a, // ERROR
+                   ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------ pattern-errors.js:171:6
+
+`match` object patterns don't allow this property shorthand syntax. To fix, be explicit and either use `{const foo}` if
+you want to create a new variable with the value of property `foo`, or use `{foo: foo}` if you want to match property
+`foo` against the value of the variable named `foo`. [match-invalid-pattern]
+
+   171|     {foo, ...} => 0, // ERROR
+             ^^^
+
+
+Error ------------------------------------------------------------------------------------------ pattern-errors.js:172:6
+
+`match` object patterns don't allow this property shorthand syntax. To fix, be explicit and either use `{const foo}` if
+you want to create a new variable with the value of property `foo`, or use `{foo: foo}` if you want to match property
+`foo` against the value of the variable named `foo`. [match-invalid-pattern]
+
+   172|     {foo, bar: true} => 0, // ERROR
+             ^^^
+
+
+Error ------------------------------------------------------------------------------------------ pattern-errors.js:181:6
+
+Unsupported object pattern property literal in match pattern. String literals and int-like number literals are
+supported. [match-invalid-pattern]
+
+   181|     {1n: 1, ...} => 0, // ERROR
+             ^^
+
+
+Error ------------------------------------------------------------------------------------------ pattern-errors.js:191:5
+
+`match` uses `_` for wildcard patterns which match everything. To fix, replace `default` with `_`. [unsupported-syntax]
+
+   191|     default => {} // ERROR
+            ^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- patterns.js:9:3
+
+Cannot cast `out` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   patterns.js:9:3
+   9|   out as empty; // ERROR
+        ^^^
+
+References:
+   patterns.js:3:20
+   3|   declare const x: number;
+                         ^^^^^^ [1]
+   patterns.js:9:10
+   9|   out as empty; // ERROR
+               ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- patterns.js:20:3
+
+Cannot resolve name `a`. [cannot-resolve-name]
+
+   20|   a; // ERROR: cannot resolve name
+         ^
+
+
+Error ------------------------------------------------------------------------------------------------- patterns.js:31:3
+
+Cannot cast `out` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   patterns.js:31:3
+   31|   out as empty; // ERROR
+         ^^^
+
+References:
+   patterns.js:25:21
+   25|   declare const x: [number];
+                           ^^^^^^ [1]
+   patterns.js:31:10
+   31|   out as empty; // ERROR
+                ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- patterns.js:43:3
+
+Cannot cast `out` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   patterns.js:43:3
+   43|   out as empty; // ERROR
+         ^^^
+
+References:
+   patterns.js:36:26
+   36|   declare const x: {foo: number};
+                                ^^^^^^ [1]
+   patterns.js:43:10
+   43|   out as empty; // ERROR
+                ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- patterns.js:55:3
+
+Cannot cast `out` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   patterns.js:55:3
+   55|   out as empty; // ERROR
+         ^^^
+
+References:
+   patterns.js:48:26
+   48|   declare const x: {foo: number};
+                                ^^^^^^ [1]
+   patterns.js:55:10
+   55|   out as empty; // ERROR
+                ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- patterns.js:66:3
+
+Cannot cast `out1` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   patterns.js:66:3
+   66|   out1 as empty; // ERROR
+         ^^^^
+
+References:
+   patterns.js:60:33
+   60|   declare const x: {foo: [{bar: number}]};
+                                       ^^^^^^ [1]
+   patterns.js:66:11
+   66|   out1 as empty; // ERROR
+                 ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- patterns.js:72:3
+
+Cannot cast `out2` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   patterns.js:72:3
+   72|   out2 as empty; // ERROR
+         ^^^^
+
+References:
+   patterns.js:60:33
+   60|   declare const x: {foo: [{bar: number}]};
+                                       ^^^^^^ [1]
+   patterns.js:72:11
+   72|   out2 as empty; // ERROR
+                 ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ patterns.js:83:24
+
+Cannot cast `n` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   patterns.js:83:24
+   83|     {foo: const n} if (n as empty) => n, // ERROR
+                              ^
+
+References:
+   patterns.js:77:26
+   77|   declare const x: {foo: number};
+                                ^^^^^^ [1]
+   patterns.js:83:29
+   83|     {foo: const n} if (n as empty) => n, // ERROR
+                                   ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ refining.js:10:19
+
+Cannot cast `test` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   refining.js:10:19
+   10|     const test => test as empty, // ERROR: `-2 | 's'`
+                         ^^^^
+
+References:
+   refining.js:3:24
+    3|   declare const x: 1 | -2 | 3n | 's' | false | null;
+                              ^^ [1]
+   refining.js:10:27
+   10|     const test => test as empty, // ERROR: `-2 | 's'`
+                                 ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ refining.js:10:19
+
+Cannot cast `test` to empty because string [1] is incompatible with empty [2]. [incompatible-type]
+
+   refining.js:10:19
+   10|     const test => test as empty, // ERROR: `-2 | 's'`
+                         ^^^^
+
+References:
+   refining.js:3:34
+    3|   declare const x: 1 | -2 | 3n | 's' | false | null;
+                                        ^^^ [1]
+   refining.js:10:27
+   10|     const test => test as empty, // ERROR: `-2 | 's'`
+                                 ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ refining.js:23:19
+
+Cannot cast `test` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   refining.js:23:19
+   23|     const test => test as empty, // ERROR: `2`
+                         ^^^^
+
+References:
+   refining.js:16:24
+   16|   declare const x: 1 | 2;
+                              ^ [1]
+   refining.js:23:27
+   23|     const test => test as empty, // ERROR: `2`
+                                 ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ refining.js:33:19
+
+Cannot cast `test` to empty because undefined [1] is incompatible with empty [2]. [incompatible-type]
+
+   refining.js:33:19
+   33|     const test => test as empty, // ERROR: void
+                         ^^^^
+
+References:
+   refining.js:29:24
+   29|   declare const x: 1 | void;
+                              ^^^^ [1]
+   refining.js:33:27
+   33|     const test => test as empty, // ERROR: void
+                                 ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ refining.js:43:19
+
+Cannot cast `test` to empty because null or undefined [1] is incompatible with empty [2]. [incompatible-type]
+
+   refining.js:43:19
+   43|     const test => test as empty, // `null | undefined`
+                         ^^^^
+
+References:
+   refining.js:39:20
+   39|   declare const x: ?1;
+                          ^^ [1]
+   refining.js:43:27
+   43|     const test => test as empty, // `null | undefined`
+                                 ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ refining.js:58:19
+
+Cannot cast `test` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   refining.js:58:19
+   58|     const test => test as empty, // ERROR: `2`
+                         ^^^^
+
+References:
+   refining.js:49:24
+   49|   declare const x: 1 | 2;
+                              ^ [1]
+   refining.js:58:27
+   58|     const test => test as empty, // ERROR: `2`
+                                 ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ refining.js:68:19
+
+Cannot cast `test` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   refining.js:68:19
+   68|     const test => test as empty, // ERROR `3`
+                         ^^^^
+
+References:
+   refining.js:64:28
+   64|   declare const x: 1 | 2 | 3;
+                                  ^ [1]
+   refining.js:68:27
+   68|     const test => test as empty, // ERROR `3`
+                                 ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ refining.js:81:19
+
+Cannot cast `test` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   refining.js:81:19
+   81|     const test => test as empty, // ERROR: `2`
+                         ^^^^
+
+References:
+   refining.js:74:24
+   74|   declare const x: 1 | 2;
+                              ^ [1]
+   refining.js:81:27
+   81|     const test => test as empty, // ERROR: `2`
+                                 ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ refining.js:91:19
+
+Cannot cast `test` to empty because object type [1] is incompatible with empty [2]. [incompatible-type]
+
+   refining.js:91:19
+   91|     const test => test as empty, // ERROR: `{bar: void, a: 1}`
+                         ^^^^
+
+References:
+   refining.js:87:40
+   87|   declare const x: {foo: void, a: 0} | {bar: void, a: 1};
+                                              ^^^^^^^^^^^^^^^^^ [1]
+   refining.js:91:27
+   91|     const test => test as empty, // ERROR: `{bar: void, a: 1}`
+                                 ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- refining.js:104:19
+
+Cannot cast `test` to empty because object type [1] is incompatible with empty [2]. [incompatible-type]
+
+   refining.js:104:19
+   104|     const test => test as empty, // ERROR: `{type: 'baz', val: boolean}`
+                          ^^^^
+
+References:
+   refining.js:99:20
+    99|                  | {type: 'baz', val: boolean};
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   refining.js:104:27
+   104|     const test => test as empty, // ERROR: `{type: 'baz', val: boolean}`
+                                  ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- refining.js:114:19
+
+Cannot cast `test` to empty because object type [1] is incompatible with empty [2]. [incompatible-type]
+
+   refining.js:114:19
+   114|     const test => test as empty, // ERROR: `{type: 'baz', val: boolean}`
+                          ^^^^
+
+References:
+   refining.js:99:20
+    99|                  | {type: 'baz', val: boolean};
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   refining.js:114:27
+   114|     const test => test as empty, // ERROR: `{type: 'baz', val: boolean}`
+                                  ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- refining.js:126:19
+
+Cannot cast `test` to empty because object type [1] is incompatible with empty [2]. [incompatible-type]
+
+   refining.js:126:19
+   126|     const test => test as empty, // ERROR: `{type: 'baz', val: boolean}`
+                          ^^^^
+
+References:
+   refining.js:99:20
+    99|                  | {type: 'baz', val: boolean};
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   refining.js:126:27
+   126|     const test => test as empty, // ERROR: `{type: 'baz', val: boolean}`
+                                  ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- refining.js:136:19
+
+Cannot cast `test` to empty because null [1] is incompatible with empty [2]. [incompatible-type]
+
+   refining.js:136:19
+   136|     const test => test as empty, // ERROR: `null`
+                          ^^^^
+
+References:
+   refining.js:132:20
+   132|   declare const x: null | {type: 'bar', val: number};
+                           ^^^^ [1]
+   refining.js:136:27
+   136|     const test => test as empty, // ERROR: `null`
+                                  ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- refining.js:148:19
+
+Cannot cast `test` to empty because object type [1] is incompatible with empty [2]. [incompatible-type]
+
+   refining.js:148:19
+   148|     const test => test as empty, // ERROR: `{type: 'bar', val: string}`
+                          ^^^^
+
+References:
+   refining.js:143:20
+   143|                  | {type: 'bar', val: string}
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   refining.js:148:27
+   148|     const test => test as empty, // ERROR: `{type: 'bar', val: string}`
+                                  ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- refining.js:161:19
+
+Cannot cast `test` to empty because tuple type [1] is incompatible with empty [2]. [incompatible-type]
+
+   refining.js:161:19
+   161|     const test => test as empty, // ERROR: `['baz', boolean]`
+                          ^^^^
+
+References:
+   refining.js:156:20
+   156|                  | ['baz', boolean];
+                           ^^^^^^^^^^^^^^^^ [1]
+   refining.js:161:27
+   161|     const test => test as empty, // ERROR: `['baz', boolean]`
+                                  ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- refining.js:172:19
+
+Cannot cast `test` to empty because tuple type [1] is incompatible with empty [2]. [incompatible-type]
+
+   refining.js:172:19
+   172|     const test => test as empty, // ERROR: `['foo', string]`
+                          ^^^^
+
+References:
+   refining.js:167:45
+   167|   declare const x: null | ['bar', number] | ['foo', string];
+                                                    ^^^^^^^^^^^^^^^ [1]
+   refining.js:172:27
+   172|     const test => test as empty, // ERROR: `['foo', string]`
+                                  ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- refining.js:185:19
+
+Cannot cast `test` to empty because tuple type [1] is incompatible with empty [2]. [incompatible-type]
+
+   refining.js:185:19
+   185|     const test => test as empty, // ERROR: [boolean, boolean, boolean]
+                          ^^^^
+
+References:
+   refining.js:180:20
+   180|                  | [boolean, boolean, boolean];
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   refining.js:185:27
+   185|     const test => test as empty, // ERROR: [boolean, boolean, boolean]
+                                  ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- refining.js:193:16
+
+Cannot cast `d` to empty because array type [1] is incompatible with empty [2]. [incompatible-type]
+
+   refining.js:193:16
+   193|     const d => d as empty, // ERROR: `Array<string>`
+                       ^
+
+References:
+   refining.js:189:31
+   189|   declare const x: [number] | Array<string>;
+                                      ^^^^^^^^^^^^^ [1]
+   refining.js:193:21
+   193|     const d => d as empty, // ERROR: `Array<string>`
+                            ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- rules-of-hooks.js:8:7
+
+Cannot call hook [1] because React hooks cannot be called in conditional contexts.
+(https://react.dev/reference/rules/rules-of-hooks) [react-rule-hook-conditional]
+
+   rules-of-hooks.js:8:7
+   8|       useHook(); // ERROR
+            ^^^^^^^^^
+
+References:
+   rules-of-hooks.js:8:7
+   8|       useHook(); // ERROR
+            ^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------ rules-of-hooks.js:17:10
+
+Cannot call hook [1] because React hooks cannot be called in conditional contexts.
+(https://react.dev/reference/rules/rules-of-hooks) [react-rule-hook-conditional]
+
+   rules-of-hooks.js:17:10
+   17|     1 => useHook(), // ERROR
+                ^^^^^^^^^
+
+References:
+   rules-of-hooks.js:17:10
+   17|     1 => useHook(), // ERROR
+                ^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- smart_filtering.js:6:9
+
+Cannot cast `foo` to empty because string [1] is incompatible with empty [2]. [incompatible-type]
+
+   smart_filtering.js:6:9
+   6|         foo as empty; // error for sanity check
+              ^^^
+
+References:
+   smart_filtering.js:2:15
+   2|   const foo: ?string = 'foo';
+                    ^^^^^^ [1]
+   smart_filtering.js:6:16
+   6|         foo as empty; // error for sanity check
+                     ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ smart_filtering.js:26:9
+
+Cannot cast `entireTuple` to `Readonly` because in index `0`: null [1] is incompatible with string [2].
+[incompatible-type]
+
+   smart_filtering.js:26:9
+   26|         entireTuple as $ReadOnly<[string, string]>; // error
+               ^^^^^^^^^^^
+
+References:
+   smart_filtering.js:18:27
+   18|     return match ([a.x ?? null, b.x ?? null]) {
+                                 ^^^^ [1]
+   smart_filtering.js:26:35
+   26|         entireTuple as $ReadOnly<[string, string]>; // error
+                                         ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ smart_filtering.js:26:9
+
+Cannot cast `entireTuple` to `Readonly` because in index `1`: null [1] is incompatible with string [2].
+[incompatible-type]
+
+   smart_filtering.js:26:9
+   26|         entireTuple as $ReadOnly<[string, string]>; // error
+               ^^^^^^^^^^^
+
+References:
+   smart_filtering.js:18:40
+   18|     return match ([a.x ?? null, b.x ?? null]) {
+                                              ^^^^ [1]
+   smart_filtering.js:26:43
+   26|         entireTuple as $ReadOnly<[string, string]>; // error
+                                                 ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ statement.js:22:3
+
+Unreachable code. [unreachable-code]
+
+   22|   x; // ERROR: unreachable
+         ^^
+
+
+Error ------------------------------------------------------------------------------------------------ statement.js:70:3
+
+Cannot resolve name `a`. [cannot-resolve-name]
+
+   70|   a; // ERROR
+         ^
+
+
+Error ------------------------------------------------------------------------------------------------ statement.js:85:3
+
+Cannot resolve name `a`. [cannot-resolve-name]
+
+   85|   a; // ERROR
+         ^
+
+
+Error ---------------------------------------------------------------------------------------------- statement.js:177:10
+
+`match` statements use blocks for each case body. To fix, wrap this statement with `{` and `}`.
+[match-statement-invalid-body]
+
+   177|     1 => return 1; // ERROR
+                 ^^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------- statement.js:178:10
+
+`match` statements use blocks for each case body. To fix, wrap this statement with `{` and `}`.
+[match-statement-invalid-body]
+
+   178|     2 => throw false; // ERROR
+                 ^^^^^^^^^^^^
+
+
+Error ----------------------------------------------------------------------------------------------- statement.js:195:3
+
+Cannot cast `target` to empty because boolean [1] is incompatible with empty [2]. [incompatible-type]
+
+   statement.js:195:3
+   195|   target as empty; // ERROR: `boolean`
+          ^^^^^^
+
+References:
+   statement.js:191:16
+   191|       target = true;
+                       ^^^^ [1]
+   statement.js:195:13
+   195|   target as empty; // ERROR: `boolean`
+                    ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- statement.js:209:3
+
+Cannot cast `target` to boolean because string [1] is incompatible with boolean [2]. [incompatible-type]
+
+   statement.js:209:3
+   209|   target as boolean; // ERROR: `string`
+          ^^^^^^
+
+References:
+   statement.js:201:16
+   201|       target = "foo";
+                       ^^^^^ [1]
+   statement.js:209:13
+   209|   target as boolean; // ERROR: `string`
+                    ^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- statement.js:224:3
+
+Unreachable code. [unreachable-code]
+
+   224|   target as boolean; // ERROR: unreachable
+          ^^^^^^^^^^^^^^^^^^
+
+
+Error ----------------------------------------------------------------------------------------------- statement.js:238:3
+
+Cannot cast `o.prop` to empty because number literal `2` [1] is incompatible with empty [2]. [incompatible-type]
+
+   statement.js:238:3
+   238|   o.prop as empty; // ERROR: `2`
+          ^^^^^^
+
+References:
+   statement.js:234:16
+   234|       o.prop = 2 as const;
+                       ^ [1]
+   statement.js:238:13
+   238|   o.prop as empty; // ERROR: `2`
+                    ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- statement.js:252:3
+
+Cannot cast `o.prop` to empty because number literal `1` [1] is incompatible with empty [2]. [incompatible-type]
+
+   statement.js:252:3
+   252|   o.prop as empty; // ERROR: `1`
+          ^^^^^^
+
+References:
+   statement.js:244:16
+   244|       o.prop = 1 as const;
+                       ^ [1]
+   statement.js:252:13
+   252|   o.prop as empty; // ERROR: `1`
+                    ^^^^^ [2]
+
+
+
+Found 136 errors

@@ -1,0 +1,919 @@
+Error -------------------------------------------------------------------------------------------------- logical.js:9:10
+
+This condition is likely falsy.
+[WARNING]: Flow's type inference may be incorrect that it could be null at runtime (due to `any` annotations,
+out-of-bounds array accesses, etc.). If the check is valid, you might want to make [1] nullable (`T` -> `?T`).
+[constant-condition]
+
+   logical.js:9:10
+   9|   return x && '123'; // constant-condition error
+               ^
+
+References:
+   logical.js:8:11
+   8|   var x = false as const;
+                ^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- logical.js:9:10
+
+Cannot return `x && '123'` because boolean literal `false` [1] is incompatible with number [2]. [incompatible-type]
+
+   logical.js:9:10
+   9|   return x && '123'; // constant-condition error
+               ^
+
+References:
+   logical.js:8:11
+   8|   var x = false as const;
+                ^^^^^ [1]
+   logical.js:6:23
+   6| function logical1a(): number {
+                            ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:17:10
+
+This condition is likely truthy.
+[WARNING]: Flow's type inference may be incorrect that it could be null at runtime (due to `any` annotations,
+out-of-bounds array accesses, etc.). If the check is valid, you might want to make [1] nullable (`T` -> `?T`).
+[constant-condition]
+
+   logical.js:17:10
+   17|   return x && '123'; // constant-condition error
+                ^
+
+References:
+   logical.js:16:11
+   16|   var x = true as const;
+                 ^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:25:10
+
+Cannot return `false && '123'` because boolean [1] is incompatible with number [2]. [incompatible-type]
+
+   logical.js:25:10
+   25|   return false && '123';
+                ^^^^^ [1]
+
+References:
+   logical.js:23:23
+   23| function logical2a(): number {
+                             ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:39:10
+
+This condition is falsy. [constant-condition]
+
+   39|   return '' && 123;
+                ^^
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:53:10
+
+This condition is truthy. [constant-condition]
+
+   53|   return 'foo' && 123;
+                ^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:60:10
+
+This condition is truthy. [constant-condition]
+
+   60|   return 123 && 'foo';
+                ^^^
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:67:10
+
+This condition is truthy. [constant-condition]
+
+   67|   return [1, 2, 3] && 'foo';
+                ^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:88:10
+
+This condition is likely truthy. Perhaps you meant to call the function?
+[WARNING]: Flow's type inference may be incorrect that it could be null at runtime (due to `any` annotations,
+out-of-bounds array accesses, etc.). If the check is valid, you might want to make [1] nullable (`T` -> `?T`).
+[constant-condition]
+
+   logical.js:88:10
+   88|   return x && 'foo'; // constant-condition error
+                ^
+
+References:
+   logical.js:87:23
+   87| function logical2j(x: (a: number) => number): string {
+                             ^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:117:10
+
+This condition is likely falsy.
+[WARNING]: Flow's type inference may be incorrect that it could be null at runtime (due to `any` annotations,
+out-of-bounds array accesses, etc.). If the check is valid, you might want to make [1] nullable (`T` -> `?T`).
+[constant-condition]
+
+   logical.js:117:10
+   117|   return x && 'foo'; // constant-condition error
+                 ^
+
+References:
+   logical.js:116:23
+   116| function logical2n(x: $Exact<void>): void | string {
+                              ^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:126:10
+
+Cannot return `(x != null) && (x > 10)` because boolean [1] is incompatible with string [2]. [incompatible-type]
+
+   logical.js:126:10
+   126|   return x != null && x > 10;
+                 ^^^^^^^^^ [1]
+
+References:
+   logical.js:123:23
+   123| function logical3a(): string {
+                              ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:126:23
+
+Cannot return `(x != null) && (x > 10)` because boolean [1] is incompatible with string [2]. [incompatible-type]
+
+   logical.js:126:23
+   126|   return x != null && x > 10;
+                              ^^^^^^ [1]
+
+References:
+   logical.js:123:23
+   123| function logical3a(): string {
+                              ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:135:10
+
+Cannot return `(x != null) && x` because boolean [1] is incompatible with number [2]. [incompatible-type]
+
+   logical.js:135:10
+   135|   return x != null && x;
+                 ^^^^^^^^^ [1]
+
+References:
+   logical.js:132:23
+   132| function logical3b(): number {
+                              ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:144:10
+
+Cannot return `(x != undefined) && x` because boolean [1] is incompatible with number [2]. [incompatible-type]
+
+   logical.js:144:10
+   144|   return x != undefined && x;
+                 ^^^^^^^^^^^^^^ [1]
+
+References:
+   logical.js:141:24
+   141| function logical3c(): ?number {
+                               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:160:10
+
+Cannot return `x && '123'` because boolean [1] is incompatible with string [2]. [incompatible-type]
+
+   logical.js:160:10
+   160|   return x && '123';
+                 ^
+
+References:
+   logical.js:158:22
+   158| function logical4(x: boolean): string {
+                             ^^^^^^^ [1]
+   logical.js:158:32
+   158| function logical4(x: boolean): string {
+                                       ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:168:10
+
+This condition is likely falsy.
+[WARNING]: Flow's type inference may be incorrect that it could be null at runtime (due to `any` annotations,
+out-of-bounds array accesses, etc.). If the check is valid, you might want to make [1] nullable (`T` -> `?T`).
+[constant-condition]
+
+   logical.js:168:10
+   168|   return x || 0; // constant-condition error
+                 ^
+
+References:
+   logical.js:167:11
+   167|   var x = false as const;
+                  ^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:185:10
+
+This condition is likely truthy.
+[WARNING]: Flow's type inference may be incorrect that it could be null at runtime (due to `any` annotations,
+out-of-bounds array accesses, etc.). If the check is valid, you might want to make [1] nullable (`T` -> `?T`).
+[constant-condition]
+
+   logical.js:185:10
+   185|   return x || 0; // constant-condition error
+                 ^
+
+References:
+   logical.js:184:11
+   184|   var x = true as const;
+                  ^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:185:10
+
+Cannot return `x || 0` because boolean literal `true` [1] is incompatible with string [2]. [incompatible-type]
+
+   logical.js:185:10
+   185|   return x || 0; // constant-condition error
+                 ^
+
+References:
+   logical.js:184:11
+   184|   var x = true as const;
+                  ^^^^ [1]
+   logical.js:182:23
+   182| function logical5c(): string {
+                              ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:206:10
+
+This condition is falsy. [constant-condition]
+
+   206|   return '' || 123;
+                 ^^
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:214:10
+
+Cannot return `true || '123'` because boolean [1] is incompatible with number [2]. [incompatible-type]
+
+   logical.js:214:10
+   214|   return true || '123';
+                 ^^^^ [1]
+
+References:
+   logical.js:212:23
+   212| function logical6d(): number {
+                              ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:221:10
+
+This condition is truthy. [constant-condition]
+
+   221|   return 'foo' || 123;
+                 ^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:228:10
+
+This condition is truthy. [constant-condition]
+
+   228|   return 123 || 'foo';
+                 ^^^
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:250:10
+
+This condition is likely falsy.
+[WARNING]: Flow's type inference may be incorrect that it could be null at runtime (due to `any` annotations,
+out-of-bounds array accesses, etc.). If the check is valid, you might want to make [1] nullable (`T` -> `?T`).
+[constant-condition]
+
+   logical.js:250:10
+   250|   return x || 'foo'; // constant-condition error
+                 ^
+
+References:
+   logical.js:249:23
+   249| function logical6i(x: $Exact<void>): string {
+                              ^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:297:11
+
+This condition is likely falsy.
+[WARNING]: Flow's type inference may be incorrect that it could be null at runtime (due to `any` annotations,
+out-of-bounds array accesses, etc.). If the check is valid, you might want to make [1] nullable (`T` -> `?T`).
+[constant-condition]
+
+   logical.js:297:11
+   297|   return (x || 0) && 'foo'; // constant-condition error
+                  ^
+
+References:
+   logical.js:296:11
+   296|   var x = false as const;
+                  ^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:325:10
+
+This condition is likely falsy.
+[WARNING]: Flow's type inference may be incorrect that it could be null at runtime (due to `any` annotations,
+out-of-bounds array accesses, etc.). If the check is valid, you might want to make [1] nullable (`T` -> `?T`).
+[constant-condition]
+
+   logical.js:325:10
+   325|   return x || (0 && 'foo'); // constant-condition error
+                 ^
+
+References:
+   logical.js:324:11
+   324|   var x = false as const;
+                  ^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:333:10
+
+This condition is likely falsy.
+[WARNING]: Flow's type inference may be incorrect that it could be null at runtime (due to `any` annotations,
+out-of-bounds array accesses, etc.). If the check is valid, you might want to make [1] nullable (`T` -> `?T`).
+[constant-condition]
+
+   logical.js:333:10
+   333|   return x || (1 && 'foo'); // constant-condition error
+                 ^
+
+References:
+   logical.js:332:11
+   332|   var x = false as const;
+                  ^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:342:10
+
+Cannot return `x || (1 && 'foo')` because boolean [1] is incompatible with string [2]. [incompatible-type]
+
+   logical.js:342:10
+   342|   return x || (1 && 'foo');
+                 ^
+
+References:
+   logical.js:341:11
+   341|   var x = true;
+                  ^^^^ [1]
+   logical.js:339:23
+   339| function logical8f(): string {
+                              ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:350:20
+
+Cannot return `x || y || false` because: [incompatible-type]
+ - Either boolean [1] is incompatible with number [2].
+ - Or boolean [1] is incompatible with string [3].
+
+   logical.js:350:20
+   350|   return x || y || false;
+                           ^^^^^ [1]
+
+References:
+   logical.js:348:43
+   348| function logical9a(x: number, y: string): number | string {
+                                                  ^^^^^^ [2]
+   logical.js:348:52
+   348| function logical9a(x: number, y: string): number | string {
+                                                           ^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:364:10
+
+This condition is truthy. [constant-condition]
+
+   364|   return 'a' || x || y;
+                 ^^^
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:372:20
+
+Cannot return `x && y && false` because: [incompatible-type]
+ - Either boolean [1] is incompatible with number [2].
+ - Or boolean [1] is incompatible with string [3].
+
+   logical.js:372:20
+   372|   return x && y && false;
+                           ^^^^^ [1]
+
+References:
+   logical.js:370:44
+   370| function logical10a(x: number, y: string): number | string {
+                                                   ^^^^^^ [2]
+   logical.js:370:53
+   370| function logical10a(x: number, y: string): number | string {
+                                                            ^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:380:10
+
+Cannot return `false && x && y` because boolean [1] is incompatible with array type [2]. [incompatible-type]
+
+   logical.js:380:10
+   380|   return false && x && y;
+                 ^^^^^ [1]
+
+References:
+   logical.js:378:44
+   378| function logical10b(x: number, y: string): Array<any> {
+                                                   ^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:388:10
+
+Cannot return `x && false && y` because number [1] is incompatible with array type [2]. [incompatible-type]
+
+   logical.js:388:10
+   388|   return x && false && y;
+                 ^
+
+References:
+   logical.js:386:24
+   386| function logical10c(x: number, y: string): Array<any> {
+                               ^^^^^^ [1]
+   logical.js:386:44
+   386| function logical10c(x: number, y: string): Array<any> {
+                                                   ^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:388:15
+
+Cannot return `x && false && y` because boolean [1] is incompatible with array type [2]. [incompatible-type]
+
+   logical.js:388:15
+   388|   return x && false && y;
+                      ^^^^^ [1]
+
+References:
+   logical.js:386:44
+   386| function logical10c(x: number, y: string): Array<any> {
+                                                   ^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:397:14
+
+Cannot assign `y || true` to `y` because boolean [1] is incompatible with number [2]. [incompatible-type]
+
+All writes to `y` must be compatible with the type of its initializer [3]. Add an annotation to `y` [3] if a different
+type is desired.
+
+   logical.js:397:14
+   397|     y = y || true; // error `y` is a number
+                     ^^^^ [1]
+
+References:
+   logical.js:395:11
+   395|   var y = 1;
+                  ^ [2]
+   logical.js:395:7
+   395|   var y = 1;
+              ^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:407:14
+
+Cannot assign `y || true` to `y` because boolean [1] is incompatible with number [2]. [incompatible-type]
+
+   logical.js:407:14
+   407|     y = y || true; // expected a number
+                     ^^^^ [1]
+
+References:
+   logical.js:405:24
+   405| function logical11b(y: number): number {
+                               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:422:10
+
+Cannot return `y` because boolean [1] is incompatible with number [2]. [incompatible-type]
+
+   logical.js:422:10
+   422|   return y;
+                 ^
+
+References:
+   logical.js:416:19
+   416|   var y: number | boolean = 1;
+                          ^^^^^^^ [1]
+   logical.js:415:24
+   415| function logical12a(): number {
+                               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:430:14
+
+Cannot assign `y && true` to `y` because boolean [1] is incompatible with number [2]. [incompatible-type]
+
+   logical.js:430:14
+   430|     y = y && true; // expected a number
+                     ^^^^ [1]
+
+References:
+   logical.js:428:24
+   428| function logical12b(y: number): number {
+                               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:440:9
+
+Cannot return array literal because in array element > property `x`: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   logical.js:440:9
+   440|     {x: x && 'bar'},
+                ^
+
+References:
+   logical.js:438:23
+   438| function logical13(x: number): Array<{x: string}> {
+                              ^^^^^^ [1]
+   logical.js:438:42
+   438| function logical13(x: number): Array<{x: string}> {
+                                                 ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:442:17
+
+Cannot return array literal because in array element > property `x`: boolean [1] is incompatible with string [2].
+[incompatible-type]
+
+   logical.js:442:17
+   442|     {x: true && false},
+                        ^^^^^ [1]
+
+References:
+   logical.js:438:42
+   438| function logical13(x: number): Array<{x: string}> {
+                                                 ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:443:9
+
+Cannot return array literal because in array element > property `x`: boolean [1] is incompatible with string [2].
+[incompatible-type]
+
+   logical.js:443:9
+   443|     {x: false && false},
+                ^^^^^ [1]
+
+References:
+   logical.js:438:42
+   438| function logical13(x: number): Array<{x: string}> {
+                                                 ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:445:9
+
+This condition is truthy. [constant-condition]
+
+   445|     {x: 'foo' && 'bar'},
+                ^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:446:9
+
+This condition is truthy. [constant-condition]
+
+   446|     {x: 'foo' && 'bar'},
+                ^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:447:9
+
+This condition is truthy. [constant-condition]
+
+   447|     {x: 'foo' && 'bar'},
+                ^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:456:9
+
+Cannot return array literal because in array element > property `x`: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   logical.js:456:9
+   456|     {x: x || 'bar'},
+                ^
+
+References:
+   logical.js:454:23
+   454| function logical14(x: number): Array<{x: string}> {
+                              ^^^^^^ [1]
+   logical.js:454:42
+   454| function logical14(x: number): Array<{x: string}> {
+                                                 ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:458:18
+
+Cannot return array literal because in array element > property `x`: boolean [1] is incompatible with string [2].
+[incompatible-type]
+
+   logical.js:458:18
+   458|     {x: false || true},
+                         ^^^^ [1]
+
+References:
+   logical.js:454:42
+   454| function logical14(x: number): Array<{x: string}> {
+                                                 ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:459:9
+
+Cannot return array literal because in array element > property `x`: boolean [1] is incompatible with string [2].
+[incompatible-type]
+
+   logical.js:459:9
+   459|     {x: true || false},
+                ^^^^ [1]
+
+References:
+   logical.js:454:42
+   454| function logical14(x: number): Array<{x: string}> {
+                                                 ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:461:9
+
+This condition is truthy. [constant-condition]
+
+   461|     {x: 'foo' || 'bar'},
+                ^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:462:9
+
+This condition is truthy. [constant-condition]
+
+   462|     {x: 'foo' || 'bar'},
+                ^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:463:9
+
+This condition is truthy. [constant-condition]
+
+   463|     {x: 'foo' || 'bar'},
+                ^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:569:10
+
+Cannot return `x.y && x.z` because string [1] is incompatible with boolean [2]. [incompatible-type]
+
+   logical.js:569:10
+   569|   return x.y && x.z; // error: x.y is a string
+                 ^^^
+
+References:
+   logical.js:568:28
+   568| function logical19a(x: {y: string, z: boolean}): boolean {
+                                   ^^^^^^ [1]
+   logical.js:568:50
+   568| function logical19a(x: {y: string, z: boolean}): boolean {
+                                                         ^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ logical.js:572:10
+
+Cannot return `x.y || x.z` because string [1] is incompatible with boolean [2]. [incompatible-type]
+
+   logical.js:572:10
+   572|   return x.y || x.z; // error: x.y is a string
+                 ^^^
+
+References:
+   logical.js:571:28
+   571| function logical19b(x: {y: string, z: boolean}): boolean {
+                                   ^^^^^^ [1]
+   logical.js:571:50
+   571| function logical19b(x: {y: string, z: boolean}): boolean {
+                                                         ^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:582:9
+
+Cannot cast `x && x.y` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   logical.js:582:9
+   582|   (x && x.y) as number; // error, x.y is a string (no error about x)
+                ^^^
+
+References:
+   logical.js:581:27
+   581| function logical21(x: {y: string} & {}): void {
+                                  ^^^^^^ [1]
+   logical.js:582:17
+   582|   (x && x.y) as number; // error, x.y is a string (no error about x)
+                        ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:590:4
+
+Cannot cast `a ?? false` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   logical.js:590:4
+   590|   (a ?? false) as empty; // should error on `a` and `false`
+           ^
+
+References:
+   logical.js:588:18
+   588|   declare var a: indirection1 | indirection2;
+                         ^^^^^^^^^^^^ [1]
+   logical.js:590:19
+   590|   (a ?? false) as empty; // should error on `a` and `false`
+                          ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:590:4
+
+Cannot cast `a ?? false` to empty because string [1] is incompatible with empty [2]. [incompatible-type]
+
+   logical.js:590:4
+   590|   (a ?? false) as empty; // should error on `a` and `false`
+           ^
+
+References:
+   logical.js:588:33
+   588|   declare var a: indirection1 | indirection2;
+                                        ^^^^^^^^^^^^ [1]
+   logical.js:590:19
+   590|   (a ?? false) as empty; // should error on `a` and `false`
+                          ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:590:9
+
+Cannot cast `a ?? false` to empty because boolean [1] is incompatible with empty [2]. [incompatible-type]
+
+   logical.js:590:9
+   590|   (a ?? false) as empty; // should error on `a` and `false`
+                ^^^^^ [1]
+
+References:
+   logical.js:590:19
+   590|   (a ?? false) as empty; // should error on `a` and `false`
+                          ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:596:4
+
+This condition is likely falsy.
+[WARNING]: Flow's type inference may be incorrect that it could be null at runtime (due to `any` annotations,
+out-of-bounds array accesses, etc.). If the check is valid, you might want to make the type of this expression nullable
+(`T` -> `?T`). [constant-condition]
+
+   596|   (b && false) as empty; // should only error on `b`
+           ^
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:596:4
+
+Cannot cast `b && false` to empty because number literal `0` [1] is incompatible with empty [2]. [incompatible-type]
+
+   logical.js:596:4
+   596|   (b && false) as empty; // should only error on `b`
+           ^
+
+References:
+   logical.js:594:18
+   594|   declare var b: indirection3 | indirection4;
+                         ^^^^^^^^^^^^ [1]
+   logical.js:596:19
+   596|   (b && false) as empty; // should only error on `b`
+                          ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:596:4
+
+Cannot cast `b && false` to empty because empty string [1] is incompatible with empty [2]. [incompatible-type]
+
+   logical.js:596:4
+   596|   (b && false) as empty; // should only error on `b`
+           ^
+
+References:
+   logical.js:594:33
+   594|   declare var b: indirection3 | indirection4;
+                                        ^^^^^^^^^^^^ [1]
+   logical.js:596:19
+   596|   (b && false) as empty; // should only error on `b`
+                          ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:615:3
+
+Cannot cast `nullableStringOrNumber` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   logical.js:615:3
+   615|   nullableStringOrNumber as string; // error: number ~> string
+          ^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   logical.js:614:46
+   614|   const nullableStringOrNumber = nullable ?? 0;
+                                                     ^ [1]
+   logical.js:615:29
+   615|   nullableStringOrNumber as string; // error: number ~> string
+                                    ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:628:8
+
+Cannot assign `1` to `n_` because: [incompatible-type]
+ - Either number literal `1` [1] is incompatible with number [2].
+ - Or number [1] is incompatible with object literal [3].
+
+All writes to `n_` must be compatible with the type of its initializer [4]. Add an annotation to `n_` [4] if a different
+type is desired.
+
+   logical.js:628:8
+   628|   n_ = 1; // error number ~> 1
+               ^ [1]
+
+References:
+   logical.js:619:18
+   619|   declare var n: number;
+                         ^^^^^^ [2]
+   logical.js:622:17
+   622|   let n_ = n && {};
+                        ^^ [3]
+   logical.js:622:7
+   622|   let n_ = n && {};
+              ^^ [4]
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:629:8
+
+Cannot assign `"1"` to `s_` because: [incompatible-type]
+ - Either string literal `1` [1] is incompatible with string [2].
+ - Or string [1] is incompatible with object literal [3].
+
+All writes to `s_` must be compatible with the type of its initializer [4]. Add an annotation to `s_` [4] if a different
+type is desired.
+
+   logical.js:629:8
+   629|   s_ = "1"; // error "1" ~> ""
+               ^^^ [1]
+
+References:
+   logical.js:620:18
+   620|   declare var s: string;
+                         ^^^^^^ [2]
+   logical.js:623:17
+   623|   let s_ = s && {};
+                        ^^ [3]
+   logical.js:623:7
+   623|   let s_ = s && {};
+              ^^ [4]
+
+
+Error ------------------------------------------------------------------------------------------------- logical.js:630:8
+
+Cannot assign `true` to `b_` because: [incompatible-type]
+ - Either boolean literal `true` [1] is incompatible with boolean [2].
+ - Or boolean [1] is incompatible with object literal [3].
+
+All writes to `b_` must be compatible with the type of its initializer [4]. Add an annotation to `b_` [4] if a different
+type is desired.
+
+   logical.js:630:8
+   630|   b_ = true; // error true ~> false
+               ^^^^ [1]
+
+References:
+   logical.js:621:18
+   621|   declare var b: boolean;
+                         ^^^^^^^ [2]
+   logical.js:624:17
+   624|   let b_ = b && {};
+                        ^^ [3]
+   logical.js:624:7
+   624|   let b_ = b && {};
+              ^^ [4]
+
+
+
+Found 62 errors
+
+Only showing the most relevant union/intersection branches.
+To see all branches, re-run Flow with --show-all-branches

@@ -1,0 +1,10 @@
+Error ------------------------------------------------------------------------------------------- foo/bar/client.js:5:27
+
+Cannot resolve module `annotation`. [cannot-resolve-module]
+
+   5| var unreachable = require('annotation');
+                                ^^^^^^^^^^^^
+
+
+
+Found 1 error

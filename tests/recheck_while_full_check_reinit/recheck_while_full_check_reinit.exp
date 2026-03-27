@@ -1,0 +1,53 @@
+No errors initially:
+No errors!
+
+Updating libdef and then removing a file should error:
+Error ------------------------------------------------------------------------------------------------------ test.js:1:8
+
+Cannot resolve module `./to_be_removed`. [cannot-resolve-module]
+
+   1| import './to_be_removed'
+             ^^^^^^^^^^^^^^^^^
+
+
+
+Found 1 error
+
+Adding back the removed file and then updating libdef should remove error:
+No errors!
+Removing a file and then updating libdef should error:
+Error ------------------------------------------------------------------------------------------------------ test.js:1:8
+
+Cannot resolve module `./to_be_removed`. [cannot-resolve-module]
+
+   1| import './to_be_removed'
+             ^^^^^^^^^^^^^^^^^
+
+
+
+Found 1 error
+
+Updating libdef and add then addiing back the removed file should remove error:
+No errors!
+
+Remove declare module and add module type def together
+Error ------------------------------------------------------------------------------------------------------ test.js:5:1
+
+Cannot cast `require(...)` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   test.js:5:1
+   5| require('foo') as string;
+      ^^^^^^^^^^^^^^
+
+References:
+   @flowtyped/foo.js.flow:1:25
+   1| declare module.exports: number
+                              ^^^^^^ [1]
+   test.js:5:19
+   5| require('foo') as string;
+                        ^^^^^^ [2]
+
+
+
+Found 1 error
+

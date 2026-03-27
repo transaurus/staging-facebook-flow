@@ -1,0 +1,28 @@
+type BinaryExpression = {
+  _BinaryExpression: void,
+  end: number,
+  innerComments: ?Array<Comment>,
+  leadingComments: ?Array<Comment>,
+  left: Expression,
+  loc: {
+    end: {column: number, line: number},
+    start: {column: number, line: number}
+  },
+  operator: BinaryOperator,
+  right: Expression,
+  start: number,
+  trailingComments: ?Array<Comment>,
+  type: "BinaryExpression"
+}
+
+'BinaryExpression' defined at types.js:3156:12
+'BinaryOperator' defined at types.js:3132:5
+'Comment' defined at types.js:13:12
+'Expression' defined at types.js:140:12
+
+printBinaryExpression.js:15:9,15:24
+BinaryExpression
+
+'BinaryExpression' defined at types.js:3156:12
+
+printBinaryExpression.js:17:15,17:18

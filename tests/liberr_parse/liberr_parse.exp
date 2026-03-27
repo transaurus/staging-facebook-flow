@@ -1,0 +1,10 @@
+Error ----------------------------------------------------------------------------------------- libs/parse_error.js:6:21
+
+Unexpected token `!`, expected the token `,` [ParseError]
+
+   6|   methodA: () => any! // parse error, !
+                          ^
+
+
+
+Found 1 error

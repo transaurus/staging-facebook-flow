@@ -1,0 +1,95 @@
+Error -------------------------------------------------------------------------------------- foo/bar/nested_test.js:5:31
+
+Cannot resolve module `SomeOtherModule`. [cannot-resolve-module]
+
+   5| var SomeOtherModule = require('SomeOtherModule'); // error
+                                    ^^^^^^^^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------- foo/bar/nested_test.js:7:1
+
+Cannot cast `min.fun()` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   foo/bar/nested_test.js:7:1
+   7| min.fun() as string;
+      ^^^^^^^^^
+
+References:
+   external/_d3/min.js.flow:2:32
+   2| declare export function fun(): number;
+                                     ^^^^^^ [1]
+   foo/bar/nested_test.js:7:14
+   7| min.fun() as string;
+                   ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------- foo/bar/nested_test.js:8:1
+
+Cannot cast `corge.fun()` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   foo/bar/nested_test.js:8:1
+   8| corge.fun() as string;
+      ^^^^^^^^^^^
+
+References:
+   node_modules/qux/corge/lib/index.js.flow:2:32
+   2| declare export function fun(): number;
+                                     ^^^^^^ [1]
+   foo/bar/nested_test.js:8:16
+   8| corge.fun() as string;
+                     ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------------ test.js:4:1
+
+Cannot cast `Implicit.fun()` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   test.js:4:1
+   4| Implicit.fun() as string;
+      ^^^^^^^^^^^^^^
+
+References:
+   ImplicitProvidesModule.js.flow:2:32
+   2| declare export function fun(): number;
+                                     ^^^^^^ [1]
+   test.js:4:19
+   4| Implicit.fun() as string;
+                        ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------------ test.js:8:1
+
+Cannot cast `Flow.x` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   test.js:8:1
+   8| Flow.x as empty; // error: should be number
+      ^^^^^^
+
+References:
+   pragmas/Flow.js.flow:9:17
+   9| export const x: number = 123;
+                      ^^^^^^ [1]
+   test.js:8:11
+   8| Flow.x as empty; // error: should be number
+                ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:20:1
+
+Cannot cast `NotFlowShadowed.x` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   test.js:20:1
+   20| NotFlowShadowed.x as empty; // error: should be number
+       ^^^^^^^^^^^^^^^^^
+
+References:
+   pragmas/NotFlowShadowed.js.flow:8:17
+    8| export const x: number = 123;
+                       ^^^^^^ [1]
+   test.js:20:22
+   20| NotFlowShadowed.x as empty; // error: should be number
+                            ^^^^^ [2]
+
+
+
+Found 6 errors

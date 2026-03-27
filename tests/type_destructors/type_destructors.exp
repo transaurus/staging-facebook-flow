@@ -1,0 +1,587 @@
+Error ---------------------------------------------------------------------------------------------- element_type.js:5:2
+
+Cannot cast `'hello world'` to `Arr_Elem` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   element_type.js:5:2
+   5| ('hello world': Arr_Elem);
+       ^^^^^^^^^^^^^ [1]
+
+References:
+   element_type.js:5:17
+   5| ('hello world': Arr_Elem);
+                      ^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- element_type.js:16:2
+
+Cannot cast `'hello world'` to `Obj_Elem` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   element_type.js:16:2
+   16| ('hello world': Obj_Elem);
+        ^^^^^^^^^^^^^ [1]
+
+References:
+   element_type.js:16:17
+   16| ('hello world': Obj_Elem);
+                       ^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- element_type.js:24:7
+
+Cannot access string literal `c` on `Z` because property `c` is missing in null or undefined [1]. [incompatible-use]
+
+   element_type.js:24:7
+   24| (1: Z['c']); // Error - access 'c' on `void`/`null`
+             ^^^
+
+References:
+   element_type.js:24:5
+   24| (1: Z['c']); // Error - access 'c' on `void`/`null`
+           ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- non_maybe_type.js:5:17
+
+Cannot return `0` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   non_maybe_type.js:5:17
+   5|   } else return 0; // this should be an error
+                      ^ [1]
+
+References:
+   non_maybe_type.js:2:40
+   2| function foo(x: ?string): NonNullable<?string> {
+                                             ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- non_maybe_type.js:10:1
+
+Cannot cast `0` to `NonNullable` because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   non_maybe_type.js:10:1
+   10| 0 as NonNullable<null>; // error
+       ^ [1]
+
+References:
+   non_maybe_type.js:10:6
+   10| 0 as NonNullable<null>; // error
+            ^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- non_maybe_type.js:17:1
+
+Cannot cast `null` to `NonNullable` because null [1] is incompatible with `unknown` [2]. [incompatible-type]
+
+   non_maybe_type.js:17:1
+   17| null as NonNullable<mixed>;
+       ^^^^ [1]
+
+References:
+   non_maybe_type.js:17:21
+   17| null as NonNullable<mixed>;
+                           ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- non_maybe_type.js:18:1
+
+Cannot cast `undefined` to `NonNullable` because undefined [1] is incompatible with `unknown` [2]. [incompatible-type]
+
+   non_maybe_type.js:18:1
+   18| undefined as NonNullable<mixed>;
+       ^^^^^^^^^ [1]
+
+References:
+   non_maybe_type.js:18:26
+   18| undefined as NonNullable<mixed>;
+                                ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- non_maybe_type.js:49:1
+
+Cannot cast `'hi'` to `NonNullable` because string [1] is incompatible with empty [2]. [incompatible-type]
+
+   non_maybe_type.js:49:1
+   49| 'hi' as NonNullable<empty>; // Error
+       ^^^^ [1]
+
+References:
+   non_maybe_type.js:49:9
+   49| 'hi' as NonNullable<empty>; // Error
+               ^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- non_maybe_type.js:53:1
+
+Cannot cast `true` to `NonMaybeNumber` because boolean [1] is incompatible with number [2]. [incompatible-type]
+
+   non_maybe_type.js:53:1
+   53| true as NonMaybeNumber; // Error
+       ^^^^ [1]
+
+References:
+   non_maybe_type.js:53:9
+   53| true as NonMaybeNumber; // Error
+               ^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- non_maybe_type.js:54:1
+
+Cannot cast `undefined` to `NonMaybeNumber` because undefined [1] is incompatible with number [2]. [incompatible-type]
+
+   non_maybe_type.js:54:1
+   54| undefined as NonMaybeNumber; // Error
+       ^^^^^^^^^ [1]
+
+References:
+   non_maybe_type.js:54:14
+   54| undefined as NonMaybeNumber; // Error
+                    ^^^^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- property_type.js:6:2
+
+Cannot cast `42` to `Obj_Prop_x` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   property_type.js:6:2
+   6| (42: Obj_Prop_x);
+       ^^ [1]
+
+References:
+   property_type.js:6:6
+   6| (42: Obj_Prop_x);
+           ^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- property_type.js:10:15
+
+Cannot return `0` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   property_type.js:10:15
+   10|   else return 0;
+                     ^ [1]
+
+References:
+   property_type.js:3:17
+    3| type Obj = { x: string };
+                       ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- tvar3.js:20:1
+
+Cannot cast `fn1(...)` to `B` because `A` [1] is incompatible with `B` [2]. [incompatible-type]
+
+   tvar3.js:20:1
+   20| fn1(a) as B; // Error
+       ^^^^^^
+
+References:
+   tvar3.js:6:16
+    6| declare var a: A;
+                      ^ [1]
+   tvar3.js:20:11
+   20| fn1(a) as B; // Error
+                 ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- tvar3.js:21:9
+
+Cannot call `fn2` with function bound to `x` because in the first parameter: `A` [1] is incompatible with `B` [2].
+[incompatible-type]
+
+   tvar3.js:21:9
+   21| fn2((a: A) => {}) as (B) => void; // Error
+               ^ [1]
+
+References:
+   tvar3.js:21:23
+   21| fn2((a: A) => {}) as (B) => void; // Error
+                             ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- tvar3.js:22:1
+
+Cannot cast `fn3(...)` to `C` because `A` [1] is incompatible with `C` [2]. [incompatible-type]
+
+   tvar3.js:22:1
+   22| fn3(a, (b: B) => {}) as C; // Error
+       ^^^^^^^^^^^^^^^^^^^^
+
+References:
+   tvar3.js:6:16
+    6| declare var a: A;
+                      ^ [1]
+   tvar3.js:22:25
+   22| fn3(a, (b: B) => {}) as C; // Error
+                               ^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- tvar3.js:22:12
+
+Cannot call `fn3` with function bound to `y` because in the first parameter: `B` [1] is incompatible with `A` [2].
+[incompatible-type]
+
+   tvar3.js:22:12
+   22| fn3(a, (b: B) => {}) as C; // Error
+                  ^ [1]
+
+References:
+   tvar3.js:6:16
+    6| declare var a: A;
+                      ^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- tvar3.js:23:12
+
+Cannot call `fn4` with function bound to `y` because in the first parameter: `B` [1] is incompatible with `A` [2].
+[incompatible-type]
+
+   tvar3.js:23:12
+   23| fn4(a, (b: B) => {}) as (C) => void; // Error
+                  ^ [1]
+
+References:
+   tvar3.js:6:16
+    6| declare var a: A;
+                      ^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- tvar3.js:23:12
+
+Cannot call `fn4` with function bound to `y` because in the first parameter: `B` [1] is incompatible with `C` [2].
+[incompatible-type]
+
+   tvar3.js:23:12
+   23| fn4(a, (b: B) => {}) as (C) => void; // Error
+                  ^ [1]
+
+References:
+   tvar3.js:23:26
+   23| fn4(a, (b: B) => {}) as (C) => void; // Error
+                                ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- tvar3.js:25:1
+
+Cannot cast `fn5(...)` to `B` because `A` [1] is incompatible with `B` [2]. [incompatible-type]
+
+   tvar3.js:25:1
+   25| fn5(a) as B; // Error
+       ^^^^^^
+
+References:
+   tvar3.js:6:16
+    6| declare var a: A;
+                      ^ [1]
+   tvar3.js:25:11
+   25| fn5(a) as B; // Error
+                 ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- tvar3.js:26:1
+
+Cannot cast `fn6(...)` to function type because in the first parameter: `A` [1] is incompatible with `B` [2].
+[incompatible-type]
+
+   tvar3.js:26:1
+   26| fn6((a: A) => {}) as (B) => void; // Error
+       ^^^^^^^^^^^^^^^^^
+
+References:
+   tvar3.js:26:9
+   26| fn6((a: A) => {}) as (B) => void; // Error
+               ^ [1]
+   tvar3.js:26:23
+   26| fn6((a: A) => {}) as (B) => void; // Error
+                             ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- tvar3.js:27:1
+
+Cannot cast `fn7(...)` to `C` because `A` [1] is incompatible with `C` [2]. [incompatible-type]
+
+   tvar3.js:27:1
+   27| fn7(a, (b: B) => {}) as C; // Error
+       ^^^^^^^^^^^^^^^^^^^^
+
+References:
+   tvar3.js:6:16
+    6| declare var a: A;
+                      ^ [1]
+   tvar3.js:27:25
+   27| fn7(a, (b: B) => {}) as C; // Error
+                               ^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- tvar3.js:27:12
+
+Cannot call `fn7` with function bound to `y` because in the first parameter: `B` [1] is incompatible with `A` [2].
+[incompatible-type]
+
+   tvar3.js:27:12
+   27| fn7(a, (b: B) => {}) as C; // Error
+                  ^ [1]
+
+References:
+   tvar3.js:6:16
+    6| declare var a: A;
+                      ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- tvar3.js:28:1
+
+Cannot cast `fn8(...)` to function type because in the first parameter: `A` [1] is incompatible with `C` [2].
+[incompatible-type]
+
+   tvar3.js:28:1
+   28| fn8(a, (b: B) => {}) as (C) => void; // Error
+       ^^^^^^^^^^^^^^^^^^^^
+
+References:
+   tvar3.js:6:16
+    6| declare var a: A;
+                      ^ [1]
+   tvar3.js:28:26
+   28| fn8(a, (b: B) => {}) as (C) => void; // Error
+                                ^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- tvar3.js:28:12
+
+Cannot call `fn8` with function bound to `y` because in the first parameter: `B` [1] is incompatible with `A` [2].
+[incompatible-type]
+
+   tvar3.js:28:12
+   28| fn8(a, (b: B) => {}) as (C) => void; // Error
+                  ^ [1]
+
+References:
+   tvar3.js:6:16
+    6| declare var a: A;
+                      ^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- tvar4.js:25:29
+
+Cannot call `fn2(...)` with `'foo'` bound to the first parameter because string [1] is incompatible with number [2].
+[incompatible-type]
+
+   tvar4.js:25:29
+   25| fn2({p: 42}, (x: {}) => {})('foo');
+                                   ^^^^^ [1]
+
+References:
+   tvar4.js:25:9
+   25| fn2({p: 42}, (x: {}) => {})('foo');
+               ^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- tvar4.js:33:48
+
+Cannot call `fn3(...)` with object literal bound to the first parameter because in property `foo`: number [1] is
+incompatible with string [2]. [incompatible-type]
+
+   tvar4.js:33:48
+   33| fn3((x: {foo: string, p: number}) => {})({foo: 42});
+                                                      ^^ [1]
+
+References:
+   tvar4.js:33:15
+   33| fn3((x: {foo: string, p: number}) => {})({foo: 42});
+                     ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- tvar4.js:35:9
+
+Cannot call `fn3` because in type argument `T`: property `p` is missing in object type [1] but exists in object
+type [2]. [incompatible-type]
+
+   tvar4.js:35:9
+   35| fn3((x: {foo: number}) => {})({foo: 42}); // OK
+               ^^^^^^^^^^^^^ [1]
+
+References:
+   tvar4.js:27:17
+   27| function fn3<T: {p: any}>(a: T => void): (Omit<T, 'p'>) => void {
+                       ^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- tvar4.js:40:17
+
+Cannot call `a` with object literal bound to the first parameter because object literal [1] is incompatible with
+`T` [2]. [incompatible-type]
+
+   tvar4.js:40:17
+   40|   return p => a({p});
+                       ^^^ [1]
+
+References:
+   tvar4.js:37:32
+   37| function fn4<T: {|p: any|}>(a: T => void): (T['p']) => void {
+                                      ^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- tvar4.js:44:31
+
+Cannot call `fn4(...)` with `42` bound to the first parameter because number [1] is incompatible with string [2].
+[incompatible-type]
+
+   tvar4.js:44:31
+   44| fn4((x: {|p: string|}) => {})(42);
+                                     ^^ [1]
+
+References:
+   tvar4.js:44:14
+   44| fn4((x: {|p: string|}) => {})(42);
+                    ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- tvar4.js:48:1
+
+Cannot call `fn4` because property `p` is missing in object type [1]. [prop-missing]
+
+   tvar4.js:48:1
+   48| fn4((x: {||}) => {})(42);
+       ^^^
+
+References:
+   tvar4.js:48:9
+   48| fn4((x: {||}) => {})(42);
+               ^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- tvar4.js:48:9
+
+Cannot call `fn4` because in type argument `T`: property `p` is missing in object type [1] but exists in object
+type [2]. [incompatible-type]
+
+   tvar4.js:48:9
+   48| fn4((x: {||}) => {})(42);
+               ^^^^ [1]
+
+References:
+   tvar4.js:37:17
+   37| function fn4<T: {|p: any|}>(a: T => void): (T['p']) => void {
+                       ^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- tvar5.js:5:12
+
+Cannot call `unReadOnly` with `foo` bound to `thing` because object type [1] is incompatible with empty [2].
+[incompatible-type]
+
+   tvar5.js:5:12
+   5| unReadOnly(foo) as empty; // error
+                 ^^^
+
+References:
+   tvar5.js:4:27
+   4| declare var foo: Readonly<{foo: string}>;
+                                ^^^^^^^^^^^^^ [1]
+   tvar5.js:3:39
+   3| declare function unReadOnly<T>(thing: Readonly<T>): T;
+                                            ^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- union.js:2:38
+
+Cannot assign `true` to `x1` because: [incompatible-type]
+ - Either boolean [1] is incompatible with number [2].
+ - Or boolean [1] is incompatible with string [3].
+
+   union.js:2:38
+   2| var x1: NonNullable<number|string> = true; // err, boolean ~> number|string
+                                           ^^^^ [1]
+
+References:
+   union.js:2:21
+   2| var x1: NonNullable<number|string> = true; // err, boolean ~> number|string
+                          ^^^^^^ [2]
+   union.js:2:28
+   2| var x1: NonNullable<number|string> = true; // err, boolean ~> number|string
+                                 ^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------------- union.js:4:40
+
+Cannot assign `true` to `x3` because: [incompatible-type]
+ - Either boolean [1] is incompatible with number [2].
+ - Or boolean [1] is incompatible with string [3].
+
+   union.js:4:40
+   4| var x3: ({p:number}|{p:string})["p"] = true; // err, boolean ~> number|string
+                                             ^^^^ [1]
+
+References:
+   union.js:4:13
+   4| var x3: ({p:number}|{p:string})["p"] = true; // err, boolean ~> number|string
+                  ^^^^^^ [2]
+   union.js:4:24
+   4| var x3: ({p:number}|{p:string})["p"] = true; // err, boolean ~> number|string
+                             ^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------------- union.js:10:2
+
+Cannot cast `null` to `P2` because: [incompatible-type]
+ - Either null [1] is incompatible with string [2].
+ - Or null [1] is incompatible with number [3].
+
+   union.js:10:2
+   10| (null: P2); // err, null ~> string|number
+        ^^^^ [1]
+
+References:
+   union.js:11:14
+   11| type T = {p: string} | {p: number}; // NB: T resolved here
+                    ^^^^^^ [2]
+   union.js:11:28
+   11| type T = {p: string} | {p: number}; // NB: T resolved here
+                                  ^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------------- union.js:17:4
+
+Cannot cast `x` to `TupleUnion` because: [incompatible-type]
+ - Either in index `0`: number literal `3` [1] is incompatible with number literal `1` [2].
+ - Or in index `0`: number literal `3` [1] is incompatible with number literal `2` [3].
+
+   union.js:17:4
+   17|   (x: TupleUnion); // ERROR: 1, 2
+          ^
+
+References:
+   union.js:16:21
+   16|   declare const x: [3];
+                           ^ [1]
+   union.js:14:21
+   14|  type TupleUnion = [1] | [2];
+                           ^ [2]
+   union.js:14:27
+   14|  type TupleUnion = [1] | [2];
+                                 ^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------------- union.js:18:4
+
+Cannot cast `x` to `Readonly` because: [incompatible-type]
+ - Either in index `0`: number literal `3` [1] is incompatible with number literal `1` [2].
+ - Or in index `0`: number literal `3` [1] is incompatible with number literal `2` [3].
+
+   union.js:18:4
+   18|   (x: Readonly<TupleUnion>); // ERROR: 1, 2 (same order as above)
+          ^
+
+References:
+   union.js:16:21
+   16|   declare const x: [3];
+                           ^ [1]
+   union.js:14:21
+   14|  type TupleUnion = [1] | [2];
+                           ^ [2]
+   union.js:14:27
+   14|  type TupleUnion = [1] | [2];
+                                 ^ [3]
+
+
+
+Found 37 errors

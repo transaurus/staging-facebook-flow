@@ -1,0 +1,38 @@
+Error ------------------------------------------------------------------------------------------------------ test.js:7:8
+
+Cannot call method `getPrototypeOf` because no more than 1 argument is expected by function type [1]. [extra-arg]
+
+   test.js:7:8
+     7| Object.getPrototypeOf(...arr); // error
+               ^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:178:5
+   178|     static getPrototypeOf(o: $NotNullOrVoid): any;
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:12:29
+
+A spread argument is unsupported here. [unsupported-syntax]
+
+   12| const o1 = Object.assign(...objArr); // error
+                                   ^^^^^^
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:20:1
+
+Incorrect arguments passed to `Object.assign` because number [1] is not an object. [not-an-object]
+
+   test.js:20:1
+   20| Object.assign({}, ...[1]); // error
+       ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   test.js:20:23
+   20| Object.assign({}, ...[1]); // error
+                             ^ [1]
+
+
+
+Found 3 errors

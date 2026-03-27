@@ -1,0 +1,481 @@
+============================================
+No warnings:
+============================================
+Error ---------------------------------------------------------------------------------------------- libs/exports.js:9:5
+
+Unable to determine module type (CommonJS vs ES) if both an export statement and `module.exports` are used in the same
+module! [module-type-conflict]
+
+   9|     declare module.exports: number; // error
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------- libs/imports.js:3:1
+
+Cannot use an import statement at the toplevel of a library file. Import statements may only appear inside a
+`declare module`. The statement will be ignored. [unsupported-syntax]
+
+   3| import type {t1} from 'm1'; // error toplevel import
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- libs/imports.js:13:27
+
+Cannot resolve module `missing_module`. [cannot-resolve-module]
+
+   13|     import type {t2} from 'missing_module'; // error missing module
+                                 ^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- libs/imports.js:20:14
+
+Cannot extend `A` [1] with `D` because in property `m` > the return value: number [2] is incompatible with string [3].
+[incompatible-type]
+
+   libs/imports.js:20:14
+   20|         m(): number; // error number <: string
+                    ^^^^^^ [2]
+
+References:
+   libs/imports.js:19:36
+   19|     declare export class D extends A {
+                                          ^ [1]
+   libs/imports.js:7:14
+    7|         m(): string;
+                    ^^^^^^ [3]
+
+
+Error -------------------------------------------------------------------------------------- libs/invalid-nested.js:2:18
+
+`declare module` statement is only supported at the toplevel of a library file. [unsupported-syntax]
+
+   2|   declare module 'nested-declare-module1' {}
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------- libs/invalid-nested.js:5:1
+
+Cannot use block statements in a library file. The statement will be ignored. [unsupported-syntax]
+
+      v
+   5| {
+   6|   declare module 'nested-declare-module2' {}
+   7| }
+      ^
+
+
+Error --------------------------------------------------------------------------------------- libs/invalid-nested.js:9:1
+
+Cannot use if statements in a library file. The statement will be ignored. [unsupported-syntax]
+
+       v----------
+    9| if (true) {
+   10|   declare module 'nested-declare-module3' {}
+   11| }
+       ^
+
+
+Error ----------------------------------------------------------------------------------------------- libs/lints.js:3:18
+
+Nonexistent/misspelled lint rule. Perhaps you have a missing/extra `,`? [lint-setting]
+
+   3| /* flowlint-line unknown rule:off */ // unknown rule
+                       ^^^^^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------- libs/missing_name.js:10:3
+
+Suppression is missing a code. Please update this suppression to use an error code: `$FlowFixMe[<CODE>]` [InferError]
+
+   10|   // $FlowFixMe
+         ^^^^^^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------- libs/missing_name.js:11:6
+
+Cannot resolve name `R`. [cannot-resolve-name]
+
+   11|   r: R;  // error missing code
+            ^
+
+
+Error ---------------------------------------------------------------------------------------- libs/missing_name.js:13:6
+
+Cannot resolve name `S`. [cannot-resolve-name]
+
+   13|   s: S; // error, S is not defined
+            ^
+
+
+Error ------------------------------------------------------------------------------------------ libs/type_error.js:2:34
+
+Cannot use type without exactly 1 type argument. [nonpolymorphic-type-app]
+
+   2| declare function foo(x: number): Array;
+                                       ^^^^^
+
+
+Error ------------------------------------------------------------------------------- libs/unsupported-statements.js:3:3
+
+Cannot use if statements in a library file. The statement will be ignored. [unsupported-syntax]
+
+   3|   if (true) {} // error
+        ^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------- libs/unsupported-statements.js:3:3
+
+Cannot use if statements with in `declare module`. The statement will be ignored. [unsupported-syntax]
+
+   3|   if (true) {} // error
+        ^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------- libs/unsupported-statements.js:4:3
+
+Cannot use value export statements in a library file. The statement will be ignored. [unsupported-syntax]
+
+   4|   export const foo = ''; // error
+        ^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------- libs/unsupported-statements.js:4:3
+
+Cannot use value export statements with in `declare module`. The statement will be ignored. [unsupported-syntax]
+
+   4|   export const foo = ''; // error
+        ^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------------- a.js:5:17
+
+Cannot assign `0` to `x` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   a.js:5:17
+   5| var x: string = 0;
+                      ^ [1]
+
+References:
+   a.js:5:8
+   5| var x: string = 0;
+             ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------------- a.js:7:1
+
+Cannot cast `require(...)` to empty because boolean [1] is incompatible with empty [2]. [incompatible-type]
+
+   a.js:7:1
+   7| require('c') as empty; // error: boolean ~> empty
+      ^^^^^^^^^^^^
+
+References:
+   libs/exports.js:4:29
+   4|     declare module.exports: boolean; // ok
+                                  ^^^^^^^ [1]
+   a.js:7:17
+   7| require('c') as empty; // error: boolean ~> empty
+                      ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------------- a.js:10:9
+
+Cannot resolve module `nested-declare-module1`. [cannot-resolve-module]
+
+   10| require('nested-declare-module1'); // error
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------------- a.js:11:9
+
+Cannot resolve module `nested-declare-module2`. [cannot-resolve-module]
+
+   11| require('nested-declare-module2'); // error
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------------- a.js:12:9
+
+Cannot resolve module `nested-declare-module3`. [cannot-resolve-module]
+
+   12| require('nested-declare-module3'); // error
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------------- a.js:14:16
+
+`declare module` statement is only supported at the toplevel of a library file. [unsupported-syntax]
+
+   14| declare module 'non-libdef-declare-module' {} // error
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------------- a.js:15:9
+
+Cannot resolve module `non-libdef-declare-module`. [cannot-resolve-module]
+
+   15| require('non-libdef-declare-module'); // error
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------------- a.js:17:1
+
+Cannot cast `require(...)` to empty because module `contains-unsupported-statements` [1] is incompatible with empty [2].
+[incompatible-type]
+
+   a.js:17:1
+   17| require('contains-unsupported-statements') as empty; // error: number ~> empty
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   libs/unsupported-statements.js:1:16
+    1| declare module 'contains-unsupported-statements' {
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   a.js:17:47
+   17| require('contains-unsupported-statements') as empty; // error: number ~> empty
+                                                     ^^^^^ [2]
+
+
+
+Found 24 errors
+
+============================================
+With warnings:
+============================================
+Error ---------------------------------------------------------------------------------------------- libs/exports.js:9:5
+
+Unable to determine module type (CommonJS vs ES) if both an export statement and `module.exports` are used in the same
+module! [module-type-conflict]
+
+   9|     declare module.exports: number; // error
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------- libs/imports.js:3:1
+
+Cannot use an import statement at the toplevel of a library file. Import statements may only appear inside a
+`declare module`. The statement will be ignored. [unsupported-syntax]
+
+   3| import type {t1} from 'm1'; // error toplevel import
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- libs/imports.js:13:27
+
+Cannot resolve module `missing_module`. [cannot-resolve-module]
+
+   13|     import type {t2} from 'missing_module'; // error missing module
+                                 ^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------- libs/imports.js:20:14
+
+Cannot extend `A` [1] with `D` because in property `m` > the return value: number [2] is incompatible with string [3].
+[incompatible-type]
+
+   libs/imports.js:20:14
+   20|         m(): number; // error number <: string
+                    ^^^^^^ [2]
+
+References:
+   libs/imports.js:19:36
+   19|     declare export class D extends A {
+                                          ^ [1]
+   libs/imports.js:7:14
+    7|         m(): string;
+                    ^^^^^^ [3]
+
+
+Error -------------------------------------------------------------------------------------- libs/invalid-nested.js:2:18
+
+`declare module` statement is only supported at the toplevel of a library file. [unsupported-syntax]
+
+   2|   declare module 'nested-declare-module1' {}
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------- libs/invalid-nested.js:5:1
+
+Cannot use block statements in a library file. The statement will be ignored. [unsupported-syntax]
+
+      v
+   5| {
+   6|   declare module 'nested-declare-module2' {}
+   7| }
+      ^
+
+
+Error --------------------------------------------------------------------------------------- libs/invalid-nested.js:9:1
+
+Cannot use if statements in a library file. The statement will be ignored. [unsupported-syntax]
+
+       v----------
+    9| if (true) {
+   10|   declare module 'nested-declare-module3' {}
+   11| }
+       ^
+
+
+Error ----------------------------------------------------------------------------------------------- libs/lints.js:3:18
+
+Nonexistent/misspelled lint rule. Perhaps you have a missing/extra `,`? [lint-setting]
+
+   3| /* flowlint-line unknown rule:off */ // unknown rule
+                       ^^^^^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------- libs/missing_name.js:10:3
+
+Suppression is missing a code. Please update this suppression to use an error code: `$FlowFixMe[<CODE>]` [InferError]
+
+   10|   // $FlowFixMe
+         ^^^^^^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------- libs/missing_name.js:11:6
+
+Cannot resolve name `R`. [cannot-resolve-name]
+
+   11|   r: R;  // error missing code
+            ^
+
+
+Error ---------------------------------------------------------------------------------------- libs/missing_name.js:13:6
+
+Cannot resolve name `S`. [cannot-resolve-name]
+
+   13|   s: S; // error, S is not defined
+            ^
+
+
+Error ------------------------------------------------------------------------------------------ libs/type_error.js:2:34
+
+Cannot use type without exactly 1 type argument. [nonpolymorphic-type-app]
+
+   2| declare function foo(x: number): Array;
+                                       ^^^^^
+
+
+Error ------------------------------------------------------------------------------- libs/unsupported-statements.js:3:3
+
+Cannot use if statements in a library file. The statement will be ignored. [unsupported-syntax]
+
+   3|   if (true) {} // error
+        ^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------- libs/unsupported-statements.js:3:3
+
+Cannot use if statements with in `declare module`. The statement will be ignored. [unsupported-syntax]
+
+   3|   if (true) {} // error
+        ^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------- libs/unsupported-statements.js:4:3
+
+Cannot use value export statements in a library file. The statement will be ignored. [unsupported-syntax]
+
+   4|   export const foo = ''; // error
+        ^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------- libs/unsupported-statements.js:4:3
+
+Cannot use value export statements with in `declare module`. The statement will be ignored. [unsupported-syntax]
+
+   4|   export const foo = ''; // error
+        ^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------------- a.js:5:17
+
+Cannot assign `0` to `x` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   a.js:5:17
+   5| var x: string = 0;
+                      ^ [1]
+
+References:
+   a.js:5:8
+   5| var x: string = 0;
+             ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------------- a.js:7:1
+
+Cannot cast `require(...)` to empty because boolean [1] is incompatible with empty [2]. [incompatible-type]
+
+   a.js:7:1
+   7| require('c') as empty; // error: boolean ~> empty
+      ^^^^^^^^^^^^
+
+References:
+   libs/exports.js:4:29
+   4|     declare module.exports: boolean; // ok
+                                  ^^^^^^^ [1]
+   a.js:7:17
+   7| require('c') as empty; // error: boolean ~> empty
+                      ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------------- a.js:10:9
+
+Cannot resolve module `nested-declare-module1`. [cannot-resolve-module]
+
+   10| require('nested-declare-module1'); // error
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------------- a.js:11:9
+
+Cannot resolve module `nested-declare-module2`. [cannot-resolve-module]
+
+   11| require('nested-declare-module2'); // error
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------------- a.js:12:9
+
+Cannot resolve module `nested-declare-module3`. [cannot-resolve-module]
+
+   12| require('nested-declare-module3'); // error
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------------- a.js:14:16
+
+`declare module` statement is only supported at the toplevel of a library file. [unsupported-syntax]
+
+   14| declare module 'non-libdef-declare-module' {} // error
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------------- a.js:15:9
+
+Cannot resolve module `non-libdef-declare-module`. [cannot-resolve-module]
+
+   15| require('non-libdef-declare-module'); // error
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------------- a.js:17:1
+
+Cannot cast `require(...)` to empty because module `contains-unsupported-statements` [1] is incompatible with empty [2].
+[incompatible-type]
+
+   a.js:17:1
+   17| require('contains-unsupported-statements') as empty; // error: number ~> empty
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   libs/unsupported-statements.js:1:16
+    1| declare module 'contains-unsupported-statements' {
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   a.js:17:47
+   17| require('contains-unsupported-statements') as empty; // error: number ~> empty
+                                                     ^^^^^ [2]
+
+
+
+Found 24 errors

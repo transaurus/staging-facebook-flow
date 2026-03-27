@@ -1,0 +1,106 @@
+Error ----------------------------------------------------------------------------------------------------- test.js:2:18
+
+Cannot assign `o1.y` to `s1` because `void` (due to access of non-existent property `y`) [1] is incompatible with
+string [2]. [incompatible-type]
+
+   test.js:2:18
+   2| var s1: string = o1.y; // error
+                       ^^^^ [1]
+
+References:
+   test.js:2:9
+   2| var s1: string = o1.y; // error
+              ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:2:21
+
+Cannot get `o1.y` because property `y` is missing in object literal [1]. [prop-missing]
+
+   test.js:2:21
+   2| var s1: string = o1.y; // error
+                          ^
+
+References:
+   test.js:1:10
+   1| var o1 = { x: 0 };
+               ^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:7:59
+
+Cannot assign object literal to `o3` because property `y` is missing in object type [1] but exists in object type [2].
+[incompatible-type]
+
+This optional property of object type [2] is invariantly typed. To fix,
+- Either make `{x: number, ...}` [1] and `{x: number, y?: string, ...}` [2] exactly the same
+- Or make object type [2] readonly. See
+https://flow.org/en/docs/faq/#why-cant-i-pass-a-string-to-a-function-that-takes-a-string-number.
+
+   test.js:7:59
+   7| var o3: { x: number; y?: string; ... } = ({ x: 0, y: 0 }: { x: number; ... });
+                                                                ^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   test.js:7:9
+   7| var o3: { x: number; y?: string; ... } = ({ x: 0, y: 0 }: { x: number; ... });
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:14:18
+
+Cannot assign `o5.y` to `s5` because `void` (due to access of non-existent property `y`) [1] is incompatible with
+string [2]. [incompatible-type]
+
+   test.js:14:18
+   14| var s5: string = o5.y; // error
+                        ^^^^ [1]
+
+References:
+   test.js:14:9
+   14| var s5: string = o5.y; // error
+               ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:14:21
+
+Cannot get `o5.y` because property `y` is missing in object literal [1]. [prop-missing]
+
+   test.js:14:21
+   14| var s5: string = o5.y; // error
+                           ^
+
+References:
+   test.js:13:10
+   13| var o5 = { x: 0, ...{} };
+                ^^^^^^^^^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:19:80
+
+Cannot assign object literal to `o7` because in property `y`: `number` [1] is not exactly the same as `string` [2].
+[incompatible-type]
+
+The above-mentioned two types must be the same because property `y` is invariantly typed. To fix the error,
+- Either make `{[_: any]: number, x: number}` [3] and `{x: number, y?: string, ...}` [4] exactly the same
+- Or make property `y` in object type [4] readonly. See
+https://flow.org/en/docs/faq/#why-cant-i-pass-a-string-to-a-function-that-takes-a-string-number.
+
+   test.js:19:80
+   19| var o7: { x: number; y?: string; ... } = ({ x: 0, y: 0 }: { x: number; [_:any]:number}); // error
+                                                                                      ^^^^^^ [1]
+
+References:
+   test.js:19:26
+   19| var o7: { x: number; y?: string; ... } = ({ x: 0, y: 0 }: { x: number; [_:any]:number}); // error
+                                ^^^^^^ [2]
+   test.js:19:59
+   19| var o7: { x: number; y?: string; ... } = ({ x: 0, y: 0 }: { x: number; [_:any]:number}); // error
+                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [3]
+   test.js:19:9
+   19| var o7: { x: number; y?: string; ... } = ({ x: 0, y: 0 }: { x: number; [_:any]:number}); // error
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [4]
+
+
+
+Found 6 errors

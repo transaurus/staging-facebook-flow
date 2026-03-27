@@ -1,0 +1,7 @@
+[options]
+all=true
+
+module.system=haste
+
+module.system.haste.paths.includes=<PROJECT_ROOT>/dir[0-9]+/.*
+module.system.haste.paths.excludes=.*/node_modules/.*

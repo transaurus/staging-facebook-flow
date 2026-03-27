@@ -1,0 +1,40 @@
+Error ------------------------------------------------------------------------------------------------- profiler.js:5:26
+
+Cannot get `React.ProfilerOnRenderFnType` because property `ProfilerOnRenderFnType` is missing in module `react` [1].
+[prop-missing]
+
+   profiler.js:5:26
+     5| const onRenderBad: React.ProfilerOnRenderFnType = ( // Error, the type isnt exported
+                                 ^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:179:16
+   179| declare module react {
+                       ^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ profiler.js:17:13
+
+Cannot create `React.Profiler` element because properties `id` and `onRender` are missing in props [1] but exist in
+props of component [2]. [incompatible-type]
+
+   profiler.js:17:13
+    17| const _b = <React.Profiler />; // Error, id and onRender are required
+                    ^^^^^^^^^^^^^^
+
+References:
+   profiler.js:17:12
+    17| const _b = <React.Profiler />; // Error, id and onRender are required
+                   ^^^^^^^^^^^^^^^^^^ [1]
+   <BUILTINS>/react.js:813:38
+                                             v
+   813|     declare const Profiler: component(
+   814|       children?: React$Node,
+   815|       id: string,
+   816|       onRender: ProfilerOnRenderFnType,
+   817|     );
+            ^ [2]
+
+
+
+Found 2 errors

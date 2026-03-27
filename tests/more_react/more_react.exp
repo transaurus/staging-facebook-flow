@@ -1,0 +1,272 @@
+Error ------------------------------------------------------------------------------------------ inexact_config.js:12:13
+
+Cannot create `Component2` element because property `bar` and property `foo` are extra in props [1] but missing in
+`Props` [2]. Exact objects do not accept extra props. [incompatible-type]
+
+   inexact_config.js:12:13
+   12| const _c = <Component2 foo={3} bar={3} />; // error
+                   ^^^^^^^^^^
+
+References:
+   inexact_config.js:12:12
+   12| const _c = <Component2 foo={3} bar={3} />; // error
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   inexact_config.js:10:29
+   10| function Component2(props : Props) : React.Node { return null; }
+                                   ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ inexact_config.js:13:13
+
+Cannot create `Component2` element because property `children` is extra in props [1] but missing in `Props` [2]. Exact
+objects do not accept extra props. [incompatible-type]
+
+   inexact_config.js:13:13
+   13| const _d = <Component2>{"foo"}</Component2>; //error
+                   ^^^^^^^^^^
+
+References:
+   inexact_config.js:13:12
+   13| const _d = <Component2>{"foo"}</Component2>; //error
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   inexact_config.js:10:29
+   10| function Component2(props : Props) : React.Node { return null; }
+                                   ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ inexact_config.js:22:13
+
+Cannot create `Component4` element because property `bar` is extra in props [1] but missing in object type [2]. Exact
+objects do not accept extra props. [incompatible-type]
+
+   inexact_config.js:22:13
+   22| const _g = <Component4 foo={3} bar={3} />; //error
+                   ^^^^^^^^^^
+
+References:
+   inexact_config.js:22:12
+   22| const _g = <Component4 foo={3} bar={3} />; //error
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   inexact_config.js:20:29
+   20| function Component4(props : {| foo : number |}) : React.Node { return null; }
+                                   ^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ inexact_config.js:23:13
+
+Cannot create `Component4` element because property `foo` is missing in props [1] but exists in object type [2].
+[incompatible-type]
+
+   inexact_config.js:23:13
+   23| const _h = <Component4></Component4>; //error
+                   ^^^^^^^^^^
+
+References:
+   inexact_config.js:23:12
+   23| const _h = <Component4></Component4>; //error
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   inexact_config.js:20:29
+   20| function Component4(props : {| foo : number |}) : React.Node { return null; }
+                                   ^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- inexact_props.js:19:2
+
+Cannot create `B` element because property `z` is extra in props [1] but missing in props of class `B` [2]. Exact
+objects do not accept extra props. [incompatible-type]
+
+   inexact_props.js:19:2
+   19| <B x={4} y={"hello"} z={3}></B>; // error
+        ^
+
+References:
+   inexact_props.js:19:1
+   19| <B x={4} y={"hello"} z={3}></B>; // error
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   inexact_props.js:16:7
+   16| class B extends React.Component<Props2> {}
+             ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- inexact_props.js:44:34
+
+Cannot create `YComponent` element because in property `p3`: null or undefined [1] is incompatible with string [2].
+[incompatible-type]
+
+   inexact_props.js:44:34
+   44| <YComponent p1={true} p2={3} p3={s}></YComponent>
+                                        ^
+
+References:
+   inexact_props.js:42:17
+   42| declare var s : ?string;
+                       ^^^^^^^ [1]
+   inexact_props.js:35:9
+   35|   p3? : string,
+               ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- subclassComponent.js:29:2
+
+Cannot create `D` element because props [1] is incompatible with empty [1]. [incompatible-type]
+
+   subclassComponent.js:29:2
+   29| <D></D>; // error
+        ^
+
+References:
+   subclassComponent.js:29:1
+   29| <D></D>; // error
+       ^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- subclassComponent.js:29:2
+
+Cannot instantiate React element because in type argument `ElementType`: [incompatible-type]
+ - Either class `D` [1] is incompatible with string [2].
+ - Or `D` [1] is incompatible with `Component` [3].
+
+   subclassComponent.js:29:2
+    29| <D></D>; // error
+         ^
+
+References:
+   subclassComponent.js:21:15
+    21| declare class D extends React$Component2<Props2, void> {}
+                      ^ [1]
+   <BUILTINS>/react.js:43:5
+    43|   | string
+            ^^^^^^ [2]
+   <BUILTINS>/react.js:644:19
+   644|     declare class Component<Props, State = void> {
+                          ^^^^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------- subclassComponent.js:29:2
+
+`D` [1] is incompatible with `Component` [2]. [incompatible-type]
+
+   subclassComponent.js:29:2
+    29| <D></D>; // error
+         ^
+
+References:
+   subclassComponent.js:21:15
+    21| declare class D extends React$Component2<Props2, void> {}
+                      ^ [1]
+   <BUILTINS>/react.js:644:19
+   644|     declare class Component<Props, State = void> {
+                          ^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- subclassComponent.js:30:2
+
+Cannot create `E` element because props [1] is incompatible with empty [1]. [incompatible-type]
+
+   subclassComponent.js:30:2
+   30| <E></E>; // error
+        ^
+
+References:
+   subclassComponent.js:30:1
+   30| <E></E>; // error
+       ^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- subclassComponent.js:30:2
+
+Cannot instantiate React element because in type argument `ElementType`: [incompatible-type]
+ - Either class `E` [1] is incompatible with string [2].
+ - Or `E` [1] is incompatible with `Component` [3].
+
+   subclassComponent.js:30:2
+    30| <E></E>; // error
+         ^
+
+References:
+   subclassComponent.js:23:15
+    23| declare class E extends D {}
+                      ^ [1]
+   <BUILTINS>/react.js:43:5
+    43|   | string
+            ^^^^^^ [2]
+   <BUILTINS>/react.js:644:19
+   644|     declare class Component<Props, State = void> {
+                          ^^^^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------- subclassComponent.js:30:2
+
+`E` [1] is incompatible with `Component` [2]. [incompatible-type]
+
+   subclassComponent.js:30:2
+    30| <E></E>; // error
+         ^
+
+References:
+   subclassComponent.js:23:15
+    23| declare class E extends D {}
+                      ^ [1]
+   <BUILTINS>/react.js:644:19
+   644|     declare class Component<Props, State = void> {
+                          ^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- subclassComponent.js:31:2
+
+Cannot create `F` element because props [1] is incompatible with empty [1]. [incompatible-type]
+
+   subclassComponent.js:31:2
+   31| <F></F>; // error
+        ^
+
+References:
+   subclassComponent.js:31:1
+   31| <F></F>; // error
+       ^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- subclassComponent.js:31:2
+
+Cannot instantiate React element because in type argument `ElementType`: [incompatible-type]
+ - Either class `F` [1] is incompatible with string [2].
+ - Or `F` [1] is incompatible with `Component` [3].
+
+   subclassComponent.js:31:2
+    31| <F></F>; // error
+         ^
+
+References:
+   subclassComponent.js:25:15
+    25| declare class F {
+                      ^ [1]
+   <BUILTINS>/react.js:43:5
+    43|   | string
+            ^^^^^^ [2]
+   <BUILTINS>/react.js:644:19
+   644|     declare class Component<Props, State = void> {
+                          ^^^^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------- subclassComponent.js:31:2
+
+`F` [1] is incompatible with `Component` [2]. [incompatible-type]
+
+   subclassComponent.js:31:2
+    31| <F></F>; // error
+         ^
+
+References:
+   subclassComponent.js:25:15
+    25| declare class F {
+                      ^ [1]
+   <BUILTINS>/react.js:644:19
+   644|     declare class Component<Props, State = void> {
+                          ^^^^^^^^^ [2]
+
+
+
+Found 15 errors
+
+Only showing the most relevant union/intersection branches.
+To see all branches, re-run Flow with --show-all-branches

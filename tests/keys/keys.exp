@@ -1,0 +1,263 @@
+Error ---------------------------------------------------------------------------------------------------- errors.js:9:1
+
+Cannot cast `k` to string literal `c` because key set [1] is incompatible with string literal `c` [2].
+[incompatible-type]
+
+   errors.js:9:1
+   9| k as 'c';
+      ^
+
+References:
+   errors.js:8:16
+   8| declare var k: K;
+                     ^ [1]
+   errors.js:9:6
+   9| k as 'c';
+           ^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- errors.js:10:1
+
+Cannot cast `'c'` to `K` because property `c` is missing in object literal [1]. [prop-missing]
+
+   errors.js:10:1
+   10| 'c' as K;
+       ^^^
+
+References:
+   errors.js:10:8
+   10| 'c' as K;
+              ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- instance.js:21:2
+
+Cannot cast `'missing'` to `T` because property `missing` is missing in `B` [1]. [prop-missing]
+
+   instance.js:21:2
+   21| ('missing': T); // Error
+        ^^^^^^^^^
+
+References:
+   instance.js:21:13
+   21| ('missing': T); // Error
+                   ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- instance.js:23:2
+
+Cannot cast `'bMethod'` to `T` because property `bMethod` is missing in `B` [1]. [prop-missing]
+
+   instance.js:23:2
+   23| ('bMethod': T); // Error: methods are on proto
+        ^^^^^^^^^
+
+References:
+   instance.js:23:13
+   23| ('bMethod': T); // Error: methods are on proto
+                   ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- instance.js:25:2
+
+Cannot cast `'aOne'` to `T` because property `aOne` (did you mean `bOne`?) is missing in `B` [1]. [prop-missing]
+
+   instance.js:25:2
+   25| ('aOne': T); // Error: non-own field
+        ^^^^^^
+
+References:
+   instance.js:25:10
+   25| ('aOne': T); // Error: non-own field
+                ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- instance.js:26:2
+
+Cannot cast `'aMethod'` to `T` because property `aMethod` is missing in `B` [1]. [prop-missing]
+
+   instance.js:26:2
+   26| ('aMethod': T); // Error: non-own field
+        ^^^^^^^^^
+
+References:
+   instance.js:26:13
+   26| ('aMethod': T); // Error: non-own field
+                   ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ interface.js:19:2
+
+Cannot cast `'xxx'` to key set because property `xxx` [1] is incompatible with union type [2]. [incompatible-type]
+
+   interface.js:19:2
+   19| ('xxx': keyof WithDict); // ERROR
+        ^^^^^ [1]
+
+References:
+   interface.js:2:4
+    2|   ['x' | 'y']: number;
+          ^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ interface.js:22:2
+
+Cannot cast `'xxx'` to key set because property `xxx` is missing in `WithProps` [1]. [prop-missing]
+
+   interface.js:22:2
+   22| ('xxx': keyof WithProps); // ERROR
+        ^^^^^
+
+References:
+   interface.js:22:15
+   22| ('xxx': keyof WithProps); // ERROR
+                     ^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ interface.js:26:2
+
+Cannot cast `'xxx'` to key set because property `xxx` [1] is incompatible with union type [2]. [incompatible-type]
+
+   interface.js:26:2
+   26| ('xxx': keyof WithBoth); // ERROR
+        ^^^^^ [1]
+
+References:
+   interface.js:11:4
+   11|   ['x' | 'y']: number;
+          ^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- keys.js:10:3
+
+Cannot cast `123` to key set because number [1] is incompatible with key set [2]. [incompatible-type]
+
+   keys.js:10:3
+   10|   123 as keyof Object; // Error: number -> keys of Object
+         ^^^ [1]
+
+References:
+   keys.js:10:10
+   10|   123 as keyof Object; // Error: number -> keys of Object
+                ^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- keys.js:21:3
+
+Cannot cast `123` to key set because number [1] is incompatible with key set [2]. [incompatible-type]
+
+   keys.js:21:3
+   21|   123 as keyof StrDict; // Error: number -> keys of StrDict
+         ^^^ [1]
+
+References:
+   keys.js:21:10
+   21|   123 as keyof StrDict; // Error: number -> keys of StrDict
+                ^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- keys.js:26:3
+
+Cannot cast `str` to key set because some string with unknown value [1] is incompatible with string literal `hi` [2].
+[incompatible-type]
+
+   keys.js:26:3
+   26|   str as keyof StrLitDict; // Error: Not all strings are allowed
+         ^^^ [1]
+
+References:
+   keys.js:24:26
+   24| type StrLitDict = {[key: 'hi']: mixed};
+                                ^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- keys.js:28:5
+
+Cannot cast `str` to key set because some string with unknown value [1] is incompatible with string literal `hi` [2].
+[incompatible-type]
+
+   keys.js:28:5
+   28|     str as keyof StrLitDict; // Error: Not all truthy strings are allowed
+           ^^^ [1]
+
+References:
+   keys.js:24:26
+   24| type StrLitDict = {[key: 'hi']: mixed};
+                                ^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- keys.js:31:3
+
+Cannot cast `'bye'` to key set because property `bye` [1] is incompatible with string literal `hi` [2].
+[incompatible-type]
+
+   keys.js:31:3
+   31|   'bye' as keyof StrLitDict; // Error: The wrong string literal is not allowed
+         ^^^^^ [1]
+
+References:
+   keys.js:24:26
+   24| type StrLitDict = {[key: 'hi']: mixed};
+                                ^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- keys.js:33:3
+
+Cannot cast `123` to key set because number [1] is incompatible with key set [2]. [incompatible-type]
+
+   keys.js:33:3
+   33|   123 as keyof StrLitDict; // Error: number -> keys of StrLitDict
+         ^^^ [1]
+
+References:
+   keys.js:33:10
+   33|   123 as keyof StrLitDict; // Error: number -> keys of StrLitDict
+                ^^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- keys.js:38:3
+
+Cannot cast `str` to key set because an index signature declaring the expected key / value type is missing in
+`ObjLit` [1]. [prop-missing]
+
+   keys.js:38:3
+   38|   str as keyof ObjLit; // Error: string -> keys of ObjLit
+         ^^^
+
+References:
+   keys.js:38:16
+   38|   str as keyof ObjLit; // Error: string -> keys of ObjLit
+                      ^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- keys.js:40:5
+
+Cannot cast `str` to key set because an index signature declaring the expected key / value type is missing in
+`ObjLit` [1]. [prop-missing]
+
+   keys.js:40:5
+   40|     str as keyof ObjLit; // Error: truthy string -> keys of ObjLit
+           ^^^
+
+References:
+   keys.js:40:18
+   40|     str as keyof ObjLit; // Error: truthy string -> keys of ObjLit
+                        ^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- keys.js:44:3
+
+Cannot cast `123` to key set because number [1] is incompatible with key set [2]. [incompatible-type]
+
+   keys.js:44:3
+   44|   123 as keyof ObjLit; // Error: number -> keys of ObjLit
+         ^^^ [1]
+
+References:
+   keys.js:44:10
+   44|   123 as keyof ObjLit; // Error: number -> keys of ObjLit
+                ^^^^^^^^^^^^ [2]
+
+
+
+Found 18 errors

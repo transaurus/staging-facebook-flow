@@ -1,0 +1,172 @@
+Error ----------------------------------------------------------------------------------------------------- error.js:8:8
+
+Cannot cast `any` to number because null or undefined [1] is incompatible with number [2]. [incompatible-type]
+
+   error.js:8:8
+   8| any as ?number as number;
+             ^^^^^^^ [1]
+
+References:
+   error.js:8:19
+   8| any as ?number as number;
+                        ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- error.js:9:8
+
+Cannot cast `any` to null because null or undefined [1] is incompatible with null [2]. [incompatible-type]
+
+   error.js:9:8
+   9| any as ?number as null;
+             ^^^^^^^ [1]
+
+References:
+   error.js:9:19
+   9| any as ?number as null;
+                        ^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- error.js:9:9
+
+Cannot cast `any` to null because number [1] is incompatible with null [2]. [incompatible-type]
+
+   error.js:9:9
+   9| any as ?number as null;
+              ^^^^^^ [1]
+
+References:
+   error.js:9:19
+   9| any as ?number as null;
+                        ^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- error.js:10:8
+
+Cannot cast `any` to undefined because null or undefined [1] is incompatible with undefined [2]. [incompatible-type]
+
+   error.js:10:8
+   10| any as ?number as void;
+              ^^^^^^^ [1]
+
+References:
+   error.js:10:19
+   10| any as ?number as void;
+                         ^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- error.js:10:9
+
+Cannot cast `any` to undefined because number [1] is incompatible with undefined [2]. [incompatible-type]
+
+   error.js:10:9
+   10| any as ?number as void;
+               ^^^^^^ [1]
+
+References:
+   error.js:10:19
+   10| any as ?number as void;
+                         ^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- error.js:16:8
+
+Cannot cast `any` to union type because: [incompatible-type]
+ - Either null or undefined [1] is incompatible with null [2].
+ - Or null or undefined [1] is incompatible with number [3].
+
+   error.js:16:8
+   16| any as ?number as number | null;
+              ^^^^^^^ [1]
+
+References:
+   error.js:16:28
+   16| any as ?number as number | null;
+                                  ^^^^ [2]
+   error.js:16:19
+   16| any as ?number as number | null;
+                         ^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------------- error.js:17:8
+
+Cannot cast `any` to union type because: [incompatible-type]
+ - Either null or undefined [1] is incompatible with undefined [2].
+ - Or null or undefined [1] is incompatible with number [3].
+
+   error.js:17:8
+   17| any as ?number as number | void;
+              ^^^^^^^ [1]
+
+References:
+   error.js:17:28
+   17| any as ?number as number | void;
+                                  ^^^^ [2]
+   error.js:17:19
+   17| any as ?number as number | void;
+                         ^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------------- maybe.js:3:11
+
+Cannot cast `123` to nullable string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   maybe.js:3:11
+   3| ((123: ?(?number)): ?string); // error (only num ~> string)
+                ^^^^^^ [1]
+
+References:
+   maybe.js:3:22
+   3| ((123: ?(?number)): ?string); // error (only num ~> string)
+                           ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- nullable.js:1:32
+
+Cannot return `null` because null [1] is incompatible with string [2]. [incompatible-type]
+
+   nullable.js:1:32
+   1| function foo():string { return null; }
+                                     ^^^^ [1]
+
+References:
+   nullable.js:1:16
+   1| function foo():string { return null; }
+                     ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ nullable.js:11:22
+
+Cannot call `corge` with `x` bound to `x` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   nullable.js:11:22
+   11| if (x != null) corge(x); // x: ?string | null
+                            ^
+
+References:
+   nullable.js:3:17
+    3| function bar():?string { return null; }
+                       ^^^^^^ [1]
+   nullable.js:7:18
+    7| function corge(x:number) { }
+                        ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- simple_nullable.js:4:5
+
+Cannot call `bar` with `'hmm'` bound to `x` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   simple_nullable.js:4:5
+   4| bar('hmm');
+          ^^^^^ [1]
+
+References:
+   simple_nullable.js:2:17
+   2| function bar(x:?number) {}
+                      ^^^^^^ [2]
+
+
+
+Found 11 errors
+
+Only showing the most relevant union/intersection branches.
+To see all branches, re-run Flow with --show-all-branches

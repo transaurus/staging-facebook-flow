@@ -1,0 +1,90 @@
+Error --------------------------------------------------------------------------------------------------- client.js:3:19
+
+Cannot assign `ns.foo` to `bar` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   client.js:3:19
+    3| var bar: string = ns.foo
+                         ^^^^^^
+
+References:
+   namespace.js:17:30
+   17| module.exports = {foo: '' as number};
+                                    ^^^^^^ [1]
+   client.js:3:10
+    3| var bar: string = ns.foo
+                ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ namespace.js:3:25
+
+Cannot assign function to `f` because in the first parameter: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   namespace.js:3:25
+   3| var f: T = function (x: string): void {};
+                              ^^^^^^ [1]
+
+References:
+   namespace.js:2:14
+   2| type T = (x: number) => void;
+                   ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- namespace.js:11:17
+
+Cannot assign `bar(...)` to `y` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   namespace.js:11:17
+   11| var y: number = bar(0, x => '');
+                       ^^^^^^^^^^^^^^^
+
+References:
+   namespace.js:11:29
+   11| var y: number = bar(0, x => '');
+                                   ^^ [1]
+   namespace.js:11:8
+   11| var y: number = bar(0, x => '');
+              ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- namespace.js:15:15
+
+Cannot assign array literal to `s2` because: [incompatible-type]
+ - Either in array element > array element: string [1] is incompatible with number [2].
+ - Or in array element > array element: string [1] is incompatible with array type [3].
+
+   namespace.js:15:15
+   15| var s2: Seq = [['']];
+                     ^^^^^^
+
+References:
+   namespace.js:15:17
+   15| var s2: Seq = [['']];
+                       ^^ [1]
+   namespace.js:13:12
+   13| type Seq = number | Array<Seq>;
+                  ^^^^^^ [2]
+   namespace.js:13:21
+   13| type Seq = number | Array<Seq>;
+                           ^^^^^^^^^^ [3]
+
+
+Error ----------------------------------------------------------------------------------------------- namespace.js:17:24
+
+Cannot cast empty string to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   namespace.js:17:24
+   17| module.exports = {foo: '' as number};
+                              ^^ [1]
+
+References:
+   namespace.js:17:30
+   17| module.exports = {foo: '' as number};
+                                    ^^^^^^ [2]
+
+
+
+Found 5 errors
+
+Only showing the most relevant union/intersection branches.
+To see all branches, re-run Flow with --show-all-branches

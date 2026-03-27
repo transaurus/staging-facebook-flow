@@ -1,0 +1,13 @@
+[ignore]
+'<PROJECT_ROOT>/explicitly_ignored_with_backup.js' -> 'other/.flowconfig'
+<PROJECT_ROOT>/explicitly_ignored.js
+
+[include]
+../other/explicitly_included.js
+
+[libs]
+explicit_lib.js
+
+[options]
+all=true
+exact_by_default=false

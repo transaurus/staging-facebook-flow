@@ -1,0 +1,11 @@
+[ignore]
+
+[include]
+
+[libs]
+
+[options]
+all=true
+
+[version]
+0.1.0

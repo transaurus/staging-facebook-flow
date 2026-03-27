@@ -1,0 +1,27 @@
+
+Expect no errors.
+No errors!
+
+The Flow server is currently in lazy mode and is only checking 1/1 files.
+To learn more, visit flow.org/en/docs/lang/lazy-modes
+
+Add trivial package.json:
+
+Add trivial error to file.js:
+Error ------------------------------------------------------------------------------------------------------ file.js:1:1
+
+Cannot cast `0` to number literal `1` because number literal `0` [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   file.js:1:1
+   1| 0 as 1;
+      ^ [1]
+
+References:
+   file.js:1:6
+   1| 0 as 1;
+           ^ [2]
+
+
+
+Found 1 error

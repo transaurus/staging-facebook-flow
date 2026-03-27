@@ -1,0 +1,188 @@
+test.js:7:7
+Flags:
+number
+test.js:7:7,7:7
+
+test.js:10:7
+Flags:
+number
+test.js:10:7,10:7
+
+test.js:13:7
+Flags:
+number
+test.js:13:7,13:7
+
+test.js:16:7
+Flags:
+number
+test.js:16:7,16:7
+
+test.js:19:7
+Flags:
+void
+test.js:19:7,19:9
+
+test.js:22:7
+Flags:
+void
+test.js:22:7,22:9
+
+test.js:27:8
+Flags:
+0
+test.js:27:8,27:8
+
+jsx_instantiation.js:3:19
+Flags:
+component Foo1<T>(x: T, y: T)
+
+'Foo1' defined at jsx_instantiation.js:3:0
+
+jsx_instantiation.js:3:19,3:22
+
+jsx_instantiation.js:10:6
+Flags:
+component Foo1<string | number>(x: string | number, y: string | number)
+
+'Foo1' defined at jsx_instantiation.js:3:0
+
+jsx_instantiation.js:10:6,10:9
+
+jsx_instantiation.js:15:6
+Flags:
+component Foo1<number | string>(x: number | string, y: number | string)
+
+'Foo1' defined at jsx_instantiation.js:3:0
+
+jsx_instantiation.js:15:6,15:9
+
+jsx_instantiation.js:20:6
+Flags:
+component Foo4<string, number>(x: string, y: number)
+
+'Foo4' defined at jsx_instantiation.js:7:0
+
+jsx_instantiation.js:20:6,20:9
+
+jsx_instantiation.js:26:13
+Flags:
+component Bar<1 | any>(...Readonly<{n: 1 | any}>)
+= component Bar<1 | any>(n: 1 | any)
+
+'Bar' defined at jsx_instantiation.js:25:4
+
+jsx_instantiation.js:26:13,26:15
+
+jsx_instantiation.js:41:17
+Flags:
+component Foo<any (explicit)>(...Props<any>)
+= component Foo<any (explicit)>(f: (any) => void)
+
+'Foo' defined at jsx_instantiation.js:37:4
+'Props' defined at jsx_instantiation.js:33:9
+
+jsx_instantiation.js:41:17,41:19
+
+jsx_instantiation.js:55:6
+Flags:
+typeof Foo2<string, number> | typeof Foo1<string | number>
+
+'Foo1' defined at jsx_instantiation.js:3:0
+'Foo2' defined at jsx_instantiation.js:5:0
+
+jsx_instantiation.js:55:6,55:9
+
+jsx_instantiation.js:57:6
+Flags:
+typeof Foo3<string | number> | typeof Foo1<string | number>
+
+'Foo1' defined at jsx_instantiation.js:3:0
+'Foo3' defined at jsx_instantiation.js:6:0
+
+jsx_instantiation.js:57:6,57:9
+
+jsx_instantiation.js:67:5
+Flags:
+component Foo1<string | number>(x: string | number, y: string | number)
+
+'Foo1' defined at jsx_instantiation.js:3:0
+
+jsx_instantiation.js:67:5,67:9
+
+jsx_instantiation.js:69:5
+Flags:
+component Foo2<string, number>(x: string, y: number)
+
+'Foo2' defined at jsx_instantiation.js:5:0
+
+jsx_instantiation.js:69:5,69:9
+
+jsx_instantiation.js:71:5
+Flags:
+typeof Foo3 & typeof Foo4
+
+'Foo3' defined at jsx_instantiation.js:6:0
+'Foo4' defined at jsx_instantiation.js:7:0
+
+jsx_instantiation.js:71:5,71:9
+
+jsx_instantiation.js:73:5
+Flags:
+component Foo2<string, number>(x: string, y: number)
+
+'Foo2' defined at jsx_instantiation.js:5:0
+
+jsx_instantiation.js:73:5,73:9
+
+jsx_instantiation.js:81:6
+Flags:
+component Foo2<string, number>(x: string, y: number)
+
+'Foo2' defined at jsx_instantiation.js:5:0
+
+jsx_instantiation.js:81:6,81:11
+
+jsx_instantiation.js:83:6
+Flags:
+component Foo2<string, number>(x: string, y: number)
+
+'Foo2' defined at jsx_instantiation.js:5:0
+
+jsx_instantiation.js:83:6,83:11
+
+jsx_instantiation.js:90:6
+Flags:
+typeof Foo2<string, number> | typeof Foo1<string | number>
+
+'Foo1' defined at jsx_instantiation.js:3:0
+'Foo2' defined at jsx_instantiation.js:5:0
+
+jsx_instantiation.js:90:6,90:8
+
+jsx_instantiation.js:97:6
+Flags:
+component Foo2<string, number>(x: string, y: number)
+
+'Foo2' defined at jsx_instantiation.js:5:0
+
+jsx_instantiation.js:97:6,97:8
+
+jsx_instantiation.js:105:6
+Flags:
+(props: Props<string | number>) => Node
+
+'Node' defined at (lib) react.js:275:22
+'Props' defined at jsx_instantiation.js:102:9
+
+jsx_instantiation.js:105:6,105:8
+
+jsx_instantiation.js:109:6
+Flags:
+(props: Props<string | number>) => Node
+
+'Node' defined at (lib) react.js:275:22
+'Props' defined at jsx_instantiation.js:102:9
+
+jsx_instantiation.js:109:6,109:16
+

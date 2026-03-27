@@ -1,0 +1,8 @@
+(library
+ (name flow_index)
+ (wrapped false)
+ (libraries
+  flow_typing
+  flow_typing_type)
+ (preprocess
+  (pps ppx_deriving.std)))

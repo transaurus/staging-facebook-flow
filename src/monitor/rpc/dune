@@ -1,0 +1,8 @@
+(library
+ (name flow_monitor_rpc)
+ (wrapped false)
+ (libraries
+  flow_protocols
+  marshal_tools_lwt
+  sys_utils ; hack
+  ))

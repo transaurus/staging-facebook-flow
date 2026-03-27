@@ -1,0 +1,10 @@
+Error ---------------------------------------------------------------------------------------------------- test.js:11:22
+
+Cannot resolve module `node_pkg`. [cannot-resolve-module]
+
+   11| import node_pkg from 'node_pkg'; // error
+                            ^^^^^^^^^^
+
+
+
+Found 1 error

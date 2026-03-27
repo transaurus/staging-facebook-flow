@@ -1,0 +1,211 @@
+jsx1.js:7:4
+Flags: --pretty
+{
+  "result":[{"name":"ref","type":"RefSetter<C> | void"},{"name":"x","type":"number"}]
+}
+
+jsx2.js:7:9
+Flags: --pretty
+{
+  "result":[{"name":"ref","type":"RefSetter<C> | void"},{"name":"y","type":"string"}]
+}
+
+jsx3.js:9:4
+Flags: --pretty
+{
+  "result":[
+    {"name":"ref","type":"RefSetter<C> | void"},
+    {"name":"x","type":"number"},
+    {"name":"y","type":"string"}
+  ]
+}
+
+jsx4.js:10:3
+Flags: --pretty
+{
+  "result":[
+    {"name":"Complementarity","type":"class Complementarity"},
+    {
+      "name":"ComponentSyntaxBar",
+      "type":"component ComponentSyntaxBar() renders ComponentSyntaxFoo"
+    },
+    {"name":"ComponentSyntaxFoo","type":"component ComponentSyntaxFoo()"},
+    {"name":"Compressibility","type":"(props: empty) => void"},
+    {"name":"Computerization","type":"(props: empty) => void"}
+  ]
+}
+
+jsx-attribute-member.js:6:23
+Flags: --pretty
+{"result":[{"name":"bar","type":"string"}]}
+
+jsx-closing-tag.js:10:14
+Flags: --pretty
+{
+  "result":[
+    {"name":"Bar","type":"(props: Props) => void"},
+    {"name":"Foo","type":"(props: Props) => void"},
+    {"name":"React","type":"module \"react\""},
+    {"name":"div","type":"JSX Intrinsic"},
+    {"name":"img","type":"JSX Intrinsic"},
+    {"name":"span","type":"JSX Intrinsic"}
+  ]
+}
+
+jsx-closing-tag-unclosed.js:10:14
+Flags: --pretty
+{
+  "result":[
+    {"name":"Bar","type":"(props: Props) => void"},
+    {"name":"Foo","type":"(props: Props) => void"},
+    {"name":"React","type":"module \"react\""},
+    {"name":"div","type":"JSX Intrinsic"},
+    {"name":"img","type":"JSX Intrinsic"},
+    {"name":"span","type":"JSX Intrinsic"}
+  ]
+}
+
+jsx-function-component.js:9:4
+Flags: --pretty
+{"result":[{"name":"x","type":"number"},{"name":"y","type":"string"}]}
+
+jsx-function-component-2.js:9:11
+Flags: --pretty
+{"result":[{"name":"x","type":"number"}]}
+
+jsx-function-component-3.js:10:4
+Flags: --pretty
+{"result":[{"name":"y","type":"string"}]}
+
+jsx-abstract-component.js:8:4
+Flags: --pretty
+{"result":[{"name":"x","type":"number"},{"name":"y","type":"string"}]}
+
+jsx-with-children.js:10:4
+Flags: --pretty
+{"result":[{"name":"x","type":"number"}]}
+
+jsx-text.js:1:11
+Flags: --pretty
+{"result":[]}
+
+component_members.js:7:11
+Flags: --pretty
+{
+  "result":[
+    {"name":"displayName","type":"(?string) | void"},
+    {"name":"name","type":"(?string) | void"},
+    {"name":"propTypes","type":"{[string]: any} | void"}
+  ]
+}
+
+component_members_poly.js:7:11
+Flags: --pretty
+{
+  "result":[
+    {"name":"displayName","type":"(?string) | void"},
+    {"name":"name","type":"(?string) | void"},
+    {"name":"propTypes","type":"{[string]: any} | void"}
+  ]
+}
+
+components.js:7:21
+Flags: --pretty --imports
+{
+  "result":[
+    {"name":"MyComponent","type":"React$RendersExactly<typeof MyComponent>"},
+    {"name":"MyComponent3","type":"component() renders MyComponent"},
+    {"name":"MyComponent4","type":"Import type from ./exported_components"},
+    {"name":"MyComponent5","type":"Import type from ./exported_components"},
+    {"name":"MyComponent6","type":"Import type from ./exported_components"},
+    {"name":"MyComponent7","type":"Import type from ./exported_components"}
+  ]
+}
+
+components.js:10:29
+Flags: --pretty --imports
+{
+  "result":[
+    {"name":"MyComponent","type":"React$RendersExactly<typeof MyComponent>"},
+    {"name":"MyComponent3","type":"component() renders MyComponent"},
+    {"name":"MyComponent4","type":"Import type from ./exported_components"},
+    {"name":"MyComponent5","type":"Import type from ./exported_components"},
+    {"name":"MyComponent6","type":"Import type from ./exported_components"},
+    {"name":"MyComponent7","type":"Import type from ./exported_components"}
+  ]
+}
+
+components.js:15:28
+Flags: --pretty --imports
+{
+  "result":[
+    {"name":"MyComponent","type":"React$RendersExactly<typeof MyComponent>"},
+    {"name":"MyComponent3","type":"component() renders MyComponent"},
+    {"name":"MyComponent4","type":"Import type from ./exported_components"},
+    {"name":"MyComponent5","type":"Import type from ./exported_components"},
+    {"name":"MyComponent6","type":"Import type from ./exported_components"},
+    {"name":"MyComponent7","type":"Import type from ./exported_components"}
+  ]
+}
+
+components.js:21:16
+Flags: --pretty --imports
+{"result":[{"name":"xaaa","type":"42"},{"name":"xbbb","type":"string"}]}
+
+react_type_namespace.js:3:18
+Flags: --pretty
+{
+  "result":[
+    {
+      "name":"ChildrenArray",
+      "type":"type ChildrenArray<+T> = ReadonlyArray<ChildrenArray<T>> | T"
+    },
+    {
+      "name":"ComponentType",
+      "type":"type ComponentType<-P: {...}> = component(...P)"
+    },
+    {"name":"Context","type":"type Context<T>"},
+    {
+      "name":"ElementConfig",
+      "type":"type ElementConfig<C> = React$ElementConfig<C>"
+    },
+    {
+      "name":"ElementRef",
+      "type":"type ElementRef<C: string | component(...empty)> = C extends empty ? any : C extends infer S extends string ? $JSXIntrinsics[S][\"instance\"] : C extends component(...infer Props extends {...}) ? \"ref\" extends keyof Props ? Props extends {+ref?: RefSetter<infer I>, ...} ? I : mixed : void : empty"
+    },
+    {"name":"ElementType","type":"type ElementType = React$ElementType"},
+    {
+      "name":"Interaction",
+      "type":"type Interaction = {name: string, timestamp: number, ...}"
+    },
+    {"name":"Key","type":"type Key = React$Key"},
+    {
+      "name":"MixedElement",
+      "type":"type MixedElement = ExactReactElement_DEPRECATED<React$ElementType, mixed>"
+    },
+    {"name":"Node","type":"type Node = React$Node"},
+    {"name":"Portal","type":"type Portal = React$Portal"},
+    {
+      "name":"PropOf",
+      "type":"type PropOf<E: string | MixedElement | React$RendersExactly<React$ElementType>, K: string> = PropsOf<E>[K]"
+    },
+    {
+      "name":"PropsOf",
+      "type":"type PropsOf<E: string | MixedElement | React$RendersExactly<React$ElementType>> = E extends ExactReactElement_DEPRECATED<infer C> ? ElementConfig<C> : E extends React$RendersExactly<infer C> ? ElementConfig<C> : E extends string ? $JSXIntrinsics[E][\"props\"] : empty"
+    },
+    {
+      "name":"ReactSetStateFunction",
+      "type":"type ReactSetStateFunction<S> = (((S) => S) | S) => void"
+    },
+    {"name":"RefObject","type":"type RefObject<T> = React$RefObject<T>"},
+    {
+      "name":"RefOf",
+      "type":"type RefOf<E: string | MixedElement | React$RendersExactly<React$ElementType>> = E extends ExactReactElement_DEPRECATED<infer C> ? ElementRef<C> : E extends React$RendersExactly<infer C> ? ElementRef<C> : E extends string ? $JSXIntrinsics[E][\"instance\"] : empty"
+    },
+    {
+      "name":"RefSetter",
+      "type":"type RefSetter<-T> = ?{-current: T | null, ...} | ((T | null) => mixed)"
+    }
+  ]
+}
+

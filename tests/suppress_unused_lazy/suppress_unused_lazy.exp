@@ -1,0 +1,124 @@
+Status after check-contents a.js:
+No errors!
+Status including warnings:
+No errors!
+
+The Flow server is currently in lazy mode and is only checking 3/9 files.
+To learn more, visit flow.org/en/docs/lang/lazy-modes
+
+Status after focusing a.js:
+Warning ------------------------------------------------------------------------------- invalid_export_suppressed.js:8:3
+
+Unused suppression comment. [InferError]
+
+   8|   // $FlowFixMe[invalid-export]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Warning ----------------------------------------------------------------- signature_verification_error_suppressed.js:7:1
+
+Unused suppression comment. [InferError]
+
+   7| // $FlowFixMe[signature-verification-failure]
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Warning ----------------------------------------------------------------------------------- type_error_suppressed.js:7:1
+
+Unused suppression comment. [InferError]
+
+   7| // $FlowFixMe[incompatible-type]
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+Found 3 warnings
+
+The Flow server is currently in lazy mode and is only checking 9/9 files.
+To learn more, visit flow.org/en/docs/lang/lazy-modes
+Status after check-contents type_error.js:
+Error ------------------------------------------------------------------------------------------------ type_error.js:7:2
+
+Cannot cast `123` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   type_error.js:7:2
+   7| (123: string); // error
+       ^^^ [1]
+
+References:
+   type_error.js:7:7
+   7| (123: string); // error
+            ^^^^^^ [2]
+
+
+
+Found 1 error
+
+Status including warnings:
+Warning ------------------------------------------------------------------------------- invalid_export_suppressed.js:8:3
+
+Unused suppression comment. [InferError]
+
+   8|   // $FlowFixMe[invalid-export]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Warning ----------------------------------------------------------------- signature_verification_error_suppressed.js:7:1
+
+Unused suppression comment. [InferError]
+
+   7| // $FlowFixMe[signature-verification-failure]
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Warning ----------------------------------------------------------------------------------- type_error_suppressed.js:7:1
+
+Unused suppression comment. [InferError]
+
+   7| // $FlowFixMe[incompatible-type]
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+Found 3 warnings
+
+The Flow server is currently in lazy mode and is only checking 9/9 files.
+To learn more, visit flow.org/en/docs/lang/lazy-modes
+
+Status after focusing dependents:
+Error ------------------------------------------------------------------------------------------- invalid_export.js:8:13
+
+`module` may only be used as part of a legal top level export statement [invalid-export]
+
+   8|   const x = module.exports;
+                  ^^^^^^
+
+
+Error ----------------------------------------------------------------------------- signature_verification_error.js:8:31
+
+Cannot build a typed interface for this module. You should annotate the exports of this module with types. Missing type
+annotation at function return: [signature-verification-failure]
+
+   8| export function foo(x: number) { return x; }
+                                    
+
+
+Error ------------------------------------------------------------------------------------------------ type_error.js:7:2
+
+Cannot cast `123` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   type_error.js:7:2
+   7| (123: string); // error
+       ^^^ [1]
+
+References:
+   type_error.js:7:7
+   7| (123: string); // error
+            ^^^^^^ [2]
+
+
+
+Found 3 errors
+
+The Flow server is currently in lazy mode and is only checking 9/9 files.
+To learn more, visit flow.org/en/docs/lang/lazy-modes

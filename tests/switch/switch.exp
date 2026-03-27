@@ -1,0 +1,218 @@
+Error -------------------------------------------------------------------------------------------------- switch.js:28:13
+
+Cannot use operator `*` with operands number [1] and string [2] [unsafe-arithmetic]
+
+   switch.js:28:13
+   28|         x = x*x;
+                   ^^^
+
+References:
+   switch.js:23:16
+   23|     var x = b? 0: "";
+                      ^ [1]
+   switch.js:23:19
+   23|     var x = b? 0: "";
+                         ^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- switch.js:28:13
+
+Cannot use operator `*` with operands string [1] and number [2] [unsafe-arithmetic]
+
+   switch.js:28:13
+   28|         x = x*x;
+                   ^^^
+
+References:
+   switch.js:23:19
+   23|     var x = b? 0: "";
+                         ^^ [1]
+   switch.js:23:16
+   23|     var x = b? 0: "";
+                      ^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- switch.js:28:13
+
+Cannot use operator `*` with operands string [1] and string [1] [unsafe-arithmetic]
+
+   switch.js:28:13
+   28|         x = x*x;
+                   ^^^
+
+References:
+   switch.js:23:19
+   23|     var x = b? 0: "";
+                         ^^ [1]
+
+
+Error ------------------------------------------------------------------------------- switch_default_fallthrough.js:16:3
+
+Cannot cast `a` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   switch_default_fallthrough.js:16:3
+   16|   a as string; // error, string | number ~/> string
+         ^
+
+References:
+   switch_default_fallthrough.js:5:10
+    5|   var a: number | string = '';
+                ^^^^^^ [1]
+   switch_default_fallthrough.js:16:8
+   16|   a as string; // error, string | number ~/> string
+              ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------- switch_default_fallthrough.js:17:3
+
+Cannot cast `a` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   switch_default_fallthrough.js:17:3
+   17|   a as number; // error, string | number ~/> number
+         ^
+
+References:
+   switch_default_fallthrough.js:5:19
+    5|   var a: number | string = '';
+                         ^^^^^^ [1]
+   switch_default_fallthrough.js:17:8
+   17|   a as number; // error, string | number ~/> number
+              ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------ switch_default_fallthrough.js:21:10
+
+Cannot return `b` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   switch_default_fallthrough.js:21:10
+   21|   return b; // error, number ~/> string
+                ^
+
+References:
+   switch_default_fallthrough.js:12:11
+   12|       b = 0;
+                 ^ [1]
+   switch_default_fallthrough.js:4:25
+    4| function foo(x: mixed): string {
+                               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------- switch_default_fallthrough.js:39:3
+
+Cannot cast `a` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   switch_default_fallthrough.js:39:3
+   39|   a as string; // error, string | number ~/> string
+         ^
+
+References:
+   switch_default_fallthrough.js:25:10
+   25|   var a: number | string = '';
+                ^^^^^^ [1]
+   switch_default_fallthrough.js:39:8
+   39|   a as string; // error, string | number ~/> string
+              ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------- switch_default_fallthrough.js:40:3
+
+Cannot cast `a` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   switch_default_fallthrough.js:40:3
+   40|   a as number; // error, string | number ~/> number
+         ^
+
+References:
+   switch_default_fallthrough.js:25:19
+   25|   var a: number | string = '';
+                         ^^^^^^ [1]
+   switch_default_fallthrough.js:40:8
+   40|   a as number; // error, string | number ~/> number
+              ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------- switch_default_fallthrough.js:43:3
+
+Cannot cast `b` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   switch_default_fallthrough.js:43:3
+   43|   b as string; // error, string | number ~/> string
+         ^
+
+References:
+   switch_default_fallthrough.js:26:10
+   26|   var b: number | string = '';
+                ^^^^^^ [1]
+   switch_default_fallthrough.js:43:8
+   43|   b as string; // error, string | number ~/> string
+              ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------- switch_default_fallthrough.js:44:3
+
+Cannot cast `b` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   switch_default_fallthrough.js:44:3
+   44|   b as number; // error, string | number ~/> number
+         ^
+
+References:
+   switch_default_fallthrough.js:26:19
+   26|   var b: number | string = '';
+                         ^^^^^^ [1]
+   switch_default_fallthrough.js:44:8
+   44|   b as number; // error, string | number ~/> number
+              ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------ switch_default_fallthrough.js:46:10
+
+Cannot return `a + b` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   switch_default_fallthrough.js:46:10
+   46|   return a + b; // error, string ~/> number
+                ^^^^^ [1]
+
+References:
+   switch_default_fallthrough.js:24:25
+   24| function baz(x: mixed): number {
+                               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ trailing_cases.js:23:18
+
+Cannot assign `x` to `y` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   trailing_cases.js:23:18
+   23|   var y:number = x; // error, number | string ~/> number
+                        ^
+
+References:
+   trailing_cases.js:19:9
+   19|     x = "2";
+               ^^^ [1]
+   trailing_cases.js:23:9
+   23|   var y:number = x; // error, number | string ~/> number
+               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ trailing_cases.js:39:18
+
+Cannot assign `x` to `y` because possibly uninitialized variable [1] is incompatible with number [2].
+[incompatible-type]
+
+   trailing_cases.js:39:18
+   39|   var y:number = x; // error, number | uninitialized ~/> number
+                        ^
+
+References:
+   trailing_cases.js:27:7
+   27|   var x;
+             ^ [1]
+   trailing_cases.js:39:9
+   39|   var y:number = x; // error, number | uninitialized ~/> number
+               ^^^^^^ [2]
+
+
+
+Found 13 errors

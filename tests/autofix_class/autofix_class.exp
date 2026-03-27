@@ -1,0 +1,59 @@
+> flow autofix missing-local-annot a.js
+> cat a.js
+// @flow
+
+class C {}
+// XYZXYZ
+export default class {
+  array: Array<empty> = [];
+  num = 1;
+}
+> flow autofix insert-type a.js 7 3 7 11
+> cat a.js
+// @flow
+
+class C {}
+// XYZXYZ
+export default class {
+  array: Array<empty> = [];
+  num: number = 1;
+}
+> flow autofix missing-local-annot b.js
+> cat b.js
+// @flow
+
+class C {
+  m(): number {
+    return 1;
+  }
+}
+module.exports = C;
+> flow autofix missing-local-annot c.js
+> cat c.js
+// @flow
+
+class A {
+  f = (x: string): string => x;
+}
+
+module.exports = {
+  a: A,
+  b: (x: string) => x,
+};
+> flow autofix insert-type c.js 4 3 4 32
+> flow autofix insert-type c.js 9 17 9 17
+> cat c.js
+// @flow
+
+class A {
+  f: ((x: string) => string) = (x: string): string => x;
+}
+
+module.exports = {
+  a: A,
+  b: (x: string): string => x,
+};
+> flow status
+No errors!
+> flow status tmp
+No errors!

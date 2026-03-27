@@ -1,0 +1,4 @@
+[options]
+all=true
+
+use_unknown_in_catch_variables=true

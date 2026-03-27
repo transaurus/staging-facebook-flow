@@ -1,0 +1,1745 @@
+Error ---------------------------------------------------------------------------------------------------- array.js:22:3
+
+Cannot cast `arr1` to tuple type because tuple element at index `0` is read-only in const array literal [1] but writable
+in tuple type [2]. [incompatible-variance]
+
+   array.js:22:3
+   22|   arr1 as [1, 2, 3]; // error cast to non-readonly
+         ^^^^
+
+References:
+   array.js:7:21
+    7| export const arr1 = [1, 2, 3] as const;   // readonly [1, 2, 3]
+                           ^^^^^^^^^ [1]
+   array.js:22:11
+   22|   arr1 as [1, 2, 3]; // error cast to non-readonly
+                 ^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- array.js:22:3
+
+Cannot cast `arr1` to tuple type because tuple element at index `1` is read-only in const array literal [1] but writable
+in tuple type [2]. [incompatible-variance]
+
+   array.js:22:3
+   22|   arr1 as [1, 2, 3]; // error cast to non-readonly
+         ^^^^
+
+References:
+   array.js:7:21
+    7| export const arr1 = [1, 2, 3] as const;   // readonly [1, 2, 3]
+                           ^^^^^^^^^ [1]
+   array.js:22:11
+   22|   arr1 as [1, 2, 3]; // error cast to non-readonly
+                 ^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- array.js:22:3
+
+Cannot cast `arr1` to tuple type because tuple element at index `2` is read-only in const array literal [1] but writable
+in tuple type [2]. [incompatible-variance]
+
+   array.js:22:3
+   22|   arr1 as [1, 2, 3]; // error cast to non-readonly
+         ^^^^
+
+References:
+   array.js:7:21
+    7| export const arr1 = [1, 2, 3] as const;   // readonly [1, 2, 3]
+                           ^^^^^^^^^ [1]
+   array.js:22:11
+   22|   arr1 as [1, 2, 3]; // error cast to non-readonly
+                 ^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- array.js:25:8
+
+Cannot call `arr1.push` because property `push` is missing in `$ReadOnlyArray` [1]. [prop-missing]
+
+   array.js:25:8
+    25|   arr1.push(4); // error cannot mutate readonly array
+               ^^^^
+
+References:
+   <BUILTINS>/core.js:726:15
+   726| declare class $ReadOnlyArray<+T> {
+                      ^^^^^^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- array.js:29:17
+
+Cannot cast `_` to `typeof arr1` because tuple type [1] has 3 or more elements (inexact tuple) but const array
+literal [2] has 3 elements. [invalid-tuple-arity]
+
+   array.js:29:17
+   29|   _ as readonly [1, 2, 3, ...] as typeof arr1; // ERRROR: inexact ~> exact
+                       ^^^^^^^^^^^^^^ [1]
+
+References:
+   array.js:29:35
+   29|   _ as readonly [1, 2, 3, ...] as typeof arr1; // ERRROR: inexact ~> exact
+                                         ^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- array.js:30:9
+
+Cannot cast `_` to `typeof arr1` because in index `0`: number [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   array.js:30:9
+   30|   _ as [number, 1, 3] as typeof arr1; // error number ~> 1, 1 ~> 2
+               ^^^^^^ [1]
+
+References:
+   array.js:7:22
+    7| export const arr1 = [1, 2, 3] as const;   // readonly [1, 2, 3]
+                            ^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- array.js:30:17
+
+Cannot cast `_` to `typeof arr1` because in index `1`: number literal `1` [1] is incompatible with number literal
+`2` [2]. [incompatible-type]
+
+   array.js:30:17
+   30|   _ as [number, 1, 3] as typeof arr1; // error number ~> 1, 1 ~> 2
+                       ^ [1]
+
+References:
+   array.js:7:25
+    7| export const arr1 = [1, 2, 3] as const;   // readonly [1, 2, 3]
+                               ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- array.js:34:3
+
+Cannot cast `arr2` to tuple type because tuple element at index `0` is read-only in const array literal [1] but writable
+in tuple type [2]. [incompatible-variance]
+
+   array.js:34:3
+   34|   arr2 as [number]; // error cast to non-readonly
+         ^^^^
+
+References:
+   array.js:8:21
+    8| export const arr2 = [n] as const;         // readonly [number]
+                           ^^^ [1]
+   array.js:34:11
+   34|   arr2 as [number]; // error cast to non-readonly
+                 ^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- array.js:44:3
+
+Cannot cast `arr4` to `Readonly` because in index `0`: number [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   array.js:44:3
+   44|   arr4 as readonly [1, 2, 3]; // error arr4 elements are `number` not `1`, `2`, `3`
+         ^^^^
+
+References:
+   array.js:3:12
+    3| const a = [1, 2, 3];
+                  ^ [1]
+   array.js:44:21
+   44|   arr4 as readonly [1, 2, 3]; // error arr4 elements are `number` not `1`, `2`, `3`
+                           ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- array.js:44:3
+
+Cannot cast `arr4` to `Readonly` because in index `1`: number [1] is incompatible with number literal `2` [2].
+[incompatible-type]
+
+   array.js:44:3
+   44|   arr4 as readonly [1, 2, 3]; // error arr4 elements are `number` not `1`, `2`, `3`
+         ^^^^
+
+References:
+   array.js:3:15
+    3| const a = [1, 2, 3];
+                     ^ [1]
+   array.js:44:24
+   44|   arr4 as readonly [1, 2, 3]; // error arr4 elements are `number` not `1`, `2`, `3`
+                              ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- array.js:44:3
+
+Cannot cast `arr4` to `Readonly` because in index `2`: number [1] is incompatible with number literal `3` [2].
+[incompatible-type]
+
+   array.js:44:3
+   44|   arr4 as readonly [1, 2, 3]; // error arr4 elements are `number` not `1`, `2`, `3`
+         ^^^^
+
+References:
+   array.js:3:18
+    3| const a = [1, 2, 3];
+                        ^ [1]
+   array.js:44:27
+   44|   arr4 as readonly [1, 2, 3]; // error arr4 elements are `number` not `1`, `2`, `3`
+                                 ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- array.js:53:3
+
+Cannot cast `arr5` to tuple type because const array literal [1] is incompatible with tuple type [2].
+[incompatible-type]
+
+   array.js:53:3
+   53|   arr5 as [1, 2, 3]; // error arr5 is not a tuple
+         ^^^^
+
+References:
+   array.js:12:14
+   12| const arr5 = [...b] as const;              // readonly [number, number, number]
+                    ^^^^^^ [1]
+   array.js:53:11
+   53|   arr5 as [1, 2, 3]; // error arr5 is not a tuple
+                 ^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- array.js:54:3
+
+Cannot cast `arr5` to array type because const array literal [1] is incompatible with array type [2].
+[incompatible-type]
+
+   array.js:54:3
+   54|   arr5 as Array<number>; // error arr5 is readonly
+         ^^^^
+
+References:
+   array.js:12:14
+   12| const arr5 = [...b] as const;              // readonly [number, number, number]
+                    ^^^^^^ [1]
+   array.js:54:11
+   54|   arr5 as Array<number>; // error arr5 is readonly
+                 ^^^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- array.js:65:3
+
+Cannot cast `arr6` to tuple type because tuple element at index `0` is read-only in const array literal [1] but writable
+in tuple type [2]. [incompatible-variance]
+
+   array.js:65:3
+   65|   arr6 as [{+f: 1}]; // error cast to non-readonly array
+         ^^^^
+
+References:
+   array.js:13:21
+   13| export const arr6 = [{f: 1}] as const;            // readonly [{+f: 1}]
+                           ^^^^^^^^ [1]
+   array.js:65:11
+   65|   arr6 as [{+f: 1}]; // error cast to non-readonly array
+                 ^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- array.js:66:3
+
+Cannot cast `arr6` to tuple type because tuple element at index `0` is read-only in const array literal [1] but writable
+in tuple type [2]. [incompatible-variance]
+
+   array.js:66:3
+   66|   arr6 as [{f: 1}]; // error cast to non-readonly prop
+         ^^^^
+
+References:
+   array.js:13:21
+   13| export const arr6 = [{f: 1}] as const;            // readonly [{+f: 1}]
+                           ^^^^^^^^ [1]
+   array.js:66:11
+   66|   arr6 as [{f: 1}]; // error cast to non-readonly prop
+                 ^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- array.js:66:3
+
+Cannot cast `arr6` to tuple type because in index `0`: property `f` is read-only in const object literal [1] but
+writable in object type [2]. [incompatible-variance]
+
+   array.js:66:3
+   66|   arr6 as [{f: 1}]; // error cast to non-readonly prop
+         ^^^^
+
+References:
+   array.js:13:22
+   13| export const arr6 = [{f: 1}] as const;            // readonly [{+f: 1}]
+                            ^^^^^^ [1]
+   array.js:66:12
+   66|   arr6 as [{f: 1}]; // error cast to non-readonly prop
+                  ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- array.js:81:3
+
+Cannot cast `arr8` to tuple type because in index `0`: null or undefined [1] is incompatible with undefined (out of
+bounds tuple access at index 0) [2]. [incompatible-type]
+
+   array.js:81:3
+   81|   arr8 as [a?: ?number]; // error arity
+         ^^^^ [2]
+
+References:
+   array.js:81:16
+   81|   arr8 as [a?: ?number]; // error arity
+                      ^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- array.js:81:3
+
+Cannot cast `arr8` to tuple type because in index `0`: number [1] is incompatible with undefined (out of bounds tuple
+access at index 0) [2]. [incompatible-type]
+
+   array.js:81:3
+   81|   arr8 as [a?: ?number]; // error arity
+         ^^^^ [2]
+
+References:
+   array.js:81:17
+   81|   arr8 as [a?: ?number]; // error arity
+                       ^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- array.js:84:8
+
+Cannot cast `_` to `typeof arr8` because tuple type [1] has 1 element but const array literal [2] has 0 elements.
+[invalid-tuple-arity]
+
+   array.js:84:8
+   84|   _ as [1] as typeof arr8; // error arity
+              ^^^ [1]
+
+References:
+   array.js:84:15
+   84|   _ as [1] as typeof arr8; // error arity
+                     ^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- array.js:85:8
+
+Cannot cast `_` to `typeof arr8` because tuple type [1] has 0-1 elements but const array literal [2] has 0 elements.
+[invalid-tuple-arity]
+
+   array.js:85:8
+   85|   _ as [a?: number] as typeof arr8; // error arity
+              ^^^^^^^^^^^^ [1]
+
+References:
+   array.js:85:24
+   85|   _ as [a?: number] as typeof arr8; // error arity
+                              ^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- import-array.js:8:3
+
+Cannot cast `arr1` to tuple type because tuple element at index `2` is read-only in const array literal [1] but writable
+in tuple type [2]. [incompatible-variance]
+
+   import-array.js:8:3
+   8|   arr1 as [+_:1, +_:2, 3]; // error cast 3rd element to non-readonly
+        ^^^^
+
+References:
+   array.js:7:21
+   7| export const arr1 = [1, 2, 3] as const;   // readonly [1, 2, 3]
+                          ^^^^^^^^^ [1]
+   import-array.js:8:11
+   8|   arr1 as [+_:1, +_:2, 3]; // error cast 3rd element to non-readonly
+                ^^^^^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- import-array.js:14:17
+
+Cannot cast `_` to `typeof arr1` because tuple type [1] has 3 or more elements (inexact tuple) but const array
+literal [2] has 3 elements. [invalid-tuple-arity]
+
+   import-array.js:14:17
+   14|   _ as readonly [1, 2, 3, ...] as typeof arr1; // TODO error inexact ~> exact
+                       ^^^^^^^^^^^^^^ [1]
+
+References:
+   import-array.js:14:35
+   14|   _ as readonly [1, 2, 3, ...] as typeof arr1; // TODO error inexact ~> exact
+                                         ^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- import-array.js:15:9
+
+Cannot cast `_` to `typeof arr1` because in index `0`: number [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   import-array.js:15:9
+   15|   _ as [number, 1, 3] as typeof arr1; // error number ~> 1, 1 ~> 2
+               ^^^^^^ [1]
+
+References:
+   array.js:7:22
+    7| export const arr1 = [1, 2, 3] as const;   // readonly [1, 2, 3]
+                            ^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- import-array.js:15:17
+
+Cannot cast `_` to `typeof arr1` because in index `1`: number literal `1` [1] is incompatible with number literal
+`2` [2]. [incompatible-type]
+
+   import-array.js:15:17
+   15|   _ as [number, 1, 3] as typeof arr1; // error number ~> 1, 1 ~> 2
+                       ^ [1]
+
+References:
+   array.js:7:25
+    7| export const arr1 = [1, 2, 3] as const;   // readonly [1, 2, 3]
+                               ^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- import-array.js:19:3
+
+Cannot cast `arr2` to tuple type because tuple element at index `0` is read-only in const array literal [1] but writable
+in tuple type [2]. [incompatible-variance]
+
+   import-array.js:19:3
+   19|   arr2 as [number]; // error cast to non-readonly
+         ^^^^
+
+References:
+   array.js:8:21
+    8| export const arr2 = [n] as const;         // readonly [number]
+                           ^^^ [1]
+   import-array.js:19:11
+   19|   arr2 as [number]; // error cast to non-readonly
+                 ^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- import-array.js:26:3
+
+Cannot cast `arr6` to tuple type because tuple element at index `0` is read-only in const array literal [1] but writable
+in tuple type [2]. [incompatible-variance]
+
+   import-array.js:26:3
+   26|   arr6 as [{+f: 1}]; // error cast to non-readonly array
+         ^^^^
+
+References:
+   array.js:13:21
+   13| export const arr6 = [{f: 1}] as const;            // readonly [{+f: 1}]
+                           ^^^^^^^^ [1]
+   import-array.js:26:11
+   26|   arr6 as [{+f: 1}]; // error cast to non-readonly array
+                 ^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- import-array.js:27:3
+
+Cannot cast `arr6` to `Readonly` because in index `0`: property `f` is read-only in const object literal [1] but
+writable in object type [2]. [incompatible-variance]
+
+   import-array.js:27:3
+   27|   arr6 as readonly [{f: 1}]; // error cast to non-readonly prop
+         ^^^^
+
+References:
+   array.js:13:22
+   13| export const arr6 = [{f: 1}] as const;            // readonly [{+f: 1}]
+                            ^^^^^^ [1]
+   import-array.js:27:21
+   27|   arr6 as readonly [{f: 1}]; // error cast to non-readonly prop
+                           ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- import-array.js:37:3
+
+Cannot cast `arr8` to tuple type because in index `0`: null or undefined [1] is incompatible with undefined (out of
+bounds tuple access at index 0) [2]. [incompatible-type]
+
+   import-array.js:37:3
+   37|   arr8 as [a?: ?number]; // error arity
+         ^^^^ [2]
+
+References:
+   import-array.js:37:16
+   37|   arr8 as [a?: ?number]; // error arity
+                      ^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------- import-array.js:37:3
+
+Cannot cast `arr8` to tuple type because in index `0`: number [1] is incompatible with undefined (out of bounds tuple
+access at index 0) [2]. [incompatible-type]
+
+   import-array.js:37:3
+   37|   arr8 as [a?: ?number]; // error arity
+         ^^^^ [2]
+
+References:
+   import-array.js:37:17
+   37|   arr8 as [a?: ?number]; // error arity
+                       ^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------- import-array.js:40:8
+
+Cannot cast `_` to `typeof arr8` because tuple type [1] has 1 element but const array literal [2] has 0 elements.
+[invalid-tuple-arity]
+
+   import-array.js:40:8
+   40|   _ as [1] as typeof arr8; // error arity
+              ^^^ [1]
+
+References:
+   import-array.js:40:15
+   40|   _ as [1] as typeof arr8; // error arity
+                     ^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- import-array.js:41:8
+
+Cannot cast `_` to `typeof arr8` because tuple type [1] has 0-1 elements but const array literal [2] has 0 elements.
+[invalid-tuple-arity]
+
+   import-array.js:41:8
+   41|   _ as [a?: number] as typeof arr8; // error arity
+              ^^^^^^^^^^^^ [1]
+
+References:
+   import-array.js:41:24
+   41|   _ as [a?: number] as typeof arr8; // error arity
+                              ^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- import-object.js:10:3
+
+Cannot cast `obj1` to object type because property `f` is read-only in const object literal [1] but writable in object
+type [2]. [incompatible-variance]
+
+   import-object.js:10:3
+   10|   obj1 as {f: 1}; // error cast to non-readonly
+         ^^^^
+
+References:
+   object.js:7:21
+    7| export const obj1 = {f: 1} as const;      // {+f: 1}
+                           ^^^^^^ [1]
+   import-object.js:10:11
+   10|   obj1 as {f: 1}; // error cast to non-readonly
+                 ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- import-object.js:17:8
+
+Cannot cast `_` to `typeof obj1` because inexact object type [1] is incompatible with exact const object literal [2].
+[incompatible-exact]
+
+   import-object.js:17:8
+   17|   _ as {+f: 1, ...} as typeof obj1; // error inexact ~> exact
+              ^^^^^^^^^^^^ [1]
+
+References:
+   import-object.js:17:24
+   17|   _ as {+f: 1, ...} as typeof obj1; // error inexact ~> exact
+                              ^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- import-object.js:18:12
+
+Cannot cast `_` to `typeof obj1` because in property `f`: number [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   import-object.js:18:12
+   18|   _ as {f: number} as typeof obj1; // error number ~> 1
+                  ^^^^^^ [1]
+
+References:
+   object.js:7:25
+    7| export const obj1 = {f: 1} as const;      // {+f: 1}
+                               ^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- import-object.js:31:3
+
+Cannot cast `obj3` to object type because property `f` is read-only in const object literal [1] but writable in object
+type [2]. [incompatible-variance]
+
+   import-object.js:31:3
+   31|   obj3 as {f: 1}; // error cast to non-readonly
+         ^^^^
+
+References:
+   object.js:9:21
+    9| export const obj3 = {...{f: 1}} as const; // {+f: 1}
+                           ^^^^^^^^^^^ [1]
+   import-object.js:31:11
+   31|   obj3 as {f: 1}; // error cast to non-readonly
+                 ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- import-object.js:38:8
+
+Cannot cast `_` to `typeof obj3` because inexact object type [1] is incompatible with exact const object literal [2].
+[incompatible-exact]
+
+   import-object.js:38:8
+   38|   _ as {+f: 1, ...} as typeof obj3; // error inexact ~> exact
+              ^^^^^^^^^^^^ [1]
+
+References:
+   import-object.js:38:24
+   38|   _ as {+f: 1, ...} as typeof obj3; // error inexact ~> exact
+                              ^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- import-object.js:39:12
+
+Cannot cast `_` to `typeof obj3` because in property `f`: number [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   import-object.js:39:12
+   39|   _ as {f: number} as typeof obj3; // error number ~> 1
+                  ^^^^^^ [1]
+
+References:
+   object.js:9:29
+    9| export const obj3 = {...{f: 1}} as const; // {+f: 1}
+                                   ^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- import-object.js:43:3
+
+Cannot cast `obj4` to object type because property `f` is read-only in const object literal [1] but writable in object
+type [2]. [incompatible-variance]
+
+   import-object.js:43:3
+   43|   obj4 as {f: number}; // error cast to non-readonly
+         ^^^^
+
+References:
+   object.js:10:21
+   10| export const obj4 = {...p} as const;      // {+f: Num<1>}
+                           ^^^^^^ [1]
+   import-object.js:43:11
+   43|   obj4 as {f: number}; // error cast to non-readonly
+                 ^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- import-object.js:50:8
+
+Cannot cast `_` to `typeof obj4` because inexact object type [1] is incompatible with exact const object literal [2].
+[incompatible-exact]
+
+   import-object.js:50:8
+   50|   _ as {+f: 1, ...} as typeof obj4; // error inexact ~> exact
+              ^^^^^^^^^^^^ [1]
+
+References:
+   import-object.js:50:24
+   50|   _ as {+f: 1, ...} as typeof obj4; // error inexact ~> exact
+                              ^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- import-object.js:55:3
+
+Cannot cast `obj5` to object type because property `f` is read-only in const object literal [1] but writable in object
+type [2]. [incompatible-variance]
+
+   import-object.js:55:3
+   55|   obj5 as {f: number}; // error cast to non-readonly
+         ^^^^
+
+References:
+   object.js:11:21
+   11| export const obj5 = {...q} as const;      // {+f: number}
+                           ^^^^^^ [1]
+   import-object.js:55:11
+   55|   obj5 as {f: number}; // error cast to non-readonly
+                 ^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- import-object.js:57:3
+
+Cannot cast `obj5` to object type because in property `f`: number [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   import-object.js:57:3
+   57|   obj5 as {+f: 1, ...}; // error number ~> 1
+         ^^^^
+
+References:
+   object.js:4:22
+    4| declare const q: {f: number};
+                            ^^^^^^ [1]
+   import-object.js:57:16
+   57|   obj5 as {+f: 1, ...}; // error number ~> 1
+                      ^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- import-object.js:61:8
+
+Cannot cast `_` to `typeof obj5` because inexact object type [1] is incompatible with exact const object literal [2].
+[incompatible-exact]
+
+   import-object.js:61:8
+   61|   _ as {+f: number, ...} as typeof obj5; // error inexact ~> exact
+              ^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   import-object.js:61:29
+   61|   _ as {+f: number, ...} as typeof obj5; // error inexact ~> exact
+                                   ^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- import-object.js:65:3
+
+Cannot cast `obj6` to object type because an index signature declaring the expected key / value type is read-only in
+const object literal [1] but writable in object type [2]. [incompatible-variance]
+
+   import-object.js:65:3
+   65|   obj6 as {[string]: number}; // error readonly ~> non-readonly
+         ^^^^
+
+References:
+   object.js:12:21
+   12| export const obj6 = {...d} as const;      // {+[string]: number}
+                           ^^^^^^ [1]
+   import-object.js:65:11
+   65|   obj6 as {[string]: number}; // error readonly ~> non-readonly
+                 ^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- import-object.js:74:3
+
+Cannot cast `obj7` to object type because property `m` is read-only in const object literal [1] but writable in object
+type [2]. [incompatible-variance]
+
+   import-object.js:74:3
+   74|   obj7 as {m: () => void}; // error m is readonly in obj7
+         ^^^^
+
+References:
+   object.js:13:21
+   13| export const obj7 = {m() {}} as const;    // {m(): void}
+                           ^^^^^^^^ [1]
+   import-object.js:74:11
+   74|   obj7 as {m: () => void}; // error m is readonly in obj7
+                 ^^^^^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- import-object.js:83:3
+
+Cannot cast `obj8` to object type because in property `f`: property `g` is read-only in const object literal [1] but
+writable in object type [2]. [incompatible-variance]
+
+   import-object.js:83:3
+   83|   obj8 as {+f: {g: 1}}; // error cast to non-readonly g
+         ^^^^
+
+References:
+   object.js:14:25
+   14| export const obj8 = {f: {g: 1}} as const; // {+f: {+g: 1}}
+                               ^^^^^^ [1]
+   import-object.js:83:16
+   83|   obj8 as {+f: {g: 1}}; // error cast to non-readonly g
+                      ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- import-object.js:91:13
+
+Cannot cast `_` to `typeof obj8` because in property `f`: inexact object type [1] is incompatible with exact const
+object literal [2]. [incompatible-exact]
+
+   import-object.js:91:13
+   91|   _ as {+f: {+g: 1, ...}} as typeof obj8; // error inexact ~> exact
+                   ^^^^^^^^^^^^ [1]
+
+References:
+   object.js:14:25
+   14| export const obj8 = {f: {g: 1}} as const; // {+f: {+g: 1}}
+                               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- import-object.js:92:16
+
+Cannot cast `_` to `typeof obj8` because in property `f.g`: number [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   import-object.js:92:16
+   92|   _ as {f: {g: number}} as typeof obj8; // error number ~> 1
+                      ^^^^^^ [1]
+
+References:
+   object.js:14:29
+   14| export const obj8 = {f: {g: 1}} as const; // {+f: {+g: 1}}
+                                   ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- import-object.js:108:8
+
+Cannot cast `_` to `typeof obj10.g.h` because number literal `2` [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   import-object.js:108:8
+   108|   _ as 2 as typeof obj10.g.h; // error 2 ~> 1
+               ^ [1]
+
+References:
+   import-object.js:108:13
+   108|   _ as 2 as typeof obj10.g.h; // error 2 ~> 1
+                    ^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ import-primitive.js:6:3
+
+Cannot cast `n` to number literal `2` because number literal `1` [1] is incompatible with number literal `2` [2].
+[incompatible-type]
+
+   import-primitive.js:6:3
+   6|   n as 2; // error 1 ~> 2
+        ^
+
+References:
+   primitive.js:1:18
+   1| export const n = 1 as const;
+                       ^ [1]
+   import-primitive.js:6:8
+   6|   n as 2; // error 1 ~> 2
+             ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ import-primitive.js:9:3
+
+Cannot cast `2` to `typeof n` because number literal `2` [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   import-primitive.js:9:3
+   9|   2 as typeof n; // error 2 ~> 1
+        ^ [1]
+
+References:
+   import-primitive.js:9:8
+   9|   2 as typeof n; // error 2 ~> 1
+             ^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- import-primitive.js:10:8
+
+Cannot cast `2` to `typeof n` because number [1] is incompatible with number literal `1` [2]. [incompatible-type]
+
+   import-primitive.js:10:8
+   10|   2 as number as typeof n; // error number ~> 1
+              ^^^^^^ [1]
+
+References:
+   import-primitive.js:10:18
+   10|   2 as number as typeof n; // error number ~> 1
+                        ^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- import-primitive.js:16:3
+
+Cannot cast `s` to string literal `b` because string literal `a` [1] is incompatible with string literal `b` [2].
+[incompatible-type]
+
+   import-primitive.js:16:3
+   16|   s as "b"; // error a ~> b
+         ^
+
+References:
+   primitive.js:2:18
+    2| export const s = "a" as const;
+                        ^^^ [1]
+   import-primitive.js:16:8
+   16|   s as "b"; // error a ~> b
+              ^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- import-primitive.js:19:3
+
+Cannot cast `"b"` to `typeof s` because string literal `b` [1] is incompatible with string literal `a` [2].
+[incompatible-type]
+
+   import-primitive.js:19:3
+   19|   "b" as typeof s; // error b ~> a
+         ^^^ [1]
+
+References:
+   import-primitive.js:19:10
+   19|   "b" as typeof s; // error b ~> a
+                ^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- import-primitive.js:20:10
+
+Cannot cast `"b"` to `typeof s` because string [1] is incompatible with string literal `a` [2]. [incompatible-type]
+
+   import-primitive.js:20:10
+   20|   "b" as string as typeof s; // error string ~> a
+                ^^^^^^ [1]
+
+References:
+   import-primitive.js:20:20
+   20|   "b" as string as typeof s; // error string ~> a
+                          ^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- import-primitive.js:26:3
+
+Cannot cast `b` to boolean literal `false` because boolean literal `true` [1] is incompatible with boolean literal
+`false` [2]. [incompatible-type]
+
+   import-primitive.js:26:3
+   26|   b as false; // error true ~> false
+         ^
+
+References:
+   primitive.js:3:18
+    3| export const b = true as const;
+                        ^^^^ [1]
+   import-primitive.js:26:8
+   26|   b as false; // error true ~> false
+              ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- import-primitive.js:29:3
+
+Cannot cast `false` to `typeof b` because boolean literal `false` [1] is incompatible with boolean literal `true` [2].
+[incompatible-type]
+
+   import-primitive.js:29:3
+   29|   false as typeof b; // error false ~> true
+         ^^^^^ [1]
+
+References:
+   import-primitive.js:29:12
+   29|   false as typeof b; // error false ~> true
+                  ^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- import-primitive.js:30:12
+
+Cannot cast `false` to `typeof b` because boolean [1] is incompatible with boolean literal `true` [2].
+[incompatible-type]
+
+   import-primitive.js:30:12
+   30|   false as boolean as typeof b; // error bool ~> true
+                  ^^^^^^^ [1]
+
+References:
+   import-primitive.js:30:23
+   30|   false as boolean as typeof b; // error bool ~> true
+                             ^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- import-primitive.js:36:3
+
+Cannot cast `bi` to bigint literal `2n` because bigint literal `1n` [1] is incompatible with bigint literal `2n` [2].
+[incompatible-type]
+
+   import-primitive.js:36:3
+   36|   bi as 2n; // error 1n ~> 2n
+         ^^
+
+References:
+   primitive.js:4:19
+    4| export const bi = 1n as const;
+                         ^^ [1]
+   import-primitive.js:36:9
+   36|   bi as 2n; // error 1n ~> 2n
+               ^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- import-primitive.js:39:3
+
+Cannot cast `2n` to `typeof bi` because bigint literal `2n` [1] is incompatible with bigint literal `1n` [2].
+[incompatible-type]
+
+   import-primitive.js:39:3
+   39|   2n as typeof bi; // error 2n ~> 1n
+         ^^ [1]
+
+References:
+   import-primitive.js:39:9
+   39|   2n as typeof bi; // error 2n ~> 1n
+               ^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- import-primitive.js:40:9
+
+Cannot cast `2n` to `typeof bi` because bigint [1] is incompatible with bigint literal `1n` [2]. [incompatible-type]
+
+   import-primitive.js:40:9
+   40|   2n as bigint as typeof bi; // error bigint ~> 1n
+               ^^^^^^ [1]
+
+References:
+   import-primitive.js:40:19
+   40|   2n as bigint as typeof bi; // error bigint ~> 1n
+                         ^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- import-primitive.js:45:3
+
+Cannot cast `neg` to number literal `1` because number literal `-1` [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   import-primitive.js:45:3
+   45|   neg as 1; // error
+         ^^^
+
+References:
+   primitive.js:5:20
+    5| export const neg = -1 as const;
+                          ^^ [1]
+   import-primitive.js:45:10
+   45|   neg as 1; // error
+                ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- import-primitive.js:47:3
+
+Cannot cast `1` to `typeof neg` because number literal `1` [1] is incompatible with number literal `-1` [2].
+[incompatible-type]
+
+   import-primitive.js:47:3
+   47|   1 as typeof neg; // error
+         ^ [1]
+
+References:
+   import-primitive.js:47:8
+   47|   1 as typeof neg; // error
+              ^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- import-primitive.js:50:3
+
+Cannot cast `obj_neg.f` to number literal `1` because number literal `-1` [1] is incompatible with number literal
+`1` [2]. [incompatible-type]
+
+   import-primitive.js:50:3
+   50|   obj_neg.f as 1; // error
+         ^^^^^^^^^
+
+References:
+   primitive.js:6:29
+    6| export const obj_neg = { f: -1 } as const;
+                                   ^^ [1]
+   import-primitive.js:50:16
+   50|   obj_neg.f as 1; // error
+                      ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- import-primitive.js:52:3
+
+Cannot cast `1` to `typeof obj_neg.f` because number literal `1` [1] is incompatible with number literal `-1` [2].
+[incompatible-type]
+
+   import-primitive.js:52:3
+   52|   1 as typeof obj_neg.f; // error
+         ^ [1]
+
+References:
+   import-primitive.js:52:8
+   52|   1 as typeof obj_neg.f; // error
+              ^^^^^^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- invalid.js:17:2
+
+The `as const` assertion can only be used on string, numeric, boolean, object, or array literals, or const-variables
+initialized with primitive literals. [unsupported-syntax]
+
+   17| (function f() {}) as const; // error function is not a literal
+        ^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- invalid.js:18:2
+
+The `as const` assertion can only be used on string, numeric, boolean, object, or array literals, or const-variables
+initialized with primitive literals. [unsupported-syntax]
+
+   18| (class C {}) as const; // error class is not a literal
+        ^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- invalid.js:19:1
+
+The `as const` assertion can only be used on string, numeric, boolean, object, or array literals, or const-variables
+initialized with primitive literals. [unsupported-syntax]
+
+   19| 1 as const as const; // error as const is not a literal
+       ^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- invalid.js:20:1
+
+The `as const` assertion can only be used on string, numeric, boolean, object, or array literals, or const-variables
+initialized with primitive literals. [unsupported-syntax]
+
+   20| 1 + 1 as const; // error binary operation is not a literal
+       ^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- invalid.js:21:1
+
+The `as const` assertion can only be used on string, numeric, boolean, object, or array literals, or const-variables
+initialized with primitive literals. [unsupported-syntax]
+
+   21| 1 as number as const; // error cast expression is not a literal
+       ^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- invalid.js:22:1
+
+The `as const` assertion can only be used on string, numeric, boolean, object, or array literals, or const-variables
+initialized with primitive literals. [unsupported-syntax]
+
+   22| null as const; // error null is not a supported literal
+       ^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- invalid.js:23:1
+
+The `as const` assertion can only be used on string, numeric, boolean, object, or array literals, or const-variables
+initialized with primitive literals. [unsupported-syntax]
+
+   23| undefined as const; // error undefined is not a supported literal
+       ^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- invalid.js:24:1
+
+The `as const` assertion can only be used on string, numeric, boolean, object, or array literals, or const-variables
+initialized with primitive literals. [unsupported-syntax]
+
+   24| foo() as const; // error function call is not a literal
+       ^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- invalid.js:25:1
+
+The `as const` assertion can only be used on string, numeric, boolean, object, or array literals, or const-variables
+initialized with primitive literals. [unsupported-syntax]
+
+   25| constNumber as const; // error as const on non-primitive const variable
+       ^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- invalid.js:26:1
+
+The `as const` assertion can only be used on string, numeric, boolean, object, or array literals, or const-variables
+initialized with primitive literals. [unsupported-syntax]
+
+   26| letOne as const; // error as const on non-const variable
+       ^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------------- jsx.js:5:1
+
+Cannot cast `b` to `ExactReactElement_DEPRECATED` because in type argument `ElementType` [1]: component [2] is
+incompatible with string literal `div` [3]. [incompatible-type]
+
+   jsx.js:5:1
+    5| b as ExactReactElement_DEPRECATED<'div'>; // error
+       ^
+
+References:
+   <BUILTINS>/react.js:58:51
+   58| declare opaque type ExactReactElement_DEPRECATED<+ElementType: React$ElementType, +P = React$ElementConfig<ElementType>>: {...};
+                                                         ^^^^^^^^^^^ [1]
+   <BUILTINS>/react.js:97:52
+   97|   type MixedElement = ExactReactElement_DEPRECATED<React$ElementType, mixed>;
+                                                          ^^^^^^^^^^^^^^^^^ [2]
+   jsx.js:5:35
+    5| b as ExactReactElement_DEPRECATED<'div'>; // error
+                                         ^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------------- jsx.js:5:1
+
+Cannot cast `b` to `ExactReactElement_DEPRECATED` because in type argument `ElementType` [1]: string literal `div` [2]
+is incompatible with string [3]. [incompatible-type]
+
+   jsx.js:5:1
+    5| b as ExactReactElement_DEPRECATED<'div'>; // error
+       ^
+
+References:
+   <BUILTINS>/react.js:58:51
+   58| declare opaque type ExactReactElement_DEPRECATED<+ElementType: React$ElementType, +P = React$ElementConfig<ElementType>>: {...};
+                                                         ^^^^^^^^^^^ [1]
+   jsx.js:5:35
+    5| b as ExactReactElement_DEPRECATED<'div'>; // error
+                                         ^^^^^ [2]
+   <BUILTINS>/react.js:97:52
+   97|   type MixedElement = ExactReactElement_DEPRECATED<React$ElementType, mixed>;
+                                                          ^^^^^^^^^^^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------------- jsx.js:6:1
+
+Cannot cast `a` to empty because React element [1] is incompatible with empty [2]. [incompatible-type]
+
+   jsx.js:6:1
+   6| a as empty; // error
+      ^ [1]
+
+References:
+   jsx.js:6:6
+   6| a as empty; // error
+           ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------------- jsx.js:7:1
+
+Cannot cast `b` to empty because `ExactReactElement_DEPRECATED` [1] is incompatible with empty [2]. [incompatible-type]
+
+   jsx.js:7:1
+   7| b as empty; // error
+      ^
+
+References:
+   jsx.js:2:11
+   2| const b = <div />; // generalized to React.MixedElement
+                ^^^^^^^ [1]
+   jsx.js:7:6
+   7| b as empty; // error
+           ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- object.js:23:3
+
+Cannot cast `obj1` to object type because property `f` is read-only in const object literal [1] but writable in object
+type [2]. [incompatible-variance]
+
+   object.js:23:3
+   23|   obj1 as {f: 1}; // error cast to non-readonly
+         ^^^^
+
+References:
+   object.js:7:21
+    7| export const obj1 = {f: 1} as const;      // {+f: 1}
+                           ^^^^^^ [1]
+   object.js:23:11
+   23|   obj1 as {f: 1}; // error cast to non-readonly
+                 ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- object.js:30:8
+
+Cannot cast `_` to `typeof obj1` because inexact object type [1] is incompatible with exact const object literal [2].
+[incompatible-exact]
+
+   object.js:30:8
+   30|   _ as {+f: 1, ...} as typeof obj1; // error inexact ~> exact
+              ^^^^^^^^^^^^ [1]
+
+References:
+   object.js:30:24
+   30|   _ as {+f: 1, ...} as typeof obj1; // error inexact ~> exact
+                              ^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- object.js:31:12
+
+Cannot cast `_` to `typeof obj1` because in property `f`: number [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   object.js:31:12
+   31|   _ as {f: number} as typeof obj1; // error number ~> 1
+                  ^^^^^^ [1]
+
+References:
+   object.js:7:25
+    7| export const obj1 = {f: 1} as const;      // {+f: 1}
+                               ^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- object.js:44:3
+
+Cannot cast `obj3` to object type because property `f` is read-only in const object literal [1] but writable in object
+type [2]. [incompatible-variance]
+
+   object.js:44:3
+   44|   obj3 as {f: 1}; // error cast to non-readonly
+         ^^^^
+
+References:
+   object.js:9:21
+    9| export const obj3 = {...{f: 1}} as const; // {+f: 1}
+                           ^^^^^^^^^^^ [1]
+   object.js:44:11
+   44|   obj3 as {f: 1}; // error cast to non-readonly
+                 ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- object.js:51:8
+
+Cannot cast `_` to `typeof obj3` because inexact object type [1] is incompatible with exact const object literal [2].
+[incompatible-exact]
+
+   object.js:51:8
+   51|   _ as {+f: 1, ...} as typeof obj3; // error inexact ~> exact
+              ^^^^^^^^^^^^ [1]
+
+References:
+   object.js:51:24
+   51|   _ as {+f: 1, ...} as typeof obj3; // error inexact ~> exact
+                              ^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- object.js:52:12
+
+Cannot cast `_` to `typeof obj3` because in property `f`: number [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   object.js:52:12
+   52|   _ as {f: number} as typeof obj3; // error number ~> 1
+                  ^^^^^^ [1]
+
+References:
+   object.js:9:29
+    9| export const obj3 = {...{f: 1}} as const; // {+f: 1}
+                                   ^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- object.js:56:3
+
+Cannot cast `obj4` to object type because property `f` is read-only in const object literal [1] but writable in object
+type [2]. [incompatible-variance]
+
+   object.js:56:3
+   56|   obj4 as {f: number}; // error cast to non-readonly
+         ^^^^
+
+References:
+   object.js:10:21
+   10| export const obj4 = {...p} as const;      // {+f: Num<1>}
+                           ^^^^^^ [1]
+   object.js:56:11
+   56|   obj4 as {f: number}; // error cast to non-readonly
+                 ^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- object.js:63:8
+
+Cannot cast `_` to `typeof obj4` because inexact object type [1] is incompatible with exact const object literal [2].
+[incompatible-exact]
+
+   object.js:63:8
+   63|   _ as {+f: 1, ...} as typeof obj4; // error inexact ~> exact
+              ^^^^^^^^^^^^ [1]
+
+References:
+   object.js:63:24
+   63|   _ as {+f: 1, ...} as typeof obj4; // error inexact ~> exact
+                              ^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- object.js:68:3
+
+Cannot cast `obj5` to object type because property `f` is read-only in const object literal [1] but writable in object
+type [2]. [incompatible-variance]
+
+   object.js:68:3
+   68|   obj5 as {f: number}; // error cast to non-readonly
+         ^^^^
+
+References:
+   object.js:11:21
+   11| export const obj5 = {...q} as const;      // {+f: number}
+                           ^^^^^^ [1]
+   object.js:68:11
+   68|   obj5 as {f: number}; // error cast to non-readonly
+                 ^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- object.js:70:3
+
+Cannot cast `obj5` to object type because in property `f`: number [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   object.js:70:3
+   70|   obj5 as {+f: 1, ...}; // error number ~> 1
+         ^^^^
+
+References:
+   object.js:4:22
+    4| declare const q: {f: number};
+                            ^^^^^^ [1]
+   object.js:70:16
+   70|   obj5 as {+f: 1, ...}; // error number ~> 1
+                      ^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- object.js:74:8
+
+Cannot cast `_` to `typeof obj5` because inexact object type [1] is incompatible with exact const object literal [2].
+[incompatible-exact]
+
+   object.js:74:8
+   74|   _ as {+f: number, ...} as typeof obj5; // error inexact ~> exact
+              ^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   object.js:74:29
+   74|   _ as {+f: number, ...} as typeof obj5; // error inexact ~> exact
+                                   ^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- object.js:78:3
+
+Cannot cast `obj6` to object type because an index signature declaring the expected key / value type is read-only in
+const object literal [1] but writable in object type [2]. [incompatible-variance]
+
+   object.js:78:3
+   78|   obj6 as {[string]: number}; // error readonly ~> non-readonly
+         ^^^^
+
+References:
+   object.js:12:21
+   12| export const obj6 = {...d} as const;      // {+[string]: number}
+                           ^^^^^^ [1]
+   object.js:78:11
+   78|   obj6 as {[string]: number}; // error readonly ~> non-readonly
+                 ^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- object.js:87:3
+
+Cannot cast `obj7` to object type because property `m` is read-only in const object literal [1] but writable in object
+type [2]. [incompatible-variance]
+
+   object.js:87:3
+   87|   obj7 as {m: () => void}; // error m is readonly in obj7
+         ^^^^
+
+References:
+   object.js:13:21
+   13| export const obj7 = {m() {}} as const;    // {m(): void}
+                           ^^^^^^^^ [1]
+   object.js:87:11
+   87|   obj7 as {m: () => void}; // error m is readonly in obj7
+                 ^^^^^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- object.js:96:3
+
+Cannot cast `obj8` to object type because in property `f`: property `g` is read-only in const object literal [1] but
+writable in object type [2]. [incompatible-variance]
+
+   object.js:96:3
+   96|   obj8 as {+f: {g: 1}}; // error cast to non-readonly g
+         ^^^^
+
+References:
+   object.js:14:25
+   14| export const obj8 = {f: {g: 1}} as const; // {+f: {+g: 1}}
+                               ^^^^^^ [1]
+   object.js:96:16
+   96|   obj8 as {+f: {g: 1}}; // error cast to non-readonly g
+                      ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- object.js:104:13
+
+Cannot cast `_` to `typeof obj8` because in property `f`: inexact object type [1] is incompatible with exact const
+object literal [2]. [incompatible-exact]
+
+   object.js:104:13
+   104|   _ as {+f: {+g: 1, ...}} as typeof obj8; // error inexact ~> exact
+                    ^^^^^^^^^^^^ [1]
+
+References:
+   object.js:14:25
+    14| export const obj8 = {f: {g: 1}} as const; // {+f: {+g: 1}}
+                                ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- object.js:105:16
+
+Cannot cast `_` to `typeof obj8` because in property `f.g`: number [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   object.js:105:16
+   105|   _ as {f: {g: number}} as typeof obj8; // error number ~> 1
+                       ^^^^^^ [1]
+
+References:
+   object.js:14:29
+    14| export const obj8 = {f: {g: 1}} as const; // {+f: {+g: 1}}
+                                    ^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- object.js:120:8
+
+Cannot cast `_` to `typeof obj10.g.h` because number literal `2` [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   object.js:120:8
+   120|   _ as 2 as typeof obj10.g.h; // error 2 ~> 1
+               ^ [1]
+
+References:
+   object.js:120:13
+   120|   _ as 2 as typeof obj10.g.h; // error 2 ~> 1
+                    ^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ primitive.js:11:3
+
+Cannot cast `n` to number literal `2` because number literal `1` [1] is incompatible with number literal `2` [2].
+[incompatible-type]
+
+   primitive.js:11:3
+   11|   n as 2; // error 1 ~> 2
+         ^
+
+References:
+   primitive.js:1:18
+    1| export const n = 1 as const;
+                        ^ [1]
+   primitive.js:11:8
+   11|   n as 2; // error 1 ~> 2
+              ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ primitive.js:14:3
+
+Cannot cast `2` to `typeof n` because number literal `2` [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   primitive.js:14:3
+   14|   2 as typeof n; // error 2 ~> 1
+         ^ [1]
+
+References:
+   primitive.js:14:8
+   14|   2 as typeof n; // error 2 ~> 1
+              ^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ primitive.js:15:8
+
+Cannot cast `2` to `typeof n` because number [1] is incompatible with number literal `1` [2]. [incompatible-type]
+
+   primitive.js:15:8
+   15|   2 as number as typeof n; // error number ~> 1
+              ^^^^^^ [1]
+
+References:
+   primitive.js:15:18
+   15|   2 as number as typeof n; // error number ~> 1
+                        ^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ primitive.js:21:3
+
+Cannot cast `s` to string literal `b` because string literal `a` [1] is incompatible with string literal `b` [2].
+[incompatible-type]
+
+   primitive.js:21:3
+   21|   s as "b"; // error a ~> b
+         ^
+
+References:
+   primitive.js:2:18
+    2| export const s = "a" as const;
+                        ^^^ [1]
+   primitive.js:21:8
+   21|   s as "b"; // error a ~> b
+              ^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ primitive.js:24:3
+
+Cannot cast `"b"` to `typeof s` because string literal `b` [1] is incompatible with string literal `a` [2].
+[incompatible-type]
+
+   primitive.js:24:3
+   24|   "b" as typeof s; // error b ~> a
+         ^^^ [1]
+
+References:
+   primitive.js:24:10
+   24|   "b" as typeof s; // error b ~> a
+                ^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- primitive.js:25:10
+
+Cannot cast `"b"` to `typeof s` because string [1] is incompatible with string literal `a` [2]. [incompatible-type]
+
+   primitive.js:25:10
+   25|   "b" as string as typeof s; // error string ~> a
+                ^^^^^^ [1]
+
+References:
+   primitive.js:25:20
+   25|   "b" as string as typeof s; // error string ~> a
+                          ^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ primitive.js:31:3
+
+Cannot cast `b` to boolean literal `false` because boolean literal `true` [1] is incompatible with boolean literal
+`false` [2]. [incompatible-type]
+
+   primitive.js:31:3
+   31|   b as false; // error true ~> false
+         ^
+
+References:
+   primitive.js:3:18
+    3| export const b = true as const;
+                        ^^^^ [1]
+   primitive.js:31:8
+   31|   b as false; // error true ~> false
+              ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ primitive.js:34:3
+
+Cannot cast `false` to `typeof b` because boolean literal `false` [1] is incompatible with boolean literal `true` [2].
+[incompatible-type]
+
+   primitive.js:34:3
+   34|   false as typeof b; // error false ~> true
+         ^^^^^ [1]
+
+References:
+   primitive.js:34:12
+   34|   false as typeof b; // error false ~> true
+                  ^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- primitive.js:35:12
+
+Cannot cast `false` to `typeof b` because boolean [1] is incompatible with boolean literal `true` [2].
+[incompatible-type]
+
+   primitive.js:35:12
+   35|   false as boolean as typeof b; // error bool ~> true
+                  ^^^^^^^ [1]
+
+References:
+   primitive.js:35:23
+   35|   false as boolean as typeof b; // error bool ~> true
+                             ^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ primitive.js:41:3
+
+Cannot cast `bi` to bigint literal `2n` because bigint literal `1n` [1] is incompatible with bigint literal `2n` [2].
+[incompatible-type]
+
+   primitive.js:41:3
+   41|   bi as 2n; // error 1n ~> 2n
+         ^^
+
+References:
+   primitive.js:4:19
+    4| export const bi = 1n as const;
+                         ^^ [1]
+   primitive.js:41:9
+   41|   bi as 2n; // error 1n ~> 2n
+               ^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ primitive.js:44:3
+
+Cannot cast `2n` to `typeof bi` because bigint literal `2n` [1] is incompatible with bigint literal `1n` [2].
+[incompatible-type]
+
+   primitive.js:44:3
+   44|   2n as typeof bi; // error 2n ~> 1n
+         ^^ [1]
+
+References:
+   primitive.js:44:9
+   44|   2n as typeof bi; // error 2n ~> 1n
+               ^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ primitive.js:45:9
+
+Cannot cast `2n` to `typeof bi` because bigint [1] is incompatible with bigint literal `1n` [2]. [incompatible-type]
+
+   primitive.js:45:9
+   45|   2n as bigint as typeof bi; // error bigint ~> 1n
+               ^^^^^^ [1]
+
+References:
+   primitive.js:45:19
+   45|   2n as bigint as typeof bi; // error bigint ~> 1n
+                         ^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ primitive.js:50:3
+
+Cannot cast `neg` to number literal `1` because number literal `-1` [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   primitive.js:50:3
+   50|   neg as 1; // error
+         ^^^
+
+References:
+   primitive.js:5:20
+    5| export const neg = -1 as const;
+                          ^^ [1]
+   primitive.js:50:10
+   50|   neg as 1; // error
+                ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ primitive.js:52:3
+
+Cannot cast `1` to `typeof neg` because number literal `1` [1] is incompatible with number literal `-1` [2].
+[incompatible-type]
+
+   primitive.js:52:3
+   52|   1 as typeof neg; // error
+         ^ [1]
+
+References:
+   primitive.js:52:8
+   52|   1 as typeof neg; // error
+              ^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ primitive.js:55:3
+
+Cannot cast `obj_neg.f` to number literal `1` because number literal `-1` [1] is incompatible with number literal
+`1` [2]. [incompatible-type]
+
+   primitive.js:55:3
+   55|   obj_neg.f as 1; // error
+         ^^^^^^^^^
+
+References:
+   primitive.js:6:29
+    6| export const obj_neg = { f: -1 } as const;
+                                   ^^ [1]
+   primitive.js:55:16
+   55|   obj_neg.f as 1; // error
+                      ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ primitive.js:57:3
+
+Cannot cast `1` to `typeof obj_neg.f` because number literal `1` [1] is incompatible with number literal `-1` [2].
+[incompatible-type]
+
+   primitive.js:57:3
+   57|   1 as typeof obj_neg.f; // error
+         ^ [1]
+
+References:
+   primitive.js:57:8
+   57|   1 as typeof obj_neg.f; // error
+              ^^^^^^^^^^^^^^^^ [2]
+
+
+
+Found 111 errors

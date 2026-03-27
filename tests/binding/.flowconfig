@@ -1,0 +1,7 @@
+[options]
+no_flowlib=false
+all=true
+component_syntax=true
+
+[lints]
+deprecated-type=off

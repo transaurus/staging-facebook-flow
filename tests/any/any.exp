@@ -1,0 +1,105 @@
+Error ------------------------------------------------------------------------------------------------------ any.js:8:16
+
+Cannot assign `bar(...)` to `y` because `unknown` [1] is incompatible with string [2]. [incompatible-type]
+
+   any.js:8:16
+   8| var y:string = bar(0);
+                     ^^^^^^
+
+References:
+   any.js:4:21
+   4| function bar(x:any):mixed { return x; }
+                          ^^^^^ [1]
+   any.js:8:7
+   8| var y:string = bar(0);
+            ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- ex_special_cases.js:30:21
+
+Cannot assign `array[receiver.name]` to `test1` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   ex_special_cases.js:30:21
+   30| var test1: string = array[receiver.name]; // if result of receiver.getprop is any, this will fail, but no error if it's empty.
+                           ^^^^^^^^^^^^^^^^^^^^
+
+References:
+   ex_special_cases.js:29:26
+   29| declare var array: Array<number>;
+                                ^^^^^^ [1]
+   ex_special_cases.js:30:12
+   30| var test1: string = array[receiver.name]; // if result of receiver.getprop is any, this will fail, but no error if it's empty.
+                  ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- ex_special_cases.js:31:21
+
+Cannot assign `array[receiver.name()]` to `test2` because number [1] is incompatible with string [2].
+[incompatible-type]
+
+   ex_special_cases.js:31:21
+   31| var test2: string = array[receiver.name()] // likewise
+                           ^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   ex_special_cases.js:29:26
+   29| declare var array: Array<number>;
+                                ^^^^^^ [1]
+   ex_special_cases.js:31:12
+   31| var test2: string = array[receiver.name()] // likewise
+                  ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- propagate.js:10:10
+
+Cannot return `c.bar(...)` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   propagate.js:10:10
+   10|   return c.bar(0, y); // should be able to select first case and error
+                ^^^^^^^^^^^
+
+References:
+   propagate.js:4:32
+    4|   bar(n1: number, n2: number): number;
+                                      ^^^^^^ [1]
+   propagate.js:8:29
+    8| function foo(c: C, x: any): string {
+                                   ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ propagate.js:16:5
+
+Cannot cast `x` to boolean because `unknown` [1] is incompatible with boolean [2]. [incompatible-type]
+
+   propagate.js:16:5
+   16|     x as boolean;
+           ^
+
+References:
+   propagate.js:14:18
+   14| function bar1(x: unknown) {
+                        ^^^^^^^ [1]
+   propagate.js:16:10
+   16|     x as boolean;
+                ^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ propagate.js:23:5
+
+Cannot cast `x` to boolean because `unknown` [1] is incompatible with boolean [2]. [incompatible-type]
+
+   propagate.js:23:5
+   23|     x as boolean;
+           ^
+
+References:
+   propagate.js:21:18
+   21| function bar2(x: unknown) {
+                        ^^^^^^^ [1]
+   propagate.js:23:10
+   23|     x as boolean;
+                ^^^^^^^ [2]
+
+
+
+Found 6 errors

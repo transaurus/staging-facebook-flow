@@ -1,0 +1,75 @@
+Error ----------------------------------------------------------------------------------------------------- cycle.js:0:1
+
+Invalid trivially recursive definition of exports.  [recursive-definition]
+
+
+Error ----------------------------------------------------------------------------------------------------- dest.js:4:17
+
+Cannot assign `source.num` to `b` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   dest.js:4:17
+   4| var b: string = source.num; // Error: num ~> string
+                      ^^^^^^^^^^
+
+References:
+   source.js:2:20
+   2| export const num = 42;
+                         ^^ [1]
+   dest.js:4:8
+   4| var b: string = source.num; // Error: num ~> string
+             ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- dest.js:7:17
+
+Cannot assign `source.str` to `d` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   dest.js:7:17
+   7| var d: number = source.str; // Error: num ~> string
+                      ^^^^^^^^^^
+
+References:
+   source.js:1:20
+   1| export const str = 'asdf';
+                         ^^^^^^ [1]
+   dest.js:7:8
+   7| var d: number = source.str; // Error: num ~> string
+             ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- override_test.js:4:2
+
+Cannot cast `C1` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   override_test.js:4:2
+   4| (C1: number); // error
+       ^^
+
+References:
+   local_override1.js:3:18
+   3| export const C = "asdf";
+                       ^^^^^^ [1]
+   override_test.js:4:6
+   4| (C1: number); // error
+           ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- override_test.js:9:2
+
+Cannot cast `C2` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   override_test.js:9:2
+   9| (C2: number); // error
+       ^^
+
+References:
+   local_override2.js:4:18
+   4| export const C = "asdf";
+                       ^^^^^^ [1]
+   override_test.js:9:6
+   9| (C2: number); // error
+           ^^^^^^ [2]
+
+
+
+Found 5 errors

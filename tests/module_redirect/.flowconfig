@@ -1,0 +1,10 @@
+[ignore]
+
+[include]
+
+[libs]
+A.js
+
+[options]
+all=true
+module.system=haste

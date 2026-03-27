@@ -1,0 +1,13 @@
+[ignore]
+
+[include]
+
+[libs]
+libs/
+
+[options]
+all=true
+no_flowlib=true
+
+[lints]
+unsafe-getters-setters=error

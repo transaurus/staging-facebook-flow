@@ -1,0 +1,4 @@
+(library
+ (name flow_sedlexing)
+ (package flow_parser)
+ (wrapped false))

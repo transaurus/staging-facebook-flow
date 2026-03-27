@@ -1,0 +1,436 @@
+Error --------------------------------------------------------------------------------------- componentlike_name.js:12:3
+
+Cannot call hook [1] because React hooks can only be called within components or hooks. This hook is definitely not
+called in a component or hook. (https://react.dev/reference/rules/rules-of-hooks)
+[react-rule-hook-definitely-not-in-component-or-hook]
+
+   componentlike_name.js:12:3
+   12|   useState(); // ERROR
+         ^^^^^^^^^^
+
+References:
+   componentlike_name.js:12:3
+   12|   useState(); // ERROR
+         ^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------------ dro.js:1:18
+
+`$ReactDeepReadOnly` is a secret internal Flow type exposed for testing purposes. There will be no stability guarantees.
+[internal-type]
+
+   1| declare const a: $ReactDeepReadOnly<{x: {y: number}}>;
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------------- dro.js:2:5
+
+Cannot assign `42` to `a.x.y` because property `y` is not writable. [cannot-write]
+
+   2| a.x.y = 42; // error
+          ^
+
+
+Error ------------------------------------------------------------------------------------------------------- dro.js:3:3
+
+Cannot assign `42` to `a.x` because property `x` is not writable. [cannot-write]
+
+   3| a.x = 42; // error
+        ^
+
+
+Error ------------------------------------------------------------------------------------------------------ dro.js:5:18
+
+`$ReactDeepReadOnly` is a secret internal Flow type exposed for testing purposes. There will be no stability guarantees.
+[internal-type]
+
+   5| declare const x: $ReactDeepReadOnly<{x: {a: number}, y: Array<{w: {v: number}}>}>;
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------------ dro.js:10:2
+
+Cannot cast `v` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   dro.js:10:2
+   10| (v: empty); //error
+        ^
+
+References:
+   dro.js:5:71
+    5| declare const x: $ReactDeepReadOnly<{x: {a: number}, y: Array<{w: {v: number}}>}>;
+                                                                             ^^^^^^ [1]
+   dro.js:10:5
+   10| (v: empty); //error
+           ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------------ dro.js:11:3
+
+Cannot assign `0` to `w.v` because property `v` is not writable. [cannot-write]
+
+   11| w.v = 0; // error
+         ^
+
+
+Error ------------------------------------------------------------------------------------------------------ dro.js:12:5
+
+Cannot assign `42` to `x.x.a` because property `a` is not writable. [cannot-write]
+
+   12| x.x.a = 42; // error
+           ^
+
+
+Error ------------------------------------------------------------------------------------------------------ dro.js:13:5
+
+Cannot assign array literal to `x.x.y` because property `y` is not writable. [cannot-write]
+
+   13| x.x.y = []; // error
+           ^
+
+
+Error ------------------------------------------------------------------------------------------------------ dro.js:14:3
+
+Cannot assign `42` to `x.x` because property `x` is not writable. [cannot-write]
+
+   14| x.x = (42: any);
+         ^
+
+
+Error ----------------------------------------------------------------------------------------------------- dro.js:16:19
+
+`$ReactDeepReadOnly` is a secret internal Flow type exposed for testing purposes. There will be no stability guarantees.
+[internal-type]
+
+   16| declare const rr: $ReactDeepReadOnly<{current: number}>;
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ----------------------------------------------------------------------------------------------------- dro.js:19:19
+
+`$ReactDeepReadOnly` is a secret internal Flow type exposed for testing purposes. There will be no stability guarantees.
+[internal-type]
+
+   19| declare const w3: $ReactDeepReadOnly<{a: {b: number}, c: number}>;
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------------ dro.js:22:6
+
+Cannot assign `42` to `w2.a.b` because property `b` is not writable. [cannot-write]
+
+   22| w2.a.b = 42; // error
+            ^
+
+
+Error ----------------------------------------------------------------------------------------------------- dro.js:24:19
+
+`$ReactDeepReadOnly` is a secret internal Flow type exposed for testing purposes. There will be no stability guarantees.
+[internal-type]
+
+   24| declare const v3: $ReactDeepReadOnly<Array<{a: number}>>;
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------------ dro.js:27:7
+
+Cannot assign `42` to `v2[1].a` because property `a` is not writable. [cannot-write]
+
+   27| v2[1].a = 42; //error
+             ^
+
+
+Error ------------------------------------------------------------------------------------------------------ dro.js:32:7
+
+Cannot assign `42` to `x.y` because property `y` is not writable. [react-rule-unsafe-mutation]
+
+React component properties [1] and their nested props and elements cannot be written to.
+(https://react.dev/reference/rules/components-and-hooks-must-be-pure#props).
+
+   dro.js:32:7
+   32|     x.y = 42 // error;
+             ^
+
+References:
+   dro.js:31:16
+   31| component Foo1(x: { y: number}) {
+                      ^^^^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- dro.js:36:10
+
+Cannot assign `42` to `rest.bar` because property `bar` is not writable. [react-rule-unsafe-mutation]
+
+React component properties [1] and their nested props and elements cannot be written to.
+(https://react.dev/reference/rules/components-and-hooks-must-be-pure#props).
+
+   dro.js:36:10
+   36|     rest.bar = 42; // error;
+                ^^^
+
+References:
+   dro.js:35:19
+   35| component Foo2(...rest: {bar: number, baz: Array<string>, qux:[number, Array<string>]}) {
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------------ dro.js:37:5
+
+Cannot call `rest.baz.push` because property `push` is not readable. [react-rule-unsafe-mutation]
+
+React component properties [1] and their nested props and elements cannot be written to.
+(https://react.dev/reference/rules/components-and-hooks-must-be-pure#props).
+
+   dro.js:37:5
+   37|     rest.baz.push("hello"); // error
+           ^^^^^^^^^^^^^
+
+References:
+   dro.js:35:19
+   35| component Foo2(...rest: {bar: number, baz: Array<string>, qux:[number, Array<string>]}) {
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------------ dro.js:38:5
+
+Cannot assign `42` to `rest.qux[0]` because read-only arrays cannot be written to. [react-rule-unsafe-mutation]
+
+React component properties [1] and their nested props and elements cannot be written to.
+(https://react.dev/reference/rules/components-and-hooks-must-be-pure#props).
+
+   dro.js:38:5
+   38|     rest.qux[0] = 42; // error
+           ^^^^^^^^^^^
+
+References:
+   dro.js:35:19
+   35| component Foo2(...rest: {bar: number, baz: Array<string>, qux:[number, Array<string>]}) {
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------------ dro.js:39:5
+
+Cannot call `rest.qux[1].pop` because property `pop` is not readable. [react-rule-unsafe-mutation]
+
+React component properties [1] and their nested props and elements cannot be written to.
+(https://react.dev/reference/rules/components-and-hooks-must-be-pure#props).
+
+   dro.js:39:5
+   39|     rest.qux[1].pop(); // error
+           ^^^^^^^^^^^^^^^
+
+References:
+   dro.js:35:19
+   35| component Foo2(...rest: {bar: number, baz: Array<string>, qux:[number, Array<string>]}) {
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------------ dro.js:56:9
+
+Cannot assign `0` to `obj.prop` because property `prop` is not writable. [react-rule-unsafe-mutation]
+
+React component properties [1] and their nested props and elements cannot be written to.
+(https://react.dev/reference/rules/components-and-hooks-must-be-pure#props).
+
+   dro.js:56:9
+   56|     obj.prop = 0; // error
+               ^^^^
+
+References:
+   dro.js:49:5
+           v------
+   49|     data: {
+   50|       [key: Union]: {
+   51|         prop?: number,
+   52|       },
+   53|     },
+           ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------------ dro.js:61:3
+
+Cannot call `arr.sort` because property `sort` is not readable. [react-rule-unsafe-mutation]
+
+React component properties [1] and their nested props and elements cannot be written to.
+(https://react.dev/reference/rules/components-and-hooks-must-be-pure#props).
+
+   dro.js:61:3
+   61|   arr.sort((a, b) => { // only dro error
+         ^^^^^^^^
+
+References:
+   dro.js:60:40
+   60| component NonInterferenceWithInference(arr: Array<number>) {
+                                              ^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------- error.invalid-access-ref-during-render.js:8:17
+
+Cannot read `current` from `ref` [1] because `ref` values may not be read during render.
+(https://react.dev/reference/react/useRef). [react-rule-unsafe-ref]
+
+   8|   const value = ref.current; // Error
+                      ^^^ [1]
+
+
+Error ----------------------------------------------------------------------- error.invalid-pass-ref-to-function.js:8:17
+
+Cannot pass `ref` [1] as an argument because `ref` values may not be passed to functions because they could read the ref
+value (`current`) property) during render. (https://react.dev/reference/react/useRef). [react-rule-unsafe-ref]
+
+   8|   const x = foo(ref); // Error
+                      ^^^ [1]
+
+
+Error ------------------------------------------------------------------------- error.invalid-ref-value-as-props.js:8:20
+
+Cannot read `current` from `ref` [1] because `ref` values may not be read during render.
+(https://react.dev/reference/react/useRef). [react-rule-unsafe-ref]
+
+   8|   return <Foo ref={ref.current} />; // Error
+                         ^^^ [1]
+
+
+Error -------------------------------------------------------------- error.invalid-set-and-read-ref-during-render.js:6:3
+
+Cannot read `current` from `ref` [1] because `ref` values may not be read during render.
+(https://react.dev/reference/react/useRef). [react-rule-unsafe-ref]
+
+   6|   ref.current = value; // Error
+        ^^^ [1]
+
+
+Error ------------------------------------------------------------- error.invalid-set-and-read-ref-during-render.js:7:10
+
+Cannot read `current` from `ref` [1] because `ref` values may not be read during render.
+(https://react.dev/reference/react/useRef). [react-rule-unsafe-ref]
+
+   7|   return ref.current; // Error
+               ^^^ [1]
+
+
+Error ---------------------------------------------------- error.invalid-use-ref-added-to-dep-without-type-info.js:14:23
+
+Cannot read `current` from `val.ref` [1] because `ref` values may not be read during render.
+(https://react.dev/reference/react/useRef). [react-rule-unsafe-ref]
+
+   14|   const x = { a, val: val.ref.current }; // Error
+                             ^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- exception_for_init.js:9:3
+
+Cannot read `current` from `ref1` [1] because `ref` values may not be read during render.
+(https://react.dev/reference/react/useRef). [react-rule-unsafe-ref]
+
+   9|   ref1.current; // error
+        ^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------- exception_for_init.js:13:5
+
+Cannot read `current` from `ref2` [1] because `ref` values may not be read during render.
+(https://react.dev/reference/react/useRef). [react-rule-unsafe-ref]
+
+   13|     ref2.current; // error
+           ^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------- exception_for_init.js:23:5
+
+Cannot read `current` from `ref4` [1] because `ref` values may not be read during render.
+(https://react.dev/reference/react/useRef). [react-rule-unsafe-ref]
+
+   23|     ref4.current = 42; // error
+           ^^^^ [1]
+
+
+Error ------------------------------------------------------------------------- invalidComponentExportDefaultAnon.js:5:3
+
+Cannot call hook [1] because React hooks can only be called within components or hooks.
+(https://react.dev/reference/rules/rules-of-hooks) [react-rule-hook]
+
+   invalidComponentExportDefaultAnon.js:5:3
+   5|   useState(); // ERROR
+        ^^^^^^^^^^
+
+References:
+   invalidComponentExportDefaultAnon.js:5:3
+   5|   useState(); // ERROR
+        ^^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- nested.js:5:5
+
+Cannot read `current` from `ref` [1] because `ref` values may not be read within hooks.
+(https://react.dev/reference/react/useRef). [react-rule-unsafe-ref]
+
+   5|     ref.current = 42; // error
+          ^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- nested.js:17:13
+
+Cannot pass `ref` [1] as an argument because `ref` values may not be passed to functions because they could read the ref
+value (`current`) property) during render. (https://react.dev/reference/react/useRef). [react-rule-unsafe-ref]
+
+   17|     takeRef(ref); // error
+                   ^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- nested.js:19:9
+
+Cannot read `current` from `ref` [1] because `ref` values may not be read during render.
+(https://react.dev/reference/react/useRef). [react-rule-unsafe-ref]
+
+   19|         ref.current = 42; // error, triggeted by boom()
+               ^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- nested.js:29:21
+
+Cannot read `current` from `ref` [1] because `ref` values may not be read during render.
+(https://react.dev/reference/react/useRef). [react-rule-unsafe-ref]
+
+   29|     useMemo(() => { ref.current = 42; }, []); // error
+                           ^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- nested.js:32:9
+
+Cannot read `current` from `ref` [1] because `ref` values may not be read during render.
+(https://react.dev/reference/react/useRef). [react-rule-unsafe-ref]
+
+   32|         ref.current = 42; // error, triggeted by nestedBoomOuter()
+               ^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- nested.js:45:41
+
+Cannot read `current` from `ref` [1] because `ref` values may not be read during render.
+(https://react.dev/reference/react/useRef). [react-rule-unsafe-ref]
+
+   45|     const cb_boom = useCallback(() => { ref.current = 42; }, []); // error
+                                               ^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- pass_to_hook.js:4:5
+
+Cannot read `current` from `ref` [1] because `ref` values may not be read within hooks.
+(https://react.dev/reference/react/useRef). [react-rule-unsafe-ref]
+
+   4|     ref.current; // error
+          ^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------- ref_read_different_type.js:2:5
+
+Cannot read `current` from `otherRef` [1] because `ref` values may not be read during render.
+(https://react.dev/reference/react/useRef). [react-rule-unsafe-ref]
+
+   2|     otherRef.current; // error
+          ^^^^^^^^ [1]
+
+
+
+Found 40 errors

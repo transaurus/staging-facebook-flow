@@ -1,0 +1,8 @@
+> cat a.js
+// @flow
+
+declare function f(): ExactReactElement_DEPRECATED<'a'> | ExactReactElement_DEPRECATED<'b'>;
+
+module.exports = (f() as React.MixedElement);
+> flow status
+No errors!

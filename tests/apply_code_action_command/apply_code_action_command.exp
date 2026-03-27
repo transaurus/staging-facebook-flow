@@ -1,0 +1,116 @@
+> apply-code-action 'source.addMissingImports' tmp/a.js
+// @flow
+
+import OtherModule from "./OtherModule";
+
+OtherModule;
+> Confirm no errors
+Found 0 errors
+> apply-code-action 'source.addMissingImports' tmp/multi.js
+// @flow
+
+import OtherModule from "./OtherModule";
+
+OtherModule;
+OtherModule;
+> Confirm no errors
+Found 0 errors
+> apply-code-action suggestImports tmp/suggest_imports.js
+{
+  "OtherModule":[
+    {
+      "command":{
+        "arguments":["textDocument/codeAction","import","Import default from ./OtherModule"],
+        "command":"log:",
+        "title":""
+      },
+      "diagnostics":[],
+      "edit":{
+        "changes":{
+          "file:tmp/suggest_imports.js": [
+            {
+              "newText":"import OtherModule from \"./OtherModule\";\n\n",
+              "range":{"end":{"character":0,"line":1},"start":{"character":0,"line":1}}
+            }
+          ]
+        }
+      },
+      "kind":"quickfix",
+      "title":"Import default from ./OtherModule"
+    }
+  ],
+  "foo":[
+    {
+      "command":{
+        "arguments":["textDocument/codeAction","import","Import from ./ExportFoo1"],
+        "command":"log:",
+        "title":""
+      },
+      "diagnostics":[],
+      "edit":{
+        "changes":{
+          "file:tmp/suggest_imports.js": [
+            {
+              "newText":"import { foo } from \"./ExportFoo1\";\n\n",
+              "range":{"end":{"character":0,"line":1},"start":{"character":0,"line":1}}
+            }
+          ]
+        }
+      },
+      "kind":"quickfix",
+      "title":"Import from ./ExportFoo1"
+    },
+    {
+      "command":{
+        "arguments":["textDocument/codeAction","import","Import from ./ExportFoo2"],
+        "command":"log:",
+        "title":""
+      },
+      "diagnostics":[],
+      "edit":{
+        "changes":{
+          "file:tmp/suggest_imports.js": [
+            {
+              "newText":"import { foo } from \"./ExportFoo2\";\n\n",
+              "range":{"end":{"character":0,"line":1},"start":{"character":0,"line":1}}
+            }
+          ]
+        }
+      },
+      "kind":"quickfix",
+      "title":"Import from ./ExportFoo2"
+    }
+  ]
+}
+> apply-code-action 'experimental.quickfix' tmp/test-quickfixes.js
+// $FlowFixMe[internal-type]
+type T1 = React.Node;
+// $FlowFixMe[internal-type]
+type T2 = React.Node;
+
+type Expected = {
+    foo?: number,
+    bar: 'foo' | 'bar',
+}
+
+declare export function assertExpected(expected: Expected): void;
+
+const obj = {bar: 'foo' as const};
+// $FlowFixMe[incompatible-type]
+assertExpected(obj);
+> apply-code-action 'experimental.quickfix' tmp/test-quickfixes.js --include-best-effort-fix
+// $FlowFixMe[internal-type]
+type T1 = React.Node;
+// $FlowFixMe[internal-type]
+type T2 = React.Node;
+
+type Expected = {
+    foo?: number,
+    bar: 'foo' | 'bar',
+}
+
+declare export function assertExpected(expected: Expected): void;
+
+const obj: Expected = {bar: 'foo' as const};
+// $FlowFixMe[incompatible-type]
+assertExpected(obj);

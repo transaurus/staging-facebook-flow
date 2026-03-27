@@ -1,0 +1,917 @@
+Error ------------------------------------------------------------------------------------------ function_typeof.js:5:30
+
+Cannot resolve name `x`. [cannot-resolve-name]
+
+   5| export function f1(x: typeof x) {} // error - unbound x
+                                   ^
+
+
+Error ------------------------------------------------------------------------------------------ function_typeof.js:18:7
+
+Cannot call `f2` with `'a'` bound to `y` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   function_typeof.js:18:7
+   18| f2(1, 'a'); // error
+             ^^^ [1]
+
+References:
+   function_typeof.js:6:34
+    6| export function f2(x: number, y: typeof x) {}
+                                        ^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- function_typeof.js:21:12
+
+Cannot call `f3` with `'a'` bound to `y` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   function_typeof.js:21:12
+   21| f3({f: 1}, 'a'); // error
+                  ^^^ [1]
+
+References:
+   function_typeof.js:7:39
+    7| export function f3(x: {f: number}, y: typeof x.f) {}
+                                             ^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- function_typeof.js:24:20
+
+Cannot call `f4` because in array element: string [1] is incompatible with number [2]. [incompatible-type]
+
+   function_typeof.js:24:20
+   24| f4({f: [1, 2, 3]}, '1'); // error
+                          ^^^ [1]
+
+References:
+   function_typeof.js:8:33
+    8| export function f4(x: {f: Array<number>}, ...y: typeof x.f) {}
+                                       ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- function_typeof.js:26:10
+
+Cannot call `poly1` with `2` bound to `y` because number [1] is incompatible with `X` [2]. [incompatible-type]
+
+   function_typeof.js:26:10
+   26| poly1(1, 2); // TODO okay
+                ^ [1]
+
+References:
+   function_typeof.js:10:35
+   10| export function poly1<X>(x: X, y: typeof x) {}
+                                         ^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- function_typeof.js:27:10
+
+Cannot call `poly1` with `'a'` bound to `y` because string [1] is incompatible with `X` [2]. [incompatible-type]
+
+   function_typeof.js:27:10
+   27| poly1(1, 'a'); // error (TODO string ~> number)
+                ^^^ [1]
+
+References:
+   function_typeof.js:10:35
+   10| export function poly1<X>(x: X, y: typeof x) {}
+                                         ^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- function_typeof.js:30:15
+
+Cannot call `poly2` with `'a'` bound to `y` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   function_typeof.js:30:15
+   30| poly2({f: 1}, 'a'); // error string ~> number
+                     ^^^ [1]
+
+References:
+   function_typeof.js:11:48
+   11| export function poly2<X: {f: number}>(x: X, y: typeof x.f) {}
+                                                      ^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- function_typeof.js:32:15
+
+Cannot call `poly3` with `3` bound to `y` because number [1] is incompatible with `V` [2]. [incompatible-type]
+
+   function_typeof.js:32:15
+   32| poly3({f: 1}, 3); // TODO okay
+                     ^ [1]
+
+References:
+   function_typeof.js:12:46
+   12| export function poly3<V, X: {f: V}>(x: X, y: typeof x.f) {}
+                                                    ^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- function_typeof.js:33:15
+
+Cannot call `poly3` with `'a'` bound to `y` because string [1] is incompatible with `V` [2]. [incompatible-type]
+
+   function_typeof.js:33:15
+   33| poly3({f: 1}, 'a'); // error (TODO string ~> number)
+                     ^^^ [1]
+
+References:
+   function_typeof.js:12:46
+   12| export function poly3<V, X: {f: V}>(x: X, y: typeof x.f) {}
+                                                    ^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ function_typeof.js:46:1
+
+Cannot cast `r1` to function type because in the return value: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   function_typeof.js:46:1
+   46| r1 as (x: number) => string; // error
+       ^^
+
+References:
+   function_typeof.js:35:32
+   35| export function r1(x: number): typeof x { return x; }
+                                      ^^^^^^^^ [1]
+   function_typeof.js:46:22
+   46| r1 as (x: number) => string; // error
+                            ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ function_typeof.js:49:1
+
+Cannot cast `r2` to function type because in the return value: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   function_typeof.js:49:1
+   49| r2 as (x: {f: number}) => string; // error
+       ^^
+
+References:
+   function_typeof.js:36:37
+   36| export function r2(x: {f: number}): typeof x.f { return x.f; }
+                                           ^^^^^^^^^^ [1]
+   function_typeof.js:49:27
+   49| r2 as (x: {f: number}) => string; // error
+                                 ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ function_typeof.js:54:1
+
+Cannot cast `r4` to function type because in the return value: `unknown` [1] is incompatible with empty [2].
+[incompatible-type]
+
+   function_typeof.js:54:1
+   54| r4 as <X>(x: X) => empty // error
+       ^^
+
+References:
+   function_typeof.js:38:30
+   38| export function r4<X>(x: X): typeof x { return x; }
+                                    ^^^^^^^^ [1]
+   function_typeof.js:54:20
+   54| r4 as <X>(x: X) => empty // error
+                          ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ function_typeof.js:57:1
+
+Cannot cast `r5` to function type because in the return value > property `f`: `X` [1] is not exactly the same as
+`empty` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because property `f` is invariantly typed. To fix the error,
+- Either make `{f: X}` [3] and `{f: empty}` [4] exactly the same
+- Or make property `f` in object type [4] readonly. See
+https://flow.org/en/docs/faq/#why-cant-i-pass-a-string-to-a-function-that-takes-a-string-number.
+
+   function_typeof.js:57:1
+   57| r5 as <X>(x: X) => {f: empty}; // error
+       ^^
+
+References:
+   function_typeof.js:39:33
+   39| export function r5<X>(x: X): {f:typeof x} { return {f: x}; }
+                                       ^^^^^^^^ [1]
+   function_typeof.js:57:24
+   57| r5 as <X>(x: X) => {f: empty}; // error
+                              ^^^^^ [2]
+   function_typeof.js:39:30
+   39| export function r5<X>(x: X): {f:typeof x} { return {f: x}; }
+                                    ^^^^^^^^^^^^ [3]
+   function_typeof.js:57:20
+   57| r5 as <X>(x: X) => {f: empty}; // error
+                          ^^^^^^^^^^ [4]
+
+
+Error ------------------------------------------------------------------------------------------ function_typeof.js:60:1
+
+Cannot cast `r6` to function type because in the return value: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   function_typeof.js:60:1
+   60| r6 as <X: {f: number}>(x: X) => string; // error
+       ^^
+
+References:
+   function_typeof.js:40:43
+   40| export function r6<X: {f: number}>(x: X): typeof x.f { return x.f; }
+                                                 ^^^^^^^^^^ [1]
+   function_typeof.js:60:33
+   60| r6 as <X: {f: number}>(x: X) => string; // error
+                                       ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ function_typeof.js:63:1
+
+Cannot cast `r7` to function type because in the return value: `unknown` [1] is incompatible with empty [2].
+[incompatible-type]
+
+   function_typeof.js:63:1
+   63| r7 as <V, X: {f: V}>(x: X) => empty; // error
+       ^^
+
+References:
+   function_typeof.js:41:41
+   41| export function r7<V, X: {f: V}>(x: X): typeof x.f { return x.f; }
+                                               ^^^^^^^^^^ [1]
+   function_typeof.js:63:31
+   63| r7 as <V, X: {f: V}>(x: X) => empty; // error
+                                     ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ function_typeof.js:66:1
+
+Cannot cast `r8` to function type because in the return value > array element: `X` [1] is not exactly the same as
+`empty` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<X>` [3] and `Array<empty>` [4] exactly the same
+- Or make array type [4] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   function_typeof.js:66:1
+   66| r8 as <X>(...x: Array<X>) => Array<empty>; // error
+       ^^
+
+References:
+   function_typeof.js:42:35
+   42| export function r8<X>(...x: Array<X>): typeof x { return x; }
+                                         ^ [1]
+   function_typeof.js:66:36
+   66| r8 as <X>(...x: Array<X>) => Array<empty>; // error
+                                          ^^^^^ [2]
+   function_typeof.js:42:29
+   42| export function r8<X>(...x: Array<X>): typeof x { return x; }
+                                   ^^^^^^^^ [3]
+   function_typeof.js:66:30
+   66| r8 as <X>(...x: Array<X>) => Array<empty>; // error
+                                    ^^^^^^^^^^^^ [4]
+
+
+Error ------------------------------------------------------------------------------------------ function_typeof.js:70:5
+
+Cannot cast `x9_1` to number literal `1` because number literal `2` [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   function_typeof.js:70:5
+   70|     x9_1 as 1; // error 2 ~> 1
+           ^^^^
+
+References:
+   function_typeof.js:43:61
+   43| export function r9(b: boolean): typeof b extends true ? 1 : 2 { return 2; }
+                                                                   ^ [1]
+   function_typeof.js:70:13
+   70|     x9_1 as 1; // error 2 ~> 1
+                   ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------ function_typeof.js:73:5
+
+Cannot cast `x9_2` to number literal `1` because number literal `2` [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   function_typeof.js:73:5
+   73|     x9_2 as 1; // error 2 ~> 1
+           ^^^^
+
+References:
+   function_typeof.js:43:61
+   43| export function r9(b: boolean): typeof b extends true ? 1 : 2 { return 2; }
+                                                                   ^ [1]
+   function_typeof.js:73:13
+   73|     x9_2 as 1; // error 2 ~> 1
+                   ^ [2]
+
+
+Error ----------------------------------------------------------------------------------- function_typeof_import.js:20:7
+
+Cannot call `f2` with `'a'` bound to `y` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   function_typeof_import.js:20:7
+   20| f2(1, 'a'); // error
+             ^^^ [1]
+
+References:
+   function_typeof.js:6:34
+    6| export function f2(x: number, y: typeof x) {}
+                                        ^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------- function_typeof_import.js:23:12
+
+Cannot call `f3` with `'a'` bound to `y` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   function_typeof_import.js:23:12
+   23| f3({f: 1}, 'a'); // error
+                  ^^^ [1]
+
+References:
+   function_typeof.js:7:39
+    7| export function f3(x: {f: number}, y: typeof x.f) {}
+                                             ^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------- function_typeof_import.js:26:20
+
+Cannot call `f4` because in array element: string [1] is incompatible with number [2]. [incompatible-type]
+
+   function_typeof_import.js:26:20
+   26| f4({f: [1, 2, 3]}, '1'); // error
+                          ^^^ [1]
+
+References:
+   function_typeof.js:8:33
+    8| export function f4(x: {f: Array<number>}, ...y: typeof x.f) {}
+                                       ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------- function_typeof_import.js:28:10
+
+Cannot call `poly1` with `2` bound to `y` because number [1] is incompatible with `X` [2]. [incompatible-type]
+
+   function_typeof_import.js:28:10
+   28| poly1(1, 2); // TODO okay
+                ^ [1]
+
+References:
+   function_typeof.js:10:23
+   10| export function poly1<X>(x: X, y: typeof x) {}
+                             ^ [2]
+
+
+Error ---------------------------------------------------------------------------------- function_typeof_import.js:29:10
+
+Cannot call `poly1` with `'a'` bound to `y` because string [1] is incompatible with `X` [2]. [incompatible-type]
+
+   function_typeof_import.js:29:10
+   29| poly1(1, 'a'); // error (TODO string ~> number)
+                ^^^ [1]
+
+References:
+   function_typeof.js:10:23
+   10| export function poly1<X>(x: X, y: typeof x) {}
+                             ^ [2]
+
+
+Error ---------------------------------------------------------------------------------- function_typeof_import.js:32:15
+
+Cannot call `poly2` with `'a'` bound to `y` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   function_typeof_import.js:32:15
+   32| poly2({f: 1}, 'a'); // error string ~> number
+                     ^^^ [1]
+
+References:
+   function_typeof.js:11:48
+   11| export function poly2<X: {f: number}>(x: X, y: typeof x.f) {}
+                                                      ^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------- function_typeof_import.js:34:15
+
+Cannot call `poly3` with `3` bound to `y` because number [1] is incompatible with `V` [2]. [incompatible-type]
+
+   function_typeof_import.js:34:15
+   34| poly3({f: 1}, 3); // TODO okay
+                     ^ [1]
+
+References:
+   function_typeof.js:12:46
+   12| export function poly3<V, X: {f: V}>(x: X, y: typeof x.f) {}
+                                                    ^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------- function_typeof_import.js:35:15
+
+Cannot call `poly3` with `'a'` bound to `y` because string [1] is incompatible with `V` [2]. [incompatible-type]
+
+   function_typeof_import.js:35:15
+   35| poly3({f: 1}, 'a'); // error (TODO string ~> number)
+                     ^^^ [1]
+
+References:
+   function_typeof.js:12:46
+   12| export function poly3<V, X: {f: V}>(x: X, y: typeof x.f) {}
+                                                    ^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------- function_typeof_import.js:38:1
+
+Cannot cast `r1` to function type because in the return value: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   function_typeof_import.js:38:1
+   38| r1 as (x: number) => string; // error
+       ^^
+
+References:
+   function_typeof.js:35:32
+   35| export function r1(x: number): typeof x { return x; }
+                                      ^^^^^^^^ [1]
+   function_typeof_import.js:38:22
+   38| r1 as (x: number) => string; // error
+                            ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------- function_typeof_import.js:41:1
+
+Cannot cast `r2` to function type because in the return value: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   function_typeof_import.js:41:1
+   41| r2 as (x: {f: number}) => string; // error
+       ^^
+
+References:
+   function_typeof.js:36:37
+   36| export function r2(x: {f: number}): typeof x.f { return x.f; }
+                                           ^^^^^^^^^^ [1]
+   function_typeof_import.js:41:27
+   41| r2 as (x: {f: number}) => string; // error
+                                 ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------- function_typeof_import.js:52:1
+
+Cannot cast `r6` to function type because in the return value: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   function_typeof_import.js:52:1
+   52| r6 as <X: {f: number}>(x: X) => string; // error
+       ^^
+
+References:
+   function_typeof.js:40:43
+   40| export function r6<X: {f: number}>(x: X): typeof x.f { return x.f; }
+                                                 ^^^^^^^^^^ [1]
+   function_typeof_import.js:52:33
+   52| r6 as <X: {f: number}>(x: X) => string; // error
+                                       ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------- function_typeof_import.js:55:1
+
+Cannot cast `r7` to function type because in the return value: `unknown` [1] is incompatible with empty [2].
+[incompatible-type]
+
+   function_typeof_import.js:55:1
+   55| r7 as <V, X: {f: V}>(x: X) => empty; // error
+       ^^
+
+References:
+   function_typeof.js:41:41
+   41| export function r7<V, X: {f: V}>(x: X): typeof x.f { return x.f; }
+                                               ^^^^^^^^^^ [1]
+   function_typeof_import.js:55:31
+   55| r7 as <V, X: {f: V}>(x: X) => empty; // error
+                                     ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------- function_typeof_import.js:62:5
+
+Cannot cast `x9_1` to number literal `1` because number literal `2` [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   function_typeof_import.js:62:5
+   62|     x9_1 as 1; // error 2 ~> 1
+           ^^^^
+
+References:
+   function_typeof.js:43:61
+   43| export function r9(b: boolean): typeof b extends true ? 1 : 2 { return 2; }
+                                                                   ^ [1]
+   function_typeof_import.js:62:13
+   62|     x9_1 as 1; // error 2 ~> 1
+                   ^ [2]
+
+
+Error ----------------------------------------------------------------------------------- function_typeof_import.js:65:5
+
+Cannot cast `x9_2` to number literal `1` because number literal `2` [1] is incompatible with number literal `1` [2].
+[incompatible-type]
+
+   function_typeof_import.js:65:5
+   65|     x9_2 as 1; // error 2 ~> 1
+           ^^^^
+
+References:
+   function_typeof.js:43:61
+   43| export function r9(b: boolean): typeof b extends true ? 1 : 2 { return 2; }
+                                                                   ^ [1]
+   function_typeof_import.js:65:13
+   65|     x9_2 as 1; // error 2 ~> 1
+                   ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- maybe.js:9:2
+
+Cannot cast `'foo'` to `typeof x` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   maybe.js:9:2
+   9| ('foo': typeof x); // error: string ~> number
+       ^^^^^ [1]
+
+References:
+   maybe.js:8:11
+   8| var x = f(42);
+                ^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- optional.js:9:2
+
+Cannot cast `null` to `typeof x` because null [1] is incompatible with number [2]. [incompatible-type]
+
+   optional.js:9:2
+   9| (null: typeof x); // error: null ~> $Optional<number> (i.e., void|number)
+       ^^^^ [1]
+
+References:
+   optional.js:8:11
+   8| var x = f(42).p;
+                ^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- typeof.js:45:19
+
+Cannot assign `MyClass1` to `b` because class `MyClass1` [1] is incompatible with `MyClass1` [2]. [incompatible-type]
+
+   typeof.js:45:19
+   45| var b: MyClass1 = MyClass1;
+                         ^^^^^^^^
+
+References:
+   typeof.js:11:7
+   11| class MyClass1 {
+             ^^^^^^^^ [1]
+   typeof.js:45:8
+   45| var b: MyClass1 = MyClass1;
+              ^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- typeof.js:57:26
+
+Cannot assign `new MyClass2()` to `c` because `MyClass2` [1] is incompatible with class `MyClass2` [2].
+[incompatible-type]
+
+   typeof.js:57:26
+   57| var c: typeof MyClass2 = new MyClass2();
+                                ^^^^^^^^^^^^^^ [1]
+
+References:
+   typeof.js:57:8
+   57| var c: typeof MyClass2 = new MyClass2();
+              ^^^^^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- typeof.js:65:26
+
+Cannot assign `'asdf'` to `e` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   typeof.js:65:26
+   65| var e: typeof numValue = 'asdf'; // Error: string ~> number
+                                ^^^^^^ [1]
+
+References:
+   typeof.js:65:8
+   65| var e: typeof numValue = 'asdf'; // Error: string ~> number
+              ^^^^^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- typeof.js:77:15
+
+Cannot use type `numberAlias` [1] as a value. Types are erased and don't exist at runtime. [type-as-value]
+
+   typeof.js:77:15
+   77| var f: typeof numberAlias = 42; // Error: 'typeof <<type-alias>>' makes no sense...
+                     ^^^^^^^^^^^
+
+References:
+   typeof.js:71:6
+   71| type numberAlias = number;
+            ^^^^^^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- typeof.js:86:17
+
+Cannot use `Map` as a type. A name can be used as a type only if it refers to a type, interface, class, or enum
+definition. To get the type of a non-class value, use `typeof`. [value-as-type]
+
+   86| var keys: $Keys<Map> = 'A'; // Error: ineligible value used in type anno
+                       ^^^
+
+
+Error --------------------------------------------------------------------------------------------------- typeof.js:95:1
+
+Cannot cast `g` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   typeof.js:95:1
+   95| g as string; // error
+       ^
+
+References:
+   typeof.js:92:16
+   92| declare var g: typeof h;
+                      ^^^^^^^^ [1]
+   typeof.js:95:6
+   95| g as string; // error
+            ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- typeof.js:101:1
+
+Cannot cast `i.p` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   typeof.js:101:1
+   101| i.p as string; // error
+        ^^^
+
+References:
+   typeof.js:99:15
+    99| const j = {p: 1};
+                      ^ [1]
+   typeof.js:101:8
+   101| i.p as string; // error
+               ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- union.js:9:2
+
+Cannot cast `null` to `typeof x` because: [incompatible-type]
+ - Either null [1] is incompatible with number [2].
+ - Or null [1] is incompatible with string [3].
+
+   union.js:9:2
+   9| (null: typeof x); // error: null ~> number|string
+       ^^^^ [1]
+
+References:
+   union.js:8:13
+   8| const x = f(42, 'foo');
+                  ^^ [2]
+   union.js:8:17
+   8| const x = f(42, 'foo');
+                      ^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------ with-targs.js:9:1
+
+Cannot cast `new FooClass()` to `Foo` because in type argument `T` [1]: string [2] is incompatible with number [3].
+[incompatible-type]
+
+   with-targs.js:9:1
+   9| new FooClass() as Foo<number>; // error: string ~> number
+      ^^^^^^^^^^^^^^
+
+References:
+   with-targs.js:3:11
+   3| class Foo<T> {}
+                ^ [1]
+   with-targs.js:4:36
+   4| declare const FooClass: typeof Foo<string>;
+                                         ^^^^^^ [2]
+   with-targs.js:9:23
+   9| new FooClass() as Foo<number>; // error: string ~> number
+                            ^^^^^^ [3]
+
+
+Error ----------------------------------------------------------------------------------------------- with-targs.js:10:1
+
+Cannot cast `barF()` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   with-targs.js:10:1
+   10| barF() as number; // error: string ~> number
+       ^^^^^^
+
+References:
+   with-targs.js:7:32
+    7| declare const barF: typeof bar<string>;
+                                      ^^^^^^ [1]
+   with-targs.js:10:11
+   10| barF() as number; // error: string ~> number
+                 ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- with-targs.js:11:1
+
+Cannot cast `new FooClassStringExported()` to `FooClassExported` because in type argument `T` [1]: string [2] is
+incompatible with number [3]. [incompatible-type]
+
+   with-targs.js:11:1
+   11| new FooClassStringExported() as FooClassExported<number>; // error: string ~> number
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   with-targs-exported.js:1:31
+    1| export class FooClassExported<T> {}
+                                     ^ [1]
+   with-targs-exported.js:2:70
+    2| declare export const FooClassStringExported: typeof FooClassExported<string>;
+                                                                            ^^^^^^ [2]
+   with-targs.js:11:50
+   11| new FooClassStringExported() as FooClassExported<number>; // error: string ~> number
+                                                        ^^^^^^ [3]
+
+
+Error ----------------------------------------------------------------------------------------------- with-targs.js:12:1
+
+Cannot cast `barFExported()` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   with-targs.js:12:1
+   12| barFExported() as number; // error: string ~> number
+       ^^^^^^^^^^^^^^
+
+References:
+   with-targs-exported.js:5:47
+    5| declare export const barFExported: typeof bar<string>;
+                                                     ^^^^^^ [1]
+   with-targs.js:12:19
+   12| barFExported() as number; // error: string ~> number
+                         ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- with-targs.js:14:17
+
+Cannot instantiate `typeof barF` because function type [1] is not a polymorphic type. [incompatible-use]
+
+   with-targs.js:14:17
+   14| type Invalid1 = typeof barF<string>; // error
+                       ^^^^^^^^^^^^^^^^^^^
+
+References:
+   with-targs.js:6:21
+    6| declare function bar<T>(): T;
+                           ^^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- with-targs.js:15:17
+
+Cannot instantiate `typeof FooClass` because class `Foo` [1] is not a polymorphic type. [incompatible-use]
+
+   with-targs.js:15:17
+   15| type Invalid2 = typeof FooClass<string>; // error
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   with-targs.js:3:7
+    3| class Foo<T> {}
+             ^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- with-targs.js:16:17
+
+Cannot instantiate `typeof barFExported` because function type [1] is not a polymorphic type. [incompatible-use]
+
+   with-targs.js:16:17
+   16| type Invalid3 = typeof barFExported<string>; // error
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   with-targs-exported.js:4:21
+    4| declare function bar<T>(): T;
+                           ^^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- with-targs.js:17:17
+
+Cannot instantiate `typeof FooClassStringExported` because class `FooClassExported` [1] is not a polymorphic type.
+[incompatible-use]
+
+   with-targs.js:17:17
+   17| type Invalid4 = typeof FooClassStringExported<string>; // error
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   with-targs-exported.js:1:14
+    1| export class FooClassExported<T> {}
+                    ^^^^^^^^^^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- with-targs.js:26:15
+
+Cannot use `Invalid5` [1] with more than 1 type argument. [extra-type-arg]
+
+   with-targs.js:26:15
+   26| emptyValue as Invalid5; // error
+                     ^^^^^^^^
+
+References:
+   with-targs.js:6:21
+    6| declare function bar<T>(): T;
+                           ^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- with-targs.js:27:15
+
+Cannot use `Invalid6` [1] with more than 1 type argument. [extra-type-arg]
+
+   with-targs.js:27:15
+   27| emptyValue as Invalid6; // error
+                     ^^^^^^^^
+
+References:
+   with-targs.js:3:10
+    3| class Foo<T> {}
+                ^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- with-targs.js:32:26
+
+Cannot call `barGeneric` with function bound to `cb` because in the return value: number [1] is incompatible with
+string [2]. [incompatible-type]
+
+   with-targs.js:32:26
+   32| barGeneric<string>(() => 1); // error: number ~> string
+                                ^ [1]
+
+References:
+   with-targs.js:32:12
+   32| barGeneric<string>(() => 1); // error: number ~> string
+                  ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- with-targs.js:34:1
+
+Cannot cast `barGeneric(...)` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   with-targs.js:34:1
+   34| barGeneric(() => 1) as string; // error: number ~> string
+       ^^^^^^^^^^^^^^^^^^^
+
+References:
+   with-targs.js:34:18
+   34| barGeneric(() => 1) as string; // error: number ~> string
+                        ^ [1]
+   with-targs.js:34:24
+   34| barGeneric(() => 1) as string; // error: number ~> string
+                              ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- with-targs.js:36:34
+
+Cannot call `barGenericExported` with function bound to `cb` because in the return value: number [1] is incompatible
+with string [2]. [incompatible-type]
+
+   with-targs.js:36:34
+   36| barGenericExported<string>(() => 1); // error: number ~> string
+                                        ^ [1]
+
+References:
+   with-targs.js:36:20
+   36| barGenericExported<string>(() => 1); // error: number ~> string
+                          ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- with-targs.js:38:1
+
+Cannot cast `barGenericExported(...)` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   with-targs.js:38:1
+   38| barGenericExported(() => 1) as string; // error: number ~> string
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   with-targs.js:38:26
+   38| barGenericExported(() => 1) as string; // error: number ~> string
+                                ^ [1]
+   with-targs.js:38:32
+   38| barGenericExported(() => 1) as string; // error: number ~> string
+                                      ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- with-targs.js:43:15
+
+Cannot instantiate `typeof EscapedGeneric.x` because empty [1] is not a polymorphic type. [incompatible-use]
+
+   43| emptyValue as typeof EscapedGeneric.x<number, boolean>; // error: empty not polymorphic
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- with-targs.js:44:15
+
+Cannot instantiate `typeof EscapedGenericExported.x` because empty [1] is not a polymorphic type. [incompatible-use]
+
+   44| emptyValue as typeof EscapedGenericExported.x<number, boolean>; // error: empty not polymorphic
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+
+Found 58 errors

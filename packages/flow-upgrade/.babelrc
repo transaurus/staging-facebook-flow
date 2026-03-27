@@ -1,0 +1,4 @@
+{
+  "presets": ["@babel/preset-flow", ["@babel/preset-env", { "targets": { "node": 14 } }]],
+  "plugins": ["babel-plugin-syntax-hermes-parser"]
+}

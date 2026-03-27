@@ -1,0 +1,611 @@
+member_class_property.js:10:5
+Flags: --lsp
+{
+  "label":"baz",
+  "labelDetails":{"detail":": string"},
+  "kind":6,
+  "detail":"string",
+  "sortText":"00000000000000000000",
+  "insertTextFormat":1,
+  "textEdit":{
+    "range":{"start":{"line":9,"character":4},"end":{"line":9,"character":4}},
+    "newText":"baz"
+  },
+  "command":{
+    "title":"",
+    "command":"log:<PLACEHOLDER_PROJECT_URL>",
+    "arguments":[
+      "textDocument/completion",
+      "member",
+      {
+        "token":null,
+        "index":0,
+        "session_requests":null,
+        "typed_length":null,
+        "completion":"baz",
+        "ac_type":"Acmem"
+      }
+    ]
+  }
+}
+{
+  "label":"baz_DEPRECATED",
+  "labelDetails":{"detail":": number"},
+  "kind":6,
+  "detail":"number",
+  "documentation":{"kind":"markdown","value":"**@deprecated**"},
+  "tags":[1],
+  "sortText":"00000000000000000000",
+  "insertTextFormat":1,
+  "textEdit":{
+    "range":{"start":{"line":9,"character":4},"end":{"line":9,"character":4}},
+    "newText":"baz_DEPRECATED"
+  },
+  "command":{
+    "title":"",
+    "command":"log:<PLACEHOLDER_PROJECT_URL>",
+    "arguments":[
+      "textDocument/completion",
+      "member",
+      {
+        "token":null,
+        "index":1,
+        "session_requests":null,
+        "typed_length":null,
+        "completion":"baz_DEPRECATED",
+        "ac_type":"Acmem"
+      }
+    ]
+  }
+}
+
+member_class_static.js:7:5
+Flags: --pretty
+{
+  "result":[
+    {"name":"bar","type":"string"},
+    {
+      "name":"apply",
+      "type":"<T, R, A: $ArrayLike<mixed> = Readonly<[]>>(thisArg: T, args?: A) => R"
+    },
+    {"name":"arguments","type":"any"},
+    {"name":"bind","type":"(thisArg: any, ...argArray: Array<any>) => any"},
+    {
+      "name":"call",
+      "type":"<T, R, A: $ArrayLike<mixed> = Readonly<[]>>(thisArg: T, ...args: A) => R"
+    },
+    {"name":"caller","type":"any | null"},
+    {"name":"length","type":"number"},
+    {"name":"name","type":"string"},
+    {"name":"toString","type":"() => string"}
+  ]
+}
+
+member_interface_property.js:10:5
+Flags: --lsp
+{
+  "label":"bar",
+  "labelDetails":{"detail":": string"},
+  "kind":6,
+  "detail":"string",
+  "sortText":"00000000000000000000",
+  "insertTextFormat":1,
+  "textEdit":{
+    "range":{"start":{"line":9,"character":4},"end":{"line":9,"character":4}},
+    "newText":"bar"
+  },
+  "command":{
+    "title":"",
+    "command":"log:<PLACEHOLDER_PROJECT_URL>",
+    "arguments":[
+      "textDocument/completion",
+      "member",
+      {
+        "token":null,
+        "index":0,
+        "session_requests":null,
+        "typed_length":null,
+        "completion":"bar",
+        "ac_type":"Acmem"
+      }
+    ]
+  }
+}
+{
+  "label":"baz",
+  "labelDetails":{"detail":": string"},
+  "kind":6,
+  "detail":"string",
+  "documentation":{"kind":"markdown","value":"**@deprecated**"},
+  "tags":[1],
+  "sortText":"00000000000000000000",
+  "insertTextFormat":1,
+  "textEdit":{
+    "range":{"start":{"line":9,"character":4},"end":{"line":9,"character":4}},
+    "newText":"baz"
+  },
+  "command":{
+    "title":"",
+    "command":"log:<PLACEHOLDER_PROJECT_URL>",
+    "arguments":[
+      "textDocument/completion",
+      "member",
+      {
+        "token":null,
+        "index":1,
+        "session_requests":null,
+        "typed_length":null,
+        "completion":"baz",
+        "ac_type":"Acmem"
+      }
+    ]
+  }
+}
+
+member_middle.js:5:4
+Flags: --pretty
+{"result":[{"name":"foobar","type":"string"}]}
+
+method_signature.js:22:4
+Flags: --lsp
+{
+  "label":"bar",
+  "labelDetails":{"detail":"(s: string) { … }"},
+  "kind":3,
+  "sortText":"00000000000000000000",
+  "insertTextFormat":2,
+  "textEdit":{
+    "range":{"start":{"line":21,"character":3},"end":{"line":21,"character":3}},
+    "newText":"bar(s: string) {\n  $0\n}"
+  },
+  "command":{
+    "title":"",
+    "command":"log:<PLACEHOLDER_PROJECT_URL>",
+    "arguments":[
+      "textDocument/completion",
+      "class key",
+      {
+        "token":null,
+        "index":0,
+        "session_requests":null,
+        "typed_length":null,
+        "completion":"bar",
+        "ac_type":"Ac_class_key"
+      }
+    ]
+  }
+}
+{
+  "label":"foo",
+  "labelDetails":{"detail":"(): number { … }"},
+  "kind":3,
+  "sortText":"00000000000000000000",
+  "insertTextFormat":2,
+  "textEdit":{
+    "range":{"start":{"line":21,"character":3},"end":{"line":21,"character":3}},
+    "newText":"foo(): number {\n  $0\n}"
+  },
+  "command":{
+    "title":"",
+    "command":"log:<PLACEHOLDER_PROJECT_URL>",
+    "arguments":[
+      "textDocument/completion",
+      "class key",
+      {
+        "token":null,
+        "index":1,
+        "session_requests":null,
+        "typed_length":null,
+        "completion":"foo",
+        "ac_type":"Ac_class_key"
+      }
+    ]
+  }
+}
+{
+  "label":"i",
+  "labelDetails":{"detail":"(x: number): string { … }"},
+  "kind":3,
+  "sortText":"00000000000000000000",
+  "insertTextFormat":2,
+  "textEdit":{
+    "range":{"start":{"line":21,"character":3},"end":{"line":21,"character":3}},
+    "newText":"i(x: number): string {\n  $0\n}"
+  },
+  "command":{
+    "title":"",
+    "command":"log:<PLACEHOLDER_PROJECT_URL>",
+    "arguments":[
+      "textDocument/completion",
+      "class key",
+      {
+        "token":null,
+        "index":2,
+        "session_requests":null,
+        "typed_length":null,
+        "completion":"i",
+        "ac_type":"Ac_class_key"
+      }
+    ]
+  }
+}
+{
+  "label":"qux",
+  "labelDetails":{"detail":"(): void { … }"},
+  "kind":3,
+  "sortText":"00000000000000000000",
+  "insertTextFormat":2,
+  "textEdit":{
+    "range":{"start":{"line":21,"character":3},"end":{"line":21,"character":3}},
+    "newText":"qux(): void {\n  $0\n}"
+  },
+  "command":{
+    "title":"",
+    "command":"log:<PLACEHOLDER_PROJECT_URL>",
+    "arguments":[
+      "textDocument/completion",
+      "class key",
+      {
+        "token":null,
+        "index":3,
+        "session_requests":null,
+        "typed_length":null,
+        "completion":"qux",
+        "ac_type":"Ac_class_key"
+      }
+    ]
+  }
+}
+
+method_signature.js:31:4
+Flags: --lsp
+{
+  "label":"foo",
+  "labelDetails":{"detail":": () => string"},
+  "kind":3,
+  "detail":"() => string",
+  "sortText":"00000000000000000000",
+  "insertTextFormat":1,
+  "textEdit":{
+    "range":{"start":{"line":30,"character":3},"end":{"line":30,"character":3}},
+    "newText":"foo"
+  },
+  "command":{
+    "title":"",
+    "command":"log:<PLACEHOLDER_PROJECT_URL>",
+    "arguments":[
+      "textDocument/completion",
+      "object key",
+      {
+        "token":null,
+        "index":0,
+        "session_requests":null,
+        "typed_length":null,
+        "completion":"foo",
+        "ac_type":"Ackey"
+      }
+    ]
+  }
+}
+{
+  "label":"foo",
+  "labelDetails":{"detail":"(): string { … }"},
+  "kind":3,
+  "sortText":"00000000000000000000",
+  "insertTextFormat":2,
+  "textEdit":{
+    "range":{"start":{"line":30,"character":3},"end":{"line":30,"character":3}},
+    "newText":"foo(): string {\n  $0\n}"
+  },
+  "command":{
+    "title":"",
+    "command":"log:<PLACEHOLDER_PROJECT_URL>",
+    "arguments":[
+      "textDocument/completion",
+      "class key",
+      {
+        "token":null,
+        "index":1,
+        "session_requests":null,
+        "typed_length":null,
+        "completion":"foo",
+        "ac_type":"Ackey"
+      }
+    ]
+  }
+}
+
+method_signature.js:40:4
+Flags: --lsp
+
+namespace.js:8:12
+Flags: --pretty
+{"result":[{"name":"a","type":"number"},{"name":"s","type":"typeof S"}]}
+
+namespace.js:12:12
+Flags: --pretty
+{
+  "result":[
+    {"name":"AggregateError","type":"typeof AggregateError"},
+    {"name":"Array","type":"typeof Array"},
+    {"name":"ArrayBuffer","type":"typeof ArrayBuffer"},
+    {"name":"atob","type":"(encodedString: string) => string"},
+    {
+      "name":"Atomics",
+      "type":"{+[key: $SymbolToStringTag]: \"Atomics\", add(typedArray: $SharedIntegerTypedArray, index: number, value: number): number, and(typedArray: $SharedIntegerTypedArray, index: number, value: number): number, compareExchange(typedArray: $SharedIntegerTypedArray, index: number, expectedValue: number, replacementValue: number): number, exchange(typedArray: $SharedIntegerTypedArray, index: number, value: number): number, isLockFree(size: number): boolean, load(typedArray: $SharedIntegerTypedArray, index: number): number, notify(typedArray: Int32Array, index: number, count: number): number, or(typedArray: $SharedIntegerTypedArray, index: number, value: number): number, store(typedArray: $SharedIntegerTypedArray, index: number, value: number): number, sub(typedArray: $SharedIntegerTypedArray, index: number, value: number): number, wait(typedArray: Int32Array, index: number, value: number, timeout?: number): \"ok\" | \"not-equal\" | \"timed-out\", xor(typedArray: $SharedIntegerTypedArray, index: number, value: number): number}"
+    },
+    {"name":"BigInt","type":"typeof BigInt"},
+    {"name":"BigInt64Array","type":"typeof BigInt64Array"},
+    {"name":"BigUint64Array","type":"typeof BigUint64Array"},
+    {"name":"Boolean","type":"typeof Boolean"},
+    {"name":"btoa","type":"(rawString: string) => string"},
+    {"name":"CallSite","type":"typeof CallSite"},
+    {"name":"clearInterval","type":"(intervalId: ?IntervalID) => void"},
+    {"name":"clearTimeout","type":"(timeoutId: ?TimeoutID) => void"},
+    {
+      "name":"console",
+      "type":"{_exception(...data: Array<any>): void, assert(condition: mixed, ...data: Array<any>): void, clear(): void, count(label?: string): void, countReset(label?: string): void, debug(...data: Array<any>): void, dir(...data: Array<any>): void, dirxml(...data: Array<any>): void, error(...data: Array<any>): void, group(...data: Array<any>): void, groupCollapsed(...data: Array<any>): void, groupEnd(): void, info(...data: Array<any>): void, log(...data: Array<any>): void, profile(name?: string): void, profileEnd(name?: string): void, table(tabularData: {[key: string]: any} | Array<{[key: string]: any}> | Array<Array<any>>): void, time(label?: string): void, timeEnd(label: string): void, timeLog(label?: string, ...data: Array<any>): void, timeStamp(label?: string): void, trace(...data: Array<any>): void, warn(...data: Array<any>): void, ...}"
+    },
+    {"name":"DataView","type":"typeof DataView"},
+    {"name":"Date","type":"typeof Date"},
+    {"name":"decodeURI","type":"(encodedURI: string) => string"},
+    {"name":"decodeURIComponent","type":"(encodedURIComponent: string) => string"},
+    {"name":"encodeURI","type":"(uri: string) => string"},
+    {"name":"encodeURIComponent","type":"(uriComponent: string) => string"},
+    {"name":"Error","type":"typeof Error"},
+    {"name":"escape","type":"(str: string) => string"},
+    {"name":"EvalError","type":"typeof EvalError"},
+    {"name":"exports","type":"{-[key: string]: mixed}"},
+    {"name":"FinalizationRegistry","type":"typeof FinalizationRegistry"},
+    {"name":"Float16Array","type":"typeof Float16Array"},
+    {"name":"Float32Array","type":"typeof Float32Array"},
+    {"name":"Float64Array","type":"typeof Float64Array"},
+    {"name":"Function","type":"typeof Function"},
+    {"name":"global","type":"any"},
+    {"name":"globalThis","type":"typeof globalThis"},
+    {"name":"Infinity","type":"number"},
+    {"name":"Int16Array","type":"typeof Int16Array"},
+    {"name":"Int32Array","type":"typeof Int32Array"},
+    {"name":"Int8Array","type":"typeof Int8Array"},
+    {"name":"isFinite","type":"(number: mixed) => boolean"},
+    {"name":"isNaN","type":"(number: mixed) => boolean"},
+    {"name":"Iterator","type":"typeof Iterator"},
+    {
+      "name":"JSON",
+      "type":"{|+parse: (text: string, reviver?: (key: any, value: any) => any) => any, +stringify: ((value: null | string | number | boolean | interface {} | ReadonlyArray<mixed>, replacer?: ?((key: string, value: any) => any) | Array<any>, space?: string | number) => string) & ((value: mixed, replacer?: ?((key: string, value: any) => any) | Array<any>, space?: string | number) => string | void)|}"
+    },
+    {"name":"Map","type":"typeof Map"},
+    {
+      "name":"Math",
+      "type":"{E: number, LN10: number, LN2: number, LOG10E: number, LOG2E: number, PI: number, SQRT1_2: number, SQRT2: number, abs(x: number): number, acos(x: number): number, acosh(x: number): number, asin(x: number): number, asinh(x: number): number, atan(x: number): number, atan2(y: number, x: number): number, atanh(x: number): number, cbrt(x: number): number, ceil(x: number): number, clz32(x: number): number, cos(x: number): number, cosh(x: number): number, exp(x: number): number, expm1(x: number): number, f16round(x: number): number, floor(x: number): number, fround(x: number): number, hypot(...values: Array<number>): number, imul(x: number, y: number): number, log(x: number): number, log10(x: number): number, log1p(x: number): number, log2(x: number): number, max(...values: Array<number>): number, min(...values: Array<number>): number, pow(x: number, y: number): number, random(): number, round(x: number): number, sign(x: number): number, sin(x: number): number, sinh(x: number): number, sqrt(x: number): number, tan(x: number): number, tanh(x: number): number, trunc(x: number): number, ...}"
+    },
+    {
+      "name":"module",
+      "type":"{children: Array<any>, exports: any, filename: string, id: string, isPreloading: boolean, loaded: boolean, parent: any, path: string, paths: Array<string>, require(id: string): any, ...}"
+    },
+    {"name":"NaN","type":"number"},
+    {"name":"Number","type":"typeof Number"},
+    {"name":"Object","type":"typeof Object"},
+    {"name":"parseFloat","type":"(string: mixed) => number"},
+    {"name":"parseInt","type":"(string: mixed, radix?: number) => number"},
+    {"name":"Promise","type":"typeof Promise"},
+    {"name":"Proxy","type":"typeof Proxy"},
+    {
+      "name":"queueMicrotask",
+      "type":"<TArguments: ReadonlyArray<mixed>>(callback: (...args: TArguments) => mixed) => void"
+    },
+    {"name":"RangeError","type":"typeof RangeError"},
+    {"name":"ReferenceError","type":"typeof ReferenceError"},
+    {
+      "name":"Reflect",
+      "type":"{apply(target: (...any) => any, thisArg?: any, argumentsList?: Array<any>): any, construct(target: (...any) => any, argumentsList?: Array<any>, newTarget?: any): any, defineProperty(o: any, p: any, attributes: any): boolean, deleteProperty(o: any, p: any): boolean, get(o: any, p: any, receiver?: any): any, getOwnPropertyDescriptor(o: any, p: any): any, getPrototypeOf: (o: $NotNullOrVoid) => any, has(o: any, p: any): boolean, isExtensible(o: any): boolean, ownKeys(o: any): Array<any>, preventExtensions(o: any): boolean, set(o: any, p: any, value: any, receiver?: any): boolean, setPrototypeOf: (target: any, prototype: {[any]: any} | null) => boolean, ...}"
+    },
+    {"name":"RegExp","type":"typeof RegExp"},
+    {
+      "name":"require",
+      "type":"{(id: string): any, cache: any, main: {children: Array<any>, exports: any, filename: string, id: string, isPreloading: boolean, loaded: boolean, parent: any, path: string, paths: Array<string>, require(id: string): any, ...}, resolve: (id: string, options?: {paths?: Array<string>, ...}) => string, ...}"
+    },
+    {"name":"Set","type":"typeof Set"},
+    {
+      "name":"setInterval",
+      "type":"<TArguments: Array<mixed>>(callback: (...args: TArguments) => mixed, ms?: number, ...args: TArguments) => IntervalID"
+    },
+    {
+      "name":"setTimeout",
+      "type":"<TArguments: Array<mixed>>(callback: (...args: TArguments) => mixed, ms?: number, ...args: TArguments) => TimeoutID"
+    },
+    {"name":"SharedArrayBuffer","type":"typeof SharedArrayBuffer"},
+    {"name":"String","type":"typeof String"},
+    {"name":"Symbol","type":"typeof Symbol"},
+    {"name":"SyntaxError","type":"typeof SyntaxError"},
+    {"name":"TypeError","type":"typeof TypeError"},
+    {"name":"Uint16Array","type":"typeof Uint16Array"},
+    {"name":"Uint32Array","type":"typeof Uint32Array"},
+    {"name":"Uint8Array","type":"typeof Uint8Array"},
+    {"name":"Uint8ClampedArray","type":"typeof Uint8ClampedArray"},
+    {"name":"undefined","type":"void"},
+    {"name":"unescape","type":"(str: string) => string"},
+    {"name":"URIError","type":"typeof URIError"},
+    {"name":"WeakMap","type":"typeof WeakMap"},
+    {"name":"WeakRef","type":"typeof WeakRef"},
+    {"name":"WeakSet","type":"typeof WeakSet"}
+  ]
+}
+
+normalize-1.js:4:12
+Flags: --pretty
+{"result":[{"name":"b","type":"T"}]}
+
+normalize-2.js:5:10
+Flags: --pretty
+{
+  "result":[
+    {"name":"a","type":"{b: T, ...}"},
+    {"name":"async","type":""},
+    {"name":"await","type":""},
+    {"name":"c","type":"T"},
+    {"name":"class","type":""},
+    {"name":"delete","type":""},
+    {"name":"foo","type":"<T>(a: {b: T, ...}) => any"},
+    {"name":"function","type":""},
+    {"name":"import","type":""},
+    {"name":"new","type":""},
+    {"name":"this","type":"this"},
+    {"name":"typeof","type":""},
+    {"name":"void","type":""},
+    {"name":"yield","type":""}
+  ]
+}
+
+num.js:4:5
+Flags: --pretty
+{
+  "result":[
+    {"name":"toExponential","type":"(fractionDigits?: number) => string"},
+    {"name":"toFixed","type":"(fractionDigits?: number) => string"},
+    {
+      "name":"toLocaleString",
+      "type":"(locales?: string | Array<string>, options?: Intl$NumberFormatOptions) => string"
+    },
+    {"name":"toPrecision","type":"(precision?: number) => string"},
+    {"name":"toString","type":"(radix?: number) => string"},
+    {"name":"valueOf","type":"() => number"}
+  ]
+}
+
+object_builtins.js:4:5
+Flags: --pretty
+{"error":"not enough type information to extract members","result":[]}
+
+object_keys_spread.js:22:15
+Flags: --pretty
+{"result":[{"name":"a","type":"number"},{"name":"c","type":"number"}]}
+
+object_literal.js:5:16
+Flags: --pretty
+{"result":[{"name":"bar","type":"number"},{"name":"foo","type":"string"}]}
+
+object_literal.js:7:17
+Flags: --pretty
+{"result":[{"name":"bar","type":"number"},{"name":"foo","type":"string"}]}
+
+object_literal.js:12:4
+Flags: --pretty
+{
+  "result":[{"name":"baz","type":"boolean | void"},{"name":"foo","type":"string | void"}]
+}
+
+object_literal.js:15:4
+Flags: --pretty
+{
+  "result":[{"name":"baz","type":"boolean | void"},{"name":"foo","type":"string | void"}]
+}
+
+object-spread-1.js:9:3
+Flags: --pretty
+{"result":[{"name":"bar","type":"B"},{"name":"foo","type":"A"}]}
+
+object-spread-2.js:9:3
+Flags: --pretty
+{"result":[{"name":"bar","type":"C"},{"name":"foo","type":"A"}]}
+
+opaque_types.js:13:4
+Flags: --pretty
+{"result":[]}
+
+opaque_types.js:16:4
+Flags: --pretty
+{"result":[{"name":"foo","type":"string"}]}
+
+opaque_types.js:19:4
+Flags: --pretty
+{"result":[{"name":"bar","type":"number"},{"name":"foo","type":"string"}]}
+
+opaque_types.js:22:4
+Flags: --pretty
+{"result":[{"name":"bar","type":"number"},{"name":"foo","type":"string"}]}
+
+optional_chaining_continue.js:13:19
+Flags: --pretty
+{"result":[{"name":"baz","type":"void | number"}]}
+
+optional_chaining_middle.js:9:16
+Flags: --pretty
+{"result":[{"name":"bar","type":"void | number"}]}
+
+optional_chaining_new.js:9:15
+Flags: --pretty
+{"result":[{"name":"bar","type":"void | number"}]}
+
+optional.js:4:14
+Flags: --pretty
+{
+  "result":[
+    {"name":"f","type":"(x?: string) => void"},
+    {"name":"o","type":"{x?: string, ...}"},
+    {"name":"x","type":"string | void"}
+  ]
+}
+
+optional_object.js:3:5
+Flags: --pretty
+{"result":[{"name":"?.z","type":"void | number"}]}
+
+override.js:10:16
+Flags: --pretty
+{
+  "result":[
+    {"name":"bar","type":"() => void"},
+    {"name":"foo","type":"() => string"},
+    {"name":"override","type":"() => string"}
+  ]
+}
+
+pattern.js:4:8
+Flags: --pretty
+{"result":[]}
+
+pattern.js:8:4
+Flags: --pretty
+{"result":[{"name":"foo","type":"number"}]}
+
+pattern.js:12:14
+Flags: --pretty
+{"result":[]}
+
+pattern_object_key_middle.js:6:12
+Flags: --pretty
+{"result":[{"name":"foobar","type":"string"}]}
+
+poly.js:5:3
+Flags: --pretty
+{"result":[{"name":"x","type":"number"},{"name":"y","type":"number"}]}
+
+poly_no_args.js:5:3
+Flags: --pretty
+{"result":[{"name":"x","type":"number"}]}
+
+qualified-type-annotation.js:5:23
+Flags: --pretty
+{
+  "result":[
+    {"name":"Typesafety","type":"interface Typesafety"},
+    {"name":"Typical","type":"type Typical = {|x: number, y: number|}"},
+    {"name":"Tyrannosaurus","type":"class Tyrannosaurus"}
+  ]
+}
+
+qualified-type-annotation-require.js:5:23
+Flags: --pretty
+{
+  "result":[
+    {"name":"Typesafety","type":"interface Typesafety"},
+    {"name":"Typical","type":"type Typical = {|x: number, y: number|}"},
+    {"name":"Tyrannosaurus","type":"class Tyrannosaurus"}
+  ]
+}
+
+qux.js:6:4
+Flags: --pretty
+{"result":[{"name":"x","type":"number"}]}
+

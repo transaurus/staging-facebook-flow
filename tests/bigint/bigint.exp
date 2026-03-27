@@ -1,0 +1,592 @@
+Error --------------------------------------------------------------------------------------------------- bigint.js:11:5
+
+Cannot assign `x` to `z` because bigint [1] is incompatible with bigint literal `10n` [2]. [incompatible-type]
+
+   bigint.js:11:5
+   11| z = x; // error, bigint </: 10n
+           ^
+
+References:
+   bigint.js:3:8
+    3| let y: bigint = 10n;
+              ^^^^^^ [1]
+   bigint.js:5:8
+    5| let z: 10n = 10n;
+              ^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- bigint.js:20:8
+
+Cannot call `BigInt` with `null` bound to `value` because: [incompatible-type]
+ - Either null [1] is incompatible with boolean [2].
+ - Or null [1] is incompatible with string [3].
+ - Or null [1] is incompatible with number [4].
+ - Or null [1] is incompatible with bigint [5].
+ - Or null [1] is incompatible with interface type [6].
+ - Or null [1] is incompatible with read-only array type [7].
+
+   bigint.js:20:8
+     20| BigInt(null); // error
+                ^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:3123:18
+   3123|   static (value: boolean | string | number | bigint | interface {} | $ReadOnlyArray<mixed>): bigint;
+                          ^^^^^^^ [2]
+   <BUILTINS>/core.js:3123:28
+   3123|   static (value: boolean | string | number | bigint | interface {} | $ReadOnlyArray<mixed>): bigint;
+                                    ^^^^^^ [3]
+   <BUILTINS>/core.js:3123:37
+   3123|   static (value: boolean | string | number | bigint | interface {} | $ReadOnlyArray<mixed>): bigint;
+                                             ^^^^^^ [4]
+   <BUILTINS>/core.js:3123:46
+   3123|   static (value: boolean | string | number | bigint | interface {} | $ReadOnlyArray<mixed>): bigint;
+                                                      ^^^^^^ [5]
+   <BUILTINS>/core.js:3123:55
+   3123|   static (value: boolean | string | number | bigint | interface {} | $ReadOnlyArray<mixed>): bigint;
+                                                               ^^^^^^^^^^^^ [6]
+   <BUILTINS>/core.js:3123:70
+   3123|   static (value: boolean | string | number | bigint | interface {} | $ReadOnlyArray<mixed>): bigint;
+                                                                              ^^^^^^^^^^^^^^^^^^^^^ [7]
+
+
+Error --------------------------------------------------------------------------------------------------- bigint.js:25:6
+
+Cannot cast `foo` to empty because bigint [1] is incompatible with empty [2]. [incompatible-type]
+
+   bigint.js:25:6
+   25|     (foo : empty); // error
+            ^^^
+
+References:
+   bigint.js:23:5
+   23| if (typeof foo === "bigint") {
+           ^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   bigint.js:25:12
+   25|     (foo : empty); // error
+                  ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- bigint.js:37:2
+
+Cannot compare bigint [1] to string [2]. [invalid-compare]
+
+   bigint.js:37:2
+   37| (0n > ""); // error
+        ^^ [1]
+
+References:
+   bigint.js:37:7
+   37| (0n > ""); // error
+             ^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- bigint.js:40:5
+
+Sketchy null check on bigint [1] which is potentially 0n. Perhaps you meant to check for null or undefined [2]?
+[sketchy-null-bigint]
+
+   bigint.js:40:5
+   40| if (b) {} // error
+           ^
+
+References:
+   bigint.js:39:17
+   39| declare var b: ?bigint;
+                       ^^^^^^ [1]
+   bigint.js:39:16
+   39| declare var b: ?bigint;
+                      ^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- bigint.js:47:3
+
+Cannot cast `x` to `typeof b` because bigint literal `0n` [1] is incompatible with bigint literal `1n` [2].
+[incompatible-type]
+
+   bigint.js:47:3
+   47|   x as typeof b; // ERROR typeof b is `1n`
+         ^
+
+References:
+   bigint.js:44:20
+   44|   declare const x: 0n | 1n;
+                          ^^ [1]
+   bigint.js:47:8
+   47|   x as typeof b; // ERROR typeof b is `1n`
+              ^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- bigint.js:49:3
+
+Cannot cast `x` to union type because union type [1] is incompatible with union type [2]. [incompatible-type]
+
+Type union type [1] includes members `0n`, `1n` that are not included in type union type [2].
+
+   bigint.js:49:3
+   49|   x as 2n | 3n; // ERROR
+         ^
+
+References:
+   bigint.js:44:20
+   44|   declare const x: 0n | 1n;
+                          ^^^^^^^ [1]
+   bigint.js:49:8
+   49|   x as 2n | 3n; // ERROR
+              ^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- bigint.js:54:3
+
+Cannot use operator `+` with operands bigint [1] and string [2] [unsafe-addition]
+
+   bigint.js:54:3
+   54|   1n + ''; // ERROR
+         ^^^^^^^
+
+References:
+   bigint.js:54:3
+   54|   1n + ''; // ERROR
+         ^^ [1]
+   bigint.js:54:8
+   54|   1n + ''; // ERROR
+              ^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- bigint.js:60:3
+
+Cannot use operator `+` with operands bigint [1] and string [2] [unsafe-addition]
+
+   bigint.js:60:3
+   60|   b + ''; // ERROR
+         ^^^^^^
+
+References:
+   bigint.js:59:20
+   59|   declare const b: bigint;
+                          ^^^^^^ [1]
+   bigint.js:60:7
+   60|   b + ''; // ERROR
+             ^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- bigint.js:66:3
+
+Cannot use operator `+` with operands bigint literal `1n` [1] and string [2] [unsafe-addition]
+
+   bigint.js:66:3
+   66|   b + ''; // ERROR
+         ^^^^^^
+
+References:
+   bigint.js:65:20
+   65|   declare const b: 1n;
+                          ^^ [1]
+   bigint.js:66:7
+   66|   b + ''; // ERROR
+             ^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- bigint.js:75:3
+
+Cannot cast `x` to bigint literal `1n` because bigint literal `-1n` [1] is incompatible with bigint literal `1n` [2].
+[incompatible-type]
+
+   bigint.js:75:3
+   75|   x as 1n; // ERROR
+         ^
+
+References:
+   bigint.js:73:13
+   73|   const x = -b; // okay
+                   ^^ [1]
+   bigint.js:75:8
+   75|   x as 1n; // ERROR
+              ^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- bigint.js:82:3
+
+Cannot cast `x` to bigint literal `1n` because bigint literal `2n` [1] is incompatible with bigint literal `1n` [2].
+[incompatible-type]
+
+   bigint.js:82:3
+   82|   x as 1n; // ERROR
+         ^
+
+References:
+   bigint.js:81:25
+   81|   const x = cond ? 1n : 2n;
+                               ^^ [1]
+   bigint.js:82:8
+   82|   x as 1n; // ERROR
+              ^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- bigint.js:85:3
+
+Cannot cast `y` to bigint literal `-1n` because bigint literal `2n` [1] is incompatible with bigint literal `-1n` [2].
+[incompatible-type]
+
+   bigint.js:85:3
+   85|   y as -1n; // ERROR
+         ^
+
+References:
+   bigint.js:84:13
+   84|   const y = -x;
+                   ^^ [1]
+   bigint.js:85:8
+   85|   y as -1n; // ERROR
+              ^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- bigint.js:94:3
+
+Cannot cast `x` to bigint literal `1n` because bigint literal `2n` [1] is incompatible with bigint literal `1n` [2].
+[incompatible-type]
+
+   bigint.js:94:3
+   94|   x as 1n; // ERROR
+         ^
+
+References:
+   bigint.js:92:21
+   92|   declare const b2: 2n;
+                           ^^ [1]
+   bigint.js:94:8
+   94|   x as 1n; // ERROR
+              ^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- bigint.js:97:3
+
+Cannot cast `y` to bigint literal `-1n` because bigint literal `-2n` [1] is incompatible with bigint literal `-1n` [2].
+[incompatible-type]
+
+   bigint.js:97:3
+   97|   y as -1n; // ERROR
+         ^
+
+References:
+   bigint.js:96:13
+   96|   const y = -x;
+                   ^^ [1]
+   bigint.js:97:8
+   97|   y as -1n; // ERROR
+              ^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- imported.js:5:2
+
+Cannot cast `x` to empty because bigint [1] is incompatible with empty [2]. [incompatible-type]
+
+   imported.js:5:2
+   5| (x : empty); // error
+       ^
+
+References:
+   exported.js:1:18
+   1| export const x = 1n;
+                       ^^ [1]
+   imported.js:5:6
+   5| (x : empty); // error
+           ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- imported.js:8:2
+
+Cannot cast `y` to empty because bigint [1] is incompatible with empty [2]. [incompatible-type]
+
+   imported.js:8:2
+   8| (y : empty); // error
+       ^
+
+References:
+   exported.js:2:16
+   2| export default 2n;
+                     ^^ [1]
+   imported.js:8:6
+   8| (y : empty); // error
+           ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- imported.js:11:2
+
+Cannot cast `z` to empty because bigint [1] is incompatible with empty [2]. [incompatible-type]
+
+   imported.js:11:2
+   11| (z : empty); // error
+        ^
+
+References:
+   exported.js:3:18
+    3| export const z = -1n;
+                        ^^^ [1]
+   imported.js:11:6
+   11| (z : empty); // error
+            ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- imported.js:14:2
+
+Cannot cast `a` to empty because bigint [1] is incompatible with empty [2]. [incompatible-type]
+
+   imported.js:14:2
+   14| (a : empty); // error
+        ^
+
+References:
+   exported.js:4:18
+    4| export const a = ~1n;
+                        ^^^ [1]
+   imported.js:14:6
+   14| (a : empty); // error
+            ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- imported.js:17:2
+
+Cannot cast `c` to empty because bigint [1] is incompatible with empty [2]. [incompatible-type]
+
+   imported.js:17:2
+   17| (c : empty); // error
+        ^
+
+References:
+   exported.js:6:18
+    6| export const c = b++;
+                        ^^^ [1]
+   imported.js:17:6
+   17| (c : empty); // error
+            ^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ invalid01.js:1:23
+
+A bigint literal must be an integer [ParseError]
+
+   1| type InvalidDecimal = 1.0n; // error
+                            ^^^^
+
+
+Error ------------------------------------------------------------------------------------------------ invalid02.js:1:27
+
+A bigint literal must be an integer [ParseError]
+
+   1| type InvalidNegDecimal = -1.0n; // error
+                                ^^^^
+
+
+Error ------------------------------------------------------------------------------------------------ invalid03.js:1:25
+
+A bigint literal must be an integer [ParseError]
+
+   1| const invalid_decimal = 1.0n; // error
+                              ^^^^
+
+
+Error ------------------------------------------------------------------------------------------------ invalid04.js:1:30
+
+A bigint literal must be an integer [ParseError]
+
+   1| const invalid_neg_decimal = -1.0n; // error
+                                   ^^^^
+
+
+Error ------------------------------------------------------------------------------------------------ invalid05.js:1:17
+
+A bigint literal cannot use exponential notation [ParseError]
+
+   1| type InvalidE = 2e9n; // error
+                      ^^^^
+
+
+Error ------------------------------------------------------------------------------------------------ invalid06.js:1:21
+
+A bigint literal cannot use exponential notation [ParseError]
+
+   1| type InvalidNegE = -2e9n; // error
+                          ^^^^
+
+
+Error ------------------------------------------------------------------------------------------------ invalid07.js:1:24
+
+A bigint literal cannot use exponential notation [ParseError]
+
+   1| type InvalidDecimalE = 2.0e9n; // error
+                             ^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------ invalid08.js:1:28
+
+A bigint literal cannot use exponential notation [ParseError]
+
+   1| type InvalidNegDecimalE = -2.0e9n; // error
+                                 ^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------ invalid09.js:1:19
+
+A bigint literal cannot use exponential notation [ParseError]
+
+   1| const invalid_e = 2e9n; // error
+                        ^^^^
+
+
+Error ------------------------------------------------------------------------------------------------ invalid10.js:1:24
+
+A bigint literal cannot use exponential notation [ParseError]
+
+   1| const invalid_neg_e = -2e9n; // error
+                             ^^^^
+
+
+Error ------------------------------------------------------------------------------------------------ invalid11.js:1:27
+
+Octal literals are not allowed in strict mode. [ParseError]
+
+   1| type InvalidOctalLegacy = 016432n; // error
+                                ^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------ invalid12.js:1:31
+
+Octal literals are not allowed in strict mode. [ParseError]
+
+   1| type InvalidNegOctalLegacy = -016432n; // error
+                                    ^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------ invalid13.js:1:30
+
+Unexpected token ILLEGAL [ParseError]
+
+   1| const invalid_octal_legacy = 016432n; // error
+                                   ^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------ invalid14.js:1:35
+
+Unexpected token ILLEGAL [ParseError]
+
+   1| const invalid_neg_octal_legacy = -016432n; // error
+                                        ^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------ object_key.js:5:2
+
+Cannot cast object literal to `T` because property `1` is missing in object literal [1] but exists in `T` [2].
+[incompatible-type]
+
+   object_key.js:5:2
+   5| ({ 1n: "foo" }: T); // error (TODO: non-string literals not supported)
+       ^^^^^^^^^^^^^ [1]
+
+References:
+   object_key.js:5:17
+   5| ({ 1n: "foo" }: T); // error (TODO: non-string literals not supported)
+                      ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ object_key.js:5:4
+
+Unsupported key in object literal. Only identifier, string literal, and number literal keys are allowed. [illegal-key]
+
+   5| ({ 1n: "foo" }: T); // error (TODO: non-string literals not supported)
+         ^^
+
+
+Error ------------------------------------------------------------------------------------------------ object_key.js:6:2
+
+Cannot cast object literal to `T` because property `1` is missing in object literal [1] but exists in `T` [2].
+[incompatible-type]
+
+   object_key.js:6:2
+   6| ({ 2n: "foo" }: T); // error
+       ^^^^^^^^^^^^^ [1]
+
+References:
+   object_key.js:6:17
+   6| ({ 2n: "foo" }: T); // error
+                      ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ object_key.js:6:4
+
+Unsupported key in object literal. Only identifier, string literal, and number literal keys are allowed. [illegal-key]
+
+   6| ({ 2n: "foo" }: T); // error
+         ^^
+
+
+Error --------------------------------------------------------------------------------------------------- unions.js:5:10
+
+Cannot return `x` because number literal `1` [1] is incompatible with `bigints` [2]. [incompatible-type]
+
+   unions.js:5:10
+   5|   return x; // fast path error
+               ^
+
+References:
+   unions.js:4:15
+   4| function f(x: nums): bigints {
+                    ^^^^ [1]
+   unions.js:4:22
+   4| function f(x: nums): bigints {
+                           ^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- unions.js:5:10
+
+Cannot return `x` because number literal `2` [1] is incompatible with `bigints` [2]. [incompatible-type]
+
+   unions.js:5:10
+   5|   return x; // fast path error
+               ^
+
+References:
+   unions.js:4:15
+   4| function f(x: nums): bigints {
+                    ^^^^ [1]
+   unions.js:4:22
+   4| function f(x: nums): bigints {
+                           ^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- unions.js:9:10
+
+Cannot return `x` because bigint literal `1n` [1] is incompatible with `nums` [2]. [incompatible-type]
+
+   unions.js:9:10
+   9|   return x; // fast path error
+               ^
+
+References:
+   unions.js:8:15
+   8| function g(x: bigints): nums {
+                    ^^^^^^^ [1]
+   unions.js:8:25
+   8| function g(x: bigints): nums {
+                              ^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- unions.js:9:10
+
+Cannot return `x` because bigint literal `2n` [1] is incompatible with `nums` [2]. [incompatible-type]
+
+   unions.js:9:10
+   9|   return x; // fast path error
+               ^
+
+References:
+   unions.js:8:15
+   8| function g(x: bigints): nums {
+                    ^^^^^^^ [1]
+   unions.js:8:25
+   8| function g(x: bigints): nums {
+                              ^^^^ [2]
+
+
+
+Found 42 errors

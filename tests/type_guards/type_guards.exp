@@ -1,0 +1,3809 @@
+Error --------------------------------------------------------------------------------------------- class_imports.js:8:4
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   class_imports.js:8:4
+   8|   (x: string); // error number ~> string
+         ^
+
+References:
+   class_exports.js:2:23
+   2|   m(x: unknown): x is number {
+                            ^^^^^^ [1]
+   class_imports.js:8:7
+   8|   (x: string); // error number ~> string
+            ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- class_imports.js:13:4
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   class_imports.js:13:4
+   13|   (x: string); // error number ~> string
+          ^
+
+References:
+   class_exports.js:5:32
+    5|   os(x: unknown): implies x is number {
+                                      ^^^^^^ [1]
+   class_imports.js:13:7
+   13|   (x: string); // error number ~> string
+             ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- class_imports.js:19:4
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   class_imports.js:19:4
+   19|   (x: string); // error number ~> string
+          ^
+
+References:
+   class_exports.js:11:23
+   11|   m(x: unknown): x is number;
+                             ^^^^^^ [1]
+   class_imports.js:19:7
+   19|   (x: string); // error number ~> string
+             ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- class_imports.js:24:4
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   class_imports.js:24:4
+   24|   (x: string); // error number ~> string
+          ^
+
+References:
+   class_exports.js:12:32
+   12|   os(x: unknown): implies x is number;
+                                      ^^^^^^ [1]
+   class_imports.js:24:7
+   24|   (x: string); // error number ~> string
+             ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- classes.js:15:14
+
+Cannot use type guard parameter `x` [1] because at this return point it is written to in [2]. [function-predicate]
+
+   classes.js:15:14
+   15|       return typeof x === 'number'; // error param write reaching this return
+                    ^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   classes.js:13:27
+   13|     invalid1(x: unknown): x is number {
+                                 ^ [1]
+   classes.js:14:7
+   14|       x = 1;
+             ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- classes.js:18:27
+
+Cannot find type guard parameter `y` [1] in the parameters of this function (type). [function-predicate]
+
+   18|     invalid2(x: unknown): y is number { // error param missing
+                                 ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- classes.js:23:14
+
+Cannot return `(typeof x) === 'number'` because number [1] is incompatible with string [2]. [incompatible-type-guard]
+
+The type of `x` [3] at the return expression `(typeof x) === 'number'` [1] needs to be compatible with the guard type
+string [2]. See 1. in https://flow.org/en/docs/types/type-guards/#toc-consistency-checks-of-type-guard-functions.
+
+   classes.js:23:14
+   23|       return typeof x === 'number'; // error number ~> string
+                    ^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   classes.js:22:32
+   22|     invalid3(x: unknown): x is string {
+                                      ^^^^^^ [2]
+   classes.js:22:14
+   22|     invalid3(x: unknown): x is string {
+                    ^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------- classes.js:23:14
+
+Cannot return `(typeof x) === 'number'` because the negation of the predicate encoded in this expression needs to
+completely refine away the guard type string [1]. Consider using a one-sided type-guard (`implies x is T`). See 2. in
+https://flow.org/en/docs/types/type-guards/#toc-consistency-checks-of-type-guard-functions. [incompatible-type-guard]
+
+   classes.js:23:14
+   23|       return typeof x === 'number'; // error number ~> string
+                    ^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   classes.js:22:32
+   22|     invalid3(x: unknown): x is string {
+                                      ^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- classes.js:30:6
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   classes.js:30:6
+   30|     (x: string); // error number ~> string
+            ^
+
+References:
+   classes.js:5:25
+    5|     m(x: unknown): x is number {
+                               ^^^^^^ [1]
+   classes.js:30:9
+   30|     (x: string); // error number ~> string
+               ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- classes.js:33:6
+
+Cannot cast `x` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   classes.js:33:6
+   33|     (x: number); // error string ~> number
+            ^
+
+References:
+   classes.js:9:32
+    9|     static s(x: unknown): x is string {
+                                      ^^^^^^ [1]
+   classes.js:33:9
+   33|     (x: number); // error string ~> number
+               ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- classes.js:40:5
+
+Cannot extend `C` [1] with `D1` because in property `m`: function [2], a non-type-guard function, is incompatible with
+function [3], which is a type-guard function. [function-predicate]
+
+   classes.js:40:5
+           v------------------------------------------------------
+   40|     m(x: unknown): boolean { // error extends non-predicate
+   41|       return true;
+   42|     }
+           ^ [2]
+
+References:
+   classes.js:39:20
+   39|   class D1 extends C {
+                          ^ [1]
+   classes.js:5:5
+           v---------------------------
+    5|     m(x: unknown): x is number {
+    6|       return typeof x === 'number';
+    7|     }
+           ^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------- classes.js:46:25
+
+Cannot extend `C` [1] with `D2` because in property `m` > the type predicate: `unknown` [2] is incompatible with
+number [3]. [incompatible-type]
+
+   classes.js:46:25
+   46|     m(x: unknown): x is mixed { // error extends
+                               ^^^^^ [2]
+
+References:
+   classes.js:45:20
+   45|   class D2 extends C {
+                          ^ [1]
+   classes.js:5:25
+    5|     m(x: unknown): x is number {
+                               ^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------- classes.js:52:14
+
+Cannot return `true` because `unknown` [1] is incompatible with number [2]. [incompatible-type-guard]
+
+The type of `x` [3] at the return expression `true` [4] needs to be compatible with the guard type number [2]. See 1. in
+https://flow.org/en/docs/types/type-guards/#toc-consistency-checks-of-type-guard-functions.
+
+   classes.js:52:14
+   52|       return true; // error mixed ~> number
+                    ^^^^ [4]
+
+References:
+   classes.js:51:10
+   51|     m(x: unknown): x is number {
+                ^^^^^^^ [1]
+   classes.js:51:25
+   51|     m(x: unknown): x is number {
+                               ^^^^^^ [2]
+   classes.js:51:7
+   51|     m(x: unknown): x is number {
+             ^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------- classes.js:67:25
+
+Cannot implement `I` [1] with `E1` because in property `n` > the type predicate: number [2] is incompatible with
+string [3]. [incompatible-type]
+
+   classes.js:67:25
+   67|     n(x: unknown): x is number { // error number ~> string
+                               ^^^^^^ [2]
+
+References:
+   classes.js:63:23
+   63|   class E1 implements I {
+                             ^ [1]
+   classes.js:60:25
+   60|     n(x: unknown): x is string;
+                               ^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------- classes.js:81:25
+
+Cannot implement `IP` [1] with `E2` because in property `n` > the type predicate: string [2] is incompatible with
+number [3]. [incompatible-type]
+
+   classes.js:81:25
+   81|     n(x: unknown): x is string { // error number ~> string
+                               ^^^^^^ [2]
+
+References:
+   classes.js:77:23
+   77|   class E2 implements IP<number> {
+                             ^^^^^^^^^^ [1]
+   classes.js:77:26
+   77|   class E2 implements IP<number> {
+                                ^^^^^^ [3]
+
+
+Error -------------------------------------------------------------------------------------------------- classes.js:98:6
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   classes.js:98:6
+   98|     (x: string); // error number ~> string
+            ^
+
+References:
+   classes.js:91:25
+   91|     m(x: unknown): x is number;
+                               ^^^^^^ [1]
+   classes.js:98:9
+   98|     (x: string); // error number ~> string
+               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- classes.js:102:6
+
+Cannot cast `x` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   classes.js:102:6
+   102|     (x: number); // error string ~> number
+             ^
+
+References:
+   classes.js:92:32
+    92|     static s(x: unknown): x is string;
+                                       ^^^^^^ [1]
+   classes.js:102:9
+   102|     (x: number); // error string ~> number
+                ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- classes.js:107:5
+
+Cannot extend `C` [1] with `D1` because in property `m`: function [2], a non-type-guard function, is incompatible with
+function type [3], which is a type-guard function. [function-predicate]
+
+   classes.js:107:5
+            v------------------------------------------------------
+   107|     m(x: unknown): boolean { // error extends non-predicate
+   108|       return true;
+   109|     }
+            ^ [2]
+
+References:
+   classes.js:106:20
+   106|   class D1 extends C {
+                           ^ [1]
+   classes.js:91:5
+    91|     m(x: unknown): x is number;
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------ classes.js:113:25
+
+Cannot extend `C` [1] with `D2` because in property `m` > the type predicate: `unknown` [2] is incompatible with
+number [3]. [incompatible-type]
+
+   classes.js:113:25
+   113|     m(x: unknown): x is mixed { // error mixed ~> number
+                                ^^^^^ [2]
+
+References:
+   classes.js:112:20
+   112|   class D2 extends C {
+                           ^ [1]
+   classes.js:91:25
+    91|     m(x: unknown): x is number;
+                                ^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------ classes.js:119:14
+
+Cannot return `true` because `unknown` [1] is incompatible with number [2]. [incompatible-type-guard]
+
+The type of `x` [3] at the return expression `true` [4] needs to be compatible with the guard type number [2]. See 1. in
+https://flow.org/en/docs/types/type-guards/#toc-consistency-checks-of-type-guard-functions.
+
+   classes.js:119:14
+   119|       return true; // error mixed ~> number
+                     ^^^^ [4]
+
+References:
+   classes.js:118:10
+   118|     m(x: unknown): x is number {
+                 ^^^^^^^ [1]
+   classes.js:118:25
+   118|     m(x: unknown): x is number {
+                                ^^^^^^ [2]
+   classes.js:118:7
+   118|     m(x: unknown): x is number {
+              ^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------- classes.js:134:6
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   classes.js:134:6
+   134|     (x: string); // error number ~> string
+             ^
+
+References:
+   classes.js:131:19
+   131|   const p = new P<number>();
+                          ^^^^^^ [1]
+   classes.js:134:9
+   134|     (x: string); // error number ~> string
+                ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- consistency.js:7:33
+
+Cannot declare a type guard [1] for function [2] because boolean [1] is incompatible with implicitly-returned undefined.
+[incompatible-type]
+
+   consistency.js:7:33
+   7| function no_return(x: unknown): x is number {} // error no return
+                                      ^^^^^^^^^^^ [1]
+
+References:
+   consistency.js:7:1
+   7| function no_return(x: unknown): x is number {} // error no return
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- consistency.js:10:12
+
+Cannot return `true` because `unknown` [1] is incompatible with number [2]. [incompatible-type-guard]
+
+The type of `x` [3] at the return expression `true` [4] needs to be compatible with the guard type number [2]. See 1. in
+https://flow.org/en/docs/types/type-guards/#toc-consistency-checks-of-type-guard-functions.
+
+   consistency.js:10:12
+   10|     return true; // error x: unknown ~> number
+                  ^^^^ [4]
+
+References:
+   consistency.js:9:25
+    9| function return_true(x: unknown): x is number {
+                               ^^^^^^^ [1]
+   consistency.js:9:40
+    9| function return_true(x: unknown): x is number {
+                                              ^^^^^^ [2]
+   consistency.js:9:22
+    9| function return_true(x: unknown): x is number {
+                            ^ [3]
+
+
+Error --------------------------------------------------------------------------------------------- consistency.js:15:12
+
+Cannot return `true` because `unknown` [1] is incompatible with number [2]. [incompatible-type-guard]
+
+The type of `x` [3] at the return expression `true` [4] needs to be compatible with the guard type number [2]. See 1. in
+https://flow.org/en/docs/types/type-guards/#toc-consistency-checks-of-type-guard-functions.
+
+   consistency.js:15:12
+   15|     return true; // error in this branch x: unknown ~> number
+                  ^^^^ [4]
+
+References:
+   consistency.js:13:35
+   13| function return_true_in_branch(x: unknown): x is number {
+                                         ^^^^^^^ [1]
+   consistency.js:13:50
+   13| function return_true_in_branch(x: unknown): x is number {
+                                                        ^^^^^^ [2]
+   consistency.js:13:32
+   13| function return_true_in_branch(x: unknown): x is number {
+                                      ^ [3]
+
+
+Error --------------------------------------------------------------------------------------------- consistency.js:26:10
+
+Cannot return `false` because the negation of the predicate encoded in this expression needs to completely refine away
+the guard type `A` [1]. Consider using a one-sided type-guard (`implies x is T`). See 2. in
+https://flow.org/en/docs/types/type-guards/#toc-consistency-checks-of-type-guard-functions. [incompatible-type-guard]
+
+   consistency.js:26:10
+   26|   return false; // error (negation) A ~> empty
+                ^^^^^
+
+References:
+   consistency.js:25:47
+   25| function always_false_error(x: unknown): x is A {
+                                                     ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- consistency.js:45:3
+
+Cannot return `((typeof x) === 'number') || ((typeof x) === 'string')` because string [1] is incompatible with
+number [2]. [incompatible-type-guard]
+
+The type of `x` [3] at the return expression `((typeof x) === 'number') || ((typeof x) === 'string')` [4] needs to be
+compatible with the guard type number [2]. See 1. in
+https://flow.org/en/docs/types/type-guards/#toc-consistency-checks-of-type-guard-functions.
+
+   consistency.js:45:3
+   45|   typeof x === 'string' // error x: string ~> number
+         ^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   consistency.js:43:40
+   43| const arrow_error = (x: unknown): x is number => (
+                                              ^^^^^^ [2]
+   consistency.js:43:22
+   43| const arrow_error = (x: unknown): x is number => (
+                            ^ [3]
+   consistency.js:44:3
+         v-----------------------
+   44|   typeof x === 'number' ||
+   45|   typeof x === 'string' // error x: string ~> number
+         --------------------^ [4]
+
+
+Error --------------------------------------------------------------------------------------------- consistency.js:50:12
+
+Cannot return `(typeof x) === 'string'` because string [1] is incompatible with number [2]. [incompatible-type-guard]
+
+The type of `x` [3] at the return expression `(typeof x) === 'string'` [1] needs to be compatible with the guard type
+number [2]. See 1. in https://flow.org/en/docs/types/type-guards/#toc-consistency-checks-of-type-guard-functions.
+
+   consistency.js:50:12
+   50|     return typeof x === 'string'; // error x: string ~> number and (negation) number ~> empty
+                  ^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   consistency.js:49:23
+   49|   m(x: unknown): x is number {
+                             ^^^^^^ [2]
+   consistency.js:49:5
+   49|   m(x: unknown): x is number {
+           ^ [3]
+
+
+Error --------------------------------------------------------------------------------------------- consistency.js:50:12
+
+Cannot return `(typeof x) === 'string'` because the negation of the predicate encoded in this expression needs to
+completely refine away the guard type number [1]. Consider using a one-sided type-guard (`implies x is T`). See 2. in
+https://flow.org/en/docs/types/type-guards/#toc-consistency-checks-of-type-guard-functions. [incompatible-type-guard]
+
+   consistency.js:50:12
+   50|     return typeof x === 'string'; // error x: string ~> number and (negation) number ~> empty
+                  ^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   consistency.js:49:23
+   49|   m(x: unknown): x is number {
+                             ^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------- consistency.js:55:35
+
+The type predicate string [1] needs to be compatible with parameter `x`'s type: string [1] is incompatible with
+number [2]. [incompatible-type-guard]
+
+   consistency.js:55:35
+   55|   const tes1 = (x: ?number): x is string => ( // error on string because string ~/> ?number
+                                         ^^^^^^ [1]
+
+References:
+   consistency.js:55:21
+   55|   const tes1 = (x: ?number): x is string => ( // error on string because string ~/> ?number
+                           ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- consistency.js:56:5
+
+Cannot return `x != null` because number [1] is incompatible with string [2]. [incompatible-type-guard]
+
+The type of `x` [3] at the return expression `x != null` [4] needs to be compatible with the guard type string [2]. See
+1. in https://flow.org/en/docs/types/type-guards/#toc-consistency-checks-of-type-guard-functions.
+
+   consistency.js:56:5
+   56|     x != null // error number ~> string
+           ^^^^^^^^^ [4]
+
+References:
+   consistency.js:55:21
+   55|   const tes1 = (x: ?number): x is string => ( // error on string because string ~/> ?number
+                           ^^^^^^ [1]
+   consistency.js:55:35
+   55|   const tes1 = (x: ?number): x is string => ( // error on string because string ~/> ?number
+                                         ^^^^^^ [2]
+   consistency.js:55:17
+   55|   const tes1 = (x: ?number): x is string => ( // error on string because string ~/> ?number
+                       ^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------- consistency.js:60:5
+
+Cannot return `x !== null` because null or undefined [1] is incompatible with number [2]. [incompatible-type-guard]
+
+The type of `x` [3] at the return expression `x !== null` [4] needs to be compatible with the guard type number [2]. See
+1. in https://flow.org/en/docs/types/type-guards/#toc-consistency-checks-of-type-guard-functions.
+
+   consistency.js:60:5
+   60|     x !== null // error null | undefined ~> string
+           ^^^^^^^^^^ [4]
+
+References:
+   consistency.js:59:21
+   59|   const test2 = (x: ?number): x is number => (
+                           ^^^^^^^ [1]
+   consistency.js:59:36
+   59|   const test2 = (x: ?number): x is number => (
+                                          ^^^^^^ [2]
+   consistency.js:59:18
+   59|   const test2 = (x: ?number): x is number => (
+                        ^ [3]
+
+
+Error --------------------------------------------------------------------------------------------- consistency.js:71:24
+
+The type predicate string [1] needs to be compatible with parameter `x`'s type: string [1] is incompatible with
+number [2]. [incompatible-type-guard]
+
+   consistency.js:71:24
+   71|   arr.filter((x): x is string => ( // error on string because string ~/> ?number
+                              ^^^^^^ [1]
+
+References:
+   consistency.js:69:27
+   69|   declare var arr: Array<?number>;
+                                 ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- consistency.js:72:5
+
+Cannot return `x != null` because number [1] is incompatible with string [2]. [incompatible-type-guard]
+
+The type of `x` [3] at the return expression `x != null` [4] needs to be compatible with the guard type string [2]. See
+1. in https://flow.org/en/docs/types/type-guards/#toc-consistency-checks-of-type-guard-functions.
+
+   consistency.js:72:5
+   72|     x != null // error number ~> string
+           ^^^^^^^^^ [4]
+
+References:
+   consistency.js:69:27
+   69|   declare var arr: Array<?number>;
+                                 ^^^^^^ [1]
+   consistency.js:71:24
+   71|   arr.filter((x): x is string => ( // error on string because string ~/> ?number
+                              ^^^^^^ [2]
+   consistency.js:71:15
+   71|   arr.filter((x): x is string => ( // error on string because string ~/> ?number
+                     ^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------- consistency.js:76:5
+
+Cannot return `x !== null` because null or undefined [1] is incompatible with number [2]. [incompatible-type-guard]
+
+The type of `x` [3] at the return expression `x !== null` [4] needs to be compatible with the guard type number [2]. See
+1. in https://flow.org/en/docs/types/type-guards/#toc-consistency-checks-of-type-guard-functions.
+
+   consistency.js:76:5
+   76|     x !== null // error null | undefined ~> string
+           ^^^^^^^^^^ [4]
+
+References:
+   consistency.js:69:26
+   69|   declare var arr: Array<?number>;
+                                ^^^^^^^ [1]
+   consistency.js:75:24
+   75|   arr.filter((x): x is number => (
+                              ^^^^^^ [2]
+   consistency.js:75:15
+   75|   arr.filter((x): x is number => (
+                     ^ [3]
+
+
+Error --------------------------------------------------------------------------------------------- consistency.js:95:10
+
+Cannot return `x instanceof B` because the negation of the predicate encoded in this expression needs to completely
+refine away the guard type `A` [1]. Consider using a one-sided type-guard (`implies x is T`). See 2. in
+https://flow.org/en/docs/types/type-guards/#toc-consistency-checks-of-type-guard-functions. [incompatible-type-guard]
+
+   consistency.js:95:10
+   95|   return x instanceof B; // error (negation) A ~> empty
+                ^^^^^^^^^^^^^^
+
+References:
+   consistency.js:94:47
+   94| function instanceof_error_1(x: unknown): x is A {
+                                                     ^ [1]
+
+
+Error --------------------------------------------------------------------------------------------- consistency.js:99:23
+
+Cannot return `x instanceof A` because `A` [1] is incompatible with `B` [2]. [incompatible-type-guard]
+
+The type of `x` [3] at the return expression `x instanceof A` [4] needs to be compatible with the guard type `B` [2].
+See 1. in https://flow.org/en/docs/types/type-guards/#toc-consistency-checks-of-type-guard-functions.
+
+   consistency.js:99:23
+   99|   return x instanceof A; // error A ~> B
+                             ^ [1]
+
+References:
+   consistency.js:98:47
+   98| function instanceof_error_2(x: unknown): x is B {
+                                                     ^ [2]
+   consistency.js:98:29
+   98| function instanceof_error_2(x: unknown): x is B {
+                                   ^ [3]
+   consistency.js:99:10
+   99|   return x instanceof A; // error A ~> B
+                ^^^^^^^^^^^^^^ [4]
+
+
+Error -------------------------------------------------------------------------------------------- consistency.js:125:10
+
+Cannot return `Array.isArray(...)` because in array element: array element of refined `unknown` [1] is incompatible with
+`A` [2]. [incompatible-type-guard]
+
+The type of `x` [3] at the return expression `Array.isArray(...)` [4] needs to be compatible with the guard type
+read-only array type [5]. See 1. in
+https://flow.org/en/docs/types/type-guards/#toc-consistency-checks-of-type-guard-functions.
+
+   consistency.js:125:10
+   125|   return Array.isArray(x);
+                 ^^^^^^^^^^^^^^^^ [4]
+
+References:
+   consistency.js:124:36
+   124| function is_array_poly_error<A>(x: unknown): x is ReadonlyArray<A> { // error ROArray<mixed> ~> ROArray<A>
+                                           ^^^^^^^ [1]
+   consistency.js:124:65
+   124| function is_array_poly_error<A>(x: unknown): x is ReadonlyArray<A> { // error ROArray<mixed> ~> ROArray<A>
+                                                                        ^ [2]
+   consistency.js:124:33
+   124| function is_array_poly_error<A>(x: unknown): x is ReadonlyArray<A> { // error ROArray<mixed> ~> ROArray<A>
+                                        ^ [3]
+   consistency.js:124:51
+   124| function is_array_poly_error<A>(x: unknown): x is ReadonlyArray<A> { // error ROArray<mixed> ~> ROArray<A>
+                                                          ^^^^^^^^^^^^^^^^ [5]
+
+
+Error -------------------------------------------------------------------------------------------- consistency.js:138:12
+
+Cannot return `isNumberOrString(...) && isBoolean(...)` because the negation of the predicate encoded in this expression
+needs to completely refine away the guard type string [1]. Consider using a one-sided type-guard (`implies x is T`). See
+2. in https://flow.org/en/docs/types/type-guards/#toc-consistency-checks-of-type-guard-functions.
+[incompatible-type-guard]
+
+   consistency.js:138:12
+   138|     return isNumberOrString(x) && isBoolean(x); // error (negation) string ~> empty
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   consistency.js:137:36
+   137|   function error(x: unknown): x is string {
+                                           ^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- consistency.js:149:10
+
+Cannot use type guard parameter `x` [1] because at this return point it is written to in [2]. [function-predicate]
+
+   consistency.js:149:10
+   149|   return x instanceof A; // error 'x' is written to
+                 ^^^^^^^^^^^^^^
+
+References:
+   consistency.js:147:57
+   147| function error_write_to_type_guard_param_1(x: unknown): x is A {
+                                                                ^ [1]
+   consistency.js:148:3
+   148|   x = 1;
+          ^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- consistency.js:154:10
+
+Cannot use type guard parameter `x` [1] because at this return point it is written to in [2]. [function-predicate]
+
+   consistency.js:154:10
+   154|   return x instanceof B; // error 'x' is written to
+                 ^^^^^^^^^^^^^^
+
+References:
+   consistency.js:152:57
+   152| function error_write_to_type_guard_param_2(x: unknown): x is B {
+                                                                ^ [1]
+   consistency.js:153:3
+   153|   x = new B();
+          ^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- consistency.js:160:12
+
+Cannot use type guard parameter `x` [1] because at this return point it is written to in [2]. [function-predicate]
+
+   consistency.js:160:12
+   160|     return x instanceof B; // error 'x' is written to (1st loc)
+                   ^^^^^^^^^^^^^^
+
+References:
+   consistency.js:157:61
+   157| function error_write_to_type_guard_param_multi(x: unknown): x is B {
+                                                                    ^ [1]
+   consistency.js:159:5
+   159|     x = new B();
+            ^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- consistency.js:163:12
+
+Cannot use type guard parameter `x` [1] because at this return point it is written to in [2]. [function-predicate]
+
+   consistency.js:163:12
+   163|     return x instanceof B; // error 'x' is written to (2nd loc)
+                   ^^^^^^^^^^^^^^
+
+References:
+   consistency.js:157:61
+   157| function error_write_to_type_guard_param_multi(x: unknown): x is B {
+                                                                    ^ [1]
+   consistency.js:162:5
+   162|     x = new B();
+            ^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- consistency.js:171:10
+
+Cannot return `x instanceof B` because the negation of the predicate encoded in this expression needs to completely
+refine away the guard type `A` [1]. Consider using a one-sided type-guard (`implies x is T`). See 2. in
+https://flow.org/en/docs/types/type-guards/#toc-consistency-checks-of-type-guard-functions. [incompatible-type-guard]
+
+   consistency.js:171:10
+   171|   return x instanceof B; // error (negation) A ~> empty
+                 ^^^^^^^^^^^^^^
+
+References:
+   consistency.js:167:44
+   167| function multi_return_ok(x: unknown): x is A {
+                                                   ^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- consistency.js:176:25
+
+Cannot return `x instanceof A` because `A` [1] is incompatible with `B` [2]. [incompatible-type-guard]
+
+The type of `x` [3] at the return expression `x instanceof A` [4] needs to be compatible with the guard type `B` [2].
+See 1. in https://flow.org/en/docs/types/type-guards/#toc-consistency-checks-of-type-guard-functions.
+
+   consistency.js:176:25
+   176|     return x instanceof A; // error A ~> B
+                                ^ [1]
+
+References:
+   consistency.js:174:58
+   174| function multi_return_one_branch_error(x: unknown): x is B {
+                                                                 ^ [2]
+   consistency.js:174:40
+   174| function multi_return_one_branch_error(x: unknown): x is B {
+                                               ^ [3]
+   consistency.js:176:12
+   176|     return x instanceof A; // error A ~> B
+                   ^^^^^^^^^^^^^^ [4]
+
+
+Error -------------------------------------------------------------------------------------------- consistency.js:185:35
+
+Cannot use type guard parameter `x`, because `x` [1] is reassigned in [2]. [function-predicate]
+
+   consistency.js:185:35
+   185| function havoc_error(x: unknown): x is B { // error 'x' is havoced
+                                          ^
+
+References:
+   consistency.js:185:22
+   185| function havoc_error(x: unknown): x is B { // error 'x' is havoced
+                             ^ [1]
+   consistency.js:189:3
+   189|   y();
+          ^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- consistency.js:213:12
+
+Cannot return `this.#prop(...)` because number [1] is incompatible with string [2]. [incompatible-type-guard]
+
+The type of `value` [3] at the return expression `this.#prop(...)` [4] needs to be compatible with the guard type
+string [2]. See 1. in https://flow.org/en/docs/types/type-guards/#toc-consistency-checks-of-type-guard-functions.
+
+   consistency.js:213:12
+   213|     return this.#prop(value); // no prop-missing error
+                   ^^^^^^^^^^^^^^^^^ [4]
+
+References:
+   consistency.js:210:47
+   210|   #prop: (value: unknown) => implies value is number;
+                                                      ^^^^^^ [1]
+   consistency.js:212:43
+   212|   test1(value: unknown): implies value is string { // error number ~> string on predicate
+                                                  ^^^^^^ [2]
+   consistency.js:212:9
+   212|   test1(value: unknown): implies value is string { // error number ~> string on predicate
+                ^^^^^ [3]
+
+
+Error -------------------------------------------------------------------------------------------- consistency.js:226:19
+
+Cannot call `remote.#prop` because property `#prop` is missing in `Private_property_1` [1]. [prop-missing]
+
+   consistency.js:226:19
+   226|     return remote.#prop(value); // error prop-missing
+                          ^^^^^
+
+References:
+   consistency.js:225:32
+   225|   test(value: unknown, remote: Private_property_1): implies value is string { // error number ~> string on predicate
+                                       ^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- consistency.js:226:12
+
+Cannot return `remote.#prop(...)` because `unknown` [1] is incompatible with string [2]. [incompatible-type-guard]
+
+The type of `value` [3] at the return expression `remote.#prop(...)` [4] needs to be compatible with the guard type
+string [2]. See 1. in https://flow.org/en/docs/types/type-guards/#toc-consistency-checks-of-type-guard-functions.
+
+   consistency.js:226:12
+   226|     return remote.#prop(value); // error prop-missing
+                   ^^^^^^^^^^^^^^^^^^^ [4]
+
+References:
+   consistency.js:225:15
+   225|   test(value: unknown, remote: Private_property_1): implies value is string { // error number ~> string on predicate
+                      ^^^^^^^ [1]
+   consistency.js:225:70
+   225|   test(value: unknown, remote: Private_property_1): implies value is string { // error number ~> string on predicate
+                                                                             ^^^^^^ [2]
+   consistency.js:225:8
+   225|   test(value: unknown, remote: Private_property_1): implies value is string { // error number ~> string on predicate
+               ^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------ inferred.js:18:23
+
+Cannot call `takesGuard` with function bound to `fn` because in the type predicate: string [1] is incompatible with
+number [2]. [incompatible-type]
+
+   inferred.js:18:23
+   18|   takesGuard(value => typeof value === "string"); // error wrong guard type
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   inferred.js:13:64
+   13|   declare function takesGuard(fn: (x: unknown) => implies x is number): void;
+                                                                      ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ inferred.js:19:34
+
+Cannot call `takesGuard` with function bound to `fn` because in the type predicate: string [1] is incompatible with
+number [2]. [incompatible-type]
+
+   inferred.js:19:34
+   19|   takesGuard((value: unknown) => typeof value === "string"); // error wrong guard type
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   inferred.js:13:64
+   13|   declare function takesGuard(fn: (x: unknown) => implies x is number): void;
+                                                                      ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- inferred.js:29:5
+
+Cannot call `takesGuardTwoParams` with function bound to `fn` because function [1], a non-type-guard function, is
+incompatible with function type [2], which is a type-guard function. [function-predicate]
+
+   inferred.js:29:5
+           v--------------------------------------------
+   29|     ( // error function-predicate incompatibility
+   30|       value: unknown,
+   31|       otherValue, // error missing-local-annot
+   32|     ) => typeof value === "number");
+           -----------------------------^ [1]
+
+References:
+   inferred.js:23:44
+   23|   declare function takesGuardTwoParams(fn: (x: unknown, y: unknown) => implies x is number): void;
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- inferred.js:31:7
+
+An annotation on `otherValue` is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   31|       otherValue, // error missing-local-annot
+             ^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------- inferred.js:34:5
+
+Cannot call `takesGuardTwoParams` with function bound to `fn` because function [1], a non-type-guard function, is
+incompatible with function type [2], which is a type-guard function. [function-predicate]
+
+   inferred.js:34:5
+   34|     (value: unknown, otherValue: unknown) => typeof value === "number" // error can only infer type guard
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   inferred.js:23:44
+   23|   declare function takesGuardTwoParams(fn: (x: unknown, y: unknown) => implies x is number): void;
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ inferred.js:38:32
+
+Cannot call `takesGuardTwoParams` with function bound to `fn` because in the type predicate: string [1] is incompatible
+with number [2]. [incompatible-type]
+
+   inferred.js:38:32
+   38|   takesGuardTwoParams(value => typeof value === "string"); // error wrong guard type
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   inferred.js:23:85
+   23|   declare function takesGuardTwoParams(fn: (x: unknown, y: unknown) => implies x is number): void;
+                                                                                           ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ inferred.js:39:43
+
+Cannot call `takesGuardTwoParams` with function bound to `fn` because in the type predicate: string [1] is incompatible
+with number [2]. [incompatible-type]
+
+   inferred.js:39:43
+   39|   takesGuardTwoParams((value: unknown) => typeof value === "string"); // error wrong guard type
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   inferred.js:23:85
+   23|   declare function takesGuardTwoParams(fn: (x: unknown, y: unknown) => implies x is number): void;
+                                                                                           ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- inferred.js:48:5
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   inferred.js:48:5
+   48|     x as string; // error number ~> string
+           ^
+
+References:
+   inferred.js:44:18
+   44|   declare var x: number | string;
+                        ^^^^^^ [1]
+   inferred.js:48:10
+   48|     x as string; // error number ~> string
+                ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- inferred.js:50:5
+
+Cannot cast `x` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   inferred.js:50:5
+   50|     x as number; // error no refinement due to one-sided type guard
+           ^
+
+References:
+   inferred.js:44:27
+   44|   declare var x: number | string;
+                                 ^^^^^^ [1]
+   inferred.js:50:10
+   50|     x as number; // error no refinement due to one-sided type guard
+                ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- inferred.js:51:5
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   inferred.js:51:5
+   51|     x as string; // error no refinement due to one-sided type guard
+           ^
+
+References:
+   inferred.js:44:18
+   44|   declare var x: number | string;
+                        ^^^^^^ [1]
+   inferred.js:51:10
+   51|     x as string; // error no refinement due to one-sided type guard
+                ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- inferred.js:54:3
+
+Cannot cast `fn` to function type because one-sided `value` [1] is incompatible with default type guard [2].
+[function-predicate]
+
+   inferred.js:54:3
+   54|   fn as (value: unknown) => value is number; // error one-sided incompatible with two-sided
+         ^^
+
+References:
+   inferred.js:43:15
+   43|   const fn = (value: unknown) => typeof value === "number"; // infers: (value: unknown) => implies value is number
+                     ^^^^^ [1]
+   inferred.js:54:29
+   54|   fn as (value: unknown) => value is number; // error one-sided incompatible with two-sided
+                                   ^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- inferred.js:60:3
+
+Cannot cast `fn` to function type because function [1], a non-type-guard function, is incompatible with function
+type [2], which is a type-guard function. [function-predicate]
+
+   inferred.js:60:3
+   60|   fn as (value: unknown) => implies value is number; // error non type guard
+         ^^
+
+References:
+   inferred.js:58:14
+   58|   const fn = (value: unknown): boolean => typeof value === "number"; // infers: (value: unknown) => boolean
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   inferred.js:60:9
+   60|   fn as (value: unknown) => implies value is number; // error non type guard
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- inferred.js:61:3
+
+Cannot cast `fn` to function type because function [1], a non-type-guard function, is incompatible with function
+type [2], which is a type-guard function. [function-predicate]
+
+   inferred.js:61:3
+   61|   fn as (value: unknown) => value is number; // error non type guard
+         ^^
+
+References:
+   inferred.js:58:14
+   58|   const fn = (value: unknown): boolean => typeof value === "number"; // infers: (value: unknown) => boolean
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   inferred.js:61:9
+   61|   fn as (value: unknown) => value is number; // error non type guard
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- inferred.js:70:3
+
+Cannot cast `u` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   inferred.js:70:3
+   70|   u as number; // error string ~> number
+         ^
+
+References:
+   inferred.js:67:23
+   67|   declare var value: ?string;
+                             ^^^^^^ [1]
+   inferred.js:70:8
+   70|   u as number; // error string ~> number
+              ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- inferred.js:80:3
+
+Cannot cast `u2` to number literal `4` because number [1] is incompatible with number literal `4` [2].
+[incompatible-type]
+
+   inferred.js:80:3
+   80|   u2 as 4; // TODO(T225771563) okay
+         ^^
+
+References:
+   inferred.js:77:43
+   77|   const [t2, u2] = takesPolyGuard((value: unknown) => value === 4);
+                                                 ^^^^^^^ [1]
+   inferred.js:80:9
+   80|   u2 as 4; // TODO(T225771563) okay
+               ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- inferred.js:81:3
+
+Cannot cast `u2` to number literal `3` because number [1] is incompatible with number literal `3` [2].
+[incompatible-type]
+
+   inferred.js:81:3
+   81|   u2 as 3; // error 4 ~> 3
+         ^^
+
+References:
+   inferred.js:77:43
+   77|   const [t2, u2] = takesPolyGuard((value: unknown) => value === 4);
+                                                 ^^^^^^^ [1]
+   inferred.js:81:9
+   81|   u2 as 3; // error 4 ~> 3
+               ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- inferred.js:93:3
+
+Cannot cast `u1` to number literal `4` because number [1] is incompatible with number literal `4` [2].
+[incompatible-type]
+
+   inferred.js:93:3
+   93|   u1 as 4; // TODO(T225771563) okay
+         ^^
+
+References:
+   inferred.js:91:45
+   91|   const [t1, u1] = takesOverloadedPolyGuard(value, x => x === 4); // picks the first overload
+                                                   ^^^^^ [1]
+   inferred.js:93:9
+   93|   u1 as 4; // TODO(T225771563) okay
+               ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- inferred.js:94:3
+
+Cannot cast `u1` to number literal `3` because number [1] is incompatible with number literal `3` [2].
+[incompatible-type]
+
+   inferred.js:94:3
+   94|   u1 as 3; // error 4 ~> 3
+         ^^
+
+References:
+   inferred.js:91:45
+   91|   const [t1, u1] = takesOverloadedPolyGuard(value, x => x === 4); // picks the first overload
+                                                   ^^^^^ [1]
+   inferred.js:94:9
+   94|   u1 as 3; // error 4 ~> 3
+               ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- inferred.js:99:3
+
+Cannot cast `u2` to number literal `4` because number [1] is incompatible with number literal `4` [2].
+[incompatible-type]
+
+   inferred.js:99:3
+   99|   u2 as 4; // error number ~> 4
+         ^^
+
+References:
+   inferred.js:90:22
+   90|   declare var value: number;
+                            ^^^^^^ [1]
+   inferred.js:99:9
+   99|   u2 as 4; // error number ~> 4
+               ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- inferred.js:108:45
+
+An annotation on `x` is required because Flow cannot infer its type from local context. [missing-local-annot]
+
+   108|   const [t1, u1] = takesOverloadedPolyGuard(x => x === 4); // error missing-local-annot
+                                                    ^
+
+
+Error ------------------------------------------------------------------------------------------------ inferred.js:142:5
+
+Cannot call `takesGuard` with function bound to `guard` because function [1], a non-type-guard function, is incompatible
+with function type [2], which is a type-guard function. [function-predicate]
+
+   inferred.js:142:5
+   142|     (z) => z, // error non type guard function
+            ^^^^^^^^ [1]
+
+References:
+   inferred.js:138:48
+   138|   declare function takesGuard<T, U: T>(guard: ?(x: T) => implies x is U, val: T): [T, U];
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- inferred.js:142:12
+
+Cannot call `takesGuard` with function bound to `guard` because in the return value: number [1] is incompatible with
+boolean [2]. [incompatible-type]
+
+   inferred.js:142:12
+   142|     (z) => z, // error non type guard function
+                   ^
+
+References:
+   inferred.js:140:18
+   140|   declare var x: number;
+                         ^^^^^^ [1]
+   inferred.js:138:58
+   138|   declare function takesGuard<T, U: T>(guard: ?(x: T) => implies x is U, val: T): [T, U];
+                                                                 ^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ inferred.js:158:3
+
+Cannot cast `fn` to function type because one-sided `x` [1] is incompatible with default type guard [2].
+[function-predicate]
+
+   inferred.js:158:3
+   158|   fn as (x: ?number) => x is number; // error inferred type guard is one-sided
+          ^^
+
+References:
+   inferred.js:155:15
+   155|   const fn = (x: ?number)=> x != null;
+                      ^ [1]
+   inferred.js:158:25
+   158|   fn as (x: ?number) => x is number; // error inferred type guard is one-sided
+                                ^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ inferred.js:161:3
+
+Cannot cast `fn1` to `typeof fn` because in the type predicate: null or undefined [1] is incompatible with number [2].
+[incompatible-type]
+
+   inferred.js:161:3
+   161|   fn1 as typeof fn; // error ?number ~> number
+          ^^^
+
+References:
+   inferred.js:160:42
+   160|   declare var fn1 : (x: ?number) => x is ?number;
+                                                 ^^^^^^^ [1]
+   inferred.js:155:19
+   155|   const fn = (x: ?number)=> x != null;
+                          ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ inferred.js:186:3
+
+Cannot cast `fn` to function type because function [1], a non-type-guard function, is incompatible with function
+type [2], which is a type-guard function. [function-predicate]
+
+   inferred.js:186:3
+   186|   fn as (x: unknown) => implies x is mixed; // error non-type guard function
+          ^^
+
+References:
+   inferred.js:185:14
+   185|   const fn = (x: unknown) => typeof x === "object" && x?.hasOwnProperty("a");
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   inferred.js:186:9
+   186|   fn as (x: unknown) => implies x is mixed; // error non-type guard function
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ inferred.js:186:3
+
+Cannot cast `fn` to function type because in the return value: undefined (result of null short-circuiting an optional
+chain) [1] is incompatible with boolean [2]. [incompatible-type]
+
+   inferred.js:186:3
+   186|   fn as (x: unknown) => implies x is mixed; // error non-type guard function
+          ^^
+
+References:
+   inferred.js:185:18
+   185|   const fn = (x: unknown) => typeof x === "object" && x?.hasOwnProperty("a");
+                         ^^^^^^^ [1]
+   inferred.js:186:25
+   186|   fn as (x: unknown) => implies x is mixed; // error non-type guard function
+                                ^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- intersect.js:7:5
+
+Cannot cast `x` to string literal `b` because string literal `a` [1] is incompatible with string literal `b` [2].
+[incompatible-type]
+
+   intersect.js:7:5
+   7|     x as 'b'; // error 'a' ~> 'b'
+          ^
+
+References:
+   intersect.js:4:18
+   4|   declare var x: 'a'|'c';
+                       ^^^ [1]
+   intersect.js:7:10
+   7|     x as 'b'; // error 'a' ~> 'b'
+               ^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- intersect.js:8:5
+
+Cannot cast `x` to string literal `c` because string literal `a` [1] is incompatible with string literal `c` [2].
+[incompatible-type]
+
+   intersect.js:8:5
+   8|     x as 'c'; // error 'a' ~> 'c'
+          ^
+
+References:
+   intersect.js:4:18
+   4|   declare var x: 'a'|'c';
+                       ^^^ [1]
+   intersect.js:8:10
+   8|     x as 'c'; // error 'a' ~> 'c'
+               ^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ intersect.js:19:5
+
+Cannot cast `x` to string literal `b` because string literal `c` [1] is incompatible with string literal `b` [2].
+[incompatible-type]
+
+   intersect.js:19:5
+   19|     x as 'b'; // error 'c' ~> 'b'
+           ^
+
+References:
+   intersect.js:17:26
+   17|   declare const x: 'a' | 'c';
+                                ^^^ [1]
+   intersect.js:19:10
+   19|     x as 'b'; // error 'c' ~> 'b'
+                ^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ intersect.js:43:5
+
+Cannot cast `x` to `KB` because in type argument `X` [1]: string literal `C` [2] is incompatible with string literal
+`B` [3]. [incompatible-type]
+
+   intersect.js:43:5
+   43|     x as KB; // error KC ~> KB
+           ^
+
+References:
+   intersect.js:37:11
+   37|   class K<X: keyof AllTypes>  extends S<X> {}
+                 ^ [1]
+   intersect.js:34:15
+   34|   type KC = K<'C'>;
+                     ^^^ [2]
+   intersect.js:33:15
+   33|   type KB = K<'B'>;
+                     ^^^ [3]
+
+
+Error -------------------------------------------------------------------------------------------------- invalid.js:6:22
+
+Cannot return boolean because boolean [1] is incompatible with constructor void return [2]. [incompatible-type]
+
+   invalid.js:6:22
+   6|   constructor(x: A): x is C { // error no type guard on constructor
+                           ^^^^^^ [1]
+
+References:
+   invalid.js:6:20
+   6|   constructor(x: A): x is C { // error no type guard on constructor
+                         ^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- invalid.js:6:22
+
+Cannot declare a type guard on a(n) constructor function. [function-predicate]
+
+   6|   constructor(x: A): x is C { // error no type guard on constructor
+                           ^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- invalid.js:9:12
+
+Cannot declare a type guard on a(n) getter/setter function. [function-predicate]
+
+   9|   get p(): this is C {  // error no type guard on getter
+                 ^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------- invalid.js:12:16
+
+Cannot declare a type guard on a(n) getter/setter function. [function-predicate]
+
+   12|   set q(x: A): x is C {  // error no type guard on setter
+                      ^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------- invalid.js:17:33
+
+Cannot declare a type guard [1] for function [2] because boolean [1] is incompatible with implicitly-returned undefined.
+[incompatible-type]
+
+   invalid.js:17:33
+   17| function no_return(x: unknown): x is number {}
+                                       ^^^^^^^^^^^ [1]
+
+References:
+   invalid.js:17:1
+   17| function no_return(x: unknown): x is number {}
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- invalid.js:19:34
+
+Cannot declare a type guard on a(n) generator function. [function-predicate]
+
+   19| function *generator(x: unknown): x is number { // error
+                                        ^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------- invalid.js:19:34
+
+`$Generator` [1] is incompatible with boolean [2]. [incompatible-type]
+
+   invalid.js:19:34
+     19| function *generator(x: unknown): x is number { // error
+                                          ^^^^^^^^^^^ [2]
+
+References:
+   <BUILTINS>/core.js:2021:40
+   2021| type Generator<+Yield,+Return,-Next> = $Generator<Yield,Return,Next>;
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- invalid.js:19:34
+
+boolean [1], a primitive, cannot be used as a subtype of `$Iterable` [2]. You can wrap it in `new Boolean(...))` to turn
+it into an object and attempt to use it as a subtype of an interface. [incompatible-type]
+
+   invalid.js:19:34
+     19| function *generator(x: unknown): x is number { // error
+                                          ^^^^^^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:2007:11
+   2007| interface $Iterable<+Yield,+Return,-Next> {
+                   ^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- invalid.js:20:10
+
+Cannot return `(typeof x) == "number"` because `$Generator` [1] is incompatible with boolean [2]. [incompatible-type]
+
+   invalid.js:20:10
+     20|   return typeof x == "number";
+                  ^^^^^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:2021:40
+   2021| type Generator<+Yield,+Return,-Next> = $Generator<Yield,Return,Next>;
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   invalid.js:19:34
+     19| function *generator(x: unknown): x is number { // error
+                                          ^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- invalid.js:25:4
+
+Cannot cast `x` to number because `unknown` [1] is incompatible with number [2]. [incompatible-type]
+
+   invalid.js:25:4
+   25|   (x: number); // error no refining effect
+          ^
+
+References:
+   invalid.js:23:16
+   23| declare var x: unknown;
+                      ^^^^^^^ [1]
+   invalid.js:25:7
+   25|   (x: number); // error no refining effect
+             ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- invalid.js:28:35
+
+Cannot declare a type guard on a(n) async function. [function-predicate]
+
+   28| async function async(x: unknown): x is number { // error
+                                         ^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------- invalid.js:29:10
+
+Cannot return `(typeof x) == "number"` because `Promise` [1] is incompatible with boolean [2]. [incompatible-type]
+
+   invalid.js:29:10
+     29|   return typeof x == "number"
+                  ^^^^^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:2286:15
+   2286| declare class Promise<+R = mixed> {
+                       ^^^^^^^ [1]
+   invalid.js:28:35
+     28| async function async(x: unknown): x is number { // error
+                                           ^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- invalid.js:33:12
+
+Cannot declare a type guard on a(n) getter function. [function-predicate]
+
+   33|   get p(): x is number;
+                  ^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------- invalid.js:34:22
+
+Cannot declare a type guard on a(n) setter function. [function-predicate]
+
+   34|   set p(x: unknown): x is number;
+                            ^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------- invalid.js:35:28
+
+Cannot declare a type guard on a(n) constructor function. [function-predicate]
+
+   35|   constructor(x: unknown): x is number;
+                                  ^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------- invalid.js:38:54
+
+Cannot resolve name `Missing`. [cannot-resolve-name]
+
+   38| type Error_in_type_guard_type = (x: unknown) => x is Missing; // error missing name
+                                                            ^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------- objects.js:14:14
+
+Cannot use type guard parameter `x` [1] because at this return point it is written to in [2]. [function-predicate]
+
+   objects.js:14:14
+   14|       return typeof x === 'number'; // error write reaches return
+                    ^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   objects.js:12:26
+   12|     invalid(x: unknown): x is number {
+                                ^ [1]
+   objects.js:13:7
+   13|       x = 1;
+             ^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- objects.js:20:6
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   objects.js:20:6
+   20|     (x: string); // error number ~> string
+            ^
+
+References:
+   objects.js:6:25
+    6|     m(x: unknown): x is number {
+                               ^^^^^^ [1]
+   objects.js:20:9
+   20|     (x: string); // error number ~> string
+               ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- objects.js:23:6
+
+Cannot cast `x` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   objects.js:23:6
+   23|     (x: number); // error string ~> number
+            ^
+
+References:
+   objects.js:9:25
+    9|     f(x: unknown): x is string {
+                               ^^^^^^ [1]
+   objects.js:23:9
+   23|     (x: number); // error string ~> number
+               ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- objects.js:29:4
+
+Cannot cast `obj` to object type because in property `m` > the type predicate: number [1] is incompatible with
+string [2]. [incompatible-type]
+
+   objects.js:29:4
+   29|   (obj: { // error number ~> string
+          ^^^
+
+References:
+   objects.js:6:25
+    6|     m(x: unknown): x is number {
+                               ^^^^^^ [1]
+   objects.js:30:25
+   30|     m(x: unknown): x is string,
+                               ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- patterns_and_rest.js:1:56
+
+A type guard parameter `b` [1] cannot reference pattern parameter `b` [2]. [function-predicate]
+
+   patterns_and_rest.js:1:56
+   1| function invalid_pattern_object({a: b}: {a: unknown}): b is string {
+                                                             ^ [1]
+
+References:
+   patterns_and_rest.js:1:37
+   1| function invalid_pattern_object({a: b}: {a: unknown}): b is string {
+                                          ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- patterns_and_rest.js:5:47
+
+A type guard parameter `b` [1] cannot reference pattern parameter `b` [2]. [function-predicate]
+
+   patterns_and_rest.js:5:47
+   5| function invalid_pattern_array([b]: [mixed]): b is string {
+                                                    ^ [1]
+
+References:
+   patterns_and_rest.js:5:33
+   5| function invalid_pattern_array([b]: [mixed]): b is string {
+                                      ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- patterns_and_rest.js:9:44
+
+A type guard parameter `a` [1] cannot reference rest parameter `a` [2]. [function-predicate]
+
+   patterns_and_rest.js:9:44
+   9| function invalid_rest(...a: Array<mixed>): a is string {
+                                                 ^ [1]
+
+References:
+   patterns_and_rest.js:9:26
+   9| function invalid_rest(...a: Array<mixed>): a is string {
+                               ^ [2]
+
+
+Error --------------------------------------------------------------------------------------- patterns_and_rest.js:13:57
+
+A type guard parameter `a` [1] cannot reference rest parameter `a` [2]. [function-predicate]
+
+   patterns_and_rest.js:13:57
+   13| declare function invalid_rest_decl(...a: Array<mixed>): a is string;  // error a is in rest param
+                                                               ^ [1]
+
+References:
+   patterns_and_rest.js:13:39
+   13| declare function invalid_rest_decl(...a: Array<mixed>): a is string;  // error a is in rest param
+                                             ^ [2]
+
+
+Error --------------------------------------------------------------------------------------- patterns_and_rest.js:15:60
+
+A type guard parameter `b` [1] cannot reference pattern parameter `b` [2]. [function-predicate]
+
+   patterns_and_rest.js:15:60
+   15| function invalid_pattern_compound({a: [b]}: {a: [mixed]}): b is string {
+                                                                  ^ [1]
+
+References:
+   patterns_and_rest.js:15:40
+   15| function invalid_pattern_compound({a: [b]}: {a: [mixed]}): b is string {
+                                              ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- patterns_and_rest.js:28:4
+
+Cannot cast `x` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   patterns_and_rest.js:28:4
+   28|   (x: number); // TODO error string ~> number
+          ^
+
+References:
+   patterns_and_rest.js:21:82
+   21| function valid_pattern({a}: {a: unknown}, x: unknown, ...r: Array<number>): x is string {
+                                                                                        ^^^^^^ [1]
+   patterns_and_rest.js:28:7
+   28|   (x: number); // TODO error string ~> number
+             ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------- patterns_and_rest.js:31:46
+
+A type guard parameter `p` [1] cannot reference rest parameter `p` [2]. [function-predicate]
+
+   patterns_and_rest.js:31:46
+   31| type F = (x: unknown, ...p: Array<mixed>) => p is number; // error p is in rest param
+                                                    ^ [1]
+
+References:
+   patterns_and_rest.js:31:26
+   31| type F = (x: unknown, ...p: Array<mixed>) => p is number; // error p is in rest param
+                                ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ refinement.js:7:6
+
+Cannot cast `y` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   refinement.js:7:6
+   7|     (y: string); // error number ~> string
+           ^
+
+References:
+   refinement.js:2:28
+   2|   fn: (x: unknown) => x is number,
+                                 ^^^^^^ [1]
+   refinement.js:7:9
+   7|     (y: string); // error number ~> string
+              ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- refinement.js:20:6
+
+Cannot cast `x1` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   refinement.js:20:6
+   20|     (x1: number); // error string ~> number
+            ^^
+
+References:
+   refinement.js:13:7
+   13|   x1: string,
+             ^^^^^^ [1]
+   refinement.js:20:10
+   20|     (x1: number); // error string ~> number
+                ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- refinement.js:24:6
+
+Cannot cast `x2` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   refinement.js:24:6
+   24|     (x2: number); // error string ~> number
+            ^^
+
+References:
+   refinement.js:14:7
+   14|   x2: string | null,
+             ^^^^^^ [1]
+   refinement.js:24:10
+   24|     (x2: number); // error string ~> number
+                ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- refinement.js:28:6
+
+Cannot cast `x3` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   refinement.js:28:6
+   28|     (x3: number); // error string ~> number
+            ^^
+
+References:
+   refinement.js:15:7
+   15|   x3: string | void,
+             ^^^^^^ [1]
+   refinement.js:28:10
+   28|     (x3: number); // error string ~> number
+                ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- refinement.js:32:6
+
+Cannot cast `x4` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   refinement.js:32:6
+   32|     (x4: number); // error string ~> number
+            ^^
+
+References:
+   refinement.js:16:8
+   16|   x4: ?string,
+              ^^^^^^ [1]
+   refinement.js:32:10
+   32|     (x4: number); // error string ~> number
+                ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:40:21
+
+Cannot use `T` [1] in an input/output position because `T` [1] is expected to occur only in output positions.
+[incompatible-variance]
+
+   refinement.js:40:21
+   40|     filter<This, S: T>(predicate: (this: This, value: T, index: number, array: ReadonlyArray<T>) => value is S, thisArg?: This): Array<S>;
+                           ^
+
+References:
+   refinement.js:38:33
+   38|   declare class ReadOnlyArray_<+T> {
+                                       ^ [1]
+
+
+Error --------------------------------------------------------------------------------------------- refinement.js:41:127
+
+Cannot use `T` [1] in an input/output position because `T` [1] is expected to occur only in output positions.
+[incompatible-variance]
+
+   refinement.js:41:127
+   41|     filter<This>(callbackfn: (this : This, value: T, index: number, array: ReadonlyArray<T>) => mixed, thisArg : This): Array<T>;
+                                                                                                                                     ^
+
+References:
+   refinement.js:38:33
+   38|   declare class ReadOnlyArray_<+T> {
+                                       ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:47:35
+
+Cannot call `arr.filter` because: [incompatible-type]
+ - Either in array element: number [1] is incompatible with string [2].
+ - Or in array element: `unknown` [3] is incompatible with string [2].
+
+   refinement.js:47:35
+   47|   const arr2: Array<string> = arr.filter((x: unknown): x is number => { return typeof x === "number"; }); // error
+                                         ^^^^^^
+
+References:
+   refinement.js:47:61
+   47|   const arr2: Array<string> = arr.filter((x: unknown): x is number => { return typeof x === "number"; }); // error
+                                                                   ^^^^^^ [1]
+   refinement.js:47:21
+   47|   const arr2: Array<string> = arr.filter((x: unknown): x is number => { return typeof x === "number"; }); // error
+                           ^^^^^^ [2]
+   refinement.js:44:35
+   44|   declare var arr: ReadOnlyArray_<mixed>;
+                                         ^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:48:35
+
+Cannot call `arr.filter` because: [incompatible-type]
+ - Either in array element: `unknown` [1] is incompatible with string [2].
+ - Or function [3] is incompatible with class `Boolean` [4].
+
+   refinement.js:48:35
+   48|   const arr3: Array<string> = arr.filter((x: unknown) => { return typeof x === "number"; }); // error no refinement
+                                         ^^^^^^
+
+References:
+   refinement.js:44:35
+   44|   declare var arr: ReadOnlyArray_<mixed>;
+                                         ^^^^^ [1]
+   refinement.js:48:21
+   48|   const arr3: Array<string> = arr.filter((x: unknown) => { return typeof x === "number"; }); // error no refinement
+                           ^^^^^^ [2]
+   refinement.js:48:42
+   48|   const arr3: Array<string> = arr.filter((x: unknown) => { return typeof x === "number"; }); // error no refinement
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [3]
+   refinement.js:39:24
+   39|     filter(callbackfn: typeof Boolean): Array<NonNullable<T>>;
+                              ^^^^^^^^^^^^^^ [4]
+
+
+Error ----------------------------------------------------------------------------------------------- refinement.js:61:8
+
+Cannot cast `x` to `B` because properties `foo` and `tag` of `A` [1] are not exactly the same as those of `B` [2].
+[incompatible-type]
+
+The above-mentioned two types must be the same because properties `foo` and `tag` are invariantly typed. To fix the
+error,
+- Either make `A` [3] and `B` [4] exactly the same
+- Or make properties `foo` and `tag` in `B` [2] readonly. See
+https://flow.org/en/docs/faq/#why-cant-i-pass-a-string-to-a-function-that-takes-a-string-number.
+
+   refinement.js:61:8
+   61|       (x: B); // error A ~> B
+              ^ [1]
+
+References:
+   refinement.js:61:11
+   61|       (x: B); // error A ~> B
+                 ^ [2]
+   refinement.js:53:12
+   53|   type A = { tag: 'A', foo: number };
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^ [3]
+   refinement.js:54:12
+   54|   type B = { tag: 'B', foo: string };
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^ [4]
+
+
+Error ----------------------------------------------------------------------------------------------- refinement.js:72:8
+
+Cannot cast `x` to `A` because: [incompatible-type]
+ - Either in property `foo`: string [1] is incompatible with number [2].
+ - Or inexact object type [3] is incompatible with exact `A` [4].
+
+   refinement.js:72:8
+   72|       (x: A); // error B & {tag_: 'A',...} ~> A
+              ^
+
+References:
+   refinement.js:54:29
+   54|   type B = { tag: 'B', foo: string };
+                                   ^^^^^^ [1]
+   refinement.js:53:29
+   53|   type A = { tag: 'A', foo: number };
+                                   ^^^^^^ [2]
+   refinement.js:70:59
+   70|   declare function invalid_sentinel_key(x: unknown): x is {tag_: 'A', ...};
+                                                                 ^^^^^^^^^^^^^^^^ [3]
+   refinement.js:72:11
+   72|       (x: A); // error B & {tag_: 'A',...} ~> A
+                 ^ [4]
+
+
+Error ----------------------------------------------------------------------------------------------- refinement.js:73:8
+
+Cannot cast `x` to `B` because: [incompatible-type]
+ - Either in property `foo`: number [1] is incompatible with string [2].
+ - Or inexact object type [3] is incompatible with exact `B` [4].
+
+   refinement.js:73:8
+   73|       (x: B); // error A & {tag_: 'A',...} ~> B
+              ^
+
+References:
+   refinement.js:53:29
+   53|   type A = { tag: 'A', foo: number };
+                                   ^^^^^^ [1]
+   refinement.js:54:29
+   54|   type B = { tag: 'B', foo: string };
+                                   ^^^^^^ [2]
+   refinement.js:70:59
+   70|   declare function invalid_sentinel_key(x: unknown): x is {tag_: 'A', ...};
+                                                                 ^^^^^^^^^^^^^^^^ [3]
+   refinement.js:73:11
+   73|       (x: B); // error A & {tag_: 'A',...} ~> B
+                 ^ [4]
+
+
+Error ----------------------------------------------------------------------------------------------- refinement.js:86:8
+
+Cannot cast `x` to `B` because in property `foo`: number [1] is incompatible with string [2]. [incompatible-type]
+
+   refinement.js:86:8
+   86|       (x: B); // error A ~> B
+              ^
+
+References:
+   refinement.js:78:38
+   78|   type A = Readonly<{ tag: 'A', foo: number }>;
+                                            ^^^^^^ [1]
+   refinement.js:79:38
+   79|   type B = Readonly<{ tag: 'B', foo: string }>;
+                                            ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- refinement.js:86:8
+
+Cannot cast `x` to `B` because in property `tag`: string literal `A` [1] is incompatible with string literal `B` [2].
+[incompatible-type]
+
+   refinement.js:86:8
+   86|       (x: B); // error A ~> B
+              ^
+
+References:
+   refinement.js:78:28
+   78|   type A = Readonly<{ tag: 'A', foo: number }>;
+                                  ^^^ [1]
+   refinement.js:79:28
+   79|   type B = Readonly<{ tag: 'B', foo: string }>;
+                                  ^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- refinement.js:97:8
+
+Cannot cast `x` to `A` because: [incompatible-type]
+ - Either in property `foo`: string [1] is incompatible with number [2].
+ - Or inexact object type [3] is incompatible with exact object type [4].
+
+   refinement.js:97:8
+   97|       (x: A); // error B & {+tag_: 'A',...} ~> A
+              ^
+
+References:
+   refinement.js:79:38
+   79|   type B = Readonly<{ tag: 'B', foo: string }>;
+                                            ^^^^^^ [1]
+   refinement.js:78:38
+   78|   type A = Readonly<{ tag: 'A', foo: number }>;
+                                            ^^^^^^ [2]
+   refinement.js:95:68
+   95|   declare function invalid_sentinel_key(x: unknown): x is Readonly<{tag_: 'A', ...}>;
+                                                                          ^^^^^^^^^^^^^^^^ [3]
+   refinement.js:97:11
+   97|       (x: A); // error B & {+tag_: 'A',...} ~> A
+                 ^ [4]
+
+
+Error ----------------------------------------------------------------------------------------------- refinement.js:98:8
+
+Cannot cast `x` to `B` because: [incompatible-type]
+ - Either in property `foo`: number [1] is incompatible with string [2].
+ - Or inexact object type [3] is incompatible with exact object type [4].
+
+   refinement.js:98:8
+   98|       (x: B); // error A & {+tag_: 'A',...} ~> B
+              ^
+
+References:
+   refinement.js:78:38
+   78|   type A = Readonly<{ tag: 'A', foo: number }>;
+                                            ^^^^^^ [1]
+   refinement.js:79:38
+   79|   type B = Readonly<{ tag: 'B', foo: string }>;
+                                            ^^^^^^ [2]
+   refinement.js:95:68
+   95|   declare function invalid_sentinel_key(x: unknown): x is Readonly<{tag_: 'A', ...}>;
+                                                                          ^^^^^^^^^^^^^^^^ [3]
+   refinement.js:98:11
+   98|       (x: B); // error A & {+tag_: 'A',...} ~> B
+                 ^ [4]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:110:8
+
+Cannot cast `x` to `A` because: [incompatible-type]
+ - Either in property `foo`: string [1] is incompatible with number [2].
+ - Or inexact object type [3] is incompatible with exact object type [4].
+
+   refinement.js:110:8
+   110|       (x: A); // error B & {+tag: 'C', ...} ~> A
+               ^
+
+References:
+   refinement.js:104:48
+   104|   type B = Readonly<{ tag1: 'B', tag2: 1, foo: string }>;
+                                                       ^^^^^^ [1]
+   refinement.js:103:48
+   103|   type A = Readonly<{ tag1: 'A', tag2: 1, foo: number }>;
+                                                       ^^^^^^ [2]
+   refinement.js:108:64
+   108|   declare function unknown_sentinel(x: unknown): x is Readonly<{tag: 'C', ...}>;
+                                                                       ^^^^^^^^^^^^^^^ [3]
+   refinement.js:110:11
+   110|       (x: A); // error B & {+tag: 'C', ...} ~> A
+                  ^ [4]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:111:8
+
+Cannot cast `x` to `B` because: [incompatible-type]
+ - Either in property `foo`: number [1] is incompatible with string [2].
+ - Or inexact object type [3] is incompatible with exact object type [4].
+
+   refinement.js:111:8
+   111|       (x: B); // error A & {+tag: 'C', ...} ~> B
+               ^
+
+References:
+   refinement.js:103:48
+   103|   type A = Readonly<{ tag1: 'A', tag2: 1, foo: number }>;
+                                                       ^^^^^^ [1]
+   refinement.js:104:48
+   104|   type B = Readonly<{ tag1: 'B', tag2: 1, foo: string }>;
+                                                       ^^^^^^ [2]
+   refinement.js:108:64
+   108|   declare function unknown_sentinel(x: unknown): x is Readonly<{tag: 'C', ...}>;
+                                                                       ^^^^^^^^^^^^^^^ [3]
+   refinement.js:111:11
+   111|       (x: B); // error A & {+tag: 'C', ...} ~> B
+                  ^ [4]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:117:8
+
+Cannot cast `x` to `B` because in property `foo`: number [1] is incompatible with string [2]. [incompatible-type]
+
+   refinement.js:117:8
+   117|       (x: B); // error A ~> B
+               ^
+
+References:
+   refinement.js:103:48
+   103|   type A = Readonly<{ tag1: 'A', tag2: 1, foo: number }>;
+                                                       ^^^^^^ [1]
+   refinement.js:104:48
+   104|   type B = Readonly<{ tag1: 'B', tag2: 1, foo: string }>;
+                                                       ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:117:8
+
+Cannot cast `x` to `B` because in property `tag1`: string literal `A` [1] is incompatible with string literal `B` [2].
+[incompatible-type]
+
+   refinement.js:117:8
+   117|       (x: B); // error A ~> B
+               ^
+
+References:
+   refinement.js:103:29
+   103|   type A = Readonly<{ tag1: 'A', tag2: 1, foo: number }>;
+                                    ^^^ [1]
+   refinement.js:104:29
+   104|   type B = Readonly<{ tag1: 'B', tag2: 1, foo: string }>;
+                                    ^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:122:8
+
+Cannot cast `x` to `A` because in property `foo`: string [1] is incompatible with number [2]. [incompatible-type]
+
+   refinement.js:122:8
+   122|       (x: A); // error B ~> A
+               ^
+
+References:
+   refinement.js:104:48
+   104|   type B = Readonly<{ tag1: 'B', tag2: 1, foo: string }>;
+                                                       ^^^^^^ [1]
+   refinement.js:103:48
+   103|   type A = Readonly<{ tag1: 'A', tag2: 1, foo: number }>;
+                                                       ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:122:8
+
+Cannot cast `x` to `A` because in property `tag1`: string literal `B` [1] is incompatible with string literal `A` [2].
+[incompatible-type]
+
+   refinement.js:122:8
+   122|       (x: A); // error B ~> A
+               ^
+
+References:
+   refinement.js:104:29
+   104|   type B = Readonly<{ tag1: 'B', tag2: 1, foo: string }>;
+                                    ^^^ [1]
+   refinement.js:103:29
+   103|   type A = Readonly<{ tag1: 'A', tag2: 1, foo: number }>;
+                                    ^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:123:8
+
+Cannot cast `x` to `B` because in property `foo`: number [1] is incompatible with string [2]. [incompatible-type]
+
+   refinement.js:123:8
+   123|       (x: B); // error A ~> B
+               ^
+
+References:
+   refinement.js:103:48
+   103|   type A = Readonly<{ tag1: 'A', tag2: 1, foo: number }>;
+                                                       ^^^^^^ [1]
+   refinement.js:104:48
+   104|   type B = Readonly<{ tag1: 'B', tag2: 1, foo: string }>;
+                                                       ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:123:8
+
+Cannot cast `x` to `B` because in property `tag1`: string literal `A` [1] is incompatible with string literal `B` [2].
+[incompatible-type]
+
+   refinement.js:123:8
+   123|       (x: B); // error A ~> B
+               ^
+
+References:
+   refinement.js:103:29
+   103|   type A = Readonly<{ tag1: 'A', tag2: 1, foo: number }>;
+                                    ^^^ [1]
+   refinement.js:104:29
+   104|   type B = Readonly<{ tag1: 'B', tag2: 1, foo: string }>;
+                                    ^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:136:6
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   refinement.js:136:6
+   136|     (x: string); // error number ~> string
+             ^
+
+References:
+   refinement.js:132:18
+   132|   declare var x: number | string;
+                         ^^^^^^ [1]
+   refinement.js:136:9
+   136|     (x: string); // error number ~> string
+                ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:139:6
+
+Cannot cast `x` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   refinement.js:139:6
+   139|     (x: number); // error string ~> number
+             ^
+
+References:
+   refinement.js:132:27
+   132|   declare var x: number | string;
+                                  ^^^^^^ [1]
+   refinement.js:139:9
+   139|     (x: number); // error string ~> number
+                ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:144:6
+
+Cannot cast `x` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   refinement.js:144:6
+   144|     (x: number); // error string ~> number
+             ^
+
+References:
+   refinement.js:132:27
+   132|   declare var x: number | string;
+                                  ^^^^^^ [1]
+   refinement.js:144:9
+   144|     (x: number); // error string ~> number
+                ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:146:6
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   refinement.js:146:6
+   146|     (x: string); // error string ~> number
+             ^
+
+References:
+   refinement.js:132:18
+   132|   declare var x: number | string;
+                         ^^^^^^ [1]
+   refinement.js:146:9
+   146|     (x: string); // error string ~> number
+                ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:151:6
+
+Cannot cast `x` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   refinement.js:151:6
+   151|     (x: number); // error string ~> number
+             ^
+
+References:
+   refinement.js:132:27
+   132|   declare var x: number | string;
+                                  ^^^^^^ [1]
+   refinement.js:151:9
+   151|     (x: number); // error string ~> number
+                ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:152:6
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   refinement.js:152:6
+   152|     (x: string); // error number ~> string
+             ^
+
+References:
+   refinement.js:132:18
+   132|   declare var x: number | string;
+                         ^^^^^^ [1]
+   refinement.js:152:9
+   152|     (x: string); // error number ~> string
+                ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:175:6
+
+Cannot cast `maybeNumber` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   refinement.js:175:6
+   175|     (maybeNumber: empty); // error number ~> empty
+             ^^^^^^^^^^^
+
+References:
+   refinement.js:172:28
+   172|   declare var maybeNumber: number;
+                                   ^^^^^^ [1]
+   refinement.js:175:19
+   175|     (maybeNumber: empty); // error number ~> empty
+                          ^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:185:6
+
+Cannot cast `anyVal` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   refinement.js:185:6
+   185|     (anyVal: empty); // error number ~> empty
+             ^^^^^^
+
+References:
+   refinement.js:180:55
+   180|   declare function isNumber(value: unknown): value is number;
+                                                              ^^^^^^ [1]
+   refinement.js:185:14
+   185|     (anyVal: empty); // error number ~> empty
+                     ^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:202:6
+
+Cannot cast `x` to empty because `$FbtResultBase` [1] is incompatible with empty [2]. [incompatible-type]
+
+   refinement.js:202:6
+   202|     (x: empty); // error Fbt ~> empty
+             ^
+
+References:
+   refinement.js:198:25
+   198|   declare var x: void | Fbt;
+                                ^^^ [1]
+   refinement.js:202:9
+   202|     (x: empty); // error Fbt ~> empty
+                ^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:202:6
+
+Cannot cast `x` to empty because `FbtString` [1] is incompatible with empty [2]. [incompatible-type]
+
+   refinement.js:202:6
+   202|     (x: empty); // error Fbt ~> empty
+             ^
+
+References:
+   refinement.js:198:25
+   198|   declare var x: void | Fbt;
+                                ^^^ [1]
+   refinement.js:202:9
+   202|     (x: empty); // error Fbt ~> empty
+                ^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:202:6
+
+Cannot cast `x` to empty because string [1] is incompatible with empty [2]. [incompatible-type]
+
+   refinement.js:202:6
+   202|     (x: empty); // error Fbt ~> empty
+             ^
+
+References:
+   refinement.js:198:25
+   198|   declare var x: void | Fbt;
+                                ^^^ [1]
+   refinement.js:202:9
+   202|     (x: empty); // error Fbt ~> empty
+                ^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:214:6
+
+Cannot cast `x` to `OpaqueOrString` because: [incompatible-type]
+ - Either string [1] is incompatible with `OpaqueT` [2].
+ - Or `OpaqueT` [1] is incompatible with string [3].
+
+   refinement.js:214:6
+   214|     (x: OpaqueOrString); // TODO okay, currently imported opaque type is not filtered because it's underlying type is opaque to type-guard filtering
+             ^
+
+References:
+   refinement.js:211:25
+   211|   declare var x: void | OpaqueOrString;
+                                ^^^^^^^^^^^^^^ [1]
+   opaque_exports.js:17:30
+    17| export type OpaqueOrString = OpaqueT | string;
+                                     ^^^^^^^ [2]
+   opaque_exports.js:17:40
+    17| export type OpaqueOrString = OpaqueT | string;
+                                               ^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:225:6
+
+Cannot cast `x` to empty because string [1] is incompatible with empty [2]. [incompatible-type]
+
+   refinement.js:225:6
+   225|     (x: empty); // error string ~> empty
+             ^
+
+References:
+   refinement.js:221:25
+   221|   declare var x: void | string | any;
+                                ^^^^^^ [1]
+   refinement.js:225:9
+   225|     (x: empty); // error string ~> empty
+                ^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:235:6
+
+Cannot cast `value` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   refinement.js:235:6
+   235|     (value: string); // error number ~> string
+             ^^^^^
+
+References:
+   refinement.js:230:10
+   230|   value: number | string,
+                 ^^^^^^ [1]
+   refinement.js:235:13
+   235|     (value: string); // error number ~> string
+                    ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:237:6
+
+Cannot cast `value` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   refinement.js:237:6
+   237|     (value: string); // error number ~> string
+             ^^^^^
+
+References:
+   refinement.js:230:10
+   230|   value: number | string,
+                 ^^^^^^ [1]
+   refinement.js:237:13
+   237|     (value: string); // error number ~> string
+                    ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:238:6
+
+Cannot cast `value` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   refinement.js:238:6
+   238|     (value: number); // error string ~> number
+             ^^^^^
+
+References:
+   refinement.js:230:19
+   230|   value: number | string,
+                          ^^^^^^ [1]
+   refinement.js:238:13
+   238|     (value: number); // error string ~> number
+                    ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- refinement.js:243:21
+
+Cannot use `T` [1] in an input/output position because `T` [1] is expected to occur only in output positions.
+[incompatible-variance]
+
+   refinement.js:243:21
+   243|     filter<This, S: T>(predicate: (this: This, value: T, index: number, array: ReadonlyArray<T>) => implies value is S, thisArg?: This): Array<S>;
+                            ^
+
+References:
+   refinement.js:241:33
+   241|   declare class ReadOnlyArray_<+T> {
+                                        ^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- refinement.js:244:127
+
+Cannot use `T` [1] in an input/output position because `T` [1] is expected to occur only in output positions.
+[incompatible-variance]
+
+   refinement.js:244:127
+   244|     filter<This>(callbackfn: (this : This, value: T, index: number, array: ReadonlyArray<T>) => mixed, thisArg : This): Array<T>;
+                                                                                                                                      ^
+
+References:
+   refinement.js:241:33
+   241|   declare class ReadOnlyArray_<+T> {
+                                        ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:249:7
+
+Cannot call `arr.filter` because: [incompatible-type]
+ - Either in the type predicate: number [1] is incompatible with string [2].
+ - Or in array element: `unknown` [3] is incompatible with string [2].
+
+   refinement.js:249:7
+   249|   arr.filter(fn) as Array<string>; // error number ~> string
+              ^^^^^^
+
+References:
+   refinement.js:231:36
+   231|   fn: (x: unknown) => implies x is number,
+                                           ^^^^^^ [1]
+   refinement.js:249:27
+   249|   arr.filter(fn) as Array<string>; // error number ~> string
+                                  ^^^^^^ [2]
+   refinement.js:247:35
+   247|   declare var arr: ReadOnlyArray_<mixed>;
+                                          ^^^^^ [3]
+
+
+Error --------------------------------------------------------------------------------------------- refinement.js:253:10
+
+Cannot call `ro_arr.filter` because: [incompatible-type]
+ - Either in the type predicate: number [1] is incompatible with string [2].
+ - Or in array element: `unknown` [3] is incompatible with string [2].
+
+   refinement.js:253:10
+   253|   ro_arr.filter(fn) as Array<string>; // error number ~> string
+                 ^^^^^^
+
+References:
+   refinement.js:231:36
+   231|   fn: (x: unknown) => implies x is number,
+                                           ^^^^^^ [1]
+   refinement.js:253:30
+   253|   ro_arr.filter(fn) as Array<string>; // error number ~> string
+                                     ^^^^^^ [2]
+   refinement.js:251:37
+   251|   declare var ro_arr: ReadonlyArray<mixed>;
+                                            ^^^^^ [3]
+
+
+Error --------------------------------------------------------------------------------------------- refinement.js:257:10
+
+Cannot call `rw_arr.filter` because: [incompatible-type]
+ - Either in the type predicate: number [1] is incompatible with string [2].
+ - Or in array element: `unknown` [3] is incompatible with string [2].
+
+   refinement.js:257:10
+   257|   rw_arr.filter(fn) as Array<string>; // error number ~> string
+                 ^^^^^^
+
+References:
+   refinement.js:231:36
+   231|   fn: (x: unknown) => implies x is number,
+                                           ^^^^^^ [1]
+   refinement.js:257:30
+   257|   rw_arr.filter(fn) as Array<string>; // error number ~> string
+                                     ^^^^^^ [2]
+   refinement.js:255:37
+   255|   declare var rw_arr: ReadonlyArray<mixed>;
+                                            ^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:275:7
+
+Cannot cast `item` to `TypeA` because in property `type`: string literal `TypeB` [1] is incompatible with string literal
+`TypeA` [2]. [incompatible-type]
+
+   refinement.js:275:7
+   275|       item as TypeA; // error
+              ^^^^
+
+References:
+   refinement.js:262:33
+   262|   type TypeB = Readonly<{ type: 'TypeB', id: string }>;
+                                        ^^^^^^^ [1]
+   refinement.js:261:33
+   261|   type TypeA = Readonly<{ type: 'TypeA', id: string }>;
+                                        ^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:276:7
+
+Cannot cast `item` to `TypeB` because in property `type`: string literal `TypeA` [1] is incompatible with string literal
+`TypeB` [2]. [incompatible-type]
+
+   refinement.js:276:7
+   276|       item as TypeB; // error
+              ^^^^
+
+References:
+   refinement.js:261:33
+   261|   type TypeA = Readonly<{ type: 'TypeA', id: string }>;
+                                        ^^^^^^^ [1]
+   refinement.js:262:33
+   262|   type TypeB = Readonly<{ type: 'TypeB', id: string }>;
+                                        ^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:277:7
+
+Cannot cast `item` to `TypeC` because in property `type`: string literal `TypeA` [1] is incompatible with string literal
+`TypeC` [2]. [incompatible-type]
+
+   refinement.js:277:7
+   277|       item as TypeC; // error
+              ^^^^
+
+References:
+   refinement.js:261:33
+   261|   type TypeA = Readonly<{ type: 'TypeA', id: string }>;
+                                        ^^^^^^^ [1]
+   refinement.js:263:33
+   263|   type TypeC = Readonly<{ type: 'TypeC', id: string }>;
+                                        ^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:277:7
+
+Cannot cast `item` to `TypeC` because in property `type`: string literal `TypeB` [1] is incompatible with string literal
+`TypeC` [2]. [incompatible-type]
+
+   refinement.js:277:7
+   277|       item as TypeC; // error
+              ^^^^
+
+References:
+   refinement.js:262:33
+   262|   type TypeB = Readonly<{ type: 'TypeB', id: string }>;
+                                        ^^^^^^^ [1]
+   refinement.js:263:33
+   263|   type TypeC = Readonly<{ type: 'TypeC', id: string }>;
+                                        ^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:280:7
+
+Cannot cast `item` to `SpecialTypes` because: [incompatible-type]
+ - Either in property `type`: string literal `TypeC` [1] is incompatible with string literal `TypeA` [2].
+ - Or in property `type`: string literal `TypeC` [1] is incompatible with string literal `TypeB` [3].
+
+   refinement.js:280:7
+   280|       item as SpecialTypes; // error TypeC ~> SpecialType
+              ^^^^
+
+References:
+   refinement.js:263:33
+   263|   type TypeC = Readonly<{ type: 'TypeC', id: string }>;
+                                        ^^^^^^^ [1]
+   refinement.js:261:33
+   261|   type TypeA = Readonly<{ type: 'TypeA', id: string }>;
+                                        ^^^^^^^ [2]
+   refinement.js:262:33
+   262|   type TypeB = Readonly<{ type: 'TypeB', id: string }>;
+                                        ^^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:282:7
+
+Cannot cast `item` to `TypeA` because in property `type`: string literal `TypeC` [1] is incompatible with string literal
+`TypeA` [2]. [incompatible-type]
+
+   refinement.js:282:7
+   282|       item as TypeA; // error
+              ^^^^
+
+References:
+   refinement.js:263:33
+   263|   type TypeC = Readonly<{ type: 'TypeC', id: string }>;
+                                        ^^^^^^^ [1]
+   refinement.js:261:33
+   261|   type TypeA = Readonly<{ type: 'TypeA', id: string }>;
+                                        ^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- refinement.js:283:7
+
+Cannot cast `item` to `TypeB` because in property `type`: string literal `TypeC` [1] is incompatible with string literal
+`TypeB` [2]. [incompatible-type]
+
+   refinement.js:283:7
+   283|       item as TypeB; // error
+              ^^^^
+
+References:
+   refinement.js:263:33
+   263|   type TypeC = Readonly<{ type: 'TypeC', id: string }>;
+                                        ^^^^^^^ [1]
+   refinement.js:262:33
+   262|   type TypeB = Readonly<{ type: 'TypeB', id: string }>;
+                                        ^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- subst.js:10:15
+
+Cannot assign `funA(...)` to `x2` because `A` [1] is incompatible with `B` [2]. [incompatible-type]
+
+   subst.js:10:15
+   10| const x2: B = funA(isA); // error A ~> B
+                     ^^^^^^^^^
+
+References:
+   subst.js:4:40
+    4| declare function isA(x: unknown): x is A;
+                                              ^ [1]
+   subst.js:10:11
+   10| const x2: B = funA(isA); // error A ~> B
+                 ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- subst.js:15:4
+
+Cannot cast `input` to `B` because `A` [1] is incompatible with `B` [2]. [incompatible-type]
+
+   subst.js:15:4
+   15|   (input: B); // error A ~> B
+          ^^^^^
+
+References:
+   subst.js:4:40
+    4| declare function isA(x: unknown): x is A;
+                                              ^ [1]
+   subst.js:15:11
+   15|   (input: B); // error A ~> B
+                 ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ subtyping.js:6:10
+
+Cannot return `f` because in the type predicate: type guard parameter `x` [1] does not appear in the same position as
+type guard parameter `x` [2]. [function-predicate]
+
+   subtyping.js:6:10
+   6|   return f; // error 'x' is not in the same position as 'y'
+               ^
+
+References:
+   subtyping.js:5:60
+   5| function non_matching_prams(f: (x: unknown, y: unknown) => x is number): (y: unknown, x: unknown) => x is number {
+                                                                 ^ [1]
+   subtyping.js:5:102
+   5| function non_matching_prams(f: (x: unknown, y: unknown) => x is number): (y: unknown, x: unknown) => x is number {
+                                                                                                           ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- subtyping.js:10:10
+
+Cannot return `f` because function type [1], a non-type-guard function, is incompatible with function type [2], which is
+a type-guard function. [function-predicate]
+
+   subtyping.js:10:10
+   10|   return f; // error non type predicate
+                ^
+
+References:
+   subtyping.js:9:42
+    9| function non_type_guard_to_type_guard(f: (x: unknown) => boolean): (x: unknown) => x is number {
+                                                ^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   subtyping.js:9:68
+    9| function non_type_guard_to_type_guard(f: (x: unknown) => boolean): (x: unknown) => x is number {
+                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- subtyping.js:20:10
+
+Cannot return `f` because in the type predicate: `A` [1] is incompatible with `B` [2]. [incompatible-type]
+
+   subtyping.js:20:10
+   20|   return f; // error A ~> B
+                ^
+
+References:
+   subtyping.js:19:63
+   19| function type_guard_subtyping_error_1(f: (x: unknown) => x is A): (x: unknown) => x is B {
+                                                                     ^ [1]
+   subtyping.js:19:88
+   19| function type_guard_subtyping_error_1(f: (x: unknown) => x is A): (x: unknown) => x is B {
+                                                                                              ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- subtyping.js:24:10
+
+Cannot return `f` because in the type predicate: `A` [1] is incompatible with `C` [2]. [incompatible-type]
+
+   subtyping.js:24:10
+   24|   return f; // error A ~> C
+                ^
+
+References:
+   subtyping.js:23:63
+   23| function type_guard_subtyping_error_2(f: (x: unknown) => x is A): (x: unknown) => x is C {
+                                                                     ^ [1]
+   subtyping.js:23:88
+   23| function type_guard_subtyping_error_2(f: (x: unknown) => x is A): (x: unknown) => x is C {
+                                                                                              ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- subtyping.js:28:10
+
+Cannot return `f` because in the type predicate: read-only array type [1] is incompatible with array type [2].
+[incompatible-type]
+
+   subtyping.js:28:10
+   28|   return f; // error
+                ^
+
+References:
+   subtyping.js:27:66
+   27| function type_guard_subtyping_error_3(f: <A>(x: unknown) => x is ReadonlyArray<A>): <B>(x: unknown) => x is Array<B> {
+                                                                        ^^^^^^^^^^^^^^^^ [1]
+   subtyping.js:27:109
+   27| function type_guard_subtyping_error_3(f: <A>(x: unknown) => x is ReadonlyArray<A>): <B>(x: unknown) => x is Array<B> {
+                                                                                                                   ^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- subtyping.js:32:10
+
+Cannot return `f` because in the type predicate: `A` [1] is incompatible with `C` [2]. [incompatible-type]
+
+   subtyping.js:32:10
+   32|   return f; // error C <~> A
+                ^
+
+References:
+   subtyping.js:31:88
+   31| function type_guard_subtyping_error_4(f: (x: unknown) => x is C): (x: unknown) => x is A {
+                                                                                              ^ [1]
+   subtyping.js:31:63
+   31| function type_guard_subtyping_error_4(f: (x: unknown) => x is C): (x: unknown) => x is A {
+                                                                     ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- subtyping.js:36:10
+
+Cannot return `f` because in the type predicate: read-only array type [1] is incompatible with array type [2].
+[incompatible-type]
+
+   subtyping.js:36:10
+   36|   return f; // error Array<A> <~> ReadonlyArray<B>
+                ^
+
+References:
+   subtyping.js:35:101
+   35| function type_guard_subtyping_error_5(f: <A>(x: unknown) => x is Array<A>): <B>(x: unknown) => x is ReadonlyArray<B> {
+                                                                                                           ^^^^^^^^^^^^^^^^ [1]
+   subtyping.js:35:66
+   35| function type_guard_subtyping_error_5(f: <A>(x: unknown) => x is Array<A>): <B>(x: unknown) => x is ReadonlyArray<B> {
+                                                                        ^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- subtyping.js:56:10
+
+Cannot return `f` because one-sided type guard [1] is incompatible with default type guard [2]. [function-predicate]
+
+   subtyping.js:56:10
+   56|   return f; // error
+                ^
+
+References:
+   subtyping.js:55:66
+   55| function type_guard_subtyping_one_sided_error(f: (x: unknown) => implies x is A): (x: unknown) => x is A {
+                                                                        ^^^^^^^^^^^^^^ [1]
+   subtyping.js:55:99
+   55| function type_guard_subtyping_one_sided_error(f: (x: unknown) => implies x is A): (x: unknown) => x is A {
+                                                                                                         ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- subtyping.js:66:10
+
+Cannot return `f` because in array element: `(x: mixed) => x is C` [1] is not exactly the same as
+`(x: mixed) => x is A` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<(x: mixed) => x is C>` [3] and `Array<(x: mixed) => x is A>` [4] exactly the same
+- Or make array type [4] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   subtyping.js:66:10
+   66|   return f; // error C ~ A
+                ^
+
+References:
+   subtyping.js:65:43
+   65| function type_guard_unif_error_1(f: Array<(x: unknown) => x is C>): Array<(x: unknown) => x is A> {
+                                                 ^^^^^^^^^^^^^^^^^^^^^^ [1]
+   subtyping.js:65:75
+   65| function type_guard_unif_error_1(f: Array<(x: unknown) => x is C>): Array<(x: unknown) => x is A> {
+                                                                                 ^^^^^^^^^^^^^^^^^^^^^^ [2]
+   subtyping.js:65:37
+   65| function type_guard_unif_error_1(f: Array<(x: unknown) => x is C>): Array<(x: unknown) => x is A> {
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [3]
+   subtyping.js:65:69
+   65| function type_guard_unif_error_1(f: Array<(x: unknown) => x is C>): Array<(x: unknown) => x is A> {
+                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [4]
+
+
+Error ----------------------------------------------------------------------------------------------- subtyping.js:70:10
+
+Cannot return `f` because in array element: `(x: mixed) => x is A` [1] is not exactly the same as
+`(x: mixed) => x is B` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<(x: mixed) => x is A>` [3] and `Array<(x: mixed) => x is B>` [4] exactly the same
+- Or make array type [4] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   subtyping.js:70:10
+   70|   return f; // errors A ~> B, B ~> A
+                ^
+
+References:
+   subtyping.js:69:43
+   69| function type_guard_unif_error_2(f: Array<(x: unknown) => x is A>): Array<(x: unknown) => x is B> {
+                                                 ^^^^^^^^^^^^^^^^^^^^^^ [1]
+   subtyping.js:69:75
+   69| function type_guard_unif_error_2(f: Array<(x: unknown) => x is A>): Array<(x: unknown) => x is B> {
+                                                                                 ^^^^^^^^^^^^^^^^^^^^^^ [2]
+   subtyping.js:69:37
+   69| function type_guard_unif_error_2(f: Array<(x: unknown) => x is A>): Array<(x: unknown) => x is B> {
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [3]
+   subtyping.js:69:69
+   69| function type_guard_unif_error_2(f: Array<(x: unknown) => x is A>): Array<(x: unknown) => x is B> {
+                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [4]
+
+
+Error ----------------------------------------------------------------------------------------------- subtyping.js:74:10
+
+Cannot return `f` because in array element: `(x: mixed) => x is A` [1] is not exactly the same as
+`(x: mixed) => x is C` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<(x: mixed) => x is A>` [3] and `Array<(x: mixed) => x is C>` [4] exactly the same
+- Or make array type [4] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   subtyping.js:74:10
+   74|   return f; // error A ~> C
+                ^
+
+References:
+   subtyping.js:73:43
+   73| function type_guard_unif_error_3(f: Array<(x: unknown) => x is A>): Array<(x: unknown) => x is C> {
+                                                 ^^^^^^^^^^^^^^^^^^^^^^ [1]
+   subtyping.js:73:75
+   73| function type_guard_unif_error_3(f: Array<(x: unknown) => x is A>): Array<(x: unknown) => x is C> {
+                                                                                 ^^^^^^^^^^^^^^^^^^^^^^ [2]
+   subtyping.js:73:37
+   73| function type_guard_unif_error_3(f: Array<(x: unknown) => x is A>): Array<(x: unknown) => x is C> {
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [3]
+   subtyping.js:73:69
+   73| function type_guard_unif_error_3(f: Array<(x: unknown) => x is A>): Array<(x: unknown) => x is C> {
+                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [4]
+
+
+Error ----------------------------------------------------------------------------------------------- subtyping.js:82:10
+
+Cannot return `f` because in array element: `(x: mixed) => x is A` [1] is not exactly the same as
+`(x: mixed) => implies x is A` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<(x: mixed) => x is A>` [3] and `Array<(x: mixed) => implies x is A>` [4] exactly the same
+- Or make array type [4] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   subtyping.js:82:10
+   82|   return f; // error
+                ^
+
+References:
+   subtyping.js:81:51
+   81| function type_guard_unif_one_sided_error(f: Array<(x: unknown) => x is A>): Array<(x: unknown) => implies x is A> {
+                                                         ^^^^^^^^^^^^^^^^^^^^^^ [1]
+   subtyping.js:81:83
+   81| function type_guard_unif_one_sided_error(f: Array<(x: unknown) => x is A>): Array<(x: unknown) => implies x is A> {
+                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+   subtyping.js:81:45
+   81| function type_guard_unif_one_sided_error(f: Array<(x: unknown) => x is A>): Array<(x: unknown) => implies x is A> {
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [3]
+   subtyping.js:81:77
+   81| function type_guard_unif_one_sided_error(f: Array<(x: unknown) => x is A>): Array<(x: unknown) => implies x is A> {
+                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [4]
+
+
+Error ---------------------------------------------------------------------------------------------------- this.js:19:39
+
+Cannot use this [1] as a type guard variable in this context. `this` type guards are only supported in non-static
+declare class or interface methods. [function-predicate]
+
+   19|     isB_prop: (this: A, x: number) => this is B; // error only on methods
+                                             ^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- this.js:20:26
+
+Cannot use this [1] as a type guard variable in this context. `this` type guards are only supported in non-static
+declare class or interface methods. [function-predicate]
+
+   20|     static isB_static(): this is B; // error only on instance methods
+                                ^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- this.js:28:5
+
+Cannot extend `A` [1] with `E` because in property `isB` > the type predicate: `B` [2] is incompatible with `C` [3].
+[incompatible-type]
+
+   this.js:28:5
+   28|     isB(): this is C; // error type guard is in invariant position
+           ^^^^^^^^^^^^^^^^
+
+References:
+   this.js:27:27
+   27|   declare class E extends A {
+                                 ^ [1]
+   this.js:15:20
+   15|     isB(): this is B; // okay
+                          ^ [2]
+   this.js:28:20
+   28|     isB(): this is C; // error type guard is in invariant position
+                          ^ [3]
+
+
+Error ----------------------------------------------------------------------------------------------------- this.js:41:5
+
+Cannot cast `a` to `B` because `A` [1] is incompatible with `B` [2]. [incompatible-type]
+
+   this.js:41:5
+   41|     a as B; // error
+           ^
+
+References:
+   this.js:36:18
+   36|   declare var a: A;
+                        ^ [1]
+   this.js:41:10
+   41|     a as B; // error
+                ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- this.js:59:5
+
+Cannot cast `b` to empty because `B` [1] is incompatible with empty [2]. [incompatible-type]
+
+   this.js:59:5
+   59|     b as empty; // error - not refining else branch
+           ^
+
+References:
+   this.js:47:18
+   47|   declare var b: B;
+                        ^ [1]
+   this.js:59:10
+   59|     b as empty; // error - not refining else branch
+                ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- this.js:65:5
+
+Cannot cast `b` to `D` because `B` [1] is incompatible with `D` [2]. [incompatible-type]
+
+   this.js:65:5
+   65|     b as D; // error
+           ^
+
+References:
+   this.js:47:18
+   47|   declare var b: B;
+                        ^ [1]
+   this.js:65:10
+   65|     b as D; // error
+                ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- this.js:68:5
+
+Cannot cast `B` to `B` because class `B` [1] is incompatible with `B` [2]. [incompatible-type]
+
+   this.js:68:5
+   68|     B as B; // error class B ~> B
+           ^
+
+References:
+   this.js:23:17
+   23|   declare class B extends A {}
+                       ^ [1]
+   this.js:68:10
+   68|     B as B; // error class B ~> B
+                ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- this.js:86:5
+
+Cannot cast `i` to `B` because `I` [1] is incompatible with `B` [2]. [incompatible-type]
+
+   this.js:86:5
+   86|     i as B; // error
+           ^
+
+References:
+   this.js:82:18
+   82|   declare var i: I;
+                        ^ [1]
+   this.js:86:10
+   86|     i as B; // error
+                ^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- this.js:90:19
+
+Cannot get `x.isB` because property `isB` [1] cannot be unbound from the context [2] where it was defined.
+[method-unbinding]
+
+   this.js:90:19
+   90|     const isB = x.isB // error method-unbinding
+                         ^^^ [1]
+
+References:
+   this.js:15:5
+   15|     isB(): this is B; // okay
+           ^^^^^^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- this.js:98:29
+
+Cannot use this [1] as a type guard variable in this context. `this` type guards are only supported in non-static
+declare class or interface methods. [function-predicate]
+
+   98|   type T1 = (x: unknown) => this is C; // error only on declare classes/interfaces
+                                   ^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- this.js:100:34
+
+Cannot use this [1] as a type guard variable in this context. `this` type guards are only supported in non-static
+declare class or interface methods. [function-predicate]
+
+   100|   type T2 = (cb: (x: unknown) => this is C) => void; // error only on declare classes/interfaces
+                                         ^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- this.js:102:29
+
+Cannot use this [1] as a type guard variable in this context. `this` type guards are only supported in non-static
+declare class or interface methods. [function-predicate]
+
+   102|   type T3 = (x: unknown) => this is Unresolved; // error only on declare classes/interfaces, Unresolved
+                                    ^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- this.js:102:37
+
+Cannot resolve name `Unresolved`. [cannot-resolve-name]
+
+   102|   type T3 = (x: unknown) => this is Unresolved; // error only on declare classes/interfaces, Unresolved
+                                            ^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- this.js:105:10
+
+Cannot use this [1] as a type guard variable in this context. `this` type guards are only supported in non-static
+declare class or interface methods. [function-predicate]
+
+   105|     m(): this is C; // error only on declare classes/interfaces
+                 ^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- this.js:106:14
+
+Cannot use this [1] as a type guard variable in this context. `this` type guards are only supported in non-static
+declare class or interface methods. [function-predicate]
+
+   106|     f: () => this is C; // error only on declare classes/interfaces
+                     ^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- this.js:111:5
+
+Cannot cast `x` to `C` because `T4` [1] is incompatible with `C` [2]. [incompatible-type]
+
+   this.js:111:5
+   111|     x as C; // error should not refine
+            ^
+
+References:
+   this.js:109:18
+   109|   declare var x: T4;
+                         ^^ [1]
+   this.js:111:10
+   111|     x as C; // error should not refine
+                 ^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- this.js:115:27
+
+Cannot use this [1] as a type guard variable in this context. `this` type guards are only supported in non-static
+declare class or interface methods. [function-predicate]
+
+   115|     m(cb: (x: unknown) => this is C): void; // error only on declare classes/interfaces method return
+                                  ^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- this.js:116:26
+
+Cannot use this [1] as a type guard variable in this context. `this` type guards are only supported in non-static
+declare class or interface methods. [function-predicate]
+
+   116|     n(): (x: unknown) => this is C; // error only on declare classes/interfaces method return
+                                 ^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- this.js:119:27
+
+Cannot use this [1] as a type guard variable in this context. `this` type guards are only supported in non-static
+declare class or interface methods. [function-predicate]
+
+   119|   function foo1(this: C): this is C {  // error 'this' type guard only on declare classes
+                                  ^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- this.js:123:27
+
+Cannot use this [1] as a type guard variable in this context. `this` type guards are only supported in non-static
+declare class or interface methods. [function-predicate]
+
+   123|   function foo2(this: C): this is Unresolved {  // error 'this' type guard only on declare classes, unresolved
+                                  ^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- this.js:123:35
+
+Cannot resolve name `Unresolved`. [cannot-resolve-name]
+
+   123|   function foo2(this: C): this is Unresolved {  // error 'this' type guard only on declare classes, unresolved
+                                          ^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- this.js:137:33
+
+Cannot use `X` [1] in an input/output position because `X` [1] is expected to occur only in output positions.
+[incompatible-variance]
+
+   this.js:137:33
+   137|   declare class D<+X> extends C<X> {}
+                                        ^
+
+References:
+   this.js:137:20
+   137|   declare class D<+X> extends C<X> {}
+                           ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- this.js:143:5
+
+Cannot cast `x` to `D` because in type argument `X` [1]: number [2] is incompatible with string [3]. [incompatible-type]
+
+   this.js:143:5
+   143|     x as D<string>; // error number ~> string
+            ^
+
+References:
+   this.js:137:20
+   137|   declare class D<+X> extends C<X> {}
+                           ^ [1]
+   this.js:139:20
+   139|   declare var x: C<number>;
+                           ^^^^^^ [2]
+   this.js:143:12
+   143|     x as D<string>; // error number ~> string
+                   ^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------------- this.js:152:5
+
+Cannot cast `x` to `D` because in type argument `X` [1]: number [2] is incompatible with string [3]. [incompatible-type]
+
+   this.js:152:5
+   152|     x as D<string>; // error number ~> string
+            ^
+
+References:
+   this.js:137:20
+   137|   declare class D<+X> extends C<X> {}
+                           ^ [1]
+   this.js:150:12
+   150|   if (x.m2<number>()) {
+                   ^^^^^^ [2]
+   this.js:152:12
+   152|     x as D<string>; // error number ~> string
+                   ^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------------- this.js:157:5
+
+Cannot cast `x` to `D` because in type argument `X` [1]: number [2] is incompatible with string [3]. [incompatible-type]
+
+   this.js:157:5
+   157|     x as D<string>; // error number ~> string
+            ^
+
+References:
+   this.js:137:20
+   137|   declare class D<+X> extends C<X> {}
+                           ^ [1]
+   this.js:155:12
+   155|   if (x.m3(1)) {
+                   ^ [2]
+   this.js:157:12
+   157|     x as D<string>; // error number ~> string
+                   ^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------------- this.js:181:6
+
+Cannot call `fn` with `new B` bound to `cb` because in property `m`: function type [1], a non-type-guard function, is
+incompatible with function type [2], which is a type-guard function. [function-predicate]
+
+   this.js:181:6
+   181|   fn(new B); // error no type-guard
+             ^^^^^
+
+References:
+   this.js:174:21
+   174|   declare class B { m(): boolean }
+                            ^^^^^^^^^^^^ [1]
+   this.js:177:39
+   177|   declare function fn(cb: interface { m(): this is D }): void;
+                                              ^^^^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- this.js:186:5
+
+Cannot extend `AImported` [1] with `E` because in property `isB` > the type predicate: `B` [2] is incompatible with
+`C` [3]. [incompatible-type]
+
+   this.js:186:5
+   186|     isB(): this is CImported; // error type guard is in invariant position
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   this.js:185:27
+   185|   declare class E extends AImported {
+                                  ^^^^^^^^^ [1]
+   this_exports.js:2:18
+     2|   isB(): this is B;
+                         ^ [2]
+   this.js:186:20
+   186|     isB(): this is CImported; // error type guard is in invariant position
+                           ^^^^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------------- this.js:195:5
+
+Cannot cast `a` to `BImported` because `A` [1] is incompatible with `B` [2]. [incompatible-type]
+
+   this.js:195:5
+   195|     a as BImported; // error
+            ^
+
+References:
+   this.js:190:18
+   190|   declare var a: AImported;
+                         ^^^^^^^^^ [1]
+   this.js:195:10
+   195|     a as BImported; // error
+                 ^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- this.js:213:5
+
+Cannot cast `b` to empty because `B` [1] is incompatible with empty [2]. [incompatible-type]
+
+   this.js:213:5
+   213|     b as empty; // error - not refining else branch
+            ^
+
+References:
+   this.js:201:18
+   201|   declare var b: BImported;
+                         ^^^^^^^^^ [1]
+   this.js:213:10
+   213|     b as empty; // error - not refining else branch
+                 ^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- this.js:219:5
+
+Cannot cast `b` to `DImported` because `B` [1] is incompatible with `D` [2]. [incompatible-type]
+
+   this.js:219:5
+   219|     b as DImported; // error
+            ^
+
+References:
+   this.js:201:18
+   201|   declare var b: BImported;
+                         ^^^^^^^^^ [1]
+   this.js:219:10
+   219|     b as DImported; // error
+                 ^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- this.js:222:5
+
+Cannot cast `BImported` to `BImported` because class `B` [1] is incompatible with `B` [2]. [incompatible-type]
+
+   this.js:222:5
+   222|     BImported as BImported; // error class B ~> B
+            ^^^^^^^^^
+
+References:
+   this_exports.js:9:22
+     9| declare export class B extends A {}
+                             ^ [1]
+   this.js:222:18
+   222|     BImported as BImported; // error class B ~> B
+                         ^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- this.js:237:19
+
+Cannot get `x.isB` because property `isB` [1] cannot be unbound from the context [2] where it was defined.
+[method-unbinding]
+
+   this.js:237:19
+   237|     const isB = x.isB // error method-unbinding
+                          ^^^ [1]
+
+References:
+   this_exports.js:2:3
+     2|   isB(): this is B;
+          ^^^^^^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- this.js:246:5
+
+Cannot cast `e` to `FImported` because `E` [1] is incompatible with `F` [2]. [incompatible-type]
+
+   this.js:246:5
+   246|     e as FImported; // error
+            ^
+
+References:
+   this.js:241:18
+   241|   declare var e: EImported;
+                         ^^^^^^^^^ [1]
+   this.js:246:10
+   246|     e as FImported; // error
+                 ^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- this.js:253:5
+
+Cannot cast `i` to `BImported` because `I` [1] is incompatible with `B` [2]. [incompatible-type]
+
+   this.js:253:5
+   253|     i as BImported; // error
+            ^
+
+References:
+   this.js:249:18
+   249|   declare var i: IImported;
+                         ^^^^^^^^^ [1]
+   this.js:253:10
+   253|     i as BImported; // error
+                 ^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- this.js:274:5
+
+Cannot cast `x` to `B` because `A` [1] is incompatible with `B` [2]. [incompatible-type]
+
+   this.js:274:5
+   274|     x as B; // TODO okay (relax this limitation)
+            ^
+
+References:
+   this.js:270:18
+   270|   declare var x: A;
+                         ^ [1]
+   this.js:274:10
+   274|     x as B; // TODO okay (relax this limitation)
+                 ^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- this_exports.js:6:24
+
+Cannot use this [1] as a type guard variable in this context. `this` type guards are only supported in non-static
+declare class or interface methods. [function-predicate]
+
+   6|   static isB_static(): this is B; // error should not export this guard
+                             ^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- this_exports.js:14:10
+
+Cannot use this [1] as a type guard variable in this context. `this` type guards are only supported in non-static
+declare class or interface methods. [function-predicate]
+
+   14|   isF(): this is F { // error due to consistency check, but type guard recorded
+                ^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------- tuple_refinement.js:11:7
+
+Cannot cast `x` to `B` because in index `0`: string literal `A` [1] is incompatible with string literal `B` [2].
+[incompatible-type]
+
+   tuple_refinement.js:11:7
+   11|       x as B; // ERROR: A ~> B
+             ^
+
+References:
+   tuple_refinement.js:2:11
+    2| type A = ['A', number];
+                 ^^^ [1]
+   tuple_refinement.js:3:11
+    3| type B = ['B', string];
+                 ^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- tuple_refinement.js:11:7
+
+Cannot cast `x` to `B` because in index `1`: number [1] is incompatible with string [2]. [incompatible-type]
+
+   tuple_refinement.js:11:7
+   11|       x as B; // ERROR: A ~> B
+             ^
+
+References:
+   tuple_refinement.js:2:16
+    2| type A = ['A', number];
+                      ^^^^^^ [1]
+   tuple_refinement.js:3:16
+    3| type B = ['B', string];
+                      ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- tuple_refinement.js:31:7
+
+Cannot cast `x` to `ROB` because in index `0`: string literal `A` [1] is incompatible with string literal `B` [2].
+[incompatible-type]
+
+   tuple_refinement.js:31:7
+   31|       x as ROB; // ERROR: A ~> B
+             ^
+
+References:
+   tuple_refinement.js:22:22
+   22| type ROA = Readonly<['A', number]>;
+                            ^^^ [1]
+   tuple_refinement.js:23:22
+   23| type ROB = Readonly<['B', string]>;
+                            ^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- tuple_refinement.js:31:7
+
+Cannot cast `x` to `ROB` because in index `1`: number [1] is incompatible with string [2]. [incompatible-type]
+
+   tuple_refinement.js:31:7
+   31|       x as ROB; // ERROR: A ~> B
+             ^
+
+References:
+   tuple_refinement.js:22:27
+   22| type ROA = Readonly<['A', number]>;
+                                 ^^^^^^ [1]
+   tuple_refinement.js:23:27
+   23| type ROB = Readonly<['B', string]>;
+                                 ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- tuple_refinement.js:51:7
+
+Cannot cast `x` to `MTB` because in index `0`: string literal `A` [1] is incompatible with string literal `B` [2].
+[incompatible-type]
+
+   tuple_refinement.js:51:7
+   51|       x as MTB; // ERROR: A ~> B
+             ^
+
+References:
+   tuple_refinement.js:42:22
+   42| type MTA = Readonly<['A', 1, number]>;
+                            ^^^ [1]
+   tuple_refinement.js:43:22
+   43| type MTB = Readonly<['B', 1, string]>;
+                            ^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- tuple_refinement.js:51:7
+
+Cannot cast `x` to `MTB` because in index `2`: number [1] is incompatible with string [2]. [incompatible-type]
+
+   tuple_refinement.js:51:7
+   51|       x as MTB; // ERROR: A ~> B
+             ^
+
+References:
+   tuple_refinement.js:42:30
+   42| type MTA = Readonly<['A', 1, number]>;
+                                    ^^^^^^ [1]
+   tuple_refinement.js:43:30
+   43| type MTB = Readonly<['B', 1, string]>;
+                                    ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------- type_guard_compatibility.js:15:30
+
+The type predicate `B` [1] needs to be compatible with parameter `x`'s type: `B` [1] is incompatible with `A` [2].
+[incompatible-type-guard]
+
+   type_guard_compatibility.js:15:30
+   15| function error_1(x: A): x is B { // error B ~> A
+                                    ^ [1]
+
+References:
+   type_guard_compatibility.js:15:21
+   15| function error_1(x: A): x is B { // error B ~> A
+                           ^ [2]
+
+
+Error -------------------------------------------------------------------------------- type_guard_compatibility.js:19:59
+
+The type predicate array type [1] needs to be compatible with parameter `x`'s type: in array element: `mixed` [2] is not
+exactly the same as `X` [3]. [incompatible-type-guard]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<mixed>` [1] and `Array<X>` [4] exactly the same
+- Or make array type [4] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   type_guard_compatibility.js:19:59
+   19| declare function error_poly_1<X>(x: Array<X>): x is Array<mixed>; // error mixed ~> X
+                                                                 ^^^^^ [2]
+
+References:
+   type_guard_compatibility.js:19:53
+   19| declare function error_poly_1<X>(x: Array<X>): x is Array<mixed>; // error mixed ~> X
+                                                           ^^^^^^^^^^^^ [1]
+   type_guard_compatibility.js:19:43
+   19| declare function error_poly_1<X>(x: Array<X>): x is Array<mixed>; // error mixed ~> X
+                                                 ^ [3]
+   type_guard_compatibility.js:19:37
+   19| declare function error_poly_1<X>(x: Array<X>): x is Array<mixed>; // error mixed ~> X
+                                           ^^^^^^^^ [4]
+
+
+Error -------------------------------------------------------------------------------- type_guard_compatibility.js:27:33
+
+The type predicate `B` [1] needs to be compatible with parameter `x`'s type: `B` [1] is incompatible with `A` [2].
+[incompatible-type-guard]
+
+   type_guard_compatibility.js:27:33
+   27| type F_error_1 = (x: A) => x is B; // error B ~> A
+                                       ^ [1]
+
+References:
+   type_guard_compatibility.js:27:22
+   27| type F_error_1 = (x: A) => x is B; // error B ~> A
+                            ^ [2]
+
+
+Error -------------------------------------------------------------------------------- type_guard_compatibility.js:29:54
+
+The type predicate array type [1] needs to be compatible with parameter `x`'s type: in array element: `mixed` [2] is not
+exactly the same as `X` [3]. [incompatible-type-guard]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<mixed>` [1] and `Array<X>` [4] exactly the same
+- Or make array type [4] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   type_guard_compatibility.js:29:54
+   29| type F_error_poly_1 = <X>(x: Array<X>) => x is Array<mixed>; // error mixed ~> X
+                                                            ^^^^^ [2]
+
+References:
+   type_guard_compatibility.js:29:48
+   29| type F_error_poly_1 = <X>(x: Array<X>) => x is Array<mixed>; // error mixed ~> X
+                                                      ^^^^^^^^^^^^ [1]
+   type_guard_compatibility.js:29:36
+   29| type F_error_poly_1 = <X>(x: Array<X>) => x is Array<mixed>; // error mixed ~> X
+                                          ^ [3]
+   type_guard_compatibility.js:29:30
+   29| type F_error_poly_1 = <X>(x: Array<X>) => x is Array<mixed>; // error mixed ~> X
+                                    ^^^^^^^^ [4]
+
+
+Error -------------------------------------------------------------------------------- type_guard_compatibility.js:30:54
+
+The type predicate array type [1] needs to be compatible with parameter `x`'s type: in array element: `mixed` [2] is not
+exactly the same as `X` [3]. [incompatible-type-guard]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<mixed>` [1] and `Array<X>` [4] exactly the same
+- Or make array type [4] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   type_guard_compatibility.js:30:54
+   30| type F_error_poly_2<X> = (x: Array<X>) => x is Array<mixed>; // error mixed ~> X
+                                                            ^^^^^ [2]
+
+References:
+   type_guard_compatibility.js:30:48
+   30| type F_error_poly_2<X> = (x: Array<X>) => x is Array<mixed>; // error mixed ~> X
+                                                      ^^^^^^^^^^^^ [1]
+   type_guard_compatibility.js:30:36
+   30| type F_error_poly_2<X> = (x: Array<X>) => x is Array<mixed>; // error mixed ~> X
+                                          ^ [3]
+   type_guard_compatibility.js:30:30
+   30| type F_error_poly_2<X> = (x: Array<X>) => x is Array<mixed>; // error mixed ~> X
+                                    ^^^^^^^^ [4]
+
+
+Error -------------------------------------------------------------------------------------------------- unbound.js:1:23
+
+Cannot find type guard parameter `x` [1] in the parameters of this function (type). [function-predicate]
+
+   1| function no_params(): x is number { // error x unbound
+                            ^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- unbound.js:5:47
+
+Cannot find type guard parameter `y` [1] in the parameters of this function (type). [function-predicate]
+
+   5| function unbound_type_guard_param(x: number): y is number {  // error y is not a param
+                                                    ^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- unbound.js:9:23
+
+Cannot find type guard parameter `x` [1] in the parameters of this function (type). [function-predicate]
+
+   9| type No_param = () => x is number; // error x unbound
+                            ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- unbound.js:11:37
+
+Cannot find type guard parameter `x` [1] in the parameters of this function (type). [function-predicate]
+
+   11| type Unbound_param = (y: number) => x is number; // error x unbound
+                                           ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- unbound.js:13:34
+
+Cannot find type guard parameter `x` [1] in the parameters of this function (type). [function-predicate]
+
+   13| type No_param_name = (number) => x is number; // error x unbound
+                                        ^ [1]
+
+
+
+Found 224 errors
+
+Only showing the most relevant union/intersection branches.
+To see all branches, re-run Flow with --show-all-branches

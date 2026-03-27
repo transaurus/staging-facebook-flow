@@ -1,0 +1,2329 @@
+Error ----------------------------------------------------------------------------------------------------- const.js:4:1
+
+Cannot reassign constant `x` [1]. [reassign-const]
+
+   const.js:4:1
+   4| x++;
+      ^
+
+References:
+   const.js:1:7
+   1| const x = 0;
+            ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- const.js:5:1
+
+Cannot reassign constant `x` [1]. [reassign-const]
+
+   const.js:5:1
+   5| x--;
+      ^
+
+References:
+   const.js:1:7
+   1| const x = 0;
+            ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- const.js:6:1
+
+Cannot reassign constant `x` [1]. [reassign-const]
+
+   const.js:6:1
+   6| x += 0;
+      ^
+
+References:
+   const.js:1:7
+   1| const x = 0;
+            ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- const.js:7:1
+
+Cannot reassign constant `x` [1]. [reassign-const]
+
+   const.js:7:1
+   7| x -= 0;
+      ^
+
+References:
+   const.js:1:7
+   1| const x = 0;
+            ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- const.js:8:1
+
+Cannot reassign constant `x` [1]. [reassign-const]
+
+   const.js:8:1
+   8| x /= 0;
+      ^
+
+References:
+   const.js:1:7
+   1| const x = 0;
+            ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- const.js:9:1
+
+Cannot reassign constant `x` [1]. [reassign-const]
+
+   const.js:9:1
+   9| x %= 0;
+      ^
+
+References:
+   const.js:1:7
+   1| const x = 0;
+            ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- const.js:10:1
+
+Cannot reassign constant `x` [1]. [reassign-const]
+
+   const.js:10:1
+   10| x <<= 0
+       ^
+
+References:
+   const.js:1:7
+    1| const x = 0;
+             ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- const.js:11:1
+
+Cannot reassign constant `x` [1]. [reassign-const]
+
+   const.js:11:1
+   11| x >>= 0;
+       ^
+
+References:
+   const.js:1:7
+    1| const x = 0;
+             ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- const.js:12:1
+
+Cannot reassign constant `x` [1]. [reassign-const]
+
+   const.js:12:1
+   12| x >>>= 0;
+       ^
+
+References:
+   const.js:1:7
+    1| const x = 0;
+             ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- const.js:13:1
+
+Cannot reassign constant `x` [1]. [reassign-const]
+
+   const.js:13:1
+   13| x |= 0;
+       ^
+
+References:
+   const.js:1:7
+    1| const x = 0;
+             ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- const.js:14:1
+
+Cannot reassign constant `x` [1]. [reassign-const]
+
+   const.js:14:1
+   14| x ^= 0;
+       ^
+
+References:
+   const.js:1:7
+    1| const x = 0;
+             ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- const.js:15:1
+
+Cannot reassign constant `x` [1]. [reassign-const]
+
+   const.js:15:1
+   15| x &= 0;
+       ^
+
+References:
+   const.js:1:7
+    1| const x = 0;
+             ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- const.js:21:2
+
+Cannot cast `foo` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   const.js:21:2
+   21| (foo: number); // error: string ~> number
+        ^^^
+
+References:
+   const.js:19:24
+   19| const { foo } = { foo: "foo" }
+                              ^^^^^ [1]
+   const.js:21:7
+   21| (foo: number); // error: string ~> number
+             ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- const.js:22:2
+
+Cannot cast `bar` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   const.js:22:2
+   22| (bar: number); // error: string ~> number
+        ^^^
+
+References:
+   const.js:20:18
+   20| const [ bar ] = ["bar"];
+                        ^^^^^ [1]
+   const.js:22:7
+   22| (bar: number); // error: string ~> number
+             ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- const.js:26:4
+
+Cannot cast `baz` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   const.js:26:4
+   26|   (baz: number); // error: string ~> number
+          ^^^
+
+References:
+   const.js:24:28
+   24| declare var bazzes: { baz: string }[];
+                                  ^^^^^^ [1]
+   const.js:26:9
+   26|   (baz: number); // error: string ~> number
+               ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- declared.js:3:15
+
+Cannot declare `x` [1] because var redeclaration is not supported. [name-already-bound]
+
+   declared.js:3:15
+   3|   declare var x: string; // error
+                    ^
+
+References:
+   declared.js:2:15
+   2|   declare var x: number;
+                    ^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- declared.js:5:4
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   declared.js:5:4
+   5|   (x: string); // error: should read the first x
+         ^
+
+References:
+   declared.js:2:18
+   2|   declare var x: number;
+                       ^^^^^^ [1]
+   declared.js:5:7
+   5|   (x: string); // error: should read the first x
+            ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- declared.js:9:7
+
+Cannot declare `x` [1] because var redeclaration is not supported. [name-already-bound]
+
+   declared.js:9:7
+   9|   var x: string = ''; // error
+            ^
+
+References:
+   declared.js:8:15
+   8|   declare var x: number;
+                    ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- declared.js:11:4
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   declared.js:11:4
+   11|   (x: string); // error: should read the first x
+          ^
+
+References:
+   declared.js:8:18
+    8|   declare var x: number;
+                        ^^^^^^ [1]
+   declared.js:11:7
+   11|   (x: string); // error: should read the first x
+             ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ declared.js:15:15
+
+Cannot declare `x` [1] because var redeclaration is not supported. [name-already-bound]
+
+   declared.js:15:15
+   15|   declare var x: string; // error
+                     ^
+
+References:
+   declared.js:14:7
+   14|   var x: number = 1;
+             ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ declared.js:21:15
+
+Cannot declare `x` [1] because the name is already bound. [name-already-bound]
+
+   declared.js:21:15
+   21|   declare let x: string; // error
+                     ^
+
+References:
+   declared.js:20:15
+   20|   declare let x: number;
+                     ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- declared.js:23:4
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   declared.js:23:4
+   23|   (x: string); // error: should read the first x
+          ^
+
+References:
+   declared.js:20:18
+   20|   declare let x: number;
+                        ^^^^^^ [1]
+   declared.js:23:7
+   23|   (x: string); // error: should read the first x
+             ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- declared.js:27:7
+
+Cannot declare `x` [1] because the name is already bound. [name-already-bound]
+
+   declared.js:27:7
+   27|   let x: string = ''; // error
+             ^
+
+References:
+   declared.js:26:15
+   26|   declare let x: number;
+                     ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- declared.js:29:4
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   declared.js:29:4
+   29|   (x: string); // error: should read the first x
+          ^
+
+References:
+   declared.js:26:18
+   26|   declare let x: number;
+                        ^^^^^^ [1]
+   declared.js:29:7
+   29|   (x: string); // error: should read the first x
+             ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ declared.js:33:15
+
+Cannot declare `x` [1] because the name is already bound. [name-already-bound]
+
+   declared.js:33:15
+   33|   declare let x: string; // error
+                     ^
+
+References:
+   declared.js:32:7
+   32|   let x: number = 1;
+             ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- declared.js:35:4
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   declared.js:35:4
+   35|   (x: string); // error: should read the first x
+          ^
+
+References:
+   declared.js:32:10
+   32|   let x: number = 1;
+                ^^^^^^ [1]
+   declared.js:35:7
+   35|   (x: string); // error: should read the first x
+             ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ declared.js:40:17
+
+Cannot declare `x` [1] because the name is already bound. [name-already-bound]
+
+   declared.js:40:17
+   40|   declare const x: string; // error
+                       ^
+
+References:
+   declared.js:39:17
+   39|   declare const x: number;
+                       ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- declared.js:42:4
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   declared.js:42:4
+   42|   (x: string); // error: should read the first x
+          ^
+
+References:
+   declared.js:39:20
+   39|   declare const x: number;
+                          ^^^^^^ [1]
+   declared.js:42:7
+   42|   (x: string); // error: should read the first x
+             ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- declared.js:46:9
+
+Cannot declare `x` [1] because the name is already bound. [name-already-bound]
+
+   declared.js:46:9
+   46|   const x: string = ''; // error
+               ^
+
+References:
+   declared.js:45:17
+   45|   declare const x: number;
+                       ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- declared.js:48:4
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   declared.js:48:4
+   48|   (x: string); // error: should read the first x
+          ^
+
+References:
+   declared.js:45:20
+   45|   declare const x: number;
+                          ^^^^^^ [1]
+   declared.js:48:7
+   48|   (x: string); // error: should read the first x
+             ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ declared.js:52:17
+
+Cannot declare `x` [1] because the name is already bound. [name-already-bound]
+
+   declared.js:52:17
+   52|   declare const x: string; // error
+                       ^
+
+References:
+   declared.js:51:9
+   51|   const x: number = 1;
+               ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- declared.js:54:4
+
+Cannot cast `x` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   declared.js:54:4
+   54|   (x: string); // error: should read the first x
+          ^
+
+References:
+   declared.js:51:12
+   51|   const x: number = 1;
+                  ^^^^^^ [1]
+   declared.js:54:7
+   54|   (x: string); // error: should read the first x
+             ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ declared.js:61:17
+
+Cannot declare `C` [1] because the name is already bound. [name-already-bound]
+
+   declared.js:61:17
+   61|   declare class C extends B {}
+                       ^
+
+References:
+   declared.js:60:17
+   60|   declare class C extends A {}
+                       ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- declared.js:63:4
+
+Cannot cast `new C` to `B` because `C` [1] is incompatible with `B` [2]. [incompatible-type]
+
+   declared.js:63:4
+   63|   (new C: B); // error: should read the first C
+          ^^^^^ [1]
+
+References:
+   declared.js:63:11
+   63|   (new C: B); // error: should read the first C
+                 ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- declared.js:69:9
+
+Cannot declare `C` [1] because the name is already bound. [name-already-bound]
+
+   declared.js:69:9
+   69|   class C extends B {}
+               ^
+
+References:
+   declared.js:68:17
+   68|   declare class C extends A {}
+                       ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- declared.js:71:4
+
+Cannot cast `new C` to `B` because `C` [1] is incompatible with `B` [2]. [incompatible-type]
+
+   declared.js:71:4
+   71|   (new C: B); // error: should read the first C
+          ^^^^^ [1]
+
+References:
+   declared.js:71:11
+   71|   (new C: B); // error: should read the first C
+                 ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ declared.js:77:17
+
+Cannot declare `C` [1] because the name is already bound. [name-already-bound]
+
+   declared.js:77:17
+   77|   declare class C extends B {}
+                       ^
+
+References:
+   declared.js:76:9
+   76|   class C extends A {}
+               ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- declared.js:79:4
+
+Cannot cast `new C` to `B` because `C` [1] is incompatible with `B` [2]. [incompatible-type]
+
+   declared.js:79:4
+   79|   (new C: B); // error: should read the first C
+          ^^^^^ [1]
+
+References:
+   declared.js:79:11
+   79|   (new C: B); // error: should read the first C
+                 ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ duplicate.js:10:7
+
+Cannot declare `Bar1` [1] because the name is already bound. [name-already-bound]
+
+   duplicate.js:10:7
+   10| class Bar1 { // error - duplicate name
+             ^^^^
+
+References:
+   duplicate.js:3:6
+    3| type Bar1 = {};
+            ^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- duplicate.js:13:10
+
+Cannot call `this.n` because property `n` is missing in `Bar1` [1]. [prop-missing]
+
+   duplicate.js:13:10
+   13|     this.n(); // error, n is not a method
+                ^
+
+References:
+   duplicate.js:10:7
+   10| class Bar1 { // error - duplicate name
+             ^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ duplicate.js:17:7
+
+Cannot declare `Bar2` [1] because the name is already bound. [name-already-bound]
+
+   duplicate.js:17:7
+   17| class Bar2 { // error - duplicate name
+             ^^^^
+
+References:
+   duplicate.js:4:22
+    4| import type {Node as Bar2} from 'react';
+                            ^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ duplicate.js:21:7
+
+Cannot declare `Bar3` [1] because the name is already bound. [name-already-bound]
+
+   duplicate.js:21:7
+   21| class Bar3 { // error - duplicate name
+             ^^^^
+
+References:
+   duplicate.js:5:7
+    5| class Bar3 {}
+             ^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ duplicate.js:26:6
+
+Cannot call `bar3.m` because property `m` is missing in `Bar3` [1]. [prop-missing]
+
+   duplicate.js:26:6
+   26| bar3.m(); // error, n is not a method in first definition of Bar3
+            ^
+
+References:
+   duplicate.js:25:14
+   25| const bar3 = new Bar3();
+                    ^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ duplicate.js:28:7
+
+Cannot declare `Bar4` [1] because the name is already bound. [name-already-bound]
+
+   duplicate.js:28:7
+   28| class Bar4 { // error - duplicate name
+             ^^^^
+
+References:
+   duplicate.js:6:10
+    6| function Bar4() {}
+                ^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ duplicate.js:32:7
+
+Cannot declare `Bar5` [1] because the name is already bound. [name-already-bound]
+
+   duplicate.js:32:7
+   32| class Bar5 { // error - duplicate name
+             ^^^^
+
+References:
+   duplicate.js:7:13
+    7| declare var Bar5: unknown;
+                   ^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ duplicate.js:36:7
+
+Cannot declare `Bar6` [1] because the name is already bound. [name-already-bound]
+
+   duplicate.js:36:7
+   36| class Bar6 { // error - duplicate name
+             ^^^^
+
+References:
+   duplicate.js:8:11
+    8| component Bar6() { return null; }
+                 ^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- imports.js:2:8
+
+Cannot declare `R1` [1] because the name is already bound. [name-already-bound]
+
+   imports.js:2:8
+   2| import R1 from 'react'; // error
+             ^^
+
+References:
+   imports.js:1:8
+   1| import R1 from 'react';
+             ^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- imports.js:3:1
+
+Cannot reassign import `R1` [1]. [reassign-import]
+
+   imports.js:3:1
+   3| R1 = (42: any); // error
+      ^^
+
+References:
+   imports.js:1:8
+   1| import R1 from 'react';
+             ^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- imports.js:6:8
+
+Cannot declare `R2` [1] because the name is already bound. [name-already-bound]
+
+   imports.js:6:8
+   6| import R2 from 'react'; // error
+             ^^
+
+References:
+   imports.js:5:13
+   5| import * as R2 from 'react';
+                  ^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- imports.js:7:1
+
+Cannot reassign import `R2` [1]. [reassign-import]
+
+   imports.js:7:1
+   7| R2 = (42: any); // error
+      ^^
+
+References:
+   imports.js:5:13
+   5| import * as R2 from 'react';
+                  ^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- imports.js:10:7
+
+Cannot declare `Node` [1] because the name is already bound. [name-already-bound]
+
+   imports.js:10:7
+   10| const Node = 3; // error
+             ^^^^
+
+References:
+   imports.js:9:14
+    9| import type {Node} from 'react';
+                    ^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- imports.js:11:1
+
+Cannot use type `Node` [1] as a value. Types are erased and don't exist at runtime. If the exported binding can also be
+used as a value, try importing it using `import Node` instead of `import type Node` and `import {Node}` instead of
+`import type {Node}`. [type-as-value]
+
+   imports.js:11:1
+   11| Node = 4; // error
+       ^^^^
+
+References:
+   imports.js:9:14
+    9| import type {Node} from 'react';
+                    ^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- imports.js:12:6
+
+Cannot declare `Node` [1] because the name is already bound. [name-already-bound]
+
+   imports.js:12:6
+   12| type Node = number; // error
+            ^^^^
+
+References:
+   imports.js:9:14
+    9| import type {Node} from 'react';
+                    ^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- jsx_pragma_member1.js:1:9
+
+Cannot resolve name `Foo`. [cannot-resolve-name]
+
+   1| // @jsx Foo.baz
+              ^^^
+
+
+Error ---------------------------------------------------------------------------------------- jsx_pragma_member2.js:1:9
+
+Cannot resolve name `Foo`. [cannot-resolve-name]
+
+   1| // @jsx Foo.Bar.baz
+              ^^^
+
+
+Error ---------------------------------------------------------------------------------------- jsx_pragma_member3.js:1:9
+
+Cannot resolve name `Foo`. [cannot-resolve-name]
+
+   1| // @jsx Foo['bar']
+              ^^^
+
+
+Error ------------------------------------------------------------------------------------------------ rebinding.js:16:8
+
+Cannot declare `A` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:16:8
+   16|   type A = number;  // error: name already bound
+              ^
+
+References:
+   rebinding.js:15:8
+   15|   type A = number;
+              ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ rebinding.js:21:9
+
+Cannot declare `A` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:21:9
+   21|   class A {}        // error: name already bound
+               ^
+
+References:
+   rebinding.js:20:8
+   20|   type A = number;
+              ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ rebinding.js:26:7
+
+Cannot declare `A` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:26:7
+   26|   let A = 0;        // error: name already bound
+             ^
+
+References:
+   rebinding.js:25:8
+   25|   type A = number;
+              ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ rebinding.js:31:9
+
+Cannot declare `A` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:31:9
+   31|   const A = 0;     // error: name already bound
+               ^
+
+References:
+   rebinding.js:30:8
+   30|   type A = number;
+              ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ rebinding.js:36:7
+
+Cannot declare `A` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:36:7
+   36|   var A = 0;        // error: name already bound
+             ^
+
+References:
+   rebinding.js:35:8
+   35|   type A = number;
+              ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ rebinding.js:41:3
+
+Cannot use type `A` [1] as a value. Types are erased and don't exist at runtime. [type-as-value]
+
+   rebinding.js:41:3
+   41|   A = 42;           // error: type alias ref'd from value pos
+         ^
+
+References:
+   rebinding.js:40:8
+   40|   type A = number;
+              ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ rebinding.js:48:8
+
+Cannot declare `A` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:48:8
+   48|   type A = number;  // error: name already bound
+              ^
+
+References:
+   rebinding.js:47:9
+   47|   class A {}
+               ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ rebinding.js:53:9
+
+Cannot declare `A` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:53:9
+   53|   class A {}        // error: name already bound
+               ^
+
+References:
+   rebinding.js:52:9
+   52|   class A {}
+               ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ rebinding.js:58:7
+
+Cannot declare `A` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:58:7
+   58|   let A = 0;        // error: name already bound
+             ^
+
+References:
+   rebinding.js:57:9
+   57|   class A {}
+               ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ rebinding.js:63:9
+
+Cannot declare `A` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:63:9
+   63|   const A = 0;     // error: name already bound
+               ^
+
+References:
+   rebinding.js:62:9
+   62|   class A {}
+               ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ rebinding.js:68:7
+
+Cannot declare `A` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:68:7
+   68|   var A = 0;        // error: name already bound
+             ^
+
+References:
+   rebinding.js:67:9
+   67|   class A {}
+               ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ rebinding.js:75:8
+
+Cannot declare `A` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:75:8
+   75|   type A = number;  // error: name already bound
+              ^
+
+References:
+   rebinding.js:74:7
+   74|   let A = 0;
+             ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ rebinding.js:80:9
+
+Cannot declare `A` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:80:9
+   80|   class A {}        // error: name already bound
+               ^
+
+References:
+   rebinding.js:79:7
+   79|   let A = 0;
+             ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ rebinding.js:85:7
+
+Cannot declare `A` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:85:7
+   85|   let A = 0;        // error: name already bound
+             ^
+
+References:
+   rebinding.js:84:7
+   84|   let A = 0;
+             ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ rebinding.js:90:9
+
+Cannot declare `A` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:90:9
+   90|   const A = 0;     // error: name already bound
+               ^
+
+References:
+   rebinding.js:89:7
+   89|   let A = 0;
+             ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ rebinding.js:95:7
+
+Cannot declare `A` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:95:7
+   95|   var A = 0;        // error: name already bound
+             ^
+
+References:
+   rebinding.js:94:7
+   94|   let A = 0;
+             ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rebinding.js:102:8
+
+Cannot declare `A` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:102:8
+   102|   type A = number;  // error: name already bound
+               ^
+
+References:
+   rebinding.js:101:9
+   101|   const A = 0;
+                ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rebinding.js:107:9
+
+Cannot declare `A` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:107:9
+   107|   class A {}        // error: name already bound
+                ^
+
+References:
+   rebinding.js:106:9
+   106|   const A = 0;
+                ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rebinding.js:112:7
+
+Cannot declare `A` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:112:7
+   112|   let A = 0;        // error: name already bound
+              ^
+
+References:
+   rebinding.js:111:9
+   111|   const A = 0;
+                ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rebinding.js:117:9
+
+Cannot declare `A` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:117:9
+   117|   const A = 0;     // error: name already bound
+                ^
+
+References:
+   rebinding.js:116:9
+   116|   const A = 0;
+                ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rebinding.js:122:7
+
+Cannot declare `A` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:122:7
+   122|   var A = 0;        // error: name already bound
+              ^
+
+References:
+   rebinding.js:121:9
+   121|   const A = 0;
+                ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rebinding.js:127:3
+
+Cannot reassign constant `A` [1]. [reassign-const]
+
+   rebinding.js:127:3
+   127|   A = 42;           // error: cannot be reassigned
+          ^
+
+References:
+   rebinding.js:126:9
+   126|   const A = 0;
+                ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rebinding.js:134:8
+
+Cannot declare `A` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:134:8
+   134|   type A = number;  // error: name already bound
+               ^
+
+References:
+   rebinding.js:133:7
+   133|   var A = 0;
+              ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rebinding.js:139:9
+
+Cannot declare `A` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:139:9
+   139|   class A {}        // error: name already bound
+                ^
+
+References:
+   rebinding.js:138:7
+   138|   var A = 0;
+              ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rebinding.js:144:7
+
+Cannot declare `A` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:144:7
+   144|   let A = 0;        // error: name already bound
+              ^
+
+References:
+   rebinding.js:143:7
+   143|   var A = 0;
+              ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rebinding.js:149:9
+
+Cannot declare `A` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:149:9
+   149|   const A = 0;      // error: name already bound
+                ^
+
+References:
+   rebinding.js:148:7
+   148|   var A = 0;
+              ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rebinding.js:154:7
+
+Cannot declare `A` [1] because var redeclaration is not supported. [name-already-bound]
+
+   rebinding.js:154:7
+   154|   var A = 0;       // error: banned redeclaration
+              ^
+
+References:
+   rebinding.js:153:7
+   153|   var A = 0;
+              ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- rebinding.js:161:12
+
+Cannot declare `a` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:161:12
+   161|   function a() {}; // error: name already bound
+                   ^
+
+References:
+   rebinding.js:160:12
+   160|   function a() {};
+                   ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- rebinding.js:167:14
+
+Cannot declare `a` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:167:14
+   167|     function a() {}; // error: name already bound
+                     ^
+
+References:
+   rebinding.js:166:14
+   166|     function a() {};
+                     ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rebinding.js:173:7
+
+Cannot declare `a` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:173:7
+   173|   var a = 42; // error
+              ^
+
+References:
+   rebinding.js:172:12
+   172|   function a() {};
+                   ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- rebinding.js:178:12
+
+Cannot declare `a` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:178:12
+   178|   function a() {}; // error: name already bound
+                   ^
+
+References:
+   rebinding.js:177:7
+   177|   var a = 42;
+              ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- rebinding.js:187:11
+
+Cannot declare `x` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:187:11
+   187|       var x = 0; // error: name already bound
+                  ^
+
+References:
+   rebinding.js:185:9
+   185|     let x = 0;
+                ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- rebinding.js:196:12
+
+Cannot declare `x` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:196:12
+   196|       type x = string; // error: name already bound
+                   ^
+
+References:
+   rebinding.js:194:9
+   194|     let x = 0;
+                ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- rebinding.js:203:42
+
+Cannot declare `x` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:203:42
+   203| function fn_params_name_clash(x: number, x: number /* error: x already bound */) {}
+                                                 ^
+
+References:
+   rebinding.js:203:31
+   203| function fn_params_name_clash(x: number, x: number /* error: x already bound */) {}
+                                      ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rebinding.js:205:7
+
+Cannot declare `x` [1] because the name is already bound. [name-already-bound]
+
+   rebinding.js:205:7
+   205|   let x = 0; // error: x already bound
+              ^
+
+References:
+   rebinding.js:204:37
+   204| function fn_params_clash_fn_binding(x: number, y: number) {
+                                            ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ rec_decls.js:2:15
+
+Invalid type annotation for `x1`. It contains a reference [1] to the binding being declared. [recursive-definition]
+
+   rec_decls.js:2:15
+   2|   declare var x1: x1; // error recursive-definition
+                    ^^
+
+References:
+   rec_decls.js:2:19
+   2|   declare var x1: x1; // error recursive-definition
+                        ^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ rec_decls.js:3:15
+
+Invalid type annotation for `x2`. It contains a reference [1] to the binding being declared. [recursive-definition]
+
+   rec_decls.js:3:15
+   3|   declare var x2: typeof x2; // error recursive-definition
+                    ^^
+
+References:
+   rec_decls.js:3:26
+   3|   declare var x2: typeof x2; // error recursive-definition
+                               ^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ rec_decls.js:5:15
+
+Invalid type annotation for `V2`. It contains a reference [1] to the binding being declared. [recursive-definition]
+
+   rec_decls.js:5:15
+   5|   declare var V2: V2 extends infer V2 ? V2 : empty; // error recursive-definition
+                    ^^
+
+References:
+   rec_decls.js:5:19
+   5|   declare var V2: V2 extends infer V2 ? V2 : empty; // error recursive-definition
+                        ^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ rec_decls.js:8:15
+
+Invalid type annotation for `rec_obj_err`. It contains a reference [1] to the binding being declared.
+[recursive-definition]
+
+   rec_decls.js:8:15
+    8|   declare var rec_obj_err:
+                     ^^^^^^^^^^^
+
+References:
+   rec_decls.js:10:14
+   10|     | typeof rec_obj_err; // error here
+                    ^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ rec_decls.js:14:9
+
+Invalid type annotation for `x1`. It contains a reference [1] to the binding being declared. [recursive-definition]
+
+   rec_decls.js:14:9
+   14|   const x1: x1 = 1; // error on x1 not `1`
+               ^^
+
+References:
+   rec_decls.js:14:13
+   14|   const x1: x1 = 1; // error on x1 not `1`
+                   ^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ rec_decls.js:15:9
+
+Invalid type annotation for `x2`. It contains a reference [1] to the binding being declared. [recursive-definition]
+
+   rec_decls.js:15:9
+   15|   const x2: typeof x2 = 1; // error on x2 not `1`
+               ^^
+
+References:
+   rec_decls.js:15:20
+   15|   const x2: typeof x2 = 1; // error on x2 not `1`
+                          ^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ rec_decls.js:16:9
+
+Invalid type annotation for `x3`. It contains a reference [1] to the binding being declared. [recursive-definition]
+
+   rec_decls.js:16:9
+   16|   const x3: typeof x3.f = 1; // error on x2 not `1`
+               ^^
+
+References:
+   rec_decls.js:16:20
+   16|   const x3: typeof x3.f = 1; // error on x2 not `1`
+                          ^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rec_decls.js:20:15
+
+Invalid type annotation for `Val`. It contains a reference [1] to the binding being declared. [recursive-definition]
+
+   rec_decls.js:20:15
+   20|   declare var Val: Val<string>; // error on Val, no recursion-limit-exceeded
+                     ^^^
+
+References:
+   rec_decls.js:20:20
+   20|   declare var Val: Val<string>; // error on Val, no recursion-limit-exceeded
+                          ^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ rec_decls.js:25:7
+
+Invalid type annotation for `Val`. It contains a reference [1] to the binding being declared. [recursive-definition]
+
+   rec_decls.js:25:7
+   25|   let Val: Val<string>;
+             ^^^
+
+References:
+   rec_decls.js:25:12
+   25|   let Val: Val<string>;
+                  ^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rec_decls.js:31:26
+
+Invalid default expression for parameter x [1]. It contains a reference [2] to the binding being declared.
+[recursive-definition]
+
+   rec_decls.js:31:26
+   31|   function f(x: number = x) {} // error: x references the param being declared
+                                ^ [2]
+
+References:
+   rec_decls.js:31:14
+   31|   function f(x: number = x) {} // error: x references the param being declared
+                    ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rec_decls.js:32:33
+
+Cannot assign `a` to object type because number [1] is incompatible with object type [2]. [incompatible-type]
+
+   rec_decls.js:32:33
+   32|   function g({a}: {a: number} = a) {} // error: a references the param being declared
+                                       ^
+
+References:
+   rec_decls.js:32:23
+   32|   function g({a}: {a: number} = a) {} // error: a references the param being declared
+                             ^^^^^^ [1]
+   rec_decls.js:32:19
+   32|   function g({a}: {a: number} = a) {} // error: a references the param being declared
+                         ^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- rec_decls.js:32:33
+
+Invalid default expression for parameter a [1]. It contains a reference [2] to the binding being declared.
+[recursive-definition]
+
+   rec_decls.js:32:33
+   32|   function g({a}: {a: number} = a) {} // error: a references the param being declared
+                                       ^ [2]
+
+References:
+   rec_decls.js:32:15
+   32|   function g({a}: {a: number} = a) {} // error: a references the param being declared
+                     ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rec_decls.js:33:26
+
+Invalid default expression for parameter y [1]. It contains a reference [2] to the binding being declared.
+[recursive-definition]
+
+   rec_decls.js:33:26
+   33|   function h(y: number = y + 1) {} // error: y references the param being declared
+                                ^ [2]
+
+References:
+   rec_decls.js:33:14
+   33|   function h(y: number = y + 1) {} // error: y references the param being declared
+                    ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rec_decls.js:34:26
+
+Invalid default expression for parameter x [1]. It contains a reference [2] to the binding being declared.
+[recursive-definition]
+
+   rec_decls.js:34:26
+   34|   function i(x: number = x + x) {} // error: x references the param being declared (twice)
+                                ^ [2]
+
+References:
+   rec_decls.js:34:14
+   34|   function i(x: number = x + x) {} // error: x references the param being declared (twice)
+                    ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rec_decls.js:34:30
+
+Invalid default expression for parameter x [1]. It contains a reference [2] to the binding being declared.
+[recursive-definition]
+
+   rec_decls.js:34:30
+   34|   function i(x: number = x + x) {} // error: x references the param being declared (twice)
+                                    ^ [2]
+
+References:
+   rec_decls.js:34:14
+   34|   function i(x: number = x + x) {} // error: x references the param being declared (twice)
+                    ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rec_decls.js:40:40
+
+Cannot use variable `b` [1] because the declaration either comes later or was skipped. [reference-before-declaration]
+
+   rec_decls.js:40:40
+   40|   function default_expr_scope_err({a = b, b}: {a?: string, b: string}) {} // error: a's default references b, which comes after
+                                              ^
+
+References:
+   rec_decls.js:40:43
+   40|   function default_expr_scope_err({a = b, b}: {a?: string, b: string}) {} // error: a's default references b, which comes after
+                                                 ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rec_decls.js:44:20
+
+Invalid default expression for parameter c [1]. It contains a reference [2] to the binding being declared.
+[recursive-definition]
+
+   rec_decls.js:44:20
+   44|     {a, b = a, c = c}: {a: string, b?: string, c?: string}, // b = a OK (earlier), c = c ERROR (self)
+                          ^ [2]
+
+References:
+   rec_decls.js:44:16
+   44|     {a, b = a, c = c}: {a: string, b?: string, c?: string}, // b = a OK (earlier), c = c ERROR (self)
+                      ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rec_decls.js:45:24
+
+Cannot use variable `g` [1] because the declaration either comes later or was skipped. [reference-before-declaration]
+
+   rec_decls.js:45:24
+   45|     {d = a, e = d, f = g, g}: {d?: string, e?: string, f?: string, g: string}, // d = a OK (earlier param), e = d OK (earlier in same pattern), f = g ERROR (forward)
+                              ^
+
+References:
+   rec_decls.js:45:27
+   45|     {d = a, e = d, f = g, g}: {d?: string, e?: string, f?: string, g: string}, // d = a OK (earlier param), e = d OK (earlier in same pattern), f = g ERROR (forward)
+                                 ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rec_decls.js:58:19
+
+Invalid default expression for parameter z [1]. It contains a reference [2] to the binding being declared.
+[recursive-definition]
+
+   rec_decls.js:58:19
+   58| function Foo({z = z ?? null}: O) { // error: z references the param being declared
+                         ^ [2]
+
+References:
+   rec_decls.js:58:15
+   58| function Foo({z = z ?? null}: O) { // error: z references the param being declared
+                     ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rec_decls.js:62:28
+
+Invalid default expression for parameter scope [1]. It contains a reference [2] to the binding being declared.
+[recursive-definition]
+
+   rec_decls.js:62:28
+   62| component Comp(...{scope = scope ?? null}: {scope?: ?string}) { // error: scope references the param being declared
+                                  ^^^^^ [2]
+
+References:
+   rec_decls.js:62:20
+   62| component Comp(...{scope = scope ?? null}: {scope?: ?string}) { // error: scope references the param being declared
+                          ^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rec_params.js:7:26
+
+Cannot resolve name `x`. [cannot-resolve-name]
+
+   7|   function invalid_01(x: x): void {} // error on x
+                               ^
+
+
+Error ----------------------------------------------------------------------------------------------- rec_params.js:8:33
+
+Cannot resolve name `x`. [cannot-resolve-name]
+
+   8|   function invalid_02(x: typeof x): void {} // error on x
+                                      ^
+
+
+Error ----------------------------------------------------------------------------------------------- rec_params.js:9:26
+
+Cannot resolve name `V`. [cannot-resolve-name]
+
+   9|   function invalid_03(V: V extends infer V ? V : empty): void {} // error on V
+                               ^
+
+
+Error ---------------------------------------------------------------------------------------------- rec_params.js:10:28
+
+Cannot resolve name `x`. [cannot-resolve-name]
+
+   10|   function invalid_04({x}: x) {} // error on x
+                                  ^
+
+
+Error ---------------------------------------------------------------------------------------------- rec_params.js:11:35
+
+Cannot resolve name `x`. [cannot-resolve-name]
+
+   11|   function invalid_05({x}: typeof x) {} // error on x
+                                         ^
+
+
+Error ---------------------------------------------------------------------------------------------- rec_params.js:12:37
+
+Cannot resolve name `y`. [cannot-resolve-name]
+
+   12|   function invalid_06({x:y}: typeof y) {} // error on y
+                                           ^
+
+
+Error ---------------------------------------------------------------------------------------------- rec_params.js:13:41
+
+Cannot resolve name `z`. [cannot-resolve-name]
+
+   13|   function invalid_07({x:[{z}]}: typeof z) {} // error on z
+                                               ^
+
+
+Error ---------------------------------------------------------------------------------------------- rec_params.js:15:39
+
+Cannot resolve name `y`. [cannot-resolve-name]
+
+   15|   function invalid_circular(x: typeof y, y: typeof x) {} // error cannot resolve 'y'
+                                             ^
+
+
+Error ---------------------------------------------------------------------------------------------- rec_params.js:17:15
+
+Cannot resolve name `y`. [cannot-resolve-name]
+
+   17|     x: typeof y /* error: cannot resolve 'y' */ = y /* error reference-before-declaration */,
+                     ^
+
+
+Error ---------------------------------------------------------------------------------------------- rec_params.js:17:51
+
+Cannot use variable `y` [1] because the declaration either comes later or was skipped. [reference-before-declaration]
+
+   rec_params.js:17:51
+   17|     x: typeof y /* error: cannot resolve 'y' */ = y /* error reference-before-declaration */,
+                                                         ^
+
+References:
+   rec_params.js:18:5
+   18|     y: typeof x,
+           ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- rec_params.js:23:8
+
+Cannot resolve name `Val`. [cannot-resolve-name]
+
+   23|   Val: Val<K>, // error on Val, no recursion-limit-exceeded
+              ^^^
+
+
+Error ---------------------------------------------------------------------------------------------- rec_params.js:29:11
+
+Cannot resolve name `Val`. [cannot-resolve-name]
+
+   29|   ...Val: Val<K> // error on Val, no recursion-limit-exceeded
+                 ^^^
+
+
+Error ---------------------------------------------------------------------------------------------- rec_params.js:46:19
+
+Cannot resolve name `A`. [cannot-resolve-name]
+
+   46|   function foo(a: A) { // error cannot-resolve-name
+                         ^
+
+
+Error ---------------------------------------------------------------------------------------------- rec_params.js:55:28
+
+Annotations inside of destructuring are not supported. Annotate the top-level pattern instead. For example, instead of
+the invalid `const [a: number, b: string] = ...` do `const [a, b]: [number, string] = ...`. [unsupported-syntax]
+
+   55|   arr1.forEach(([_, binding: UnsupportedAnnotation]) => 1); // error unsupported syntax, no internal error
+                                  ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------- rec_params.js:58:33
+
+Annotations inside of destructuring are not supported. Annotate the top-level pattern instead. For example, instead of
+the invalid `const [a: number, b: string] = ...` do `const [a, b]: [number, string] = ...`. [unsupported-syntax]
+
+   58|   arr2.forEach(({ f: [_, binding: UnsupportedAnnotation] }) => 1); // error unsupported syntax, no internal error
+                                       ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ----------------------------------------------------------------------------------------------------- scope.js:6:9
+
+Cannot declare `b` [1] because var redeclaration is not supported. [name-already-bound]
+
+   scope.js:6:9
+   6|     var b = ""; // error: banned redeclaration
+              ^
+
+References:
+   scope.js:3:7
+   3|   var b: number = 0;
+            ^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- scope.js:16:11
+
+Cannot declare `b` [1] because var redeclaration is not supported. [name-already-bound]
+
+   scope.js:16:11
+   16|       var b = ""; // error: banned redeclaration
+                 ^
+
+References:
+   scope.js:12:7
+   12|   var b: number = 0;
+             ^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- scope.js:19:11
+
+Cannot declare `a` [1] because the name is already bound. [name-already-bound]
+
+   scope.js:19:11
+   19|       let a = ""; // error: a already bound in switch
+                 ^
+
+References:
+   scope.js:15:11
+   15|       let a = ""; // ok: local to switch
+                 ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- scope.js:30:6
+
+Cannot use variable `a` [1] because the declaration either comes later or was skipped. [reference-before-declaration]
+
+   scope.js:30:6
+   30|      a = "";     // error: assign before declaration
+            ^
+
+References:
+   scope.js:36:11
+   36|       let a = "";
+                 ^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- scope.js:33:14
+
+Cannot use variable `a` [1] because the declaration either comes later or was skipped. [reference-before-declaration]
+
+   scope.js:33:14
+   33|      var b = a;  // error: use before declaration
+                    ^
+
+References:
+   scope.js:36:11
+   36|       let a = "";
+                 ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- scope.js:39:7
+
+Cannot use variable `a` [1] because the declaration either comes later or was skipped. [reference-before-declaration]
+
+   scope.js:39:7
+   39|       a = "";     // error: skipped initializer
+             ^
+
+References:
+   scope.js:36:11
+   36|       let a = "";
+                 ^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- scope.js:42:22
+
+Cannot use variable `a` [1] because the declaration either comes later or was skipped. [reference-before-declaration]
+
+   scope.js:42:22
+   42|       var c:string = a;  // error: skipped initializer
+                            ^
+
+References:
+   scope.js:36:11
+   36|       let a = "";
+                 ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- scope.js:45:3
+
+Cannot resolve name `a`. [cannot-resolve-name]
+
+   45|   a = ""; // error: a no longer in scope
+         ^
+
+
+Error --------------------------------------------------------------------------------------------------- scope.js:66:12
+
+Cannot declare `a` [1] because var redeclaration is not supported. [name-already-bound]
+
+   scope.js:66:12
+   66|   for (var a = "" /* error: banned redeclaration */ ;;) {}
+                  ^
+
+References:
+   scope.js:65:7
+   65|   var a: number = 0;
+             ^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- scope.js:76:12
+
+Cannot declare `a` [1] because var redeclaration is not supported. [name-already-bound]
+
+   scope.js:76:12
+   76|   for (var a /* error: banned redeclaration */ in o) {}
+                  ^
+
+References:
+   scope.js:75:7
+   75|   var a: number = 0;
+             ^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- scope.js:86:12
+
+Cannot declare `a` [1] because var redeclaration is not supported. [name-already-bound]
+
+   scope.js:86:12
+   86|   for (var a /* error: banned redeclaration */ of xs) {}
+                  ^
+
+References:
+   scope.js:85:7
+   85|   var a: number = 0;
+             ^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- scope.js:92:23
+
+Cannot assign `f` to `x` because in the return value: number [1] is incompatible with string [2]. [incompatible-type]
+
+   scope.js:92:23
+   92|     x: () => string = f // error: number ~> string
+                             ^
+
+References:
+   scope.js:93:6
+   93|   ): number {
+            ^^^^^^ [1]
+   scope.js:92:14
+   92|     x: () => string = f // error: number ~> string
+                    ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- scope.js:103:12
+
+Cannot return `x()` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   scope.js:103:12
+   103|     return x(); // error: string ~> number
+                   ^^^
+
+References:
+   scope.js:101:24
+   101|   function f0(x: () => string = () => a): number {
+                               ^^^^^^ [1]
+   scope.js:101:43
+   101|   function f0(x: () => string = () => a): number {
+                                                  ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- scope.js:105:27
+
+Cannot resolve name `b`. [cannot-resolve-name]
+
+   105|   function f1(x: number = b /* error: cannot resolve b */): number {
+                                  ^
+
+
+Error --------------------------------------------------------------------------------------------------- scope.js:118:6
+
+Cannot cast `a` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   scope.js:118:6
+   118|     (a: string); // error a ~> number
+             ^
+
+References:
+   scope.js:116:51
+   116|   function f(x: number, y: boolean, z: string, a: typeof x, b: typeof y, c: typeof z) {
+                                                          ^^^^^^^^ [1]
+   scope.js:118:9
+   118|     (a: string); // error a ~> number
+                ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- scope.js:119:6
+
+Cannot cast `b` to number because boolean [1] is incompatible with number [2]. [incompatible-type]
+
+   scope.js:119:6
+   119|     (b: number); // error boolean ~> number
+             ^
+
+References:
+   scope.js:116:64
+   116|   function f(x: number, y: boolean, z: string, a: typeof x, b: typeof y, c: typeof z) {
+                                                                       ^^^^^^^^ [1]
+   scope.js:119:9
+   119|     (b: number); // error boolean ~> number
+                ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- scope.js:120:6
+
+Cannot cast `c` to boolean because string [1] is incompatible with boolean [2]. [incompatible-type]
+
+   scope.js:120:6
+   120|     (c: boolean); // error string ~> boolean
+             ^
+
+References:
+   scope.js:116:77
+   116|   function f(x: number, y: boolean, z: string, a: typeof x, b: typeof y, c: typeof z) {
+                                                                                    ^^^^^^^^ [1]
+   scope.js:120:9
+   120|     (c: boolean); // error string ~> boolean
+                ^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- scope.js:124:21
+
+Cannot resolve name `selfRef`. [cannot-resolve-name]
+
+   124|     selfRef: typeof selfRef // Error cannot resolve selfRef
+                            ^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- scope.js:128:15
+
+Cannot resolve name `forwardRef`. [cannot-resolve-name]
+
+   128|     x: typeof forwardRef, // Error: cannot resolve forwardRef
+                      ^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- scope.js:137:6
+
+Cannot cast `y` to string because number [1] is incompatible with string [2]. [incompatible-type]
+
+   scope.js:137:6
+   137|     (y: string); // error number ~> string
+             ^
+
+References:
+   scope.js:134:8
+   134|     y: typeof x,
+               ^^^^^^^^ [1]
+   scope.js:137:9
+   137|     (y: string); // error number ~> string
+                ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- scope.js:141:36
+
+Missing an annotation on `x`. [missing-local-annot]
+
+   141| function unannotated_param_as_type(x) { // error missing-local-annot
+                                           ^
+
+
+Error --------------------------------------------------------------------------------------------------- scope.js:143:8
+
+Cannot use `x` as a type. A name can be used as a type only if it refers to a type, interface, class, or enum
+definition. To get the type of a non-class value, use `typeof`. [value-as-type]
+
+   143|     x: x, // error value-as-type
+               ^
+
+
+Error -------------------------------------------------------------------------------------------------- scope.js:150:19
+
+Cannot use `e` as a type. A name can be used as a type only if it refers to a type, interface, class, or enum
+definition. To get the type of a non-class value, use `typeof`. [value-as-type]
+
+   150|   function foo(x: e) {} // error value-as-type
+                          ^
+
+
+Error --------------------------------------------------------------------------------------------------- scope.js:157:7
+
+Cannot declare `x` [1] because the name is already bound. [name-already-bound]
+
+   scope.js:157:7
+   157|   let x = 1; // error redeclaration
+              ^
+
+References:
+   scope.js:154:3
+   154|   x: number,
+          ^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- scope.js:163:7
+
+Cannot declare `x` [1] because the name is already bound. [name-already-bound]
+
+   scope.js:163:7
+   163|   let x = 1; // error redeclaration
+              ^
+
+References:
+   scope.js:161:3
+   161|   x: number = 1,
+          ^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- scope.js:192:4
+
+Cannot cast `x` to number because null [1] is incompatible with number [2]. [incompatible-type]
+
+   scope.js:192:4
+   192|   (x: number); // error null ~> number
+           ^
+
+References:
+   scope.js:189:6
+   189|   x: null | number,
+             ^^^^ [1]
+   scope.js:192:7
+   192|   (x: number); // error null ~> number
+              ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- scope.js:199:4
+
+Cannot cast `x` to number because null [1] is incompatible with number [2]. [incompatible-type]
+
+   scope.js:199:4
+   199|   (x: number); // error null ~> number
+           ^
+
+References:
+   scope.js:196:6
+   196|   x: null | number,
+             ^^^^ [1]
+   scope.js:199:7
+   199|   (x: number); // error null ~> number
+              ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- tdz.js:25:11
+
+Cannot use variable `x` [1] because the declaration either comes later or was skipped. [reference-before-declaration]
+
+   tdz.js:25:11
+   25|   var v = x * c;  // errors, let + const referenced before decl
+                 ^
+
+References:
+   tdz.js:26:7
+   26|   let x = 0;
+             ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- tdz.js:25:15
+
+Cannot use variable `c` [1] because the declaration either comes later or was skipped. [reference-before-declaration]
+
+   tdz.js:25:15
+   25|   var v = x * c;  // errors, let + const referenced before decl
+                     ^
+
+References:
+   tdz.js:27:9
+   27|   const c = 0;
+               ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------------ tdz.js:31:3
+
+Cannot use variable `x` [1] because the declaration either comes later or was skipped. [reference-before-declaration]
+
+   tdz.js:31:3
+   31|   x = 10;         // error, attempt to write to let before decl
+         ^
+
+References:
+   tdz.js:32:7
+   32|   let x = 0;
+             ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------------ tdz.js:34:5
+
+Cannot use variable `y` [1] because the declaration either comes later or was skipped. [reference-before-declaration]
+
+   tdz.js:34:5
+   34|     y = 10;       // error, attempt to write to let before decl
+           ^
+
+References:
+   tdz.js:35:9
+   35|     let y = 0;
+               ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- tdz.js:41:13
+
+Cannot use variable `x` [1] because the declaration either comes later or was skipped. [reference-before-declaration]
+
+   tdz.js:41:13
+   41|     var v = x * c; // errors, let + const referenced before decl
+                   ^
+
+References:
+   tdz.js:43:7
+   43|   let x = 0;
+             ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- tdz.js:41:17
+
+Cannot use variable `c` [1] because the declaration either comes later or was skipped. [reference-before-declaration]
+
+   tdz.js:41:17
+   41|     var v = x * c; // errors, let + const referenced before decl
+                       ^
+
+References:
+   tdz.js:44:9
+   44|   const c = 0;
+               ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- tdz.js:79:16
+
+Cannot use variable `C` [1] because the declaration either comes later or was skipped. [reference-before-declaration]
+
+   tdz.js:79:16
+   79| var x2: typeof C // error
+                      ^
+
+References:
+   tdz.js:82:7
+   82| class C {}
+             ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- tdz.js:80:13
+
+Cannot use variable `C` [1] because the declaration either comes later or was skipped. [reference-before-declaration]
+
+   tdz.js:80:13
+   80| var y = new C(); // error: let ref before decl from value position
+                   ^
+
+References:
+   tdz.js:82:7
+   82| class C {}
+             ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------------ tdz.js:96:3
+
+Cannot call `f` with `a` bound to `n` because uninitialized variable [1] is incompatible with number [2].
+[incompatible-type]
+
+   tdz.js:96:3
+   96| f(a); // error: undefined ~/> number
+         ^
+
+References:
+   tdz.js:92:5
+   92| var a: number;  // not an error per se - only if used before init
+           ^ [1]
+   tdz.js:94:15
+   94| function f(n: number) { return n; }
+                     ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- tdz.js:103:17
+
+Cannot use variable `A` [1] because the declaration either comes later or was skipped. [reference-before-declaration]
+
+   tdz.js:103:17
+   103| class A extends A {} // error
+                        ^
+
+References:
+   tdz.js:103:7
+   103| class A extends A {} // error
+              ^ [1]
+
+
+Error ----------------------------------------------------------------------------------------- tdz_class_fields.js:5:24
+
+Cannot use variable `forwardReferenced` [1] because the declaration either comes later or was skipped.
+[reference-before-declaration]
+
+   tdz_class_fields.js:5:24
+    5|     static b: number = forwardReferenced; // Should error
+                              ^^^^^^^^^^^^^^^^^
+
+References:
+   tdz_class_fields.js:10:7
+   10| const forwardReferenced = 0;
+             ^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------- tdz_class_fields.js:7:25
+
+Cannot use variable `forwardReferenced` [1] because the declaration either comes later or was skipped.
+[reference-before-declaration]
+
+   tdz_class_fields.js:7:25
+    7|     static #d: number = forwardReferenced; // Should error
+                               ^^^^^^^^^^^^^^^^^
+
+References:
+   tdz_class_fields.js:10:7
+   10| const forwardReferenced = 0;
+             ^^^^^^^^^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- unbound.js:1:1
+
+Cannot resolve name `unbound`. [cannot-resolve-name]
+
+   1| unbound = 1; // Error
+      ^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- unbound.js:8:11
+
+Cannot resolve name `UnboundType`. [cannot-resolve-name]
+
+   8| (unbound: UnboundType); // Error
+                ^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- unbound.js:9:11
+
+Cannot resolve name `UnboundType`. [cannot-resolve-name]
+
+   9| (unbound: UnboundType); // Error
+                ^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------- unbound.js:10:11
+
+Cannot resolve name `UnboundType`. [cannot-resolve-name]
+
+   10| (unbound: UnboundType); // Error
+                 ^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- unbound.js:12:1
+
+Cannot resolve name `unboundFunction`. [cannot-resolve-name]
+
+   12| unboundFunction(); // Error
+       ^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- unbound.js:13:1
+
+Cannot resolve name `unboundFunction`. [cannot-resolve-name]
+
+   13| unboundFunction(); // No error, only error once
+       ^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- unbound.js:14:1
+
+Cannot resolve name `unboundFunction`. [cannot-resolve-name]
+
+   14| unboundFunction(); // No error, only error once
+       ^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- unbound.js:17:5
+
+Cannot resolve name `unboundFunction2`. [cannot-resolve-name]
+
+   17|     unboundFunction2(); // Error
+           ^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- unbound.js:20:5
+
+Cannot resolve name `unboundFunction2`. [cannot-resolve-name]
+
+   20|     unboundFunction2(); // Error
+           ^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- unbound.js:23:5
+
+Cannot resolve name `unboundFunction2`. [cannot-resolve-name]
+
+   23|     unboundFunction2(); // Error
+           ^^^^^^^^^^^^^^^^
+
+
+
+Found 175 errors

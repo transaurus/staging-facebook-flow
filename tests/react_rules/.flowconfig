@@ -1,0 +1,5 @@
+[options]
+component_syntax=true
+experimental.component_syntax.hook_compatibility=true
+no_flowlib=false
+all=true

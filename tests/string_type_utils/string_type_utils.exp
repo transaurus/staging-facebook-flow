@@ -1,0 +1,798 @@
+Error ----------------------------------------------------------------------------------------------------- combo.js:3:1
+
+Cannot cast `'bar(--color)'` to `CSSVarInter` because string [1] is incompatible with string prefixed with `var(--` [2].
+[incompatible-type]
+
+   combo.js:3:1
+   3| 'bar(--color)' as CSSVarInter; // ERROR
+      ^^^^^^^^^^^^^^ [1]
+
+References:
+   combo.js:1:20
+   1| type CSSVarInter = StringPrefix<'var(--'> & StringSuffix<')'>;
+                         ^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- combo.js:4:1
+
+Cannot cast `'var(--color'` to `CSSVarInter` because string [1] is incompatible with string suffixed with `)` [2].
+[incompatible-type]
+
+   combo.js:4:1
+   4| 'var(--color' as CSSVarInter; // ERROR
+      ^^^^^^^^^^^^^ [1]
+
+References:
+   combo.js:1:45
+   1| type CSSVarInter = StringPrefix<'var(--'> & StringSuffix<')'>;
+                                                  ^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- combo.js:8:1
+
+Cannot cast `'bar(--color)'` to `CSSVarRemainder` because string [1] is incompatible with string prefixed with
+`var(--` [2]. [incompatible-type]
+
+   combo.js:8:1
+   8| 'bar(--color)' as CSSVarRemainder; // ERROR
+      ^^^^^^^^^^^^^^ [1]
+
+References:
+   combo.js:8:19
+   8| 'bar(--color)' as CSSVarRemainder; // ERROR
+                        ^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- combo.js:9:1
+
+Cannot cast `'var(--color'` to `CSSVarRemainder` because string with prefix `var(--` removed [1] is incompatible with
+string suffixed with `)` [2]. [incompatible-type]
+
+   combo.js:9:1
+   9| 'var(--color' as CSSVarRemainder; // ERROR
+      ^^^^^^^^^^^^^ [1]
+
+References:
+   combo.js:6:47
+   6| type CSSVarRemainder = StringPrefix<'var(--', StringSuffix<')'>>;
+                                                    ^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- computed.js:10:7
+
+Cannot get `x.xyz` because property `xyz` is missing in object literal [1]. [prop-missing]
+
+   computed.js:10:7
+   10|     x.xyz; // error property 'xyz' missing
+             ^^^
+
+References:
+   computed.js:6:15
+    6|     const x = {def: 0, [keyStringPrefix]: 0}; // okay no overlap
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------ computed.js:13:25
+
+Cannot add computed property because the indexer [1] may overwrite properties with explicit keys [2] in a way that Flow
+cannot track. [invalid-computed-prop]
+
+   computed.js:13:25
+   13|     const x = {abc: 0, [keyStringPrefix]: 0}; // error overlap
+                               ^^^^^^^^^^^^^^^ [1]
+
+References:
+   computed.js:13:16
+   13|     const x = {abc: 0, [keyStringPrefix]: 0}; // error overlap
+                      ^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ computed.js:18:36
+
+Cannot add computed property because the indexer [1] may overwrite properties with explicit keys [2] [3] in a way that
+Flow cannot track. [invalid-computed-prop]
+
+   computed.js:18:36
+   18|     const x = {abc: 0, abcdef: 1, [keyStringPrefix]: 0}; // error overlap with both
+                                          ^^^^^^^^^^^^^^^ [1]
+
+References:
+   computed.js:18:16
+   18|     const x = {abc: 0, abcdef: 1, [keyStringPrefix]: 0}; // error overlap with both
+                      ^^^ [2]
+   computed.js:18:24
+   18|     const x = {abc: 0, abcdef: 1, [keyStringPrefix]: 0}; // error overlap with both
+                              ^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------ computed.js:23:33
+
+Cannot add computed property because the indexer [1] may overwrite properties with explicit keys [2] in a way that Flow
+cannot track. [invalid-computed-prop]
+
+   computed.js:23:33
+   23|     const x = {abc: 0, def: 1, [keyStringPrefix]: 0}; // error overlap with one
+                                       ^^^^^^^^^^^^^^^ [1]
+
+References:
+   computed.js:23:16
+   23|     const x = {abc: 0, def: 1, [keyStringPrefix]: 0}; // error overlap with one
+                      ^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------ computed.js:36:28
+
+Cannot add computed property because the indexer [1] may overwrite properties with explicit keys [2] in a way that Flow
+cannot track. [invalid-computed-prop]
+
+   computed.js:36:28
+   36|     const x = {uvwxyz: 0, [keyStringSuffix]: 0}; // error overlap
+                                  ^^^^^^^^^^^^^^^ [1]
+
+References:
+   computed.js:36:16
+   36|     const x = {uvwxyz: 0, [keyStringSuffix]: 0}; // error overlap
+                      ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- import-prefix.js:6:1
+
+Cannot cast `data` to string literal `data-` because string prefixed with `data-` [1] is incompatible with string
+literal `data-` [2]. [incompatible-type]
+
+   import-prefix.js:6:1
+    6| data as 'data-'; // ERROR
+       ^^^^
+
+References:
+   prefix.js:72:28
+   72| declare export const data: DataProp;
+                                  ^^^^^^^^ [1]
+   import-prefix.js:6:9
+    6| data as 'data-'; // ERROR
+               ^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------- import-suffix.js:6:1
+
+Cannot cast `percent` to empty because string suffixed with `%` [1] is incompatible with empty [2]. [incompatible-type]
+
+   import-suffix.js:6:1
+    6| percent as empty; // ERROR
+       ^^^^^^^
+
+References:
+   suffix.js:57:31
+   57| declare export const percent: Percent;
+                                     ^^^^^^^ [1]
+   import-suffix.js:6:12
+    6| percent as empty; // ERROR
+                  ^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- prefix.js:6:1
+
+Cannot cast `'data'` to `DataProp` because string [1] is incompatible with string prefixed with `data-` [2].
+[incompatible-type]
+
+   prefix.js:6:1
+   6| 'data' as DataProp; // ERROR
+      ^^^^^^ [1]
+
+References:
+   prefix.js:6:11
+   6| 'data' as DataProp; // ERROR
+                ^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- prefix.js:7:1
+
+Cannot cast `'x-data-x'` to `DataProp` because string [1] is incompatible with string prefixed with `data-` [2].
+[incompatible-type]
+
+   prefix.js:7:1
+   7| 'x-data-x' as DataProp; // ERROR
+      ^^^^^^^^^^ [1]
+
+References:
+   prefix.js:7:15
+   7| 'x-data-x' as DataProp; // ERROR
+                    ^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- prefix.js:12:3
+
+Cannot cast `x` to `DataProp` because string [1] is incompatible with string prefixed with `data-` [2].
+[incompatible-type]
+
+   prefix.js:12:3
+   12|   x as DataProp; // ERROR
+         ^
+
+References:
+   prefix.js:11:20
+   11|   declare const x: string;
+                          ^^^^^^ [1]
+   prefix.js:12:8
+   12|   x as DataProp; // ERROR
+              ^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- prefix.js:20:3
+
+Cannot cast `x` to string literal `data-` because string prefixed with `data-` [1] is incompatible with string literal
+`data-` [2]. [incompatible-type]
+
+   prefix.js:20:3
+   20|   x as 'data-'; // ERROR
+         ^
+
+References:
+   prefix.js:18:20
+   18|   declare const x: DataProp;
+                          ^^^^^^^^ [1]
+   prefix.js:20:8
+   20|   x as 'data-'; // ERROR
+              ^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- prefix.js:32:5
+
+Cannot get `d[123]` because property `123` is missing in `Dict` [1]. [prop-missing]
+
+   prefix.js:32:5
+   32|   d[123]; // ERROR
+           ^^^
+
+References:
+   prefix.js:30:18
+   30|   const d = o as Dict; // OK
+                        ^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- prefix.js:36:3
+
+Cannot cast `x` to key set because string prefixed with `data-` [1] is incompatible with string literal `xxx` [2].
+[incompatible-type]
+
+   prefix.js:36:3
+   36|   x as $Keys<{['xxx']: mixed}>; // ERROR
+         ^
+
+References:
+   prefix.js:34:20
+   34|   declare const x: DataProp;
+                          ^^^^^^^^ [1]
+   prefix.js:36:16
+   36|   x as $Keys<{['xxx']: mixed}>; // ERROR
+                      ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- prefix.js:47:12
+
+Cannot use `StringPrefix` because the first type argument must be a string literal. [invalid-type-arg]
+
+   47| type Err = StringPrefix<string>; // ERROR
+                  ^^^^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- prefix.js:48:36
+
+Cannot use `StringPrefix` because the first type argument must be a string literal. [invalid-type-arg]
+
+   48| declare function err<T: string>(x: StringPrefix<T>): void; // ERROR
+                                          ^^^^^^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- prefix.js:55:5
+
+Cannot cast `x` to empty because string prefixed with `data-` [1] is incompatible with empty [2]. [incompatible-type]
+
+   prefix.js:55:5
+   55|     x as empty; // ERROR
+           ^
+
+References:
+   prefix.js:52:20
+   52|   declare const x: DataProp | number;
+                          ^^^^^^^^ [1]
+   prefix.js:55:10
+   55|     x as empty; // ERROR
+                ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- prefix.js:68:3
+
+Cannot cast `dataProp` to `DataFooProp` because string prefixed with `data-` [1] is incompatible with string prefixed
+with `data-foo-` [2]. [incompatible-type]
+
+   prefix.js:68:3
+   68|   dataProp as DataFooProp; // ERROR
+         ^^^^^^^^
+
+References:
+   prefix.js:64:27
+   64|   declare const dataProp: DataProp;
+                                 ^^^^^^^^ [1]
+   prefix.js:68:15
+   68|   dataProp as DataFooProp; // ERROR
+                     ^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- prefix.js:75:15
+
+Cannot use type without at least 1 type argument. [missing-type-arg]
+
+   75| type NoArgs = StringPrefix;
+                     ^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- prefix.js:76:21
+
+Cannot use type without at least 1 type argument. [missing-type-arg]
+
+   76| type ZeroTypeArgs = StringPrefix<>;
+                           ^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- prefix.js:77:24
+
+Cannot use `StringPrefix` [1] with more than 2 type arguments. [extra-type-arg]
+
+   77| type TooManyTypeArgs = StringPrefix<'foo', 'bar', 'baz'>;
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- prefix.js:82:1
+
+Cannot cast `'$'` to `Price` because string with prefix `$` removed [1] is incompatible with union type [2].
+[incompatible-type]
+
+   prefix.js:82:1
+   82| '$' as Price; // ERROR
+       ^^^ [1]
+
+References:
+   prefix.js:80:32
+   80| type Price = StringPrefix<'$', '1' | '2'>;
+                                      ^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- prefix.js:83:1
+
+Cannot cast `'1'` to `Price` because string [1] is incompatible with string prefixed with `$` [2]. [incompatible-type]
+
+   prefix.js:83:1
+   83| '1' as Price; // ERROR
+       ^^^ [1]
+
+References:
+   prefix.js:83:8
+   83| '1' as Price; // ERROR
+              ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- prefix.js:91:3
+
+Cannot cast `x` to union type because: [incompatible-type]
+ - Either string prefixed with `$` [1] is incompatible with string literal `$1` [2].
+ - Or string prefixed with `$` [1] is incompatible with string literal `$2` [3].
+
+   prefix.js:91:3
+   91|   x as '$1' | '$2'; // ERROR: we don't support this
+         ^
+
+References:
+   prefix.js:89:20
+   89|   declare const x: Price;
+                          ^^^^^ [1]
+   prefix.js:91:8
+   91|   x as '$1' | '$2'; // ERROR: we don't support this
+              ^^^^ [2]
+   prefix.js:91:15
+   91|   x as '$1' | '$2'; // ERROR: we don't support this
+                     ^^^^ [3]
+
+
+Error --------------------------------------------------------------------------------------------------- prefix.js:96:3
+
+Cannot cast `x` to string prefixed with `foo` because string [1] is incompatible with string literal `xxx` [2].
+[incompatible-type]
+
+   prefix.js:96:3
+   96|   x as StringPrefix<'foo', 'xxx'>; // ERROR
+         ^
+
+References:
+   prefix.js:94:20
+   94|   declare const x: StringPrefix<'foo'>;
+                          ^^^^^^^^^^^^^^^^^^^ [1]
+   prefix.js:96:28
+   96|   x as StringPrefix<'foo', 'xxx'>; // ERROR
+                                  ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- prefix.js:104:3
+
+Cannot cast `x` to string prefixed with `foo` because string literal `bar` [1] is incompatible with string literal
+`xxx` [2]. [incompatible-type]
+
+   prefix.js:104:3
+   104|   x as StringPrefix<'foo', 'xxx'>; // ERROR
+          ^
+
+References:
+   prefix.js:99:40
+    99|   declare const x: StringPrefix<'foo', 'bar'>;
+                                               ^^^^^ [1]
+   prefix.js:104:28
+   104|   x as StringPrefix<'foo', 'xxx'>; // ERROR
+                                   ^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- prefix.js:107:3
+
+Cannot cast `x` to string prefixed with `f` because string prefixed with `foo` [1] is incompatible with string prefixed
+with `f` [2]. [incompatible-type]
+
+   prefix.js:107:3
+   107|   x as StringPrefix<'f', 'bar'>; // ERROR
+          ^
+
+References:
+   prefix.js:99:20
+    99|   declare const x: StringPrefix<'foo', 'bar'>;
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   prefix.js:107:8
+   107|   x as StringPrefix<'f', 'bar'>; // ERROR
+               ^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- prefix.js:109:45
+
+Cannot instantiate `StringPrefix` because number literal `1` [1] is incompatible with string [2]. [incompatible-type]
+
+   prefix.js:109:45
+   109| type RemainderTypeErr = StringPrefix<'foo', 1>; // ERROR
+                                                    ^ [1]
+
+References:
+   prefix.js:109:25
+   109| type RemainderTypeErr = StringPrefix<'foo', 1>; // ERROR
+                                ^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- prefix.js:114:3
+
+Cannot cast `x` to string literal `3` because string with prefix `$` removed [1] is incompatible with string literal
+`3` [2]. [incompatible-type]
+
+   prefix.js:114:3
+   114|   x as "3"; // ERROR
+          ^
+
+References:
+   prefix.js:112:26
+   112|   const x =  stripDollar("$2");
+                                 ^^^^ [1]
+   prefix.js:114:8
+   114|   x as "3"; // ERROR
+               ^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- prefix.js:122:82
+
+Cannot assign `obj` to `noCopyReadWrite` because in the indexer property's key: string `bar` [1] is incompatible with
+string prefixed with `foo` [2]. [incompatible-type]
+
+   prefix.js:122:82
+   122|   const noCopyReadWrite: {[SpreadOverOptionalProperies]: number, bar?: number} = obj; // ERROR
+                                                                                         ^^^
+
+References:
+   prefix.js:122:26
+   122|   const noCopyReadWrite: {[SpreadOverOptionalProperies]: number, bar?: number} = obj; // ERROR
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   prefix.js:119:16
+   119|   const obj: {[SpreadOverOptionalProperies]: number} = {foo: 1};
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- prefix.js:123:91
+
+Cannot assign `obj` to `validKeyInvalidValue` because in property `foobar`: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   prefix.js:123:91
+   123|   const validKeyInvalidValue: {[SpreadOverOptionalProperies]: number, +foobar?: string} = obj; // ERROR
+                                                                                                  ^^^
+
+References:
+   prefix.js:119:46
+   119|   const obj: {[SpreadOverOptionalProperies]: number} = {foo: 1};
+                                                     ^^^^^^ [1]
+   prefix.js:123:81
+   123|   const validKeyInvalidValue: {[SpreadOverOptionalProperies]: number, +foobar?: string} = obj; // ERROR
+                                                                                        ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- suffix.js:6:1
+
+Cannot cast empty string to `Percent` because string [1] is incompatible with string suffixed with `%` [2].
+[incompatible-type]
+
+   suffix.js:6:1
+   6| '' as Percent; // ERROR
+      ^^ [1]
+
+References:
+   suffix.js:6:7
+   6| '' as Percent; // ERROR
+            ^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- suffix.js:7:1
+
+Cannot cast `'%6'` to `Percent` because string [1] is incompatible with string suffixed with `%` [2].
+[incompatible-type]
+
+   suffix.js:7:1
+   7| '%6' as Percent; // ERROR
+      ^^^^ [1]
+
+References:
+   suffix.js:7:9
+   7| '%6' as Percent; // ERROR
+              ^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- suffix.js:12:3
+
+Cannot cast `x` to `Percent` because string [1] is incompatible with string suffixed with `%` [2]. [incompatible-type]
+
+   suffix.js:12:3
+   12|   x as Percent; // ERROR
+         ^
+
+References:
+   suffix.js:11:20
+   11|   declare const x: string;
+                          ^^^^^^ [1]
+   suffix.js:12:8
+   12|   x as Percent; // ERROR
+              ^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- suffix.js:20:3
+
+Cannot cast `x` to string literal `%` because string suffixed with `%` [1] is incompatible with string literal `%` [2].
+[incompatible-type]
+
+   suffix.js:20:3
+   20|   x as '%'; // ERROR
+         ^
+
+References:
+   suffix.js:18:20
+   18|   declare const x: Percent;
+                          ^^^^^^^ [1]
+   suffix.js:20:8
+   20|   x as '%'; // ERROR
+              ^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- suffix.js:31:12
+
+Cannot use `StringPrefix` because the first type argument must be a string literal. [invalid-type-arg]
+
+   31| type Err = StringSuffix<string>; // ERROR
+                  ^^^^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- suffix.js:32:36
+
+Cannot use `StringPrefix` because the first type argument must be a string literal. [invalid-type-arg]
+
+   32| declare function err<T: string>(x: StringSuffix<T>): void; // ERROR
+                                          ^^^^^^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------------------- suffix.js:39:5
+
+Cannot cast `x` to empty because string suffixed with `%` [1] is incompatible with empty [2]. [incompatible-type]
+
+   suffix.js:39:5
+   39|     x as empty; // ERROR
+           ^
+
+References:
+   suffix.js:36:20
+   36|   declare const x: Percent | number;
+                          ^^^^^^^ [1]
+   suffix.js:39:10
+   39|     x as empty; // ERROR
+                ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- suffix.js:53:3
+
+Cannot cast `bar` to `FooBar` because string suffixed with `bar` [1] is incompatible with string suffixed with
+`foobar` [2]. [incompatible-type]
+
+   suffix.js:53:3
+   53|   bar as FooBar; // ERROR
+         ^^^
+
+References:
+   suffix.js:50:22
+   50|   declare const bar: Bar;
+                            ^^^ [1]
+   suffix.js:53:10
+   53|   bar as FooBar; // ERROR
+                ^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- suffix.js:60:15
+
+Cannot use type without at least 1 type argument. [missing-type-arg]
+
+   60| type NoArgs = StringSuffix;
+                     ^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- suffix.js:61:21
+
+Cannot use type without at least 1 type argument. [missing-type-arg]
+
+   61| type ZeroTypeArgs = StringSuffix<>;
+                           ^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------------------- suffix.js:62:24
+
+Cannot use `StringSuffix` [1] with more than 2 type arguments. [extra-type-arg]
+
+   62| type TooManyTypeArgs = StringSuffix<'foo', 'bar', 'baz'>;
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- suffix.js:67:1
+
+Cannot cast `'!'` to `Exclamation` because string with suffix `!` removed [1] is incompatible with union type [2].
+[incompatible-type]
+
+   suffix.js:67:1
+   67| '!' as Exclamation; // ERROR
+       ^^^ [1]
+
+References:
+   suffix.js:65:38
+   65| type Exclamation = StringSuffix<'!', 'woo' | 'yay'>;
+                                            ^^^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- suffix.js:68:1
+
+Cannot cast `'yay'` to `Exclamation` because string [1] is incompatible with string suffixed with `!` [2].
+[incompatible-type]
+
+   suffix.js:68:1
+   68| 'yay' as Exclamation; // ERROR
+       ^^^^^ [1]
+
+References:
+   suffix.js:68:10
+   68| 'yay' as Exclamation; // ERROR
+                ^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- suffix.js:76:3
+
+Cannot cast `x` to union type because: [incompatible-type]
+ - Either string suffixed with `!` [1] is incompatible with string literal `woo!` [2].
+ - Or string suffixed with `!` [1] is incompatible with string literal `yay!` [3].
+
+   suffix.js:76:3
+   76|   x as 'woo!' | 'yay!'; // ERROR: we don't support this
+         ^
+
+References:
+   suffix.js:74:20
+   74|   declare const x: Exclamation;
+                          ^^^^^^^^^^^ [1]
+   suffix.js:76:8
+   76|   x as 'woo!' | 'yay!'; // ERROR: we don't support this
+              ^^^^^^ [2]
+   suffix.js:76:17
+   76|   x as 'woo!' | 'yay!'; // ERROR: we don't support this
+                       ^^^^^^ [3]
+
+
+Error --------------------------------------------------------------------------------------------------- suffix.js:81:3
+
+Cannot cast `x` to string suffixed with `!` because string [1] is incompatible with string literal `xxx` [2].
+[incompatible-type]
+
+   suffix.js:81:3
+   81|   x as StringSuffix<'!', 'xxx'>; // ERROR
+         ^
+
+References:
+   suffix.js:79:20
+   79|   declare const x: StringSuffix<'!'>;
+                          ^^^^^^^^^^^^^^^^^ [1]
+   suffix.js:81:26
+   81|   x as StringSuffix<'!', 'xxx'>; // ERROR
+                                ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- suffix.js:89:3
+
+Cannot cast `x` to string suffixed with `foo` because string literal `bar` [1] is incompatible with string literal
+`xxx` [2]. [incompatible-type]
+
+   suffix.js:89:3
+   89|   x as StringSuffix<'foo', 'xxx'>; // ERROR
+         ^
+
+References:
+   suffix.js:84:40
+   84|   declare const x: StringSuffix<'foo', 'bar'>;
+                                              ^^^^^ [1]
+   suffix.js:89:28
+   89|   x as StringSuffix<'foo', 'xxx'>; // ERROR
+                                  ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- suffix.js:92:3
+
+Cannot cast `x` to string suffixed with `o` because string suffixed with `foo` [1] is incompatible with string suffixed
+with `o` [2]. [incompatible-type]
+
+   suffix.js:92:3
+   92|   x as StringSuffix<'o', 'bar'>; // ERROR
+         ^
+
+References:
+   suffix.js:84:20
+   84|   declare const x: StringSuffix<'foo', 'bar'>;
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   suffix.js:92:8
+   92|   x as StringSuffix<'o', 'bar'>; // ERROR
+              ^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------------- suffix.js:94:45
+
+Cannot instantiate `StringSuffix` because number literal `1` [1] is incompatible with string [2]. [incompatible-type]
+
+   suffix.js:94:45
+   94| type RemainderTypeErr = StringSuffix<'foo', 1>; // ERROR
+                                                   ^ [1]
+
+References:
+   suffix.js:94:25
+   94| type RemainderTypeErr = StringSuffix<'foo', 1>; // ERROR
+                               ^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- suffix.js:99:3
+
+Cannot cast `x` to string literal `yay!` because string with suffix `!` removed [1] is incompatible with string literal
+`yay!` [2]. [incompatible-type]
+
+   suffix.js:99:3
+   99|   x as "yay!"; // ERROR
+         ^
+
+References:
+   suffix.js:97:23
+   97|   const x =  unexcite("yay!");
+                             ^^^^^^ [1]
+   suffix.js:99:8
+   99|   x as "yay!"; // ERROR
+              ^^^^^^ [2]
+
+
+
+Found 53 errors

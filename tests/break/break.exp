@@ -1,0 +1,328 @@
+Error ---------------------------------------------------------------------------------------------------- break.js:6:24
+
+Cannot assign `x` to `y` because boolean [1] is incompatible with number [2]. [incompatible-type]
+
+   break.js:6:24
+   6|         var y:number = x; // error: boolean !~> number
+                             ^
+
+References:
+   break.js:2:23
+   2|     var x = b ? null: false;
+                            ^^^^^ [1]
+   break.js:6:15
+   6|         var y:number = x; // error: boolean !~> number
+                    ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- break.js:8:20
+
+Cannot assign `z` to `w` because possibly uninitialized variable [1] is incompatible with number [2].
+[incompatible-type]
+
+   break.js:8:20
+   8|     var w:number = z; // 2 errors: ?string !~> number
+                         ^
+
+References:
+   break.js:3:9
+   3|     var z;
+              ^ [1]
+   break.js:8:11
+   8|     var w:number = z; // 2 errors: ?string !~> number
+                ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- break.js:8:20
+
+Cannot assign `z` to `w` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   break.js:8:20
+   8|     var w:number = z; // 2 errors: ?string !~> number
+                         ^
+
+References:
+   break.js:5:30
+   5|         if (x == null) { z = ""; break; }
+                                   ^^ [1]
+   break.js:8:11
+   8|     var w:number = z; // 2 errors: ?string !~> number
+                ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- break.js:17:24
+
+Cannot assign `x` to `y` because boolean [1] is incompatible with number [2]. [incompatible-type]
+
+   break.js:17:24
+   17|         var y:number = x; // error: boolean !~> number
+                              ^
+
+References:
+   break.js:12:23
+   12|     var x = b ? null: false;
+                             ^^^^^ [1]
+   break.js:17:15
+   17|         var y:number = x; // error: boolean !~> number
+                     ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- break.js:18:13
+
+Cannot assign empty string to `x` because: [incompatible-type]
+ - Either string [1] is incompatible with boolean [2].
+ - Or string [1] is incompatible with null [3].
+
+All writes to `x` must be compatible with the type of its initializer [4]. Add an annotation to `x` [4] if a different
+type is desired.
+
+   break.js:18:13
+   18|         x = "";
+                   ^^ [1]
+
+References:
+   break.js:12:23
+   12|     var x = b ? null: false;
+                             ^^^^^ [2]
+   break.js:12:17
+   12|     var x = b ? null: false;
+                       ^^^^ [3]
+   break.js:12:9
+   12|     var x = b ? null: false;
+               ^ [4]
+
+
+Error --------------------------------------------------------------------------------------------------- break.js:20:24
+
+Cannot assign `x` to `z` because boolean [1] is incompatible with number [2]. [incompatible-type]
+
+   break.js:20:24
+   20|         var z:number = x; // 2 errors: (boolean | string) !~> number
+                              ^
+
+References:
+   break.js:12:23
+   12|     var x = b ? null: false;
+                             ^^^^^ [1]
+   break.js:20:15
+   20|         var z:number = x; // 2 errors: (boolean | string) !~> number
+                     ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- break.js:20:24
+
+Cannot assign `x` to `z` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   break.js:20:24
+   20|         var z:number = x; // 2 errors: (boolean | string) !~> number
+                              ^
+
+References:
+   break.js:18:13
+   18|         x = "";
+                   ^^ [1]
+   break.js:20:15
+   20|         var z:number = x; // 2 errors: (boolean | string) !~> number
+                     ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- break.js:24:20
+
+Cannot assign `x` to `w` because boolean [1] is incompatible with number [2]. [incompatible-type]
+
+   break.js:24:20
+   24|     var w:number = x; // 2 errors: (boolean | string) !~> number
+                          ^
+
+References:
+   break.js:12:23
+   12|     var x = b ? null: false;
+                             ^^^^^ [1]
+   break.js:24:11
+   24|     var w:number = x; // 2 errors: (boolean | string) !~> number
+                 ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- break.js:24:20
+
+Cannot assign `x` to `w` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   break.js:24:20
+   24|     var w:number = x; // 2 errors: (boolean | string) !~> number
+                          ^
+
+References:
+   break.js:18:13
+   18|         x = "";
+                   ^^ [1]
+   break.js:24:11
+   24|     var w:number = x; // 2 errors: (boolean | string) !~> number
+                 ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- break.js:33:22
+
+Cannot assign `x` to `y` because boolean [1] is incompatible with number [2]. [incompatible-type]
+
+   break.js:33:22
+   33|       let y:number = x; // error: boolean !~> number
+                            ^
+
+References:
+   break.js:28:23
+   28|     var x = b ? null: false;
+                             ^^^^^ [1]
+   break.js:33:13
+   33|       let y:number = x; // error: boolean !~> number
+                   ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- break.js:34:11
+
+Cannot assign empty string to `x` because: [incompatible-type]
+ - Either string [1] is incompatible with boolean [2].
+ - Or string [1] is incompatible with null [3].
+
+All writes to `x` must be compatible with the type of its initializer [4]. Add an annotation to `x` [4] if a different
+type is desired.
+
+   break.js:34:11
+   34|       x = "";
+                 ^^ [1]
+
+References:
+   break.js:28:23
+   28|     var x = b ? null: false;
+                             ^^^^^ [2]
+   break.js:28:17
+   28|     var x = b ? null: false;
+                       ^^^^ [3]
+   break.js:28:9
+   28|     var x = b ? null: false;
+               ^ [4]
+
+
+Error --------------------------------------------------------------------------------------------------- break.js:37:22
+
+Cannot assign `x` to `z` because boolean [1] is incompatible with number [2]. [incompatible-type]
+
+   break.js:37:22
+   37|       let z:number = x; // 2 errors: (boolean | string) !~> number
+                            ^
+
+References:
+   break.js:28:23
+   28|     var x = b ? null: false;
+                             ^^^^^ [1]
+   break.js:37:13
+   37|       let z:number = x; // 2 errors: (boolean | string) !~> number
+                   ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- break.js:37:22
+
+Cannot assign `x` to `z` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   break.js:37:22
+   37|       let z:number = x; // 2 errors: (boolean | string) !~> number
+                            ^
+
+References:
+   break.js:34:11
+   34|       x = "";
+                 ^^ [1]
+   break.js:37:13
+   37|       let z:number = x; // 2 errors: (boolean | string) !~> number
+                   ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- break.js:42:20
+
+Cannot assign `x` to `w` because boolean [1] is incompatible with number [2]. [incompatible-type]
+
+   break.js:42:20
+   42|     var w:number = x; // 2 errors: (boolean | string) !~> number
+                          ^
+
+References:
+   break.js:28:23
+   28|     var x = b ? null: false;
+                             ^^^^^ [1]
+   break.js:42:11
+   42|     var w:number = x; // 2 errors: (boolean | string) !~> number
+                 ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- break.js:42:20
+
+Cannot assign `x` to `w` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   break.js:42:20
+   42|     var w:number = x; // 2 errors: (boolean | string) !~> number
+                          ^
+
+References:
+   break.js:34:11
+   34|       x = "";
+                 ^^ [1]
+   break.js:42:11
+   42|     var w:number = x; // 2 errors: (boolean | string) !~> number
+                 ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- break.js:48:24
+
+Cannot assign `z` to `y` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   break.js:48:24
+   48|         var y:number = z;
+                              ^
+
+References:
+   break.js:46:21
+   46|     var z: number | string = 0;
+                           ^^^^^^ [1]
+   break.js:48:15
+   48|         var y:number = z;
+                     ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- break.js:49:13
+
+This condition is likely truthy.
+[WARNING]: Flow's type inference may be incorrect that it could be null at runtime (due to `any` annotations,
+out-of-bounds array accesses, etc.). If the check is valid, you might want to make [1] nullable (`T` -> `?T`).
+[constant-condition]
+
+   break.js:49:13
+   49|         if (b) { z = ""; continue; } // error: string !~> number
+                   ^
+
+References:
+   break.js:45:17
+   45| function qux(b: boolean) {
+                       ^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------------------- break.js:52:20
+
+Cannot assign `z` to `w` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   break.js:52:20
+   52|     var w:number = z; // error: string !~> number
+                          ^
+
+References:
+   break.js:46:21
+   46|     var z: number | string = 0;
+                           ^^^^^^ [1]
+   break.js:52:11
+   52|     var w:number = z; // error: string !~> number
+                 ^^^^^^ [2]
+
+
+
+Found 18 errors
+
+Only showing the most relevant union/intersection branches.
+To see all branches, re-run Flow with --show-all-branches

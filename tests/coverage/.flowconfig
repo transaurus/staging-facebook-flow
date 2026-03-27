@@ -1,0 +1,11 @@
+[ignore]
+
+[include]
+
+[libs]
+
+[options]
+all=false
+exact_by_default=false
+facebook.fbt=FbtElement
+no_flowlib=false

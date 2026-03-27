@@ -1,0 +1,202 @@
+dro.js:2:9 = (compareFn?: (a: number, b: number) => number) => Array<number>
+dro.js:2:9,2:12
+lazy_ref.js:14:9 = {
+  default: component(...{...empty, +ref?: RefSetter<{moo(x: string): void}>}) renders null
+}
+= {default: component(...empty) renders null}
+
+'RefSetter' defined at (lib) react.js:1037:9
+
+lazy_ref.js:14:9,14:9
+lazy_ref.js:19:9 = Promise<
+  {+default: (x: Props) => ExactReactElement_DEPRECATED<(x: Props) => Node>},
+>
+
+'ExactReactElement_DEPRECATED' defined at (lib) react.js:58:20
+'Node' defined at (lib) react.js:275:22
+'Promise' defined at (lib) core.js:2286:14
+'Props' defined at exports-component.js:5:5
+
+lazy_ref.js:19:9,19:9
+react_component.js:3:9 = module "react"
+
+'react' defined at react_component.js:3:14
+
+react_component.js:3:7,3:11
+react_component.js:13:33 = 
+ `Component` lets you define a React component as a JavaScript class.
+
+ We recommend defining components as functions instead of classes.
+ [See how to migrate](https://react.dev/reference/react/PureComponent#alternatives).
+
+**@see**  https://react.dev/reference/react/Component
+class Component<Props, State = void>
+
+'Component' defined at (lib) react.js:644:18
+
+react_component.js:13:29,13:37
+react_component.js:18:17 = State
+
+'State' defined at react_component.js:9:5
+
+react_component.js:18:14,18:18
+react_component.js:31:7 = {
+  "documentation":"\n `<Fragment>`, often used via `<>...</>` syntax,\n lets you group elements without a wrapper node.\n\n**@see**  https://react.dev/reference/react/Fragment",
+  "types":{
+    "unevaluated":{
+      "expanded":{
+        "kind":"NominalComponentDecl",
+        "name":{
+          "provenance":{"kind":"Library (Remote)","loc":"[LIB] react.js:749:5,751:22"},
+          "name":"Fragment"
+        },
+        "typeParams":[
+          {
+            "name":"Renders",
+            "bound":{
+              "kind":"Generic",
+              "type":{
+                "provenance":{"kind":"Library (Remote)","loc":"[LIB] react.js:15:14-23"},
+                "name":"React$Node"
+              },
+              "generic_kind":"type alias"
+            },
+            "polarity":"Neutral",
+            "const":false,
+            "default":{"kind":"Void"}
+          }
+        ],
+        "isType":false,
+        "regularProps":{
+          "kind":"flattened",
+          "types":[{"name":"children","optional":true,"type":{"kind":"Bound","bound":"Renders"}}],
+          "inexact":false
+        },
+        "renders":{
+          "kind":"Renders",
+          "argument":{"kind":"Bound","bound":"Renders"},
+          "variant":"normal"
+        }
+      },
+      "type":"component Fragment<Renders: React$Node = void>(children?: Renders) renders Renders"
+    },
+    "evaluated":{
+      "expanded":{
+        "kind":"NominalComponentDecl",
+        "name":{
+          "provenance":{"kind":"Library (Remote)","loc":"[LIB] react.js:749:5,751:22"},
+          "name":"Fragment"
+        },
+        "typeParams":[
+          {
+            "name":"Renders",
+            "bound":{
+              "kind":"Generic",
+              "type":{
+                "provenance":{"kind":"Library (Remote)","loc":"[LIB] react.js:15:14-23"},
+                "name":"React$Node"
+              },
+              "generic_kind":"type alias"
+            },
+            "polarity":"Neutral",
+            "const":false,
+            "default":{"kind":"Void"}
+          }
+        ],
+        "isType":false,
+        "regularProps":{
+          "kind":"flattened",
+          "types":[{"name":"children","optional":true,"type":{"kind":"Bound","bound":"Renders"}}],
+          "inexact":false
+        },
+        "renders":{
+          "kind":"Renders",
+          "argument":{"kind":"Bound","bound":"Renders"},
+          "variant":"normal"
+        }
+      },
+      "type":"component Fragment<Renders: React$Node = void>(children?: Renders) renders Renders"
+    }
+  },
+  "reasons":[],
+  "loc":{
+    "source":"react_component.js",
+    "type":"SourceFile",
+    "start":{"line":31,"column":7,"offset":454},
+    "end":{"line":31,"column":14,"offset":462}
+  },
+  "path":"react_component.js",
+  "line":31,
+  "endline":31,
+  "start":7,
+  "end":14
+}
+react_component.js:32:13 = {
+  "types":{
+    "unevaluated":{
+      "expanded":{
+        "kind":"Component",
+        "regularProps":{"kind":"unflattened","type":{"kind":"Num"}},
+        "renders":null
+      },
+      "type":"component(...number)"
+    },
+    "evaluated":{
+      "expanded":{
+        "kind":"Component",
+        "regularProps":{"kind":"unflattened","type":{"kind":"Implicit Any","any":"implicit"}},
+        "renders":null
+      },
+      "type":"component(...any)"
+    }
+  },
+  "reasons":[],
+  "loc":{
+    "source":"react_component.js",
+    "type":"SourceFile",
+    "start":{"line":32,"column":13,"offset":475},
+    "end":{"line":32,"column":20,"offset":483}
+  },
+  "path":"react_component.js",
+  "line":32,
+  "endline":32,
+  "start":13,
+  "end":20
+}
+react_component.js:32:29 = {
+  "types":null,
+  "reasons":[],
+  "loc":{
+    "source":null,
+    "type":null,
+    "start":{"line":0,"column":1,"offset":0},
+    "end":{"line":0,"column":0,"offset":0}
+  },
+  "path":"",
+  "line":0,
+  "endline":0,
+  "start":1,
+  "end":0
+}
+react.js:4:7
+Flags:
+
+ `createElement` lets you create a React element.
+ It serves as an alternative to writing JSX.
+
+**@see**  https://react.dev/reference/react/createElement
+React$CreateElement
+
+'React$CreateElement' defined at (lib) react.js:154:20
+
+react.js:4:7,4:19
+
+react_abstract_component.js:3:15 = component(...any)
+= component(...any)
+react_abstract_component.js:3:15,3:15
+react_abstract_component.js:8:15 = type RendersFoo = renders Foo
+
+'Foo' defined at react_abstract_component.js:7:18
+'RendersFoo' defined at react_abstract_component.js:8:5
+
+react_abstract_component.js:8:6,8:15

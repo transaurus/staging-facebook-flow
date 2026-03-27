@@ -1,0 +1,214 @@
+Error ------------------------------------------------------------------------------------------------------ test.js:4:5
+
+Cannot assign `42` to `obj.p` because property `p` is not writable. [cannot-write]
+
+   4| obj.p = 42; // Should error!
+          ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:12:13
+
+Cannot assign `42` to `multiKeyObj.p` because property `p` is not writable. [cannot-write]
+
+   12| multiKeyObj.p = 42; // Should error!
+                   ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:13:13
+
+Cannot assign `42` to `multiKeyObj.q` because property `q` is not writable. [cannot-write]
+
+   13| multiKeyObj.q = 42; // Should error!
+                   ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:20:12
+
+Cannot assign `42` to `unionObj.p` because property `p` is not writable. [cannot-write]
+
+   20|   unionObj.p = 42; // Should error!
+                  ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:22:13
+
+Cannot get `unionObj.q` because property `q` is missing in object type [1]. [prop-missing]
+
+   test.js:22:13
+   22|   (unionObj.q: number); // Should error!
+                   ^
+
+References:
+   test.js:18:33
+   18| declare var unionObj: $ReadOnly<UnionObj>;
+                                       ^^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:24:12
+
+Cannot assign `42` to `unionObj.p` because property `p` is not writable. [cannot-write]
+
+   24|   unionObj.p = 42; // Should error!
+                  ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:25:12
+
+Cannot assign `42` to `unionObj.q` because property `q` is not writable. [cannot-write]
+
+   25|   unionObj.q = 42; // Should error!
+                  ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:34:18
+
+Cannot assign `42` to `spreadUnionObj.p` because property `p` is not writable. [cannot-write]
+
+   34|   spreadUnionObj.p = 42; // Should error!
+                        ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:35:18
+
+Cannot assign `42` to `spreadUnionObj.z` because property `z` is not writable. [cannot-write]
+
+   35|   spreadUnionObj.z = 42; // Should error!
+                        ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:38:19
+
+Cannot get `spreadUnionObj.q` because property `q` is missing in object type [1]. [prop-missing]
+
+   test.js:38:19
+   38|   (spreadUnionObj.q: number); // Should error!
+                         ^
+
+References:
+   test.js:32:39
+   32| declare var spreadUnionObj: $ReadOnly<SpreadUnionObj>
+                                             ^^^^^^^^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:40:18
+
+Cannot assign `42` to `spreadUnionObj.p` because property `p` is not writable. [cannot-write]
+
+   40|   spreadUnionObj.p = 42; // Should error!
+                        ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:41:18
+
+Cannot assign `42` to `spreadUnionObj.q` because property `q` is not writable. [cannot-write]
+
+   41|   spreadUnionObj.q = 42; // Should error!
+                        ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:42:18
+
+Cannot assign `42` to `spreadUnionObj.z` because property `z` is not writable. [cannot-write]
+
+   42|   spreadUnionObj.z = 42; // Should error!
+                        ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:50:17
+
+Cannot assign `42` to `intersectionObj.p` because property `p` is not writable. [cannot-write]
+
+   50| intersectionObj.p = 42; // Should error!
+                       ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:51:17
+
+Cannot assign `42` to `intersectionObj.q` because property `q` is not writable. [cannot-write]
+
+   51| intersectionObj.q = 42; // Should error!
+                       ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:57:15
+
+Cannot assign `42` to `indexerKeyObj.p` because property `p` is not writable. [cannot-write]
+
+   57| indexerKeyObj.p = 42; // Should error!
+                     ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:58:15
+
+Cannot assign `true` to `indexerKeyObj.x` because property `x` is not writable. [cannot-write]
+
+   58| indexerKeyObj.x = true; // Should error!
+                     ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:64:10
+
+Cannot assign `42` to `exactObj.p` because property `p` is not writable. [cannot-write]
+
+   64| exactObj.p = 42; // Should error!
+                ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:69:11
+
+Cannot assign `42` to `spreadObj.p` because property `p` is not writable. [cannot-write]
+
+   69| spreadObj.p = 42; // Should error!
+                 ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:74:16
+
+Cannot assign `42` to `spreadExactObj.p` because property `p` is not writable. [cannot-write]
+
+   74| spreadExactObj.p = 42; // Should error!
+                      ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:79:15
+
+Cannot assign `42` to `objWithMethod.p` because property `p` is not writable. [cannot-write]
+
+   79| objWithMethod.p = 42; // Should error!
+                     ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:80:15
+
+Cannot assign function to `objWithMethod.fn` because property `fn` is not writable. [cannot-write]
+
+   80| objWithMethod.fn = () => true; // Should error!
+                     ^^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:88:10
+
+Cannot assign `42` to `instance.p` because property `p` is not writable. [cannot-write]
+
+   88| instance.p = 42; // Should error!
+                ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:93:14
+
+Cannot assign `42` to `writeOnlyObj.p` because property `p` is not writable. [cannot-write]
+
+   93| writeOnlyObj.p = 42; // Should error!
+                    ^
+
+
+Error ---------------------------------------------------------------------------------------------------- test.js:97:30
+
+Cannot instantiate `Readonly` because number [1] is not an object. [not-an-object]
+
+   97| type readOnlyNum = $ReadOnly<number>;
+                                    ^^^^^^ [1]
+
+
+
+Found 25 errors

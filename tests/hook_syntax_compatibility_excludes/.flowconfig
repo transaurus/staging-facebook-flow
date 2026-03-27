@@ -1,0 +1,10 @@
+[options]
+component_syntax=true
+experimental.component_syntax.hook_compatibility=true
+experimental.component_syntax.hook_compatibility.excludes=<PROJECT_ROOT>/exclude_provider\\.js
+experimental.component_syntax.hook_compatibility.excludes=<PROJECT_ROOT>/exclude\\.js
+; Verify includes take precedence over excludes
+experimental.component_syntax.hook_compatibility.includes=<PROJECT_ROOT>.*/__tests__/in.*
+experimental.component_syntax.hook_compatibility.excludes=<PROJECT_ROOT>.*/__tests__/.*
+all=true
+no_flowlib=false

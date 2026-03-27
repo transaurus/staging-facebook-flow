@@ -1,0 +1,26 @@
+Error ----------------------------------------------------------------------------------------- method_no_return.js:8:11
+
+Return type annotation is required for `declare class` methods. [unsupported-syntax]
+
+   8|   method(); // ERROR
+                
+
+
+Error ---------------------------------------------------------------------------------------- method_no_return.js:14:11
+
+Return type annotation is required for `declare class` methods. [unsupported-syntax]
+
+   14|   method(); // ERROR
+                 
+
+
+Error ---------------------------------------------------------------------------------------- method_no_return.js:15:27
+
+Return type annotation is required for `declare class` methods. [unsupported-syntax]
+
+   15|   anotherMethod(x: number); // ERROR
+                                 
+
+
+
+Found 3 errors

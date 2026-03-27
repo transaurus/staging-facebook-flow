@@ -1,0 +1,34 @@
+Error --------------------------------------------------------------------------------------------- embedded_ltgt.js:2:1
+
+Unexpected token ILLEGAL [ParseError]
+
+   2|
+      
+
+
+Error ---------------------------------------------------------------------------------------- incorrect_token_lt.js:1:4
+
+Unexpected token `<`, expected the token `>` [ParseError]
+
+   1| <><</>; // Error: `<` is not a valid token here.
+         ^
+
+
+Error ------------------------------------------------------------------------------- nonmatching_closing_element.js:1:5
+
+Expected corresponding JSX closing tag for JSX fragment [ParseError]
+
+   1| <></elementName>; // Error: `elementName` is not a valid token here.
+          ^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------ nonmatching_opening_element.js:1:14
+
+Expected corresponding JSX closing tag for elementName [ParseError]
+
+   1| <elementName></>; // Error: `elementName` is not a valid token here.
+                   ^^^
+
+
+
+Found 4 errors

@@ -1,0 +1,87 @@
+Error ----------------------------------------------------------------------------------------- shadowing.android.js:1:1
+
+Cannot conform to common interface module because property `myValue` is missing in self [1] but exists in common
+interface [2]. [incompatible-type]
+
+Read the docs on Flow's multi-platform support for more information: https://flow.org/en/docs/react/multiplatform.
+
+   shadowing.android.js:1:1
+   1|
+       [1]
+
+References:
+   shadowing.js.flow
+   ^^^^^^^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- shadowing.ios.js:1:14
+
+Cannot conform to common interface module because property `myValue` is missing in self [1] but exists in common
+interface [2]. [incompatible-type]
+
+Read the docs on Flow's multi-platform support for more information: https://flow.org/en/docs/react/multiplatform.
+
+   shadowing.ios.js:1:14
+   1| export const iosOnly = true;
+                   ^^^^^^^
+
+References:
+   shadowing.ios.js:1:1
+   1| export const iosOnly = true;
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   shadowing.js.flow
+   ^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------- test_interface_import.js:3:8
+
+Cannot resolve module `shadowing.ios`. [cannot-resolve-module]
+
+   3| import 'shadowing.ios'; // error, platform specific files cannot be explicitly imported in Haste, since metro doesn't support it
+             ^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------- test_interface_import.js:4:8
+
+Cannot resolve module `shadowing.android`. [cannot-resolve-module]
+
+   4| import 'shadowing.android'; // error, platform specific files cannot be explicitly imported in Haste, since metro doesn't support it
+             ^^^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------- test_interface_import.js:8:2
+
+Cannot cast `o1` to empty because string [1] is incompatible with empty [2]. [incompatible-type]
+
+   test_interface_import.js:8:2
+   8| (o1: empty); // error
+       ^^
+
+References:
+   test_interface_import.js:6:17
+   6| declare var o1: MyType;
+                      ^^^^^^ [1]
+   test_interface_import.js:8:6
+   8| (o1: empty); // error
+           ^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------- with_platform_specific_js_flow.ios.js:2:19
+
+Cannot conform to common interface module because in property `foo`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+Read the docs on Flow's multi-platform support for more information: https://flow.org/en/docs/react/multiplatform.
+
+   with_platform_specific_js_flow.ios.js:2:19
+   2| export const foo: string = ''; // weird but ok: no conformance error against .ios.js.flow because this file is completely shadowed by js.flow file, but against .js.flow
+                        ^^^^^^ [1]
+
+References:
+   with_platform_specific_js_flow.js.flow:1:27
+   1| declare export const foo: number;
+                                ^^^^^^ [2]
+
+
+
+Found 6 errors

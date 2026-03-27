@@ -1,0 +1,9 @@
+[options]
+all=true
+
+module.system=haste
+module.system.haste.paths.excludes=.*/__tests__/.*
+
+relay_integration=true
+relay_integration.module_prefix=./__generated__/
+relay_integration.module_prefix.includes=.*/__tests__/.*

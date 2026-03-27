@@ -1,0 +1,125 @@
+keyword-expression.js:1:10
+Flags: --pretty
+{
+  "result":[
+    {"name":"async","type":""},
+    {"name":"await","type":""},
+    {"name":"class","type":""},
+    {"name":"delete","type":""},
+    {"name":"e","type":"empty"},
+    {"name":"function","type":""},
+    {"name":"import","type":""},
+    {"name":"match","type":""},
+    {"name":"new","type":""},
+    {"name":"typeof","type":""},
+    {"name":"void","type":""},
+    {"name":"yield","type":""}
+  ]
+}
+
+keyword-statement.js:1:1
+Flags: --pretty
+{
+  "result":[
+    {"name":"async","type":""},
+    {"name":"await","type":""},
+    {"name":"break","type":""},
+    {"name":"case","type":""},
+    {"name":"catch","type":""},
+    {"name":"class","type":""},
+    {"name":"const","type":""},
+    {"name":"continue","type":""},
+    {"name":"debugger","type":""},
+    {"name":"declare","type":""},
+    {"name":"default","type":""},
+    {"name":"delete","type":""},
+    {"name":"do","type":""},
+    {"name":"else","type":""},
+    {"name":"enum","type":""},
+    {"name":"export","type":""},
+    {"name":"extends","type":""},
+    {"name":"finally","type":""},
+    {"name":"for","type":""},
+    {"name":"function","type":""},
+    {"name":"if","type":""},
+    {"name":"implements","type":""},
+    {"name":"import","type":""},
+    {"name":"interface","type":""},
+    {"name":"let","type":""},
+    {"name":"match","type":""},
+    {"name":"new","type":""},
+    {"name":"opaque","type":""},
+    {"name":"return","type":""},
+    {"name":"static","type":""},
+    {"name":"switch","type":""},
+    {"name":"throw","type":""},
+    {"name":"try","type":""},
+    {"name":"type","type":""},
+    {"name":"typeof","type":""},
+    {"name":"var","type":""},
+    {"name":"void","type":""},
+    {"name":"while","type":""},
+    {"name":"yield","type":""}
+  ]
+}
+
+pattern-identifier.js:6:5
+Flags: --pretty
+{"result":[{"name":"foo","type":"1"}]}
+
+pattern-binding.js:6:14
+Flags: --pretty
+{"result":[]}
+
+pattern-binding.js:8:14
+Flags: --pretty
+{"result":[]}
+
+pattern-binding.js:10:9
+Flags: --pretty
+{"result":[]}
+
+pattern-binding.js:12:10
+Flags: --pretty
+{"result":[]}
+
+pattern-binding.js:15:4
+Flags: --pretty
+{"result":[{"name":"const","type":""}]}
+
+pattern-object.js:6:5
+Flags: --pretty
+{"result":[]}
+
+pattern-object-rest.js:5:10
+Flags: --pretty
+{"result":[{"name":"bar","type":"number"},{"name":"foo","type":"string"}]}
+
+pattern-member.js:6:6
+Flags: --pretty
+{
+  "result":[
+    {"name":"[\"zip-zap\"]","type":"3"},
+    {"name":"bar","type":"{baz: 2}"},
+    {"name":"foo","type":"1"}
+  ]
+}
+
+pattern-member.js:8:7
+Flags: --pretty
+{"result":[{"name":"foo","type":"1"}]}
+
+pattern-member.js:10:11
+Flags: --pretty
+{"result":[{"name":"baz","type":"2"}]}
+
+pattern-member.js:12:6
+Flags: --pretty
+{
+  "result":[
+    {"name":"\"bar\"","type":"{baz: 2}"},
+    {"name":"\"foo\"","type":"1"},
+    {"name":"\"zip-zap\"","type":"3"}
+  ]
+}
+

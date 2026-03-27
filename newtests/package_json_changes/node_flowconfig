@@ -1,0 +1,10 @@
+[ignore]
+
+[include]
+
+[libs]
+
+[options]
+all=true
+exact_by_default=false
+module.system=node

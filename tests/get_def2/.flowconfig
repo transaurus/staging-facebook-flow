@@ -1,0 +1,8 @@
+[libs]
+lib
+
+[options]
+all=true
+module.system=haste
+module.system.haste.module_ref_prefix=m#
+no_flowlib=false

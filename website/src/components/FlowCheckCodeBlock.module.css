@@ -1,0 +1,196 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.codeBlockContainer {
+  margin-bottom: var(--ifm-leading);
+  border-radius: var(--ifm-global-radius);
+  box-shadow: var(--ifm-global-shadow-lw);
+  overflow: hidden;
+}
+
+.codeBlockContent {
+  position: relative;
+  /*rtl:ignore*/
+  direction: ltr;
+}
+
+.codeBlockTitle {
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  font-size: var(--ifm-code-font-size);
+  font-weight: 500;
+  padding: 0.75rem var(--ifm-pre-padding);
+}
+
+.codeBlock {
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+}
+
+.copyButton {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: var(--ifm-global-radius);
+  color: var(--ifm-color-white);
+  opacity: 0;
+  user-select: none;
+  padding: 0.4rem 0.5rem;
+  position: absolute;
+  right: calc(var(--ifm-pre-padding) / 2);
+  top: calc(var(--ifm-pre-padding) / 2);
+  transition: opacity 200ms ease-in-out;
+}
+
+.codeBlockTitle:hover + .codeBlockContent .copyButton,
+.codeBlockContent:hover > .copyButton,
+.copyButton:focus {
+  opacity: 1;
+}
+
+.codeBlockLines {
+  font: inherit;
+  float: left;
+  min-width: 100%;
+  padding: var(--ifm-pre-padding);
+  display: flex;
+  flex-direction: column;
+}
+
+@media print {
+  .codeBlockLines {
+    white-space: pre-wrap;
+  }
+}
+
+.codeBlockLine {
+  display: table-row;
+}
+
+.codeBlockLineNumber {
+  width: 2.5em;
+  display: table-cell;
+  text-align: right;
+  padding-right: 1em;
+  user-select: none;
+  position: relative;
+}
+
+.lineNumberText {
+  opacity: 0.5;
+}
+
+.codeBlockLineContent {
+  display: table-cell;
+  position: relative;
+}
+
+/* VS Code-style red left edge bar for lines with errors */
+.gutterMarker {
+  position: absolute;
+  left: 0;
+  top: -1px;
+  bottom: -1px;
+  width: 3px;
+  background-color: #d5382f;
+  border-radius: 0 2px 2px 0;
+}
+
+/* Squiggly underline for error ranges */
+.flowErrorHighlight {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='3'%3E%3Cpath d='M0 2 Q1 0 2 2 Q3 4 4 2' fill='none' stroke='%23d5382f' stroke-width='0.8'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: 4px 3px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Inline error message row */
+.inlineErrorRow {
+  display: table-row;
+  background: rgba(213, 56, 47, 0.08);
+}
+
+.inlineErrorGutter {
+  display: table-cell;
+  width: 2.5em;
+  padding-right: 1em;
+  position: relative;
+}
+
+.inlineErrorGutter::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: #d5382f;
+  border-radius: 0 2px 2px 0;
+}
+
+.inlineErrorContent {
+  display: table-cell;
+  padding: 4px 0;
+  font-size: 0.85em;
+  line-height: 1.5;
+  color: #b71c1c;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+[data-theme='dark'] .inlineErrorRow {
+  background: rgba(213, 56, 47, 0.12);
+}
+
+.inlineErrorSpacer {
+  display: table-row;
+  height: 2px;
+}
+
+[data-theme='dark'] .inlineErrorContent {
+  color: #ff8a80;
+}
+
+/* Error code badge */
+.errorCodeBadge {
+  display: inline-block;
+  background: rgba(213, 56, 47, 0.15);
+  color: #d5382f;
+  font-size: 0.85em;
+  padding: 0 5px;
+  border-radius: 3px;
+  margin-right: 6px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+[data-theme='dark'] .errorCodeBadge {
+  background: rgba(213, 56, 47, 0.25);
+  color: #ff8a80;
+}
+
+.errorMessageText {
+  display: inline;
+}
+
+/* Muted [N] reference markers */
+.errorRefMarker {
+  opacity: 0.4;
+  font-size: 0.65em;
+  margin-left: 1px;
+  font-weight: normal;
+}
+
+/* Highlighted identifiers in error messages */
+.errorHighlightedCode {
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: 600;
+}

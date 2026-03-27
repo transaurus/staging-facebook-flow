@@ -1,0 +1,220 @@
+
+=== Codemod annotate-exports ===
+
+>>> ./element-component.js
+// @flow
+
+const React = require('react');
+
+type Props = {}
+
+module.exports = (): React.MixedElement => {
+  class Abc extends React.Component<Props> { }
+  return <Abc/>;
+}
+
+>>> ./element-div.js
+// @flow
+
+const React = require('react');
+
+declare var div: ExactReactElement_DEPRECATED<'div'>;
+module.exports = (): React.MixedElement => div;
+
+>>> ./element-no-react-star-import.js
+// @flow
+
+import React from 'react';
+
+type Props = {}
+
+export default (): React.MixedElement => {
+  class Abc extends React.Component<Props> { }
+  return <Abc/>;
+}
+
+>>> ./no-import.js
+// @flow
+
+import type { ComponentType } from "./fake-react";import { foo } from "./lib";
+import { bar } from "./fake-react";
+
+export function my_foo(): React.ComponentType<any> {
+  return foo();
+}
+export function my_bar(): ComponentType<any> {
+  return bar();
+}
+
+>>> ./node.js
+// @flow
+
+const React = require('react');
+declare var n: React.Node
+module.exports = (): React.Node => n;
+
+>>> ./qualified.js
+// @flow
+
+const React = require("react");
+declare var componentType_1: React.ComponentType<number>;
+declare var componentType_2: React.ComponentType<React.ComponentType<number>>;
+declare var elementRef: React.ElementRef<number>;
+declare var elementConfig: React.ElementConfig<number>;
+
+module.exports = (): {|
+  componentType_1: React.ComponentType<number>,
+  componentType_2: React.ComponentType<React.ComponentType<number>>,
+  elementConfig: React.ElementConfig<number>,
+  elementRef: React.ElementRef<number>,
+|} => ({
+  componentType_1,
+  componentType_2,
+  elementRef,
+  elementConfig
+});
+
+>>> ./render-types.js
+// @flow
+
+declare component Foo();
+declare var rendersFoo: renders Foo;
+declare var rendersFooMaybe: renders? Foo;
+declare var rendersFooStar: renders* Foo;
+
+export function foo(): {|
+  rendersFoo: renders Foo,
+  rendersFooMaybe: renders? Foo,
+  rendersFooStar: renders* Foo,
+|} {
+    return {
+        rendersFoo,
+        rendersFooMaybe,
+        rendersFooStar,
+    }
+}
+
+>>> Launching report...
+
+Stats:
+  Files changed:                            7
+  Number of annotations added:              8
+  Total size of annotations:               26
+  Number of sig. ver. errors:               8
+  Number of annotations required:           8
+  Number of annotations skipped:            0
+
+Errors:
+  Missing annot./normalizer error:          0
+  Validation Error:                         0
+  Import Error:
+    Loc source none:                        0
+    Indeterminate module type:              0
+    No matching export:                     0
+  Unsupported error kind:                   0
+
+Warnings:
+  Skipping arrow function:                  0
+  Large type added:                         0
+  Location unhandled:                       0
+  Empty NoUpper:                            0
+  Empty SomeKnownUpper:                     0
+
+
+=== Autofix exports ===
+
+>>> ./element-component.js
+// @flow
+
+const React = require('react');
+
+type Props = {}
+
+module.exports = (): React.MixedElement => {
+  class Abc extends React.Component<Props> { }
+  return <Abc/>;
+}
+
+>>> ./element-div.js
+// @flow
+
+const React = require('react');
+
+declare var div: ExactReactElement_DEPRECATED<'div'>;
+module.exports = (): React.MixedElement => div;
+
+>>> ./element-no-react-star-import.js
+// @flow
+
+import React from 'react';
+
+type Props = {}
+
+export default (): React.MixedElement => {
+  class Abc extends React.Component<Props> { }
+  return <Abc/>;
+}
+
+>>> ./no-import.js
+// @flow
+
+import type { ComponentType } from "./fake-react";import { foo } from "./lib";
+import { bar } from "./fake-react";
+
+export function my_foo(): React.ComponentType<any> {
+  return foo();
+}
+export function my_bar(): ComponentType<any> {
+  return bar();
+}
+
+>>> ./node.js
+// @flow
+
+const React = require('react');
+declare var n: React.Node
+module.exports = (): React.Node => n;
+
+>>> ./qualified.js
+// @flow
+
+const React = require("react");
+declare var componentType_1: React.ComponentType<number>;
+declare var componentType_2: React.ComponentType<React.ComponentType<number>>;
+declare var elementRef: React.ElementRef<number>;
+declare var elementConfig: React.ElementConfig<number>;
+
+module.exports = (): {|
+  componentType_1: React.ComponentType<number>,
+  componentType_2: React.ComponentType<React.ComponentType<number>>,
+  elementConfig: React.ElementConfig<number>,
+  elementRef: React.ElementRef<number>,
+|} => ({
+  componentType_1,
+  componentType_2,
+  elementRef,
+  elementConfig
+});
+
+>>> ./render-types.js
+// @flow
+
+declare component Foo();
+declare var rendersFoo: renders Foo;
+declare var rendersFooMaybe: renders? Foo;
+declare var rendersFooStar: renders* Foo;
+
+export function foo(): {|
+  rendersFoo: renders Foo,
+  rendersFooMaybe: renders? Foo,
+  rendersFooStar: renders* Foo,
+|} {
+    return {
+        rendersFoo,
+        rendersFooMaybe,
+        rendersFooStar,
+    }
+}
+
+
+=== Diff between codemod-ed & autofix-ed ===

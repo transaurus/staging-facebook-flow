@@ -1,0 +1,48 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @flow
+ * @format
+ */
+
+const {dirname, join, resolve} = require('path');
+
+const FLOW_ROOT = resolve(__dirname, '../../../');
+const defaultTestsDirName = 'newtests';
+
+// This is where we look for tests to run and where we put newly converted
+// tests
+function getTestsDir(explicitlyProvided: ?string): string {
+  if (explicitlyProvided != null) {
+    return resolve(explicitlyProvided);
+  } else {
+    return join(FLOW_ROOT, defaultTestsDirName);
+  }
+}
+
+function getCheckTestsDir(explicitlyProvided: ?string): string {
+  if (explicitlyProvided != null) {
+    return resolve(explicitlyProvided);
+  } else {
+    return join(FLOW_ROOT, 'tests');
+  }
+}
+
+const binOptions: Array<string> = [
+  resolve(FLOW_ROOT, '../../buck-out/v2/gen/fbcode/flow/out/flow'), // Buck
+  resolve(FLOW_ROOT, 'bin/flow'), // Open source build
+  resolve(FLOW_ROOT, 'bin/flow.exe'), // Open source windows build
+];
+
+const defaultFlowConfigName = '_flowconfig';
+
+module.exports = {
+  defaultTestsDirName,
+  getTestsDir,
+  getCheckTestsDir,
+  binOptions,
+  defaultFlowConfigName,
+};

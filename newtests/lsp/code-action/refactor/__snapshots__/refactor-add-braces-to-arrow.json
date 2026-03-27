@@ -1,0 +1,38 @@
+{
+  "method": "textDocument/codeAction",
+  "result": [
+    {
+      "title": "Add braces to arrow function",
+      "kind": "refactor.rewrite",
+      "diagnostics": [],
+      "edit": {
+        "changes": {
+          "<PLACEHOLDER_PROJECT_URL>/refactor-arrow-functions.js": [
+            {
+              "range": {
+                "start": {
+                  "line": 4,
+                  "character": 4
+                },
+                "end": {
+                  "line": 4,
+                  "character": 15
+                }
+              },
+              "newText": "() => {\n  return \"foo\";\n}"
+            }
+          ]
+        }
+      },
+      "command": {
+        "title": "",
+        "command": "log:org.flow:<PLACEHOLDER_PROJECT_URL>",
+        "arguments": [
+          "textDocument/codeAction",
+          "refactor_arrow_function",
+          "Add braces to arrow function"
+        ]
+      }
+    }
+  ]
+}

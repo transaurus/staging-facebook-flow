@@ -1,0 +1,10 @@
+[ignore]
+
+[include]
+
+[lints]
+
+[options]
+all=true
+
+[strict]

@@ -1,0 +1,146 @@
+
+Server should start in fs lazy mode and in types-first mode
+No errors!
+
+The Flow server is currently in lazy mode and is only checking 1/12 files.
+To learn more, visit flow.org/en/docs/lang/lazy-modes
+
+Editing a file should cause checking its code against computed types of dependencies
+Error ----------------------------------------------------------------------------------------------------- test.js:3:19
+
+Cannot assign `require(...)` to `n` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   test.js:3:19
+   3| const n: string = require('./import-value1'); // error: number ~/~> string
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   import-value1.js:3:18
+   3| module.exports = 0;
+                       ^ [1]
+   test.js:3:10
+   3| const n: string = require('./import-value1'); // error: number ~/~> string
+               ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:10:2
+
+Cannot cast `n` to `T` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   test.js:10:2
+   10| (n: T); // error: string ~/~> number
+        ^
+
+References:
+   test.js:3:10
+    3| const n: string = require('./import-value1'); // error: number ~/~> string
+                ^^^^^^ [1]
+   test.js:10:5
+   10| (n: T); // error: string ~/~> number
+           ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:11:2
+
+Cannot cast `f(...)` to `S` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   test.js:11:2
+   11| (f(""): S); // error: string (argument) ~/~> number, string (return) ~/~> number
+        ^^^^^
+
+References:
+   import-value2.js:3:31
+    3| export function f(x: number): string {
+                                     ^^^^^^ [1]
+   test.js:11:9
+   11| (f(""): S); // error: string (argument) ~/~> number, string (return) ~/~> number
+               ^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:11:4
+
+Cannot call `f` with empty string bound to `x` because string [1] is incompatible with number [2]. [incompatible-type]
+
+   test.js:11:4
+   11| (f(""): S); // error: string (argument) ~/~> number, string (return) ~/~> number
+          ^^ [1]
+
+References:
+   import-value2.js:3:22
+    3| export function f(x: number): string {
+                            ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:12:2
+
+Cannot cast `o` to `O` because properties `x` and `y` of object literal [1] are not exactly the same as those of
+`O` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because properties `x` and `y` are invariantly typed. To fix the error,
+- Either annotate object literal [3] with `O` [4]
+- Or make properties `x` and `y` in `O` [2] readonly. See
+https://flow.org/en/docs/faq/#why-cant-i-pass-a-string-to-a-function-that-takes-a-string-number.
+
+   test.js:12:2
+   12| (o: O); // error: number (property x) <~/~> string
+        ^ [1]
+
+References:
+   test.js:12:5
+   12| (o: O); // error: number (property x) <~/~> string
+           ^ [2]
+   import-value3.js:4:12
+                  v
+    4| const o2 = {
+    5|   x: 0,
+    6|   y: o1,
+    7| };
+       ^ [3]
+   import-type5.js:5:17
+                       v----------------------------------
+    5| export type O = { // mutually recursive object type
+    6|   x: string;
+    7|   y: T;
+    8| }
+       ^ [4]
+
+
+Error ----------------------------------------------------------------------------------------------------- test.js:13:2
+
+Cannot cast `o.y` to `O` because properties `x` and `y` of object literal [1] are not exactly the same as those of
+`O` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because properties `x` and `y` are invariantly typed. To fix the error,
+- Either annotate object literal [3] with `O` [4]
+- Or make properties `x` and `y` in `O` [2] readonly. See
+https://flow.org/en/docs/faq/#why-cant-i-pass-a-string-to-a-function-that-takes-a-string-number.
+
+   test.js:13:2
+   13| (o.y: O); // error: number (property x) <~/~> string
+        ^^^ [1]
+
+References:
+   test.js:13:7
+   13| (o.y: O); // error: number (property x) <~/~> string
+             ^ [2]
+   import-value3.js:4:12
+                  v
+    4| const o2 = {
+    5|   x: 0,
+    6|   y: o1,
+    7| };
+       ^ [3]
+   import-type5.js:5:17
+                       v----------------------------------
+    5| export type O = { // mutually recursive object type
+    6|   x: string;
+    7|   y: T;
+    8| }
+       ^ [4]
+
+
+
+Found 6 errors
+
+The Flow server is currently in lazy mode and is only checking 10/12 files.
+To learn more, visit flow.org/en/docs/lang/lazy-modes

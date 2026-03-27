@@ -1,0 +1,443 @@
+Error ----------------------------------------------------------------------------------------- argless_function.js:10:3
+
+Cannot assign `3` to `x.foo` because property `foo` is missing in function [1]. [prop-missing]
+
+   argless_function.js:10:3
+   10| x.foo = 3; // Error, the props type for Component is a sealed empty object.
+         ^^^
+
+References:
+   argless_function.js:9:18
+    9| declare const x: React.ElementConfig<typeof Component>;
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------- bad_default_props.js:15:18
+
+Cannot use `React.Component` [1] with fewer than 1 type argument. [missing-type-arg]
+
+   bad_default_props.js:15:18
+    15| class C3 extends React.Component { // error
+                         ^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:644:28
+   644|     declare class Component<Props, State = void> {
+                                   ^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------- bad_default_props.js:20:18
+
+Cannot use `React.Component` [1] with fewer than 1 type argument. [missing-type-arg]
+
+   bad_default_props.js:20:18
+    20| class C4 extends React.Component {
+                         ^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/react.js:644:28
+   644|     declare class Component<Props, State = void> {
+                                   ^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- classes.js:23:3
+
+Cannot extend `React.Component` [1] with `Foo` because in property `setState` > the first parameter: property `y_` is
+missing in object type [2] but exists in object type [3]. [incompatible-type]
+
+   classes.js:23:3
+   23|   setState(o: { y_: string }): void { }
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   classes.js:7:19
+    7| class Foo extends React.Component<Props, State> {
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   classes.js:7:42
+    7| class Foo extends React.Component<Props, State> {
+                                                ^^^^^ [2]
+   classes.js:23:15
+   23|   setState(o: { y_: string }): void { }
+                     ^^^^^^^^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------- classes.js:23:15
+
+Cannot extend `React.Component` [1] with `Foo` because in property `setState` > the first parameter: object type [2] is
+incompatible with nullable `Readonly` [3]. [incompatible-type]
+
+   classes.js:23:15
+    23|   setState(o: { y_: string }): void { }
+                      ^^^^^^^^^^^^^^ [2]
+
+References:
+   classes.js:7:19
+     7| class Foo extends React.Component<Props, State> {
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   <BUILTINS>/react.js:653:23
+   653|         partialState: ?$ReadOnly<Partial<State>> | ((State, Props) => ?$ReadOnly<Partial<State>>),
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------- classes.js:23:15
+
+Cannot extend `React.Component` [1] with `Foo` because in property `setState` > the first parameter: object type [2] is
+incompatible with function type [3]. [incompatible-type]
+
+Functions without statics are not compatible with objects.
+
+   classes.js:23:15
+    23|   setState(o: { y_: string }): void { }
+                      ^^^^^^^^^^^^^^ [2]
+
+References:
+   classes.js:7:19
+     7| class Foo extends React.Component<Props, State> {
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   <BUILTINS>/react.js:653:53
+   653|         partialState: ?$ReadOnly<Partial<State>> | ((State, Props) => ?$ReadOnly<Partial<State>>),
+                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------- classes.js:15:21
+
+Cannot assign `this.props.x` to `_` because number [1] is incompatible with string [2]. [incompatible-type]
+
+   classes.js:15:21
+   15|     var _: string = this.props.x;
+                           ^^^^^^^^^^^^
+
+References:
+   classes.js:4:19
+    4| type Props = { x: number };
+                         ^^^^^^ [1]
+   classes.js:15:12
+   15|     var _: string = this.props.x;
+                  ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- classes.js:20:23
+
+Cannot assign object literal to `this.state` because in property `y`: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   classes.js:20:23
+   20|     this.state = { y: "" };
+                             ^^ [1]
+
+References:
+   classes.js:5:19
+    5| type State = { y: number };
+                         ^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- classes.js:38:20
+
+Cannot assign `0` to `Foo.defaultProps` because number [1] is incompatible with `DefaultProps` [2]. [incompatible-type]
+
+   classes.js:38:20
+   38| Foo.defaultProps = 0;
+                          ^ [1]
+
+References:
+   classes.js:8:24
+    8|   static defaultProps: DefaultProps;
+                              ^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------------- classes.js:39:25
+
+Cannot assign `<Foo />` to `foo` because number [1] is not a React component. [not-a-component]
+
+   classes.js:39:25
+   39| var foo: $jsx<number> = <Foo/>;
+                               ^^^^^^
+
+References:
+   classes.js:39:15
+   39| var foo: $jsx<number> = <Foo/>;
+                     ^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------------- classes.js:39:25
+
+Cannot assign `<Foo />` to `foo` because in type argument `ElementType`: [incompatible-type]
+ - Either number [1] is incompatible with string [2].
+ - Or number [1] is incompatible with component [3].
+
+   classes.js:39:25
+   39| var foo: $jsx<number> = <Foo/>;
+                               ^^^^^^
+
+References:
+   classes.js:39:15
+   39| var foo: $jsx<number> = <Foo/>;
+                     ^^^^^^ [1]
+   <BUILTINS>/react.js:43:5
+   43|   | string
+           ^^^^^^ [2]
+   <BUILTINS>/react.js:44:5
+   44|   | component(...empty);
+           ^^^^^^^^^^^^^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------- classes.js:39:26
+
+Cannot assign `<Foo />` to `foo` because in type argument `ElementType` [1]: class `Foo` [2] is incompatible with
+number [3]. [incompatible-type]
+
+   classes.js:39:26
+   39| var foo: $jsx<number> = <Foo/>;
+                                ^^^
+
+References:
+   <BUILTINS>/react.js:58:51
+   58| declare opaque type ExactReactElement_DEPRECATED<+ElementType: React$ElementType, +P = React$ElementConfig<ElementType>>: {...};
+                                                         ^^^^^^^^^^^ [1]
+   classes.js:7:7
+    7| class Foo extends React.Component<Props, State> {
+             ^^^ [2]
+   classes.js:39:15
+   39| var foo: $jsx<number> = <Foo/>;
+                     ^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------------- classes.js:39:26
+
+Cannot create `Foo` element because property `x` is missing in props [1] but exists in props of class `Foo` [2].
+[incompatible-type]
+
+   classes.js:39:26
+   39| var foo: $jsx<number> = <Foo/>;
+                                ^^^
+
+References:
+   classes.js:39:25
+   39| var foo: $jsx<number> = <Foo/>;
+                               ^^^^^^ [1]
+   classes.js:7:7
+    7| class Foo extends React.Component<Props, State> {
+             ^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- import-react.js:13:21
+
+Cannot create `HelloMessage` element because in property `name`: number [1] is incompatible with string [2].
+[incompatible-type]
+
+   import-react.js:13:21
+   13| <HelloMessage name={007} />; // number ~/~> string error
+                           ^^^ [1]
+
+References:
+   import-react.js:11:52
+   11| class HelloMessage extends React.Component<{ name: string }> {}
+                                                          ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- object_component.js:13:13
+
+Cannot create `Component` element because property `bar` is missing in props [1] but exists in object type [2].
+[incompatible-type]
+
+   object_component.js:13:13
+   13| const _a = <Component />; // Error, missing bar
+                   ^^^^^^^^^
+
+References:
+   object_component.js:13:12
+   13| const _a = <Component />; // Error, missing bar
+                  ^^^^^^^^^^^^^ [1]
+   object_component.js:8:11
+    8|   (props: {| foo?: number, bar: number |}): React.Node,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- object_component.js:16:13
+
+Cannot create `Component` element because property `baz` is extra in props [1] but missing in object type [2]. Exact
+objects do not accept extra props. [incompatible-type]
+
+   object_component.js:16:13
+   16| const _d = <Component foo={3} bar={3} baz={3} />; // Error, baz is not in the config
+                   ^^^^^^^^^
+
+References:
+   object_component.js:16:12
+   16| const _d = <Component foo={3} bar={3} baz={3} />; // Error, baz is not in the config
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   object_component.js:8:11
+    8|   (props: {| foo?: number, bar: number |}): React.Node,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- object_component.js:19:47
+
+Cannot assign `null` to `_y` because null [1] is incompatible with undefined [2]. [incompatible-type]
+
+   object_component.js:19:47
+   19| const _y: React.ElementRef<ObjectComponent> = null; // Error, ref is undefined
+                                                     ^^^^ [1]
+
+References:
+   object_component.js:19:11
+   19| const _y: React.ElementRef<ObjectComponent> = null; // Error, ref is undefined
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- object_component.js:23:58
+
+Cannot assign object literal to `_badProps2` because property `baz` is extra in object literal [1] but missing in object
+type [2]. Exact objects do not accept extra props. [incompatible-type]
+
+   object_component.js:23:58
+   23| const _badProps2: React.ElementConfig<ObjectComponent> = {bar: 3, foo: 3, baz: 3}; // Error extra baz
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   object_component.js:23:19
+   23| const _badProps2: React.ElementConfig<ObjectComponent> = {bar: 3, foo: 3, baz: 3}; // Error extra baz
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- props4.js:6:11
+
+Cannot create `JDiv` element because in property `id`: number [1] is incompatible with string [2]. [incompatible-type]
+
+   props4.js:6:11
+   6| <JDiv id={42} />;
+                ^^ [1]
+
+References:
+   props4.js:3:41
+   3| class JDiv extends React.Component<{id: string}> {}
+                                              ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- props4.js:14:2
+
+Cannot create `Example` element because property `bar` is missing in props [1] but exists in props of class
+`Example` [2]. [incompatible-type]
+
+   props4.js:14:2
+   14| <Example foo="foo" />;
+        ^^^^^^^
+
+References:
+   props4.js:14:1
+   14| <Example foo="foo" />;
+       ^^^^^^^^^^^^^^^^^^^^^ [1]
+   props4.js:8:7
+    8| class Example extends React.Component<{ bar: string }> {
+             ^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- state5.js:5:23
+
+Cannot get `this.state.x` because property `x` is missing in undefined [1]. [incompatible-use]
+
+   state5.js:5:23
+     5|     return this.state.x; // error: need to declare type of state
+                              ^
+
+References:
+   <BUILTINS>/react.js:644:44
+   644|     declare class Component<Props, State = void> {
+                                                   ^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- state6.js:27:19
+
+Cannot call `this.setState` with function bound to `partialState` because: [incompatible-type]
+ - Either in the return value > property `bar`: string [1] is incompatible with number [2].
+ - Or function [3] is incompatible with nullable `Readonly` [4].
+
+   state6.js:27:19
+                          v-------------------------------------------
+    27|     this.setState(() => ({ // Error: `bar` should be a number.
+    28|       bar: '42',
+    29|     }));
+            -^ [3]
+
+References:
+   state6.js:28:12
+    28|       bar: '42',
+                   ^^^^ [1]
+   state6.js:5:34
+     5| type State = {|foo: number, bar: number|};
+                                         ^^^^^^ [2]
+   <BUILTINS>/react.js:653:23
+   653|         partialState: ?$ReadOnly<Partial<State>> | ((State, Props) => ?$ReadOnly<Partial<State>>),
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^ [4]
+
+
+Error -------------------------------------------------------------------------------------------------- state6.js:31:29
+
+Cannot get `prevState.nope` because property `nope` is missing in `State` [1]. [prop-missing]
+
+   state6.js:31:29
+   31|       console.log(prevState.nope); // Error: `nope` does not exist.
+                                   ^^^^
+
+References:
+   state6.js:11:59
+   11| class MyComponent extends React.Component<{prop: number}, State> {
+                                                                 ^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- state6.js:34:25
+
+Cannot get `props.nope` because property `nope` is missing in object type [1]. [prop-missing]
+
+   state6.js:34:25
+   34|       console.log(props.nope); // Error: `nope` does not exist.
+                               ^^^^
+
+References:
+   state6.js:11:43
+   11| class MyComponent extends React.Component<{prop: number}, State> {
+                                                 ^^^^^^^^^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------------- state6.js:39:25
+
+Cannot call `this.setState` with `any` bound to `partialState` because: [incompatible-type]
+ - Either in the first parameter: number [1] is incompatible with `State` [2].
+ - Or `StateUpdater3` [3] is incompatible with nullable `Readonly` [4].
+
+   state6.js:39:25
+    39|     this.setState((any: StateUpdater3)); // Error: It has the wrong signature
+                                ^^^^^^^^^^^^^ [3]
+
+References:
+   state6.js:9:24
+     9| type StateUpdater3 = {(number): number, foo: number, bar: number};
+                               ^^^^^^ [1]
+   state6.js:11:59
+    11| class MyComponent extends React.Component<{prop: number}, State> {
+                                                                  ^^^^^ [2]
+   <BUILTINS>/react.js:653:23
+   653|         partialState: ?$ReadOnly<Partial<State>> | ((State, Props) => ?$ReadOnly<Partial<State>>),
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^ [4]
+
+
+Error --------------------------------------------------------------------------------------------------- state6.js:45:3
+
+Cannot cast function to partial `State` because inexact function [1] is incompatible with exact `State` [2].
+[incompatible-exact]
+
+   state6.js:45:3
+   45| ((() => {}): Partial<State>); // Error: Functions are not a valid object shape.
+         ^^^^^^^^ [1]
+
+References:
+   state6.js:45:22
+   45| ((() => {}): Partial<State>); // Error: Functions are not a valid object shape.
+                            ^^^^^ [2]
+
+
+
+Found 26 errors
+
+Only showing the most relevant union/intersection branches.
+To see all branches, re-run Flow with --show-all-branches

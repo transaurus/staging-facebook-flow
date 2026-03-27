@@ -1,0 +1,1545 @@
+Error -------------------------------------------------------------------------------------------- object_create.js:14:2
+
+Cannot cast object literal to `C` because object literal [1] is incompatible with `C` [2]. [incompatible-type]
+
+   object_create.js:14:2
+   14| ({foo: 'foo'}) as C;
+        ^^^^^^^^^^^^ [1]
+
+References:
+   object_create.js:14:19
+   14| ({foo: 'foo'}) as C;
+                         ^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- object_create.js:19:1
+
+Cannot cast `o` to `C` because `O` [1] is incompatible with `C` [2]. [incompatible-type]
+
+   object_create.js:19:1
+   19| o as C;
+       ^
+
+References:
+   object_create.js:18:16
+   18| declare var o: O;
+                      ^ [1]
+   object_create.js:19:6
+   19| o as C;
+            ^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- object_entries.js:27:2
+
+Cannot cast `Object.entries(...)` to array type because in array element: `[key: string, value: number]` [1] is not
+exactly the same as `[string, empty]` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<[key: string, value: number]>` [1] and `Array<[string, empty]>` [3] exactly the same
+- Or make array type [3] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   object_entries.js:27:2
+   27| (Object.entries(dict): Array<[string, empty]>); // ERROR
+        ^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   object_entries.js:27:30
+   27| (Object.entries(dict): Array<[string, empty]>); // ERROR
+                                    ^^^^^^^^^^^^^^^ [2]
+   object_entries.js:27:24
+   27| (Object.entries(dict): Array<[string, empty]>); // ERROR
+                              ^^^^^^^^^^^^^^^^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------- object_entries.js:28:2
+
+Cannot cast `Object.entries(...)` to array type because in array element: `[key: string, value: mixed]` [1] is not
+exactly the same as `[string, empty]` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<[key: string, value: mixed]>` [1] and `Array<[string, empty]>` [3] exactly the same
+- Or make array type [3] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   object_entries.js:28:2
+   28| (Object.entries(iface): Array<[string, empty]>); // ERROR
+        ^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   object_entries.js:28:31
+   28| (Object.entries(iface): Array<[string, empty]>); // ERROR
+                                     ^^^^^^^^^^^^^^^ [2]
+   object_entries.js:28:25
+   28| (Object.entries(iface): Array<[string, empty]>); // ERROR
+                               ^^^^^^^^^^^^^^^^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------- object_entries.js:29:2
+
+Cannot cast `Object.entries(...)` to array type because in array element: `[key: string | "a", value: mixed]` [1] is not
+exactly the same as `[string, empty]` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<[key: string | "a", value: mixed]>` [1] and `Array<[string, empty]>` [3] exactly the same
+- Or make array type [3] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   object_entries.js:29:2
+   29| (Object.entries(dictWithProps): Array<[string, empty]>); // ERROR
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   object_entries.js:29:39
+   29| (Object.entries(dictWithProps): Array<[string, empty]>); // ERROR
+                                             ^^^^^^^^^^^^^^^ [2]
+   object_entries.js:29:33
+   29| (Object.entries(dictWithProps): Array<[string, empty]>); // ERROR
+                                       ^^^^^^^^^^^^^^^^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------- object_entries.js:30:2
+
+Cannot cast `Object.entries(...)` to array type because in array element: `[key: string, value: number | boolean]` [1]
+is not exactly the same as `[string, empty]` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<[key: string, value: number | boolean]>` [1] and `Array<[string, empty]>` [3] exactly the same
+- Or make array type [3] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   object_entries.js:30:2
+   30| (Object.entries(dictUnion): Array<[string, empty]>); // ERROR
+        ^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   object_entries.js:30:35
+   30| (Object.entries(dictUnion): Array<[string, empty]>); // ERROR
+                                         ^^^^^^^^^^^^^^^ [2]
+   object_entries.js:30:29
+   30| (Object.entries(dictUnion): Array<[string, empty]>); // ERROR
+                                   ^^^^^^^^^^^^^^^^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------- object_entries.js:31:2
+
+Cannot cast `Object.entries(...)` to array type because in array element: `[key: string, value: mixed]` [1] is not
+exactly the same as `[string, empty]` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<[key: string, value: mixed]>` [1] and `Array<[string, empty]>` [3] exactly the same
+- Or make array type [3] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   object_entries.js:31:2
+   31| (Object.entries(writeOnlyDict): Array<[string, empty]>); // ERROR
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   object_entries.js:31:39
+   31| (Object.entries(writeOnlyDict): Array<[string, empty]>); // ERROR
+                                             ^^^^^^^^^^^^^^^ [2]
+   object_entries.js:31:33
+   31| (Object.entries(writeOnlyDict): Array<[string, empty]>); // ERROR
+                                       ^^^^^^^^^^^^^^^^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------- object_entries.js:32:2
+
+Cannot cast `Object.entries(...)` to array type because in array element: `[key: "a" | "b", value: mixed]` [1] is not
+exactly the same as `["a" | "b", empty]` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<[key: "a" | "b", value: mixed]>` [1] and `Array<["a" | "b", empty]>` [3] exactly the same
+- Or make array type [3] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   object_entries.js:32:2
+   32| (Object.entries(obj): Array<['a' | 'b', empty]>); // ERROR
+        ^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   object_entries.js:32:29
+   32| (Object.entries(obj): Array<['a' | 'b', empty]>); // ERROR
+                                   ^^^^^^^^^^^^^^^^^^ [2]
+   object_entries.js:32:23
+   32| (Object.entries(obj): Array<['a' | 'b', empty]>); // ERROR
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------- object_entries.js:33:2
+
+Cannot cast `Object.entries(...)` to array type because in array element: `[key: "a" | "b", value: mixed]` [1] is not
+exactly the same as `["a" | "b", empty]` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<[key: "a" | "b", value: mixed]>` [1] and `Array<["a" | "b", empty]>` [3] exactly the same
+- Or make array type [3] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   object_entries.js:33:2
+   33| (Object.entries(instance): Array<['a' | 'b', empty]>); // ERROR
+        ^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   object_entries.js:33:34
+   33| (Object.entries(instance): Array<['a' | 'b', empty]>); // ERROR
+                                        ^^^^^^^^^^^^^^^^^^ [2]
+   object_entries.js:33:28
+   33| (Object.entries(instance): Array<['a' | 'b', empty]>); // ERROR
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------- object_entries.js:34:2
+
+Cannot cast `Object.entries(...)` to array type because in array element: `[key: string, value: number]` [1] is not
+exactly the same as `empty` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<[key: string, value: number]>` [1] and `Array<empty>` [3] exactly the same
+- Or make array type [3] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   object_entries.js:34:2
+   34| (Object.entries(dict): Array<empty>); // ERROR
+        ^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   object_entries.js:34:30
+   34| (Object.entries(dict): Array<empty>); // ERROR
+                                    ^^^^^ [2]
+   object_entries.js:34:24
+   34| (Object.entries(dict): Array<empty>); // ERROR
+                              ^^^^^^^^^^^^ [3]
+
+
+Error ------------------------------------------------------------------------------------------- object_entries.js:37:8
+
+Cannot call method `entries` because undefined [1] is not an object. [not-an-object]
+
+   object_entries.js:37:8
+   37| Object.entries(undefined); // ERROR
+              ^^^^^^^
+
+References:
+   object_entries.js:37:16
+   37| Object.entries(undefined); // ERROR
+                      ^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- object_entries.js:38:8
+
+Cannot call method `entries` because null [1] is not an object. [not-an-object]
+
+   object_entries.js:38:8
+   38| Object.entries(null); // ERROR
+              ^^^^^^^
+
+References:
+   object_entries.js:38:16
+   38| Object.entries(null); // ERROR
+                      ^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- object_entries.js:39:8
+
+Cannot call method `entries` because number [1] is not an object. [not-an-object]
+
+   object_entries.js:39:8
+   39| Object.entries(1); // ERROR
+              ^^^^^^^
+
+References:
+   object_entries.js:39:16
+   39| Object.entries(1); // ERROR
+                      ^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- object_entries.js:40:8
+
+Cannot call method `entries` because boolean [1] is not an object. [not-an-object]
+
+   object_entries.js:40:8
+   40| Object.entries(true); // ERROR
+              ^^^^^^^
+
+References:
+   object_entries.js:40:16
+   40| Object.entries(true); // ERROR
+                      ^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------------- object_entries.js:41:8
+
+Cannot call method `entries` because array literal [1] is not an object. [not-an-object]
+
+   object_entries.js:41:8
+   41| Object.entries([1, 2]); // ERROR
+              ^^^^^^^
+
+References:
+   object_entries.js:41:16
+   41| Object.entries([1, 2]); // ERROR
+                      ^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------- object_keys.js:3:2
+
+Cannot cast `Object.keys(...)` to undefined because array type [1] is incompatible with undefined [2].
+[incompatible-type]
+
+   object_keys.js:3:2
+   3| (Object.keys(sealed): void); // error, Array<string>
+       ^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   object_keys.js:3:23
+   3| (Object.keys(sealed): void); // error, Array<string>
+                            ^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------- object_keys.js:7:4
+
+Cannot cast `k` to number because string [1] is incompatible with number [2]. [incompatible-type]
+
+   object_keys.js:7:4
+   7|   (k : number) // error: string ~> number
+         ^
+
+References:
+   object_keys.js:6:1
+   6| Object.keys(dict).forEach(k => {
+      ^^^^^^^^^^^^^^^^^ [1]
+   object_keys.js:7:8
+   7|   (k : number) // error: string ~> number
+             ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- object_keys.js:17:2
+
+Cannot cast `Object.keys(...)` to array type because in array element: `string` [1] is not exactly the same as
+`number` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<string>` [1] and `Array<number>` [3] exactly the same
+- Or make array type [3] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   object_keys.js:17:2
+   17| (Object.keys(any): Array<number>); // error, Array<string>
+        ^^^^^^^^^^^^^^^^ [1]
+
+References:
+   object_keys.js:17:26
+   17| (Object.keys(any): Array<number>); // error, Array<string>
+                                ^^^^^^ [2]
+   object_keys.js:17:20
+   17| (Object.keys(any): Array<number>); // error, Array<string>
+                          ^^^^^^^^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------- object_keys.js:24:2
+
+Cannot cast `Object.keys(...)` to array type because in array element: `"prop"` [1] is not exactly the same as
+`"error"` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<"prop">` [1] and `Array<"error">` [3] exactly the same
+- Or make array type [3] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   object_keys.js:24:2
+   24| (Object.keys(new Foo()): Array<'error'>); // error: prop ~> error
+        ^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   object_keys.js:24:32
+   24| (Object.keys(new Foo()): Array<'error'>); // error: prop ~> error
+                                      ^^^^^^^ [2]
+   object_keys.js:24:26
+   24| (Object.keys(new Foo()): Array<'error'>); // error: prop ~> error
+                                ^^^^^^^^^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------- object_keys.js:31:2
+
+Cannot cast `Object.keys(...)` to array type because in array element: `"bar_prop"` [1] is not exactly the same as
+`"error"` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<"bar_prop">` [1] and `Array<"error">` [3] exactly the same
+- Or make array type [3] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   object_keys.js:31:2
+   31| (Object.keys(new Bar()): Array<'error'>); // error: bar_prop ~> error
+        ^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   object_keys.js:31:32
+   31| (Object.keys(new Bar()): Array<'error'>); // error: bar_prop ~> error
+                                      ^^^^^^^ [2]
+   object_keys.js:31:26
+   31| (Object.keys(new Bar()): Array<'error'>); // error: bar_prop ~> error
+                                ^^^^^^^^^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------- object_keys.js:37:6
+
+Cannot cast `Object.keys(...)` to array type because in array element: `"hi"` [1] is not exactly the same as
+`"bye"` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<"hi">` [3] and `Array<"bye">` [4] exactly the same
+- Or make array type [4] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   object_keys.js:37:6
+   37|     (Object.keys(dict): Array<'bye'>); // error
+            ^^^^^^^^^^^^^^^^^ [3]
+
+References:
+   object_keys.js:35:20
+   35|   function(dict: {['hi']: mixed}) {
+                          ^^^^ [1]
+   object_keys.js:37:31
+   37|     (Object.keys(dict): Array<'bye'>); // error
+                                     ^^^^^ [2]
+   object_keys.js:37:25
+   37|     (Object.keys(dict): Array<'bye'>); // error
+                               ^^^^^^^^^^^^ [4]
+
+
+Error ---------------------------------------------------------------------------------------------- object_keys.js:43:6
+
+Cannot cast `Object.keys(...)` to array type because in array element: `string` [1] is not exactly the same as
+`"123"` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<string>` [1] and `Array<"123">` [3] exactly the same
+- Or make array type [3] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   object_keys.js:43:6
+   43|     (Object.keys(dict): Array<'123'>); // error: not supported yet
+            ^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   object_keys.js:43:31
+   43|     (Object.keys(dict): Array<'123'>); // error: not supported yet
+                                     ^^^^^ [2]
+   object_keys.js:43:25
+   43|     (Object.keys(dict): Array<'123'>); // error: not supported yet
+                               ^^^^^^^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------- object_keys.js:55:2
+
+Cannot cast `Object.keys(...)` to array type because in array element: `"x" | "y"` [1] is not exactly the same as
+`"$value" | "$key"` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<"x" | "y">` [1] and `Array<"$value" | "$key">` [3] exactly the same
+- Or make array type [3] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   object_keys.js:55:2
+   55| (Object.keys(ifaceDict): Array<'$value' | '$key'>); // ERROR
+        ^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   object_keys.js:55:32
+   55| (Object.keys(ifaceDict): Array<'$value' | '$key'>); // ERROR
+                                      ^^^^^^^^^^^^^^^^^ [2]
+   object_keys.js:55:26
+   55| (Object.keys(ifaceDict): Array<'$value' | '$key'>); // ERROR
+                                ^^^^^^^^^^^^^^^^^^^^^^^^ [3]
+
+
+Error ---------------------------------------------------------------------------------------------- object_keys.js:58:8
+
+Cannot call method `keys` because undefined [1] is not an object. [not-an-object]
+
+   object_keys.js:58:8
+   58| Object.keys(undefined); // ERROR
+              ^^^^
+
+References:
+   object_keys.js:58:13
+   58| Object.keys(undefined); // ERROR
+                   ^^^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- object_keys.js:59:8
+
+Cannot call method `keys` because null [1] is not an object. [not-an-object]
+
+   object_keys.js:59:8
+   59| Object.keys(null); // ERROR
+              ^^^^
+
+References:
+   object_keys.js:59:13
+   59| Object.keys(null); // ERROR
+                   ^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- object_keys.js:60:8
+
+Cannot call method `keys` because number [1] is not an object. [not-an-object]
+
+   object_keys.js:60:8
+   60| Object.keys(1); // ERROR
+              ^^^^
+
+References:
+   object_keys.js:60:13
+   60| Object.keys(1); // ERROR
+                   ^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- object_keys.js:61:8
+
+Cannot call method `keys` because boolean [1] is not an object. [not-an-object]
+
+   object_keys.js:61:8
+   61| Object.keys(true); // ERROR
+              ^^^^
+
+References:
+   object_keys.js:61:13
+   61| Object.keys(true); // ERROR
+                   ^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------------- object_keys.js:67:4
+
+Cannot cast `Object.keys(...)[0]` to `OpaqueKey` because string [1] is incompatible with `OpaqueKey` [2].
+[incompatible-type]
+
+   object_keys.js:67:4
+   67|   (Object.keys(opaqueDict)[0]: OpaqueKey); // ERROR
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   object_keys.js:67:4
+   67|   (Object.keys(opaqueDict)[0]: OpaqueKey); // ERROR
+          ^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   object_keys.js:67:32
+   67|   (Object.keys(opaqueDict)[0]: OpaqueKey); // ERROR
+                                      ^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- object_keys.js:74:4
+
+Cannot cast `Object.keys(...)[0]` to empty because `OpaqueKeyWithSupertype1` [1] is incompatible with empty [2].
+[incompatible-type]
+
+   object_keys.js:74:4
+   74|   (Object.keys(opaqueDict)[0]: empty); // ERROR
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   object_keys.js:72:31
+   72|   declare const opaqueDict: {[OpaqueKeyWithSupertype1]: number};
+                                     ^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   object_keys.js:74:32
+   74|   (Object.keys(opaqueDict)[0]: empty); // ERROR
+                                      ^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------- object_keys.js:87:4
+
+Cannot cast `Object.keys(...)[0]` to `OpaqueKeyWithSupertype3` because string [1] is incompatible with
+`OpaqueKeyWithSupertype3` [2]. [incompatible-type]
+
+   object_keys.js:87:4
+   87|   (Object.keys(opaqueDict)[0]: OpaqueKeyWithSupertype3); // ERROR
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   object_keys.js:87:4
+   87|   (Object.keys(opaqueDict)[0]: OpaqueKeyWithSupertype3); // ERROR
+          ^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   object_keys.js:87:32
+   87|   (Object.keys(opaqueDict)[0]: OpaqueKeyWithSupertype3); // ERROR
+                                      ^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------------- object_missing.js:3:12
+
+Cannot call method `doesNotExist` because property `doesNotExist` is missing in statics of `Object` [1]. [prop-missing]
+
+   object_missing.js:3:12
+    3|     Object.doesNotExist();
+                  ^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:96:15
+   96| declare class Object {
+                     ^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- object_prototype.js:26:32
+
+Cannot assign `a.toString` to `aToString` because in the `this` parameter: function type [1] cannot be unbound from the
+context [1] where it was defined. [method-unbinding]
+
+   object_prototype.js:26:32
+    26| var aToString : () => string = a.toString;
+                                       ^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:255:5
+   255|     toString(): string;
+            ^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------- object_prototype.js:31:3
+
+Cannot assign function to `b.toString` because property `toString` is missing in object literal [1]. [prop-missing]
+
+   object_prototype.js:31:3
+   31| b.toString = function(): string { return 'foo'; };
+         ^^^^^^^^
+
+References:
+   object_prototype.js:11:9
+   11| var b = { foo: 'bar' };
+               ^^^^^^^^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- object_prototype.js:38:26
+
+Cannot assign `x.toString` to `xToString` because function type [1] is incompatible with number [2]. [incompatible-type]
+
+   object_prototype.js:38:26
+    38| var xToString : number = x.toString; // error
+                                 ^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:255:5
+   255|     toString(): string;
+            ^^^^^^^^^^^^^^^^^^ [1]
+   object_prototype.js:38:17
+    38| var xToString : number = x.toString; // error
+                        ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- object_prototype.js:38:28
+
+Cannot get `x.toString` because property `toString` [1] cannot be unbound from the context [2] where it was defined.
+[method-unbinding]
+
+   object_prototype.js:38:28
+    38| var xToString : number = x.toString; // error
+                                   ^^^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:255:5
+   255|     toString(): string;
+            ^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- object_prototype.js:39:33
+
+Cannot assign `x.toString` to `xToString2` because in the return value: string [1] is incompatible with number [2].
+[incompatible-type]
+
+   object_prototype.js:39:33
+    39| var xToString2 : () => number = x.toString; // error
+                                        ^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:255:17
+   255|     toString(): string;
+                        ^^^^^^ [1]
+   object_prototype.js:39:24
+    39| var xToString2 : () => number = x.toString; // error
+                               ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- object_prototype.js:39:35
+
+Cannot get `x.toString` because property `toString` [1] cannot be unbound from the context [2] where it was defined.
+[method-unbinding]
+
+   object_prototype.js:39:35
+    39| var xToString2 : () => number = x.toString; // error
+                                          ^^^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:255:5
+   255|     toString(): string;
+            ^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- object_prototype.js:43:26
+
+Cannot assign `y.toString` to `yToString` because function type [1] is incompatible with number [2]. [incompatible-type]
+
+   object_prototype.js:43:26
+    43| var yToString : number = y.toString; // error
+                                 ^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:255:5
+   255|     toString(): string;
+            ^^^^^^^^^^^^^^^^^^ [1]
+   object_prototype.js:43:17
+    43| var yToString : number = y.toString; // error
+                        ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- object_prototype.js:43:28
+
+Cannot get `y.toString` because property `toString` [1] cannot be unbound from the context [2] where it was defined.
+[method-unbinding]
+
+   object_prototype.js:43:28
+    43| var yToString : number = y.toString; // error
+                                   ^^^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:255:5
+   255|     toString(): string;
+            ^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- object_prototype.js:48:7
+
+Cannot get `123.toString` because property `toString` [1] cannot be unbound from the context [2] where it was defined.
+[method-unbinding]
+
+   object_prototype.js:48:7
+    48| (123).toString;
+              ^^^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:505:5
+   505|     toString(radix?: number): string;
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- object_prototype.js:49:7
+
+Cannot assign function to `123.toString` because property `toString` is missing in number [1]. [incompatible-use]
+
+   object_prototype.js:49:7
+   49| (123).toString = function() {}; // error
+             ^^^^^^^^
+
+References:
+   object_prototype.js:49:2
+   49| (123).toString = function() {}; // error
+        ^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- object_prototype.js:51:16
+
+Cannot call `123.toString` with `'foo'` bound to `radix` because string [1] is incompatible with number [2].
+[incompatible-type]
+
+   object_prototype.js:51:16
+    51| (123).toString('foo'); // error
+                       ^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:505:22
+   505|     toString(radix?: number): string;
+                             ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- object_prototype.js:52:16
+
+Cannot call `123.toString` with `null` bound to `radix` because null [1] is incompatible with number [2].
+[incompatible-type]
+
+   object_prototype.js:52:16
+    52| (123).toString(null); // error
+                       ^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:505:22
+   505|     toString(radix?: number): string;
+                             ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- object_prototype.js:63:51
+
+Cannot assign `a.hasOwnProperty` to `aHasOwnProperty` because in the `this` parameter: function type [1] cannot be
+unbound from the context [1] where it was defined. [method-unbinding]
+
+   object_prototype.js:63:51
+    63| var aHasOwnProperty : (prop: string) => boolean = a.hasOwnProperty;
+                                                          ^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:241:5
+   241|     hasOwnProperty(prop: mixed): boolean;
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------- object_prototype.js:68:3
+
+Cannot assign function to `b.hasOwnProperty` because property `hasOwnProperty` is missing in object literal [1].
+[prop-missing]
+
+   object_prototype.js:68:3
+   68| b.hasOwnProperty = function() { return false; };
+         ^^^^^^^^^^^^^^
+
+References:
+   object_prototype.js:11:9
+   11| var b = { foo: 'bar' };
+               ^^^^^^^^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- object_prototype.js:71:32
+
+Cannot assign `x.hasOwnProperty` to `xHasOwnProperty` because function type [1] is incompatible with number [2].
+[incompatible-type]
+
+   object_prototype.js:71:32
+    71| var xHasOwnProperty : number = x.hasOwnProperty; // error
+                                       ^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:241:5
+   241|     hasOwnProperty(prop: mixed): boolean;
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   object_prototype.js:71:23
+    71| var xHasOwnProperty : number = x.hasOwnProperty; // error
+                              ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- object_prototype.js:71:34
+
+Cannot get `x.hasOwnProperty` because property `hasOwnProperty` [1] cannot be unbound from the context [2] where it was
+defined. [method-unbinding]
+
+   object_prototype.js:71:34
+    71| var xHasOwnProperty : number = x.hasOwnProperty; // error
+                                         ^^^^^^^^^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:241:5
+   241|     hasOwnProperty(prop: mixed): boolean;
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- object_prototype.js:72:51
+
+Cannot assign `x.hasOwnProperty` to `xHasOwnProperty2` because in the return value: boolean [1] is incompatible with
+number [2]. [incompatible-type]
+
+   object_prototype.js:72:51
+    72| var xHasOwnProperty2 : (prop: string) => number = x.hasOwnProperty; // error
+                                                          ^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:241:34
+   241|     hasOwnProperty(prop: mixed): boolean;
+                                         ^^^^^^^ [1]
+   object_prototype.js:72:42
+    72| var xHasOwnProperty2 : (prop: string) => number = x.hasOwnProperty; // error
+                                                 ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- object_prototype.js:72:53
+
+Cannot get `x.hasOwnProperty` because property `hasOwnProperty` [1] cannot be unbound from the context [2] where it was
+defined. [method-unbinding]
+
+   object_prototype.js:72:53
+    72| var xHasOwnProperty2 : (prop: string) => number = x.hasOwnProperty; // error
+                                                            ^^^^^^^^^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:241:5
+   241|     hasOwnProperty(prop: mixed): boolean;
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- object_prototype.js:76:32
+
+Cannot assign `y.hasOwnProperty` to `yHasOwnProperty` because function type [1] is incompatible with number [2].
+[incompatible-type]
+
+   object_prototype.js:76:32
+    76| var yHasOwnProperty : number = y.hasOwnProperty; // error
+                                       ^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:241:5
+   241|     hasOwnProperty(prop: mixed): boolean;
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   object_prototype.js:76:23
+    76| var yHasOwnProperty : number = y.hasOwnProperty; // error
+                              ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- object_prototype.js:76:34
+
+Cannot get `y.hasOwnProperty` because property `hasOwnProperty` [1] cannot be unbound from the context [2] where it was
+defined. [method-unbinding]
+
+   object_prototype.js:76:34
+    76| var yHasOwnProperty : number = y.hasOwnProperty; // error
+                                         ^^^^^^^^^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:241:5
+   241|     hasOwnProperty(prop: mixed): boolean;
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- object_prototype.js:88:57
+
+Cannot assign `a.propertyIsEnumerable` to `aPropertyIsEnumerable` because in the `this` parameter: function type [1]
+cannot be unbound from the context [1] where it was defined. [method-unbinding]
+
+   object_prototype.js:88:57
+    88| var aPropertyIsEnumerable : (prop: string) => boolean = a.propertyIsEnumerable;
+                                                                ^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:251:5
+   251|     propertyIsEnumerable(prop: mixed): boolean;
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------- object_prototype.js:93:3
+
+Cannot assign function to `b.propertyIsEnumerable` because property `propertyIsEnumerable` is missing in object
+literal [1]. [prop-missing]
+
+   object_prototype.js:93:3
+   93| b.propertyIsEnumerable = function() { return false; };
+         ^^^^^^^^^^^^^^^^^^^^
+
+References:
+   object_prototype.js:11:9
+   11| var b = { foo: 'bar' };
+               ^^^^^^^^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- object_prototype.js:96:38
+
+Cannot assign `x.propertyIsEnumerable` to `xPropertyIsEnumerable` because function type [1] is incompatible with
+number [2]. [incompatible-type]
+
+   object_prototype.js:96:38
+    96| var xPropertyIsEnumerable : number = x.propertyIsEnumerable; // error
+                                             ^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:251:5
+   251|     propertyIsEnumerable(prop: mixed): boolean;
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   object_prototype.js:96:29
+    96| var xPropertyIsEnumerable : number = x.propertyIsEnumerable; // error
+                                    ^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- object_prototype.js:96:40
+
+Cannot get `x.propertyIsEnumerable` because property `propertyIsEnumerable` [1] cannot be unbound from the context [2]
+where it was defined. [method-unbinding]
+
+   object_prototype.js:96:40
+    96| var xPropertyIsEnumerable : number = x.propertyIsEnumerable; // error
+                                               ^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:251:5
+   251|     propertyIsEnumerable(prop: mixed): boolean;
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- object_prototype.js:98:3
+
+Cannot assign `x.propertyIsEnumerable` to `xPropertyIsEnumerable2` because in the return value: boolean [1] is
+incompatible with number [2]. [incompatible-type]
+
+   object_prototype.js:98:3
+    98|   x.propertyIsEnumerable; // error
+          ^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:251:40
+   251|     propertyIsEnumerable(prop: mixed): boolean;
+                                               ^^^^^^^ [1]
+   object_prototype.js:97:48
+    97| var xPropertyIsEnumerable2 : (prop: string) => number =
+                                                       ^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------- object_prototype.js:98:5
+
+Cannot get `x.propertyIsEnumerable` because property `propertyIsEnumerable` [1] cannot be unbound from the context [2]
+where it was defined. [method-unbinding]
+
+   object_prototype.js:98:5
+    98|   x.propertyIsEnumerable; // error
+            ^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:251:5
+   251|     propertyIsEnumerable(prop: mixed): boolean;
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------- object_prototype.js:102:38
+
+Cannot assign `y.propertyIsEnumerable` to `yPropertyIsEnumerable` because function type [1] is incompatible with
+number [2]. [incompatible-type]
+
+   object_prototype.js:102:38
+   102| var yPropertyIsEnumerable : number = y.propertyIsEnumerable; // error
+                                             ^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:251:5
+   251|     propertyIsEnumerable(prop: mixed): boolean;
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   object_prototype.js:102:29
+   102| var yPropertyIsEnumerable : number = y.propertyIsEnumerable; // error
+                                    ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------- object_prototype.js:102:40
+
+Cannot get `y.propertyIsEnumerable` because property `propertyIsEnumerable` [1] cannot be unbound from the context [2]
+where it was defined. [method-unbinding]
+
+   object_prototype.js:102:40
+   102| var yPropertyIsEnumerable : number = y.propertyIsEnumerable; // error
+                                               ^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:251:5
+   251|     propertyIsEnumerable(prop: mixed): boolean;
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------- object_prototype.js:119:3
+
+Cannot assign function to `b.valueOf` because property `valueOf` is missing in object literal [1]. [prop-missing]
+
+   object_prototype.js:119:3
+   119| b.valueOf = function() { return {}; };
+          ^^^^^^^
+
+References:
+   object_prototype.js:11:9
+    11| var b = { foo: 'bar' };
+                ^^^^^^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------- object_prototype.js:122:25
+
+Cannot assign `x.valueOf` to `xValueOf` because function type [1] is incompatible with number [2]. [incompatible-type]
+
+   object_prototype.js:122:25
+    122| var xValueOf : number = x.valueOf; // error
+                                 ^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:1734:5
+   1734|     valueOf(): number;
+             ^^^^^^^^^^^^^^^^^ [1]
+   object_prototype.js:122:16
+    122| var xValueOf : number = x.valueOf; // error
+                        ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------- object_prototype.js:122:27
+
+Cannot get `x.valueOf` because property `valueOf` [1] cannot be unbound from the context [2] where it was defined.
+[method-unbinding]
+
+   object_prototype.js:122:27
+    122| var xValueOf : number = x.valueOf; // error
+                                   ^^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:1734:5
+   1734|     valueOf(): number;
+             ^^^^^^^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------- object_prototype.js:126:25
+
+Cannot assign `y.valueOf` to `yValueOf` because function type [1] is incompatible with number [2]. [incompatible-type]
+
+   object_prototype.js:126:25
+   126| var yValueOf : number = y.valueOf; // error
+                                ^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:257:5
+   257|     valueOf(): mixed;
+            ^^^^^^^^^^^^^^^^ [1]
+   object_prototype.js:126:16
+   126| var yValueOf : number = y.valueOf; // error
+                       ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------- object_prototype.js:126:27
+
+Cannot get `y.valueOf` because property `valueOf` [1] cannot be unbound from the context [2] where it was defined.
+[method-unbinding]
+
+   object_prototype.js:126:27
+   126| var yValueOf : number = y.valueOf; // error
+                                  ^^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:257:5
+   257|     valueOf(): mixed;
+            ^^^^^^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------- object_prototype.js:142:38
+
+Cannot assign `a.toLocaleString` to `aToLocaleString` because in the `this` parameter: function type [1] cannot be
+unbound from the context [1] where it was defined. [method-unbinding]
+
+   object_prototype.js:142:38
+   142| var aToLocaleString : () => string = a.toLocaleString;
+                                             ^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:253:5
+   253|     toLocaleString(): string;
+            ^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ---------------------------------------------------------------------------------------- object_prototype.js:147:3
+
+Cannot assign function to `b.toLocaleString` because property `toLocaleString` is missing in object literal [1].
+[prop-missing]
+
+   object_prototype.js:147:3
+   147| b.toLocaleString = function() { return 'derp'; };
+          ^^^^^^^^^^^^^^
+
+References:
+   object_prototype.js:11:9
+    11| var b = { foo: 'bar' };
+                ^^^^^^^^^^^^^^ [1]
+
+
+Error --------------------------------------------------------------------------------------- object_prototype.js:150:32
+
+Cannot assign `x.toLocaleString` to `xToLocaleString` because function type [1] is incompatible with number [2].
+[incompatible-type]
+
+   object_prototype.js:150:32
+    150| var xToLocaleString : number = x.toLocaleString; // error
+                                        ^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:1722:5
+   1722|     toLocaleString(locales?: string | Array<string>, options?: Intl$DateTimeFormatOptions): string;
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   object_prototype.js:150:23
+    150| var xToLocaleString : number = x.toLocaleString; // error
+                               ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------- object_prototype.js:150:34
+
+Cannot get `x.toLocaleString` because property `toLocaleString` [1] cannot be unbound from the context [2] where it was
+defined. [method-unbinding]
+
+   object_prototype.js:150:34
+    150| var xToLocaleString : number = x.toLocaleString; // error
+                                          ^^^^^^^^^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:1722:5
+   1722|     toLocaleString(locales?: string | Array<string>, options?: Intl$DateTimeFormatOptions): string;
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------- object_prototype.js:151:39
+
+Cannot assign `x.toLocaleString` to `xToLocaleString2` because in the return value: string [1] is incompatible with
+number [2]. [incompatible-type]
+
+   object_prototype.js:151:39
+    151| var xToLocaleString2 : () => number = x.toLocaleString; // error
+                                               ^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:1722:93
+   1722|     toLocaleString(locales?: string | Array<string>, options?: Intl$DateTimeFormatOptions): string;
+                                                                                                     ^^^^^^ [1]
+   object_prototype.js:151:30
+    151| var xToLocaleString2 : () => number = x.toLocaleString; // error
+                                      ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------- object_prototype.js:151:41
+
+Cannot get `x.toLocaleString` because property `toLocaleString` [1] cannot be unbound from the context [2] where it was
+defined. [method-unbinding]
+
+   object_prototype.js:151:41
+    151| var xToLocaleString2 : () => number = x.toLocaleString; // error
+                                                 ^^^^^^^^^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:1722:5
+   1722|     toLocaleString(locales?: string | Array<string>, options?: Intl$DateTimeFormatOptions): string;
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------- object_prototype.js:155:32
+
+Cannot assign `y.toLocaleString` to `yToLocaleString` because function type [1] is incompatible with number [2].
+[incompatible-type]
+
+   object_prototype.js:155:32
+   155| var yToLocaleString : number = y.toLocaleString; // error
+                                       ^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:253:5
+   253|     toLocaleString(): string;
+            ^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+   object_prototype.js:155:23
+   155| var yToLocaleString : number = y.toLocaleString; // error
+                              ^^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------- object_prototype.js:155:34
+
+Cannot get `y.toLocaleString` because property `toLocaleString` [1] cannot be unbound from the context [2] where it was
+defined. [method-unbinding]
+
+   object_prototype.js:155:34
+   155| var yToLocaleString : number = y.toLocaleString; // error
+                                         ^^^^^^^^^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:253:5
+   253|     toLocaleString(): string;
+            ^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error -------------------------------------------------------------------------------------------- object_values.js:27:2
+
+Cannot cast `Object.values(...)` to array type because in array element: `number` [1] is not exactly the same as
+`empty` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<number>` [3] and `Array<empty>` [4] exactly the same
+- Or make array type [4] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   object_values.js:27:2
+   27| (Object.values(dict): Array<empty>); // ERROR
+        ^^^^^^^^^^^^^^^^^^^ [3]
+
+References:
+   object_values.js:1:30
+    1| declare var dict: {[string]: number};
+                                    ^^^^^^ [1]
+   object_values.js:27:29
+   27| (Object.values(dict): Array<empty>); // ERROR
+                                   ^^^^^ [2]
+   object_values.js:27:23
+   27| (Object.values(dict): Array<empty>); // ERROR
+                             ^^^^^^^^^^^^ [4]
+
+
+Error -------------------------------------------------------------------------------------------- object_values.js:28:2
+
+Cannot cast `Object.values(...)` to array type because in array element: `mixed` [1] is not exactly the same as
+`empty` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<mixed>` [1] and `Array<empty>` [3] exactly the same
+- Or make array type [3] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   object_values.js:28:2
+   28| (Object.values(iface): Array<empty>); // ERROR
+        ^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   object_values.js:28:30
+   28| (Object.values(iface): Array<empty>); // ERROR
+                                    ^^^^^ [2]
+   object_values.js:28:24
+   28| (Object.values(iface): Array<empty>); // ERROR
+                              ^^^^^^^^^^^^ [3]
+
+
+Error -------------------------------------------------------------------------------------------- object_values.js:29:2
+
+Cannot cast `Object.values(...)` to array type because in array element: `mixed` [1] is not exactly the same as
+`empty` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<mixed>` [1] and `Array<empty>` [3] exactly the same
+- Or make array type [3] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   object_values.js:29:2
+   29| (Object.values(dictWithProps): Array<empty>); // ERROR
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   object_values.js:29:38
+   29| (Object.values(dictWithProps): Array<empty>); // ERROR
+                                            ^^^^^ [2]
+   object_values.js:29:32
+   29| (Object.values(dictWithProps): Array<empty>); // ERROR
+                                      ^^^^^^^^^^^^ [3]
+
+
+Error -------------------------------------------------------------------------------------------- object_values.js:30:2
+
+Cannot cast `Object.values(...)` to array type because in array element: `number | boolean` [1] is not exactly the same
+as `empty` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<number | boolean>` [1] and `Array<empty>` [3] exactly the same
+- Or make array type [3] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   object_values.js:30:2
+   30| (Object.values(dictUnion): Array<empty>); // ERROR
+        ^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   object_values.js:30:34
+   30| (Object.values(dictUnion): Array<empty>); // ERROR
+                                        ^^^^^ [2]
+   object_values.js:30:28
+   30| (Object.values(dictUnion): Array<empty>); // ERROR
+                                  ^^^^^^^^^^^^ [3]
+
+
+Error -------------------------------------------------------------------------------------------- object_values.js:31:2
+
+Cannot cast `Object.values(...)` to array type because in array element: `mixed` [1] is not exactly the same as
+`empty` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<mixed>` [1] and `Array<empty>` [3] exactly the same
+- Or make array type [3] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   object_values.js:31:2
+   31| (Object.values(writeOnlyDict): Array<empty>); // ERROR
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   object_values.js:31:38
+   31| (Object.values(writeOnlyDict): Array<empty>); // ERROR
+                                            ^^^^^ [2]
+   object_values.js:31:32
+   31| (Object.values(writeOnlyDict): Array<empty>); // ERROR
+                                      ^^^^^^^^^^^^ [3]
+
+
+Error -------------------------------------------------------------------------------------------- object_values.js:32:2
+
+Cannot cast `Object.values(...)` to array type because in array element: `mixed` [1] is not exactly the same as
+`empty` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<mixed>` [1] and `Array<empty>` [3] exactly the same
+- Or make array type [3] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   object_values.js:32:2
+   32| (Object.values(obj): Array<empty>); // ERROR
+        ^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   object_values.js:32:28
+   32| (Object.values(obj): Array<empty>); // ERROR
+                                  ^^^^^ [2]
+   object_values.js:32:22
+   32| (Object.values(obj): Array<empty>); // ERROR
+                            ^^^^^^^^^^^^ [3]
+
+
+Error -------------------------------------------------------------------------------------------- object_values.js:33:2
+
+Cannot cast `Object.values(...)` to array type because in array element: `mixed` [1] is not exactly the same as
+`empty` [2]. [incompatible-type]
+
+The above-mentioned two types must be the same because arrays are invariantly typed. To fix the error,
+- Either make `Array<mixed>` [1] and `Array<empty>` [3] exactly the same
+- Or make array type [3] a `ReadonlyArray`.
+See https://flow.org/en/docs/faq/#why-cant-i-pass-an-arraystring-to-a-function-that-takes-an-arraystring-number.
+
+   object_values.js:33:2
+   33| (Object.values(instance): Array<empty>); // ERROR
+        ^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+References:
+   object_values.js:33:33
+   33| (Object.values(instance): Array<empty>); // ERROR
+                                       ^^^^^ [2]
+   object_values.js:33:27
+   33| (Object.values(instance): Array<empty>); // ERROR
+                                 ^^^^^^^^^^^^ [3]
+
+
+Error -------------------------------------------------------------------------------------------- object_values.js:36:8
+
+Cannot call method `values` because undefined [1] is not an object. [not-an-object]
+
+   object_values.js:36:8
+   36| Object.values(undefined); // ERROR
+              ^^^^^^
+
+References:
+   object_values.js:36:15
+   36| Object.values(undefined); // ERROR
+                     ^^^^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- object_values.js:37:8
+
+Cannot call method `values` because null [1] is not an object. [not-an-object]
+
+   object_values.js:37:8
+   37| Object.values(null); // ERROR
+              ^^^^^^
+
+References:
+   object_values.js:37:15
+   37| Object.values(null); // ERROR
+                     ^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- object_values.js:38:8
+
+Cannot call method `values` because number [1] is not an object. [not-an-object]
+
+   object_values.js:38:8
+   38| Object.values(1); // ERROR
+              ^^^^^^
+
+References:
+   object_values.js:38:15
+   38| Object.values(1); // ERROR
+                     ^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- object_values.js:39:8
+
+Cannot call method `values` because boolean [1] is not an object. [not-an-object]
+
+   object_values.js:39:8
+   39| Object.values(true); // ERROR
+              ^^^^^^
+
+References:
+   object_values.js:39:15
+   39| Object.values(true); // ERROR
+                     ^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------------- object_values.js:40:8
+
+Cannot call method `values` because array literal [1] is not an object. [not-an-object]
+
+   object_values.js:40:8
+   40| Object.values([1, 2]); // ERROR
+              ^^^^^^
+
+References:
+   object_values.js:40:15
+   40| Object.values([1, 2]); // ERROR
+                     ^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------------------------- proto.js:3:2
+
+Cannot cast `o1_proto.toString` to empty because function type [1] is incompatible with empty [2]. [incompatible-type]
+
+   proto.js:3:2
+     3| (o1_proto.toString: empty); // error: function ~> empty
+         ^^^^^^^^^^^^^^^^^
+
+References:
+   <BUILTINS>/core.js:255:5
+   255|     toString(): string;
+            ^^^^^^^^^^^^^^^^^^ [1]
+   proto.js:3:21
+     3| (o1_proto.toString: empty); // error: function ~> empty
+                            ^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- proto.js:3:11
+
+Cannot get `o1_proto.toString` because property `toString` [1] cannot be unbound from the context [2] where it was
+defined. [method-unbinding]
+
+   proto.js:3:11
+     3| (o1_proto.toString: empty); // error: function ~> empty
+                  ^^^^^^^^ [1]
+
+References:
+   <BUILTINS>/core.js:255:5
+   255|     toString(): string;
+            ^^^^^^^^^^^^^^^^^^ [2]
+
+
+Error ----------------------------------------------------------------------------------------------------- proto.js:7:2
+
+Cannot cast `o2.__proto__.p` to empty because number [1] is incompatible with empty [2]. [incompatible-type]
+
+   proto.js:7:2
+   7| (o2.__proto__.p: empty); // error: number ~> empty
+       ^^^^^^^^^^^^^^
+
+References:
+   proto.js:5:27
+   5| var o2 = Object.create({p:0});
+                                ^ [1]
+   proto.js:7:18
+   7| (o2.__proto__.p: empty); // error: number ~> empty
+                       ^^^^^ [2]
+
+
+Error ---------------------------------------------------------------------------------------------------- proto.js:13:2
+
+Cannot cast `C1_proto.bind` to empty because function prototype [1] is incompatible with empty [2]. [incompatible-type]
+
+   proto.js:13:2
+   13| (C1_proto.bind: empty); // error: function ~> empty
+        ^^^^^^^^^^^^^ [1]
+
+References:
+   proto.js:13:17
+   13| (C1_proto.bind: empty); // error: function ~> empty
+                       ^^^^^ [2]
+
+
+Error --------------------------------------------------------------------------------------------------- proto.js:17:14
+
+Cannot get `inst1_proto.m` because property `m` is missing in super of `C1` [1]. [prop-missing]
+
+   proto.js:17:14
+   17| (inst1_proto.m: empty); // TODO error: function ~> empty
+                    ^
+
+References:
+   proto.js:17:2
+   17| (inst1_proto.m: empty); // TODO error: function ~> empty
+        ^^^^^^^^^^^ [1]
+
+
+
+Found 89 errors

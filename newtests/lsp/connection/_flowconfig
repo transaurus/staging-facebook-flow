@@ -1,0 +1,7 @@
+[options]
+all=true
+exact_by_default=false
+#placeholder
+
+[version]
+>0.60.0
