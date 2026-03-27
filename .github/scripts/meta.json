@@ -1,0 +1,10 @@
+{
+  "sourceUrl": "https://github.com/facebook/flow",
+  "branch": "main",
+  "docusaurusRoot": "website",
+  "configFile": "website/docusaurus.config.js",
+  "translateCommand": "npx docusaurus write-translations",
+  "buildCommand": "NO_INLINE_FLOW_ERRORS=1 npx docusaurus build",
+  "buildOutput": "build",
+  "packageManager": "yarn"
+}
