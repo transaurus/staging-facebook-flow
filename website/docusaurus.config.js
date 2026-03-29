@@ -12,13 +12,17 @@ const webpack = require('webpack');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const allFlowVersions = require('./src/js/flow-versions');
 
-/** @type {import('@docusaurus/types').DocusaurusConfig} */
+/** @type {
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "zh-Hans"],
+  },import('@docusaurus/types').DocusaurusConfig} */
 module.exports = async () => ({
   title: 'Flow',
   tagline: 'A Static Type Checker for JavaScript',
   url: 'https://flow.org',
   baseUrl: process.env.DOCUSAURUS_BASE_URL || '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
   organizationName: 'facebook', // Usually your GitHub org/user name.

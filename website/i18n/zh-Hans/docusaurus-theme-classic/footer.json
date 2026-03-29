@@ -1,0 +1,62 @@
+{
+  "link.title.Learn": {
+    "message": "Learn",
+    "description": "The title of the footer links column with title=Learn in the footer"
+  },
+  "link.title.Community": {
+    "message": "Community",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.More": {
+    "message": "More",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.title.Legal": {
+    "message": "Legal",
+    "description": "The title of the footer links column with title=Legal in the footer"
+  },
+  "link.item.label.Getting Started": {
+    "message": "Getting Started",
+    "description": "The label of footer link with label=Getting Started linking to en/docs/getting-started"
+  },
+  "link.item.label.Twitter": {
+    "message": "Twitter",
+    "description": "The label of footer link with label=Twitter linking to https://twitter.com/flowtype"
+  },
+  "link.item.label.Discord": {
+    "message": "Discord",
+    "description": "The label of footer link with label=Discord linking to https://discordapp.com/invite/8ezwRUK"
+  },
+  "link.item.label.Medium": {
+    "message": "Medium",
+    "description": "The label of footer link with label=Medium linking to https://medium.com/flow-type"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/facebook/flow"
+  },
+  "link.item.label.Privacy": {
+    "message": "Privacy",
+    "description": "The label of footer link with label=Privacy linking to https://opensource.facebook.com/legal/privacy/"
+  },
+  "link.item.label.Terms": {
+    "message": "Terms",
+    "description": "The label of footer link with label=Terms linking to https://opensource.facebook.com/legal/terms/"
+  },
+  "link.item.label.Data Policy": {
+    "message": "Data Policy",
+    "description": "The label of footer link with label=Data Policy linking to https://opensource.facebook.com/legal/data-policy/"
+  },
+  "link.item.label.Cookie Policy": {
+    "message": "Cookie Policy",
+    "description": "The label of footer link with label=Cookie Policy linking to https://opensource.facebook.com/legal/cookie-policy/"
+  },
+  "copyright": {
+    "message": "Copyright © 2026 Meta Platforms, Inc. Built with Docusaurus.",
+    "description": "The footer copyright"
+  },
+  "logo.alt": {
+    "message": "Facebook Open Source Logo",
+    "description": "The alt text of footer logo"
+  }
+}
